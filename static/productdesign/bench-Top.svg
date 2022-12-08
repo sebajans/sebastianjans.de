@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg on:click={() => (moveToRight = !moveToRight)}
+			class="{moveToRight
+				? '-rotate-90 -translate-x-[6%] translate-y-[7%] sm:translate-x-0 sm:translate-y-0 sm:rotate-0'
+				: ' '} scale-[99%] hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]" viewBox="0 0 712 386" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-878,-1727)">
+        <g id="Top" transform="matrix(1.20001,0,0,1.20001,525.48,-376.256)">
+            <g transform="matrix(1,0,0,1,0,-112.205)">
+                <g transform="matrix(1,0,0,1,0,-609.449)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="14.173" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.54898e-12,-609.449)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="2.362" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,540.945,-112.205)">
+                <g transform="matrix(1,0,0,1,0,-609.449)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="14.173" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.54898e-12,-609.449)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="2.362" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,0,-112.205)">
+                <g transform="matrix(1,0,0,1,0,-491.339)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="14.173" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.54898e-12,-491.339)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="2.362" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,540.945,34.8289)">
+                <g transform="matrix(1,0,0,1,0,-491.339)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="14.173" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.54898e-12,-491.339)">
+                    <circle in:fade={{ duration: 800, delay: 1000 }} cx="321.26" cy="2499.21" r="2.362" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+                </g>
+            </g>
+            <g id="Top1" serif:id="Top" transform="matrix(1,0,0,1,-8.52651e-14,-572.835)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M295.276,2326.77L295.276,2486.22L885.827,2645.67L885.827,2326.77L885.827,2645.67L885.827,2326.77L295.276,2326.77L885.827,2326.77" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+            </g>
+            <g transform="matrix(0.0721866,0.0193423,-0.0885434,0.330448,758.414,1167.57)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.01px;"/>
+            </g>
+            <g transform="matrix(0.0721866,0.0193423,-0.0885434,0.330448,758.414,1167.57)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M958.989,2413.12L296.46,2412.78L296.46,2457.66L958.989,2458L958.989,2413.12Z" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.01px;"/>
+            </g>
+            <g transform="matrix(-0.0735177,4.42724e-18,-2.12886e-17,-0.342105,365.783,2594.38)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.02px;"/>
+            </g>
+            <g transform="matrix(-0.0735177,4.42724e-18,-2.12886e-17,-0.342105,907.535,2594.38)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.02px;"/>
+            </g>
+            <g transform="matrix(-0.0779917,4.97514e-18,-2.00345e-17,-0.342105,637.003,2594.38)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,0,-112.205)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M295.276,2025.59L885.827,2185.04L885.827,2169.08L295.276,2009.63L295.276,2025.59Z" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.74px;"/>
+            </g>
+            <g transform="matrix(0.996016,0,0,0.928571,1.1764,21.0911)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="1866.14" width="592.913" height="16.535" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.8px;"/>
+            </g>
+            <g transform="matrix(0.0721866,0.0193423,-0.0885434,0.330448,491.485,1095.4)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M917.972,2413.22L241.696,2412.93L296.869,2457.99L918.936,2458.25L917.972,2413.22Z" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.01px;"/>
+            </g>
+            <g transform="matrix(0,-0.0747331,-0.342105,0,1136.26,1919.07)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M2003.25,2413.22L233.896,2413.17L289.612,2458.25L2004.22,2458.25L2003.25,2413.22Z" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.01px;"/>
+            </g>
+            <g transform="matrix(0,-0.0747331,-0.342105,0,1711.39,2073.8)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M4074.58,2413.27L226.42,2413.17L282.135,2458.25L4074.58,2458.3L4074.58,2413.27Z" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.01px;"/>
+            </g>
+            <g transform="matrix(-0.0727463,-0.0194923,0.0885434,-0.330448,689.753,2874.71)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M912.504,2412.7L241.056,2412.41L296.229,2457.47L913.083,2457.73L912.504,2412.7Z" style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:7.01px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

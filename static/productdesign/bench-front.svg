@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg on:click={() => (moveToRight = !moveToRight)}
+			class="{moveToRight
+				? '-rotate-90 -translate-x-[6%] translate-y-[7%] sm:translate-x-0 sm:translate-y-0 sm:rotate-0'
+				: ' '} scale-[99%] hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]" width="100%" height="100%" viewBox="0 0 712 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-878,-2299)">
+        <g id="front" transform="matrix(1.20001,0,0,1.20001,525.48,-1009.13)">
+            <g transform="matrix(1,0,0,1,1.13687e-13,572.835)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2185.04" width="590.551" height="271.654" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.74px;"/>
+            </g>
+            <g transform="matrix(0.88968,0,0,1.05263,32.5749,443.535)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.78px;"/>
+            </g>
+            <g transform="matrix(0.88968,0,0,1.10526,32.5749,92.1881)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.73px;"/>
+            </g>
+            <g transform="matrix(0.0735587,0,0,3.89474,815.28,-6585.89)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:0.63px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1.02778,227,510.761)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="610" y="2234.65" width="3.974" height="170.079" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.71px;"/>
+            </g>
+            <g transform="matrix(0.0676157,0,0,3.89474,275.31,-6585.89)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:0.63px;"/>
+            </g>
+            <g transform="matrix(0.00590201,0,0,3.89474,338.415,-6585.89)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:0.63px;"/>
+            </g>
+            <g transform="matrix(0.0720047,0,0,3.89474,540.943,-6585.89)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="295.276" y="2411.81" width="663.78" height="44.882" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:0.63px;"/>
+            </g>
+            <g transform="matrix(0.99292,0,0,1,1.63507,572.835)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="344.882" y="2404.72" width="219.685" height="4.724" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.74px;"/>
+            </g>
+            <g transform="matrix(2.68817,0,0,1,-631.826,353.15)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="344.882" y="2404.72" width="219.685" height="4.724" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:0.86px;"/>
+            </g>
+            <g transform="matrix(1.0333,0,0,1,253.634,572.835)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="344.882" y="2404.72" width="219.685" height="4.724" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.71px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1.02778,-47.7953,510.761)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="610" y="2234.65" width="3.974" height="170.079" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.71px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,1.13687e-13,572.835)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="610" y="2234.65" width="3.974" height="170.079" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.74px;"/>
+            </g>
+            <g transform="matrix(1,0,0,0.9,4.72441,825.591)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M869.291,2468.5L840.945,2468.5L850.384,2456.69L859.853,2456.69L869.291,2468.5Z" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.82px;"/>
+            </g>
+            <g transform="matrix(1,0,0,0.428571,9.44882,1981.72)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="848.031" y="2444.88" width="4.724" height="16.535" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:2.26px;"/>
+            </g>
+            <g transform="matrix(1,0,0,0.9,-533.858,825.591)">
+                <path in:fade={{ duration: 800, delay: 1000 }} d="M869.291,2468.5L840.945,2468.5L850.384,2456.69L859.853,2456.69L869.291,2468.5Z" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:1.82px;"/>
+            </g>
+            <g transform="matrix(1,0,0,0.428571,-529.134,1981.72)">
+                <rect in:fade={{ duration: 800, delay: 1000 }} x="848.031" y="2444.88" width="4.724" height="16.535" style="fill:rgb(0,155,223);fill-opacity:0.12;stroke:rgb(0,155,223);stroke-width:2.26px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

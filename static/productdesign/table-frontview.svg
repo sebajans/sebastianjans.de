@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewBox="0 0 815 444" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-323,-2200)">
+        <g id="front-view" serif:id="front view" transform="matrix(0.920272,0,0,0.920272,-343.331,1500.24)">
+            <g transform="matrix(1.97061,0,0,1.97061,27.2107,738.467)">
+                    <g transform="matrix(1,0,0,1,0,-531.3)">
+                        <path in:draw="{{ duration: 800 }}" d="M779.5,566.7L354.3,566.7L354.3,559.6L779.5,559.6L779.5,566.7Z" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,0,-304.5)">
+                        <path in:draw="{{ duration: 800, delay: 200 }}" d="M375.6,559.6L368.5,559.6L368.5,339.9L375.6,339.9L375.6,559.6Z" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-2.44427e-11,-304.5)">
+                        <path  in:draw="{{ duration: 800, delay: 400 }}" d="M765.4,559.6L758.3,559.6L758.3,339.9L765.4,339.9L765.4,559.6Z" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                    <g transform="matrix(1.00048,0,0,1,-0.304768,-337.1)">
+                        <rect x="375.6" y="381" width="382.7" height="170.1" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                </g>
+                <!-- <g id="_77-5" serif:id="77,5" transform="matrix(1,0,0,1,608.485,70.7)">
+                    <g transform="matrix(1.02575e-16,1.67518,-0.5,3.06162e-17,171.6,-290.514)">
+                        <path in:draw="{{ duration: 800, delay: 600 }}"  d="M158.301,12L158.301,15L152.35,11L158.301,7L158.301,10L277.549,10L277.549,7L283.5,11L277.549,15L277.549,12L158.301,12Z" style="fill:currentColor;"/>
+                    </g>
+                    <!-- <g transform="matrix(0.944077,0,0,0.944077,-11.0303,61.3293)">
+                        <text x="192.2px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">77,5</text>
+                        <text x="192.2px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                    </g>
+                </g>
+                <g id="_150cm" serif:id="150cm" transform="matrix(0.66651,0,0,1,401.656,0)">
+                    <g transform="matrix(3.24209,0,0,0.5,-352.232,17.2787)">
+                        <path in:draw="{{ duration: 800, delay: 200 }}"  d="M156.964,12L156.964,15L152.35,11L156.964,7L156.964,10L278.886,10L278.886,7L283.5,11L278.886,15L278.886,12L156.964,12Z" style="fill:currentColor;"/>
+                    </g>
+                    <g transform="matrix(1.41645,0,0,0.944077,51.4598,2.69753)">
+                        <text x="202.446px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">100</text>
+                        <text x="205.14px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                    </g>
+                </g>
+                <g id="_110cm" serif:id="110cm" transform="matrix(1,0,0,1,212.6,104.809)">
+                    <g transform="matrix(2.9188,0,0,0.5,-281.778,17.2787)">
+                        <path  d="M155.766,12L155.766,15L152.35,11L155.766,7L155.766,10L280.084,10L280.084,7L283.5,11L280.084,15L280.084,12L155.766,12Z" style="fill:currentColor;"/>
+                    </g>
+                    <g transform="matrix(0.944077,0,0,0.944077,156.656,2.69753)">
+                        <text x="192.2px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">130</text>
+                        <text x="192.2px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                    </g> -->
+            </g>
+            <!-- <g id="side-view" serif:id="side view" transform="matrix(1.97061,0,0,1.97061,446.162,738.467)">
+                <g>
+                    <g transform="matrix(1,0,0,1,4.9738e-14,-531.3)">
+                        <rect x="141.7" y="559.6" width="141.8" height="7.1" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                    <g transform="matrix(1.04676,0,0,1,-12.5924,-304.5)">
+                        <rect x="147.4" y="339.9" width="121.9" height="219.7" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.12px;"/>
+                    </g>
+                    <g transform="matrix(0.982305,0,0,1,9.73309,-304.5)">
+                        <rect x="148.8" y="339.9" width="7.1" height="219.7" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.16px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,6.97436,-388.7)">
+                        <rect x="155.9" y="489.3" width="102.1" height="5.1" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,6.97436,-248.1)">
+                        <rect x="155.9" y="419" width="102.1" height="5.1" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,6.97436,-107.5)">
+                        <rect x="155.9" y="348.7" width="102.1" height="5.1" style="fill:currentColor;fill-opacity:0.12;stroke:currentColor;stroke-width:1.15px;"/>
+                    </g>
+                </g> -->
+                <!-- <g>
+                    <g transform="matrix(1,0,0,1,14.5214,0)">
+                        <g transform="matrix(3.02543e-17,0.494091,-0.5,3.06162e-17,171.6,-39.8747)">
+                            <path d="M172.527,12L172.527,15L152.35,11L172.527,7L172.527,10L263.323,10L263.323,7L283.5,11L263.323,15L263.323,12L172.527,12Z" style="fill:currentColor;"/>
+                        </g>
+                        <g transform="matrix(0.944077,0,0,0.944077,-11.0303,54.5793)">
+                            <text x="192.2px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">23</text>
+                            <text x="192.2px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,14.5214,70.7)">
+                        <g transform="matrix(3.02543e-17,0.494091,-0.5,3.06162e-17,171.6,-39.8747)">
+                            <path d="M172.527,12L172.527,15L152.35,11L172.527,7L172.527,10L263.323,10L263.323,7L283.5,11L263.323,15L263.323,12L172.527,12Z" style="fill:currentColor;"/>
+                        </g>
+                        <g transform="matrix(0.944077,0,0,0.944077,-11.0303,54.5793)">
+                            <text x="192.2px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">23</text>
+                            <text x="192.2px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,112.148,70.7)">
+                        <g transform="matrix(1.02575e-16,1.67518,-0.5,3.06162e-17,171.6,-290.514)">
+                            <path d="M158.301,12L158.301,15L152.35,11L158.301,7L158.301,10L277.549,10L277.549,7L283.5,11L277.549,15L277.549,12L158.301,12Z" style="fill:currentColor;"/>
+                        </g>
+                        <g transform="matrix(0.944077,0,0,0.944077,-11.0303,61.3293)">
+                            <text x="192.2px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">77,5</text>
+                            <text x="192.2px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,14.5214,140.6)">
+                        <g transform="matrix(3.02543e-17,0.494091,-0.5,3.06162e-17,171.6,-39.8747)">
+                            <path d="M172.527,12L172.527,15L152.35,11L172.527,7L172.527,10L263.323,10L263.323,7L283.5,11L263.323,15L263.323,12L172.527,12Z" style="fill:currentColor;"/>
+                        </g>
+                        <g transform="matrix(0.944077,0,0,0.944077,-11.0303,54.5793)">
+                            <text x="192.2px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">23</text>
+                            <text x="192.2px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                        </g>
+                    </g>
+                    <g>
+                        <g transform="matrix(1.0812,0,0,0.5,-23.0215,17.2787)">
+                            <path d="M161.571,12L161.571,15L152.35,11L161.571,7L161.571,10L274.279,10L274.279,7L283.5,11L274.279,15L274.279,12L161.571,12Z" style="fill:currentColor;"/>
+                        </g>
+                        <g transform="matrix(0.944077,0,0,0.944077,17.3197,2.69753)">
+                            <text x="192.2px" y="18.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">50</text>
+                            <text x="192.2px" y="33.107px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:12px;fill:currentColor;">cm</text>
+                        </g>
+                    </g>
+                </g> -->
+            <!-- </g> -->
+            <!-- <g transform="matrix(0.946101,0,0,0.946101,1095.15,1034.85)">
+                <text x="24.134px" y="27px" style="font-family:'Oswald-Regular', 'Oswald';font-size:33.333px;fill:rgb(0,159,223);">V<tspan x="40.701px " y="27px ">O</tspan>RDERANSICHT</text>
+            </g> -->
+        </g>
+    </g>
+</svg>
