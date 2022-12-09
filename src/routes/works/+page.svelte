@@ -11,7 +11,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import { LogoItems } from './logoitems';
 	import { sectionNames } from './sectionNames';
-
+	import Start from './Start.svelte';
 	// Tolgee t translation
 	const t = getTranslate();
 
@@ -20,8 +20,8 @@
 	mainClass.set('pt-0 pr-0 pl-0 md:pl-0');
 
 	// Sources for images
-	let srcRenaImg1 = 'img/website-rena-front-1.webp';
-	let srcRenaImg2 = 'img/website-rena-front-2.webp';
+	// let srcRenaImg1 = 'img/website-rena-front-1.webp';
+	// let srcRenaImg2 = 'img/website-rena-front-2.webp';
 
 	const testLogoAnimation = tweened(1, {
 		duration: 300,
@@ -57,35 +57,31 @@
 	}
 	// section decralations
 	$: sectionWebsites = sectionHeight;
-	$: sectionLogos = sectionHeight * 3;
 	$: sectionGraphicDesign = sectionHeight * 4;
 	$: sectionProductDesign = sectionHeight * 6;
-	// }
 
 	let scrollWebsites;
-	// let offsetScroll = 0.2
-	// $: { scrollWebsites = scroll - sectionWebsites * offsetScroll
-	// 	if (scrollWebsites < 0) {
-	// 		scrollWebsites = 0;
-	// 	} else if (scroll >= sectionWebsites*2) {
-	// 		scrollWebsites = sectionLogos;
-	// 	}
-	// }
+
 	$: scrollSection2 = Math.min(1, scroll / sectionHeight);
 	$: scrollSection3 = Math.min(1, (scroll - sectionWebsites) / sectionHeight);
 
-	// function scrollInSection(a, b = 0, c) {
-	// 	let sectionScrollAnimation;
-	// 	sectionScrollAnimation = Math.min(1, (a - b) / c);
-	// 	console.log(sectionScrollAnimation);
-	// 	return sectionScrollAnimation;
-	// }
-
 	// scroll from a to b,  b being maximum, c is offset
-	$: scrollSection4 = Math.min(1, (scroll - sectionLogos) / sectionHeight);
+	function scrollInSection(a:number, b = 0, c:number) {
+		const sectionScrollAnimation = Math.min(1, (a - b*c) / c);
+		console.log(sectionScrollAnimation);
+		return sectionScrollAnimation;
+	}
+
+	// $: scrollSection4 = scrollInSection(scroll, 3, sectionHeight) // = sectionLogos
+	$: item2 = scrollInSection(scroll, 4, sectionHeight)
+	$: console.log(item2)
+	// console.log(scrollInSection)
+
+	// $: sectionLogos = sectionHeight * 3;
+	$: scrollSection4 = Math.min(1, (scroll - sectionHeight * 3) / sectionHeight);
 
 	$: showProductTable = false;
-	$: console.log(scroll, sectionProductDesign);
+	// $: console.log(scroll, sectionProductDesign);
 	// if (scroll >= sectionProductDesign * 0.95) {
 	// 	showProductTable = true;
 	// }
@@ -142,7 +138,8 @@
 <!-- use:viewport
 on:enterViewport={() => (showLogoRJ = true)}
 on:exitViewport={() => (showLogoRJ = false)} -->
-<section
+<Start />
+<!-- <section
 	id="websites"
 	class="bg-primary-200/20 w-full relative h-screen h-screen-ios p-7  overflow-y-hidden "
 >
@@ -197,7 +194,7 @@ on:exitViewport={() => (showLogoRJ = false)} -->
 			/>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <!-- --------------- Section 2: kamadob10 --------------- -->
 <section
@@ -264,10 +261,12 @@ on:exitViewport={() => (showLogoRJ = false)} -->
 	class="bg-primary-300/20 w-full relative h-screen h-screen-ios p-7 overflow-hidden"
 >
 	<!-- on:exitViewport={() => (showLogoDesign = false)} -->
-	<h1
-		class="{scroll <= sectionLogos
+		<!-- {scroll <= sectionLogos
 			? ''
-			: 'opacity-0'} transition-all duration-75 font-sans py-4 text-4xl"
+			: 'opacity-0'}  -->
+	<h1
+		class="
+			transition-all duration-75 font-sans py-4 text-4xl"
 	>
 		Logo Design
 	</h1>

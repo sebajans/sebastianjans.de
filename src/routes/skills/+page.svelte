@@ -11,11 +11,11 @@
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
 	mainClass.set('pt-28 container');
 
-	function slidevertical(node, {firstdelay, delay }) {
+	function slidevertical(node:any, {firstdelay, delay }:{firstdelay:number,delay:number}) {
 		return {
 			delay,
 			duration: 850*firstdelay,
-			css: (t) => {
+			css: (t:number) => {
 				const eased = cubicInOut(t);
 
 				return `
@@ -26,21 +26,19 @@
 		};
 	}
 	// https://svelte.dev/repl/6904f0306d6f4985b55f5f9673f762ef?version=3.4.1
-	let visible
-	let duration 
-	let firstdelay
+	let visible:boolean
+	let duration:number
+	let firstdelay:number
 	afterNavigate(({ from }) => {
 		duration = from === null ? 450 : 0;
 		firstdelay = from === null ? 1 : 0;
 		visible = true;
 	});
 
-	let scroll
+	let scroll:number
 	let windowHeight:number
 	let animate = false;
 	onMount(() => (animate = true));
-	let test
-	$: console.log(test)
 	// $: scroll > windowHeight * 0.3 ? (animate = true) : (animate = false);
 </script>
 
@@ -81,7 +79,8 @@
 	</p>
 
 	{#each Object.entries(categories) as [categoryName, skills], i}
-		<div bind:offsetHeight={test}
+	<!-- bind:offsetHeight={test} -->
+		<div 
 			style:transform={`translateZ(0)`}
 			in:fly={{ y: 30, duration, delay: (150 + i * 150)*firstdelay }}
 			class="bg-primary-900 break-inside-avoid-column  shadow-lg shadow-primary-500/40 dark:bg-primary-50 p-4 rounded-lg align-top gap-2 grid grid-cols-1"

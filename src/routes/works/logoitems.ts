@@ -1,6 +1,9 @@
+import LogoChilli from '$lib/assets/logos/logo-chilli.webp'
+
+
 export const LogoItems = [
   {
-    class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('logos/logo-chilli.webp')]`
+    class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${LogoChilli}')]`
   },
   {
     class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50 bg-[url('logos/logo-rj-s.webp')] dark:bg-[url('logos/logo-rj-s-white.webp')]`
