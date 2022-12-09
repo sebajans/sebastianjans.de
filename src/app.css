@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
+
+@layer base {
+  h1 {
+      @apply text-2xl;
+  }
+
+  h2 {
+      @apply text-xl;
+  }
+  h3 {
+      @apply text-lg;
+  }
+
+  p {
+      @apply text-primary-900 dark:text-primary-100;
+  }
+  .inverted {
+      @apply dark:text-primary-900 text-primary-100;
+  }
+}
+
+@layer components {
+  .btn {
+      @apply transition duration-300 text-center px-4 py-2 rounded-md;
+  }
+
+  .btn-navajo {
+      @apply bg-primary-50 text-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 dark:bg-primary-900 dark:text-primary-50
+  }
+
+  .input {
+      @apply focus:ring-primary-400 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50 block w-full p-2.5 dark:bg-primary-900 dark:border-primary-600 dark:text-primary-50
+  }
+
+
+  .label {
+      @apply block mb-2 text-primary-50 font-medium dark:text-primary-900 
+  }
+}
+
+
 @tailwind utilities;
+
+@layer utilities {
+    .scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #000 #fff;
+      }
+      
+    .scrollbar::-webkit-scrollbar {
+      width: 10px;
+      /* height: 20px; */
+    }
+    
+    .scrollbar::-webkit-scrollbar-track {
+      background: #000;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #e0cbcb;
+      border-radius: 100vh;
+      border: 3px solid #f6f7ed;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #c0a0b9;
+    }
+  }

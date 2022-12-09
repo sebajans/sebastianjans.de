@@ -43,7 +43,7 @@
 	<TolgeeProvider config={tolgeeConfig}>
 		<VanishingHeader offset={100} tolerance={3} {showHeader} />
 		<NavBar {showMenu} />
-		<main class="{$mainClass} px-4 relative md:pl-44 mx-auto">
+		<main class="{$mainClass} px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900">
 			<slot />
 		</main>
 	</TolgeeProvider>

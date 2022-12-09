@@ -59,7 +59,7 @@
 		</a>
 
 	<div
-		class="relative items-center w-full md:pl-44 px-4 mx-auto md:container z-40 flex justify-between "
+		class="relative items-center w-full md:pl-44 px-4 mx-auto z-40 flex justify-between "
 	>
 		<!-- page title -->
 		<h1

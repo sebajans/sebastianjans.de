@@ -42,6 +42,7 @@ module.exports = {
   },
   plugins: [
     iOSHeight,
+    require('autoprefixer'),
     plugin(function ({ addUtilities }) {
       addUtilities({
         '.hide-scrollbar': {

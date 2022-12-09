@@ -81,7 +81,7 @@
 
 <section
 	bind:clientHeight={sectionHeight}
-	class="container relative w-full snap-start h-screen h-screen-ios flex flex-col justfiy-center content-center "
+	class="relative w-full snap-start h-screen h-screen-ios flex flex-col justfiy-center content-center "
 >
 	<div class="relative flex flex-col h-full w-full max-w-2xl pt-44 mx-auto">
 		{#if visible}
@@ -206,7 +206,7 @@
 </section>
 
 <div
-	class=" container h-auto grid grid-cols-[minmax(0,1fr)_0.75rem_0.75rem_0.75rem] gap-x-4 relative"
+	class=" h-auto grid grid-cols-[minmax(0,1fr)_0.75rem_0.75rem_0.75rem] gap-x-4 relative"
 >
 	<div
 		on:scroll={test}
