@@ -2,43 +2,42 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { draw, fade } from 'svelte/transition';
+	// let srcRenaImg1 = 'img/website-rena-front-1.webp';
+	// let srcRenaImg2 = 'img/website-rena-front-2.webp';
+
+	let moveToRight: boolean = false;
+
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 5, windowHeight);
-	// let srcRenaImg1 = 'img/website-rena-front-1.webp';
-	// let srcRenaImg2 = 'img/website-rena-front-2.webp';
-	let showProductTable:boolean = false;
-	let moveToRight: boolean = false;
-	$: console.log('scroll' + sectionScroll)
-	// if (sectionScroll >= 0.9 ) {
-	// 	showProductTable = true
-	// }
-	showProductTable = true
-	
+	let showProduct: Boolean = false;
+	$: if (sectionScroll >= 0.75 && scroll > 1) {
+		showProduct = true;
+	}
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <section
 	id="productdesign"
-	class="bg-primary-500/50 dark:bg-primary-400/50 w-full relative h-screen h-screen-ios p-7 overflow-hidden "
+	class="bg-primary-500/50 dark:bg-primary-400/50 w-full relative h-screen h-screen-ios p-7 overflow-hidden flex flex-col "
 >
-	<h1
-		class=" transition-all duration-75 font-sans py-4 text-4xl"
-	>
-		Product Design
-	</h1>
-	<button class="bg-primary-800 w-auto px-6 py-3 rounded-md hover:bg-primary-700 text-primary-50"
-	on:click={() => (moveToRight = !moveToRight)}>
-Change view
-	</button>
+	<div class="flex flex-row w-full">
+		<h1 class="text-left md:text-right font-sans py-4 text-4xl w-1/2 md:w-full">Product Design</h1>
+		<button
+			class="uppercase font-sans bg-primary-800 w-auto h-fit ml-auto my-auto md:hidden px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
+			on:click={() => (moveToRight = !moveToRight)}
+		>
+			Change view
+		</button>
+	</div>
+
 	<div class=" md:pl-44 grid w-[calc(100%_*_2)] sm:w-full grid-cols-2 gap-x-10 md:gap-y-10">
-		{#if showProductTable}
+		{#if showProduct}
 			<svg
-				
 				class="{moveToRight
 					? '-translate-x-full opacity-0 sm:opacity-100 sm:translate-x-0'
-					: 'translate-x-0 opacity-100'} hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vw] max-h-[50vh]"
+					: 'translate-x-0 opacity-100'} scale-[94%] duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vw] max-h-[30vh]"
 				viewBox="0 0 991 550"
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"
@@ -153,10 +152,9 @@ Change view
 			</svg>
 
 			<svg
-				on:click={() => (moveToRight = !moveToRight)}
 				class="{moveToRight
 					? '-translate-x-full sm:translate-x-0'
-					: 'translate-x-0 opacity-0 sm:opacity-100'}  hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh] max-h-[60vh]"
+					: 'translate-x-0 opacity-0 sm:opacity-100'} scale-[94%] duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vw] max-h-[30vh]"
 				viewBox="0 0 991 550"
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"
@@ -201,10 +199,9 @@ Change view
 				</g>
 			</svg>
 			<svg
-				on:click={() => (moveToRight = !moveToRight)}
 				class="{moveToRight
 					? '-rotate-90 -translate-x-[6%] translate-y-[7%] sm:translate-x-0 sm:translate-y-0 sm:rotate-0'
-					: ' '} scale-[99%] hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]"
+					: ' '}  duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vw] max-h-[40vh]"
 				viewBox="0 0 991 805"
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"
