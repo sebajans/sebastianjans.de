@@ -7,9 +7,14 @@
 	$: sectionScroll = scrollInSection(scroll, 5, windowHeight);
 	// let srcRenaImg1 = 'img/website-rena-front-1.webp';
 	// let srcRenaImg2 = 'img/website-rena-front-2.webp';
-
-	let showProductTable = false;
+	let showProductTable:boolean = false;
 	let moveToRight: boolean = false;
+	$: console.log('scroll' + sectionScroll)
+	// if (sectionScroll >= 0.9 ) {
+	// 	showProductTable = true
+	// }
+	showProductTable = true
+	
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
@@ -23,11 +28,14 @@
 	>
 		Product Design
 	</h1>
-
+	<button class="bg-primary-800 w-auto px-6 py-3 rounded-md hover:bg-primary-700 text-primary-50"
+	on:click={() => (moveToRight = !moveToRight)}>
+Change view
+	</button>
 	<div class=" md:pl-44 grid w-[calc(100%_*_2)] sm:w-full grid-cols-2 gap-x-10 md:gap-y-10">
 		{#if showProductTable}
 			<svg
-				on:click={() => (moveToRight = !moveToRight)}
+				
 				class="{moveToRight
 					? '-translate-x-full opacity-0 sm:opacity-100 sm:translate-x-0'
 					: 'translate-x-0 opacity-100'} hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vw] max-h-[50vh]"

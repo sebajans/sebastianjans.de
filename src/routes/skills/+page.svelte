@@ -9,7 +9,7 @@
 	import { afterNavigate } from '$app/navigation';
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
-	mainClass.set('pt-28 container');
+	mainClass.set('pt-28');
 
 	function slidevertical(node:any, {firstdelay, delay }:{firstdelay:number,delay:number}) {
 		return {
@@ -79,11 +79,10 @@
 	</p>
 
 	{#each Object.entries(categories) as [categoryName, skills], i}
-	<!-- bind:offsetHeight={test} -->
 		<div 
 			style:transform={`translateZ(0)`}
 			in:fly={{ y: 30, duration, delay: (150 + i * 150)*firstdelay }}
-			class="bg-primary-900 break-inside-avoid-column  shadow-lg shadow-primary-500/40 dark:bg-primary-50 p-4 rounded-lg align-top gap-2 grid grid-cols-1"
+			class="bg-primary-900 break-inside-avoid-column  shadow-lg shadow-primary-500/40 dark:shadow-primary-400/40 dark:bg-primary-50 p-4 rounded-lg align-top gap-2 grid grid-cols-1"
 		>
 			<h2 class="text-xl text-primary-50 dark:text-primary-900 font-bold font-sans">
 				{categoryName}

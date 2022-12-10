@@ -17,7 +17,7 @@
 
 <section
 	id="kamadoB10"
-	class="bg-primary-200/20 dark:bg-primary-900/10 w-full relative  h-screen h-screen-ios overflow-hidden "
+	class="bg-primary-200/50 dark:bg-primary-700/50 w-full relative  h-screen h-screen-ios overflow-hidden "
 >
 	<div class="pr-6 pl-6 md:pl-44 max-w-full">
 		<div

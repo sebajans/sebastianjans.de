@@ -13,16 +13,16 @@
 
 <section
 	id="graphicdesign2"
-	class="bg-primary-400/50 dark:bg-primary-500/50 w-full relative h-screen h-screen-ios overflow-hidden "
+	class="bg-primary-400/50 dark:bg-primary-900 w-full relative h-screen h-screen-ios overflow-hidden "
 >
 	<div class="md:ml-52 ml-6 mr-6 flex h-full md:flex-row flex-col items-center justify-center">
-		<div class="w-full md:w-1/2">
+		<!-- <div class="w-full md:w-1/2 max-h-40 "> -->
 			<img
 				alt="graphic-design-shirts"
-				class="object-contain rounded-lg"
+				class="mb-4 object-contain rounded-lg w-auto h-auto md:w-1/2 max-h-[60%] md:max-h-[80%] max-w-[80%]"
 				src="/graphicdesign/especimen-tipografico.webp"
 			/>
-		</div>
+		<!-- </div> -->
 
 		<div
 			class=" h-auto right-0 bottom-[10%] px-12 w-full md:w-1/2  text-justify"

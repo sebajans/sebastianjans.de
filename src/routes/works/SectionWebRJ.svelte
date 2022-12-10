@@ -14,7 +14,7 @@
 
 <section
 	id="websites"
-	class="bg-primary-200/20 w-full relative h-screen h-screen-ios p-7  overflow-y-hidden "
+	class="bg-primary-200/50 dark:bg-primary-700/50 w-full relative h-screen h-screen-ios p-7  overflow-y-hidden "
 >
 	<h1 class="w-fit transition-all duration-75 font-sans md:pt-24 text-4xl">
 		<T keyName="works-webdev" defaultValue="Webdesign" />
