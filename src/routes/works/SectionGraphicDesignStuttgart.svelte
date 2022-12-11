@@ -5,20 +5,18 @@
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
-	// let srcRenaImg1 = 'img/website-rena-front-1.webp';
-	// let srcRenaImg2 = 'img/website-rena-front-2.webp';
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <section
 	id="graphicdesign"
-	class="bg-primary-400/50 dark:bg-primary-500/50 w-full relative h-screen h-screen-ios overflow-hidden "
+	class=" bg-primary-400/50 dark:bg-primary-500/50 w-full relative h-screen h-screen-ios overflow-hidden "
 >
-	<h1 class="w-full p-7 mt-7 transition-all duration-75 font-sans py-4 text-4xl">Graphic Design</h1>
+	<h1 class="z-10 bg-primary-400  md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24">Graphic Design</h1>
 
 	<div
-		class="absolute h-auto top-28 right-0 px-6 md:w-2/5 max-w-2xl text-justify"
+		class=" z-0 h-auto top-28 mr-0 ml-auto mt-4 px-8 md:w-2/5 max-w-2xl text-justify"
 		style:transform={`translate3d(0,calc(100% - ${sectionScroll} * 100%), 0)`}
 	>
 		<T
@@ -28,7 +26,7 @@
 	</div>
 	<div
 		style:transform={`translate3d(calc(-100% + ${sectionScroll} * 100%),calc(75% - ${sectionScroll} * 75%), 0)`}
-		class="bottom-[35%] md:bottom-[30%] w-3/4 sm:w-2/3 sm:bottom-[25%] md:w-[60%] md:left-16 absolute"
+		class="bottom-[35%] md:bottom-[30%] w-3/4 sm:w-2/3 sm:bottom-[25%] md:w-[60%] md:left-8 absolute"
 	>
 		<img
 			alt="graphic-design-shirts"

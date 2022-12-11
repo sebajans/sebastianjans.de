@@ -20,10 +20,10 @@
 
 <section
 	id="productdesign"
-	class="bg-primary-500/50 dark:bg-primary-400/50 w-full relative h-screen h-screen-ios p-7 overflow-hidden flex flex-col "
+	class="bg-primary-500/50 dark:bg-primary-400/50 w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
 >
 	<div class="flex flex-row w-full">
-		<h1 class="text-left md:text-right font-sans py-4 text-4xl w-1/2 md:w-full">Product Design</h1>
+		<h1 class="bg-primary-500  md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24">Product Design</h1>
 		<button
 			class="uppercase font-sans bg-primary-800 w-auto h-fit ml-auto my-auto md:hidden px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
 			on:click={() => (moveToRight = !moveToRight)}

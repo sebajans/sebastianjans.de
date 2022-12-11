@@ -27,14 +27,14 @@
 
 <section
 	id="logodesign"
-	class="bg-primary-300/50 dark:bg-primary-600/50 w-full relative flex flex-col items-end h-screen h-screen-ios p-6 overflow-hidden"
+	class="bg-primary-300/50 dark:bg-primary-600/50 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden"
 >
 	<h1
-		class=" md:text-right text-left w-full font-sans py-4 text-4xl"
+		class="bg-primary-300 md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24"
 	>
 		Logo Design
 	</h1>
-	<p class="pb-4 md:w-1/2 md:text-right text-left w-full">
+	<p class="my-4 mr-8 md:w-2/3 md:text-right text-left w-full">
 		<T
 			keyName="logo-design-paragraph"
 			defaultValue="These logotypes show some of my previous logo design works."
