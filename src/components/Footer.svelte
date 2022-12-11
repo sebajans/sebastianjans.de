@@ -15,6 +15,6 @@
 	<button class="hover:text-primary-500 font-bold" on:click={openPopup}>Terms of Service</button>
 </div>
 
-<Popup popupClass={'w-[70vw] fixed h-[70vh] justify-start flex overflow-y-auto w-full dark:bg-primary-900 bg-primary-50'} bind:this={popup}>
+<Popup popupClass={'w-full fixed h-[60vh] justify-start flex overflow-y-auto w-full dark:bg-primary-900 bg-primary-50'} bind:this={popup}>
 	<TermsOfService />
 </Popup>

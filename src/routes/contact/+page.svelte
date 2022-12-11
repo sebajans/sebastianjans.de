@@ -135,7 +135,7 @@
 					</div>
 					<button
 						type="submit"
-						class="col-span-2 sm:col-span-1 text-white bg-primary-400 hover:bg-primary-500 dark:hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800"
+						class="col-span-2 sm:col-span-1 text-primary-900 dark:text-primary-50 bg-primary-300 hover:bg-primary-400 dark:hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800"
 						>Submit</button
 ><input type="hidden" name="form-name" value="contact">
 					<!-- <input class="hidden" type="text" name="honeypot" /> -->

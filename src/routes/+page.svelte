@@ -87,6 +87,26 @@
 			info: 'Internship – Work and design process in the creation of advertising signs',
 	},
 	]
+	let education = [
+		{
+			image : 'img/logo_UPV_principal.svg',
+			name: "Master of Science in Design Engineering",
+			time: '09/2021 - Today',	
+			info: 'Universiat Politécnica de Valencia',
+	},
+		{
+			image : 'img/logo-uni-stuttgart.eps',
+			name: 'Bachelor of Science in Materials Science',
+			time: '10/2016 - 09/2020',
+			info: 'Universität Stuttgart',
+	},
+		{
+			image : 'img/logo_gympl.jpg',
+			name: 'Letratec',
+			time: '11/2015 - 12/2015',
+			info: 'Gymnasium Plochingen',
+	},
+	]
 </script>
 
 <svelte:head>
@@ -228,8 +248,8 @@
 	<button
 		on:click|preventDefault={scrollIntoView}
 		class="hover:text-primary-400 h-10 w-10 left-1/2 transform transition-all duration-200 hover:scale-110 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-12 md:bottom-4"
-		href="#cv"
-		alt="cv"
+		href="#cv_jobs"
+		alt="cv_jobs"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -248,18 +268,36 @@
 	</button>
 </section>
 
-<section class="" id="cv">
-	<div class="space-y-4">
-		<h1 class="">Work Experience</h1>
+<section class=" h-screen h-screen-ios" id="cv_jobs">
+	<div class="md:pt-20 space-y-4 max-w-3xl">
+		<h1 class="text-primary-900 dark:text-primary-50">Work Experience</h1>
 		{#each jobs as job}
 		<div class="flex sm:flex-row flex-col space-x-4">
-			<div class="w-1/4 p-2 h-1/4 flex justify-center items-center aspect-square bg-primary-200">
+			<div class="w-1/5 p-2 h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200">
 				<img src={job.image} alt="">
 			</div>
-			<div class="w-3/4">
-				<h2 class="font-sans text-2xl">{job.name}</h2>
-				<h3 class="mb-2 text-primary-700 font-sans text-sm">{job.time}</h3>
+			<div class="w-4/5 flex flex-col justify-start">
+				<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{job.name}</h2>
+				<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">{job.time}</h3>
 				<p class="text-sm">{job.info}</p>
+			</div>
+		</div>
+		{/each}
+	</div>
+</section>
+
+<section class="md:pt-20 h-screen h-screen-ios" id="cv">
+	<div class="space-y-4 max-w-3xl">
+		<h1 class="text-primary-900 dark:text-primary-50">Education</h1>
+		{#each education as edu}
+		<div class="flex sm:flex-row flex-col space-x-4">
+			<div class="w-1/5 p-2 h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200">
+				<img src={edu.image} alt="">
+			</div>
+			<div class="w-4/5 flex flex-col justify-start">
+				<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{edu.name}</h2>
+				<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">{edu.time}</h3>
+				<p class="text-sm">{edu.info}</p>
 			</div>
 		</div>
 		{/each}
