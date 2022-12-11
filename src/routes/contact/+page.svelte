@@ -1,18 +1,20 @@
 <script lang="ts">
 	import { pageTitle } from '$lib/stores/pageTitle';
-	import TermsOfService from '../../components/TermsOfService.svelte';
 	import { fly } from 'svelte/transition';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { T, getTranslate } from '@tolgee/svelte';
+	import Popup from '../../components/Popup.svelte';
+	import TermsOfService from '../../components/TermsOfService.svelte';
 
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
 
 	mainClass.set('pt-28 min-h-[calc(100vh)]');
-	let tos = false;
 
-	function toggleButton() {
-		tos = !tos;
+	let popup: any;
+
+	function openPopup() {
+		popup.show();
 	}
 </script>
 
@@ -32,26 +34,22 @@
 			/>
 		</p>
 		<div class="flex flex-row flex-wrap">
-			<span class="w-1/3 font-bold"><T keyName="my-phone" defaultValue="Phone: " /></span>
-			<span class="w-2/3">+49 176 644 673 44</span>
-			<span class="w-1/3 font-bold"><T keyName="my-mail" defaultValue="Mail: " /></span>
-			<span class="w-2/3">sebajans@icloud.com</span>
+			<span class="w-1/4 font-sans font-semibold uppercase"
+				><T keyName="my-phone" defaultValue="Phone: " /></span
+			>
+			<span class="w-2/4">+49 176 644 673 44</span>
+			<span class="w-1/4 font-sans font-semibold uppercase"
+				><T keyName="my-mail" defaultValue="Mail: " /></span
+			>
+			<span class="w-2/4">sebajans@icloud.com</span>
 		</div>
 	</div>
 	<div
 		in:fly={{ y: 30, duration: 450 }}
 		class="relative w-full overflow-auto bg-primary-900 dark:bg-primary-50 rounded-lg p-4 scrollbar"
 	>
-		<!-- <div
-			class="{tos
-				? ''
-				: 'hidden'} fixed -translate-x-full  bg-gradient-to-b from-primary-500 to-transparent w-full h-10"
-		/> -->
 		<div class="relative flex ">
-			<div
-				class="{tos ? 'opacity-0 -translate-x-full' : 'overflow-hidden w-full opacity-100'}
-    w-full transition duration-300"
-			>
+			<div class="w-full transition duration-300">
 				<form
 					class="grid gap-6 grid-cols-2"
 					action="https://api.staticforms.xyz/submit"
@@ -63,23 +61,10 @@
 					<!-- Replace with the url you want to redirect to -->
 					<input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" />
 					<div>
-						<label for="first_name" class="label"
-							>First Name&thinsp<span style="color:#ff0000">*</span>
+						<label for="Full_name" class="label"
+							>Full Name&thinsp<span style="color:#ff0000">*</span>
 						</label>
-						<input class="input" name="$first_name" type="text" placeholder="John" required />
-					</div>
-					<div>
-						<label for="last_name" class="label"
-							>Last Name&thinsp<span style="color:#ff0000">*</span></label
-						>
-						<input type="text" name="$last_name" class="input" placeholder="Doe" required />
-					</div>
-					<div>
-						<label for="phone" class="label">Phone Number</label>
-						<!-- https://stackoverflow.com/questions/17260238/how-to-insert-space-every-4-characters-for-iban-registering -->
-						<input type="tel" name="phone" class="input" placeholder="+49 123 456 78" />
-						<!-- pattern="+[0-9]{2} [0-9]{3} [0-9]{3} [0-9]{4}" -->
-						<!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
+						<input class="input" name="$Full_name" type="text" placeholder="John" required />
 					</div>
 					<div>
 						<label for="email" class="label"
@@ -94,14 +79,18 @@
 						/>
 					</div>
 					<div>
+						<label for="phone" class="label">Phone Number</label>
+						<!-- https://stackoverflow.com/questions/17260238/how-to-insert-space-every-4-characters-for-iban-registering -->
+						<input type="tel" name="phone" class="input" placeholder="+49 123 456 78" />
+					</div>
+					<div>
 						<label for="company" class="label">Company</label>
 						<input type="text" name="company" class="input" placeholder="Google" />
 					</div>
-					<div>
+					<!-- <div>
 						<label for="website" class="label">Website URL</label>
 						<input type="url" name="website" class="input" placeholder="yourwebsite.com" />
-						<!-- pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]\{2,\}$" -->
-					</div>
+					</div> -->
 					<div class="col-span-2">
 						<label for="message" class="label"
 							>Your Message&thinsp<span style="color:#ff0000">*</span></label
@@ -119,9 +108,9 @@
 							/>
 							<label
 								for="remember"
-								class="ml-2 font-medium w-full text-primary-50 dark:text-primary-900"
+								class="ml-2 text-sm font-medium w-full text-primary-50 dark:text-primary-900"
 								>I agree with the <button
-									on:click={toggleButton}
+									on:click={openPopup}
 									class="group font-bold italic hover:text-primary-500"
 									>terms and conditions.&thinsp<span style="color:#ff0000">*</span>
 									<svg
@@ -151,29 +140,13 @@
 					<!-- Spam protection -->
 				</form>
 			</div>
-			<div
-				class="{tos
-					? 'opacity-100 w-[full] animate-fadein'
-					: 'opacity-0 animate-fadeout hidden translate-x-full'} 
-     transition absolute text-sm text-primary-50 bg-primary-900 dark:text-primary-900 dark:bg-primary-50"
-			>
-				<button on:click={toggleButton} class="fixed group right-9 group h-7 w-7 space-y-2">
-					<span
-						class="translate-y-[5px] rotate-45 group-hover:rotate-[135deg] block dark:group-hover:bg-primary-600 dark:bg-primary-900 group-hover:bg-primary-400 bg-primary-50 h-0.5 w-7 duration-300"
-					/>
-					<span
-						class="-translate-y-[5px] -rotate-45 group-hover:rotate-45 block dark:group-hover:bg-primary-600 dark:bg-primary-900 group-hover:bg-primary-400 bg-primary-50 h-0.5 w-7 duration-300"
-					/>
-				</button>
-				<TermsOfService />
-			</div>
 		</div>
 	</div>
-	<!-- https://www.termsandconditionsgenerator.com/live.php?token=ieD1izzWivvmzoIyzVEzAUMBG6W4ABcU -->
-	<div class="relative botton-0 inset-x-0 p-2 align-middle text-xs text-center">
-		<!-- –
-		<button class="hover:text-primary-500" on:click={toggleButton}>Privacy</button> -->
-		&copy; Sebastian Jans, 2022 –
-		<button class="hover:text-primary-500" on:click={toggleButton}>Terms of Service</button>
-	</div>
 </div>
+
+<Popup
+	popupClass={'w-[70vw] fixed h-[70vh] justify-start flex overflow-y-auto w-full dark:bg-primary-900 bg-primary-50'}
+	bind:this={popup}
+>
+	<TermsOfService />
+</Popup>
