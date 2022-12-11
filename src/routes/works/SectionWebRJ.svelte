@@ -24,7 +24,7 @@
 		<div
 			id="rena-logo"
 			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
-			class="absolute top-20 my-6 h-20  w-1/3 max-w-md pr-2 bg-contain bg-no-repeat bg-center bg-origin-content bg-[url('/logos/logo-rj-l.webp')] dark:bg-[url('/logos/logo-rj-l-white.webp')]"
+			class="absolute top-0 md:top-20 my-6 h-20  w-1/3 max-w-md pr-2 bg-contain bg-no-repeat bg-center bg-origin-content bg-[url('/logos/logo-rj-l.webp')] dark:bg-[url('/logos/logo-rj-l-white.webp')]"
 		/>
 		<div
 			style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400% ), 0)`}
@@ -55,8 +55,8 @@
 			<img src={srcRenaImg2} alt="website-rena-front-2" class="object-cover rounded-lg " />
 		</div>
 		<div
-			class="absolute h-auto right-0 bottom-14 md:bottom-4 px-8 md:w-2/5  text-justify"
-			style:transform={`translate3d(0,calc(100% - ${sectionScroll} * 100%), 0)`}
+			class="bg-primary-50/50 backdrop-blur-md p-2 absolute h-auto right-0 bottom-14 md:bottom-4 px-8 md:w-2/5  text-justify"
+			style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400%), 0)`}
 		>
 			<T
 				keyName="works-p-rj"

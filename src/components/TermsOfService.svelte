@@ -1,5 +1,5 @@
 
-<div class="space-y-2 text-justify pt-10">
+<div class="space-y-2 text-justify py-10 ">
   <h2><strong>Terms and Conditions</strong></h2>
   <p class="inverted">
     Welcome to Sebastian Jans Design!<br />
@@ -235,4 +235,7 @@
     As long as the website and the information and services on the website are provided free
     of charge, we will not be liable for any loss or damage of any nature.
   </p>
+  <p class="inverted">
+    All Preparation materials, visuals and sketches, including all electronic files used to create the project remain the property of Sebastian Jans.
+    </p>
 </div>

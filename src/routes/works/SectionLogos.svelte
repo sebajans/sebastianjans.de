@@ -16,10 +16,10 @@
 			movement: '0% - 10',
 			randomnumber: 0.55
 		},
-		{
-			movement: '-10% + 10',
-			randomnumber: 0.45
-		}
+		// {
+		// 	movement: '-10% + 10',
+		// 	randomnumber: 0.45
+		// }
 	];
 </script>
 

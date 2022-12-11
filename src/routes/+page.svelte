@@ -66,7 +66,27 @@
 			count += 1;
 		}
 	}
-	// $: console.log(intersecting2);
+
+	let jobs = [
+		{
+			image : 'img/logo-kamado.webp',
+			name: 'KamadoB10 Germany',
+			time: '08/2020 - 04/2022',	
+			info: 'Primarily as a designer (for web and print), manufacturing, marketing',
+	},
+		{
+			image : 'img/ditf-logo-weis.svg',
+			name: 'DITF',
+			time: '08/2017 - 08/2020',
+			info: 'Research Assistant – Laboratory work, preparation of samples, use of Office applications',
+	},
+		{
+			image : 'img/logo-letratec.png',
+			name: 'Letratec',
+			time: '11/2015 - 12/2015',
+			info: 'Internship – Work and design process in the creation of advertising signs',
+	},
+	]
 </script>
 
 <svelte:head>
@@ -167,33 +187,44 @@
 		</svg>
 	</button>
 </section>
-<!-- <div class="h-screen h-screen-ios snap snap-y snap-mandatory overflow-y-scroll hide-scrollbar"> -->
 <section
 	id="aboutme"
-	class="w-full  relative h-screen h-screen-ios flex flex-col md:flex-row justfiy-center items-center"
+	class="w-full  relative h-screen h-screen-ios flex flex-row justfiy-center items-center"
 >
-	<div class="max-w-2xl">
-		<h1 class="transition-all	 pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold">
+	<img
+		src={profilePicture}
+		alt="profile"
+		class="object-cover object-top w-1/4 aspect-square rounded-full"
+	/>
+
+	<div class="max-w-2xl pl-4">
+		<h1 class="pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold">
 			{$t({ key: 'front-about', defaultValue: 'About me' })}
 		</h1>
-		<p class="md:w-full">
+		<p class="md:w-full mb-2 ">
 			{$t({
 				key: 'front-about-text',
 				defaultValue:
 					'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
-			})} <br />
+			})}
+		</p>
+
+		<p class="md:w-full mb-2 ">
 			{$t({
 				key: 'front-about-text-2',
 				defaultValue:
 					'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
 			})}
 		</p>
+		<p class="md:w-full mb-2 ">
+			{$t({
+				key: 'front-about-text-3',
+				defaultValue:
+					'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
+			})}
+		</p>
 	</div>
-	<img
-		src={profilePicture}
-		alt="profile"
-		class="object-cover object-top w-1/4 aspect-square rounded-full"
-	/>
+
 	<button
 		on:click|preventDefault={scrollIntoView}
 		class="hover:text-primary-400 h-10 w-10 left-1/2 transform transition-all duration-200 hover:scale-110 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-12 md:bottom-4"
@@ -216,7 +247,27 @@
 		</svg>
 	</button>
 </section>
-<section
+
+<section class="" id="cv">
+	<div class="space-y-4">
+		<h1 class="">Work Experience</h1>
+		{#each jobs as job}
+		<div class="flex sm:flex-row flex-col space-x-4">
+			<div class="w-1/4 p-2 h-1/4 flex justify-center items-center aspect-square bg-primary-200">
+				<img src={job.image} alt="">
+			</div>
+			<div class="w-3/4">
+				<h2 class="font-sans text-2xl">{job.name}</h2>
+				<h3 class="mb-2 text-primary-700 font-sans text-sm">{job.time}</h3>
+				<p class="text-sm">{job.info}</p>
+			</div>
+		</div>
+		{/each}
+	</div>
+</section>
+
+<!-- 
+	<section
 	id="cv"
 >
 
@@ -249,7 +300,7 @@
 					{count + 8}
 				{/if}
 			</div>
-			<!-- style:opacity={`calc(100% - 1 * ${scroll*0.035}%)`} -->
+
 			<div
 				class="bg-primary-50 dark:bg-primary-900 dark:text-primary-200 text-primary-700 text-right ml-auto flex"
 			>
@@ -272,7 +323,7 @@
 	<div />
 	<div />
 
-	<!-- Praktikum -->
+
 	<div
 		in:fly={{ y: 100, duration: 800 }}
 		class=" h-40 py-8 pr-8 sticky transition-all duration-300 top-1/2 rounded-lg w-full flex flex-row flex-wrap grow"
@@ -296,7 +347,7 @@
 		<div class=" w-2 h-[30vh] bg-primary-600 dark:bg-primary-400 rounded-full" />
 	</div>
 	<div />
-	<!-- Year abroad -->
+
 	<div
 		in:fly={{ y: 100, duration: 800 }}
 		class=" h-40 py-8 pr-8 sticky transition-all duration-300 top-1/2 rounded-lg w-full flex flex-row flex-wrap grow"
@@ -321,7 +372,6 @@
 		<div class=" w-2 h-[50vh] bg-primary-400 dark:bg-primary-600 rounded-full" />
 	</div>
 
-	<!-- University -->
 	<div
 		in:fly={{ y: 100, duration: 800 }}
 		class=" h-40 py-8 pr-8 sticky transition-all duration-300 top-1/2 rounded-lg w-full flex flex-row flex-wrap grow"
@@ -361,5 +411,5 @@
 	<div />
 	<div />
 </div>
-</section>
+</section> -->
 <div class="w-full h-screen h-screen-ios container flex flex-row space-x-10" />
