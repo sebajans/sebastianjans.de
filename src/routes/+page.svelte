@@ -39,7 +39,7 @@
 
 		const text = node.textContent;
 		const duration = text.length / speed;
-		// delay = delay*animationdelay
+		delay = delay*animationdelay
 
 		return {
 			delay,
@@ -50,14 +50,9 @@
 			}
 		};
 	}
-	// let showCV = false;
+
 	let scroll:any;
 	let sectionHeight;
-	// let element:any;
-	// let element2:any;
-	// let element3;
-	// let element4;
-	// $: console.log('element' + element, element2);
 	let intersecting = true;
 	// let intersecting2;
 	let intersecting3;
