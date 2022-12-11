@@ -3,7 +3,6 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { T, getTranslate } from '@tolgee/svelte';
 	import ProgressBarWorks from '../../components/progressBarWorks.svelte';
-	// import viewport from '../../components/createViewportAction';
 	import { fly } from 'svelte/transition';
 	import { sectionNames } from './sectionNames';
 	import SectionWebRJ from './SectionWebRJ.svelte';

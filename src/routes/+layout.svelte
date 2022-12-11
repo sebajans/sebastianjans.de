@@ -10,6 +10,7 @@
 	import localeEs from '../i18n/es.json';
 	import localeDe from '../i18n/de.json';
 	import { onMount } from "svelte";
+	import Footer from "../components/Footer.svelte";
 	let initialized = false;
 	let showMenu = false;
 	let showHeader = false;
@@ -45,6 +46,7 @@
 		<NavBar {showMenu} />
 		<main class="{$mainClass} px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900">
 			<slot />
+			<Footer/>
 		</main>
 	</TolgeeProvider>
 {/if}

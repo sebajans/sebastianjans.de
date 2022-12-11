@@ -66,7 +66,10 @@
 			On this page is an overview of my skillset, including Graphic and Web Design and Product Design.
 			For a more elaborate version you can check out my "
 				/>
-				<button class="font-bold hover:text-primary-500 transition duration-250 " on:click={openPopup}>
+				<button
+					class="font-bold hover:text-primary-500 transition duration-250 "
+					on:click={openPopup}
+				>
 					<T keyName="CV" defaultValue="CV" />.
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -84,17 +87,30 @@
 					</svg>
 				</button>
 			</p>
-			<Popup bind:this={popup}>
+			<Popup popupClass={'w-full mr-10 items-start justify-start bg-primary-200'} bind:this={popup}>
 				<div class="font-sans font-normal uppercase space-x-2">
-
-					<a class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400" href="CV/CV_EN.pdf">
-						English</a>
-						<a class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400" href="CV/CV_EN.pdf">
-							Spanish</a>
-							<a class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400" href="CV/CV_EN.pdf">
-								German</a>
-							</div>
-			
+					<a
+						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+						target="_blank"
+						href="CV/CV_EN.pdf"
+					>
+						EN</a
+					>
+					<a
+						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+						target="_blank"
+						href="CV/CV_EN.pdf"
+					>
+						ES</a
+					>
+					<a
+						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+						target="_blank"
+						href="CV/CV_EN.pdf"
+					>
+						DE</a
+					>
+				</div>
 			</Popup>
 		</div>
 
