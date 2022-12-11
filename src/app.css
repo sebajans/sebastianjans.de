@@ -3,26 +3,23 @@
 
 @layer base {
   h1 {
-    @apply pb-2 md: pl-0 text-3xl md:text-4xl text-left font-sans font-bold;
-
+      @apply pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold;
+      
   }
 
   h2 {
-    @apply text-xl;
+      @apply text-xl;
   }
-
   h3 {
-    @apply text-lg;
+      @apply text-lg;
   }
 
   p {
-    @apply text-primary-900 dark: text-primary-100;
+      @apply text-primary-900 dark:text-primary-100;
   }
-
   .inverted {
-    @apply dark: text-primary-900 text-primary-100;
+      @apply dark:text-primary-900 text-primary-100;
   }
-
   label {
     @apply font-sans font-light
   }
@@ -30,20 +27,20 @@
 
 @layer components {
   .btn {
-    @apply transition duration-300 text-center px-4 py-2 rounded-md;
+      @apply transition duration-300 text-center px-4 py-2 rounded-md;
   }
 
   .btn-navajo {
-    @apply bg-primary-50 text-primary-900 hover: bg-primary-200 dark:hover:bg-primary-800 dark:bg-primary-900 dark:text-primary-50
+      @apply bg-primary-50 text-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 dark:bg-primary-900 dark:text-primary-50
   }
 
   .input {
-    @apply focus: ring-primary-400 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50 block w-full p-2.5 dark:bg-primary-900 dark:border-primary-600 dark:text-primary-50
+      @apply focus:ring-primary-400 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50 block w-full p-2.5 dark:bg-primary-900 dark:border-primary-600 dark:text-primary-50
   }
 
 
   .label {
-    @apply block mb-2 text-primary-50 font-medium dark: text-primary-900
+      @apply block mb-2 text-primary-50 font-medium dark:text-primary-900 
   }
 }
 
@@ -51,32 +48,29 @@
 @tailwind utilities;
 
 @layer utilities {
-
-  /* .scrollbar {
+    /* .scrollbar {
       @apply bg-primary-500 dark:bg-primary-400
       } */
-  .scrollbar {
-    scrollbar-color: rgb(252 121 19);
-    scrollbar-width: thin
+    .scrollbar {
+      scrollbar-color: rgb(252 121 19);
+      scrollbar-width: thin
+    }
+    .scrollbar::-webkit-scrollbar {
+      @apply rounded
+    }
+    .scrollbar::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    .scrollbar::-webkit-scrollbar-track {
+      @apply bg-transparent rounded mx-2 border-primary-50
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb {
+      @apply bg-primary-500 dark:bg-primary-400 rounded border-2 border-primary-50
+    }
+    
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      @apply bg-primary-700 dark:bg-primary-600 transition-all duration-200
+    }
   }
-
-  .scrollbar::-webkit-scrollbar {
-    @apply rounded
-  }
-
-  .scrollbar::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  .scrollbar::-webkit-scrollbar-track {
-    @apply bg-transparent rounded mx-2 border-primary-50
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-primary-500 dark: bg-primary-400 rounded border-2 border-primary-50
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-700 dark: bg-primary-600 transition-all duration-200
-  }
-}
