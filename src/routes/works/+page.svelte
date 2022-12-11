@@ -2,7 +2,6 @@
 	import { mainClass } from '$lib/stores/mainClass';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { T, getTranslate } from '@tolgee/svelte';
-	import { onMount } from 'svelte';
 	import ProgressBarWorks from '../../components/progressBarWorks.svelte';
 	// import viewport from '../../components/createViewportAction';
 	import { fly } from 'svelte/transition';
@@ -30,28 +29,18 @@
 			behavior: 'smooth'
 		});
 	}
-
-	// https://stackoverflow.com/questions/23841494/how-do-i-use-both-math-max-and-math-min-to-bound-my-dragger
 </script>
-
-<!-- <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} /> -->
-
-<!-- {#each sectionNames as { text, start, end }}
-	<ProgressBarWorks sectionTitle={text} {sectionHeight} {start} {end} />
-{/each} -->
 
 <section
 	id="start"
 	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-row items-center justify-center overflow-x-hidden min-h-screen h-screen h-screen-ios"
 >
-	<!-- <div class="md:pl-44 mr-0"> -->
 		<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-auto md:mb-0">
 			<T
 				keyName="intro-works"
 				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
 			/>
 		</h2>
-	<!-- </div> -->
 	<div
 		class="md:w-2/3 pl-4 md:pl-8 text-2xl md:text-3xl w-full
 					   font-sans space-y-4 mb-auto md:mb-0"

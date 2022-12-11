@@ -22,15 +22,15 @@
 	}
 
 	let visible = false;
-	let animationspeed:any;
-	let animationdelay:any;
+	let animationspeed: any;
+	let animationdelay: any;
 	afterNavigate(({ from }) => {
 		animationspeed = from === null ? 0.08 : 1;
 		animationdelay = from === null ? 1 : 0;
 		visible = true;
 	});
 
-	function typewriter(node:any, { delay=0, speed = 1 }) {
+	function typewriter(node: any, { delay = 0, speed = 1 }) {
 		const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
 
 		if (!valid) {
@@ -39,19 +39,19 @@
 
 		const text = node.textContent;
 		const duration = text.length / speed;
-		delay = delay*animationdelay
+		delay = delay * animationdelay;
 
 		return {
 			delay,
 			duration,
-			tick: (t:number) => {
+			tick: (t: number) => {
 				const i = ~~(text.length * t);
 				node.textContent = text.slice(0, i);
 			}
 		};
 	}
 
-	let scroll:any;
+	let scroll: any;
 	let sectionHeight;
 	let intersecting = true;
 	// let intersecting2;
@@ -59,8 +59,8 @@
 	let intersecting4;
 	let count = 2007;
 
-	let sectionHeightCount:any;
-	let sectionUniversity:any;
+	let sectionHeightCount: any;
+	let sectionUniversity: any;
 	function test() {
 		if ((scroll += sectionHeightCount / 8)) {
 			count += 1;
@@ -170,13 +170,13 @@
 <!-- <div class="h-screen h-screen-ios snap snap-y snap-mandatory overflow-y-scroll hide-scrollbar"> -->
 <section
 	id="aboutme"
-	class="w-full  relative snap-start h-screen h-screen-ios flex flex-col justfiy-center content-center pt-28"
+	class="w-full  relative h-screen h-screen-ios flex flex-col md:flex-row justfiy-center items-center"
 >
-	<h1 class="transition-all pl-2 pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold">
-		{$t({ key: 'front-about', defaultValue: 'About me' })}
-	</h1>
-	<div class="flex flex-row space-x-2">
-		<p class="w-2/3">
+	<div class="max-w-2xl">
+		<h1 class="transition-all	 pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold">
+			{$t({ key: 'front-about', defaultValue: 'About me' })}
+		</h1>
+		<p class="md:w-full">
 			{$t({
 				key: 'front-about-text',
 				defaultValue:
@@ -188,21 +188,40 @@
 					'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
 			})}
 		</p>
-		<!-- <div
-			class="border-4 mx-auto mb-10 border-primary-900 w-fit rounded-full  align-middle p-2 justify-center"
-		>
-	</div> -->
-		<img
-			src={profilePicture}
-			alt="profile"
-			class="object-cover object-top w-1/3 aspect-square rounded-2xl"
-		/>
 	</div>
+	<img
+		src={profilePicture}
+		alt="profile"
+		class="object-cover object-top w-1/4 aspect-square rounded-full"
+	/>
+	<button
+		on:click|preventDefault={scrollIntoView}
+		class="hover:text-primary-400 h-10 w-10 left-1/2 transform transition-all duration-200 hover:scale-110 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-12 md:bottom-4"
+		href="#cv"
+		alt="cv"
+	>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="2"
+			stroke="currentColor"
+			class="w-6 h-6 inline-flex animate-bounce pointer-events-none"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
+			/>
+		</svg>
+	</button>
 </section>
-
-<div
-	class=" h-auto grid grid-cols-[minmax(0,1fr)_0.75rem_0.75rem_0.75rem] gap-x-4 relative"
+<section
+	id="cv"
 >
+
+
+<div class=" h-auto grid grid-cols-[minmax(0,1fr)_0.75rem_0.75rem_0.75rem] gap-x-4 relative">
 	<div
 		on:scroll={test}
 		in:fly={{ y: 100, duration: 800 }}
@@ -261,7 +280,6 @@
 		<div class="w-full font-sans flex flex-row text-5xl align-baseline">
 			<div class="text-left flex opacity-0">2015</div>
 			<div
-
 				class="bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400 flex-1 text-right "
 			>
 				Praktikum
@@ -343,4 +361,5 @@
 	<div />
 	<div />
 </div>
+</section>
 <div class="w-full h-screen h-screen-ios container flex flex-row space-x-10" />

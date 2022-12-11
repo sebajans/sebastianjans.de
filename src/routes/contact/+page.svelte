@@ -21,9 +21,9 @@
 </svelte:head>
 
 <!-- https://www.staticforms.xyz -->
-<div class="flex flex-col justify-center items-center max-w-4xl scrollbar">
-	<div class="grid flex-grow-0 sm:grid-cols-2 gap-6 pb-3 ">
-		<p class="pb-4 text-justify">
+<div class=" flex flex-col justify-center mx-auto items-center max-w-4xl hide-scrollbar">
+	<div class="grid w-full sm:grid-cols-2 gap-6 pb-3 ">
+		<p class="w-full pb-4 text-justify">
 			<T
 				keyName="contact-text"
 				defaultValue="
@@ -40,8 +40,13 @@
 	</div>
 	<div
 		in:fly={{ y: 30, duration: 450 }}
-		class=" overflow-auto bg-primary-900 dark:bg-primary-50 rounded-lg p-4"
+		class="relative w-full overflow-auto bg-primary-900 dark:bg-primary-50 rounded-lg p-4 scrollbar"
 	>
+		<!-- <div
+			class="{tos
+				? ''
+				: 'hidden'} fixed -translate-x-full  bg-gradient-to-b from-primary-500 to-transparent w-full h-10"
+		/> -->
 		<div class="relative flex ">
 			<div
 				class="{tos ? 'opacity-0 -translate-x-full' : 'overflow-hidden w-full opacity-100'}
@@ -139,7 +144,7 @@
 					</div>
 					<button
 						type="submit"
-						class="col-span-2 sm:col-span-1 text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+						class="col-span-2 sm:col-span-1 text-white bg-primary-400 hover:bg-primary-500 dark:hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800"
 						>Submit</button
 					>
 					<input class="hidden" type="text" name="honeypot" />
@@ -150,9 +155,9 @@
 				class="{tos
 					? 'opacity-100 w-[full] animate-fadein'
 					: 'opacity-0 animate-fadeout hidden translate-x-full'} 
-     transition scrollbar absolute text-sm text-primary-50 bg-primary-900 dark:text-primary-900 dark:bg-primary-50"
+     transition absolute text-sm text-primary-50 bg-primary-900 dark:text-primary-900 dark:bg-primary-50"
 			>
-				<button on:click={toggleButton} class="absolute group right-0 group h-7 w-7 space-y-2">
+				<button on:click={toggleButton} class="fixed group right-9 group h-7 w-7 space-y-2">
 					<span
 						class="translate-y-[5px] rotate-45 group-hover:rotate-[135deg] block dark:group-hover:bg-primary-600 dark:bg-primary-900 group-hover:bg-primary-400 bg-primary-50 h-0.5 w-7 duration-300"
 					/>

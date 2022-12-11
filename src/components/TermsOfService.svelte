@@ -1,4 +1,5 @@
-<div class="space-y-2">
+
+<div class="space-y-2 text-justify pt-10">
   <h2><strong>Terms and Conditions</strong></h2>
   <p class="inverted">
     Welcome to Sebastian Jans Design!<br />

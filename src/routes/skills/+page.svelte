@@ -66,11 +66,11 @@
 			On this page is an overview of my skillset, including Graphic and Web Design and Product Design.
 			For a more elaborate version you can check out my "
 				/>
-				<button on:click={openPopup}>
+				<button class="font-bold hover:text-primary-500 transition duration-250 " on:click={openPopup}>
 					<T keyName="CV" defaultValue="CV" />.
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-4 w-4 before:p-1 inline align-baseline transition duration-250 "
+						class="h-4 w-4 before:p-1 inline align-baseline  "
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"

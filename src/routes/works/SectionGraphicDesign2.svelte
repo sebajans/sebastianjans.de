@@ -5,8 +5,6 @@
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 4, windowHeight);
-	// let srcRenaImg1 = 'img/website-rena-front-1.webp';
-	// let srcRenaImg2 = 'img/website-rena-front-2.webp';
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
@@ -19,11 +17,11 @@
 		<!-- <div class="w-full md:w-1/2 max-h-40 "> -->
 		<img
 			style:transform={`translate3d(calc(-100% + ${sectionScroll} * 100%),0, 0)`}
-			alt="graphic-design-shirts"
-			class="mb-4 object-contain rounded-lg w-auto h-auto max-h-[60%] md:max-h-[70%] max-w-[80%]"
+			alt="especimen-tipografico"
+			class="mb-4 md:mr-4 object-contain rounded-lg w-auto h-auto max-h-[60%] md:max-h-[70%] max-w-[80%]"
 			src="/graphicdesign/especimen-tipografico.webp"
 		/>
-		<!-- </div> -->
+
 
 		<div
 			class=" h-auto bottom-[10%] w-full md:w-1/2  text-justify"

@@ -13,7 +13,7 @@
 	id="graphicdesign"
 	class=" bg-primary-400/50 dark:bg-primary-500/50 w-full relative h-screen h-screen-ios overflow-hidden "
 >
-	<h1 class="z-10 bg-primary-400  md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24">Graphic Design</h1>
+	<h1 class="z-10 bg-primary-400 dark:bg-primary-500 md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24">Graphic Design</h1>
 
 	<div
 		class=" z-0 h-auto top-28 mr-0 ml-auto mt-4 px-8 md:w-2/5 max-w-2xl text-justify"

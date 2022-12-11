@@ -16,7 +16,7 @@
 	class="bg-primary-200/50 dark:bg-primary-700/50 w-full flex flex-col relative h-screen h-screen-ios overflow-y-hidden"
 >
 	<h1
-		class="bg-primary-200  md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24"
+		class="bg-primary-200 dark:bg-primary-700 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24"
 	>
 		<T keyName="works-webdev" defaultValue="Webdesign" />
 	</h1>

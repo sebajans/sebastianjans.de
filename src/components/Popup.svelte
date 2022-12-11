@@ -16,6 +16,7 @@
 	<div
 		transition:fade={{ duration: 150 }}
 		on:click={hide}
+    on:keydown={hide}
 		class="fixed z-40 backdrop-blur-[1px] top-0 left-0 w-screen h-screen bg-primary-900/30"
 	/>
 	<div
@@ -24,7 +25,7 @@
 		class="absolute w-full top-20 h-auto z-50 p-4"
 	>
 		<div
-			class="bg-primary-200 hover:shadow-primary-600/80 shadow-primary-600/50 transition-all duration-500 delay-75 flex flex-row justify-center items-center h-auto p-4 rounded-lg shadow-lg"
+			class="bg-primary-200 hover:shadow-primary-600/80 shadow-primary-600/50 transition-all duration-500 delay-75 flex flex-row justify-center items-center h-auto pl-2.5 pr-4 py-4 rounded-lg shadow-lg"
 		>
 			<slot />
 			<button class="h-6 w-6 group ml-auto font-sans hover:text-primary-500" on:click={hide}>
