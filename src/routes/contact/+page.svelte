@@ -23,7 +23,7 @@
 </svelte:head>
 
 <!-- https://www.staticforms.xyz -->
-<div class=" flex flex-col justify-center mx-auto items-center max-w-4xl hide-scrollbar">
+<div class=" flex flex-col justify-center mx-auto items-center max-w-3xl hide-scrollbar">
 	<div class="grid w-full sm:grid-cols-2 gap-6 pb-3 ">
 		<p class="w-full pb-4 text-justify">
 			<T
@@ -33,15 +33,15 @@
 			inquiries. "
 			/>
 		</p>
-		<div class="flex flex-row flex-wrap">
+		<div class="flex flex-row h-fit flex-wrap">
 			<span class="w-1/4 font-sans font-semibold uppercase"
 				><T keyName="my-phone" defaultValue="Phone: " /></span
 			>
-			<span class="w-2/4">+49 176 644 673 44</span>
+			<span class="w-3/4">+49 176 644 673 44</span>
 			<span class="w-1/4 font-sans font-semibold uppercase"
 				><T keyName="my-mail" defaultValue="Mail: " /></span
 			>
-			<span class="w-2/4">sebajans@icloud.com</span>
+			<span class="w-3/4">sebajans@icloud.com</span>
 		</div>
 	</div>
 	<div
@@ -52,14 +52,16 @@
 			<div class="w-full transition duration-300">
 				<form
 					class="grid gap-6 grid-cols-2"
-					action="https://api.staticforms.xyz/submit"
-					method="post"
-					id="staticform"
-				>
-					<input type="hidden" name="accessKey" value="6b38c3a8-57ad-4413-a90b-8386e25f71e7" />
-					<input type="hidden" name="subject" value="Test from jsfiddle" />
+					name="contact" 
+					method="POST"
+					data-netlify="true"
+					>
+					<!-- id="staticform" -->
+					<!-- action="https://api.staticforms.xyz/submit" -->
+					<!-- <input type="hidden" name="accessKey" value="6b38c3a8-57ad-4413-a90b-8386e25f71e7" />
+					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->
 					<!-- Replace with the url you want to redirect to -->
-					<input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" />
+					<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
 					<div>
 						<label for="Full_name" class="label"
 							>Full Name&thinsp<span style="color:#ff0000">*</span>
@@ -111,7 +113,7 @@
 								class="ml-2 text-sm font-medium w-full text-primary-50 dark:text-primary-900"
 								>I agree with the <button
 									on:click={openPopup}
-									class="group font-bold italic hover:text-primary-500"
+									class="group font-bold font-serif italic hover:text-primary-500"
 									>terms and conditions.&thinsp<span style="color:#ff0000">*</span>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -135,8 +137,8 @@
 						type="submit"
 						class="col-span-2 sm:col-span-1 text-white bg-primary-400 hover:bg-primary-500 dark:hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800"
 						>Submit</button
-					>
-					<input class="hidden" type="text" name="honeypot" />
+><input type="hidden" name="form-name" value="contact">
+					<!-- <input class="hidden" type="text" name="honeypot" /> -->
 					<!-- Spam protection -->
 				</form>
 			</div>
