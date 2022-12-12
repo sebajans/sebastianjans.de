@@ -343,12 +343,12 @@
 			Change view
 		</button>
 	</div>
-	<div class=" md:pl-44 grid max-w-4xl w-full sm:w-full grid-cols-2">
+	<div class=" md:pl-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2">
 		{#if showProduct}
 			<svg
 				class="{moveToRight
 					? '-translate-x-full sm:translate-x-0 opacity-0'
-					: 'translate-x-0 opacity-100 sm:opacity-100'} duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] max-h-[40vh]"
+					: 'translate-x-0 opacity-100 sm:opacity-100'} duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-auto max-h-[40vh]"
 				width="100%"
 				height="100%"
 				viewBox="0 0 1000 1000"
@@ -583,7 +583,7 @@
 			<svg
 				class="{moveToRight
 					? '-translate-x-full sm:translate-x-0'
-					: 'translate-x-0 opacity-100 sm:opacity-100'} duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] max-h-[40vh]"
+					: 'translate-x-0 opacity-100 sm:opacity-100'} duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-auto max-h-[40vh]"
 				width="100%"
 				height="100%"
 				viewBox="0 0 1000 1000"
@@ -748,7 +748,7 @@
 			<svg
 				class="{moveToRight
 					? '-rotate-90 translate-y-[7%] sm:translate-y-0 sm:rotate-0'
-					: ' '} -translate-y-10 duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] max-h-[40vh]"
+					: ' '} -translate-y-4 duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-auto max-h-[40vh]"
 				width="100%"
 				height="100%"
 				viewBox="0 0 1000 1000"
@@ -942,7 +942,7 @@
 			</svg>
 			<p
 				class="{moveToRight ? '-translate-y-full ' : ''}
-					 w-full px-6 self-start text-justify transform transition-all duration-500 relative"
+					 w-full pl-6 self-start text-justify transform transition-all duration-500 relative"
 			>
 				This table was one of my first projects. I designed it myself and customized it to suit all
 				my needs. With the organic cutout in the middle everything is reachable while maximizing

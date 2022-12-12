@@ -4,7 +4,7 @@
 	import { mainClass } from '$lib/stores/mainClass';
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
-	import { jobs, education } from './cv_items';
+	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	pageTitle.set('');
 	mainClass.set('pt-0');
@@ -42,6 +42,8 @@
 		};
 	}
 
+	// for (item in cvItems) {}
+
 	let scroll: any;
 </script>
 
@@ -53,7 +55,6 @@
 <section
 	class="relative w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
-
 	<div class="relative flex flex-col h-auto w-full max-w-2xl pt-[10vh] my-auto mx-auto ">
 		{#if visible}
 			<span
@@ -163,51 +164,98 @@
 			</div>
 		</div>
 		<ButtonScrollToSection section={'cv_jobs'}>Work Experience</ButtonScrollToSection>
-
 	</div>
 </section>
 
-<section class="mt-20 pb-32 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center" id="cv_jobs">
+<section
+	class="mt-20 pb-32 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	id="cv_jobs"
+>
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
 		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Work Experience</h1>
-		{#each jobs as job}
-			<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
-				<div
-					class="md:w-1/5 w-full max-w-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
-				>
-					<img src={job.image} alt="" />
+		{#each cvItems as item}
+			{#if item.category === 'job'}
+				<!-- {@const frMonth = String(item.fromMonth)} -->
+				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
+					<div
+						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+					>
+						<img src={item.image} alt={item.name} />
+					</div>
+					<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
+						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{item.name}</h2>
+						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+							<!-- {@const frMonth = item.fromMonth.toString() } -->
+							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
+						</h3>
+						<p class="text-sm">{item.info}</p>
+					</div>
 				</div>
-				<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
-					<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{job.name}</h2>
-					<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-						{job.time}
-					</h3>
-					<p class="text-sm">{job.info}</p>
-				</div>
-			</div>
+			{/if}
 		{/each}
 	</div>
-	<ButtonScrollToSection section={'cv_edu'}> My Education</ButtonScrollToSection>
+	<ButtonScrollToSection section={'cv_edu'}>My Education</ButtonScrollToSection>
 </section>
 
-<section class="pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center" id="cv_edu">
+<section
+	class="pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	id="cv_edu"
+>
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
 		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Education</h1>
-		{#each education as edu}
-		<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
-				<div
-					class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
-				>
-					<img src={edu.image} alt="" />
+		{#each cvItems as item}
+			{#if item.category === 'education'}
+				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
+					<div
+						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+					>
+						<img src={item.image} alt={item.name} />
+					</div>
+					<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
+						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{item.name}</h2>
+						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
+						</h3>
+						<p class="text-sm">{item.info}</p>
+					</div>
 				</div>
-				<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
-					<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{edu.name}</h2>
-					<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-						{edu.time}
-					</h3>
-					<p class="text-sm">{edu.info}</p>
-				</div>
-			</div>
+			{/if}
 		{/each}
 	</div>
 </section>
+
+<!-- TIMELINE -->
+
+<!-- <section
+	class="pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	id="cv_edu"
+>
+	<div class="space-y-4 max-w-4xl  w-full mx-auto my-auto overflow-x-auto overflow-y-hidden">
+		<div class="flex flex-row flex-nowrap ">
+			{#each cvItems as item , i }
+				{#if item.category === 'job'}
+					{@const start = +item.fromYear + +item.fromMonth / 12}
+					{@const end = +item.toYear + +item.toMonth / 12}
+					{@const duration = ((end - start) * 100).toFixed(2)}
+					<div class="w-[{duration}px] mr-[20px] px-2 py-2 bg-primary-200 font-sans rounded-md">
+						{item.name}
+					</div>
+				{/if}
+			{/each}
+		</div>
+		<div class="flex flex-row flex-nowrap ">
+			{#each cvItems as item , i }
+				{#if item.category === 'education'}
+					{@const start = +item.fromYear + +item.fromMonth / 12}
+					{@const end = +item.toYear + +item.toMonth / 12}
+					{@const duration = ((end - start) * 100).toFixed(2)}
+					<div class="w-[{duration}px] mr-[20px] px-2 py-2 bg-primary-200 font-sans rounded-md">
+						{item.name}
+					</div>
+				{/if}
+			{/each}
+		</div>
+	</div>
+</section> -->
+
+<!-- {@const timeBetween[i+1] = start[i+1] - end[i]} -->
