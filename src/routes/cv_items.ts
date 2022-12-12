@@ -26,7 +26,7 @@ export let education = [
     info: 'Universiat Politécnica de Valencia'
   },
   {
-    image: 'img/logo-uni-stuttgart.eps',
+    image: 'img/logo-uni-stuttgart.svg',
     name: 'Bachelor of Science in Materials Science',
     time: '10/2016 - 09/2020',
     info: 'Universität Stuttgart'

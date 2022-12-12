@@ -4,20 +4,13 @@
 	import { mainClass } from '$lib/stores/mainClass';
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
-	import { jobs, education } from './cv_items'
+	import { jobs, education } from './cv_items';
+	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	pageTitle.set('');
 	mainClass.set('pt-0');
 
 	const t = getTranslate();
 	let profilePicture = 'img/profile-pic.jpg';
-
-	function scrollIntoView({ target }: { target: any }) {
-		const el = document.querySelector(target.getAttribute('href'));
-		if (!el) return;
-		el.scrollIntoView({
-			behavior: 'smooth'
-		});
-	}
 
 	let visible = false;
 	let animationspeed: any;
@@ -50,8 +43,6 @@
 	}
 
 	let scroll: any;
-
-	
 </script>
 
 <svelte:head>
@@ -60,9 +51,10 @@
 <svelte:window bind:scrollY={scroll} />
 
 <section
-	class="relative max-w-3xl w-full h-screen h-screen-ios flex flex-col justfiy-center content-center "
+	class="relative w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative flex flex-col h-full w-full max-w-2xl pt-44 mx-auto">
+
+	<div class="relative flex flex-col h-auto w-full max-w-2xl pt-[10vh] my-auto mx-auto ">
 		{#if visible}
 			<span
 				style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
@@ -114,7 +106,7 @@
 			</span>
 			<p
 				in:fly={{ y: 50, duration: 650, delay: 2300 * animationdelay }}
-				class="my-auto w-full pb-10 font-light font-sans text-2xl text-center leading-loose sm:text-2xl lg:text-2xl"
+				class="my-auto md:mt-20 md:mb-0 w-full pb-10 font-light font-sans text-2xl text-center leading-loose sm:text-2xl lg:text-2xl"
 			>
 				<span class="font-medium">
 					{$t({
@@ -129,97 +121,59 @@
 			</p>
 		{/if}
 	</div>
-	<button
-		on:click|preventDefault={scrollIntoView}
-		class="hover:text-primary-400 h-10 w-10 left-1/2 transform transition-all duration-200 hover:scale-110 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-12 md:bottom-4"
-		href="#aboutme"
-		alt="aboutme"
-	>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke-width="2"
-			stroke="currentColor"
-			class="w-6 h-6 inline-flex animate-bounce pointer-events-none"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
-			/>
-		</svg>
-	</button>
+	<ButtonScrollToSection section={'aboutme'}>About me</ButtonScrollToSection>
 </section>
 <section
 	id="aboutme"
-	class="relative max-w-3xl w-full h-screen h-screen-ios flex flex-col justfiy-center content-center pt-20"
+	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-20"
 >
-	<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold">
-		{$t({ key: 'front-about', defaultValue: 'About me' })}
-	</h1>
-	<div class="items-center flex flex-row w-full">
-		<img
-			src={profilePicture}
-			alt="profile"
-			class="object-cover object-top w-36 h-36 aspect-square rounded-full"
-		/>
-		<div class="pl-4">
-			<p class="md:w-full mb-2 ">
-				{$t({
-					key: 'front-about-text',
-					defaultValue:
-						'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
-				})}
-			</p>
-
-			<p class="md:w-full mb-2 ">
-				{$t({
-					key: 'front-about-text-2',
-					defaultValue:
-						'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
-				})}
-			</p>
-			<p class="md:w-full mb-2 ">
-				{$t({
-					key: 'front-about-text-3',
-					defaultValue:
-						'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
-				})}
-			</p>
-		</div>
-	</div>
-
-	<button
-		on:click|preventDefault={scrollIntoView}
-		class="hover:text-primary-400 h-10 w-10 left-1/2 transform transition-all duration-200 hover:scale-110 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-12 md:bottom-4"
-		href="#cv_jobs"
-		alt="cv_jobs"
-	>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke-width="2"
-			stroke="currentColor"
-			class="w-6 h-6 inline-flex animate-bounce pointer-events-none"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
+	<div class="my-auto mx-auto max-w-4xl">
+		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
+			{$t({ key: 'front-about', defaultValue: 'About me' })}
+		</h1>
+		<div class=" flex flex-row w-full flex-wrap md:flex-nowrap justify-center">
+			<img
+				src={profilePicture}
+				alt="profile"
+				class="object-cover object-top md:w-1/5 max-w-[16rem] max-h-[16rem] md:h-auto md:grow-0 mb-2 aspect-square rounded-xl"
 			/>
-		</svg>
-	</button>
+			<div class="md:pl-4 md:w-475 flex flex-col">
+				<p class="md:w-full mb-2 text-justify ">
+					{$t({
+						key: 'front-about-text',
+						defaultValue:
+							'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
+					})}
+				</p>
+
+				<p class="md:w-full mb-2 text-justify ">
+					{$t({
+						key: 'front-about-text-2',
+						defaultValue:
+							'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
+					})}
+				</p>
+				<p class="md:w-full mb-2 text-justify ">
+					{$t({
+						key: 'front-about-text-3',
+						defaultValue:
+							'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
+					})}
+				</p>
+			</div>
+		</div>
+		<ButtonScrollToSection section={'cv_jobs'}>Work Experience</ButtonScrollToSection>
+
+	</div>
 </section>
 
-<section class=" min-h-screen min-h-screen-ios" id="cv_jobs">
-	<div class="md:pt-20 space-y-4 max-w-3xl w-full">
+<section class="mt-20 pb-32 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center" id="cv_jobs">
+	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
 		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Work Experience</h1>
 		{#each jobs as job}
-			<div class="w-full md:w-full flex sm:flex-row flex-col md:space-x-4 justify-center items-center">
+			<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
 				<div
-					class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+					class="md:w-1/5 w-full max-w-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 				>
 					<img src={job.image} alt="" />
 				</div>
@@ -233,13 +187,14 @@
 			</div>
 		{/each}
 	</div>
+	<ButtonScrollToSection section={'cv_edu'}> My Education</ButtonScrollToSection>
 </section>
 
-<section class="md:pt-20 pb-40 md:pb-20 min-h-screen min-h-screen-ios" id="cv">
-	<div class="space-y-4 max-w-3xl">
+<section class="pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center" id="cv_edu">
+	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
 		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Education</h1>
 		{#each education as edu}
-			<div class="w-full md:w-full flex sm:flex-row flex-col md:space-x-4 justify-center items-center">
+		<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
 				<div
 					class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 				>

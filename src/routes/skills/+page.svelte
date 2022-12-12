@@ -9,6 +9,8 @@
 	import { afterNavigate } from '$app/navigation';
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
+	import Popup from '../../components/Popup.svelte';
+
 	mainClass.set('pt-28');
 
 	function slidevertical(node: any, { firstdelay, delay }: { firstdelay: number; delay: number }) {
@@ -25,6 +27,7 @@
 			}
 		};
 	}
+
 	// https://svelte.dev/repl/6904f0306d6f4985b55f5f9673f762ef?version=3.4.1
 	let visible: boolean;
 	let duration: number;
@@ -41,7 +44,6 @@
 	onMount(() => (animate = true));
 	// $: scroll > windowHeight * 0.3 ? (animate = true) : (animate = false);
 
-	import Popup from '../../components/Popup.svelte';
 
 	let popup: any;
 
@@ -56,7 +58,7 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
-<div class="columns-1 md:columns-2 space-y-10 gap-10 pb-20 max-w-4xl">
+<div class="columns-1 md:columns-2 space-y-10 gap-10 pb-20 max-w-4xl justify-center items-center mx-auto my-auto">
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">

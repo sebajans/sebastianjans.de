@@ -24,7 +24,7 @@
 		<T keyName="works-webdev" defaultValue="Webdesign" />
 	</h2>
 	<div
-		class="relative w-full h-[calc(100vh_-_5.5rem)] flex justify-center items-center pr-6 pl-6 max-w-3xl"
+		class="relative w-full h-[calc(100vh_-_5.5rem)] flex justify-center items-center pr-6 pl-6 max-w-4xl"
 	>
 		<div
 			id="rena-logo"

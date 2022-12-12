@@ -9,7 +9,7 @@
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
 
-	mainClass.set('pt-28 min-h-[100vh]');
+	mainClass.set('pt-28 min-h-[100vh] flex');
 
 	let popup: any;
 
@@ -23,7 +23,7 @@
 </svelte:head>
 
 <!-- https://www.staticforms.xyz -->
-<div class=" flex flex-col justify-center mx-auto items-center max-w-3xl hide-scrollbar">
+<div class=" flex flex-col justify-center mx-auto items-center my-auto max-w-4xl hide-scrollbar">
 	<div class="grid w-full sm:grid-cols-2 gap-6 pb-3 ">
 		<p class="w-full pb-4 text-justify">
 			<T
@@ -46,7 +46,7 @@
 	</div>
 	<div
 		in:fly={{ y: 30, duration: 450 }}
-		class="relative w-full overflow-auto bg-primary-900 dark:bg-primary-50 rounded-lg p-4 scrollbar"
+		class="relative w-full overflow-auto bg-primary-900 dark:bg-primary-50 rounded-lg p-4 shadow-lg shadow-primary-500/40 dark:shadow-primary-400/40"
 	>
 		<div class="relative flex ">
 			<div class="w-full transition duration-300">
@@ -135,7 +135,7 @@
 					</div>
 					<button
 						type="submit"
-						class="col-span-2 sm:col-span-1 text-primary-900 dark:text-primary-50 bg-primary-300 hover:bg-primary-400 dark:hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800"
+						class="col-span-2 font-sans tracking-wide text-base sm:col-span-1 text-primary-900 dark:text-primary-50 bg-primary-300 hover:bg-primary-400 dark:hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md  w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800"
 						>Submit</button
 ><input type="hidden" name="form-name" value="contact">
 					<!-- <input class="hidden" type="text" name="honeypot" /> -->

@@ -18,10 +18,10 @@
 
 <section
 	id="kamadoB10"
-	class="bg-primary-200/50 dark:bg-primary-700/50 md:pl-44 w-full flex flex-col relative h-screen h-screen-ios overflow-y-hidden justify-center items-center"
+	class="bg-primary-200/50 dark:bg-primary-700/50 md:pl-44 w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
 >
 	<div
-		class="relative w-full h-screen flex justify-center items-center pr-6 pl-6 max-w-3xl"
+		class="relative w-full h-screen flex justify-center items-center pr-6 pl-6 max-w-4xl"
 	>
 		<div
 			id="kb10-logo"

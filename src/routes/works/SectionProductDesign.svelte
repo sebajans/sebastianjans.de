@@ -343,7 +343,7 @@
 			Change view
 		</button>
 	</div>
-	<div class=" md:pl-44 grid max-w-3xl w-full sm:w-full grid-cols-2">
+	<div class=" md:pl-44 grid max-w-4xl w-full sm:w-full grid-cols-2">
 		{#if showProduct}
 			<svg
 				class="{moveToRight
@@ -369,7 +369,8 @@
 					/>
 					<g id="product-table-front1">
 						<g transform="matrix(1.95571,0,0,1.95571,662.987,-290.431)">
-							<rect in:fade={{ duration: 800, delay: 800 }}
+							<rect
+								in:fade={{ duration: 800, delay: 800 }}
 								x="510.2"
 								y="290.3"
 								width="198.5"
