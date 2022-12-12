@@ -22,8 +22,12 @@
 	id="productdesign"
 	class="bg-primary-500/50 dark:bg-primary-400/50 w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
 >
-	<div class="flex flex-row w-full">
-		<h1 class="bg-primary-500 dark:bg-primary-400 md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24">Product Design</h1>
+	<div class="flex flex-row-reverse md:flex-row w-full">
+		<h1
+			class="bg-primary-500 dark:bg-primary-400 md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24"
+		>
+			Product Design
+		</h1>
 		<button
 			class="uppercase font-sans bg-primary-800 w-auto h-fit ml-auto my-auto md:hidden px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
 			on:click={() => (moveToRight = !moveToRight)}
@@ -32,7 +36,7 @@
 		</button>
 	</div>
 
-	<div class=" md:pl-44 grid w-[calc(100%_*_2)] sm:w-full grid-cols-2 gap-x-10 md:gap-y-10">
+	<div class=" md:pl-44 grid w-[calc(100%_*_2)] sm:w-full grid-cols-2 gap-x-8 md:gap-y-10">
 		{#if showProduct}
 			<svg
 				class="{moveToRight
@@ -200,8 +204,8 @@
 			</svg>
 			<svg
 				class="{moveToRight
-					? '-rotate-90 -translate-x-[6%] translate-y-[7%] sm:translate-x-0 sm:translate-y-0 sm:rotate-0'
-					: ' '}  duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vw] max-h-[40vh]"
+					? '-rotate-90 -translate-x-[2%] translate-y-[7%] sm:translate-x-0 sm:translate-y-0 sm:rotate-0'
+					: ' '} scale-[97%] duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vw] max-h-[40vh]"
 				viewBox="0 0 991 805"
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"
