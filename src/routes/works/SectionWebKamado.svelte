@@ -1,38 +1,34 @@
-
 <script type="ts">
-  import { T } from '@tolgee/svelte';
-  import { scrollInSection } from '../../components/scrollInSection'
+	import { T } from '@tolgee/svelte';
+	import { scrollInSection } from '../../components/scrollInSection';
 
-  let scroll:number = 0
-  let windowHeight:number
-  $: sectionScroll = scrollInSection(scroll, 1, windowHeight)
+	let scroll: number = 0;
+	let windowHeight: number;
+	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);
 
-  let srcKamadoLogo = '/logos/logo-kamadob10-white.webp';
-  let srcKamadoLogoDark = '/logos/logo-kamadob10.webp';
-  let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
+	let srcKamadoLogo = '/logos/logo-kamadob10-white.webp';
+	let srcKamadoLogoDark = '/logos/logo-kamadob10.webp';
+	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
+	let srcRenaLogo = '/logos/logo-rj-l.webp';
+	let srcRenaLogoDark = '/logos/logo-rj-l-white.webp';
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <section
 	id="kamadoB10"
-	class="bg-primary-200/50 dark:bg-primary-700/50 w-full relative  h-screen h-screen-ios overflow-hidden "
+	class="bg-primary-200/50 dark:bg-primary-700/50 md:pl-44 w-full flex flex-col relative h-screen h-screen-ios overflow-y-hidden justify-center items-center"
 >
-	<div class="pr-6 pl-6 md:pl-44 max-w-full">
+	<div
+		class="relative w-full h-screen flex justify-center items-center pr-6 pl-6 max-w-3xl"
+	>
 		<div
 			id="kb10-logo"
-			class="md:mt-28 mb-8 my-8 h-20  w-2/3 max-w-md pr-2 bg-contain bg-no-repeat bg-center bg-origin-content bg-[url({srcKamadoLogo})] dark:bg-[url({srcKamadoLogoDark})]"
+			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
+			class="absolute left-4 md:left-0 top-0 md:top-0 h-20 w-1/3 max-w-md bg-contain bg-no-repeat bg-center bg-origin-content bg-[url('{srcKamadoLogo}')] dark:bg-[url('{srcKamadoLogoDark}')]"
 		/>
-		<div
-			class="absolute h-auto text-primary-900/70 dark:text-primary-50 bottom-14 left-0 md:left-44 px-6 md:w-2/5 text-justify"
-			style:transform={`translate3d(calc(-50% + 50 * ${sectionScroll}%),0, 0)`}
-		>
-			<T
-				keyName="works-p-kamado"
-				defaultValue="This website was for my former employer, who produces high-end handmade kamado grills. The objective for this website to appeal to high-end customers and highlight the USPs."
-			/>
-		</div>
+		
 		<div
 			id="kb10-browser-phone"
 			style:transform={`translate3d(calc(100% - 100 * ${sectionScroll}%),0, 0)`}
@@ -62,15 +58,20 @@
 			class="shadow-primary-800/20 shadow-md left-6 md:left-52 backdrop-blur-sm p-1 bg-primary-200/80 dark:bg-primary-700/60 w-[80%] md:w-1/2 sm:w-2/3 max-w-4xl flex absolute flex-col rounded-lg z-10"
 		>
 			<div class="relative flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
-				<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80" />
-				<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80" />
-				<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80" />
+				{#each Array(3) as _}
+					<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80" />
+				{/each}
 			</div>
-			<img
-				alt="website-kamado-front"
-				class="object-contain rounded-lg"
-				src={srcKamadoFront}
-			/>
+			<img alt="website-kamado-front" class="object-contain rounded-lg" src={srcKamadoFront} />
 		</div>
+		<p
+			class="absolute h-auto left-0 pl-4 bottom-14 md:bottom-4 pr-4 md:w-1/2  text-justify"
+			style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400%), 0)`}
+		>
+			<T
+				keyName="works-p-kamado"
+				defaultValue="This website was for my former employer, who produces high-end handmade kamado grills. The objective for this website to appeal to high-end customers and highlight the USPs."
+			/>
+		</p>
 	</div>
 </section>
