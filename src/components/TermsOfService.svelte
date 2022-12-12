@@ -1,6 +1,6 @@
 
 <div class="space-y-2 z-40 text-justify py-10 w-full">
-  <h2><strong>Terms and Conditions</strong></h2>
+  <h1><strong>Terms and Conditions</strong></h1>
   <p class="inverte">
     Welcome to Sebastian Jans Design!<br />
     These terms and conditions outline the rules and regulations for the use of Sebastian Jans

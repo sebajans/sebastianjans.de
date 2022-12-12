@@ -9,7 +9,7 @@
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
 
-	mainClass.set('pt-28 min-h-[calc(100vh)]');
+	mainClass.set('pt-28 min-h-[100vh]');
 
 	let popup: any;
 
@@ -64,13 +64,13 @@
 					<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
 					<div>
 						<label for="Full_name" class="label"
-							>Full Name&thinsp<span style="color:#ff0000">*</span>
+							>Full Name
 						</label>
 						<input class="input" name="$Full_name" type="text" placeholder="John" required />
 					</div>
 					<div>
 						<label for="email" class="label"
-							>Email address&thinsp<span style="color:#ff0000">*</span></label
+							>Email address</label
 						>
 						<input
 							type="email"
@@ -81,12 +81,12 @@
 						/>
 					</div>
 					<div>
-						<label for="phone" class="label">Phone Number</label>
+						<label for="phone" class="label">Phone Number <span class="font-light">(optional)</span></label>
 						<!-- https://stackoverflow.com/questions/17260238/how-to-insert-space-every-4-characters-for-iban-registering -->
 						<input type="tel" name="phone" class="input" placeholder="+49 123 456 78" />
 					</div>
 					<div>
-						<label for="company" class="label">Company</label>
+						<label for="company" class="label">Company <span class="font-light">(optional)</span></label>
 						<input type="text" name="company" class="input" placeholder="Google" />
 					</div>
 					<!-- <div>
@@ -95,7 +95,7 @@
 					</div> -->
 					<div class="col-span-2">
 						<label for="message" class="label"
-							>Your Message&thinsp<span style="color:#ff0000">*</span></label
+							>Your Message</label
 						>
 						<textarea name="message" class="h-20 input" placeholder="Enter your message" required />
 					</div>
@@ -113,8 +113,8 @@
 								class="ml-2 text-sm font-medium w-full text-primary-50 dark:text-primary-900"
 								>I agree with the <button
 									on:click={openPopup}
-									class="group font-bold font-serif italic hover:text-primary-500"
-									>terms and conditions.&thinsp<span style="color:#ff0000">*</span>
+									class="group font-bold text-primary-500 dark:text-primary-700 hover:text-primary-400 dark:hover:text-primary-600"
+									>terms and conditions.
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										class="h-3.5 w-3.5 before:p-1 inline align-baseline transition duration-250 -0.5"
@@ -147,7 +147,7 @@
 </div>
 
 <Popup
-	popupClass={'w-[70vw] fixed h-[70vh] justify-start flex overflow-y-auto w-full dark:bg-primary-900 bg-primary-50'}
+	popupClass={'w-[70vw] pl-8 top-[15vh] left-[15vw] scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-900 bg-primary-50'}
 	bind:this={popup}
 >
 	<TermsOfService />

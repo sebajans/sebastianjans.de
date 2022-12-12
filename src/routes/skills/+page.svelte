@@ -56,7 +56,7 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
-<div class="columns-1 md:columns-2 space-y-10 gap-10 pb-20">
+<div class="columns-1 md:columns-2 space-y-10 gap-10 pb-20 max-w-4xl">
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">
@@ -87,7 +87,7 @@
 					</svg>
 				</button>
 			</p>
-			<Popup popupClass={'w-full mr-10 items-start justify-start bg-primary-200'} bind:this={popup}>
+			<Popup popupClass={'left-10 w-full mr-10 items-start justify-start bg-primary-200'} bind:this={popup}>
 				<div class="font-sans font-normal uppercase space-x-2">
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
@@ -113,8 +113,6 @@
 				</div>
 			</Popup>
 		</div>
-
-		<!-- and Portfolio. -->
 
 		{#each Object.entries(categories) as [categoryName, skills], i}
 			<div

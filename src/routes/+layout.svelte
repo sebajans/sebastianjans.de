@@ -36,15 +36,13 @@
 		apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
 		apiKey: import.meta.env.VITE_TOLGEE_API_KEY
 	};
-
-	// $: console.log(showMenu);
 </script>
 
 {#if initialized}
 	<TolgeeProvider config={tolgeeConfig}>
 		<VanishingHeader offset={100} tolerance={3} {showHeader} />
 		<NavBar {showMenu} />
-		<main class="{$mainClass} px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900">
+		<main class="{$mainClass} min-h-screen min-h-screen-ios px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900">
 			<slot />
 			<Footer/>
 		</main>

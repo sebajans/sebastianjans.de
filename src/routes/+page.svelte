@@ -2,13 +2,11 @@
 	import { getTranslate } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
-	// import viewport from '../components/createViewportAction';
-	// import IntersectionObserver from 'svelte-intersection-observer';
-	// import { each } from 'svelte/internal';
+	import { jobs, education } from './cv_items'
 	pageTitle.set('');
-	mainClass.set('pt-0 bg-primary-50 dark:bg-primary-900');
+	mainClass.set('pt-0');
 
 	const t = getTranslate();
 	let profilePicture = 'img/profile-pic.jpg';
@@ -52,61 +50,8 @@
 	}
 
 	let scroll: any;
-	let sectionHeight;
-	let intersecting = true;
-	// let intersecting2;
-	let intersecting3;
-	let intersecting4;
-	let count = 2007;
 
-	let sectionHeightCount: any;
-	let sectionUniversity: any;
-	function test() {
-		if ((scroll += sectionHeightCount / 8)) {
-			count += 1;
-		}
-	}
-
-	let jobs = [
-		{
-			image : 'img/logo-kamado.webp',
-			name: 'KamadoB10 Germany',
-			time: '08/2020 - 04/2022',	
-			info: 'Primarily as a designer (for web and print), manufacturing, marketing',
-	},
-		{
-			image : 'img/ditf-logo-weis.svg',
-			name: 'DITF',
-			time: '08/2017 - 08/2020',
-			info: 'Research Assistant – Laboratory work, preparation of samples, use of Office applications',
-	},
-		{
-			image : 'img/logo-letratec.png',
-			name: 'Letratec',
-			time: '11/2015 - 12/2015',
-			info: 'Internship – Work and design process in the creation of advertising signs',
-	},
-	]
-	let education = [
-		{
-			image : 'img/logo_UPV_principal.svg',
-			name: "Master of Science in Design Engineering",
-			time: '09/2021 - Today',	
-			info: 'Universiat Politécnica de Valencia',
-	},
-		{
-			image : 'img/logo-uni-stuttgart.eps',
-			name: 'Bachelor of Science in Materials Science',
-			time: '10/2016 - 09/2020',
-			info: 'Universität Stuttgart',
-	},
-		{
-			image : 'img/logo_gympl.jpg',
-			name: 'Letratec',
-			time: '11/2015 - 12/2015',
-			info: 'Gymnasium Plochingen',
-	},
-	]
+	
 </script>
 
 <svelte:head>
@@ -115,8 +60,7 @@
 <svelte:window bind:scrollY={scroll} />
 
 <section
-	bind:clientHeight={sectionHeight}
-	class="relative w-full snap-start h-screen h-screen-ios flex flex-col justfiy-center content-center "
+	class="relative max-w-3xl w-full h-screen h-screen-ios flex flex-col justfiy-center content-center "
 >
 	<div class="relative flex flex-col h-full w-full max-w-2xl pt-44 mx-auto">
 		{#if visible}
@@ -170,7 +114,7 @@
 			</span>
 			<p
 				in:fly={{ y: 50, duration: 650, delay: 2300 * animationdelay }}
-				class="my-auto w-full pb-10 font-light font-sans text-2xl text-left leading-loose sm:text-2xl lg:text-2xl"
+				class="my-auto w-full pb-10 font-light font-sans text-2xl text-center leading-loose sm:text-2xl lg:text-2xl"
 			>
 				<span class="font-medium">
 					{$t({
@@ -209,40 +153,41 @@
 </section>
 <section
 	id="aboutme"
-	class="w-full  relative h-screen h-screen-ios flex flex-row justfiy-center items-center"
+	class="relative max-w-3xl w-full h-screen h-screen-ios flex flex-col justfiy-center content-center pt-20"
 >
-	<img
-		src={profilePicture}
-		alt="profile"
-		class="object-cover object-top w-1/4 aspect-square rounded-full"
-	/>
+	<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold">
+		{$t({ key: 'front-about', defaultValue: 'About me' })}
+	</h1>
+	<div class="items-center flex flex-row w-full">
+		<img
+			src={profilePicture}
+			alt="profile"
+			class="object-cover object-top w-36 h-36 aspect-square rounded-full"
+		/>
+		<div class="pl-4">
+			<p class="md:w-full mb-2 ">
+				{$t({
+					key: 'front-about-text',
+					defaultValue:
+						'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
+				})}
+			</p>
 
-	<div class="max-w-2xl pl-4">
-		<h1 class="pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold">
-			{$t({ key: 'front-about', defaultValue: 'About me' })}
-		</h1>
-		<p class="md:w-full mb-2 ">
-			{$t({
-				key: 'front-about-text',
-				defaultValue:
-					'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
-			})}
-		</p>
-
-		<p class="md:w-full mb-2 ">
-			{$t({
-				key: 'front-about-text-2',
-				defaultValue:
-					'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
-			})}
-		</p>
-		<p class="md:w-full mb-2 ">
-			{$t({
-				key: 'front-about-text-3',
-				defaultValue:
-					'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
-			})}
-		</p>
+			<p class="md:w-full mb-2 ">
+				{$t({
+					key: 'front-about-text-2',
+					defaultValue:
+						'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
+				})}
+			</p>
+			<p class="md:w-full mb-2 ">
+				{$t({
+					key: 'front-about-text-3',
+					defaultValue:
+						'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
+				})}
+			</p>
+		</div>
 	</div>
 
 	<button
@@ -268,185 +213,46 @@
 	</button>
 </section>
 
-<section class=" h-screen h-screen-ios" id="cv_jobs">
-	<div class="md:pt-20 space-y-4 max-w-3xl">
-		<h1 class="text-primary-900 dark:text-primary-50">Work Experience</h1>
+<section class=" min-h-screen min-h-screen-ios" id="cv_jobs">
+	<div class="md:pt-20 space-y-4 max-w-3xl w-full">
+		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Work Experience</h1>
 		{#each jobs as job}
-		<div class="flex sm:flex-row flex-col space-x-4">
-			<div class="w-1/5 p-2 h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200">
-				<img src={job.image} alt="">
+			<div class="w-full md:w-full flex sm:flex-row flex-col md:space-x-4 justify-center items-center">
+				<div
+					class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+				>
+					<img src={job.image} alt="" />
+				</div>
+				<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
+					<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{job.name}</h2>
+					<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+						{job.time}
+					</h3>
+					<p class="text-sm">{job.info}</p>
+				</div>
 			</div>
-			<div class="w-4/5 flex flex-col justify-start">
-				<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{job.name}</h2>
-				<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">{job.time}</h3>
-				<p class="text-sm">{job.info}</p>
-			</div>
-		</div>
 		{/each}
 	</div>
 </section>
 
-<section class="md:pt-20 h-screen h-screen-ios" id="cv">
+<section class="md:pt-20 pb-40 md:pb-20 min-h-screen min-h-screen-ios" id="cv">
 	<div class="space-y-4 max-w-3xl">
-		<h1 class="text-primary-900 dark:text-primary-50">Education</h1>
+		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Education</h1>
 		{#each education as edu}
-		<div class="flex sm:flex-row flex-col space-x-4">
-			<div class="w-1/5 p-2 h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200">
-				<img src={edu.image} alt="">
+			<div class="w-full md:w-full flex sm:flex-row flex-col md:space-x-4 justify-center items-center">
+				<div
+					class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+				>
+					<img src={edu.image} alt="" />
+				</div>
+				<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
+					<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{edu.name}</h2>
+					<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+						{edu.time}
+					</h3>
+					<p class="text-sm">{edu.info}</p>
+				</div>
 			</div>
-			<div class="w-4/5 flex flex-col justify-start">
-				<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{edu.name}</h2>
-				<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">{edu.time}</h3>
-				<p class="text-sm">{edu.info}</p>
-			</div>
-		</div>
 		{/each}
 	</div>
 </section>
-
-<!-- 
-	<section
-	id="cv"
->
-
-
-<div class=" h-auto grid grid-cols-[minmax(0,1fr)_0.75rem_0.75rem_0.75rem] gap-x-4 relative">
-	<div
-		on:scroll={test}
-		in:fly={{ y: 100, duration: 800 }}
-		class=" h-40 py-8 pr-8  sticky transition-all duration-300 top-1/2 rounded-lg w-full flex flex-row flex-wrap grow"
-	>
-		<div class="w-full font-sans flex flex-row text-5xl align-baseline dark:text-primary-50">
-			<div in:fade class="text-left flex bg-primary-50 dark:bg-primary-900">
-				{#if scroll <= sectionHeightCount / 8 + sectionHeight}
-					{count}
-				{:else if scroll >= sectionHeight / 8 + sectionHeight && scroll <= (sectionHeightCount * 2) / 8 + sectionHeight}
-					{count + 1}
-				{:else if scroll >= (sectionHeightCount * 2) / 8 + sectionHeight && scroll <= (sectionHeightCount * 3) / 8 + sectionHeight}
-					{count + 2}
-				{:else if scroll >= (sectionHeightCount * 3) / 8 + sectionHeight && scroll <= (sectionHeightCount * 4) / 8 + sectionHeight}
-					{count + 3}
-				{:else if scroll >= (sectionHeightCount * 4) / 8 + sectionHeight && scroll <= (sectionHeightCount * 5) / 8 + sectionHeight}
-					{count + 4}
-				{:else if scroll >= (sectionHeightCount * 5) / 8 + sectionHeight && scroll <= (sectionHeightCount * 6) / 8 + sectionHeight}
-					{count + 5}
-				{:else if scroll >= (sectionHeightCount * 6) / 8 + sectionHeight && scroll <= (sectionHeightCount * 7) / 8 + sectionHeight}
-					{count + 6}
-				{:else if scroll >= (sectionHeightCount * 7) / 8 + sectionHeight && scroll <= (sectionHeightCount * 8) / 8 + sectionHeight}
-					{count + 7}
-				{:else if scroll >= sectionHeightCount + sectionHeight}
-					{count + 8}
-				{/if}
-			</div>
-
-			<div
-				class="bg-primary-50 dark:bg-primary-900 dark:text-primary-200 text-primary-700 text-right ml-auto flex"
-			>
-				High School
-			</div>
-		</div>
-		<div
-			class="bg-primary-50 dark:bg-primary-900 text-primary-900 dark:text-primary-50 w-full text-right font-serif text-2xl align-baseline"
-		>
-			Gymnasium Plochingen
-		</div>
-	</div>
-	<div bind:clientHeight={sectionHeightCount}>
-		<div class=" w-2 h-[100vh] bg-primary-700 dark:bg-primary-200 rounded-full" />
-		<div class=" w-2 h-2 my-3 bg-primary-700 dark:bg-primary-200 rounded-full" />
-		<div class=" w-2 h-2 my-3 bg-primary-700 dark:bg-primary-200 rounded-full" />
-		<div class=" w-2 h-2 my-3 bg-primary-700 dark:bg-primary-200 rounded-full" />
-		<div class=" w-2 h-[100vh] my-3 bg-primary-700 dark:bg-primary-200 rounded-full" />
-	</div>
-	<div />
-	<div />
-
-
-	<div
-		in:fly={{ y: 100, duration: 800 }}
-		class=" h-40 py-8 pr-8 sticky transition-all duration-300 top-1/2 rounded-lg w-full flex flex-row flex-wrap grow"
-	>
-		<div class="w-full font-sans flex flex-row text-5xl align-baseline">
-			<div class="text-left flex opacity-0">2015</div>
-			<div
-				class="bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400 flex-1 text-right "
-			>
-				Praktikum
-			</div>
-		</div>
-		<div
-			class="bg-primary-50 dark:bg-primary-900 text-primary-700 dark:text-primary-50 w-full text-right font-serif text-2xl align-baseline"
-		>
-			BorgWarner
-		</div>
-	</div>
-	<div />
-	<div>
-		<div class=" w-2 h-[30vh] bg-primary-600 dark:bg-primary-400 rounded-full" />
-	</div>
-	<div />
-
-	<div
-		in:fly={{ y: 100, duration: 800 }}
-		class=" h-40 py-8 pr-8 sticky transition-all duration-300 top-1/2 rounded-lg w-full flex flex-row flex-wrap grow"
-	>
-		<div class="w-full font-sans flex flex-row text-5xl align-baseline">
-			<div in:fade class="text-left flex opacity-0">2015</div>
-			<div
-				class="bg-primary-50 dark:bg-primary-900 dark:text-primary-600 text-primary-400 flex-1 text-right "
-			>
-				Time abroad
-			</div>
-		</div>
-		<div
-			class="bg-primary-50 dark:bg-primary-900  w-full text-right font-serif text-2xl align-baseline"
-		>
-			Argentina
-		</div>
-	</div>
-	<div />
-	<div />
-	<div>
-		<div class=" w-2 h-[50vh] bg-primary-400 dark:bg-primary-600 rounded-full" />
-	</div>
-
-	<div
-		in:fly={{ y: 100, duration: 800 }}
-		class=" h-40 py-8 pr-8 sticky transition-all duration-300 top-1/2 rounded-lg w-full flex flex-row flex-wrap grow"
-	>
-		<div class=" w-full font-sans flex flex-row text-5xl align-baseline dark:text-primary-50">
-			<div in:fade class="text-left pr-4 flex bg-primary-50 dark:bg-primary-900">
-				{#if scroll <= (sectionUniversity * 1) / 4 + sectionHeightCount + sectionHeight * 1.6 && scroll >= sectionHeightCount + sectionHeight * 1.6}
-					{count + 9}
-				{:else if scroll >= (sectionUniversity * 1) / 4 + sectionHeightCount + sectionHeight * 1.6 && scroll <= (sectionUniversity * 2) / 4 + sectionHeightCount + sectionHeight * 1.3}
-					{count + 10}
-				{:else if scroll >= (sectionUniversity * 2) / 4 + sectionHeightCount + sectionHeight * 1.6 && scroll <= (sectionUniversity * 3) / 4 + sectionHeightCount + sectionHeight * 1.3}
-					{count + 11}
-				{:else if scroll >= (sectionUniversity * 3) / 4 + sectionHeightCount + sectionHeight * 1.6 && scroll <= (sectionUniversity * 4) / 4 + sectionHeightCount + sectionHeight * 1.3}
-					{count + 12}
-				{/if}
-			</div>
-			<div class="py-4 bg-primary-50 dark:bg-primary-900 text-primary-200 text-right ml-auto flex">
-				Bachelors degree
-			</div>
-		</div>
-		<div
-			class=" bg-primary-50 dark:bg-primary-900 text-primary-900 dark:text-primary-50 w-full text-right font-serif text-2xl align-baseline"
-		>
-			University of Stuttgart
-		</div>
-		<div
-			class="bg-primary-50 pt-4 dark:bg-primary-900 text-primary-900 dark:text-primary-50 w-full text-right font-serif align-baseline"
-		>
-			Materials Science
-		</div>
-	</div>
-
-	<div
-		bind:clientHeight={sectionUniversity}
-		class=" w-2 h-[400vh] bg-primary-700 dark:bg-primary-200 rounded-full"
-	/>
-	<div />
-	<div />
-</div>
-</section> -->
