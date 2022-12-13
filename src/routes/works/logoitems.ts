@@ -1,4 +1,4 @@
-import LogoChilli from '$lib/assets/logos/logo-chilli.webp'
+import LogoChilli from '$assets/logos/logo-chilli.webp'
 
 
 export const LogoItems = [
