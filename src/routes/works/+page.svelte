@@ -41,7 +41,7 @@
 		/>
 	</h2>
 	<div
-		class="md:w-2/3 pl-4 md:pl-8 text-2xl md:text-3xl w-full font-sans space-y-4 my-auto md:mb-0"
+		class="md:w-2/3 pl-4 md:pl-8 text-2xl md:text-3xl w-full font-sans space-y-4 mb-auto md:my-auto"
 	>
 		{#each sectionNames as item, i}
 			<button

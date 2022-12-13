@@ -25,7 +25,7 @@
 			id="kb10-logo"
 			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
 			style:background-image={$nightMode ? `url('${srcKamadoLogoDark}')` : `url('${srcKamadoLogo}')`}
-			class="row-[1_/_span_2] col-[5_/_span_4] md:col-[9_/_span_4] bg-contain bg-no-repeat bg-center bg-origin-content"
+			class="row-[1_/_span_2] col-[5_/_span_4] md:col-[9_/_span_4] bg-contain bg-no-repeat bg-top bg-origin-content w-full h-full"
 		/>
 		
 		<div
