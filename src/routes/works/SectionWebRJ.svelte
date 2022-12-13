@@ -5,7 +5,7 @@
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 0, windowHeight);
-	
+
 	let srcRenaImg1 = 'img/website-rena-front-1.webp';
 	let srcRenaImg2 = 'img/website-rena-front-2.webp';
 	let srcRenaLogo = '/logos/logo-rj-l.webp';
@@ -18,11 +18,18 @@
 	id="websites"
 	class="bg-primary-200/50 md:pl-44 dark:bg-primary-700/50 w-full flex flex-col relative h-screen h-screen-ios overflow-y-hidden justify-center items-center"
 >
-	<h2
-		class="bg-primary-200 dark:bg-primary-700 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24"
-	>
-		<T keyName="works-webdev" defaultValue="Webdesign" />
-	</h2>
+	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
+		<div class="w-[calc(100vw_-_56rem)] h-auto" />
+		<div class="max-w-4xl w-full">
+			<h2
+				class="bg-primary-200 dark:bg-primary-700 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl "
+			>
+				<T keyName="works-webdev" defaultValue="Webdesign" />
+			</h2>
+		</div>
+		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-200 dark:bg-primary-700" />
+	</div>
+
 	<div
 		class="relative w-full h-[calc(100vh_-_5.5rem)] flex justify-center items-center pr-6 pl-6 max-w-4xl"
 	>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getTranslate } from '@tolgee/svelte';
+	import { getTranslate, T } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { fly } from 'svelte/transition';
@@ -168,7 +168,7 @@
 </section>
 
 <section
-	class="mt-20 pb-32 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class="mt-20  relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_jobs"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
@@ -176,19 +176,23 @@
 		{#each cvItems as item}
 			{#if item.category === 'job'}
 				<!-- {@const frMonth = String(item.fromMonth)} -->
-				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
+				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
 						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
 						<img src={item.image} alt={item.name} />
 					</div>
 					<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
-						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{item.name}</h2>
+						<!-- {@const frMonth = item.fromMonth.toString() } -->
+						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+							<T keyName="{item.name}" defaultValue="{item.name}" />
+							
+						</h2>
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-							<!-- {@const frMonth = item.fromMonth.toString() } -->
 							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
 						</h3>
-						<p class="text-sm">{item.info}</p>
+						<p class="text-sm">
+							<T keyName="{item.info}" defaultValue="{item.info}" /></p>
 					</div>
 				</div>
 			{/if}
@@ -205,18 +209,23 @@
 		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Education</h1>
 		{#each cvItems as item}
 			{#if item.category === 'education'}
-				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center">
+				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
 						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
 						<img src={item.image} alt={item.name} />
 					</div>
 					<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
-						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">{item.name}</h2>
+						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+							<T keyName="{item.name}" defaultValue="{item.name}" />
+							
+						</h2>
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
 							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
 						</h3>
-						<p class="text-sm">{item.info}</p>
+						<p class="text-sm">
+							<T keyName="{item.info}" defaultValue="{item.info}" />
+						</p>
 					</div>
 				</div>
 			{/if}

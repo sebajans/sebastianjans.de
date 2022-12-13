@@ -8,7 +8,7 @@ export let cvItems = [
     fromMonth: '08',
     toYear: '2022',
     toMonth: '04',
-    info: 'Primarily as a designer (for web and print), manufacturing, marketing'
+    info: 'I worked as a Web and Graphic Designer. As this was a Start-Up company, i was also involved in the manufacturing process. I learned about the inner workings of the company and was therefore also able to focus on the key aspects of the company in the marketing materials.'
   },
   {
     category: 'job',
@@ -19,7 +19,7 @@ export let cvItems = [
     fromMonth: '08',
     toYear: '2020',
     toMonth: '08',
-    info: 'Research Assistant – Laboratory work, preparation of samples, use of Office applications'
+    info: 'In this Institute i worked as a Research Assistant. I learned a lot about the research process and the importance of attention to detail. I also gained experience in conducting experiments and collecting and analyzing data. I also learned the importance of being organized and keeping accurate records of my work.'
   },
   {
     category: 'job',
@@ -30,7 +30,7 @@ export let cvItems = [
     fromMonth: '11',
     toYear: '2015',
     toMonth: '12',
-    info: 'Internship – Work and design process in the creation of advertising signs'
+    info: 'In this internship i learned about the process of designing and creating signage for businesses. I also learned about the different materials and manufacturing processes used to create signs, and how to work with clients to understand their needs and create effective signage solutions.'
   },
   {
     category: 'education',
@@ -41,7 +41,7 @@ export let cvItems = [
     fromMonth: '09',
     toYear: '2023',
     toMonth: '06',
-    info: 'Universiat Politécnica de Valencia'
+    info: 'Universiat Politécnica de Valencia. I learned about the principles and practices of Design Engineering. I studied topics such as typography, color theory, and visual communication, as well as more technical subjects such as design software and printing processes.'
   },
   {
     category: 'education',
@@ -52,17 +52,17 @@ export let cvItems = [
     fromMonth: '10',
     toYear: '2020',
     toMonth: '09',
-    info: 'Universität Stuttgart'
+    info: 'University of Stuttgart. As a materials science major, I learned about the properties and behavior of different materials, such as metals, ceramics, and polymers. Additionally, I gained experience in conducting experiments and analyzing data to better understand the behavior of materials.'
   },
   {
     category: 'education',
     id: 3,
     image: 'img/logo_gympl.jpg',
-    name: 'Letratec',
+    name: 'High School Graduation',
     fromYear: '2007',
     fromMonth: '11',
     toYear: '2015',
     toMonth: '07',
-    info: 'Gymnasium Plochingen'
+    info: 'Gymnasium Plochingen. In High school, my favorite subjects were math, physics and art. I always liked logic and wanted to figure out how things work, while trying to live out my creative side.'
   }
 ];

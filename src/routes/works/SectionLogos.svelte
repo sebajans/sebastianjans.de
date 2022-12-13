@@ -15,7 +15,7 @@
 		{
 			movement: '0% - 10',
 			randomnumber: 0.55
-		},
+		}
 		// {
 		// 	movement: '-10% + 10',
 		// 	randomnumber: 0.45
@@ -29,11 +29,17 @@
 	id="logodesign"
 	class="bg-primary-300/50 dark:bg-primary-600/50 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden"
 >
-	<h2
-		class="bg-primary-300 dark:bg-primary-600 md:text-right w-fit ml-auto text-left pr-8 pl-4 rounded-l-md font-sans py-3 text-4xl mt-4 md:mt-24"
-	>
-		Logo Design
-	</h2>
+	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
+		<div class="w-[calc(100vw_-_56rem)] h-auto" />
+		<div class="max-w-4xl w-full">
+			<h2
+				class="bg-primary-300 dark:bg-primary-600 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl "
+			>
+				<T keyName="works-logodesign" defaultValue="Logo Design" />
+			</h2>
+		</div>
+		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-300 dark:bg-primary-600" />
+	</div>
 	<p class="my-4 mx-6 md:mr-8 md:w-2/3 md:text-right text-left w-auto">
 		<T
 			keyName="logo-design-paragraph"
