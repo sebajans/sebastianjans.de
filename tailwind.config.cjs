@@ -11,10 +11,10 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    backgroundImage: {
-      'logo-rj': "url('../logos/logo-rj-s.webp')",
-      'logo-rj-white': "url('../logos/logo-rj-s-white.webp')"
-    },
+    // backgroundImage: {
+    //   'logo-rj': "url('../logos/logo-rj-s.webp')",
+    //   'logo-rj-white': "url('../logos/logo-rj-s-white.webp')"
+    // },
     colors: {
       'primary': {
         '50': '#fff7ed',
