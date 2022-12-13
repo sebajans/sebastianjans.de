@@ -1,4 +1,36 @@
-let path = '../../static/logos'
+const path = '/logos'
+
+export const LogoItems = [
+  {
+    class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${path}/logo-chilli.webp')]`
+  },
+  {
+    class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50 bg-[url('${path}/logo-rj-s.webp')] dark:bg-[url('${path}/logo-rj-s-white.webp')]`
+  },
+  {
+    class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${path}/logo-bate.webp')] dark:bg-[url('${path}/logo-bate-white.webp')]`
+  },
+  {
+    class: `bg-primary-300 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${path}/logo-fachschaft.webp')] dark:bg-[url('${path}/logo-fachschaft-white.webp')]`
+  },
+  {
+    class: ` right-[70%] bg-primary-400 dark:bg-primary-400 shadow-primary-800/50 bg-[url('${path}/logo-sisimi.webp')] dark:bg-[url('${path}/logo-sisimi-white.webp')]`
+  },
+  {
+    class: ` bg-primary-200 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${path}/logo-smyle.webp')]`
+  },
+  {
+    class: ` bg-primary-400 dark:bg-primary-500 shadow-primary-800/50 bg-[url('${path}/logo-ht.webp')] dark:bg-[url('${path}/logo-ht-white.webp')]`
+  },
+  {
+    class: ` bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${path}/logo-ys.webp')] dark:bg-[url('${path}/logo-ys-white.webp')]`
+  },
+  {
+    class: ` bg-primary-300 dark:bg-primary-800 shadow-primary-800/50 bg-[url('${path}/logo-cupholder.webp')] dark:bg-[url('${path}/logo-cupholder-white.webp')]`
+  }
+];
+
+// let path = '../../static/logos'
 // import LogoChilli from '/logo-chilli.webp'
 // import LogoRJ from '{path}/logo-rj-s.webp'
 // import LogoRJWhite from '{path}/logo-rj-s-white.webp'
@@ -16,10 +48,10 @@ let path = '../../static/logos'
 // import LogoCupholder from '{path}/logo-cupholder.webp'
 // import LogoCupholderWhite from '{path}/logo-cupholder-white.webp'
 
-export const LogoItems = [
-  {
-    class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${path}/logo-chilli.webp')]`
-  },
+// export const LogoItems = [
+//   {
+//     class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${path}/logo-chilli.webp')]`
+  // },
   // class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${LogoChilli}')]`
   // {
   //   class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50 bg-logo-rj dark:bg-logo-rj-white`
@@ -45,4 +77,4 @@ export const LogoItems = [
   // {
   //   class: `bg-primary-300 dark:bg-primary-800 shadow-primary-800/50 bg-[url('${LogoCupholder}')] dark:bg-[url('${LogoCupholderWhite}')]`
   // }
-];
+// ];

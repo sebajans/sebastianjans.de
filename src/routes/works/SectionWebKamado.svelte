@@ -10,8 +10,6 @@
 	let srcKamadoLogo = '/logos/logo-kamadob10.webp';
 	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
-	let srcRenaLogo = '/logos/logo-rj-l.webp';
-	let srcRenaLogoDark = '/logos/logo-rj-l-white.webp';
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
