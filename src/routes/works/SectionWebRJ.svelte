@@ -8,8 +8,8 @@
 
 	let srcRenaImg1 = 'img/website-rena-front-1.webp';
 	let srcRenaImg2 = 'img/website-rena-front-2.webp';
-	let srcRenaLogo = '/logos/logo-rj-l.webp';
-	let srcRenaLogoDark = '/logos/logo-rj-l-white.webp';
+	let srcRenaLogo = '../logos/logo-rj-l.webp';
+	let srcRenaLogoDark = '../logos/logo-rj-l-white.webp';
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
