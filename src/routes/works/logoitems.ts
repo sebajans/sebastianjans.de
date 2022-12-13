@@ -20,7 +20,7 @@ export const LogoItems = [
     class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${LogoChilli}')]`
   },
   {
-    class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50 bg-[url('${LogoRJ}')] dark:bg-[url('${LogoRJWhite}')]`
+    class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50 bg-logo-rj dark:bg-logo-rj-white`
   },
   {
     class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${LogoBate}')] dark:bg-[url('${LogoBateWhite}')]`
