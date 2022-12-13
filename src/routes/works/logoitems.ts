@@ -1,4 +1,4 @@
-import LogoChilli from 'logos/logo-chilli.webp'
+import LogoChilli from '../logos/logo-chilli.webp'
 import LogoRJ from 'logos/logo-rj-s.webp'
 import LogoRJWhite from 'logos/logo-rj-s-white.webp'
 import LogoBate from 'logos/logo-bate.webp'
@@ -22,25 +22,25 @@ export const LogoItems = [
   {
     class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50 bg-logo-rj dark:bg-logo-rj-white`
   },
-  {
-    class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${LogoBate}')] dark:bg-[url('${LogoBateWhite}')]`
-  },
-  {
-    class: `bg-primary-300 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${LogoFachschaft}')] dark:bg-[url('${LogoFachschaftWhite}')]`
-  },
-  {
-    class: `bg-primary-400 dark:bg-primary-400 shadow-primary-800/50 bg-[url('${LogoSisimi}')] dark:bg-[url('${LogoSisimiWhite}')]`
-  },
-  {
-    class: `bg-primary-200 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${LogoSmyle}')]`
-  },
-  {
-    class: `bg-primary-400 dark:bg-primary-500 shadow-primary-800/50 bg-[url('${LogoHT}')] dark:bg-[url('${LogoHTWhite}')]`
-  },
-  {
-    class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${LogoYS}')] dark:bg-[url('${LogoYSWhite}')]`
-  },
-  {
-    class: `bg-primary-300 dark:bg-primary-800 shadow-primary-800/50 bg-[url('${LogoCupholder}')] dark:bg-[url('${LogoCupholderWhite}')]`
-  }
+  // {
+  //   class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${LogoBate}')] dark:bg-[url('${LogoBateWhite}')]`
+  // },
+  // {
+  //   class: `bg-primary-300 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${LogoFachschaft}')] dark:bg-[url('${LogoFachschaftWhite}')]`
+  // },
+  // {
+  //   class: `bg-primary-400 dark:bg-primary-400 shadow-primary-800/50 bg-[url('${LogoSisimi}')] dark:bg-[url('${LogoSisimiWhite}')]`
+  // },
+  // {
+  //   class: `bg-primary-200 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${LogoSmyle}')]`
+  // },
+  // {
+  //   class: `bg-primary-400 dark:bg-primary-500 shadow-primary-800/50 bg-[url('${LogoHT}')] dark:bg-[url('${LogoHTWhite}')]`
+  // },
+  // {
+  //   class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${LogoYS}')] dark:bg-[url('${LogoYSWhite}')]`
+  // },
+  // {
+  //   class: `bg-primary-300 dark:bg-primary-800 shadow-primary-800/50 bg-[url('${LogoCupholder}')] dark:bg-[url('${LogoCupholderWhite}')]`
+  // }
 ];
