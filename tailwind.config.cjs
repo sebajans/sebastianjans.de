@@ -11,6 +11,9 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
+    // backgroundImage: {
+    //   'logoRJ': "url('/')"
+    // },
     colors: {
       'primary': {
         '50': '#fff7ed',
@@ -28,6 +31,11 @@ module.exports = {
       current: 'currentColor',
     },
     extend: {
+      gridTemplateRows: {
+        '8': 'repeat(8, minmax(0, 1fr))',
+        '9': 'repeat(9, minmax(0, 1fr))',
+        '12': 'repeat(12, minmax(0, 1fr))',
+      },
       fontSize: {
 				'fit': 'clamp(0px,10vw,1080px)'
 			},

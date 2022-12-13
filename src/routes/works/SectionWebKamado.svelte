@@ -6,8 +6,8 @@
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);
 
-	let srcKamadoLogo = '/logos/logo-kamadob10-white.webp';
-	let srcKamadoLogoDark = '/logos/logo-kamadob10.webp';
+	let srcKamadoLogoDark = '/logos/logo-kamadob10-white.webp';
+	let srcKamadoLogo = '/logos/logo-kamadob10.webp';
 	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
 	let srcRenaLogo = '/logos/logo-rj-l.webp';
@@ -20,22 +20,22 @@
 	id="kamadoB10"
 	class="bg-primary-200/50 dark:bg-primary-700/50 md:pl-44 w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
 >
-	<div
-		class="relative w-full h-screen flex justify-center items-center pr-6 pl-6 max-w-4xl"
+<div
+		class="w-full px-3 max-w-4xl h-[50vh] max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
 	>
 		<div
 			id="kb10-logo"
 			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
-			class="absolute left-4 md:left-0 top-0 md:top-0 h-20 w-1/3 max-w-md bg-contain bg-no-repeat bg-center bg-origin-content bg-[url('{srcKamadoLogo}')] dark:bg-[url('{srcKamadoLogoDark}')]"
+			style="background-image: url('{srcKamadoLogo}')"
+			class="row-[1_/_span_2] col-[5_/_span_4] md:col-[9_/_span_4] bg-contain bg-no-repeat bg-center bg-origin-content bg-[url('{srcKamadoLogo}')] dark:bg-[url('{srcKamadoLogoDark}')]"
 		/>
 		
 		<div
 			id="kb10-browser-phone"
 			style:transform={`translate3d(calc(100% - 100 * ${sectionScroll}%),0, 0)`}
-			class="shadow-primary-800/40 md:bottom-12 bottom-52  shadow-lg right-6 md:right-12 backdrop-blur-sm 
-			bg-primary-200/80 dark:bg-primary-700/60 md:w-1/4 max-w-lg w-1/3 flex absolute flex-col rounded-2xl md:rounded-3xl z-20"
+			class="row-[4_/_span_6] col-[5_/_span_4] md:row-[3_/_span_7] md:col-[8_/_span_4]  shadow-primary-800/40 shadow-lg backdrop-blur-sm 
+			bg-primary-200/80 dark:bg-primary-700/60 self-center flex flex-col rounded-2xl md:rounded-3xl z-10"
 		>
-			<!-- before:h-4 before:rounded-b-md before:w-1/2 before:bg-primary-700/70 before:backdrop-blur-xl before:absolute before:mt-1 before:left-1/2 before:-translate-x-1/2  -->
 			<img
 				alt="website-rena-front-1"
 				class="object-cover object-top aspect-auto rounded-t-[0.75rem] md:rounded-t-[1.25rem] m-1"
@@ -52,20 +52,21 @@
 			</div>
 			<div class=" h-0.5 md:h-1 rounded-full w-2/5 bg-primary-50/80 m-1 self-center" />
 		</div>
+		
 		<div
 			id="kb10-browser-front"
 			style:transform={`translate3d(calc(-75% + 75 * ${sectionScroll}%),0, 0)`}
-			class="shadow-primary-800/20 shadow-md left-6 md:left-52 backdrop-blur-sm p-1 bg-primary-200/80 dark:bg-primary-700/60 w-[80%] md:w-1/2 sm:w-2/3 max-w-4xl flex absolute flex-col rounded-lg z-10"
+			class="row-[3_/_span_4] col-[1_/_span_6] md:row-[1_/_span_6] md:col-[1_/_span_8] self-center shadow-primary-800/20 shadow-md  backdrop-blur-sm p-1 bg-primary-200/80 dark:bg-primary-700/60 flex flex-col rounded-lg"
 		>
 			<div class="relative flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
 				{#each Array(3) as _}
 					<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80" />
 				{/each}
 			</div>
-			<img alt="website-kamado-front" class="object-contain rounded-lg" src={srcKamadoFront} />
+			<img alt="website-kamado-front" class="object-contain  rounded-lg" src={srcKamadoFront} />
 		</div>
 		<p
-			class="absolute h-auto left-0 pl-4 bottom-14 md:bottom-4 pr-4 md:w-1/2  text-justify"
+			class="row-[9_/_span_4] col-[1_/_span_4] md:row-[8_/_span_2] md:col-[1_/_span_6] text-justify"
 			style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400%), 0)`}
 		>
 			<T
@@ -75,3 +76,4 @@
 		</p>
 	</div>
 </section>
+			<!-- before:h-4 before:rounded-b-md before:w-1/2 before:bg-primary-700/70 before:backdrop-blur-xl before:absolute before:mt-1 before:left-1/2 before:-translate-x-1/2  -->
