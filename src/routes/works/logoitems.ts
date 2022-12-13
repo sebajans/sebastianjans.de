@@ -2,31 +2,49 @@ const path = '/logos'
 
 export const LogoItems = [
   {
-    class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${path}/logo-chilli.webp')]`
+    class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50`,
+    image: `${path}/logo-chilli.webp`,
+    imageDark: ``,
   },
   {
-    class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50 bg-[url('${path}/logo-rj-s.webp')] dark:bg-[url('${path}/logo-rj-s-white.webp')]`
+    class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50`,
+    image: `${path}/logo-rj-s.webp`,
+    imageDark: `${path}/logo-rj-s-white.webp`,
   },
   {
-    class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${path}/logo-bate.webp')] dark:bg-[url('${path}/logo-bate-white.webp')]`
+    class: `bg-primary-200 dark:bg-primary-600 shadow-primary-800/50`,
+    image: `${path}/logo-bate.webp`,
+    imageDark: `${path}/logo-bate-white.webp`,
   },
   {
-    class: `bg-primary-300 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${path}/logo-fachschaft.webp')] dark:bg-[url('${path}/logo-fachschaft-white.webp')]`
+    class: `bg-primary-300 dark:bg-primary-600 shadow-primary-800/50`,
+    image: `${path}/logo-fachschaft.webp`,
+    imageDark: `${path}/logo-fachschaft-white.webp`,
   },
   {
-    class: ` right-[70%] bg-primary-400 dark:bg-primary-400 shadow-primary-800/50 bg-[url('${path}/logo-sisimi.webp')] dark:bg-[url('${path}/logo-sisimi-white.webp')]`
+    class: `bg-primary-400 dark:bg-primary-400 shadow-primary-800/50`,
+    image: `${path}/logo-sisimi.webp`,
+    imageDark: `${path}/logo-sisimi-white.webp`,
   },
   {
-    class: ` bg-primary-200 dark:bg-primary-200 shadow-primary-800/50 bg-[url('${path}/logo-smyle.webp')]`
+    class: ` bg-primary-200 dark:bg-primary-200 shadow-primary-800/50`,
+    image: `${path}/logo-smyle.webp`,
+    imageDark: ``,
   },
   {
-    class: ` bg-primary-400 dark:bg-primary-500 shadow-primary-800/50 bg-[url('${path}/logo-ht.webp')] dark:bg-[url('${path}/logo-ht-white.webp')]`
+    class: ` bg-primary-400 dark:bg-primary-500 shadow-primary-800/50`,
+    image: `${path}/logo-ht.webp`,
+    imageDark: `${path}/logo-ht-white.webp`,
   },
   {
-    class: ` bg-primary-200 dark:bg-primary-600 shadow-primary-800/50 bg-[url('${path}/logo-ys.webp')] dark:bg-[url('${path}/logo-ys-white.webp')]`
+    class: ` bg-primary-200 dark:bg-primary-600 shadow-primary-800/50`,
+    image: `${path}/logo-ys.webp`,
+    imageDark: `${path}/logo-ys-white.webp`,
   },
   {
-    class: ` bg-primary-300 dark:bg-primary-800 shadow-primary-800/50 bg-[url('${path}/logo-cupholder.webp')] dark:bg-[url('${path}/logo-cupholder-white.webp')]`
+    class: ` bg-primary-300 dark:bg-primary-800 shadow-primary-800/50`,
+    image: `${path}/logo-cupholder.webp`,
+    imageDark: `${path}/logo-cupholder-white.webp`,
   }
 ];
 

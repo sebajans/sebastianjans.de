@@ -38,8 +38,8 @@
 		<div
 			id="rena-logo"
 			style:transform={`translate3d(0,calc(200% - ${sectionScroll}* 200%), 0)`}
-			style:background-image={$nightMode ? `url('${srcRenaLogo}')` : `url('${srcRenaLogoDark}')` }
-			class="row-[1_/_span_2] col-[1_/_span_4] bg-contain bg-no-repeat bg-top bg-origin-content dark:bg-[url('{srcRenaLogoDark}')]"
+			style:background-image={$nightMode ? `url('${srcRenaLogoDark}')` : `url('${srcRenaLogo}')`}
+			class="row-[1_/_span_2] col-[1_/_span_4] bg-contain bg-no-repeat bg-top bg-origin-content"
 		/>
 
 		<!-- style:opacity={`calc(0% + ${sectionScroll}* 100%)`} -->

@@ -1,7 +1,7 @@
 <script type="ts">
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
-
+	import { nightMode } from '$lib/stores/nightMode';
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);
@@ -24,8 +24,8 @@
 		<div
 			id="kb10-logo"
 			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
-			style="background-image: url('{srcKamadoLogo}')"
-			class="row-[1_/_span_2] col-[5_/_span_4] md:col-[9_/_span_4] bg-contain bg-no-repeat bg-center bg-origin-content bg-[url('{srcKamadoLogo}')] dark:bg-[url('{srcKamadoLogoDark}')]"
+			style:background-image={$nightMode ? `url('${srcKamadoLogoDark}')` : `url('${srcKamadoLogo}')`}
+			class="row-[1_/_span_2] col-[5_/_span_4] md:col-[9_/_span_4] bg-contain bg-no-repeat bg-center bg-origin-content"
 		/>
 		
 		<div

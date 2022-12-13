@@ -2,7 +2,7 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { LogoItems } from './logoitems';
-
+	import { nightMode } from '$lib/stores/nightMode';
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
@@ -42,7 +42,6 @@
 	</div>
 	<div class="my-auto h-[70vh] w-screen">
 		<div class="md:ml-40 flex justify-center">
-
 			<p class="max-w-4xl my-4 px-3 md:mx-auto md:text-right text-left w-full ">
 				<T
 				keyName="logo-design-paragraph"
@@ -58,6 +57,7 @@
 				>
 					{#each LogoItems.sort(() => row.randomnumber - Math.random()) as logo}
 						<div
+							style:background-image={$nightMode ? `url('${logo.imageDark}')` : `url('${logo.image}')`}
 							class="{logo.class} transform bg-contain bg-no-repeat bg-center bg-origin-content rounded-md shadow-lg shadow-primary-400/60 dark:shadow-primary-600/50 h-full aspect-square w-full p-4 md:p-8"
 						/>
 					{/each}
