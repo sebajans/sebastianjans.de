@@ -107,7 +107,7 @@
 			</span>
 			<p
 				in:fly={{ y: 50, duration: 650, delay: 2300 * animationdelay }}
-				class="my-auto md:mt-20 md:mb-0 w-full pb-10 font-light font-sans text-2xl text-center leading-loose sm:text-2xl lg:text-2xl"
+				class="my-auto md:mt-20 md:mb-0 w-full pb-10 font-light font-sans text-base text-center leading-loose sm:text-xl "
 			>
 				<span class="font-medium">
 					{$t({
@@ -115,6 +115,7 @@
 						defaultValue: 'My name is Sebastian Jans.'
 					})}
 				</span>
+				<span class="sm:hidden"><br/></span>
 				{$t({
 					key: 'Introduction-text',
 					defaultValue: 'I am a Product Designer.'
@@ -126,19 +127,19 @@
 </section>
 <section
 	id="aboutme"
-	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-20"
+	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
 >
-	<div class="my-auto mx-auto max-w-4xl">
+	<div class=" sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
 			{$t({ key: 'front-about', defaultValue: 'About me' })}
 		</h1>
-		<div class=" flex flex-row w-full flex-wrap md:flex-nowrap justify-center">
+		<div class="pb-20 flex flex-row w-full flex-wrap md:flex-nowrap justify-center">
 			<img
 				src={profilePicture}
 				alt="profile"
-				class="object-cover object-top md:w-1/5 max-w-[16rem] max-h-[16rem] md:h-auto md:grow-0 mb-2 aspect-square rounded-xl"
+				class="object-cover object-top md:w-1/5 max-w-[8rem] max-h-[8rem] md:max-w-[16rem]  max-w md:max-h-[16rem] md:h-auto md:grow-0 mb-2 aspect-square rounded-xl"
 			/>
-			<div class="md:pl-4 md:w-475 flex flex-col">
+			<div class="md:pl-4 md:w-475 text-sm md:text-base flex flex-col">
 				<p class="md:w-full mb-2 text-justify ">
 					{$t({
 						key: 'front-about-text',
@@ -168,10 +169,10 @@
 </section>
 
 <section
-	class="mt-20  relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
 	id="cv_jobs"
 >
-	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
+	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
 		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Work Experience</h1>
 		{#each cvItems as item}
 			{#if item.category === 'job'}
@@ -191,7 +192,9 @@
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
 							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
 						</h3>
-						<p class="text-sm">
+						<p style="-webkit-hyphens: auto;
+						-ms-hyphens: auto;
+						hyphens: auto;" class="text-sm text-justify">
 							<T keyName="{item.info}" defaultValue="{item.info}" /></p>
 					</div>
 				</div>
@@ -202,7 +205,7 @@
 </section>
 
 <section
-	class="pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class="pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
@@ -223,7 +226,9 @@
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
 							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
 						</h3>
-						<p class="text-sm">
+						<p style="-webkit-hyphens: auto;
+						-ms-hyphens: auto;
+						hyphens: auto;" class="text-sm text-justify">
 							<T keyName="{item.info}" defaultValue="{item.info}" />
 						</p>
 					</div>

@@ -32,17 +32,16 @@
 
 <section
 	id="start"
-	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-row items-center justify-center overflow-x-hidden min-h-screen h-screen h-screen-ios"
+	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-row items-center justify-center overflow-x-hidden min-h-screen h-screen h-screen-ios pb-24"
 >
-		<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-auto md:mb-0">
-			<T
-				keyName="intro-works"
-				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
-			/>
-		</h2>
+	<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-4 md:mb-0">
+		<T
+			keyName="intro-works"
+			defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
+		/>
+	</h2>
 	<div
-		class="md:w-2/3 pl-4 md:pl-8 text-2xl md:text-3xl w-full
-					   font-sans space-y-4 mb-auto md:mb-0"
+		class="md:w-2/3 pl-4 md:pl-8 text-2xl md:text-3xl w-full font-sans space-y-4 my-auto md:mb-0"
 	>
 		{#each sectionNames as item, i}
 			<button

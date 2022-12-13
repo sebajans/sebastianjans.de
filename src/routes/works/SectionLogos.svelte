@@ -40,24 +40,29 @@
 		</div>
 		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-300 dark:bg-primary-600" />
 	</div>
-	<p class="my-4 mx-6 md:mr-8 md:w-2/3 md:text-right text-left w-auto">
-		<T
-			keyName="logo-design-paragraph"
-			defaultValue="These logotypes show some of my previous logo design works."
-		/>
-	</p>
-	<div class="h-[calc(100vh_-_5.5rem)] w-full grid grid-rows-3 gap-y-5 md:gap-y-8">
-		{#each rows as row}
-			<div
-				style:transform={`translate3d(calc(${row.movement} * ${sectionScroll}%),0, 0)`}
-				class="relative flex space-x-5 md:space-x-8 "
-			>
-				{#each LogoItems.sort(() => row.randomnumber - Math.random()) as logo}
-					<div
-						class="{logo.class} transform bg-contain bg-no-repeat bg-center bg-origin-content rounded-md shadow-lg shadow-primary-400/60 dark:shadow-primary-600/50 h-full aspect-square w-full p-4 md:p-8"
-					/>
-				{/each}
-			</div>
-		{/each}
+	<div class="my-auto h-[70vh] w-screen">
+		<div class="md:ml-40 flex justify-center">
+
+			<p class="max-w-4xl my-4 px-3 md:mx-auto md:text-right text-left w-full ">
+				<T
+				keyName="logo-design-paragraph"
+				defaultValue="These logotypes show some of my previous logo design works."
+				/>
+			</p>
+		</div>
+		<div class="h-[calc(100vh_-_5.5rem)] w-full grid grid-rows-3 gap-y-5 md:gap-y-8">
+			{#each rows as row}
+				<div
+					style:transform={`translate3d(calc(${row.movement} * ${sectionScroll}%),0, 0)`}
+					class="relative flex space-x-5 md:space-x-8 "
+				>
+					{#each LogoItems.sort(() => row.randomnumber - Math.random()) as logo}
+						<div
+							class="{logo.class} transform bg-contain bg-no-repeat bg-center bg-origin-content rounded-md shadow-lg shadow-primary-400/60 dark:shadow-primary-600/50 h-full aspect-square w-full p-4 md:p-8"
+						/>
+					{/each}
+				</div>
+			{/each}
+		</div>
 	</div>
 </section>
