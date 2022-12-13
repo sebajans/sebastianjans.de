@@ -1,11 +1,11 @@
 <script type="ts">
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
+	import { nightMode } from '$lib/stores/nightMode';
 
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 0, windowHeight);
-
 	let srcRenaImg1 = 'img/website-rena-front-1.webp';
 	let srcRenaImg2 = 'img/website-rena-front-2.webp';
 	let srcRenaLogo = '../logos/logo-rj-l.webp';
@@ -38,8 +38,7 @@
 		<div
 			id="rena-logo"
 			style:transform={`translate3d(0,calc(200% - ${sectionScroll}* 200%), 0)`}
-			style="background-image: url('{srcRenaLogo}')"
-			style:dark="background-image: url('{srcRenaLogoDark}')"
+			style:background-image={$nightMode ? `url('${srcRenaLogo}')` : `url('${srcRenaLogoDark}')` }
 			class="row-[1_/_span_2] col-[1_/_span_4] bg-contain bg-no-repeat bg-top bg-origin-content dark:bg-[url('{srcRenaLogoDark}')]"
 		/>
 
