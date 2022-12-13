@@ -11,7 +11,6 @@
 	function expandMenu() {
 		langExpanded = !langExpanded;
 	}
-	console.log($languageStore)
 </script>
 
 <!-- <select bind:value={$languageStore} class="lang-selector">
