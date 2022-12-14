@@ -27,7 +27,7 @@
 	});
 	
 	const tolgeeConfig = {
-		preloadFallback: false,
+		preloadFallback: true,
 		staticData: {
 			en: localeEn,
 			es: localeEs,

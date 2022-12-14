@@ -13,8 +13,8 @@
 	let profilePicture = 'img/profile-pic.jpg';
 
 	let visible = false;
-	let animationspeed: any;
-	let animationdelay: any;
+	let animationspeed: number;
+	let animationdelay: number;
 	afterNavigate(({ from }) => {
 		animationspeed = from === null ? 0.08 : 1;
 		animationdelay = from === null ? 1 : 0;
@@ -55,12 +55,13 @@
 <section
 	class="relative w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative flex flex-col h-auto w-full max-w-2xl pt-[10vh] my-auto mx-auto ">
+	<div class="relative pb-[100vh] flex flex-col w-full max-w-2xl my-auto mx-auto ">
 		{#if visible}
+		<div class="absolute inset-0 pt-8 sm:pt-10 md:pt-12 h-full min-h-max flex flex-col justify-center items-center">
 			<span
 				style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
-				class="w-full z-10 select-none text-primary-500 font-bold font-display text-left leading-[0.2]
-				text-[clamp(0px,32vw,100vw)] sm:text-[clamp(0px,32vw,13rem)] lg:text-[clamp(0px,32vw,16rem)]"
+				class="w-full select-none text-primary-500 font-bold font-display text-left leading-[0.2] h-auto
+				text-[clamp(10vh,30vh,30vw)]"
 				in:typewriter={{ speed: animationspeed * 0.15, delay: 100 * animationdelay }}
 			>
 				{$t({ key: 'hello', defaultValue: 'Hello' })}
@@ -68,62 +69,65 @@
 			<span
 				style:transform={`translate3d(0, ${scroll * -2}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.2, delay: 750 * animationdelay }}
-				class="w-full select-none font-display italic text-right leading-[0.5]
-				text-[clamp(0px,16vw,20vw)] sm:text-[clamp(4rem,11vw,10rem)] lg:text-[clamp(0px,10vw,8rem)]"
+				class="w-full select-none font-display italic text-right leading-[0.5] h-auto
+				text-[clamp(5vh,15vh,28vw)]"
 			>
 				{$t({ key: 'and', defaultValue: 'and' })}
 			</span>
 			<span
 				style:transform={`translate3d(0, ${scroll * -0.8}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.3, delay: 1100 * animationdelay }}
-				class="w-full z-10 select-none text-primary-600 dark:text-primary-300 font-bold font-display italic text-center leading-[1.4]
-				text-[clamp(1rem,16vw,100vw)] sm:text-[clamp(0px,22vw,6.2rem)] lg:text-[clamp(0px,20vw,8rem)]"
+				class="w-full z-10 select-none text-primary-600 dark:text-primary-300 font-bold font-display italic text-center leading-[1.2] h-auto
+				text-[clamp(5vh,14vh,13vw)]"
 			>
 				{$t({ key: 'welcome', defaultValue: 'welcome' })}
 			</span>
 			<span
 				style:transform={`translate3d(0, ${scroll * -4}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.3, delay: 1500 * animationdelay }}
-				class="w-full select-none font-display font-bold text-left leading-[0.2]
-				text-[clamp(0px,8vw,30vw)] sm:text-[clamp(0px,7vw,3.7rem)] lg:text-[clamp(0px,8vw,5.5rem)]"
+				class="w-full select-none font-display font-bold text-left leading-[0.2] h-auto
+				text-[clamp(2vh,6vh,10vw)]"
 			>
 				{$t({ key: 'to_my', defaultValue: 'to my' })}
 			</span>
 			<span
 				style:transform={`translate3d(0, ${scroll * -2.8}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.2, delay: 1750 * animationdelay }}
-				class="w-full select-none italic font-normal font-display text-right leading-[0]
-			text-[clamp(0px,16vw,100vw)] sm:text-[clamp(0px,9vw,10rem)] lg:text-[clamp(0px,9vw,6rem)]"
+				class="w-full select-none italic font-normal font-display text-right leading-[0] h-auto
+				text-[clamp(1rem,8vh,10vw)]"
 			>
 				{$t({ key: 'online', defaultValue: 'Online' })}
 			</span>
 			<span
 				style:transform={`translate3d(0, ${scroll * -1}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.15, delay: 1900 * animationdelay }}
-				class="w-full z-10 select-none text-primary-300 dark:text-primary-600 italic font-bold font-display text-center leading-[1]
-			text-[clamp(0px,19vw,100vw)] sm:text-[clamp(0px,18vw,7.5rem)] lg:text-[clamp(0px,20vw,10rem)]"
+				class="w-full z-10 select-none text-primary-300 dark:text-primary-600 italic font-bold font-display text-center leading-[1] h-auto
+				text-[clamp(5vh,16vh,16vw)]"
 			>
 				{$t({ key: 'Portfolio', defaultValue: 'Portfolio!' })}
 			</span>
 			<p
 				in:fly={{ y: 50, duration: 650, delay: 2300 * animationdelay }}
-				class="my-auto md:mt-20 md:mb-0 w-full pb-10 font-light font-sans text-base text-center leading-loose sm:text-xl "
+				class="pt-8 leading-tight w-full font-light font-sans text-base text-center sm:text-xl"
 			>
-				<span class="font-medium">
+				<span class=" font-medium">
 					{$t({
 						key: 'Introduction-text-b',
 						defaultValue: 'My name is Sebastian Jans.'
 					})}
 				</span>
-				<span class="sm:hidden"><br/></span>
+				<span class=" sm:hidden"><br/></span>
 				{$t({
 					key: 'Introduction-text',
 					defaultValue: 'I am a Product Designer.'
 				})}
 			</p>
+		</div>
 		{/if}
 	</div>
-	<ButtonScrollToSection section={'aboutme'}>About me</ButtonScrollToSection>
+	<ButtonScrollToSection section={'aboutme'}>
+		{$t({ key: 'about-me', defaultValue: 'About me' })}
+	</ButtonScrollToSection>
 </section>
 <section
 	id="aboutme"
@@ -131,7 +135,7 @@
 >
 	<div class=" sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
-			{$t({ key: 'front-about', defaultValue: 'About me' })}
+			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
 		<div class="pb-20 flex flex-row w-full flex-wrap md:flex-nowrap justify-center">
 			<img
@@ -164,7 +168,7 @@
 				</p>
 			</div>
 		</div>
-		<ButtonScrollToSection section={'cv_jobs'}>Work Experience</ButtonScrollToSection>
+		<ButtonScrollToSection section={'cv_jobs'}>{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</ButtonScrollToSection>
 	</div>
 </section>
 
@@ -173,7 +177,7 @@
 	id="cv_jobs"
 >
 	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
-		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Work Experience</h1>
+		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</h1>
 		{#each cvItems as item}
 			{#if item.category === 'job'}
 				<!-- {@const frMonth = String(item.fromMonth)} -->
@@ -201,7 +205,7 @@
 			{/if}
 		{/each}
 	</div>
-	<ButtonScrollToSection section={'cv_edu'}>My Education</ButtonScrollToSection>
+	<ButtonScrollToSection section={'cv_edu'}>{$t({ key: 'my-education', defaultValue: 'My Education' })}</ButtonScrollToSection>
 </section>
 
 <section
@@ -209,7 +213,7 @@
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
-		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">Education</h1>
+		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'my-education', defaultValue: 'My Education' })}</h1>
 		{#each cvItems as item}
 			{#if item.category === 'education'}
 				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
