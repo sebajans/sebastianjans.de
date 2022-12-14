@@ -42,7 +42,6 @@
 	let windowHeight: number;
 	let animate = false;
 	onMount(() => (animate = true));
-	// $: scroll > windowHeight * 0.3 ? (animate = true) : (animate = false);
 
 
 	let popup: any;
@@ -166,4 +165,3 @@
 		{/each}
 	{/if}
 </div>
-<!-- </div> -->

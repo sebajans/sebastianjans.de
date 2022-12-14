@@ -946,15 +946,15 @@
 					 w-full pl-6 self-start text-justify transform transition-all duration-500 relative"
 				>
 					<p>
-						This table was one of my first projects. I designed it myself and customized it to suit
+						<T keyName="description-product-design-2" defaultValue="This table was one of my first projects. I designed it myself and customized it to suit
 						all my needs. With the organic cutout in the middle everything is reachable while
-						maximizing space.
+						maximizing space." />
 					</p>
 					<button
 						class="uppercase font-sans bg-primary-800 w-auto ml-auto my-auto md:hidden px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
 						on:click={() => (moveToRight = !moveToRight)}
 					>
-						Change view
+					<T keyName="change-view-button" defaultValue="Change view" />
 					</button>
 				</div>
 			{/if}

@@ -64,13 +64,13 @@
 					<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
 					<div>
 						<label for="Full_name" class="label"
-							>Full Name
+							><T keyName="full-name" defaultValue="Full Name"/>
 						</label>
 						<input class="input" name="$Full_name" type="text" placeholder="John" required />
 					</div>
 					<div>
 						<label for="email" class="label"
-							>Email address</label
+							><T keyName="email-address" defaultValue="Email address"/></label
 						>
 						<input
 							type="email"
@@ -81,12 +81,13 @@
 						/>
 					</div>
 					<div>
-						<label for="phone" class="label">Phone Number <span class="font-light">(optional)</span></label>
+						<label for="phone" class="label"><T keyName="Phone-number" defaultValue="Phone number"/>
+							<span class="font-light">(<T keyName="optional" defaultValue="optional"/>)</span></label>
 						<!-- https://stackoverflow.com/questions/17260238/how-to-insert-space-every-4-characters-for-iban-registering -->
 						<input type="tel" name="phone" class="input" placeholder="+49 123 456 78" />
 					</div>
 					<div>
-						<label for="company" class="label">Company <span class="font-light">(optional)</span></label>
+						<label for="company" class="label"><T keyName="Company" defaultValue="Company"/><span class="font-light">(<T keyName="optional" defaultValue="optional"/>)</span></label>
 						<input type="text" name="company" class="input" placeholder="Google" />
 					</div>
 					<!-- <div>
@@ -95,7 +96,7 @@
 					</div> -->
 					<div class="col-span-2">
 						<label for="message" class="label"
-							>Your Message</label
+							><T keyName="Your-message" defaultValue="Your Message"/></label
 						>
 						<textarea name="message" class="h-20 input" placeholder="Enter your message" required />
 					</div>
@@ -111,10 +112,10 @@
 							<label
 								for="remember"
 								class="ml-2 text-sm font-medium w-full text-primary-50 dark:text-primary-900"
-								>I agree with the <button
+								><T keyName="i-agree" defaultValue="I agree with the "/><button
 									on:click={openPopup}
 									class="group font-bold text-primary-500 dark:text-primary-700 hover:text-primary-400 dark:hover:text-primary-600"
-									>terms and conditions.
+									><T keyName="terms-and-conditions" defaultValue="terms and conditions."/>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										class="h-3.5 w-3.5 before:p-1 inline align-baseline transition duration-250 -0.5"
@@ -136,7 +137,7 @@
 					<button
 						type="submit"
 						class="col-span-2 font-sans tracking-wide text-base sm:col-span-1 text-primary-900 dark:text-primary-50 bg-primary-300 hover:bg-primary-400 dark:hover:bg-primary-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md  w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800"
-						>Submit</button
+						><T keyName="Submit" defaultValue="Submit"/></button
 ><input type="hidden" name="form-name" value="contact">
 					<!-- <input class="hidden" type="text" name="honeypot" /> -->
 					<!-- Spam protection -->
