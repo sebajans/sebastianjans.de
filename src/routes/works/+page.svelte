@@ -13,6 +13,13 @@
 	import SectionProductDesign from './SectionProductDesign.svelte';
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 
+// 	let load = () => {
+//   let performAnimation: boolean = false;
+//   return {
+//     // remove the props object 
+//     performAnimation
+//   }
+// }
 	// Tolgee t translation
 	const t = getTranslate();
 

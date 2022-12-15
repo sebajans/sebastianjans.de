@@ -29,6 +29,7 @@
 				: `url('${srcKamadoLogo}')`}
 			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-top bg-no-repeat bg-origin-content md:col-[7_/_span_4] md:row-[1_/_span_2]"
 		/>
+		<!-- PHONE -->
 		<div
 			class="col-[5_/_span_4] row-[3_/_span_7] flex h-full w-full justify-end md:col-[1_/_span_4] md:row-[1_/_span_12]"
 		>
@@ -57,13 +58,14 @@
 				/>
 			</div>
 		</div>
+		<!-- BROSWER -->
 		<div
-			class="col-[1_/_span_8] row-[3_/_span_5] flex h-full w-full -translate-x-1/3 justify-end bg-primary-400 md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
+			class="col-[1_/_span_8] row-[3_/_span_5] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
 		>
 			<div
 				id="kb10-browser-front"
 				style:transform={`translate3d(0,calc(100% - 100 * ${sectionScroll}%), 0)`}
-				class="h-full w-auto self-center rounded-lg bg-primary-200/80  p-1 shadow-md shadow-primary-800/20 backdrop-blur-sm dark:bg-primary-700/60"
+				class="h-full w-auto self-center rounded-lg aspect-[14/10] bg-primary-200/80  p-1 shadow-md shadow-primary-800/20 backdrop-blur-sm dark:bg-primary-700/60"
 			>
 				<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 					{#each Array(3) as _}
@@ -72,14 +74,14 @@
 				</div>
 				<img
 					alt="website-kamado-front"
-					class="h-[calc(100%_-_1rem)] rounded-lg object-contain md:h-[calc(100%_-_1.75rem)]"
+					class="h-[calc(100%_-_1rem)] rounded-lg object-cover md:h-[calc(100%_-_1.75rem)]"
 					src={srcKamadoFront}
 				/>
 			</div>
 		</div>
 
 		<p
-			class="col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
+			class="col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3] h-auto md:mt-auto "
 			style:transform={`translate3d(calc(200% - ${sectionScroll} * 200%),0, 0)`}
 		>
 			<T

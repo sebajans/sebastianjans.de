@@ -5,11 +5,12 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { T, getTranslate } from '@tolgee/svelte';
-	import { categories } from './+page';
+	import { categories } from './skillItems';
 	import { afterNavigate } from '$app/navigation';
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
 	import Popup from '../../components/Popup.svelte';
+	import { debug } from 'svelte/internal';
 
 	mainClass.set('pt-28');
 
@@ -38,8 +39,6 @@
 		visible = true;
 	});
 
-	let scroll: number;
-	let windowHeight: number;
 	let animate = false;
 	onMount(() => (animate = true));
 
@@ -54,8 +53,6 @@
 <svelte:head>
 	<title>Skills</title>
 </svelte:head>
-
-<svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <div class="columns-1 md:columns-2 space-y-10 gap-10 pb-20 max-w-4xl justify-center items-center mx-auto my-auto">
 	{#if visible}

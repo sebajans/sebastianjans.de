@@ -18,7 +18,7 @@
 
 <section
 	id="websites"
-	class="bg-primary-200/50 md:pl-44 dark:bg-primary-700/50 w-full flex flex-col relative h-screen h-screen-ios overflow-y-hidden justify-center items-center"
+	class="bg-primary-200/50 md:pl-44 dark:bg-primary-700/50 w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
 >
 	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
 		<div class="w-[calc(100vw_-_56rem)] h-auto" />
@@ -48,7 +48,7 @@
 			<div
 				id="rj-browser-window"
 				style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400% ), 0)`}
-				class=" h-full w-fit shadow-xl backdrop-blur-sm p-0.5 md:p-1 bg-primary-300/80 dark:bg-primary-700/60 flex flex-col rounded-md md:rounded-lg z-10 "
+				class=" h-full w-fit shadow-xl aspect-[14/10] backdrop-blur-sm p-0.5 md:p-1 bg-primary-300/80 dark:bg-primary-700/60 flex flex-col rounded-md md:rounded-lg z-10 "
 			>
 				<div class="w-full flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
 					{#each Array(3) as _}
@@ -67,7 +67,7 @@
 		>
 			<div
 				style:transform={`translate3d(0,calc(40% - 40 * ${sectionScroll}%), 0)`}
-				class="h-full w-fit self-center  shadow-primary-900/50 shadow-lg backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-800/50 flex flex-col rounded-lg"
+				class="h-full w-fit self-center aspect-[14/10] shadow-primary-900/50 shadow-lg backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-800/50 flex flex-col rounded-lg"
 			>
 				<div class="relative flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
 					{#each Array(3) as _}
