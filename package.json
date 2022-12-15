@@ -17,7 +17,7 @@
 		"@playwright/test": "^1.28.1",
 		"@rvxlab/tailwind-plugin-ios-full-height": "^1.1.0",
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-netlify": "1.0.0-next.84",
+		"@sveltejs/adapter-netlify": "1.0.0",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.46.1",
 		"@typescript-eslint/parser": "^5.46.1",
