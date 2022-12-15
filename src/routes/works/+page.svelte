@@ -51,7 +51,7 @@
 				alt={item.id}
 				class="md:py-4 py-2 backdrop-blur-md  duration-300 delay-[50] rounded-l-lg text-left w-full pl-3 transition-all {item.color} "
 			>
-				<T keyName="{item.text}-works" defaultValue={item.text} />
+				<T keyName="works-{item.id}" defaultValue={item.text} />
 			</button>
 		{/each}
 	</div>

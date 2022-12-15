@@ -13,7 +13,11 @@
   h3 {
       @apply text-lg font-sans;
   }
-
+  p {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
   p {
       @apply text-primary-900 dark:text-primary-100;
   }

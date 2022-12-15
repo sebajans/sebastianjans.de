@@ -61,7 +61,7 @@
 			<span
 				style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
 				class="w-full select-none text-primary-500 font-bold font-display text-left leading-[0.2] h-auto
-				text-[clamp(10vh,30vh,30vw)]"
+				text-[clamp(10vh,30vh,15rem)]"
 				in:typewriter={{ speed: animationspeed * 0.15, delay: 100 * animationdelay }}
 			>
 				{$t({ key: 'hello', defaultValue: 'Hello' })}
@@ -70,7 +70,7 @@
 				style:transform={`translate3d(0, ${scroll * -2}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.2, delay: 750 * animationdelay }}
 				class="w-full select-none font-display italic text-right leading-[0.5] h-auto
-				text-[clamp(5vh,15vh,28vw)]"
+				text-[clamp(5vh,15vh,6rem)]"
 			>
 				{$t({ key: 'and', defaultValue: 'and' })}
 			</span>
@@ -78,7 +78,7 @@
 				style:transform={`translate3d(0, ${scroll * -0.8}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.3, delay: 1100 * animationdelay }}
 				class="w-full z-10 select-none text-primary-600 dark:text-primary-300 font-bold font-display italic text-center leading-[1.2] h-auto
-				text-[clamp(5vh,14vh,13vw)]"
+				text-[clamp(5vh,14vh,7rem)]"
 			>
 				{$t({ key: 'welcome', defaultValue: 'welcome' })}
 			</span>
@@ -86,7 +86,7 @@
 				style:transform={`translate3d(0, ${scroll * -4}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.3, delay: 1500 * animationdelay }}
 				class="w-full select-none font-display font-bold text-left leading-[0.2] h-auto
-				text-[clamp(2vh,6vh,10vw)]"
+				text-[clamp(2vh,6vh,5rem)]"
 			>
 				{$t({ key: 'to_my', defaultValue: 'to my' })}
 			</span>
@@ -94,7 +94,7 @@
 				style:transform={`translate3d(0, ${scroll * -2.8}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.2, delay: 1750 * animationdelay }}
 				class="w-full select-none italic font-normal font-display text-right leading-[0] h-auto
-				text-[clamp(1rem,8vh,10vw)]"
+				text-[clamp(1rem,8vh,5rem)]"
 			>
 				{$t({ key: 'online', defaultValue: 'Online' })}
 			</span>
@@ -102,7 +102,7 @@
 				style:transform={`translate3d(0, ${scroll * -1}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.15, delay: 1900 * animationdelay }}
 				class="w-full z-10 select-none text-primary-300 dark:text-primary-600 italic font-bold font-display text-center leading-[1] h-auto
-				text-[clamp(5vh,16vh,16vw)]"
+				text-[clamp(5vh,16vh,9rem)]"
 			>
 				{$t({ key: 'Portfolio', defaultValue: 'Portfolio!' })}
 			</span>
@@ -133,7 +133,7 @@
 	id="aboutme"
 	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
 >
-	<div class=" sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
+	<div class="sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
@@ -143,7 +143,7 @@
 				alt="profile"
 				class="object-cover object-top md:w-1/5 max-w-[8rem] max-h-[8rem] md:max-w-[16rem]  max-w md:max-h-[16rem] md:h-auto md:grow-0 mb-2 aspect-square rounded-xl"
 			/>
-			<div class="md:pl-4 md:w-475 text-sm md:text-base flex flex-col">
+			<div class="md:pl-4 md:w-4/5 text-sm md:text-base flex flex-col">
 				<p class="md:w-full mb-2 text-justify ">
 					{$t({
 						key: 'front-about-text',
@@ -187,7 +187,7 @@
 					>
 						<img src={item.image} alt={item.name} />
 					</div>
-					<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
+					<div class="md:w-4/5 w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-start">
 						<!-- {@const frMonth = item.fromMonth.toString() } -->
 						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 							<T keyName="{item.name}" defaultValue="{item.name}" />
@@ -199,7 +199,7 @@
 						<p style="-webkit-hyphens: auto;
 						-ms-hyphens: auto;
 						hyphens: auto;" class="text-sm text-justify">
-							<T keyName="{item.info}" defaultValue="{item.info}" /></p>
+							<T keyName="text-{item.name}" defaultValue="{item.info}" /></p>
 					</div>
 				</div>
 			{/if}
@@ -216,13 +216,13 @@
 		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'my-education', defaultValue: 'My Education' })}</h1>
 		{#each cvItems as item}
 			{#if item.category === 'education'}
-				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
+				<div class="w-full sm:w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
 						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
 						<img src={item.image} alt={item.name} />
 					</div>
-					<div class="md:w-4/5 w-full max-w-[16rem] md:max-w-xl flex flex-col justify-start">
+					<div class="sm:w-4/5 w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-start">
 						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 							<T keyName="{item.name}" defaultValue="{item.name}" />
 							
@@ -233,7 +233,7 @@
 						<p style="-webkit-hyphens: auto;
 						-ms-hyphens: auto;
 						hyphens: auto;" class="text-sm text-justify">
-							<T keyName="{item.info}" defaultValue="{item.info}" />
+							<T keyName="text-{item.name}" defaultValue="{item.info}" />
 						</p>
 					</div>
 				</div>

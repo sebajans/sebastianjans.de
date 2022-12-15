@@ -16,56 +16,71 @@
 
 <section
 	id="kamadoB10"
-	class="bg-primary-200/50 dark:bg-primary-700/50 md:pl-44 w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
+	class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-primary-200/50 h-screen-ios dark:bg-primary-700/50 md:pl-44"
 >
-<div
-		class="w-full px-3 max-w-4xl h-[50vh] max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
+	<div
+		class="mx-auto my-auto grid h-[65vh] max-h-[56rem] w-full max-w-4xl grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
 	>
 		<div
 			id="kb10-logo"
 			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
-			style:background-image={$nightMode ? `url('${srcKamadoLogoDark}')` : `url('${srcKamadoLogo}')`}
-			class="row-[1_/_span_2] col-[5_/_span_4] md:col-[9_/_span_4] bg-contain bg-no-repeat bg-top bg-origin-content w-full h-full"
+			style:background-image={$nightMode
+				? `url('${srcKamadoLogoDark}')`
+				: `url('${srcKamadoLogo}')`}
+			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-top bg-no-repeat bg-origin-content md:col-[7_/_span_4] md:row-[1_/_span_2]"
 		/>
-		
 		<div
-			id="kb10-browser-phone"
-			style:transform={`translate3d(calc(100% - 100 * ${sectionScroll}%),0, 0)`}
-			class="row-[4_/_span_6] col-[5_/_span_4] md:row-[3_/_span_7] md:col-[8_/_span_4]  shadow-primary-800/40 shadow-lg backdrop-blur-sm 
-			bg-primary-200/80 dark:bg-primary-700/60 self-center flex flex-col rounded-2xl md:rounded-3xl z-10"
+			class="col-[5_/_span_4] row-[3_/_span_7] flex h-full w-full justify-end md:col-[1_/_span_4] md:row-[1_/_span_12]"
 		>
-			<img
-				alt="website-rena-front-1"
-				class="object-cover object-top aspect-auto rounded-t-[0.75rem] md:rounded-t-[1.25rem] m-1"
-				src={srcKamadoMobile}
-			/>
-			<div class="relative flex mt-1 md:mb-4 mb-2 flex-row space-x-2">
-				<div class="rounded-r-full h-5 md:h-6 w-1 bg-primary-50/80 dark:bg-pimary-90/80" />
-				<span
-					class="rounded-md shadow-lg font-sans text-center text-xs md:text-sm text-primary-900/80 p-0.5 h-5 md:h-6 w-full bg-primary-50/80 dark:bg-pimary-90/80"
-				>
-					kamadob10.eu
-				</span>
-				<div class="rounded-l-full h-5 md:h-6 w-1 bg-primary-50/80 dark:bg-pimary-90/80" />
+			<div
+				id="kb10-browser-phone"
+				style:transform={`translate3d(calc(-100% + 100 * ${sectionScroll}%),0, 0)`}
+				class="relative z-10 aspect-[10/19.6] h-full max-h-[40rem]  w-auto self-center
+			rounded-xl bg-primary-200/80 shadow-lg shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-3xl"
+			>
+				<img
+					alt="website-kamadob10-front-mobile"
+					class="h-[calc(100%_-_2.75rem)] rounded-t-[0.75rem] object-cover object-top px-0.5 pt-0.5 md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+					src={srcKamadoMobile}
+				/>
+				<div class="relative mt-2 mb-2 flex flex-row space-x-2 md:mb-3">
+					<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-r-full bg-primary-50/80 md:h-6" />
+					<span
+						class="dark:bg-pimary-90/80 h-5 w-full rounded-md bg-primary-50/80 p-0.5 text-center font-sans text-xs text-primary-900/80 shadow-lg md:h-6 md:text-sm"
+					>
+						kamadob10.eu
+					</span>
+					<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-l-full bg-primary-50/80 md:h-6" />
+				</div>
+				<div
+					class="absolute bottom-1 left-1/2 h-0.5 w-2/5 -translate-x-1/2 self-center rounded-full bg-primary-50/80 md:h-1"
+				/>
 			</div>
-			<div class=" h-0.5 md:h-1 rounded-full w-2/5 bg-primary-50/80 m-1 self-center" />
 		</div>
-		
 		<div
-			id="kb10-browser-front"
-			style:transform={`translate3d(calc(-75% + 75 * ${sectionScroll}%),0, 0)`}
-			class="row-[3_/_span_4] col-[1_/_span_6] md:row-[1_/_span_6] md:col-[1_/_span_8] self-center shadow-primary-800/20 shadow-md  backdrop-blur-sm p-1 bg-primary-200/80 dark:bg-primary-700/60 flex flex-col rounded-lg"
+			class="col-[1_/_span_8] row-[3_/_span_5] flex h-full w-full -translate-x-1/3 justify-end bg-primary-400 md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
 		>
-			<div class="relative flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
-				{#each Array(3) as _}
-					<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80" />
-				{/each}
+			<div
+				id="kb10-browser-front"
+				style:transform={`translate3d(0,calc(100% - 100 * ${sectionScroll}%), 0)`}
+				class="h-full w-auto self-center rounded-lg bg-primary-200/80  p-1 shadow-md shadow-primary-800/20 backdrop-blur-sm dark:bg-primary-700/60"
+			>
+				<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
+					{#each Array(3) as _}
+						<div class="dark:bg-pimary-90/80 h-2 w-2 rounded-full bg-primary-50/80 md:h-3 md:w-3" />
+					{/each}
+				</div>
+				<img
+					alt="website-kamado-front"
+					class="h-[calc(100%_-_1rem)] rounded-lg object-contain md:h-[calc(100%_-_1.75rem)]"
+					src={srcKamadoFront}
+				/>
 			</div>
-			<img alt="website-kamado-front" class="object-contain  rounded-lg" src={srcKamadoFront} />
 		</div>
+
 		<p
-			class="row-[9_/_span_4] col-[1_/_span_4] md:row-[8_/_span_2] md:col-[1_/_span_6] text-justify"
-			style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400%), 0)`}
+			class="col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
+			style:transform={`translate3d(calc(200% - ${sectionScroll} * 200%),0, 0)`}
 		>
 			<T
 				keyName="works-p-kamado"
@@ -74,4 +89,4 @@
 		</p>
 	</div>
 </section>
-			<!-- before:h-4 before:rounded-b-md before:w-1/2 before:bg-primary-700/70 before:backdrop-blur-xl before:absolute before:mt-1 before:left-1/2 before:-translate-x-1/2  -->
+<!-- before:h-4 before:rounded-b-md before:w-1/2 before:bg-primary-700/70 before:backdrop-blur-xl before:absolute before:mt-1 before:left-1/2 before:-translate-x-1/2  -->
