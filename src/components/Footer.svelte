@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import Popup from "./Popup.svelte";
 	import TermsOfService from "./TermsOfService.svelte";
 	import { T } from "@tolgee/svelte";

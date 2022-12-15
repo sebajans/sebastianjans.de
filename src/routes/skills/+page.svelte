@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
@@ -139,8 +139,6 @@
 					</h3>
 					<div class="relative flex flex-col justify-left">
 						<div class="flex flex-row space-x-[5.7%]">
-							<!-- 4.6% for 4 -->
-							<!-- slider background -->
 							<span class="w-0.5 h-5" />
 							{#each Array(4) as _}
 								{#each Array(3) as _}

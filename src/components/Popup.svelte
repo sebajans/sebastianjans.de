@@ -1,5 +1,5 @@
 <!-- Popup.svelte -->
-<script type="ts">
+<script lang="ts">
 	let visible = false;
 	import { fade } from 'svelte/transition';
 

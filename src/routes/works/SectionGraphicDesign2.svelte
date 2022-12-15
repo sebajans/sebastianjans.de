@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 

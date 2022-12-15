@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import { mainClass } from '$lib/stores/mainClass';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { T, getTranslate } from '@tolgee/svelte';

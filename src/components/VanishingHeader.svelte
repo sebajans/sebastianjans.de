@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	import { beforeUpdate } from 'svelte';
 	import Logo from '../components/Logo.svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';

@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
 	export function scrollIntoView({ target }: { target: any }) {
 		const el = document.querySelector(target.getAttribute('href'));
 		if (!el) return;
