@@ -2,8 +2,6 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { draw, fade } from 'svelte/transition';
-	// let srcRenaImg1 = 'img/website-rena-front-1.webp';
-	// let srcRenaImg2 = 'img/website-rena-front-2.webp';
 
 	let moveToRight: boolean = false;
 
@@ -39,7 +37,7 @@
 		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-500 dark:bg-primary-400" />
 	</div>
 
-	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center">
+	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
 		<div class=" md:pl-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2">
 			{#if showProduct}
 				<div class="{moveToRight
