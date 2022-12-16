@@ -1,4 +1,4 @@
-export const categories = {
+export const skillItems = {
   Webdesign: {
     categorydescription:
       'I am always learning about the newest advancements in the world of web development.',

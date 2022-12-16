@@ -5,7 +5,7 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { T, getTranslate } from '@tolgee/svelte';
-	import { categories } from './skillItems';
+	import { skillItems } from './skillItems';
 	import { afterNavigate } from '$app/navigation';
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
@@ -97,14 +97,14 @@
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
-						href="CV/CV_EN.pdf"
+						href="CV/CV_DE.pdf"
 					>
 						ES</a
 					>
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
-						href="CV/CV_EN.pdf"
+						href="CV/CV_ES.pdf"
 					>
 						DE</a
 					>
@@ -112,7 +112,7 @@
 			</Popup>
 		</div>
 
-		{#each Object.entries(categories) as [categoryName, skills], i}
+		{#each Object.entries(skillItems) as [categoryName, skills], i}
 			<div
 				style:transform={`translateZ(0)`}
 				in:fly={{ y: 30, duration, delay: (150 + i * 150) * firstdelay }}

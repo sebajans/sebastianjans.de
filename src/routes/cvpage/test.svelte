@@ -15,6 +15,8 @@ function updatePosition(event:any) {
 	<title>Skills</title>
 </svelte:head>
 
+
+
 <div class="relative w-full h-full">
 	<img class=" relative h-full w-full" alt="test" src="/img/1.webp">
 	<div class="absolute top-0 right-0 backdrop-blur-md w-full h-full bg-primary-50/50 z-10"></div>
