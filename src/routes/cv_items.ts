@@ -10,7 +10,7 @@ export let cvItems = [
     fromMonth: '08',
     toYear: '2022',
     toMonth: '04',
-    shortdescription: 'Webdesign, Printing Materials, Marketing, SEO, Manufactoring',
+    shortdescription: 'Webdesign, Printing Materials, Marketing, Manufactoring',
     info: 'I worked as a Web and Graphic Designer. As this was a Start-Up company, i was also involved in the manufacturing process. I learned about the inner workings of the company and was therefore also able to focus on the key aspects of the company in the marketing materials.'
   },
   {
@@ -24,7 +24,7 @@ export let cvItems = [
     fromMonth: '08',
     toYear: '2020',
     toMonth: '08',
-    shortdescription: 'Laboratory work, preparation of samples, Office applications',
+    shortdescription: 'Laboratory work, preparation of samples, MS Office use',
     info: 'In this Institute i worked as a Research Assistant. I learned a lot about the research process and the importance of attention to detail. I also gained experience in conducting experiments and collecting and analyzing data. I also learned the importance of being organized and keeping accurate records of my work.'
   },
   {
@@ -45,8 +45,8 @@ export let cvItems = [
     category: 'education',
     id: 1,
     image: 'img/logo_UPV_principal.svg',
-    name: 'Master of Science in Design Engineering',
-    role: 'student',
+    name: 'M. Eng. in Design Engineering',
+    role: 'Universitat Politécnica de Valencia',
     location: 'Valencia, ES',
     fromYear: '2021',
     fromMonth: '09',
@@ -59,14 +59,14 @@ export let cvItems = [
     category: 'education',
     id: 2,
     image: 'img/logo-uni-stuttgart.svg',
-    name: 'Bachelor of Science in Materials Science',
-    role: 'student',
+    name: 'B. Sc. in Materials Science',
+    role: 'University of Stuttgart',
     location: 'Stuttgart, DE',
     fromYear: '2016',
     fromMonth: '10',
     toYear: '2020',
     toMonth: '09',
-    shortdescription: '',
+    shortdescription: 'Fundamentals of Materials Science, Material properties and behavior, metals, plastics, ceramics',
     info: 'University of Stuttgart. As a materials science major, I learned about the properties and behavior of different materials, such as metals, ceramics, and polymers. Additionally, I gained experience in conducting experiments and analyzing data to better understand the behavior of materials.'
   },
   {
@@ -74,13 +74,13 @@ export let cvItems = [
     id: 3,
     image: 'img/logo_gympl.jpg',
     name: 'High School Graduation',
-    role: 'student',
+    role: 'Gymnasium Plochingen',
     location: 'Plochingen, DE',
     fromYear: '2007',
     fromMonth: '11',
     toYear: '2015',
     toMonth: '07',
-    shortdescription: '',
+    shortdescription: 'Highest degree of general education in Germany, favorite subjects were math, physics and art',
     info: 'Gymnasium Plochingen. In High school, my favorite subjects were math, physics and art. I always liked logic and wanted to figure out how things work, while trying to live out my creative side.'
   }
 ];

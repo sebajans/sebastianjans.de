@@ -78,3 +78,17 @@
       @apply bg-primary-700 dark:bg-primary-600 transition-all duration-200
     }
   }
+
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #section-to-print, #section-to-print * {
+      visibility: visible;
+    }
+    #section-to-print {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }

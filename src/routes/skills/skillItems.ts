@@ -24,8 +24,8 @@ export const skillItems = {
       'All the important tools to provide assets for most graphic design needs.',
     categoryArray: [
       { name: 'Affinity Photo & Photoshop', progress: 'w-[75.5%] ' },
-      { name: 'Affinity Publisher & Adobe InDesign', progress: 'w-[75.5%] ' },
-      { name: 'Affinity Designer & Adobe Illustrator', progress: 'w-[100.5%] ' },
+      { name: 'Affinity Publisher & InDesign', progress: 'w-[75.5%] ' },
+      { name: 'Affinity Designer & Illustrator', progress: 'w-[100.5%] ' },
       { name: 'Figma', progress: 'w-[25.5%] ' }
     ]
   },

@@ -33,17 +33,17 @@
 	</div>
 
 	<div
-		class="w-full px-3 max-w-4xl h-[50vh] max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
+		class="w-full px-3 max-w-4xl h-[65vh] max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
 	>
 		<div
 			id="rena-logo"
 			style:transform={`translate3d(0,calc(200% - ${sectionScroll}* 200%), 0)`}
 			style:background-image={$nightMode ? `url('${srcRenaLogoDark}')` : `url('${srcRenaLogo}')`}
-			class="row-[1_/_span_2]  col-[1_/_span_4] sm:row-[1_/_span_3] sm:col-[1_/_span_] bg-contain bg-no-repeat bg-top bg-origin-content"
+			class="row-[1_/_span_2] col-[1_/_span_4] sm:row-[1_/_span_3] sm:col-[1_/_span_] bg-contain bg-no-repeat bg-top bg-origin-content"
 		/>
 
 		<div
-			class="row-[3_/_span_5]  col-[2_/_span_7] sm:row-[4_/_span_10] sm:col-[1_/_span_5] w-full h-full flex mx-auto justify-end"
+			class="row-[3_/_span_6]  col-[2_/_span_7] sm:row-[4_/_span_10] sm:col-[1_/_span_5] w-full h-full flex mx-auto justify-end translate-x-12 z-10"
 		>
 			<div
 				id="rj-browser-window"
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		<div
-			class="row-[6_/_span_3]  col-[1_/_span_5]  sm:row-[1_/_span_8] sm:col-[5_/_span_6] w-full h-full flex mx-auto justify-start"
+			class="row-[5_/_span_5]  col-[1_/_span_5]  sm:row-[1_/_span_8] sm:col-[5_/_span_6] w-full h-full flex mx-auto justify-start sm:justify-start"
 		>
 			<div
 				style:transform={`translate3d(0,calc(40% - 40 * ${sectionScroll}%), 0)`}
