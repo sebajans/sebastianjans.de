@@ -52,7 +52,7 @@
 		: '-translate-y-full md:translate-y-0 h-20 max-h-16 '} fixed duration-300 top-0 w-full  flex z-40 transition-all backdrop-blur-md dark:bg-primary-900/40 bg-primary-50/40"
 >
 	<!-- <slot/> -->
-		<a href="/" class="{headerClass || showHeader
+		<a aria-label="Back to Home" href="/" class="{headerClass || showHeader
 			? 'w-20 h-20 md:left-2 top-2'
 			: 'w-16 h-16 '} md:fixed top-0 absolute md:left-0 left-1/2 transition-all duration-150 -translate-x-1/2 md:translate-x-0  md:inset-x-0  z-50 group">
 			<Logo className={headerClass || showHeader ? 'w-16 h-16' : 'w-12 h-12'} />

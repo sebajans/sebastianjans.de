@@ -141,7 +141,7 @@
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
 		<div class="pb-20 flex flex-row w-full flex-wrap md:flex-nowrap justify-center">
-			<img
+			<img width="16rem" height="16rem"
 				src={profilePicture}
 				alt="profile"
 				class="object-cover object-top md:w-1/5 max-w-[8rem] max-h-[8rem] md:max-w-[16rem]  max-w md:max-h-[16rem] md:h-auto md:grow-0 mb-2 aspect-square rounded-xl"
@@ -188,7 +188,7 @@
 					<div
 						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
-						<img src={item.image} alt={item.name} />
+						<img width="16rem" height="16rem" class="w-full h-full" src={item.image} alt={item.name} />
 					</div>
 					<div class="md:w-4/5 w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-start">
 						<!-- {@const frMonth = item.fromMonth.toString() } -->
@@ -223,7 +223,7 @@
 					<div
 						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
-						<img src={item.image} alt={item.name} />
+						<img width="16rem" height="16rem" src={item.image} alt={item.name} />
 					</div>
 					<div class="sm:w-4/5 w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-start">
 						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
