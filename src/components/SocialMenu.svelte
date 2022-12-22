@@ -9,16 +9,12 @@
 
 
 <div class="flex flex-row space-x-2 h-10">
-  {#each socialMedia as { socialLink, socialIcon }}
-    <SocialMediaButton {socialLink} {socialIcon} />
+  {#each socialMedia as { socialLink, socialIcon, socialMediaName }}
+    <SocialMediaButton {socialLink} {socialIcon} {socialMediaName} />
   {/each}
   <div class="h-10 justify-center w-0.5 rounded-full bg-primary-900 dark:bg-primary-50" />
   <DarkModeButton />
   <!-- Language switcher comes here DE/EN/ES expandable menu -->
 	<LanguageSwitcher />
-  <!-- <select bind:value={$languageStore} class="appearance-none rounded-md text-base px-3 font-sans items-center text-center content-center flex flex-row w-10 h-10 bg-primary-900 text-primary-50 hover:text-primary-500">
-    <option value="en">EN</option>
-    <option value="de">DE</option>
-    <option value="es">ES</option>
-  </select> -->
+
 </div>

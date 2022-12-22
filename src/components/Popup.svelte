@@ -28,7 +28,8 @@
 		class="absolute w-auto top-20 h-auto z-50 "
 	>
 		<div
-			class="{popupClass} hover:shadow-primary-600/80 shadow-primary-600/50 transition-all duration-500 delay-75 pl-2.5 pr-4 py-4 rounded-lg shadow-lg"
+			class="{popupClass} hover:shadow-primary-600/80 shadow-primary-600/50 transition-all duration-500 delay-75 pl-2.5 pr-4 py-4 rounded-lg shadow-lg text-primary-50 dark:text-primary-900
+			"
 		>
 			<slot />
 			<button

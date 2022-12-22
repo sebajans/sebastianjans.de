@@ -1,5 +1,6 @@
 export const socialMedia = [
   {
+    socialMediaName: 'LinkedIn',
     socialLink: 'https://www.linkedin.com/in/sebajans/',
     socialIcon: `<svg class="m-0.5"
     xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +29,7 @@ C310,145.43,300.549,94.761,230.454,94.761z"
 
   },
   {
+    socialMediaName: 'Instagram',
     socialLink: 'https://www.instagram.com/se.ja.design/',
     socialIcon: `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,6 +40,7 @@ C310,145.43,300.549,94.761,230.454,94.761z"
 </svg>`
   },
   {
+    socialMediaName: 'Send me an E-Mail',
     socialLink: 'mailto:sebajans@icloud.com',
     socialIcon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />

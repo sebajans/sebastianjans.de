@@ -3,6 +3,7 @@
 </script>
 
 <button
+	aria-label="DarkModeToggle"
 	class="p-2 h-10 w-10 relative overflow-hidden rounded-md transition-colors duration-250 hover:text-primary-500 dark:hover:text-primary-500 bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900 "
 	on:click={nightMode.toggleDarkMode}
 >

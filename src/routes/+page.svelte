@@ -10,7 +10,7 @@
 	mainClass.set('pt-0');
 
 	const t = getTranslate();
-	let profilePicture = 'img/profile-pic.jpg';
+	let profilePicture = 'img/profile-pic.webp';
 
 	let visible = false;
 	let animationspeed: number;
@@ -47,8 +47,11 @@
 	let scroll: any;
 </script>
 
+
+
 <svelte:head>
 	<title>Welcome</title>
+	<meta name="description" content="Online Portfolio for Sebastian Jans, a Product and Graphic Designer.">
 </svelte:head>
 <svelte:window bind:scrollY={scroll} />
 
@@ -101,7 +104,7 @@
 			<span
 				style:transform={`translate3d(0, ${scroll * -1}px, 0)`}
 				in:typewriter={{ speed: animationspeed * 0.15, delay: 1900 * animationdelay }}
-				class="w-full z-10 select-none text-primary-300 dark:text-primary-600 italic font-bold font-display text-center leading-[1] h-auto
+				class="w-full z-10 select-none text-primary-500 dark:text-primary-600 italic font-bold font-display text-center leading-[1] h-auto
 				text-[clamp(5vh,16vh,16vw)] md:text-[clamp(5vh,16vh,9rem)]"
 			>
 				{$t({ key: 'Portfolio', defaultValue: 'Portfolio!' })}

@@ -4,7 +4,7 @@ export const LogoItems = [
   {
     class: `bg-primary-400 dark:bg-primary-200 shadow-primary-800/50`,
     image: `${path}/logo-chilli.webp`,
-    imageDark: ``,
+    imageDark: `${path}/logo-chilli.webp`,
   },
   {
     class: `bg-primary-300 dark:bg-primary-400 shadow-primary-800/50`,
@@ -29,7 +29,7 @@ export const LogoItems = [
   {
     class: ` bg-primary-200 dark:bg-primary-200 shadow-primary-800/50`,
     image: `${path}/logo-smyle.webp`,
-    imageDark: ``,
+    imageDark: `${path}/logo-smyle.webp`,
   },
   {
     class: ` bg-primary-400 dark:bg-primary-500 shadow-primary-800/50`,

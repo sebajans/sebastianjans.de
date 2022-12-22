@@ -67,7 +67,7 @@
     <div class="w-[0.25cm] border-primary-500 border-l-2 border-r-2"></div>
     <div class="w-[7cm]">
       <h1 class="font-sans pb-10 font-normal uppercase text-5xl text-left leading-10"><T keyName="CV" defaultValue="CV" /></h1>
-      <img class="rounded-full mt-10 w-40 h-40 object-cover object-top" alt="profile-pic" src="img/profile-pic.jpg">
+      <img class="rounded-full mt-10 w-40 h-40 object-cover object-top" alt="profile-pic" src="img/profile-pic.webp">
       <h2 class="mt-6 text-primary-600 font-sans uppercase font-medium tracking-wider text-2xl">{$t({ key: 'skills-title', defaultValue: 'Skills' })}</h2>
       {#each Object.entries(skillItems) as [categoryName, skills], i}
       <div class="flex flex-row flex-wrap">

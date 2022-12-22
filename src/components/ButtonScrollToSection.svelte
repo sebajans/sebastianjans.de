@@ -10,6 +10,7 @@
 </script>
 
 <button
+	aria-label="scrollIntoView"
 	on:click|preventDefault={scrollIntoView}
 	class="hover:text-primary-400 h-auto w-auto left-1/2 transform transition-all duration-200 hover:scale-95 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-14 md:bottom-4"
 	href="#{section}"

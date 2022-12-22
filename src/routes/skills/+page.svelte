@@ -10,7 +10,6 @@
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
 	import Popup from '../../components/Popup.svelte';
-	import { debug } from 'svelte/internal';
 
 	mainClass.set('pt-28');
 
@@ -51,7 +50,8 @@
 </script>
 
 <svelte:head>
-	<title>Skills</title>
+	<title>{$pageTitle}</title>
+	<meta name="description" content="Skills of Sebastian Jans as a Designer.">
 </svelte:head>
 
 <div class="columns-1 md:columns-2 space-y-10 gap-10 pb-20 max-w-4xl justify-center items-center mx-auto my-auto">
@@ -65,6 +65,7 @@
 			For a more elaborate version you can check out my "
 				/>
 				<button
+				aria-label="Open PopUp to download CVs"
 					class="font-bold hover:text-primary-500 transition duration-250 "
 					on:click={openPopup}
 				>
@@ -90,6 +91,7 @@
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
+						aria-label="Download English CV"
 						href="CV/CV_EN.pdf"
 					>
 						EN</a
@@ -97,6 +99,7 @@
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
+						aria-label="Download German CV"
 						href="CV/CV_DE.pdf"
 					>
 						ES</a
@@ -104,6 +107,7 @@
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
+						aria-label="Download Spanish CV"
 						href="CV/CV_ES.pdf"
 					>
 						DE</a

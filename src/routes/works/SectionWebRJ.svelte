@@ -48,7 +48,7 @@
 			<div
 				id="rj-browser-window"
 				style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400% ), 0)`}
-				class=" h-full w-fit shadow-xl aspect-[14/10] backdrop-blur-sm p-0.5 md:p-1 bg-primary-300/80 dark:bg-primary-700/60 flex flex-col rounded-md md:rounded-lg z-10 "
+				class=" h-full w-fit shadow-xl aspect-[14/10] backdrop-blur-sm p-0.5 md:p-1 bg-primary-300/80 dark:bg-primary-600/60 flex flex-col rounded-md md:rounded-lg z-10 "
 			>
 				<div class="w-full flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
 					{#each Array(3) as _}
@@ -66,13 +66,14 @@
 			class="row-[5_/_span_5]  col-[1_/_span_5]  sm:row-[1_/_span_8] sm:col-[5_/_span_6] w-full h-full flex mx-auto justify-start sm:justify-start"
 		>
 			<div
+				id="rj-browser-2"
 				style:transform={`translate3d(0,calc(40% - 40 * ${sectionScroll}%), 0)`}
-				class="h-full w-fit self-center aspect-[14/10] shadow-primary-900/50 shadow-lg backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-800/50 flex flex-col rounded-lg"
+				class="h-full w-fit self-center aspect-[14/10] shadow-primary-900/50 shadow-lg backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
 			>
 				<div class="relative flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
 					{#each Array(3) as _}
 						<div
-							class="rounded-full w-1.5 h-1.5 md:h-2.5 md:w-2.5 bg-primary-50/80 dark:bg-pimary-90/80"
+							class="rounded-full w-1.5 h-1.5 md:h-2.5 md:w-2.5 bg-primary-50/80 dark:bg-pimary-900/80"
 						/>
 					{/each}
 				</div>

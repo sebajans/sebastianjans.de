@@ -19,7 +19,8 @@
 </script>
 
 <svelte:head>
-	<title>Contact</title>
+	<title>{$pageTitle}</title>
+	<meta name="description" content="Contact Sebastian Jans via this webform or the mentioned Links.">
 </svelte:head>
 
 <!-- https://www.staticforms.xyz -->
@@ -148,7 +149,7 @@
 </div>
 
 <Popup
-	popupClass={'w-[70vw] pl-8 top-[15vh] left-[15vw] scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-900 bg-primary-50'}
+	popupClass={'w-[70vw] !pl-8 top-[15vh] left-[15vw] scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
 	bind:this={popup}
 >
 	<TermsOfService />

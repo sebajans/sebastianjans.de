@@ -3,11 +3,11 @@
 </script>
 
 <button on:click
+	aria-label="Open Navigation Menu"
 	class="{showMenu
 		? ''
 		: ''} md:hidden  z-30 fixed left-0 left -1/2 -translate -x-1/2 bottom-0 group p-2 h-14 w-14 space-y-2 rounded-t-lg"
 >
-	<!-- showMenu ? ' closed ' : ' open ' -->
 	<span
 		class="{showMenu ? 'translate-y-2.5 rotate-45 group-hover:rotate-0' : 'group-hover:-rotate-180'}
 			block h-0.5 w-10 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-400 dark:bg-primary-200 delay-100 duration-200 group-hover:translate-y-2.5 group-hover:translate-x-0.5 group-hover:w-9 "

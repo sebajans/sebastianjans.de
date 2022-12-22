@@ -12,6 +12,7 @@
 	import SectionGraphicDesign2 from './SectionGraphicDesign2.svelte';
 	import SectionProductDesign from './SectionProductDesign.svelte';
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
+	import Popup from '../../components/Popup.svelte';
 
 // 	let load = () => {
 //   let performAnimation: boolean = false;
@@ -35,7 +36,17 @@
 			behavior: 'smooth'
 		});
 	}
+
+	let popup: any;
+
+	function openPopup() {
+		popup.show();
+	}
 </script>
+<svelte:head>
+	<title>{$pageTitle}</title>
+	<meta name="description" content="Overview of the Works of Sebastian Jans.">
+</svelte:head>
 
 <section
 	id="start"
@@ -71,3 +82,39 @@
 <SectionGraphicDesign2 />
 <SectionProductDesign />
 <SectionProductDesign2 />
+
+<section
+	id="start"
+	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-col items-center justify-center overflow-x-hidden min-h-screen h-screen h-screen-ios pb-24"
+>
+
+<h1 class="w-full">Didn't see enough?</h1>
+<h2 class="w-full">Download my portfolio below!</h2>
+<button class="w-full" on:click={openPopup}>Download Portfolio</button>
+
+<Popup popupClass={'left-10 w-full mr-10 items-start justify-start bg-primary-200'} bind:this={popup}>
+	<div class="font-sans font-normal uppercase space-x-2">
+		<a
+			class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+			target="_blank"
+			href="CV/CV_EN.pdf"
+		>
+			EN</a
+		>
+		<a
+			class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+			target="_blank"
+			href="CV/CV_DE.pdf"
+		>
+			ES</a
+		>
+		<a
+			class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+			target="_blank"
+			href="CV/CV_ES.pdf"
+		>
+			DE</a
+		>
+	</div>
+</Popup>
+</section>

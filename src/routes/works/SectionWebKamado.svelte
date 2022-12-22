@@ -65,7 +65,7 @@
 			<div
 				id="kb10-browser-front"
 				style:transform={`translate3d(0,calc(100% - 100 * ${sectionScroll}%), 0)`}
-				class="h-full w-auto self-center rounded-lg aspect-[14/10] bg-primary-200/80  p-1 shadow-md shadow-primary-800/20 backdrop-blur-sm dark:bg-primary-700/60"
+				class="h-full w-fit self-center aspect-[14/10] shadow-primary-900/50 shadow-lg backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
 			>
 				<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 					{#each Array(3) as _}
