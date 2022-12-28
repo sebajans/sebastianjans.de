@@ -1,5 +1,18 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { nightMode } from '$lib/stores/nightMode';
+
+
+	
+	// onMount(() => {
+	// 	window
+	// 		.matchMedia("(prefers-color-scheme: dark)")
+	// 		.addEventListener("change", (e) => {
+	// 			darkMode = e.matches;
+	// 		});
+	// });
+	// let darkMode = isDarkMode();
+	// $: toggleColorScheme(darkMode);
 </script>
 
 <button

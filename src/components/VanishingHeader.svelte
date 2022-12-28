@@ -65,7 +65,7 @@
 		<h1
 			class="{headerClass || showHeader
 				? 'text-3xl md:text-4xl py-2'
-				: 'md:text-3xl py-0'} transition-all pl-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold z-40 !leading-tight"
+				: 'md:text-3xl py-0'} transition-all duration-300 pl-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold z-40 !leading-tight"
 		>
 			{$pageTitle}
 		</h1>

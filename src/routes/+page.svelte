@@ -5,6 +5,7 @@
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
 	import { cvItems } from './cv_items';
+
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	pageTitle.set('');
 	mainClass.set('pt-0');
@@ -43,8 +44,17 @@
 	}
 
 	// for (item in cvItems) {}
-
+	let minYWork: any;
+	let minYEdu: any;
 	let scroll: any;
+	let startAnimationWork:boolean = false,startAnimationEdu:boolean = false;
+	
+	$: if (scroll > minYWork*1.5) {
+		startAnimationWork = true
+	}
+	$: if (scroll > minYEdu*1.5) {
+		startAnimationEdu = true
+	}
 </script>
 
 
@@ -141,10 +151,10 @@
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
 		<div class="pb-20 flex flex-row w-full flex-wrap md:flex-nowrap justify-center">
-			<img width="16rem" height="16rem"
+			<img 
 				src={profilePicture}
 				alt="profile"
-				class="object-cover object-top md:w-1/5 max-w-[8rem] max-h-[8rem] md:max-w-[16rem]  max-w md:max-h-[16rem] md:h-auto md:grow-0 mb-2 aspect-square rounded-xl"
+				class="w-full h-full object-cover object-top md:w-1/5 max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 mb-2 aspect-square rounded-xl"
 			/>
 			<div class="md:pl-4 md:w-4/5 text-sm md:text-base flex flex-col">
 				<p class="md:w-full mb-2 text-justify ">
@@ -176,19 +186,23 @@
 </section>
 
 <section
+	bind:offsetHeight={minYWork}
 	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
 	id="cv_jobs"
 >
 	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
-		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</h1>
+		{#if startAnimationWork}
+			
+		<h1 in:fly={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</h1>
+		<!-- <h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">{scroll} > {minYWork*1.5}</h1> -->
 		{#each cvItems as item}
-			{#if item.category === 'job'}
-				<!-- {@const frMonth = String(item.fromMonth)} -->
-				<div class="w-full md:w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
+			{#if  item.category === 'job'}
+				<div in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
+				 class="w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
-						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+						class="md:w-1/5 w-full max-w-[16rem] max-h-[16rem] p-2 h-full flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
-						<img width="16rem" height="16rem" class="w-full h-full" src={item.image} alt={item.name} />
+						<img  class="object-contain aspect-square w-64" src={item.image} alt={item.name} />
 					</div>
 					<div class="md:w-4/5 w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-start">
 						<!-- {@const frMonth = item.fromMonth.toString() } -->
@@ -207,23 +221,28 @@
 				</div>
 			{/if}
 		{/each}
+		{/if}
 	</div>
 	<ButtonScrollToSection section={'cv_edu'}>{$t({ key: 'my-education', defaultValue: 'My Education' })}</ButtonScrollToSection>
 </section>
 
 <section
+bind:offsetHeight={minYEdu}
 	class="pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
-		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'my-education', defaultValue: 'My Education' })}</h1>
+		{#if startAnimationEdu}
+
+		<h1 in:fly={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'my-education', defaultValue: 'My Education' })}</h1>
 		{#each cvItems as item}
 			{#if item.category === 'education'}
-				<div class="w-full sm:w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
+			<div in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
+				class="w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
-						class="md:w-1/5 w-full max-w-[16rem] p-2 h-full  md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+						class="md:w-1/5 w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
-						<img width="16rem" height="16rem" src={item.image} alt={item.name} />
+						<img class="object-contain aspect-square w-64" src={item.image} alt={item.name} />
 					</div>
 					<div class="sm:w-4/5 w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-start">
 						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
@@ -241,7 +260,8 @@
 					</div>
 				</div>
 			{/if}
-		{/each}
+			{/each}
+			{/if}
 	</div>
 </section>
 

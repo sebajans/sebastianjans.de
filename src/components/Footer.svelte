@@ -16,6 +16,6 @@
 		<T keyName="terms-of-service" defaultValue="Terms of Service" /></button>
 </div>
 
-<Popup popupClass={'w-[90vw] md:w-[70vw] !pl-8 top-[15vh] left-[5vw] md:left-[15vw] scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'} bind:this={popup}>
+<Popup popupClass={'w-[90vw] md:w-[70vw] !pl-8  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'} position={'top-[15vh] left-[5vw] md:left-[15vw]'} bind:this={popup}>
 	<TermsOfService />
 </Popup>

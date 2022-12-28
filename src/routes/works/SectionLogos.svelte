@@ -49,11 +49,11 @@
 				/>
 			</p>
 		</div>
-		<div class="h-[calc(100vh_-_5.5rem)] w-full grid grid-rows-3 gap-y-5 md:gap-y-8 justify-center">
+		<div class="h-[calc(100vh_-_5.5rem)] w-full grid grid-rows-3 justify-center">
 			{#each rows as row, i}
+			<!-- style:transform={`translate3d(calc(${row.movement} * ${sectionScroll}%),0, 0)`} -->
 				<div
-					style:transform={`translate3d(calc(${row.movement} * ${sectionScroll}%),0, 0)`}
-					class="relative flex space-x-5 md:space-x-8 "
+					class="relative flex gap-5 md:gap-10 "
 				>
 					{#each (LogoItems.slice(i*3,(i*3)+3).sort(() => row.randomnumber - Math.random())) as logo}
 						<div

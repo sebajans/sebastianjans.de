@@ -72,7 +72,7 @@ export let cvItems = [
   {
     category: 'education',
     id: 3,
-    image: 'img/logo_gympl.jpg',
+    image: 'img/logo_gympl.webp',
     name: 'High School Graduation',
     role: 'Gymnasium Plochingen',
     location: 'Plochingen, DE',

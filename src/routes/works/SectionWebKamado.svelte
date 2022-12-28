@@ -27,17 +27,17 @@
 			style:background-image={$nightMode
 				? `url('${srcKamadoLogoDark}')`
 				: `url('${srcKamadoLogo}')`}
-			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-top bg-no-repeat bg-origin-content md:col-[7_/_span_4] md:row-[1_/_span_2]"
+			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-left-bottom bg-no-repeat bg-origin-content md:col-[5_/_span_6] md:row-[1_/_span_2]"
 		/>
 		<!-- PHONE -->
 		<div
-			class="col-[5_/_span_4] row-[3_/_span_7] flex h-full w-full justify-end md:col-[1_/_span_4] md:row-[1_/_span_12]"
+			class="col-[7_/_span_2] row-[3_/_span_10] flex h-full w-full justify-start md:justify-end md:col-[1_/_span_4] md:row-[1_/_span_12] "
 		>
 			<div
 				id="kb10-browser-phone"
 				style:transform={`translate3d(calc(-100% + 100 * ${sectionScroll}%),0, 0)`}
 				class="relative z-10 aspect-[10/19.6] h-full max-h-[40rem]  w-auto self-center
-			rounded-xl bg-primary-200/80 shadow-lg shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-3xl"
+			rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-3xl"
 			>
 				<img
 					alt="website-kamadob10-front-mobile"
@@ -60,12 +60,12 @@
 		</div>
 		<!-- BROSWER -->
 		<div
-			class="col-[1_/_span_8] row-[3_/_span_5] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
+			class="col-[1_/_span_6] row-[1_/_span_8] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
 		>
 			<div
 				id="kb10-browser-front"
 				style:transform={`translate3d(0,calc(100% - 100 * ${sectionScroll}%), 0)`}
-				class="h-full w-fit self-center aspect-[14/10] shadow-primary-900/50 shadow-lg backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
+				class="h-full w-fit self-center aspect-[14/10] shadow-primary-900/30 shadow-md backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
 			>
 				<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 					{#each Array(3) as _}
@@ -81,7 +81,7 @@
 		</div>
 
 		<p
-			class="col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3] h-auto md:mt-auto "
+			class="col-[1_/_span_6] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
 			style:transform={`translate3d(calc(200% - ${sectionScroll} * 200%),0, 0)`}
 		>
 			<T

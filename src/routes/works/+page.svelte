@@ -85,15 +85,28 @@
 
 <section
 	id="start"
-	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-col items-center justify-center overflow-x-hidden min-h-screen h-screen h-screen-ios pb-24"
+	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-col items-start justify-center overflow-x-hidden min-h-screen h-screen h-screen-ios pb-24 px-3"
 >
 
-<h1 class="w-full">Didn't see enough?</h1>
-<h2 class="w-full">Download my portfolio below!</h2>
-<button class="w-full" on:click={openPopup}>Download Portfolio</button>
+<h1 class="w-full text-5xl text-left">
+	
+	<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />
+</h1>
+<h3 class="w-2/3 self-start text-2xl text-left py-4">
+	<T keyName="download-portfolio-text" defaultValue="Download my portfolio below to see more of my work." />
+	
+</h3>
+<!-- <button class="w-auto font-sans rounded-md bg-primary-300  " 
+>Download Portfolio</button> -->
+<button
+class="relative  uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
+on:click={openPopup}
+					>
+						<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
+					</button>
 
-<Popup popupClass={'left-10 w-full mr-10 items-start justify-start bg-primary-200'} bind:this={popup}>
-	<div class="font-sans font-normal uppercase space-x-2">
+<Popup popupClass={'w-full mr-10 items-start justify-start bg-primary-200'} position={'w-auto top-auto translate-x-0 translate-y-0'} bind:this={popup}>
+	<div class="font-sans font-normal uppercase space-x-2 translate-x-0">
 		<a
 			class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 			target="_blank"

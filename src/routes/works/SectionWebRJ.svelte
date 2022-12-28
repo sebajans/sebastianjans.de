@@ -43,7 +43,7 @@
 		/>
 
 		<div
-			class="row-[3_/_span_6]  col-[2_/_span_7] sm:row-[4_/_span_10] sm:col-[1_/_span_5] w-full h-full flex mx-auto justify-end translate-x-12 z-10"
+			class="row-[3_/_span_6]  col-[2_/_span_7] sm:row-[4_/_span_10] sm:col-[1_/_span_5] w-full h-full flex mx-auto justify-end translate-x-12 md:translate-x-0 z-10"
 		>
 			<div
 				id="rj-browser-window"
