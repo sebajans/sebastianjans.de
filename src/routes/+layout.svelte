@@ -43,7 +43,7 @@
 	<TolgeeProvider config={tolgeeConfig}>
 		<VanishingHeader offset={100} tolerance={3} {showHeader} />
 		<NavBar {showMenu} />
-		<main class="{$mainClass} min-h-screen min-h-screen-ios px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900 transition-all duration-300">
+		<main class="{$mainClass} min-h-screen min-h-screen-ios px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
 			<slot />
 			<Footer/>
 		</main>

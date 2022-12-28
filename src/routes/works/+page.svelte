@@ -105,10 +105,10 @@ on:click={openPopup}
 						<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
 					</button>
 
-<Popup popupClass={'w-full mr-10 items-start justify-start bg-primary-200'} position={'w-auto top-auto translate-x-0 translate-y-0'} bind:this={popup}>
+<Popup popupClass={'w-full mr-10 items-start justify-start bg-primary-200'} position={'w-auto top-auto mt-20 translate-x-0 translate-y-0'} bind:this={popup}>
 	<div class="font-sans font-normal uppercase space-x-2 translate-x-0">
 		<a
-			class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+			class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900  transition-all duration-200 hover:text-primary-400"
 			target="_blank"
 			href="CV/CV_EN.pdf"
 		>

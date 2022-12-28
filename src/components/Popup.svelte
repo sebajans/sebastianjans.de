@@ -1,7 +1,7 @@
 <!-- Popup.svelte -->
 <script lang="ts">
 	let visible = false;
-	import { fade } from 'svelte/transition';
+	import { fade, scale } from 'svelte/transition';
 
 	export let popupClass = 'left-0 w-full';
 	export let position = 'left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-full';
@@ -29,6 +29,7 @@
 		class="{position} absolute w-auto h-auto z-50 "
 	>
 		<div
+		transition:scale={{duration: 200}}
 			class="{popupClass} hover:shadow-primary-600/80 shadow-primary-600/50 transition-all duration-500 delay-75 pl-2.5 pr-4 py-4 rounded-lg shadow-lg text-primary-50 dark:text-primary-900
 			"
 		>
