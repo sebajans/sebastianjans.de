@@ -27,9 +27,9 @@
 	<nav
 		class="{showMenu
 			? ''
-			: 'translate-y-[100%] '} overflow-hidden md:translate-y-0 duration-300 transition-transform w-screen md:w-40 overflow-y-hidden absolute z-30 bottom-0 left-0"
+			: 'translate-y-[100%]'} overflow-hidden md:translate-y-0 duration-300 transition-transform w-screen md:w-40 overflow-y-hidden absolute z-30 bottom-0 left-0"
 	>
-		<ul aria-label="Navigation Bar" class="flex font-sans flex-col gap-4 py-32 pb-16 md:py-4 md:pr-4 md:rounded-tr-xl backdrop-blur-2xl flex-grow h-full justify-center">
+		<ul aria-label="Navigation Bar" class="flex font-sans flex-col gap-4 py-32 pb-16 md:py-4 md:pr-4 md:rounded-tr-xl md:backdrop-blur-2xl flex-grow h-full justify-center">
 			{#each navItems as { link, text }}
 				<NavButton on:click={toggleMenu} {link} {text} />
 			{/each}

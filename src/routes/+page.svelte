@@ -5,7 +5,7 @@
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
 	import { cvItems } from './cv_items';
-
+	import { tweened } from 'svelte/motion';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	pageTitle.set('');
 	mainClass.set('pt-0');
@@ -52,9 +52,14 @@
 	$: if (scroll > minYWork*1.5) {
 		startAnimationWork = true
 	}
+	
 	$: if (scroll > minYEdu*1.5) {
 		startAnimationEdu = true
 	}
+	
+	// let opacity = 100
+
+	// const opacity = tweened(100 - scroll*0.8)
 </script>
 
 
@@ -65,14 +70,16 @@
 </svelte:head>
 <svelte:window bind:scrollY={scroll} />
 
-<section
-	class="relative w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
+<!-- <div class="snap-y snap-mandatory h-screen h-screen-ios overflow-scroll"> -->
+
+	<section
+	class="relative snap-center w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
 	<div class="relative pb-[100vh] flex flex-col w-full max-w-2xl my-auto mx-auto ">
 		{#if visible}
 		<div class="absolute inset-0 pt-8 sm:pt-10 md:pt-12 h-full min-h-max flex flex-col justify-center items-center">
 			<span
-				style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
+			style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
 				class="w-full select-none text-primary-500 font-bold font-display text-left leading-[0.2] h-auto
 				text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
 				in:typewriter={{ speed: animationspeed * 0.15, delay: 100 * animationdelay }}
@@ -143,8 +150,8 @@
 	</ButtonScrollToSection>
 </section>
 <section
-	id="aboutme"
-	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
+id="aboutme"
+	class="relative snap-center w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
 >
 	<div class="sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
@@ -186,8 +193,8 @@
 </section>
 
 <section
-	bind:offsetHeight={minYWork}
-	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
+bind:offsetHeight={minYWork}
+	class="relative snap-center w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
 	id="cv_jobs"
 >
 	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
@@ -228,7 +235,7 @@
 
 <section
 bind:offsetHeight={minYEdu}
-	class="pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class=" snap-center pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
@@ -264,6 +271,9 @@ bind:offsetHeight={minYEdu}
 			{/if}
 	</div>
 </section>
+
+<!-- </div> -->
+
 
 <!-- TIMELINE -->
 

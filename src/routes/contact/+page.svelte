@@ -9,7 +9,7 @@
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
 
-	mainClass.set('pt-28 min-h-[100vh] flex');
+	mainClass.set('pt-14 md:pt-0 min-h-[100vh] flex');
 
 	let popup: any;
 

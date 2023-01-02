@@ -479,14 +479,16 @@
 					</div>
 				</div>
 				<div class="relative">
-					<p
-						class="absolute font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-2/3"
+					<span
+						class="{moveToRight
+							? '-translate-x-1/3'
+							: '-translate-x-2/3'} absolute duration-500 font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 "
 					>
 					<T
 					keyName="Top-view"
 					defaultValue="Top View"
 				/>
-					</p>
+				</span>
 
 					<svg
 						class="{moveToRight

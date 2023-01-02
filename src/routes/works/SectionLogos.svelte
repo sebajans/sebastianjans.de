@@ -40,29 +40,23 @@
 		</div>
 		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-300 dark:bg-primary-600" />
 	</div>
-	<div class="my-auto h-auto w-screen">
+	<div class="my-auto mx-auto h-auto max-w-4xl flex flex-col items-center justify-center">
 		<div class="md:ml-40 flex justify-center">
-			<p class="max-w-4xl my-4 px-3 md:mx-auto md:text-right text-left w-full ">
+			<p class="max-w-4xl my-4 px-3 md:mx-auto md:text-center text-left w-full">
 				<T
 				keyName="logo-design-paragraph"
 				defaultValue="These logotypes show some of my previous logo design works."
 				/>
 			</p>
 		</div>
-		<div class="h-[calc(100vh_-_5.5rem)] w-full grid grid-rows-3 justify-center">
-			{#each rows as row, i}
+		<div class="max-h-[calc(100vh_-_5.5rem)] w-full gap-5 grid grid-rows-3 grid-cols-3 justify-center">
 			<!-- style:transform={`translate3d(calc(${row.movement} * ${sectionScroll}%),0, 0)`} -->
-				<div
-					class="relative flex gap-5 md:gap-10 "
-				>
-					{#each (LogoItems.slice(i*3,(i*3)+3).sort(() => row.randomnumber - Math.random())) as logo}
+					{#each (LogoItems.sort(() => Math.random())) as logo, i}
 						<div
 							style:background-image={$nightMode ? `url('${logo.imageDark}')` : `url('${logo.image}')`}
-							class="{logo.class} transform bg-contain bg-no-repeat bg-center bg-origin-content rounded-md shadow-lg shadow-primary-400/60 dark:shadow-primary-600/50 w-[25vh] h-[25vh] aspect-square p-4 md:p-8"
+							class="{logo.class} group opacity-50 hover:opacity-100 group-hover:bg-primary-400 transform hover:shadow-inner bg-contain bg-no-repeat bg-center bg-origin-content rounded-md shadow- lg w-[20vh] h-[20vh] aspect-square p-2 md:p-4 duration-200 transition-all"
 						/>
 					{/each}
-				</div>
-			{/each}
 		</div>
 	</div>
 </section>

@@ -37,7 +37,7 @@
 				<div
 					class="self-center {moveToRight
 						? 'translate-y-full translate-x-2 rotate-90'
-						: ''} duration-500 transform relative"
+						: ''} duration-500 ease-in transform relative "
 				>
 					<p
 						class="absolute font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2"
@@ -570,7 +570,7 @@
 					</svg>
 				</div>
 				<div class="relative col-span-2">
-					<div class="{moveToRight ? '' : ''} duration-500">
+					<div class="{moveToRight ? 'scale-x-0 translate-x-[25%]' : ''} origin-left duration-500 ease-in">
 						<p
 							class="opacity-80 absolute font-sans tracking-wide  font-medium uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2"
 						>
@@ -854,194 +854,14 @@
 							</g>
 						</svg>
 
-						<!-- <svg
-						class="{moveToRight
-							? '-rotate-90 -translate-x-[6%] translate-y-[7%] sm:translate-x-0 sm:translate-y-0 sm:rotate-0'
-							: ' '} scale-[90%] col-span-2 hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]"
-						width="100%"
-						height="100%"
-						viewBox="0 0 712 350"
-						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						xml:space="preserve"
-						style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-					>
-						<g transform="matrix(1,0,0,1,-878,-2299)">
-							<g id="front" transform="matrix(1.20001,0,0,1.20001,525.48,-1009.13)">
-								<g transform="matrix(1,0,0,1,1.13687e-13,572.835)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="295.276"
-										y="2185.04"
-										width="590.551"
-										height="271.654"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:2px;"
-									/>
-								</g>
-								<g transform="matrix(0.88968,0,0,1.05263,32.5749,443.535)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="295.276"
-										y="2411.81"
-										width="663.78"
-										height="44.882"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.78px;"
-									/>
-								</g>
-								<g transform="matrix(0.88968,0,0,1.10526,32.5749,92.1881)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="295.276"
-										y="2411.81"
-										width="663.78"
-										height="44.882"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.73px;"
-									/>
-								</g>
-								<g transform="matrix(0.0735587,0,0,3.89474,815.28,-6585.89)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="295.276"
-										y="2411.81"
-										width="663.78"
-										height="44.882"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:0.63px;"
-									/>
-								</g>
-								<g transform="matrix(1,0,0,1.02778,227,510.761)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="610"
-										y="2234.65"
-										width="3.974"
-										height="170.079"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.71px;"
-									/>
-								</g>
-								<g transform="matrix(0.0676157,0,0,3.89474,275.31,-6585.89)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="295.276"
-										y="2411.81"
-										width="663.78"
-										height="44.882"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:0.63px;"
-									/>
-								</g>
-								<g transform="matrix(0.00590201,0,0,3.89474,338.415,-6585.89)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="295.276"
-										y="2411.81"
-										width="663.78"
-										height="44.882"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:0.63px;"
-									/>
-								</g>
-								<g transform="matrix(0.0720047,0,0,3.89474,540.943,-6585.89)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="295.276"
-										y="2411.81"
-										width="663.78"
-										height="44.882"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:0.63px;"
-									/>
-								</g>
-								<g transform="matrix(0.99292,0,0,1,1.63507,572.835)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="344.882"
-										y="2404.72"
-										width="219.685"
-										height="4.724"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:2px;"
-									/>
-								</g>
-								<g transform="matrix(2.68817,0,0,1,-631.826,353.15)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="344.882"
-										y="2404.72"
-										width="219.685"
-										height="4.724"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:0.86px;"
-									/>
-								</g>
-								<g transform="matrix(1.0333,0,0,1,253.634,572.835)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="344.882"
-										y="2404.72"
-										width="219.685"
-										height="4.724"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.71px;"
-									/>
-								</g>
-								<g transform="matrix(1,0,0,1.02778,-47.7953,510.761)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="610"
-										y="2234.65"
-										width="3.974"
-										height="170.079"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.71px;"
-									/>
-								</g>
-								<g transform="matrix(1,0,0,1,1.13687e-13,572.835)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="610"
-										y="2234.65"
-										width="3.974"
-										height="170.079"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:2px;"
-									/>
-								</g>
-								<g transform="matrix(1,0,0,0.9,4.72441,825.591)">
-									<path
-										in:draw={{ duration: 800, delay: 1000 }}
-										d="M869.291,2468.5L840.945,2468.5L850.384,2456.69L859.853,2456.69L869.291,2468.5Z"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.82px;"
-									/>
-								</g>
-								<g transform="matrix(1,0,0,0.428571,9.44882,1981.72)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="848.031"
-										y="2444.88"
-										width="4.724"
-										height="16.535"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:2.26px;"
-									/>
-								</g>
-								<g transform="matrix(1,0,0,0.9,-533.858,825.591)">
-									<path
-										in:draw={{ duration: 800, delay: 1000 }}
-										d="M869.291,2468.5L840.945,2468.5L850.384,2456.69L859.853,2456.69L869.291,2468.5Z"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.82px;"
-									/>
-								</g>
-								<g transform="matrix(1,0,0,0.428571,-529.134,1981.72)">
-									<rect
-										in:fade={{ duration: 800, delay: 1000 }}
-										x="848.031"
-										y="2444.88"
-										width="4.724"
-										height="16.535"
-										style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:2.26px;"
-									/>
-								</g>
-							</g>
-						</g>
-					</svg> -->
+						
 					</div>
 				</div>
+				<!-- ? 'translate-y-full -translate-x-2 -rotate-90' -->
 				<div
 					class="relative {moveToRight
-						? 'translate-y-full -translate-x-2 -rotate-90'
-						: ''} transition-all duration-500"
+						? ' scale-x-100 -translate-x-[150%]'
+						: 'scale-x-0 -translate-x-[105%]'} origin-right transition-all duration-500 ease-in"
 				>
 					<p
 						class="absolute font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2"
@@ -1232,7 +1052,7 @@
 					<!-- <svg
 					class="{moveToRight
 						? ' '
-						: ' '} hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]"
+						: ' '} hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 ease-in transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]"
 					viewBox="0 0 385 350"
 					version="1.1"
 					xmlns="http://www.w3.org/2000/svg"
@@ -1811,7 +1631,7 @@
 					<!-- <svg
 					class="{moveToRight
 						? ''
-						: ' '} col-span-2 scale-[90%] hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]"
+						: ' '} col-span-2 scale-[90%] hover:text-primary-600 sm:hover:text-primary-900 sm:dark:hover:text-primary-50 duration-500 ease-in transform text-primary-900 dark:text-primary-50 w-full sm:max-w-[60vh]"
 					viewBox="0 0 712 386"
 					version="1.1"
 					xmlns="http://www.w3.org/2000/svg"
@@ -2006,7 +1826,7 @@
 				</div>
 				<div
 					class="row-start-3 col-span-4
-					 w-full text-justify transform transition-all duration-500 relative items-center flex flex-col justify-center"
+					 w-full text-justify transform transition-all duration-500 ease-in relative items-center flex flex-col justify-center"
 				>
 					<p
 						style="-webkit-hyphens: auto;
@@ -2014,10 +1834,8 @@
 					hyphens: auto;"
 					>
 						<T
-							keyName="description-product-design-2"
-							defaultValue="This table was one of my first projects. I designed it myself and customized it to suit
-						all my needs. With the organic cutout in the middle everything is reachable while
-						maximizing space."
+							keyName="description-product-design-1"
+							defaultValue="This bench is a project that i created with the intention of having multiple purposes. It had to fit a tight corner on my balcony and also serve as a sleeping spot for my cat."
 						/>
 					</p>
 					<button

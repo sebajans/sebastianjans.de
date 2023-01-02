@@ -134,11 +134,11 @@
 				</p>
 				{#each skills.categoryArray as skill, i}
 					<h3
-						class="font-serif text-primary-200 dark:text-primary-800 font-medium text-sm py-2 md:py-1.5"
+						class="font-serif text-primary-300 dark:text-primary-600 font-medium text-base "
 					>
 						{skill.name}
 					</h3>
-					<div class="relative flex flex-col justify-left">
+					<!-- <div class="relative flex flex-col justify-left">
 						<div class="flex flex-row space-x-[5.7%]">
 							<span class="w-0.5 h-5" />
 							{#each Array(4) as _}
@@ -158,7 +158,7 @@
 								class="absolute z-10 duration-75 {skill.progress} bg-gradient-to-r from-primary-500 to bg-primary-300 h-5 rounded"
 							/>
 						{/if}
-					</div>
+					</div> -->
 				{/each}
 			</div>
 		{/each}

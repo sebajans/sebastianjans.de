@@ -11,7 +11,7 @@
 
 <section
 	id="graphicdesign"
-	class=" bg-primary-400/50 dark:bg-primary-500/50 w-full relative h-screen h-screen-ios justify-center items-center flex flex-col overflow-hidden md:pl-44 "
+	class=" bg-primary-400/50 dark:bg-primary-500/50 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden "
 >
 	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
 		<div class="w-[calc(100vw_-_56rem)] h-auto" />
