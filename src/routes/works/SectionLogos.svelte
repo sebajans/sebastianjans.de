@@ -21,6 +21,8 @@
 			randomnumber: 0.45
 		}
 	];
+	let centerImage:boolean = false
+	let id
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
@@ -52,11 +54,15 @@
 		<div class="max-h-[calc(100vh_-_5.5rem)] w-full gap-5 grid grid-rows-3 grid-cols-3 justify-center">
 			<!-- style:transform={`translate3d(calc(${row.movement} * ${sectionScroll}%),0, 0)`} -->
 					{#each (LogoItems.sort(() => Math.random())) as logo, i}
-						<div
+						<div bind:this={id} on:keydown on:click={() => centerImage =! centerImage}
 							style:background-image={$nightMode ? `url('${logo.imageDark}')` : `url('${logo.image}')`}
-							class="{logo.class} group opacity-50 hover:opacity-100 group-hover:bg-primary-400 transform hover:shadow-inner bg-contain bg-no-repeat bg-center bg-origin-content rounded-md shadow- lg w-[20vh] h-[20vh] aspect-square p-2 md:p-4 duration-200 transition-all"
+							class="{logo.class} {centerImage ? 'absolute' : '[&:not(:last-child)]:bg-primary-400'} group opacity-50 hover:opacity-100 group-hover:bg-primary-400 transform hover:shadow-inner bg-contain bg-no-repeat bg-center bg-origin-content rounded-md shadow- lg w-[20vh] h-[20vh] aspect-square p-2 md:p-4 duration-200 transition-all"
 						/>
+						<!-- <div>{id}{i}</div> -->
 					{/each}
+					<!-- ON CLICK: -->
+					<!-- position absolute center -->
+					<!-- check if ID is the same otherwise -->
 		</div>
 	</div>
 </section>
