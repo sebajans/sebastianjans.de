@@ -54,7 +54,7 @@
 	<meta name="description" content="Skills of Sebastian Jans as a Designer.">
 </svelte:head>
 
-<div class="columns-1 md:columns-2 space-y-10 gap-10 pb-20 max-w-4xl justify-center items-center mx-auto my-auto">
+<div class="columns-1 md:columns-2 space-y-8 gap-8 pb-12 max-w-4xl justify-center items-center mx-auto my-auto">
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">
@@ -117,15 +117,15 @@
 		</div>
 
 		{#each Object.entries(skillItems) as [categoryName, skills], i}
+		<!-- style:transform={`translateZ(0)`} -->
 			<div
-				style:transform={`translateZ(0)`}
 				in:fly={{ y: 30, duration, delay: (150 + i * 150) * firstdelay }}
 				class=" break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
 			>
-				<h2 class="text-xl dark:text-primary-50 text-primary-900 font-bold font-sans">
+				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
 					{categoryName}
 				</h2>
-				<p class="font-serif text-base dark:text-primary-50 text-primary-900 font-medium  py-1 md:py-1.5">
+				<p class="font-serif text-sm dark:text-primary-50 text-primary-900  pb-1">
 					<T
 						keyName="skill-{categoryName}-text"
 						defaultValue="
@@ -133,9 +133,11 @@
 					/>
 				</p>
 				{#each skills.categoryArray as skill, i}
-					<h3
-						class="font-serif dark:text-primary-300 text-primary-600 font-medium text-sm "
-					>
+
+				<h3
+				class="font-serif dark:text-primary-300 text-primary-600 font-medium text-sm"
+				>
+				<img src={skill.iconLink} class="pointer-events-none inline-block h-8 w-8 rounded-md aspect-square mr-2 object-fill " alt={skill.name}>
 						{skill.name}
 					</h3>
 					

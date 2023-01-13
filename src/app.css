@@ -39,7 +39,7 @@
   }
 
   .input {
-      @apply focus:ring-primary-400 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50 block w-full p-2.5 dark:bg-primary-900 dark:border-primary-600 dark:text-primary-50
+      @apply focus:!ring-primary-400 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50 block w-full p-2.5 dark:bg-primary-900 dark:border-primary-600 dark:text-primary-50
   }
 
 

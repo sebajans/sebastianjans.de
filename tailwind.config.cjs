@@ -8,6 +8,11 @@ const iOSHeight = require('@rvxlab/tailwind-plugin-ios-full-height');
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  variants: {
+    extend: {
+      ringColor: ['focus', 'active'],
+    }
+  },
   content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
@@ -39,22 +44,22 @@ module.exports = {
         '12': 'repeat(12, minmax(0, 1fr))',
       },
       fontSize: {
-				'fit': 'clamp(0px,10vw,1080px)'
-			},
+        'fit': 'clamp(0px,10vw,1080px)'
+      },
       fontFamily: {
-				'sans': ['Oswald', 'sans-serif', ...defaultTheme.fontFamily.sans],
-				'serif': ['Lora', ...defaultTheme.fontFamily.serif],
-			},
+        'sans': ['Oswald', 'sans-serif', ...defaultTheme.fontFamily.sans],
+        'serif': ['Lora', ...defaultTheme.fontFamily.serif],
+      },
       boxShadow: {
-				innerxl: 'inset 30px 0px 60px -15px rgba(229, 229, 229, 1)',
-			},
+        innerxl: 'inset 30px 0px 60px -15px rgba(229, 229, 229, 1)',
+      },
     },
   },
   plugins: [
     function ({ addVariant }) {
       addVariant('child', '& > *');
       addVariant('child-hover', '& > *:hover');
-  },
+    },
     iOSHeight,
     require('autoprefixer'),
     plugin(function ({ addUtilities }) {
@@ -62,10 +67,10 @@ module.exports = {
         '.hide-scrollbar': {
           /* IE and Edge */
           '-ms-overflow-style': 'none',
-  
+
           /* Firefox */
           'scrollbar-width': 'none',
-  
+
           /* Safari and Chrome */
           '&::-webkit-scrollbar': {
             display: 'none'

@@ -107,7 +107,7 @@
 								name="remember"
 								type="checkbox"
 								value=""
-								class="w-4 h-4 bg-primary-50 rounded border focus:ring-3 focus:ring-blue-300 dark:bg-primary-700 dark:border-primary-600 dark:focus:ring-blue-600 dark:ring-offset-primary-800"
+								class="w-4 h-4 bg-primary-50 rounded border focus:ring-3 focus:!ring-primary-300 dark:bg-primary-700 dark:border-primary-600 dark:focus:!ring-primary-600 dark:ring-offset-primary-800"
 								required
 							/>
 							<label
