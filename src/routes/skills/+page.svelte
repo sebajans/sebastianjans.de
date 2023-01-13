@@ -120,12 +120,12 @@
 			<div
 				style:transform={`translateZ(0)`}
 				in:fly={{ y: 30, duration, delay: (150 + i * 150) * firstdelay }}
-				class="bg-primary-900 break-inside-avoid-column  shadow-lg shadow-primary-500/40 dark:shadow-primary-400/40 dark:bg-primary-50 p-4 rounded-lg align-top gap-2 grid grid-cols-1"
+				class=" break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
 			>
-				<h2 class="text-xl text-primary-50 dark:text-primary-900 font-bold font-sans">
+				<h2 class="text-xl dark:text-primary-50 text-primary-900 font-bold font-sans">
 					{categoryName}
 				</h2>
-				<p class="font-serif text-sm text-primary-50 dark:text-primary-900 font-medium  py-1 md:py-1.5">
+				<p class="font-serif text-base dark:text-primary-50 text-primary-900 font-medium  py-1 md:py-1.5">
 					<T
 						keyName="skill-{categoryName}-text"
 						defaultValue="
@@ -134,11 +134,17 @@
 				</p>
 				{#each skills.categoryArray as skill, i}
 					<h3
-						class="font-serif text-primary-300 dark:text-primary-600 font-medium text-base "
+						class="font-serif dark:text-primary-300 text-primary-600 font-medium text-sm "
 					>
 						{skill.name}
 					</h3>
-					<!-- <div class="relative flex flex-col justify-left">
+					
+				{/each}
+			</div>
+		{/each}
+	{/if}
+</div>
+<!-- <div class="relative flex flex-col justify-left">
 						<div class="flex flex-row space-x-[5.7%]">
 							<span class="w-0.5 h-5" />
 							{#each Array(4) as _}
@@ -159,8 +165,3 @@
 							/>
 						{/if}
 					</div> -->
-				{/each}
-			</div>
-		{/each}
-	{/if}
-</div>

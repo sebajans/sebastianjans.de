@@ -51,6 +51,10 @@ module.exports = {
     },
   },
   plugins: [
+    function ({ addVariant }) {
+      addVariant('child', '& > *');
+      addVariant('child-hover', '& > *:hover');
+  },
     iOSHeight,
     require('autoprefixer'),
     plugin(function ({ addUtilities }) {
