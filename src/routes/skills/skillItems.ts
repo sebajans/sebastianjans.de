@@ -52,24 +52,24 @@ export const skillItems = {
         name: 'Affinity Photo', progress: 'w-[75.5%] '
       },
       {
-        iconLink: 'skills-icons/AffinityPublisher.svg',
-        name: 'Affinity Publisher', progress: 'w-[75.5%] '
+        iconLink: 'skills-icons/adobe-photoshop.svg',
+        name: 'Adobe Photoshop', progress: 'w-[75.5%] '
       },
       {
         iconLink: 'skills-icons/AffinityDesigner.svg',
         name: 'Affinity Designer', progress: 'w-[100.5%] '
       },
       {
-        iconLink: 'skills-icons/adobe-photoshop.svg',
-        name: 'Adobe Photoshop', progress: 'w-[75.5%] '
+        iconLink: 'skills-icons/adobe-illustrator.svg',
+        name: 'Adobe Illustrator', progress: 'w-[100.5%] '
+      },
+      {
+        iconLink: 'skills-icons/AffinityPublisher.svg',
+        name: 'Affinity Publisher', progress: 'w-[75.5%] '
       },
       {
         iconLink: 'skills-icons/adobe-indesign.svg',
         name: 'Adobe InDesign', progress: 'w-[75.5%] '
-      },
-      {
-        iconLink: 'skills-icons/adobe-illustrator.svg',
-        name: 'Adobe Illustrator', progress: 'w-[100.5%] '
       },
       {
         iconLink: 'skills-icons/figma2.svg',

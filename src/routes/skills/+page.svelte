@@ -11,7 +11,7 @@
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
 	import Popup from '../../components/Popup.svelte';
 
-	mainClass.set('pt-28');
+	mainClass.set('pt-28 pb-20 md:pb-0');
 
 	function slidevertical(node: any, { firstdelay, delay }: { firstdelay: number; delay: number }) {
 		return {
@@ -54,7 +54,7 @@
 	<meta name="description" content="Skills of Sebastian Jans as a Designer.">
 </svelte:head>
 
-<div class="columns-1 md:columns-2 space-y-8 gap-8 pb-12 max-w-4xl justify-center items-center mx-auto my-auto">
+<div class=" sm:columns-2 space-y-8 gap-8 pb-12 max-w-4xl justify-center items-center mx-auto my-auto">
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">
@@ -120,7 +120,7 @@
 		<!-- style:transform={`translateZ(0)`} -->
 			<div
 				in:fly={{ y: 30, duration, delay: (150 + i * 150) * firstdelay }}
-				class=" break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
+				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
 			>
 				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
 					{categoryName}
@@ -132,38 +132,19 @@
 			{skills.categorydescription}"
 					/>
 				</p>
-				{#each skills.categoryArray as skill, i}
+				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md dark:bg-primary-700/50 bg-primary-200/50">
 
-				<h3
-				class="font-serif dark:text-primary-300 text-primary-600 font-medium text-sm"
-				>
-				<img src={skill.iconLink} class="pointer-events-none inline-block h-8 w-8 rounded-md aspect-square mr-2 object-fill " alt={skill.name}>
+					{#each skills.categoryArray as skill, i}
+					<span
+					class="font-serif dark:text-primary-100 text-primary-800 font-medium text-sm "
+					>
+						<img src={skill.iconLink} class="pointer-events-none inline-block h-7 w-7 rounded-md aspect-square mr-1.5 object-fill " alt={skill.name}>
 						{skill.name}
-					</h3>
+					</span>
 					
-				{/each}
+					{/each}
+				</div>
 			</div>
 		{/each}
 	{/if}
 </div>
-<!-- <div class="relative flex flex-col justify-left">
-						<div class="flex flex-row space-x-[5.7%]">
-							<span class="w-0.5 h-5" />
-							{#each Array(4) as _}
-								{#each Array(3) as _}
-									<span
-										class="translate-y-1 before:content-['']  before:w-5 md:before:w-10 before:-translate-x-2.5 before:-translate-y-1 before:absolute before:h-5 w-0.5 h-3 dark:bg-primary-700 bg-primary-300 hover:bg-primary-500 transition hover:-translate-y-[0.25]"
-									/>
-								{/each}
-								<span
-									class="w-0.5 h-5 z-10 dark:bg-primary-600 bg-primary-400 hover:bg-primary-500 rounded-full"
-								/>
-							{/each}
-						</div>
-						{#if animate}
-							<span
-								in:slidevertical|once={{ firstdelay, delay: i * 50 * firstdelay }}
-								class="absolute z-10 duration-75 {skill.progress} bg-gradient-to-r from-primary-500 to bg-primary-300 h-5 rounded"
-							/>
-						{/if}
-					</div> -->
