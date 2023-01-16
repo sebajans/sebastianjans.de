@@ -125,7 +125,7 @@
 				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
 					{categoryName}
 				</h2>
-				<p class="font-serif text-sm dark:text-primary-50 text-primary-900  pb-1">
+				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
 					<T
 						keyName="skill-{categoryName}-text"
 						defaultValue="

@@ -7,33 +7,8 @@
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
-
-	const rows = [
-		{
-			movement: '-10% + 10',
-			randomnumber: 0.5
-		},
-		{
-			movement: '0% - 10',
-			randomnumber: 0.55
-		},
-		{
-			movement: '-10% + 10',
-			randomnumber: 0.45
-		}
-	];
-	let centerImage:boolean = false
 	
-
-
-	function centerTheImage(i:number, id:number) {
-		if (i === id) {
-			return centerImage = !centerImage
-		}
-	}
-	function centerTheImage2() {
-			centerImage = !centerImage
-	}
+		let activeNumber: number = -1
 
 </script>
 
@@ -54,42 +29,67 @@
 		</div>
 		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-300 dark:bg-primary-600" />
 	</div>
-	<div class="relative my-auto mx-auto h-auto max-w-4xl w-full flex flex-col items-end justify-center">
-			<p class="max-w-4xl my-4 px-3 md:text-right text-left w-full">
+	<div class="relative my-auto mx-auto h-auto max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center">
+			<p class="max-w-4xl my-4 px-3 text-left w-full sm:w-2/5">
 				<T
 				keyName="logo-design-paragraph"
 				defaultValue="These logotypes show some of my previous logo design works."
 				/>
 			</p>
-		<ul class="max-h-[calc(100vh_-_5.5rem)] h-full group w-auto gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-150">
-					{#each (LogoItems.sort(() => Math.random())) as logo, i}
-					<li in:fly={{delay: i*50, y: 20, duration: 50}} class="transition-all duration-200">
+		<div class="logo-main {activeNumber === -1 ? '':'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300">
+			{#each (LogoItems.sort(() => Math.random())) as logo, i}
+				<div in:fly={{delay: i*50, y: 20, duration: 50}} class="logo-individual transition-all duration-200">
+					<button on:keydown on:click={() => activeNumber = i}
+						style:background-image={$nightMode ? `url('${logo.imageDark}')` : `url('${logo.image}')`}
+						class=" bg-contain bg-no-repeat bg-center bg-origin-content w-full max-w-[120px] md:max-w-[160px] aspect-square p-2 duration-200 transition-all"
+						/>
+				</div>
+			{/each}
+		</div>
+		{#if LogoItems[activeNumber]}
+			<div transition:fly="{{ x: -300, duration: 300 }}" class="{LogoItems[activeNumber] ? 'translate-x-0' : 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl bg-primary-300 dark:bg-primary-700 absolute flex flex-col w-4/5 md:w-3/5  h-full p-4 items-center justify-between left-0 md:right-2/5">
+				<div style:background-image={$nightMode ? `url('${LogoItems[activeNumber].imageDark}')` : `url('${LogoItems[activeNumber].image}')`}
+				class=" bg-contain bg-no-repeat bg-center bg-origin-content h-1/2 aspect-square p-2 md:p-4 duration-200 transition-all my-auto" />
+				<div class="pb-4">
+					<h2 class="font-sans text-3xl text-center pb-2">
+						{LogoItems[activeNumber].title}
+					</h2>
+					<p class="text-center">
+						{LogoItems[activeNumber].text}
+					</p>
+				</div>	
 
-						<button on:keydown on:click
-							style:background-image={$nightMode ? `url('${logo.imageDark}')` : `url('${logo.image}')`}
-							class=" {centerImage ? 'absolute left-0 top-0' : 'relative'} bg-contain bg-no-repeat bg-center bg-origin-content w-[15vh] md:w-[20vh] aspect-square p-2 md:p-4 duration-200 transition-all"
-							/>
-							{#if centerImage}
-							<div class="absolute bg-primary-400 w-full left-1/2 top-1/2">
-								test
-							</div>
-							{/if}
-						</li>
-
-					{/each}
-					<!-- ON CLICK: -->
-					<!-- position absolute center -->
-					<!-- check if ID is the same otherwise -->
-					</ul>
+				<button
+					class="absolute z-20 group top-4 right-4 h-6 w-6 group font-sans hover:text-primary-500"
+					on:click={() => activeNumber = -1}
+				>
+					<span
+						class="transition-all transform group-hover:rotate-[135deg] rotate-45 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
+					/>
+	
+					<span
+						class="transition-all transform -rotate-45 group-hover:rotate-45 -translate-y-0.5 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
+					/>
+				</button>
+			</div>
+		{/if}
+					
+					<!-- {#if  LogoItems === activeNumber}
+						<div class="absolute bg-primary-400 w-full h-full left-0">
+						{activeNumber}
+						{index}
+						
+					</div>
+					{/if} -->
 	</div>
 </section>
 
 <style>
-	ul:hover li {
+	.logo-main:hover .logo-individual {
 		@apply blur-[2px] opacity-60 scale-90
 
 	}
-	ul li:hover {
+	.logo-main .logo-individual:hover {
 		@apply blur-0 opacity-100 scale-100
 	}
 </style>
