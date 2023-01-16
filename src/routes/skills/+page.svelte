@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { cubicInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
@@ -13,37 +12,17 @@
 
 	mainClass.set('pt-28 pb-20 md:pb-0');
 
-	function slidevertical(node: any, { firstdelay, delay }: { firstdelay: number; delay: number }) {
-		return {
-			delay,
-			duration: 850 * firstdelay,
-			css: (t: number) => {
-				const eased = cubicInOut(t);
-
-				return `
-				transform-origin: left;
-				transform: scaleX(${eased})
-				`;
-			}
-		};
-	}
-
-	// https://svelte.dev/repl/6904f0306d6f4985b55f5f9673f762ef?version=3.4.1
-	let visible: boolean;
+	let visible: boolean = false;
 	let duration: number;
 	let firstdelay: number;
+	onMount(() => (visible = true));
 	afterNavigate(({ from }) => {
 		duration = from === null ? 450 : 0;
 		firstdelay = from === null ? 1 : 0;
 		visible = true;
 	});
 
-	let animate = false;
-	onMount(() => (animate = true));
-
-
 	let popup: any;
-
 	function openPopup() {
 		popup.show();
 	}
@@ -55,6 +34,7 @@
 </svelte:head>
 
 <div class=" sm:columns-2 space-y-8 gap-8 pb-12 max-w-4xl justify-center items-center mx-auto my-auto">
+
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">
@@ -115,11 +95,10 @@
 				</div>
 			</Popup>
 		</div>
-
 		{#each Object.entries(skillItems) as [categoryName, skills], i}
 		<!-- style:transform={`translateZ(0)`} -->
 			<div
-				in:fly={{ y: 30, duration, delay: (150 + i * 150) * firstdelay }}
+				in:fly={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
 				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
 			>
 				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
@@ -128,20 +107,17 @@
 				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
 					<T
 						keyName="skill-{categoryName}-text"
-						defaultValue="
-			{skills.categorydescription}"
+						defaultValue="{skills.categorydescription}"
 					/>
 				</p>
 				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md dark:bg-primary-700/50 bg-primary-200/50">
-
-					{#each skills.categoryArray as skill, i}
-					<span
-					class="font-serif dark:text-primary-100 text-primary-800 font-medium text-sm "
-					>
+					{#each skills.categoryArray as skill}
+						<span
+						class="font-serif dark:text-primary-100 text-primary-800 font-medium text-sm "
+						>
 						<img src={skill.iconLink} class="pointer-events-none inline-block h-7 w-7 rounded-md aspect-square mr-1.5 object-fill " alt={skill.name}>
-						{skill.name}
-					</span>
-					
+							{skill.name}
+						</span>
 					{/each}
 				</div>
 			</div>

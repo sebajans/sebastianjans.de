@@ -15,9 +15,10 @@
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <section
+on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1} 
 	id="logodesign"
 	class="bg-primary-300/50 dark:bg-primary-600/50 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden md:pl-52"
->
+> 
 	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
 		<div class="w-[calc(100vw_-_56rem)] h-auto" />
 		<div class="max-w-4xl w-full">
@@ -36,7 +37,7 @@
 				defaultValue="These logotypes show some of my previous logo design works."
 				/>
 			</p>
-		<div class="logo-main {activeNumber === -1 ? '':'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300">
+		<div on:keydown|stopPropagation on:click|stopPropagation class="logo-main {activeNumber === -1 ? '':'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300">
 			{#each (LogoItems.sort(() => Math.random())) as logo, i}
 				<div in:fly={{delay: i*50, y: 20, duration: 50}} class="logo-individual transition-all duration-200">
 					<button on:keydown on:click={() => activeNumber = i}
@@ -47,7 +48,7 @@
 			{/each}
 		</div>
 		{#if LogoItems[activeNumber]}
-			<div transition:fly="{{ x: -300, duration: 300 }}" class="{LogoItems[activeNumber] ? 'translate-x-0' : 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl bg-primary-300 dark:bg-primary-700 absolute flex flex-col w-4/5 md:w-3/5  h-full p-4 items-center justify-between left-0 md:right-2/5">
+			<div transition:fly="{{ x: -300, duration: 300 }}" class="{LogoItems[activeNumber] ? 'translate-x-0' : 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-700 absolute flex flex-col w-4/5 md:w-3/5  h-full p-4 items-center justify-between left-0 md:right-2/5">
 				<div style:background-image={$nightMode ? `url('${LogoItems[activeNumber].imageDark}')` : `url('${LogoItems[activeNumber].image}')`}
 				class=" bg-contain bg-no-repeat bg-center bg-origin-content h-1/2 aspect-square p-2 md:p-4 duration-200 transition-all my-auto" />
 				<div class="pb-4">
@@ -73,14 +74,6 @@
 				</button>
 			</div>
 		{/if}
-					
-					<!-- {#if  LogoItems === activeNumber}
-						<div class="absolute bg-primary-400 w-full h-full left-0">
-						{activeNumber}
-						{index}
-						
-					</div>
-					{/if} -->
 	</div>
 </section>
 
