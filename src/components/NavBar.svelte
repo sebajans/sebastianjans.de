@@ -24,7 +24,8 @@
 	<BackdropBlur {showMenu} />
 	<!-- LOGO -->
 	<a aria-label="Back to Home" href="/" 
-		class="{showMenu ? 'mt-8 md:mt-4 scale-125 md:scale-100 ' : ''} md:w-20 w-16 md:h-20 h-16 m-4 md:my-4 md:mx-8 self-center relative transition-all duration-150 md:translate-x-0 z-50 group">
+		class="{showMenu ? 'mt-8 md:mt-4 scale-125 md:scale-100 mr-[0%]' : 'translate-x-1/2 mr-[100%]'} ease-out group hover:translate-y-2  md:w-20 w-16 md:h-20 h-16 m-4 md:my-4 md:mx-8 self-center relative transition-all duration-200 md:translate-x-0 z-50 group">
+		<!-- <span class="w-[3px] group-hover:opacity-100 opacity-0 transition-all duration-200 -translate-y-[78px] translate-x-3 left-0 h-20 bg-primary-900 rounded absolute"></span> -->
 		<Logo className={''} />
 	</a>
 	<!-- actual nav -->

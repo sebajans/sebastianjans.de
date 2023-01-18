@@ -9,7 +9,7 @@
 <!-- <?xml version="1.0" encoding="UTF-8"?> -->
 
 <svg
-	class="{className} transform transition-all hover:translate-y-1 text-primary-900 hover:text-primary-800 dark:text-primary-50 dark:hover:text-primary-200 w-full aspect-square fill-current"
+	class="{className} transform transition-all  hover:text-primary-800 text-primary-900 dark:text-primary-50 dark:hover:text-primary-200 w-full aspect-square fill-current"
 	viewBox="0 0 513 513"
 	fill-rule="evenodd"
 	xmlns="http://www.w3.org/2000/svg"
