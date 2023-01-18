@@ -21,15 +21,16 @@
 <button
 	aria-label="Open Language Switcher"
 	class="{langExpanded
-		? 'w-24'
-		: 'w-10'} group overflow-hidden duration-300 transition-all items-center justify-center h-10 font-sans flex flex-row relative rounded-md text-primary-50 bg-primary-900 dark:bg-primary-50"
-	on:mouseenter={expandMenu}
+		? 'w-[5.5rem]'
+		: 'w-10'} group overflow-hidden duration-300 transition-all items-center justify-center h-10 font-sans flex flex-row relative rounded-md text-primary-50 bg-primary-900/20 hover:bg-primary-900 dark:bg-primary-50/20 dark:hover:bg-primary-50"
+	on:click={expandMenu}
 	on:focus={expandMenu}
-	on:mouseleave={expandMenu}
->
+	>
+	<!-- on:mouseenter={expandMenu}
+	on:mouseleave={expandMenu} -->
 
-<div
-		class="px-1 transition-all uppercase duration-250 text-lg hover:text-primary-500 dark:hover:text-primary-500 dark:text-primary-700"
+	<div
+		class="px-1 transition-all uppercase duration-250 text-lg group-hover:text-primary-500 dark:hover:text-primary-500 dark:text-primary-50 text-primary-900"
 	>
 		{$languageStore}
 	</div>
@@ -40,7 +41,7 @@
 				<button
 					aria-label="Switch to {language.fullLanguage}"
 					on:click={() => ($languageStore = language.lang)}
-					class="px-1 transition-all uppercase duration-250 group-hover:text-primary-200 dark:group-hover:text-primary-700 hover:!text-primary-500 dark:hover:text-primary-400  dark:text-primary-900"
+					class="px-0.5 transition-all uppercase duration-250 group-hover:text-primary-200 dark:group-hover:text-primary-700 hover:!text-primary-500 dark:hover:text-primary-400  dark:text-primary-900"
 				>
 					{language.lang}
 				</button>

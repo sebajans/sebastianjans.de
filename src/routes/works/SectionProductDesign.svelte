@@ -285,12 +285,12 @@
 						</g>
 					</svg>
 				</div>
-				<div class="relative ">
+				<div class="relative">
 					<img
 						class="{moveToRight
 							? 'opacity-100 '
-							: 'opacity-0 translate-x-full'} absolute w-full h-full transition-all duration-500"
-						src="/productdesign/bench.webp"
+							: 'opacity-0 translate-x-full'} pt-3 translate-y-3 absolute shadow-md shadow-primary-900/30 bg-primary-500/50 rounded-xl w-full h-auto m-4 object-contain transition-all duration-500"
+						src="/productdesign/table-img-2.webp"
 						alt="bench"
 					/>
 
@@ -481,7 +481,7 @@
 				<div class="relative">
 					<span
 						class="{moveToRight
-							? '-translate-x-1/3'
+							? '-translate-x-1/3 md:-translate-x-2/3'
 							: '-translate-x-2/3'} absolute duration-500 font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 "
 					>
 					<T

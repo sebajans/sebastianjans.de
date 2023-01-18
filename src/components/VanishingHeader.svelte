@@ -54,8 +54,8 @@
 	<!-- <slot/> -->
 		<a aria-label="Back to Home" href="/" class="{headerClass || showHeader
 			? 'w-20 h-20 md:left-2 top-2'
-			: 'w-16 h-16 '} md:fixed top-0 absolute md:left-0 left-1/2 transition-all duration-150 -translate-x-1/2 md:translate-x-0  md:inset-x-0  z-50 group">
-			<Logo className={headerClass || showHeader ? 'w-16 h-16' : 'w-12 h-12'} />
+			: 'w-16 h-16 '} md:fixed md:mx-8 top-0 absolute md:left-0 left-1/2 transition-all duration-150 md:translate-x-0 z-50 group">
+			<Logo className={headerClass || showHeader ? 'w-16 h-16' : 'translate-x-2 w-12 h-12'} />
 		</a>
 
 	<div
@@ -70,8 +70,8 @@
 			{$pageTitle}
 		</h1>
 		<!-- icons to the right -->
-		<div class="hidden md:flex h-10">
+		<!-- <div class="hidden md:flex h-10">
 			<SocialMenu  />
-		</div>
+		</div> -->
 	</div>
 </header>

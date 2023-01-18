@@ -35,11 +35,11 @@ export const skillItems = {
     categoryArray: [
       {
         iconLink: 'skills-icons/autodesk-fusion-360.svg',
-        name: 'Autodesk Fusion 360', progress: 'w-[75.5%] '
+        name: 'AD Fusion 360', progress: 'w-[75.5%] '
       },
       {
         iconLink: 'skills-icons/autodesk-3ds.svg',
-        name: 'Autodesk 3DS Max', progress: 'w-[50.5%] '
+        name: 'AD 3DS Max', progress: 'w-[50.5%] '
       }
     ]
   },
@@ -53,7 +53,7 @@ export const skillItems = {
       },
       {
         iconLink: 'skills-icons/adobe-photoshop.svg',
-        name: 'Adobe Photoshop', progress: 'w-[75.5%] '
+        name: 'Photoshop', progress: 'w-[75.5%] '
       },
       {
         iconLink: 'skills-icons/AffinityDesigner.svg',
@@ -61,7 +61,7 @@ export const skillItems = {
       },
       {
         iconLink: 'skills-icons/adobe-illustrator.svg',
-        name: 'Adobe Illustrator', progress: 'w-[100.5%] '
+        name: 'Illustrator', progress: 'w-[100.5%] '
       },
       {
         iconLink: 'skills-icons/AffinityPublisher.svg',
@@ -69,7 +69,7 @@ export const skillItems = {
       },
       {
         iconLink: 'skills-icons/adobe-indesign.svg',
-        name: 'Adobe InDesign', progress: 'w-[75.5%] '
+        name: 'InDesign', progress: 'w-[75.5%] '
       },
       {
         iconLink: 'skills-icons/figma2.svg',

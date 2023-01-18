@@ -5,6 +5,7 @@
 	import { T, getTranslate } from '@tolgee/svelte';
 	import Popup from '../../components/Popup.svelte';
 	import TermsOfService from '../../components/TermsOfService.svelte';
+	import type { test } from 'vitest';
 
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
@@ -16,6 +17,7 @@
 	function openPopup() {
 		popup.show();
 	}
+
 </script>
 
 <svelte:head>

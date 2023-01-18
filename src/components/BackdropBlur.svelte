@@ -1,11 +1,14 @@
 <script lang="ts">
+	import { fade } from "svelte/transition";
 	export let showMenu: boolean = false;
 </script>
 
-<div
-class="{showMenu
-  ? 'md:!hidden'
-  : 'hidden'} h-full duration-300 transition inset-0 absolute z-20 backdrop-blur-2xl bg-gradient-to-t from-primary-100 dark:from-primary-900"
->
-<slot/>
-</div>
+{#if showMenu}
+  <div transition:fade={{ duration: 150 }}
+  class="{showMenu
+    ? 'md:hidden'
+    : 'hidden'} h-full duration-300 transition inset-0 absolute z-20 backdrop-blur-2xl bg-primary-100/50  dark:bg-primary-900/50"
+  >
+    <slot/>
+  </div>
+{/if}

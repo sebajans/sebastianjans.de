@@ -5,7 +5,6 @@
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
 	import { cvItems } from './cv_items';
-	import { tweened } from 'svelte/motion';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	pageTitle.set('');
 	mainClass.set('pt-0');

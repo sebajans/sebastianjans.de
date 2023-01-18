@@ -14,7 +14,7 @@
 	let initialized = false;
 	let showMenu = false;
 	let showHeader = false;
-	
+	import { pageTitle } from "$lib/stores/pageTitle";
 	beforeUpdate(() => (showMenu = false));
 	
 	beforeUpdate(() => (showHeader = false));
@@ -41,11 +41,21 @@
 
 {#if initialized}
 	<TolgeeProvider config={tolgeeConfig}>
-		<VanishingHeader offset={100} tolerance={3} {showHeader} />
+		<!-- <VanishingHeader offset={100} tolerance={3} {showHeader} /> -->
 		<NavBar {showMenu} />
+		
 		<main class="{$mainClass} min-h-screen min-h-screen-ios px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
+			<h1
+				class="transition-all top-6 absolute md:left-44 left-4 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
+				>
+				{$pageTitle}
+			</h1>
 			<slot />
 			<Footer/>
 		</main>
 	</TolgeeProvider>
 {/if}
+
+<!-- {headerClass || showHeader
+	? 'text-3xl md:text-4xl py-2'
+	: 'md:text-3xl py-0'} -->

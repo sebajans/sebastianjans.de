@@ -6,7 +6,7 @@
 	aria-label="Open Navigation Menu"
 	class="{showMenu
 		? ''
-		: ''} md:hidden  z-30 fixed left-0 left -1/2 -translate -x-1/2 bottom-0 group p-2 h-14 w-14 space-y-2 rounded-t-lg"
+		: ''} md:hidden backdrop-blur-md z-30 fixed left-0 left -1/2 -translate -x-1/2 bottom-0 group p-2 h-14 w-14 space-y-2 rounded-tr-lg"
 >
 	<span
 		class="{showMenu ? 'translate-y-2.5 rotate-45 group-hover:rotate-0' : 'group-hover:-rotate-180'}

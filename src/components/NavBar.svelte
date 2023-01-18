@@ -5,7 +5,7 @@
 	import MenuToggle from './MenuToggle.svelte';
 	import BackdropBlur from './BackdropBlur.svelte';
 	import SocialMenu from '../components/SocialMenu.svelte';
-
+	import Logo from './Logo.svelte';
 	import { getLanguageStore } from '@tolgee/svelte';
 
 	const languageStore = getLanguageStore();
@@ -18,38 +18,28 @@
 	$: languageStore;
 </script>
 
-<div
-	class="{showMenu ? 'h-screen h-screen-ios md:h-0' : ''} z-30  fixed bottom-0 flex flex-col w-full"
+<header
+	class="{showMenu ? 'h-screen h-screen-ios' : 'h-0 md:h-screen md:h-screen-ios'} transition-transform md:w-40 z-30 fixed inset-y-0 flex justify-between flex-col w-full"
 >
 	<BackdropBlur {showMenu} />
-
+	<!-- LOGO -->
+	<a aria-label="Back to Home" href="/" 
+		class="{showMenu ? 'mt-8 md:mt-4 scale-125 md:scale-100 ' : ''} md:w-20 w-16 md:h-20 h-16 m-4 md:my-4 md:mx-8 self-center relative transition-all duration-150 md:translate-x-0 z-50 group">
+		<Logo className={''} />
+	</a>
 	<!-- actual nav -->
+	
 	<nav
 		class="{showMenu
-			? ''
-			: 'translate-y-[100%]'} overflow-hidden md:translate-y-0 duration-300 transition-transform w-screen md:w-40 overflow-y-hidden absolute z-30 bottom-0 left-0"
+			? ' '
+			: 'opacity-0 md:opacity-100 md:translate-y-0 md:pointer-events-auto pointer-events-none translate-y-[100%]'} max-w-sm self-center h-auto md:overflow-visible md:translate-y-0 md:pb-4 pb-16 duration-300 transition-transform md:rounded-tr-xl md:backdrop-blur-2xl w-screen md:w-40 overflow-hidden space-y-3 relative z-30 p-3"
 	>
-		<ul aria-label="Navigation Bar" class="flex font-sans flex-col gap-4 py-32 pb-16 md:py-4 md:pr-4 md:rounded-tr-xl md:backdrop-blur-2xl flex-grow h-full justify-center">
+		<SocialMenu />
+		<ul aria-label="Navigation Bar" class="flex font-sans flex-col gap-4 flex-grow self-center">
 			{#each navItems as { link, text }}
 				<NavButton on:click={toggleMenu} {link} {text} />
 			{/each}
 		</ul>
 	</nav>
-
-	<div class="md:hidden w-full absolute bottom-0 z-20">
-		<div
-			class="{showMenu
-				? 'bg-transparent'
-				: ' dark:bg-primary-900/40 bg-primary-50/20 backdrop-blur-md'} h-14"
-		/>
-	</div>
-
-	<div
-		class="{showMenu
-			? ''
-			: 'translate-x-[108px]'} duration-300 transform bottom-1 right-1 absolute md:hidden grid grid-flow-col gap-2 m-1 z-30"
-	>
-		<SocialMenu />
-	</div>
 	<MenuToggle on:click={toggleMenu} {showMenu} />
-</div>
+</header>
