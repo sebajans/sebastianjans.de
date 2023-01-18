@@ -85,26 +85,23 @@
 
 <section
 	id="start"
-	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-col items-start justify-center overflow-x-hidden min-h-screen bg-primary-600/50 dark:bg-primary-500/50 h-screen h-screen-ios pb-24 px-3"
+	class="relative w-full md:pl-44 pt-28 flex justify-center overflow-x-hidden min-h-screen bg-primary-50 dark:bg-primary-900 h-screen h-screen-ios pb-24 px-3"
 >
+	<div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">
 
-<h1 class="w-full text-5xl text-left">
-	
-	<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />
-</h1>
-<h3 class="w-2/3 self-start text-2xl text-left py-4">
-	<T keyName="download-portfolio-text" defaultValue="Download my portfolio below to see more of my work." />
-	
-</h3>
-<!-- <button class="w-auto font-sans rounded-md bg-primary-300  " 
->Download Portfolio</button> -->
-<button
-class="relative  uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
-on:click={openPopup}
-					>
-						<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
-					</button>
-
+		<h1 class="w-full text-5xl text-right">
+			<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />
+		</h1>
+		<h3 class="w-2/3 self-end text-2xl text-right py-4">
+			<T keyName="download-portfolio-text" defaultValue="Download my portfolio below to see more of my work." />
+			
+		</h3>
+		<button
+			class="relative uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
+			on:click={openPopup}
+							>
+							<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
+		</button>
 		<Popup popupClass={'w-full mr-10 items-start justify-start bg-primary-200'} position={'w-auto top-auto mt-20 translate-x-0 translate-y-0'} bind:this={popup}>
 			<div class="font-sans font-normal uppercase space-x-2 translate-x-0">
 				<a
@@ -130,4 +127,6 @@ on:click={openPopup}
 				>
 			</div>
 		</Popup>
+	</div>
+
 </section>
