@@ -13,8 +13,15 @@
 						xmlns="http://www.w3.org/2000/svg"
 						xmlns:xlink="http://www.w3.org/1999/xlink"
 						xml:space="preserve"
-						style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+						style="clip-path: polygon(0 0, 50% 0%, 50% 100%,0 100%); fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
 					>
+					<!-- <clipPath id="svgPath">
+						<rect 
+						x="0" y="0"
+						width="500" height="1000"
+						>	
+						</rect>
+					</clipPath> -->
 						<g transform="matrix(1,0,0,1,-2100,0)">
 							<g transform="matrix(1,0,0,1,-1050,0)">
 								<rect

@@ -29,8 +29,17 @@
 	}, {
 	 	value: 'top',
 		transform: 'rotateX( -90deg)'
+	}, {
+	 	value: 'bottom',
+		transform: 'rotateX( 90deg)'
+	}, {
+	 	value: 'angle',
+		transform: 'rotateX( -20deg) rotateY( -50deg)'
+	}, {
+	 	value: 'back',
+		transform: 'rotateY( 180deg)'
 	}]
-	let selected = 'left'
+	let selected = 'angle'
 	
 	$: selectedItem = options.find(x => x.value == selected);
 	// $: visibleSide = selected.class
@@ -62,41 +71,58 @@
 	-->
 	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
 		<div class=" md:pl-44 px-4 flex justify-center flex-col items-center max-w-4xl w-full sm:w-full">
-			<div class="font-sans uppercase font-medium ">{selectedItem?.value}</div>
-			
-			<div style="perspective: 400px;" class="h-[216px] w-[400px] m-20 flex justify-items-center border-2 border-primary-300/50">
+			<!-- <div class="font-sans uppercase font-medium ">{selectedItem?.value}</div> -->
+			<div class="flex flex-row">
+
+			<div style="perspective: 400px;" class="h-[216px] w-[400px] m-20 flex justify-items-center relative">
 				<div  style="transform-style: preserve-3d; transform: translateZ(-100px) {selectedItem?.transform};"
 								class="relative w-[400px] h-[216px] mx-[100px] transition-all transform duration-1000">
-					<div style="transform: rotateY(-15.11deg) translateX(-89px) translateZ(79px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
-						<!-- front -->
-						<BenchFront imgClass="scale-[112%] translate- y-2" {moveToRight} />
-
+					<!-- front -->
+					<div style="transform: rotateY(-15.11deg) translateX(-90px) translateZ(79px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
+						<BenchFront imgClass="scale-y-[110%] scale-x-[112%]" {moveToRight} />
 					</div>
+					
+					<!-- back  -->
+					<div style="transform: rotateY(0deg) translateX(-106px) translateZ(-108px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
+						<BenchFront imgClass="scale-x-[108%] scale-y-[111%]" {moveToRight} />
+					</div>
+
+					<!-- right -->
 					<div style="transform: rotateY( 90deg) translateZ(192px) translateY(8px);" class="absolute w-[216px] h-[200px] bg-primary- 500/30">
-						<!-- right -->
 						<BenchSideR imgClass="scale-x-[108%] scale-y-[111%] translate-x -0.5" {moveToRight} />
-
 					</div>
+					<!-- left  -->
 					<div style="transform: rotateY(-90deg) translateZ(154px) translateX(-54px) translateY(8px);" class="absolute w-[108px] h-[200px] bg-primary- 500/30">
-						<!-- left -->
-						<BenchSideL imgClass="scale-x-[108%] scale-y-[111%] translate-x -0.5" {moveToRight} />
-
+						<BenchSideL imgClass="scale-x-[200%] scale-y-[208%] translate-x-1/2" {moveToRight} />
 					</div>
+					<!-- top   -->
 					<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(100px);" class="absolute w-[400px] h-[216px] bg-primary- 500/50">
-						<!-- top					 -->
 						<BenchTop imgClass="scale-[108%] -translate-x-0.5" {moveToRight} />
-
+					</div>
+					<!-- bot   -->
+					<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(-90px);" class="absolute w-[400px] h-[216px] bg-primary- 500/50">
+						<BenchTop imgClass="scale-[108%] -translate-x-0.5" {moveToRight} />
 					</div>
 				</div>
 			</div>
-			<p class="radio-group">
+			<div class="col m-2 font-sans flex flex-col bg-primary-900/20 p-4 rounded-md space-y-2 uppercase font-medium justify-center self-center h-fit">
 				{#each options as option}
-					<label>
+					<label class="font-normal">
 						<input type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" /> {option.value}
 					</label>
 				{/each}
-			</p>
-
+			</div>
+		</div>
+		<p
+						style="-webkit-hyphens: auto;
+					-ms-hyphens: auto;
+					hyphens: auto;"
+					>
+						<T
+							keyName="description-product-design-1"
+							defaultValue="This bench is a project that i created with the intention of having multiple purposes. It had to fit a tight corner on my balcony and also serve as a sleeping spot for my cat."
+						/>
+					</p>
 			<!-- <button on:click={() => selected = 'right'}>test</button> -->
 			
 			<!-- {#if showProduct}
