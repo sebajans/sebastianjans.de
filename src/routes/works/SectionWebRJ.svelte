@@ -2,6 +2,7 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { nightMode } from '$lib/stores/nightMode';
+	import WorksHeader from '../../components/WorksHeader.svelte';
 
 	let scroll: number = 0;
 	let windowHeight: number;
@@ -16,21 +17,14 @@
 
 <!-- https://play.tailwindcss.com/r0gTHJAoNv -->
 
+<!-- bg-primary-200/50 dark:bg-primary-700/50 -->
 <section
 	id="websites"
-	class="bg-primary-200/50 md:pl-44 dark:bg-primary-700/50 w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
+	class="bg-gradient-to-bl from-primary-200/50 dark:from-primary-700/30 via-transparent to-transparent md:pl-44  w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
 >
-	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
-		<div class="w-[calc(100vw_-_56rem)] h-auto" />
-		<div class="max-w-4xl w-full">
-			<h2
-				class="bg-primary-200 dark:bg-primary-700 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl "
-			>
-				<T keyName="works-webdev" defaultValue="Webdesign" />
-			</h2>
-		</div>
-		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-200 dark:bg-primary-700" />
-	</div>
+	<WorksHeader backgroundColor="bg-primary-200 dark:bg-primary-700">
+		<T keyName="works-webdev" defaultValue="Webdesign" />
+	</WorksHeader>
 
 	<div
 		class="w-full px-3 max-w-4xl h-[65vh] max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"

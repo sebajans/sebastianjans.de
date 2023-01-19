@@ -102,7 +102,11 @@
 				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
 			>
 				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
-					{categoryName}
+					<T
+						keyName="skill-{categoryName}-title"
+						defaultValue="{categoryName}"
+					/>
+					
 				</h2>
 				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
 					<T
@@ -112,12 +116,14 @@
 				</p>
 				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md dark:bg-primary-700/50 bg-primary-200/50">
 					{#each skills.categoryArray as skill}
-						<span
-						class="font-serif dark:text-primary-100 text-primary-800 font-medium text-sm "
+						<div
+						class="flex flex-row items-center h-7"
 						>
-						<img src={skill.iconLink} class="pointer-events-none inline-block h-7 w-7 rounded-md aspect-square mr-1.5 object-fill " alt={skill.name}>
-							{skill.name}
-						</span>
+						<img src={skill.iconLink} class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill " alt={skill.name}>
+						<span class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm">
+								{skill.name}
+							</span>
+						</div>
 					{/each}
 				</div>
 			</div>

@@ -14,9 +14,10 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
+<!-- bg-primary-200/50 dark:bg-primary-700/50 -->
 <section
 	id="kamadoB10"
-	class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-primary-200/50 h-screen-ios dark:bg-primary-700/50 md:pl-44"
+	class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden h-screen-ios  md:pl-44"
 >
 	<div
 		class="mx-auto my-auto grid h-[65vh] max-h-[56rem] w-full max-w-4xl grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"

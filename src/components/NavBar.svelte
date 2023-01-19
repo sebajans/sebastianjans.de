@@ -54,7 +54,7 @@
 <svelte:window bind:scrollY={y} />
 
 <header
-	class="{showMenu ? 'h-screen h-screen-ios' : 'h-0 md:h-screen md:h-screen-ios'} transition-transform md:w-40 z-30 fixed inset-y-0 flex justify-between flex-col w-full"
+	class="{showMenu ? 'h-screen h-screen-ios' : 'h-0 md:h-screen md:h-screen-ios'} md:backdrop-blur-2xl transition-transform md:w-40 z-30 fixed inset-y-0 flex justify-between flex-col w-full"
 >
 	<BackdropBlur {showMenu} />
 	<!-- LOGO -->
@@ -71,7 +71,7 @@
 	<nav
 		class="{showMenu
 			? ' '
-			: 'opacity-0 md:opacity-100 md:translate-y-0 md:pointer-events-auto pointer-events-none translate-y-[100%]'} max-w-sm self-center h-auto md:overflow-visible md:translate-y-0 md:pb-4 pb-16 duration-300 transition-transform md:rounded-tr-xl md:backdrop-blur-2xl w-screen md:w-40 overflow-hidden space-y-3 relative z-30 p-3"
+			: 'opacity-0 md:opacity-100 md:translate-y-0 md:pointer-events-auto pointer-events-none translate-y-[100%]'} max-w-sm self-center h-auto md:overflow-visible md:translate-y-0 md:pb-4 pb-16 duration-300 transition-transform md:rounded-tr-xl  w-screen md:w-40 overflow-hidden space-y-3 relative z-30 p-3"
 	>
 		<SocialMenu />
 		<ul aria-label="Navigation Bar" class="flex font-sans flex-col gap-4 flex-grow self-center">

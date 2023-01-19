@@ -1,29 +1,22 @@
 <script lang="ts">
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
-
+	import WorksHeader from '../../components/WorksHeader.svelte';
+	
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
-
+<!-- bg-primary-400/50 dark:bg-primary-500/50 -->
 <section
 	id="graphicdesign"
-	class=" bg-primary-400/50 dark:bg-primary-500/50 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden "
+	class="  w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden "
 >
-	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
-		<div class="w-[calc(100vw_-_56rem)] h-auto" />
-		<div class="max-w-4xl w-full">
-			<h2
-				class="bg-primary-400 dark:bg-primary-500 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl "
-			>
-				<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
-			</h2>
-		</div>
-		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-400 dark:bg-primary-500" />
-	</div>
+	<WorksHeader backgroundColor="bg-primary-400 dark:bg-primary-500">
+		<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
+	</WorksHeader>
 	<div
 		class="w-full px-3 max-w-4xl mt-4 h-[calc(100vh_-_6rem)] max-h-[56rem] mx-auto my-auto grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
 	>

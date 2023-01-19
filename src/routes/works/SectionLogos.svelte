@@ -4,6 +4,7 @@
 	import { LogoItems } from './logoitems';
 	import { nightMode } from '$lib/stores/nightMode';
 	import { fly } from 'svelte/transition';
+	import WorksHeader from '../../components/WorksHeader.svelte';
 	let scroll: number = 0;
 	let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
@@ -11,25 +12,20 @@
 		let activeNumber: number = -1
 
 </script>
-
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
+
+<!-- , radial-gradient(at 43% 40%, var(--tw-gradient-from) 0%, transparent 20%), radial-gradient(at 80% 65%, var(--tw-gradient-from) 0%, transparent 40%) -->
 <section
 on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1} 
 	id="logodesign"
-	class="bg-primary-300/50 dark:bg-primary-600/50 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden md:pl-52"
+	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
+	class="bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden md:pl-52"
 > 
-	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
-		<div class="w-[calc(100vw_-_56rem)] h-auto" />
-		<div class="max-w-4xl w-full">
-			<h2
-				class="bg-primary-300 dark:bg-primary-600 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl "
-			>
-				<T keyName="works-logodesign" defaultValue="Logo Design" />
-			</h2>
-		</div>
-		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-300 dark:bg-primary-600" />
-	</div>
+	<WorksHeader backgroundColor="bg-primary-300 dark:bg-primary-600">
+		<T keyName="works-logodesign" defaultValue="Logo Design" />
+	</WorksHeader>
+
 	<div class="relative my-auto mx-auto h-auto max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center">
 			<p class="max-w-4xl my-4 px-3 text-left w-full sm:w-2/5">
 				<T
@@ -39,16 +35,16 @@ on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1}
 			</p>
 		<div on:keydown|stopPropagation on:click|stopPropagation class="logo-main {activeNumber === -1 ? '':'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300">
 			{#each (LogoItems.sort(() => Math.random())) as logo, i}
-				<div in:fly={{delay: i*50, y: 20, duration: 50}} class="logo-individual transition-all duration-200">
+				<div in:fly={{delay: i*50, y: 20, duration: 50}} class="logo-individual flex justify-center items-center transition-all duration-200">
 					<button on:keydown on:click={() => activeNumber = i}
 						style:background-image={$nightMode ? `url('${logo.imageDark}')` : `url('${logo.image}')`}
-						class=" bg-contain bg-no-repeat bg-center bg-origin-content w-full max-w-[120px] md:max-w-[160px] aspect-square p-2 duration-200 transition-all"
+						class="bg-contain bg-no-repeat bg-center bg-origin-content w-full max-w-[120px] md:max-w-[160px] aspect-square p-2 duration-200 transition-all"
 						/>
 				</div>
 			{/each}
 		</div>
 		{#if LogoItems[activeNumber]}
-			<div transition:fly="{{ x: -300, duration: 300 }}" class="{LogoItems[activeNumber] ? 'translate-x-0' : 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-700 absolute flex flex-col w-4/5 md:w-3/5  h-full p-4 items-center justify-between left-0 md:right-2/5">
+			<div on:keydown|stopPropagation on:click|stopPropagation  transition:fly="{{ x: -300, duration: 300 }}" class="{LogoItems[activeNumber] ? 'translate-x-0' : 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5">
 				<div style:background-image={$nightMode ? `url('${LogoItems[activeNumber].imageDark}')` : `url('${LogoItems[activeNumber].image}')`}
 				class=" bg-contain bg-no-repeat bg-center bg-origin-content h-1/2 aspect-square p-2 md:p-4 duration-200 transition-all my-auto" />
 				<div class="pb-4">
