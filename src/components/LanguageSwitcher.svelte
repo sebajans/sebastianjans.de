@@ -41,7 +41,7 @@
 				<button
 					aria-label="Switch to {language.fullLanguage}"
 					on:click={() => ($languageStore = language.lang)}
-					class="px-0.5 transition-all uppercase duration-250 group-hover:text-primary-200 dark:group-hover:text-primary-700 hover:!text-primary-500 dark:hover:text-primary-400  dark:text-primary-900"
+					class="w-5 px-0.5 transition-all hover:scale-110 uppercase duration-250 group-hover:text-primary-200 dark:group-hover:text-primary-700 hover:!text-primary-500 dark:hover:text-primary-400  dark:text-primary-900"
 				>
 					{language.lang}
 				</button>
