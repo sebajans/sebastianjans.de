@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { fade, draw } from "svelte/transition";
-	export let moveToRight:boolean
+
 	export let imgClass:string
 </script>
 

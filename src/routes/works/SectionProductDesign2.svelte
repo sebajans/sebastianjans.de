@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { T } from '@tolgee/svelte';
+	import { fade } from 'svelte/transition';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import WorksHeader from '../../components/WorksHeader.svelte';
+	import BenchBottom from './vectors/BenchBottom.svelte';
 	import BenchFront from './vectors/BenchFront.svelte';
 	import BenchSideL from './vectors/BenchSideL.svelte';
 	import BenchSideR from './vectors/BenchSideR.svelte';
@@ -16,13 +18,18 @@
 	let moveToRight: boolean = false;
 	let moveToLeft: boolean = false;
 	
+	function showResult() {
+		imageVisible = !imageVisible
+		selected = 'angleview'
+	}
+
 	let options = [
 	{
 		value: 'front',
 		transform: 'rotateY(   0deg)'
 	}, {
 		value: 'left',
-		transform: 'rotateY(  90deg)'
+		transform: 'rotateY(  90deg) translateX(150px)'
 	}, { 
 		value: 'right',
 		transform: 'rotateY( -90deg)'
@@ -30,17 +37,21 @@
 	 	value: 'top',
 		transform: 'rotateX( -90deg)'
 	}, {
-	 	value: 'bottom',
-		transform: 'rotateX( 90deg)'
-	}, {
-	 	value: 'angle',
+		value: 'angle',
 		transform: 'rotateX( -20deg) rotateY( -50deg)'
 	}, {
-	 	value: 'back',
-		transform: 'rotateY( 180deg)'
-	}]
-	let selected = 'angle'
-	
+		value: 'angleview',
+		transform: 'rotateX( -20deg) rotateY( -3deg) translateZ(-5px) translateY(25px)'
+	}
+	//  	value: 'bottom',
+	// 	transform: 'rotateX( 90deg)'
+	// }, {
+	// }, {
+	//  	value: 'back',
+	// 	transform: 'rotateY( 180deg)'
+]
+	let selected = 'angleview'
+	let imageVisible = true
 	$: selectedItem = options.find(x => x.value == selected);
 	// $: visibleSide = selected.class
 	// $: visibleTitle = selected.value
@@ -58,149 +69,58 @@
 		<T keyName="works-productdesign" defaultValue="Product Design" />
 	</WorksHeader>
 
-	<!-- w-400 = 100% 
-	<div style="perspective: 400px;" class="h-[400px] w-[400px] m-20 flex justify-items-center border-2 border-primary-300/50">
-				<div style:transform={selectedItem?.transform} style="transform-style: preserve-3d; transform: translateZ(-25%);" 
-								class="relative w-[100%] h-[54%] mx-[25%] transition-all duration-1000">
-					<div style="transform: rotateY(-15.11deg) translateX(-22.25%) translateZ(19.75%) translateY(2%);" class="absolute w-[103.25%] h-[50%] bg-primary-500/50">front</div>
-					<div style="transform: rotateY( 90deg) translateZ(48%) translateY(2%);" class="absolute w-[54%] h-[50%] bg-primary-500/30">right</div>
-					<div style="transform: rotateY(-90deg) translateZ(38.5%) translateX(-13.5%) translateY(2%);" class="absolute w-[27%] h-[50%] bg-primary-500/30">left</div>
-					<div style="transform: rotateX( 90deg) translateX(-25%) translateZ(25%);" class="absolute w-[100%] h-[54%] bg-primary-500/50">top</div>
-				</div>
-			</div>
-	-->
 	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
 		<div class=" md:pl-44 px-4 flex justify-center flex-col items-center max-w-4xl w-full sm:w-full">
-			<!-- <div class="font-sans uppercase font-medium ">{selectedItem?.value}</div> -->
-			<div class="flex flex-row">
+			<div class="flex flex-row flex-wrap md:flex-nowrap w-full ">
+				<div class="h-auto w-full sm:w-4/5 justify-center items-center relative">
+					<!-- <div class="font-sans uppercase font-medium mb-4">{selectedItem?.value} View</div> -->
+					<div class="{imageVisible ? 'opacity-100' : ''} transition-opacity delay-500 duration-1000 h-[216px] w-full m-4 relative"  style=" {imageVisible ? 'perspective: 24rem; perspective-origin: 37% 22%;' : 'perspective: 25rem; perspective-origin: 50% 50%;'}">
+						<div  style="transform-style: preserve-3d; transform: translateZ(-100px) {selectedItem?.transform};"
+								class=" relative w-[400px] h-[216px] mx-[100px] transition-all transform duration-1000">
+							<div style="transform: rotateY(-15.11deg) translateX(-90px) translateZ(79px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
+								<BenchFront imgClass="scale-y-[110%] scale-x-[112%]" />
+							</div>
+							<div style="transform: rotateY(0deg) translateX(-106px) translateZ(-108px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
+								<BenchFront imgClass="scale-x-[108%] scale-y-[111%]" />
+							</div>
+							<div style="transform: rotateY( 90deg) translateZ(192px) translateY(8px);" class="absolute w-[216px] h-[200px] bg-primary- 500/30">
+								<BenchSideR imgClass="scale-x-[108%] scale-y-[111%] translate-x -0.5" {moveToRight} />
+							</div>
+							<div style="transform: rotateY(-90deg) translateZ(154px) translateX(-54px) translateY(8px);" class="absolute w-[108px] h-[200px] bg-primary- 500/30">
+								<BenchSideL imgClass="scale-x-[200%] scale-y-[208%] translate-x-1/2" />
+							</div>
+							<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(100px);" class="absolute w-[400px] h-[216px] bg-primary- 500/50">
+								<BenchTop imgClass="scale-[108%] -translate-x-0.5" />
+							</div>
+							<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(-90px);" class="absolute w-[400px] h-[216px] bg-primary- 500/50">
+								<BenchBottom imgClass="scale-[108%] -translate-x-0.5" {moveToRight} />
+							</div>
+						</div>
+					</div>
+					{#if imageVisible}
+					<img in:fade={{delay: 1000, duration: 1000}} src="/productdesign/bench.webp" class="z-30 absolute ml-10 opacity-50 -top-20 aspect-auto w-[400px] h-[400px]" alt="bench">
+					{/if}
+		</div>
 
-			<div style="perspective: 400px;" class="h-[216px] w-[400px] m-20 flex justify-items-center relative">
-				<div  style="transform-style: preserve-3d; transform: translateZ(-100px) {selectedItem?.transform};"
-								class="relative w-[400px] h-[216px] mx-[100px] transition-all transform duration-1000">
-					<!-- front -->
-					<div style="transform: rotateY(-15.11deg) translateX(-90px) translateZ(79px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
-						<BenchFront imgClass="scale-y-[110%] scale-x-[112%]" {moveToRight} />
-					</div>
-					
-					<!-- back  -->
-					<div style="transform: rotateY(0deg) translateX(-106px) translateZ(-108px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
-						<BenchFront imgClass="scale-x-[108%] scale-y-[111%]" {moveToRight} />
-					</div>
-
-					<!-- right -->
-					<div style="transform: rotateY( 90deg) translateZ(192px) translateY(8px);" class="absolute w-[216px] h-[200px] bg-primary- 500/30">
-						<BenchSideR imgClass="scale-x-[108%] scale-y-[111%] translate-x -0.5" {moveToRight} />
-					</div>
-					<!-- left  -->
-					<div style="transform: rotateY(-90deg) translateZ(154px) translateX(-54px) translateY(8px);" class="absolute w-[108px] h-[200px] bg-primary- 500/30">
-						<BenchSideL imgClass="scale-x-[200%] scale-y-[208%] translate-x-1/2" {moveToRight} />
-					</div>
-					<!-- top   -->
-					<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(100px);" class="absolute w-[400px] h-[216px] bg-primary- 500/50">
-						<BenchTop imgClass="scale-[108%] -translate-x-0.5" {moveToRight} />
-					</div>
-					<!-- bot   -->
-					<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(-90px);" class="absolute w-[400px] h-[216px] bg-primary- 500/50">
-						<BenchTop imgClass="scale-[108%] -translate-x-0.5" {moveToRight} />
-					</div>
-				</div>
-			</div>
-			<div class="col m-2 font-sans flex flex-col bg-primary-900/20 p-4 rounded-md space-y-2 uppercase font-medium justify-center self-center h-fit">
+			<div class="w-full md:w-1/5  m-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit">
 				{#each options as option}
-					<label class="font-normal">
-						<input type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" /> {option.value}
+				<div class="space-y-2 space-x-2 flex flex-row justify-evenly items-center md:justify-start">
+					<input id="{option.value}" type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" class="mt-1.5" /> 
+					<label for="{option.value}" class="font-normal pr-4">
+						{option.value}
 					</label>
+				</div>
 				{/each}
+				<button class="uppercase p-2 bg-primary-50/50 transition-all duration-150 hover:bg-primary-400 text-primary-50 rounded-md" 
+				on:click={showResult}>result</button>
 			</div>
 		</div>
-		<p
-						style="-webkit-hyphens: auto;
-					-ms-hyphens: auto;
-					hyphens: auto;"
-					>
+		<p class="mt-4">
 						<T
 							keyName="description-product-design-1"
 							defaultValue="This bench is a project that i created with the intention of having multiple purposes. It had to fit a tight corner on my balcony and also serve as a sleeping spot for my cat."
 						/>
 					</p>
-			<!-- <button on:click={() => selected = 'right'}>test</button> -->
-			
-			<!-- {#if showProduct}
-				<div
-					class="self-center {moveToRight
-						? 'translate-y-full translate-x-2 rotate-90'
-						: ''} duration-[2000ms] ease-out transform relative">
-					<p
-						class="absolute font-sans tracking-wide  w-full text-center font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2"
-					>
-						<T keyName="Left-view" defaultValue="Left View" />
-					</p>
-					<BenchSideL imgClass="self-center w-full text-primary-900 dark:text-primary-50 h-full" {moveToRight} />
-				</div>
-				
-				<div class="relative col-span-2">
-					<div class="{moveToRight ? 'scale-x-0 translate-x-[25%] origin-left' : ''} {moveToLeft ? 'scale-x-0 -translate-x-[25%] origin-right' : ''}  duration-[2000ms] ease-linear">
-						<p
-						class="opacity-80 absolute font-sans tracking-wide w-full text-center font-medium uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2"
-						>
-						<T keyName="Front-view" defaultValue="Front View" />
-					</p>
-					<BenchFront imgClass="" {moveToRight} />
-						
-					</div>
-				</div>
-				<div
-					class="relative {moveToRight
-						? ' scale-x-100 -translate-x-[150%]'
-						: 'scale-x-0 -translate-x-[105%]'} origin-right transition-all duration-[1800ms] delay-200 ease-in"
-				>
-					<p
-						class="absolute font-sans tracking-wide w-full text-center font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2"
-					>
-						<T keyName="Right-view" defaultValue="Right View" />
-					</p>
-					<BenchSideR imgClass="self-center" {moveToRight} />
-					
-				</div>
-				<div class="relative col-start-2 col-span-2">
-					<p
-						class="absolute font-sans tracking-wide w-full text-center font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2"
-					>
-						<T keyName="Top-view" defaultValue="Top View" />
-					</p>
-					<BenchTop imgClass="self-center" {moveToRight} />
-					
-					
-				</div>
-
-				<div
-					class="row-start-3 col-span-4
-					 w-full text-justify transform transition-all duration-500 ease-linear relative items-center flex flex-col justify-center"
-				>
-					<p
-						style="-webkit-hyphens: auto;
-					-ms-hyphens: auto;
-					hyphens: auto;"
-					>
-						<T
-							keyName="description-product-design-1"
-							defaultValue="This bench is a project that i created with the intention of having multiple purposes. It had to fit a tight corner on my balcony and also serve as a sleeping spot for my cat."
-						/>
-					</p>
-					<button
-						class="uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
-						on:click={() => (moveToRight = !moveToRight)}
-					>
-						<T keyName="rotateRight" defaultValue="Rotate right" />
-					</button>
-					<button
-						class="uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
-						on:click={() => (moveToLeft = !moveToLeft)}
-					>
-						<T keyName="rotateLeft" defaultValue="Rotate left" />
-					</button>
-				</div>
-			{/if} -->
 		</div>
 	</div>
 </section>

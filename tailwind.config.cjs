@@ -53,6 +53,16 @@ module.exports = {
       boxShadow: {
         innerxl: 'inset 30px 0px 60px -15px rgba(229, 229, 229, 1)',
       },
+      keyframes: {
+        rotatebox: {
+          '0%': { transform: 'rotateX( -20deg) rotateY( -50deg)' },
+          '50%': { transform: 'rotateX( -200deg) rotateY( -230deg)' },
+          '100%': { transform: 'rotateX( -19deg) rotateY( -49deg)' },
+        }
+      },
+      animation: {
+        rotatebox: 'rotatebox 5s linear infinite',
+      }
     },
   },
   plugins: [
