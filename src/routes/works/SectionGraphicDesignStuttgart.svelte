@@ -12,7 +12,8 @@
 <!-- bg-primary-400/50 dark:bg-primary-500/50 -->
 <section
 	id="graphicdesign"
-	class="  w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden "
+	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
+	class="bg-gradient-to-bl from-primary-400/50 dark:from-primary-500/30 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden "
 >
 	<WorksHeader backgroundColor="bg-primary-400 dark:bg-primary-500">
 		<T keyName="works-graphicdesign" defaultValue="Graphic Design" />

@@ -20,6 +20,7 @@
 <!-- bg-primary-200/50 dark:bg-primary-700/50 -->
 <section
 	id="websites"
+	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
 	class="bg-gradient-to-bl from-primary-200/50 dark:from-primary-700/30 via-transparent to-transparent md:pl-44  w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
 >
 	<WorksHeader backgroundColor="bg-primary-200 dark:bg-primary-700">

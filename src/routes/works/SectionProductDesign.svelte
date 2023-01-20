@@ -26,7 +26,8 @@
 <!-- bg-primary-500/50 dark:bg-primary-400/50 -->
 <section
 	id="productdesign"
-	class=" w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
+	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
+	class="bg-gradient-to-bl from-primary-500/50 dark:from-primary-400/30 w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
 >
 	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
 		<div class="w-[calc(100vw_-_56rem)] h-auto" />
@@ -55,7 +56,8 @@
 					</p>
 					<TableFront imgClass="w-full max-h-[40vh] text-primary-900 dark:text-primary-50 h-full" />
 				</div>
-				<div class="relative rounded-md outline-1 outline outline-primary-50 ">
+				<!-- outline-1 outline outline-primary-50 -->
+				<div class="relative rounded-md  ">
 					<img
 						class="{moveToRight
 							? 'opacity-100 '

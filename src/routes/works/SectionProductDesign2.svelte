@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { T } from '@tolgee/svelte';
 	import { fade } from 'svelte/transition';
-	import WorksHeader from '../../components/WorksHeader.svelte';
 	import BenchBottom from './vectors/BenchBottom.svelte';
 	import BenchFront from './vectors/BenchFront.svelte';
 	import BenchSideL from './vectors/BenchSideL.svelte';
@@ -9,7 +8,7 @@
 	import BenchTop from './vectors/BenchTop.svelte';
 	
 	function showResult() {
-		imageVisible = !imageVisible
+		imageVisible = true
 		selected = 'angleview'
 	}
 
@@ -27,7 +26,7 @@
 	 	value: 'top',
 		transform: 'rotateX( -90deg) translateX(100px)'
 	}, {
-		value: 'angle',
+		value: 'perspective',
 		transform: 'rotateX( -20deg) rotateY( -50deg)'
 	}, {
 		value: 'angleview',
@@ -35,7 +34,7 @@
 	}
 	// translateZ(-5px) translateY(25px)
 ]
-	let selected = 'angleview'
+	let selected = 'perspective'
 	let imageVisible = true
 	$: selectedItem = options.find(x => x.value == selected);
 </script>
@@ -44,12 +43,15 @@
 	id="productdesign2"
 	class=" w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
 >
-	<WorksHeader backgroundColor="bg-primary-500 dark:bg-primary-400">
+	<!-- <WorksHeader backgroundColor="bg-primary-500 dark:bg-primary-400">
 		<T keyName="works-productdesign" defaultValue="Product Design" />
-	</WorksHeader>
-
+	</WorksHeader> -->
 	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
-		<div class=" md:pl-44 px-4 flex justify-center flex-col items-center max-w-4xl w-full sm:w-full">
+		<div class="md:pl-44 px-4 flex justify-center flex-col items-center max-w-4xl w-full sm:w-full">
+
+			<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
+				<T keyName="Cat-Bench" defaultValue='Cat Bench' />
+			</h1>
 			<div class="flex flex-row flex-wrap md:flex-nowrap w-full">
 				<div class="h-full flex w-full md:w-4/5 justify-center items-center relative">
 					<div class="
@@ -94,7 +96,7 @@
 					{/if}
 		</div>
 
-			<div class="w-full flex-auto md:w-1/5 ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit">
+			<div class="w-full flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit">
 				{#each options.slice(0,5) as option}
 				<div class="md:space-y-2 space-x-2 flex flex-row justify-evenly items-center md:justify-start w-full">
 					<input on:keydown on:click={() => imageVisible = false} id="{option.value}" type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" class="md:mt-2" /> 
@@ -104,7 +106,7 @@
 				</div>
 				{/each}
 				<button class="w-full uppercase md:mt-2 py-2 px-4 border-2 border-primary-400 transition-all duration-150 hover:bg-primary-400 text-primary-400 hover:text-primary-50 rounded-md" 
-				on:click={showResult}>result</button>
+				on:click={showResult}><T keyName="result" defaultValue="result" /></button>
 			</div>
 		</div>
 		<p class="mt-4">
