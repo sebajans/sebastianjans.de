@@ -50,8 +50,8 @@
 	//  	value: 'back',
 	// 	transform: 'rotateY( 180deg)'
 ]
-	let selected = 'angleview'
-	let imageVisible = true
+	let selected = 'angle'
+	let imageVisible = false
 	$: selectedItem = options.find(x => x.value == selected);
 	// $: visibleSide = selected.class
 	// $: visibleTitle = selected.value
@@ -74,7 +74,7 @@
 			<div class="flex flex-row flex-wrap md:flex-nowrap w-full ">
 				<div class="h-auto w-full sm:w-4/5 justify-center items-center relative">
 					<!-- <div class="font-sans uppercase font-medium mb-4">{selectedItem?.value} View</div> -->
-					<div class="{imageVisible ? 'opacity-100' : ''} transition-opacity delay-500 duration-1000 h-[216px] w-full m-4 relative"  style=" {imageVisible ? 'perspective: 24rem; perspective-origin: 37% 22%;' : 'perspective: 25rem; perspective-origin: 50% 50%;'}">
+					<div class="{imageVisible ? 'opacity-0' : ''} transition-opacity delay-500 duration-1000 h-[216px] w-full mx-8 my-10 relative"  style=" {imageVisible ? 'perspective: 24rem; perspective-origin: 37% 22%;' : 'perspective: 25rem; perspective-origin: 50% 50%;'}">
 						<div  style="transform-style: preserve-3d; transform: translateZ(-100px) {selectedItem?.transform};"
 								class=" relative w-[400px] h-[216px] mx-[100px] transition-all transform duration-1000">
 							<div style="transform: rotateY(-15.11deg) translateX(-90px) translateZ(79px) translateY(8px);" class="absolute w-[413px] h-[200px] bg-primary- 500/50">
@@ -98,12 +98,12 @@
 						</div>
 					</div>
 					{#if imageVisible}
-					<img in:fade={{delay: 1000, duration: 1000}} src="/productdesign/bench.webp" class="z-30 absolute ml-10 opacity-50 -top-20 aspect-auto w-[400px] h-[400px]" alt="bench">
+					<img in:fade={{delay: 300, duration: 1000}} src="/productdesign/bench.webp" class="z-30 absolute ml-10 opacity-50 -top-20 aspect-auto w-[400px] h-[400px]" alt="bench">
 					{/if}
 		</div>
 
 			<div class="w-full md:w-1/5  m-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit">
-				{#each options as option}
+				{#each options.slice(0,5) as option}
 				<div class="space-y-2 space-x-2 flex flex-row justify-evenly items-center md:justify-start">
 					<input id="{option.value}" type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" class="mt-1.5" /> 
 					<label for="{option.value}" class="font-normal pr-4">
