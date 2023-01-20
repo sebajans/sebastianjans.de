@@ -104,7 +104,7 @@
 
 			<div class="w-full md:w-1/5  m-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit">
 				{#each options.slice(0,5) as option}
-				<div class="space-y-2 space-x-2 flex flex-row justify-evenly items-center md:justify-start">
+				<div on:keydown on:click={() => imageVisible = false} class="space-y-2 space-x-2 flex flex-row justify-evenly items-center md:justify-start">
 					<input id="{option.value}" type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" class="mt-1.5" /> 
 					<label for="{option.value}" class="font-normal pr-4">
 						{option.value}
