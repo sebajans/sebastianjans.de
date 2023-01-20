@@ -35,7 +35,7 @@
 	// translateZ(-5px) translateY(25px)
 ]
 	let selected = 'perspective'
-	let imageVisible = true
+	let imageVisible = false
 	$: selectedItem = options.find(x => x.value == selected);
 </script>
 
@@ -53,7 +53,7 @@
 				<T keyName="Cat-Bench" defaultValue='Cat Bench' />
 			</h1>
 			<div class="flex flex-row flex-wrap md:flex-nowrap w-full">
-				<div class="h-full flex w-full md:w-4/5 justify-center items-center relative">
+				<div class="scale-[0.8] md:scale-100 h-full flex w-full md:w-4/5 justify-center items-center relative">
 					<div class="
 					{imageVisible ? 'translate-x-[74px] opacity-0 delay -[0ms]' : 'delay -[800ms]'} 
 					duration- 1000 
@@ -80,6 +80,9 @@
 							<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(100px);" class="absolute w-[400px] h-[216px]">
 								<BenchTop imgClass="scale-[108%] -translate-x-0.5" />
 							</div>
+							<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(-57px);" class="absolute w-[400px] h-[216px]">
+								<BenchTop imgClass="scale-[108%] -translate-x-0.5" />
+							</div>
 							<div style="transform: rotateX( 90deg) translateX(-100px) translateZ(-90px);" class="absolute w-[400px] h-[216px]">
 								<BenchBottom imgClass="scale-[108%] -translate-x-0.5" />
 							</div>
@@ -96,16 +99,16 @@
 					{/if}
 		</div>
 
-			<div class="w-full flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit">
+			<div class="w-full flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit ">
 				{#each options.slice(0,5) as option}
-				<div class="md:space-y-2 space-x-2 flex flex-row justify-evenly items-center md:justify-start w-full">
+				<div class="md:space-y-2 space-x-2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm">
 					<input on:keydown on:click={() => imageVisible = false} id="{option.value}" type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" class="md:mt-2" /> 
 					<label for="{option.value}" class="font-normal pr-4">
 						<T keyName="option-{option.value}" defaultValue="{option.value}" />
 					</label>
 				</div>
 				{/each}
-				<button class="w-full uppercase md:mt-2 py-2 px-4 border-2 border-primary-400 transition-all duration-150 hover:bg-primary-400 text-primary-400 hover:text-primary-50 rounded-md" 
+				<button class="w-full uppercase mt-2 py-1.5 px-3 border-2 border-primary-400 transition-all duration-150 hover:bg-primary-400 text-primary-400 hover:text-primary-50 rounded-md" 
 				on:click={showResult}><T keyName="result" defaultValue="result" /></button>
 			</div>
 		</div>
