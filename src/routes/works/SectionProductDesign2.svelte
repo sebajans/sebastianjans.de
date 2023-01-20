@@ -41,14 +41,12 @@
 
 <section
 	id="productdesign2"
-	class=" w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
+	style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%);"
+	class="bg-gradient-to-bl from-primary-500/50 w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
 >
-	<!-- <WorksHeader backgroundColor="bg-primary-500 dark:bg-primary-400">
-		<T keyName="works-productdesign" defaultValue="Product Design" />
-	</WorksHeader> -->
-	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
-		<div class="md:pl-44 px-4 flex justify-center flex-col items-center max-w-4xl w-full sm:w-full">
 
+	<div class="flex flex-row-reverse md:flex-row h-full max-h-[56rem] w-full justify-center items-center">
+		<div class="md:pl-44 px-4 flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4">
 			<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
 				<T keyName="Cat-Bench" defaultValue='Cat Bench' />
 			</h1>
@@ -97,7 +95,7 @@
 							<!-- style="transform:  rotateX( 4deg) rotateY( -2deg) rotateZ( 0deg) scaleX(95%) translate(1.2rem, 1rem) skewX(4deg);" -->
 						</div>
 					{/if}
-		</div>
+			</div>
 
 			<div class="w-full flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-fit ">
 				{#each options.slice(0,5) as option}
