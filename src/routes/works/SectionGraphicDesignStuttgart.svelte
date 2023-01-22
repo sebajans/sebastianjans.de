@@ -13,13 +13,13 @@
 <section
 	id="graphicdesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="bg-gradient-to-bl overflow-hidden from-primary-400/50 dark:from-primary-500/30 w-full flex flex-col items-end h-screen h-screen-ios "
+	class="bg-gradient-to-bl overflow-hidden from-primary-400/50 dark:from-primary-500/30 w-full flex flex-col items-end h-full max-h-screen max-h-screen-ios "
 >
 	<WorksHeader backgroundColor="bg-primary-400 dark:bg-primary-500">
 		<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 	</WorksHeader>
 	<div
-		class="w-full px-3 max-w-4xl mt-4 h-[calc(100vh_-_6rem)] max-h-[56rem] mx-auto my-auto grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
+		class="w-full px-3 max-w-4xl mt-4 h-[calc(100vh_-_6rem)] mx-auto my-auto grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
 	>
 		<div
 			style:transform={`translate3d(calc(-100% + ${sectionScroll} * 100%),calc(75% - ${sectionScroll} * 75%), 0)`}

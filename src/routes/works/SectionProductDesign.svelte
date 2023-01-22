@@ -43,7 +43,7 @@
 	</div>
 
 	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
-		<div class=" md:pl-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2 gap-4">
+		<div class="md:pl-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2 grid-rows-[0.5fr_0.5fr_auto] gap-4">
 			{#if showProduct}
 				<div class="{moveToRight
 					? '-translate-x-full sm:translate-x-0 opacity-0 sm:opacity-100'
@@ -54,7 +54,7 @@
 							defaultValue="Front View"
 						/>
 					</p>
-					<TableFront imgClass="w-full max-h-[40vh] text-primary-900 dark:text-primary-50 h-full" />
+					<TableFront imgClass="w-full max-h-[40vh] text-primary-900 dark:text-primary-50 h-full " />
 				</div>
 				<!-- outline-1 outline outline-primary-50 -->
 				<div class="relative rounded-md  ">
@@ -84,9 +84,15 @@
 				</span>
 					<TableTop moveToRight={moveToRight} imgClass="duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-auto max-h-[40vh]" />
 				</div>
+				<button
+						class="uppercase h-fit self-center font-sans bg-primary-800 w-auto px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
+						on:click={() => (moveToRight = !moveToRight)}
+					>
+						<T keyName="change-view-button" defaultValue="View Images" />
+					</button>
 				<div
-					class="
-					 w-full pl-6 self-start text-justify transform transition-all duration-500 relative items-center flex flex-col justify-center"
+					class=" col-span-2
+					 w-full self-start text-justify transform transition-all duration-500 relative items-center flex flex-col justify-center"
 				>
 					<p>
 						<T
@@ -96,12 +102,7 @@
 						maximizing space."
 						/>
 					</p>
-					<button
-						class="uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
-						on:click={() => (moveToRight = !moveToRight)}
-					>
-						<T keyName="change-view-button" defaultValue="View Images" />
-					</button>
+					
 				</div>
 			{/if}
 		</div>

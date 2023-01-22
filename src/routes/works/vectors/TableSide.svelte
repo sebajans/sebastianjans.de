@@ -11,7 +11,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xml:space="preserve"
-	style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+	style="clip-path: polygon(0 0, 100% 0, 100% 92%, 0 92%); fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
 >
 	<g transform="matrix(1,0,0,1,-1050,0)">
 		<g transform="matrix(1,0,0,1,-1050,0)">

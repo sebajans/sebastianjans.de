@@ -46,7 +46,7 @@
 		
 		<main class="{$mainClass} min-h-screen min-h-screen-ios px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
 			<h1
-				class="transition-all md:top-6 top-8 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
+				class="transition-all py-0 md:py-3 md:top-6 top-5 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
 				>
 				{$pageTitle}
 			</h1>

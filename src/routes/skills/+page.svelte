@@ -33,7 +33,7 @@
 	<meta name="description" content="Skills of Sebastian Jans as a Designer.">
 </svelte:head>
 
-<div class=" sm:columns-2 space-y-8 gap-8 pb-12 max-w-4xl justify-center items-center mx-auto my-auto">
+<div class=" sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto">
 
 	{#if visible}
 		<div class="relative">
