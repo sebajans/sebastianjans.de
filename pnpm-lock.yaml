@@ -4,7 +4,7 @@ specifiers:
   '@playwright/test': ^1.29.2
   '@rvxlab/tailwind-plugin-ios-full-height': ^1.1.0
   '@sveltejs/adapter-auto': ^1.0.1
-  '@sveltejs/adapter-netlify': 1.0.0
+  '@sveltejs/adapter-netlify': 1.0.4
   '@sveltejs/kit': 1.2.2
   '@threlte/core': ^5.0.8
   '@threlte/extras': ^4.9.3
@@ -37,7 +37,7 @@ devDependencies:
   '@playwright/test': 1.29.2
   '@rvxlab/tailwind-plugin-ios-full-height': 1.1.0_tailwindcss@3.2.4
   '@sveltejs/adapter-auto': 1.0.1_@sveltejs+kit@1.2.2
-  '@sveltejs/adapter-netlify': 1.0.0_@sveltejs+kit@1.2.2
+  '@sveltejs/adapter-netlify': 1.0.4_@sveltejs+kit@1.2.2
   '@sveltejs/kit': 1.2.2_svelte@3.55.1+vite@4.0.4
   '@types/three': 0.148.0
   '@typescript-eslint/eslint-plugin': 5.48.2_caon6io6stgpr7lz2rtbhekxqy
@@ -364,8 +364,8 @@ packages:
       import-meta-resolve: 2.2.1
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0_@sveltejs+kit@1.2.2:
-    resolution: {integrity: sha512-D4tsvLSuJHeqbPatMcpVzUYd2CeIkTQH/L0RHTvl0cyZOJsnkwfWysv7BZmc9OVAbp5XzHggFTwSTH+M9cYLww==}
+  /@sveltejs/adapter-netlify/1.0.4_@sveltejs+kit@1.2.2:
+    resolution: {integrity: sha512-doZotmZoTgaH57oGXX66yp+YgSsVmmZG11UVEwHO7Si0WuGg/ZCBxwqyqQGHgLAdKYBZgFL7enV2kwK+LSO0Hw==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
