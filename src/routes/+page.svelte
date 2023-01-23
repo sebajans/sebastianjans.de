@@ -258,9 +258,7 @@ bind:offsetHeight={minYEdu}
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
 							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
 						</h3>
-						<p style="-webkit-hyphens: auto;
-						-ms-hyphens: auto;
-						hyphens: auto;" class="text-sm text-justify">
+						<p>
 							<T keyName="text-{item.name}" defaultValue="{item.info}" />
 						</p>
 					</div>
@@ -270,42 +268,3 @@ bind:offsetHeight={minYEdu}
 			{/if}
 	</div>
 </section>
-
-<!-- </div> -->
-
-
-<!-- TIMELINE -->
-
-<!-- <section
-	class="pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
-	id="cv_edu"
->
-	<div class="space-y-4 max-w-4xl  w-full mx-auto my-auto overflow-x-auto overflow-y-hidden">
-		<div class="flex flex-row flex-nowrap ">
-			{#each cvItems as item , i }
-				{#if item.category === 'job'}
-					{@const start = +item.fromYear + +item.fromMonth / 12}
-					{@const end = +item.toYear + +item.toMonth / 12}
-					{@const duration = ((end - start) * 100).toFixed(2)}
-					<div class="w-[{duration}px] mr-[20px] px-2 py-2 bg-primary-200 font-sans rounded-md">
-						{item.name}
-					</div>
-				{/if}
-			{/each}
-		</div>
-		<div class="flex flex-row flex-nowrap ">
-			{#each cvItems as item , i }
-				{#if item.category === 'education'}
-					{@const start = +item.fromYear + +item.fromMonth / 12}
-					{@const end = +item.toYear + +item.toMonth / 12}
-					{@const duration = ((end - start) * 100).toFixed(2)}
-					<div class="w-[{duration}px] mr-[20px] px-2 py-2 bg-primary-200 font-sans rounded-md">
-						{item.name}
-					</div>
-				{/if}
-			{/each}
-		</div>
-	</div>
-</section> -->
-
-<!-- {@const timeBetween[i+1] = start[i+1] - end[i]} -->

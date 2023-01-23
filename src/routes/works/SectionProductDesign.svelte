@@ -2,9 +2,9 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { draw, fade } from 'svelte/transition';
-	import TableFront from './vectors/TableFront.svelte';
-	import TableSide from './vectors/TableSide.svelte';
-	import TableTop from './vectors/TableTop.svelte';
+	import TableFront from './product-items/TableFront.svelte';
+	import TableSide from './product-items/TableSide.svelte';
+	import TableTop from './product-items/TableTop.svelte';
 
 	let moveToRight: boolean = false;
 
@@ -19,11 +19,6 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
-<!-- in:draw={{ duration: 800 }} 
-									in:draw={{ duration: 800, delay: 200 }}
--->
-
-<!-- bg-primary-500/50 dark:bg-primary-400/50 -->
 <section
 	id="productdesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"

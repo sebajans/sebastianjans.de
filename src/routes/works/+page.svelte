@@ -80,7 +80,7 @@
 <SectionLogos />
 <SectionGraphicDesignStuttgart />
 <SectionGraphicDesign2 />
-<SectionProductDesign />
+<!-- <SectionProductDesign /> -->
 <SectionProductDesign2 />
 
 <section
@@ -92,7 +92,7 @@
 		<h1 class="w-full text-5xl text-right">
 			<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />
 		</h1>
-		<h3 class="w-2/3 self-end text-2xl text-right py-4">
+		<h3 class="w-full md:w-2/3 self-end text-2xl text-right py-4">
 			<T keyName="download-portfolio-text" defaultValue="Download my portfolio below to see more of my work." />
 			
 		</h3>

@@ -48,7 +48,7 @@
 
 
 <!-- , radial-gradient(at 43% 40%, var(--tw-gradient-from) 0%, transparent 20%), radial-gradient(at 80% 65%, var(--tw-gradient-from) 0%, transparent 40%) -->
-<section
+<section on:mousemove={handleMousemove}
 on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1} 
 	id="logodesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%); "
@@ -60,16 +60,18 @@ on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1}
 	<!-- The mouse position is {m.x} x {m.y} -->
 	<!-- The Window size is {offset.y} x {offset.x} -->
 
-	<div on:mousemove={handleMousemove} style:transform={`translate3d(calc(0.05*${offset.x}px), calc(0.05*${offset.y}px), 0)`} class="relative my-auto mx-auto h-auto max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center">
-			<p class="max-w-4xl my-4 px-3 text-left w-full sm:w-2/5">
+	<div   class="relative my-auto mx-auto h-auto max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center">
+			<p 
+			 class="max-w-4xl my-4 px-3 text-left w-full sm:w-2/5">
 				<T
 				keyName="logo-design-paragraph"
 				defaultValue="These logotypes show some of my previous logo design works."
 				/>
 			</p>
-			<div id="logos"
+			<div class="h-full w-full" style:transform={`translate3d(calc(0.05*${offset.x}px), calc(0.05*${offset.y}px), 0)`}>
+
+			<div id="logos" 
 			 on:keydown|stopPropagation on:click|stopPropagation class="logo-main {activeNumber === -1 ? '':'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300">
-			<!-- <div class="absolute w-full h-full"> -->
 				{#each (LogoItems.sort(() => Math.random())) as logo, i}
 				<!-- in:fly={{delay: i*50, y: 20, duration: 50}}  -->
 				<div 
@@ -81,7 +83,9 @@ on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1}
 					</div>
 					{/each}
 				<!-- </div> -->
+			</div>
 		</div>
+
 		{#if LogoItems[activeNumber]}
 			<div on:keydown|stopPropagation on:click|stopPropagation  transition:fly="{{ x: -300, duration: 300 }}" class="{LogoItems[activeNumber] ? 'translate-x-0' : 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5">
 				<div style:background-image={$nightMode ? `url('${LogoItems[activeNumber].imageDark}')` : `url('${LogoItems[activeNumber].image}')`}
