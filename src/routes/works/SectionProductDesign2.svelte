@@ -40,16 +40,16 @@
 	$: selectedItem = options.find(x => x.value == selected);
 
 </script>
-
+<!-- radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%),  -->
 <section
 	id="productdesign"
-	style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
+	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
 	class="bg-gradient-to-bl from-primary-500/50 w-full relative h-screen min-h-screen min-h-screen-ios overflow-hidden flex flex-col "
 >
 <WorksHeader backgroundColor="bg-primary-500 dark:bg-primary-400">
 	<T keyName="works-productdesign" defaultValue="Product Design" />
 </WorksHeader>
-	<div class="flex flex-row-reverse md:flex-row h-[calc(100%-6rem)] max-h-[56rem] w-full justify-center items-center">
+	<div class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center">
 		<div class="md:pl-44 px-4  flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4">
 			<h1 class="md:pt-3 md:pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
 				<T keyName="Cat-Bench" defaultValue='Cat Bench' />
@@ -57,7 +57,7 @@
 			<div class="flex flex-row flex-wrap md:flex-nowrap w-full">
 				<div class="scale-[0.8] -translate-y-6 md:scale-100 flex w-full md:w-4/5 justify-center items-center relative">
 					<div class="
-					{imageVisible ? 'translate-x-[74px] opacity-0' : ''} 
+					{imageVisible ? 'translate-x-[74px] opacity-0' : ''}
 					duration- 1000 
 					translate-y-[4px] h-[216px] w-auto md:my-10 relative"  
 					style="perspective: 25rem; perspective-origin: 50% 50%; transition-property: opacity, transform; 

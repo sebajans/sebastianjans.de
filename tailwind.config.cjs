@@ -60,6 +60,10 @@ module.exports = {
           '100%': { transform: 'rotateX( -19deg) rotateY( -49deg)' },
         }
       },
+      height: {
+        works: 'calc(100% - 6rem)',
+        worksmd: 'calc(100% - 10rem)',
+      },
       animation: {
         rotatebox: 'rotatebox 5s linear infinite',
       }

@@ -13,7 +13,7 @@
 	id="graphicdesign2"
 	class="w-full relative h-screen h-screen-ios overflow-hidden md:pl-44 px-6"
 >
-	<div class="max-w-4xl flex w-full h-full md:px-0 md:flex-row sm:mx-auto flex-col my-auto items-center justify-center">
+	<div class="max-w-4xl flex w-full h-works md:h-worksmd md:px-0 md:flex-row sm:mx-auto flex-col my-auto items-center justify-center">
 
 			<!-- style:transform={`translate3d(calc(-100% + ${sectionScroll} * 100%),0, 0)`} -->
 		<img

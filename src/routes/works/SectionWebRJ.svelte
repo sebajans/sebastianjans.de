@@ -28,7 +28,7 @@
 	</WorksHeader>
 
 	<div
-		class="w-full px-3 max-w-4xl h-[65vh] max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
+		class="w-full p-4 max-w-4xl h-works md:h-worksmd max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
 	>
 		<div
 			id="rena-logo"

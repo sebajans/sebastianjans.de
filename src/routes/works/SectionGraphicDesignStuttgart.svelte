@@ -19,7 +19,7 @@
 		<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 	</WorksHeader>
 	<div
-		class="w-full px-3 max-w-4xl mt-4 h-[calc(100vh_-_6rem)] mx-auto my-auto grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
+		class="w-full p-4 max-w-4xl mt-4 h-works md:h-worksmd mx-auto my-auto grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
 	>
 		<div
 			style:transform={`translate3d(calc(-100% + ${sectionScroll} * 100%),calc(75% - ${sectionScroll} * 75%), 0)`}

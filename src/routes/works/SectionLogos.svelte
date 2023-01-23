@@ -57,10 +57,8 @@ on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1}
 	<WorksHeader backgroundColor="bg-primary-300 dark:bg-primary-600">
 		<T keyName="works-logodesign" defaultValue="Logo Design" />
 	</WorksHeader>
-	<!-- The mouse position is {m.x} x {m.y} -->
-	<!-- The Window size is {offset.y} x {offset.x} -->
 
-	<div   class="relative my-auto mx-auto h-auto max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center">
+	<div class="relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center">
 			<p 
 			 class="max-w-4xl my-4 px-3 text-left w-full sm:w-2/5">
 				<T
@@ -103,13 +101,8 @@ on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1}
 					class="absolute z-20 group top-4 right-4 h-6 w-6 group font-sans hover:text-primary-500"
 					on:click={() => activeNumber = -1}
 				>
-					<span
-						class="transition-all transform group-hover:rotate-[135deg] rotate-45 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
-					/>
-	
-					<span
-						class="transition-all transform -rotate-45 group-hover:rotate-45 -translate-y-0.5 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
-					/>
+					<span class="transition-all transform group-hover:rotate-[135deg] rotate-45 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 " />
+					<span class="transition-all transform -rotate-45 group-hover:rotate-45 -translate-y-0.5 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 " />
 				</button>
 			</div>
 		{/if}
@@ -119,7 +112,6 @@ on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1}
 <style>
 	.logo-main:hover .logo-individual {
 		@apply blur-[2px] opacity-60 scale-90
-
 	}
 	.logo-main .logo-individual:hover {
 		@apply blur-0 opacity-100 scale-100

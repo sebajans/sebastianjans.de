@@ -20,7 +20,7 @@
 	class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden h-screen-ios  md:pl-44"
 >
 	<div
-		class="mx-auto my-auto grid h-[65vh] max-h-[56rem] w-full max-w-4xl grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
+		class="mx-auto p-4 my-auto grid h-works md:h-worksmd max-h-[56rem] w-full max-w-4xl grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
 	>
 		<div
 			id="kb10-logo"

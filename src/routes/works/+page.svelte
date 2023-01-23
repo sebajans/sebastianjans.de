@@ -2,7 +2,6 @@
 	import { mainClass } from '$lib/stores/mainClass';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { T, getTranslate } from '@tolgee/svelte';
-	import ProgressBarWorks from '../../components/progressBarWorks.svelte';
 	import { fly } from 'svelte/transition';
 	import { sectionNames } from './sectionNames';
 	import SectionWebRJ from './SectionWebRJ.svelte';
@@ -10,17 +9,10 @@
 	import SectionLogos from './SectionLogos.svelte';
 	import SectionGraphicDesignStuttgart from './SectionGraphicDesignStuttgart.svelte';
 	import SectionGraphicDesign2 from './SectionGraphicDesign2.svelte';
-	import SectionProductDesign from './SectionProductDesign.svelte';
+	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import Popup from '../../components/Popup.svelte';
 
-// 	let load = () => {
-//   let performAnimation: boolean = false;
-//   return {
-//     // remove the props object 
-//     performAnimation
-//   }
-// }
 	// Tolgee t translation
 	const t = getTranslate();
 
@@ -80,8 +72,8 @@
 <SectionLogos />
 <SectionGraphicDesignStuttgart />
 <SectionGraphicDesign2 />
-<!-- <SectionProductDesign /> -->
 <SectionProductDesign2 />
+<SectionProductDesignCup />
 
 <section
 	id="start"
