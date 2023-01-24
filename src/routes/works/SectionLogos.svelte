@@ -47,7 +47,6 @@
 </script>
 
 
-<!-- , radial-gradient(at 43% 40%, var(--tw-gradient-from) 0%, transparent 20%), radial-gradient(at 80% 65%, var(--tw-gradient-from) 0%, transparent 40%) -->
 <section on:mousemove={handleMousemove}
 on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1} 
 	id="logodesign"

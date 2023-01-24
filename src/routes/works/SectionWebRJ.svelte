@@ -4,20 +4,16 @@
 	import { nightMode } from '$lib/stores/nightMode';
 	import WorksHeader from '../../components/WorksHeader.svelte';
 
-	let scroll: number = 0;
-	let windowHeight: number;
+	export let scroll: number;
+	export let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 0, windowHeight);
+
 	let srcRenaImg1 = 'img/website-rena-front-1.webp';
 	let srcRenaImg2 = 'img/website-rena-front-2.webp';
 	let srcRenaLogo = '../logos/logo-rj-l.webp';
 	let srcRenaLogoDark = '../logos/logo-rj-l-white.webp';
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
-
-<!-- https://play.tailwindcss.com/r0gTHJAoNv -->
-
-<!-- bg-primary-200/50 dark:bg-primary-700/50 -->
 <section
 	id="websites"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"

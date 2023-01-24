@@ -69,10 +69,8 @@
 </svelte:head>
 <svelte:window bind:scrollY={scroll} />
 
-<!-- <div class="snap-y snap-mandatory h-screen h-screen-ios overflow-scroll"> -->
-
 	<section
-	class="relative snap-center w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
+	class="relative  w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
 	<div class="relative pb-[100vh] flex flex-col w-full max-w-2xl my-auto mx-auto ">
 		{#if visible}
@@ -150,7 +148,7 @@
 </section>
 <section
 id="aboutme"
-	class="relative snap-center w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
+	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
 >
 	<div class="sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
@@ -163,7 +161,7 @@ id="aboutme"
 				class="w-full h-full object-cover object-top md:w-1/5 max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 mb-2 aspect-square rounded-xl"
 			/>
 			<div class="md:pl-4 md:w-4/5 text-sm md:text-base flex flex-col">
-				<p class="md:w-full mb-2 text-justify ">
+				<p class="md:w-full mb-2 text-justify md:text-xl">
 					{$t({
 						key: 'front-about-text',
 						defaultValue:
@@ -171,14 +169,14 @@ id="aboutme"
 					})}
 				</p>
 
-				<p class="md:w-full mb-2 text-justify ">
+				<p class="md:w-full mb-2 text-justify md:text-xl">
 					{$t({
 						key: 'front-about-text-2',
 						defaultValue:
 							'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
 					})}
 				</p>
-				<p class="md:w-full mb-2 text-justify ">
+				<p class="md:w-full mb-2 text-justify md:text-xl">
 					{$t({
 						key: 'front-about-text-3',
 						defaultValue:
@@ -193,20 +191,18 @@ id="aboutme"
 
 <section
 bind:offsetHeight={minYWork}
-	class="relative snap-center w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
+	class="relative w-full h-screen h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
 	id="cv_jobs"
 >
 	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
 		{#if startAnimationWork}
-			
 		<h1 in:fly={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</h1>
-		<!-- <h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">{scroll} > {minYWork*1.5}</h1> -->
 		{#each cvItems as item}
 			{#if  item.category === 'job'}
 				<div in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
 				 class="w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
-						class="md:w-1/5 w-full max-w-[16rem] max-h-[16rem] p-2 h-full flex rounded-lg justify-center items-center aspect-square bg-primary-200"
+					class="md:w-1/5 w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200"
 					>
 						<img  class="object-contain aspect-square w-64" src={item.image} alt={item.name} />
 					</div>
@@ -219,9 +215,7 @@ bind:offsetHeight={minYWork}
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
 							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
 						</h3>
-						<p style="-webkit-hyphens: auto;
-						-ms-hyphens: auto;
-						hyphens: auto;" class="text-sm text-justify">
+						<p class="text-sm text-justify">
 							<T keyName="text-{item.name}" defaultValue="{item.info}" /></p>
 					</div>
 				</div>
@@ -234,12 +228,11 @@ bind:offsetHeight={minYWork}
 
 <section
 bind:offsetHeight={minYEdu}
-	class=" snap-center pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full h-screen h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
 		{#if startAnimationEdu}
-
 		<h1 in:fly={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'my-education', defaultValue: 'My Education' })}</h1>
 		{#each cvItems as item}
 			{#if item.category === 'education'}
@@ -258,7 +251,7 @@ bind:offsetHeight={minYEdu}
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
 							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
 						</h3>
-						<p>
+						<p class="text-sm text-justify">
 							<T keyName="text-{item.name}" defaultValue="{item.info}" />
 						</p>
 					</div>

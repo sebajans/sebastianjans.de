@@ -29,8 +29,10 @@
 		});
 	}
 
+	let scroll: number = 0;
+	let windowHeight: number = 0;
+	
 	let popup: any;
-
 	function openPopup() {
 		popup.show();
 	}
@@ -39,6 +41,8 @@
 	<title>{$pageTitle}</title>
 	<meta name="description" content="Overview of the Works of Sebastian Jans.">
 </svelte:head>
+
+<svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <section
 	id="start"
@@ -67,17 +71,20 @@
 	</div>
 </section>
 
-<SectionWebRJ />
-<SectionWebKamado />
+<SectionWebRJ {scroll} {windowHeight} />
+<SectionWebKamado {scroll} {windowHeight} />
 <SectionLogos />
-<SectionGraphicDesignStuttgart />
-<SectionGraphicDesign2 />
+<SectionGraphicDesignStuttgart {scroll} {windowHeight} />
+<SectionGraphicDesign2 {scroll} {windowHeight} />
 <SectionProductDesign2 />
-<SectionProductDesignCup />
+<!-- <SectionProductDesignCup /> -->
+<SectionProductDesignCup {scroll} {windowHeight} />
 
 <section
-	id="start"
-	class="relative w-full md:pl-44 pt-28 flex justify-center overflow-x-hidden min-h-screen bg-primary-50 dark:bg-primary-900 h-screen h-screen-ios pb-24 px-3"
+
+	id="end"
+	style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at top right, var(--tw-gradient-from) 0%, transparent 30%);"
+	class="bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50 relative w-full md:pl-44 pt-28 flex justify-center overflow-x-hidden min-h-screen bg-primary-50 dark:bg-primary-900 h-screen h-screen-ios pb-24 px-3"
 >
 	<div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">
 

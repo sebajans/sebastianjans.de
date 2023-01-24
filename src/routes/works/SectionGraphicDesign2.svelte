@@ -2,12 +2,11 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 
-	let scroll: number = 0;
-	let windowHeight: number;
+	export let scroll: number;
+	export let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 4, windowHeight);
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
 <section
 	id="graphicdesign2"

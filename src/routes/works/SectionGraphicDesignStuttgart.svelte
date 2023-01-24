@@ -3,13 +3,11 @@
 	import { scrollInSection } from '../../components/scrollInSection';
 	import WorksHeader from '../../components/WorksHeader.svelte';
 	
-	let scroll: number = 0;
-	let windowHeight: number;
+	export let scroll: number;
+	export let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
-<!-- bg-primary-400/50 dark:bg-primary-500/50 -->
 <section
 	id="graphicdesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"

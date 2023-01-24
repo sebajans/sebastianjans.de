@@ -2,8 +2,9 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { nightMode } from '$lib/stores/nightMode';
-	let scroll: number = 0;
-	let windowHeight: number;
+	
+	export let scroll: number;
+	export let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);
 
 	let srcKamadoLogoDark = '/logos/logo-kamadob10-white.webp';
@@ -12,9 +13,6 @@
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
-
-<!-- bg-primary-200/50 dark:bg-primary-700/50 -->
 <section
 	id="kamadoB10"
 	class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden h-screen-ios  md:pl-44"
