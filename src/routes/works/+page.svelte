@@ -46,7 +46,7 @@
 
 <section
 	id="start"
-	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-row items-center justify-center overflow-x-hidden min-h-screen h-screen h-screen-ios pb-24"
+	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-row items-center justify-center overflow-hidden min-h-screen h-screen h-screen-ios pb-24"
 >
 	<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-4 md:mb-0">
 		<T
@@ -77,7 +77,6 @@
 <SectionGraphicDesignStuttgart {scroll} {windowHeight} />
 <SectionGraphicDesign2 {scroll} {windowHeight} />
 <SectionProductDesign2 />
-<!-- <SectionProductDesignCup /> -->
 <SectionProductDesignCup {scroll} {windowHeight} />
 
 <section

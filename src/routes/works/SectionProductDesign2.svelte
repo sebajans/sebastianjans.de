@@ -51,7 +51,7 @@
 </WorksHeader>
 	<div class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center">
 		<div class="md:pl-44 px-4  flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4">
-			<h1 class="md:pt-3 md:pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
+			<h1 class="md:pt-3 md:pb-4 md:pl-0 text-2xl md:text-4xl text-center md:text-left font-sans font-bold">
 				<T keyName="Cat-Bench" defaultValue='Cat Bench' />
 			</h1>
 			<div class="flex flex-row flex-wrap md:flex-nowrap w-full">
@@ -63,7 +63,6 @@
 					style="perspective: 25rem; perspective-origin: 50% 50%; transition-property: opacity, transform; 
 					{imageVisible ? 'transition-duration: 1s, 500ms; transition-delay: 800ms, 0ms;':'transition-duration: 500ms, 300ms; transition-delay: 0ms, 0ms;'}"
 					>
-					<!-- {selected === 'angleview' ? 'translate-x-[74px] transition-all md:translate -x-[110px]' : ''}  -->
 						<div  style="transform-style: preserve-3d; transform: translateZ(-100px) {selectedItem?.transform};"
 								class=" relative w-[400px] h-[216px] transition-all transform duration-1000 ">
 							<div style="transform: rotateY(-15.11deg) translateX(-90px) translateZ(79px) translateY(8px);" class="absolute w-[413px] h-[200px]">
@@ -89,28 +88,28 @@
 							</div>
 						</div>
 					</div>
-
 					{#if imageVisible}
 						<div class="absolute opacity-100 dark:opacity-70 md:left-1/2 md:-translate-x-1/2 top-1/2 -translate-y-1/2  w-[366px] h-[240px] items-center flex overflow-hidden" >
 							<img in:fade={{delay: 1000, duration: 500}} out:fade={{delay: 100, duration: 300}} 
 							src="/productdesign/bench_edited.webp" 
 							class="w-full aspect-auto" alt="bench">
-							<!-- style="transform:  rotateX( 4deg) rotateY( -2deg) rotateZ( 0deg) scaleX(95%) translate(1.2rem, 1rem) skewX(4deg);" -->
 						</div>
 					{/if}
 			</div>
 
 			<div class="w-full flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-auto md:h-fit ">
 				{#each options.slice(0,5) as option}
-				<div class="md:space-y-2 space-x-2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-2">
+				<div class="md:space-y-2 space-x-2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-0.5 md:mb-2">
 					<input on:keydown on:click={() => imageVisible = false} id="{option.value}" type="radio" name="rotate-cube-side" bind:group={selected} value="{option.value}" class="md:mt-2" /> 
 					<label for="{option.value}" class="font-normal pr-4">
 						<T keyName="option-{option.value}" defaultValue="{option.value}" />
 					</label>
 				</div>
 				{/each}
-				<button class="w-full uppercase mt-2 py-1.5 px-3 border-2 border-primary-400 transition-all duration-150 hover:bg-primary-400 text-primary-400 hover:text-primary-50 rounded-md" 
-				on:click={showResult}><T keyName="result" defaultValue="result" /></button>
+				<button class="w-full uppercase mt-1 py-1 md:py-1.5 px-3 border-2 border-primary-400 transition-all duration-150 hover:bg-primary-400 text-primary-400 hover:text-primary-50 rounded-md" 
+				on:click={showResult}>
+					<T keyName="result" defaultValue="result" />
+				</button>
 			</div>
 		</div>
 		<p class="mt-4 text-sm md:text-base">

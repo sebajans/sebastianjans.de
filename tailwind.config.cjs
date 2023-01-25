@@ -43,6 +43,7 @@ module.exports = {
         '12': 'repeat(10, minmax(0, 1fr))',
         '12': 'repeat(12, minmax(0, 1fr))',
       },
+
       fontSize: {
         'fit': 'clamp(0px,10vw,1080px)'
       },
