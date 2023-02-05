@@ -191,7 +191,7 @@ id="aboutme"
 
 <section
 bind:offsetHeight={minYWork}
-	class="relative w-full h-screen h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
+	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
 	id="cv_jobs"
 >
 	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
@@ -228,7 +228,7 @@ bind:offsetHeight={minYWork}
 
 <section
 bind:offsetHeight={minYEdu}
-	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full h-screen h-screen-ios flex flex-col justfiy-center content-center"
+	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">

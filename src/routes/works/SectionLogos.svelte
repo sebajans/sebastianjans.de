@@ -69,7 +69,8 @@ on:keydown={() => activeNumber = -1} on:click={() => activeNumber = -1}
 
 			<div id="logos" 
 			 on:keydown|stopPropagation on:click|stopPropagation class="logo-main {activeNumber === -1 ? '':'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300">
-				{#each (LogoItems.sort(() => Math.random())) as logo, i}
+				{#each LogoItems as logo, i}
+				<!-- {#each (LogoItems.sort(() => Math.random())) as logo, i} -->
 				<!-- in:fly={{delay: i*50, y: 20, duration: 50}}  -->
 				<div 
 				class="logo-individual flex justify-center items-center transition-all duration-200">
