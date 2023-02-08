@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PageTransitions from '../components/PageTransitions.svelte';
 	import { getTranslate, T } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
@@ -7,7 +8,7 @@
 	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	pageTitle.set('');
-	mainClass.set('pt-0');
+	mainClass.set('');
 
 	const t = getTranslate();
 	let profilePicture = 'img/profile-pic.webp';
@@ -16,7 +17,7 @@
 	let animationspeed: number;
 	let animationdelay: number;
 	afterNavigate(({ from }) => {
-		animationspeed = from === null ? 0.08 : 1;
+		animationspeed = from === null ? 0.08 : 10;
 		animationdelay = from === null ? 1 : 0;
 		visible = true;
 	});
@@ -42,7 +43,6 @@
 		};
 	}
 
-	// for (item in cvItems) {}
 	let minYWork: any;
 	let minYEdu: any;
 	let scroll: any;
@@ -55,10 +55,6 @@
 	$: if (scroll > minYEdu*1.5) {
 		startAnimationEdu = true
 	}
-	
-	// let opacity = 100
-
-	// const opacity = tweened(100 - scroll*0.8)
 </script>
 
 
@@ -68,13 +64,12 @@
 	<meta name="description" content="Online Portfolio for Sebastian Jans, a Product and Graphic Designer.">
 </svelte:head>
 <svelte:window bind:scrollY={scroll} />
-
 	<section
-	class="relative  w-full h-screen h-screen-ios flex flex-col justfiy-center items-center content-center"
+	class="relative  w-full h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative pb-[100vh] flex flex-col w-full max-w-2xl my-auto mx-auto ">
+	<div class=" relative pb-[calc(100vh_-_112px)] flex flex-col w-full max-w-2xl my-auto mx-auto ">
 		{#if visible}
-		<div class="absolute inset-0 pt-8 sm:pt-10 md:pt-12 h-full min-h-max flex flex-col justify-center items-center">
+		<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
 			<span
 			style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
 				class="w-full select-none text-primary-500 font-bold font-display text-left leading-[0.2] h-auto
@@ -196,7 +191,9 @@ bind:offsetHeight={minYWork}
 >
 	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
 		{#if startAnimationWork}
-		<h1 in:fly={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</h1>
+		<!-- in:fly={{ y: 50, duration: 500 * animationspeed }}  -->
+		<h1 
+		class="text-center md:text-left text-primary-900 dark:text-primary-50">{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</h1>
 		{#each cvItems as item}
 			{#if  item.category === 'job'}
 				<div in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}

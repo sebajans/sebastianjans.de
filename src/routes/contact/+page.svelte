@@ -5,12 +5,11 @@
 	import { T, getTranslate } from '@tolgee/svelte';
 	import Popup from '../../components/Popup.svelte';
 	import TermsOfService from '../../components/TermsOfService.svelte';
-	import type { test } from 'vitest';
 
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
 
-	mainClass.set('pt-14 md:pt-0 min-h-[100vh] flex');
+	mainClass.set('pb-14');
 
 	let popup: any;
 
@@ -26,7 +25,7 @@
 </svelte:head>
 
 <!-- https://www.staticforms.xyz -->
-<div class=" flex flex-col min-h-screen min-h-screen-ios justify-center mx-auto items-center my-auto max-w-4xl hide-scrollbar">
+<div class=" flex flex-col justify-center mx-auto items-center my-auto max-w-4xl hide-scrollbar">
 	<div class="grid w-full sm:grid-cols-2 gap-6 pb-3 ">
 		<p class="w-full pb-4 text-justify">
 			<T

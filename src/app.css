@@ -2,6 +2,17 @@
 @tailwind components;
 
 @layer base {
+  body {
+    overflow-y:scroll;
+    overflow-x: hidden;
+    /* scrollbar-gutter: stable; */
+    @apply scrollbar
+  }
+  html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+
   h1 {
       @apply pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold;
       
@@ -59,15 +70,15 @@
       scrollbar-color: rgb(252 121 19);
       scrollbar-width: thin
     }
+
     .scrollbar::-webkit-scrollbar {
-      @apply rounded
-    }
-    .scrollbar::-webkit-scrollbar {
+      @apply rounded;
       width: 10px;
+      background-color: transparent;
     }
     
     .scrollbar::-webkit-scrollbar-track {
-      @apply bg-transparent rounded mx-2 border-primary-50
+      @apply bg-primary-50 rounded mx-2 border-primary-50
     }
   
     .scrollbar::-webkit-scrollbar-thumb {
@@ -92,3 +103,10 @@
       top: 0;
     }
   }
+
+  /* @keyframes hide-scroll {
+    from,
+    to {
+      overflow-y: auto !important;
+    }
+  } */

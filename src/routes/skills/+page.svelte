@@ -10,7 +10,7 @@
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
 	import Popup from '../../components/Popup.svelte';
 
-	mainClass.set('pt-28 pb-20 md:pb-0');
+	mainClass.set('pb-14 ');
 
 	let visible: boolean = false;
 	let duration: number;

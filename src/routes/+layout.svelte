@@ -1,22 +1,25 @@
 <script lang="ts">
   import "../app.css";
   import { beforeUpdate } from 'svelte';
+	import { onMount } from "svelte";
 	import NavBar from '../components/NavBar.svelte';
+	import { TolgeeProvider } from '@tolgee/svelte';
 	import { nightMode } from '$lib/stores/nightMode';
 	import { mainClass } from '$lib/stores/mainClass';
-	import { TolgeeProvider } from '@tolgee/svelte';
-	import VanishingHeader from '../components/VanishingHeader.svelte';
+	import { pageTitle } from "$lib/stores/pageTitle";
 	import localeEn from '../i18n/en.json';
 	import localeEs from '../i18n/es.json';
 	import localeDe from '../i18n/de.json';
-	import { onMount } from "svelte";
 	import Footer from "../components/Footer.svelte";
+	import PageTransitions from "../components/PageTransitions.svelte";
+	/** @type {import('./$types').LayoutData} */
+	export let data:any;
+
 	let initialized = false;
 	let showMenu = false;
 	let showHeader = false;
-	import { pageTitle } from "$lib/stores/pageTitle";
+
 	beforeUpdate(() => (showMenu = false));
-	
 	beforeUpdate(() => (showHeader = false));
 	
 	onMount(() => {
@@ -41,21 +44,21 @@
 
 {#if initialized}
 	<TolgeeProvider config={tolgeeConfig}>
-		<!-- <VanishingHeader offset={100} tolerance={3} {showHeader} /> -->
 		<NavBar {showMenu} />
-		
-		<main class="{$mainClass} min-h-screen min-h-screen-ios px-4 relative md:pl-44 mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
-			<h1
-				class="transition-all py-0 md:py-3 md:top-6 top-5 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
-				>
-				{$pageTitle}
-			</h1>
-			<slot />
-			<Footer/>
+		<main style="display:grid"
+		class="min-h-screen min-h-screen-ios pt-24 md:pt-28 px -4 md:pl -44 relative  mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
+		<h1
+		class="transition-all py-0 md:py-3 md:top-6 top-5 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
+		>
+		{$pageTitle}
+		</h1>
+		<PageTransitions pathname={data.pathname}>
+			<div class="{$mainClass} mx-4 md:ml-44 ">
+				<slot />
+			</div>
+		</PageTransitions>
+		<Footer/>
 		</main>
+
 	</TolgeeProvider>
 {/if}
-
-<!-- {headerClass || showHeader
-	? 'text-3xl md:text-4xl py-2'
-	: 'md:text-3xl py-0'} -->

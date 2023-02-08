@@ -18,7 +18,10 @@
 
 	// settings for Layout main class and Title
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
-	mainClass.set('pt-0 pr-0 pl-0 md:pl-0');
+	
+	// mainClass.set('pt-0 pr-0 pl-0 md:pl-0 min-h-screen');
+	mainClass.set('mr-0 ml-0 md:ml-0 overflow-x-hidden');
+
 
 	// function to scroll section ankerpoint into view
 	function scrollIntoView({ target }: { target: any }) {
@@ -46,7 +49,7 @@
 
 <section
 	id="start"
-	class="relative w-full md:pl-44 pt-28 flex flex-col md:flex-row items-center justify-center overflow-hidden min-h-screen h-screen h-screen-ios pb-24"
+	class="relative w-full md:pl-44 flex flex-col md:flex-row items-center justify-center overflow-hidden min-h-[calc(100vh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)] h-screen-ios"
 >
 	<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-4 md:mb-0">
 		<T
