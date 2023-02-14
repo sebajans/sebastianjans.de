@@ -64,10 +64,10 @@
 	<meta name="description" content="Online Portfolio for Sebastian Jans, a Product and Graphic Designer.">
 </svelte:head>
 <svelte:window bind:scrollY={scroll} />
-	<section
-	class="relative  w-full h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
+<section
+class="relative w-full h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
-	<div class=" relative pb-[calc(100vh_-_112px)] flex flex-col w-full max-w-2xl my-auto mx-auto ">
+	<div class="relative pb-[calc(100vh_-_112px)] flex flex-col w-full max-w-2xl my-auto mx-auto ">
 		{#if visible}
 		<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
 			<span

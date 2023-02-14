@@ -2,16 +2,13 @@
 @tailwind components;
 
 @layer base {
-  body {
-    overflow-y:scroll;
-    overflow-x: hidden;
-    /* scrollbar-gutter: stable; */
-    @apply scrollbar
+
+  /* *::-webkit-scrollbar-thumb {
+    box-shadow: 4px 0px 0px 4px #0ff00020 inset;
   }
-  html {
-    overflow-x: hidden;
-    margin-right: calc(-1 * (100vw - 100%));
-  }
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-700 dark:bg-primary-600
+  } */
 
   h1 {
       @apply pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold;
@@ -66,28 +63,29 @@
     /* .scrollbar {
       @apply bg-primary-500 dark:bg-primary-400
       } */
-    .scrollbar {
-      scrollbar-color: rgb(252 121 19);
-      scrollbar-width: thin
-    }
-
-    .scrollbar::-webkit-scrollbar {
-      @apply rounded;
-      width: 10px;
-      background-color: transparent;
-    }
-    
-    .scrollbar::-webkit-scrollbar-track {
-      @apply bg-primary-50 rounded mx-2 border-primary-50
-    }
-  
-    .scrollbar::-webkit-scrollbar-thumb {
-      @apply bg-primary-500 dark:bg-primary-400 rounded border-2 border-primary-50
-    }
-    
+      /* .scrollbar {
+        scrollbar-color: rgb(252 121 19);
+        scrollbar-width: thin
+      } */
+      
+      /* .scrollbar::-webkit-scrollbar {
+        width: 10px;
+        background-color: transparent;
+      } */
+      
+      /* .scrollbar::-webkit-scrollbar-track {
+        background-color: transparent;
+        @apply rounded mx-2 border-primary-50
+      }
+      
+      .scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-primary-500 dark:bg-primary-400 rounded border-2 border-primary-50
+      } */
+      /*
+      
     .scrollbar::-webkit-scrollbar-thumb:hover {
       @apply bg-primary-700 dark:bg-primary-600 transition-all duration-200
-    }
+    } */
   }
 
   @media print {
@@ -103,10 +101,3 @@
       top: 0;
     }
   }
-
-  /* @keyframes hide-scroll {
-    from,
-    to {
-      overflow-y: auto !important;
-    }
-  } */
