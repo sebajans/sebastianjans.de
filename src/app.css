@@ -55,12 +55,12 @@
   }
 
   .input {
-      @apply focus:!ring-primary-400 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50 block w-full p-2.5 dark:bg-primary-900 dark:border-primary-600 dark:text-primary-50
+      @apply focus:!ring-primary-400 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-900 block w-full p-2.5 dark:bg-primary-50 dark:border-primary-600 dark:text-primary-900 text-primary-50
   }
 
 
   .label {
-      @apply block mb-2 text-primary-50 font-medium dark:text-primary-900 
+      @apply block mb-2 dark:text-primary-50 font-medium text-primary-900 
   }
 }
 

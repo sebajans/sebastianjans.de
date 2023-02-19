@@ -114,7 +114,7 @@
 						defaultValue="{skills.categorydescription}"
 					/>
 				</p>
-				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md dark:bg-primary-700/50 bg-primary-200/50">
+				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md backdrop-blur-md shadow-md shadow-primary-800/10 dark:bg-primary-700/50 bg-primary-200/50">
 					{#each skills.categoryArray as skill}
 						<div
 						class="flex flex-row items-center h-7"

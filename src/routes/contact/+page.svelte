@@ -48,7 +48,7 @@
 	</div>
 	<div
 		in:fly={{ y: 30, duration: 450 }}
-		class="relative w-full overflow-auto bg-primary-900 dark:bg-primary-50 rounded-lg p-4 shadow-lg shadow-primary-500/40 dark:shadow-primary-400/40 mb-24 md:mb-0"
+		class="relative w-full overflow-auto backdrop-blur-md shadow-md dark:bg-primary-700/50 bg-primary-200/50 rounded-lg p-4 shadow-primary-800/10 dark:shadow-primary-400/40 mb-24 md:mb-0"
 	>
 
 			<div class="w-full transition duration-300 ">
@@ -113,7 +113,7 @@
 							/>
 							<label
 								for="remember"
-								class="ml-2 text-sm font-medium w-full text-primary-50 dark:text-primary-900"
+								class="ml-2 text-sm font-medium w-full text-primary-900 dark:text-primary-900"
 								><T keyName="i-agree" defaultValue="I agree with the "/><button
 									on:click={openPopup}
 									class="group font-bold text-primary-500 dark:text-primary-700 hover:text-primary-400 dark:hover:text-primary-600"

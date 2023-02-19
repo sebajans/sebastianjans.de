@@ -199,11 +199,11 @@ bind:offsetHeight={minYWork}
 				<div in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
 				 class="w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
-					class="md:w-1/5 w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200/70"
+					class="md:w-1/5 backdrop-blur-md shadow-md w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200/70"
 					>
 						<img class="object-contain aspect-square w-64" src={item.image} alt={item.name} />
 					</div>
-					<div class="md:w-4/5 backdrop-blur-lg bg-primary-50/50 dark:bg-primary-900/50 self-stretch px-3  rounded-md w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-center">
+					<div class="md:w-4/5 backdrop-blur-md shadow-md bg-primary-50/50 dark:bg-primary-900/50 self-stretch px-3  rounded-md w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-center">
 						<!-- {@const frMonth = item.fromMonth.toString() } -->
 						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 							<T keyName="{item.name}" defaultValue="{item.name}" />
@@ -236,11 +236,11 @@ bind:offsetHeight={minYEdu}
 			<div in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
 				class="w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start">
 					<div
-						class="md:w-1/5 w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200/70"
+						class="md:w-1/5 backdrop-blur-md shadow-md w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200/70"
 					>
 						<img class="object-contain aspect-square w-64" src={item.image} alt={item.name} />
 					</div>
-					<div class="sm:w-4/5 backdrop-blur-lg bg-primary-50/50 dark:bg-primary-900/50 self-stretch px-3 rounded-md w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-center">
+					<div class="sm:w-4/5 backdrop-blur-md shadow-md bg-primary-50/50 dark:bg-primary-900/50 self-stretch px-3 rounded-md w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-center">
 						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 							<T keyName="{item.name}" defaultValue="{item.name}" />
 							

@@ -34,7 +34,7 @@
   style:top="{`${$coords.y}px`}"
   style:transform="{`scale(${$scale}) translate(-50%,-50%)`}"
   class="bg-gradient-to-tl from-primary-100 to-primary-800 transition-[filter]
-  {smaller ? 'brightness-150 contrast-150' : ''}
+  {smaller ? 'brightness-125 contrast-125' : ''}
   animate-blobpulse z-[1] rounded-full -translate-x-1/2 -translate-y-1/2 origin-top-left aspect-square fixed h-64"
 />
 <div 
