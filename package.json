@@ -40,7 +40,7 @@
 	"dependencies": {
 		"@threlte/core": "^5.0.9",
 		"@threlte/extras": "^4.9.3",
-		"@tolgee/svelte": "^4.9.2",
+		"@tolgee/svelte": "^5.0.0",
 		"svrollbar": "^0.12.0",
 		"three": "^0.148.0"
 	}
