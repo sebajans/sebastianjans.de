@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { fade, draw } from "svelte/transition";
-	export let imgClass:string
+	import { fade, draw } from 'svelte/transition';
+	export let imgClass: string;
 </script>
+
 <svg
 	class={imgClass}
 	width="100%"
@@ -14,14 +15,7 @@
 	style="clip-path: polygon(0 0, 100% 0, 100% 92%, 0 92%); fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
 >
 	<g transform="matrix(1,0,0,1,-1050,0)">
-		<rect
-			id="product-table-front"
-			x="1050"
-			y="0"
-			width="1000"
-			height="1000"
-			style="fill:none;"
-		/>
+		<rect id="product-table-front" x="1050" y="0" width="1000" height="1000" style="fill:none;" />
 		<g id="product-table-front1">
 			<g transform="matrix(1.95571,0,0,1.95571,662.987,-290.431)">
 				<rect

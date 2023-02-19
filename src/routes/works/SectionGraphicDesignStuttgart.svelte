@@ -2,7 +2,7 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import WorksHeader from '../../components/WorksHeader.svelte';
-	
+
 	export let scroll: number;
 	export let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
@@ -33,7 +33,11 @@
 			style:transform={`translate3d(0,calc(-20% + ${sectionScroll} * 20%), 0)`}
 			class="self-center row-[9_/_span_3] col-[1_/_span_9] w-full md:row-[6_/_span_6] md:col-[3_/_span_9]"
 		>
-			<img class="scale-125 md:scale-100" alt="graphic-design-table" src="/graphicdesign/table.svg" />
+			<img
+				class="scale-125 md:scale-100"
+				alt="graphic-design-table"
+				src="/graphicdesign/table.svg"
+			/>
 		</div>
 		<div
 			style:transform={`translate3d(calc(100% - ${sectionScroll} * 100%),0, 0)`}

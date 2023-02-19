@@ -1,6 +1,7 @@
 <script lang="ts">
-	export let imgClass:string
+	export let imgClass: string;
 </script>
+
 <svg
 	class={imgClass}
 	width="100%"

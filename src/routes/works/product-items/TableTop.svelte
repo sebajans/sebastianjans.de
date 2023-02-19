@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { fade, draw } from "svelte/transition";
-	export let moveToRight:boolean
-	export let imgClass:string
+	export let moveToRight: boolean;
+	export let imgClass: string;
 </script>
+
 <svg
 	class="{moveToRight
 		? '-rotate-90 -translate-y-[7%] sm:-translate-y-5 sm:rotate-0'
@@ -18,14 +18,7 @@
 >
 	<g transform="matrix(1,0,0,1,0,-1050)">
 		<g transform="matrix(1.00908,0,0,1.00908,2.27374e-13,1050)">
-			<rect
-				id="product-table-top"
-				x="-0"
-				y="-0"
-				width="991"
-				height="991"
-				style="fill:none;"
-			/>
+			<rect id="product-table-top" x="-0" y="-0" width="991" height="991" style="fill:none;" />
 			<clipPath id="_clip1">
 				<rect id="product-table-top1" x="-0" y="-0" width="991" height="991" />
 			</clipPath>

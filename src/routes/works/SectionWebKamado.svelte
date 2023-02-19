@@ -2,7 +2,7 @@
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { nightMode } from '$lib/stores/nightMode';
-	
+
 	export let scroll: number;
 	export let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);

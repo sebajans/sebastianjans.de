@@ -30,11 +30,10 @@
 
 <svelte:head>
 	<title>{$pageTitle}</title>
-	<meta name="description" content="Skills of Sebastian Jans as a Designer.">
+	<meta name="description" content="Skills of Sebastian Jans as a Designer." />
 </svelte:head>
 
 <div class=" sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto">
-
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">
@@ -45,7 +44,7 @@
 			For a more elaborate version you can check out my "
 				/>
 				<button
-				aria-label="Open PopUp to download CVs"
+					aria-label="Open PopUp to download CVs"
 					class="font-bold hover:text-primary-500 transition duration-250 "
 					on:click={openPopup}
 				>
@@ -66,7 +65,10 @@
 					</svg>
 				</button>
 			</p>
-			<Popup popupClass={'left-10 w-full mr-10 items-start justify-start bg-primary-200'} bind:this={popup}>
+			<Popup
+				popupClass={'left-10 w-full mr-10 items-start justify-start bg-primary-200'}
+				bind:this={popup}
+			>
 				<div class="font-sans font-normal uppercase space-x-2">
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
@@ -96,31 +98,29 @@
 			</Popup>
 		</div>
 		{#each Object.entries(skillItems) as [categoryName, skills], i}
-		<!-- style:transform={`translateZ(0)`} -->
 			<div
 				in:fly={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
 				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
 			>
 				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
-					<T
-						keyName="skill-{categoryName}-title"
-						defaultValue="{categoryName}"
-					/>
-					
+					<T keyName="skill-{categoryName}-title" defaultValue={categoryName} />
 				</h2>
 				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
-					<T
-						keyName="skill-{categoryName}-text"
-						defaultValue="{skills.categorydescription}"
-					/>
+					<T keyName="skill-{categoryName}-text" defaultValue={skills.categorydescription} />
 				</p>
-				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md backdrop-blur-md shadow-md shadow-primary-800/10 dark:bg-primary-700/50 bg-primary-200/50">
+				<div
+					class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md backdrop-blur-sm shadow-md shadow-primary-800/10 dark:bg-primary-700/50 bg-primary-200/50"
+				>
 					{#each skills.categoryArray as skill}
-						<div
-						class="flex flex-row items-center h-7"
-						>
-						<img src={skill.iconLink} class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill " alt={skill.name}>
-						<span class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm">
+						<div class="flex flex-row items-center h-7">
+							<img
+								src={skill.iconLink}
+								class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
+								alt={skill.name}
+							/>
+							<span
+								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
+							>
 								{skill.name}
 							</span>
 						</div>

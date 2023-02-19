@@ -1,22 +1,22 @@
 <script lang="ts">
-  import "../app.css";
-  import { beforeUpdate } from 'svelte';
-	import { onMount } from "svelte";
+	import '../app.css';
+	import { beforeUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 	import NavBar from '../components/NavBar.svelte';
 	import { TolgeeProvider } from '@tolgee/svelte';
 	import { nightMode } from '$lib/stores/nightMode';
 	import { mainClass } from '$lib/stores/mainClass';
-	import { pageTitle } from "$lib/stores/pageTitle";
+	import { pageTitle } from '$lib/stores/pageTitle';
 	import localeEn from '../i18n/en.json';
 	import localeEs from '../i18n/es.json';
 	import localeDe from '../i18n/de.json';
-	import Footer from "../components/Footer.svelte";
-	import PageTransitions from "../components/PageTransitions.svelte";
-	import { Svrollbar } from 'svrollbar'
-	import Blob from "../components/Blob.svelte";
-	import MouseCursor from "../components/MouseCursor.svelte";
-		/** @type {import('./$types').LayoutData} */
-	export let data:any;
+	import Footer from '../components/Footer.svelte';
+	import PageTransitions from '../components/PageTransitions.svelte';
+	import { Svrollbar } from 'svrollbar';
+	import Blob from '../components/Blob.svelte';
+	import MouseCursor from '../components/MouseCursor.svelte';
+	/** @type {import('./$types').LayoutData} */
+	export let data: any;
 
 	let initialized = false;
 	let showMenu = false;
@@ -24,15 +24,15 @@
 
 	beforeUpdate(() => (showMenu = false));
 	beforeUpdate(() => (showHeader = false));
-	
+
 	onMount(() => {
 		if (nightMode.userPrefersDark()) {
 			nightMode.setDarkMode(true);
 		}
 		initialized = true;
 	});
-	let viewport: Element
-	let contents: Element
+	let viewport: Element;
+	let contents: Element;
 
 	const tolgeeConfig = {
 		preloadFallback: true,
@@ -44,46 +44,42 @@
 		apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
 		apiKey: import.meta.env.VITE_TOLGEE_API_KEY
 	};
-
-
 </script>
-
 
 <Blob />
 <!-- <MouseCursor /> -->
 {#if initialized}
-<TolgeeProvider config={tolgeeConfig}>
-	<NavBar {showMenu} />
-	<main bind:this={viewport} style="display:grid"
-	class=" viewport min-h-screen w-full min-h-screen-ios pt-24 md:pt-28 relative mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
-	<!-- <MouseCursor /> -->
-	<h1
-			class="z-[3] transition-all py-0 md:py-3 md:top-6 top-5 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
+	<TolgeeProvider config={tolgeeConfig}>
+		<NavBar {showMenu} />
+		<main
+			bind:this={viewport}
+			style="display:grid"
+			class=" viewport min-h-screen w-full min-h-screen-ios pt-24 md:pt-28 relative mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300"
+		>
+			<h1
+				class="z-[3] transition-all py-0 md:py-3 md:top-6 top-5 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
 			>
-			{$pageTitle}
+				{$pageTitle}
 			</h1>
 			<PageTransitions pathname={data.pathname}>
 				<div bind:this={contents} class="{$mainClass} mx-4 md:ml-44 ">
 					<slot />
 				</div>
 			</PageTransitions>
-			
-			<Footer/>
+
+			<Footer />
 			<Svrollbar {viewport} {contents} />
 		</main>
-
 	</TolgeeProvider>
 {/if}
 
 <style>
-  .inner {
-    overflow-x: hidden;
+	.inner {
+		overflow-x: hidden;
 		overflow-y: overlay;
-    width: 100vw;
-  }
-  .scroll {
-    overflow-y: auto;
-  }
-
-	
+		width: 100vw;
+	}
+	.scroll {
+		overflow-y: auto;
+	}
 </style>

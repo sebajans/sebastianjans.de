@@ -75,7 +75,7 @@
 				/>
 			</div>
 		</div>
-		<p 
+		<p
 			class="row-[10_/_span_3] col-[1_/_span_8] sm:row-[9_/_span_4] sm:col-[6_/_span_5] h-full w-full self-center text-justify"
 			style:transform={`translate3d(0,calc(400% - ${sectionScroll} * 400%), 0)`}
 		>

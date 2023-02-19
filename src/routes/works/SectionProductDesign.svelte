@@ -38,18 +38,23 @@
 	</div>
 
 	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
-		<div class="md:pl-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2 grid-rows-[0.5fr_0.5fr_auto] gap-4">
+		<div
+			class="md:pl-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2 grid-rows-[0.5fr_0.5fr_auto] gap-4"
+		>
 			{#if showProduct}
-				<div class="{moveToRight
-					? '-translate-x-full sm:translate-x-0 opacity-0 sm:opacity-100'
-					: 'translate-x-0 opacity-100'} duration-500  transform relative">
-					<p class="absolute font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-2/3">
-					<T
-							keyName="front-view"
-							defaultValue="Front View"
-						/>
+				<div
+					class="{moveToRight
+						? '-translate-x-full sm:translate-x-0 opacity-0 sm:opacity-100'
+						: 'translate-x-0 opacity-100'} duration-500  transform relative"
+				>
+					<p
+						class="absolute font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-2/3"
+					>
+						<T keyName="front-view" defaultValue="Front View" />
 					</p>
-					<TableFront imgClass="w-full max-h-[40vh] text-primary-900 dark:text-primary-50 h-full " />
+					<TableFront
+						imgClass="w-full max-h-[40vh] text-primary-900 dark:text-primary-50 h-full "
+					/>
 				</div>
 				<!-- outline-1 outline outline-primary-50 -->
 				<div class="relative rounded-md  ">
@@ -57,16 +62,22 @@
 						class="{moveToRight
 							? 'opacity-100 '
 							: 'opacity-0 translate-x-full'} pt-3 translate-y-3 z-10 absolute shadow-md shadow-primary-900/30 backdrop-blur-sm bg-primary-300/50 rounded-xl w-full h-auto m-4 object-contain transition-all duration-500"
-						src="/productdesign/table-img-2.webp" alt="bench"/>
+						src="/productdesign/table-img-2.webp"
+						alt="bench"
+					/>
 					<div
 						class="{moveToRight
 							? '-translate-x-full sm:translate-x-0 sm:opacity-100'
 							: 'translate-x-0 opacity-100 sm:opacity-100'} duration-500"
 					>
-						<p class="opacity-80 absolute font-sans tracking-wide  font-medium uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/3">
+						<p
+							class="opacity-80 absolute font-sans tracking-wide  font-medium uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/3"
+						>
 							<T keyName="Side-view" defaultValue="Side View" />
 						</p>
-						<TableSide imgClass="duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-full max-h-[40vh]" />
+						<TableSide
+							imgClass="duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-full max-h-[40vh]"
+						/>
 					</div>
 				</div>
 				<div class="relative">
@@ -75,16 +86,19 @@
 							? '-translate-x-1/3 md:-translate-x-2/3'
 							: '-translate-x-2/3'} absolute duration-500 font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 "
 					>
-					<T keyName="Top-view" defaultValue="Top View" />
-				</span>
-					<TableTop moveToRight={moveToRight} imgClass="duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-auto max-h-[40vh]" />
+						<T keyName="Top-view" defaultValue="Top View" />
+					</span>
+					<TableTop
+						{moveToRight}
+						imgClass="duration-500 w-full transform text-primary-900 dark:text-primary-50 sm:max-w-[50vw] h-auto max-h-[40vh]"
+					/>
 				</div>
 				<button
-						class="uppercase h-fit self-center font-sans bg-primary-800 w-auto px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
-						on:click={() => (moveToRight = !moveToRight)}
-					>
-						<T keyName="change-view-button" defaultValue="View Images" />
-					</button>
+					class="uppercase h-fit self-center font-sans bg-primary-800 w-auto px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
+					on:click={() => (moveToRight = !moveToRight)}
+				>
+					<T keyName="change-view-button" defaultValue="View Images" />
+				</button>
 				<div
 					class=" col-span-2
 					 w-full self-start text-justify transform transition-all duration-500 relative items-center flex flex-col justify-center"
@@ -97,7 +111,6 @@
 						maximizing space."
 						/>
 					</p>
-					
 				</div>
 			{/if}
 		</div>

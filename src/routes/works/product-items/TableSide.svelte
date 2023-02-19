@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { fade, draw } from "svelte/transition";
-	export let imgClass:string
+	export let imgClass: string;
 </script>
+
 <svg
 	class={imgClass}
 	width="100%"
@@ -15,14 +15,7 @@
 >
 	<g transform="matrix(1,0,0,1,-1050,0)">
 		<g transform="matrix(1,0,0,1,-1050,0)">
-			<rect
-				id="product-table-side"
-				x="2100"
-				y="0"
-				width="1000"
-				height="1000"
-				style="fill:none;"
-			/>
+			<rect id="product-table-side" x="2100" y="0" width="1000" height="1000" style="fill:none;" />
 			<g id="product-table-side1">
 				<g transform="matrix(0.997927,0,0,0.997927,5.38982,1.0365)">
 					<g transform="matrix(1.96781,0,0,1.96781,1484.45,-824.338)">
@@ -115,9 +108,7 @@
 							style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.02px;"
 						/>
 					</g>
-					<g
-						transform="matrix(1.82287,-2.52368e-22,-2.38959e-22,1.5035,2636.89,-203.493)"
-					>
+					<g transform="matrix(1.82287,-2.52368e-22,-2.38959e-22,1.5035,2636.89,-203.493)">
 						<rect
 							x="148.8"
 							y="339.9"
@@ -126,9 +117,7 @@
 							style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:1.23px;"
 						/>
 					</g>
-					<g
-						transform="matrix(7.84098,3.4019e-22,-2.38959e-22,1.5035,1754.34,-203.493)"
-					>
+					<g transform="matrix(7.84098,3.4019e-22,-2.38959e-22,1.5035,1754.34,-203.493)">
 						<rect
 							x="148.8"
 							y="339.9"
@@ -137,9 +126,7 @@
 							style="fill:currentColor;fill-opacity:0.1;stroke:currentColor;stroke-width:0.36px;"
 						/>
 					</g>
-					<g
-						transform="matrix(7.84098,3.4019e-22,-2.38959e-22,1.5035,1754.34,-203.493)"
-					>
+					<g transform="matrix(7.84098,3.4019e-22,-2.38959e-22,1.5035,1754.34,-203.493)">
 						<rect
 							x="148.8"
 							y="339.9"

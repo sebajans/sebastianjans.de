@@ -9,6 +9,7 @@
 	import SectionLogos from './SectionLogos.svelte';
 	import SectionGraphicDesignStuttgart from './SectionGraphicDesignStuttgart.svelte';
 	import SectionGraphicDesign2 from './SectionGraphicDesign2.svelte';
+	import SectionGraphicDesign3 from './SectionGraphicDesign3.svelte';
 	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import Popup from '../../components/Popup.svelte';
@@ -18,10 +19,9 @@
 
 	// settings for Layout main class and Title
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
-	
-	// mainClass.set('pt-0 pr-0 pl-0 md:pl-0 min-h-screen');
-	mainClass.set('mr-0 ml-0 md:ml-0 overflow-x-hidden');
 
+	// mainClass.set('pt-0 pr-0 pl-0 md:pl-0 min-h-screen');
+	mainClass.set('mr-0 ml-0 md:!ml-0');
 
 	// function to scroll section ankerpoint into view
 	function scrollIntoView({ target }: { target: any }) {
@@ -34,15 +34,16 @@
 
 	let scroll: number = 0;
 	let windowHeight: number = 0;
-	
+
 	let popup: any;
 	function openPopup() {
 		popup.show();
 	}
 </script>
+
 <svelte:head>
 	<title>{$pageTitle}</title>
-	<meta name="description" content="Overview of the Works of Sebastian Jans.">
+	<meta name="description" content="Overview of the Works of Sebastian Jans." />
 </svelte:head>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
@@ -79,31 +80,36 @@
 <SectionLogos />
 <SectionGraphicDesignStuttgart {scroll} {windowHeight} />
 <SectionGraphicDesign2 {scroll} {windowHeight} />
+<SectionGraphicDesign3 {scroll} {windowHeight} />
 <SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
 
 <section
-
 	id="end"
 	style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at top right, var(--tw-gradient-from) 0%, transparent 30%);"
 	class="bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50 relative w-full md:pl-44 pt-28 flex justify-center overflow-x-hidden min-h-screen bg-primary-50 dark:bg-primary-900 h-screen h-screen-ios pb-24 px-3"
 >
 	<div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">
-
 		<h1 class="w-full text-5xl text-right">
 			<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />
 		</h1>
 		<h3 class="w-full md:w-2/3 self-end text-2xl text-right py-4">
-			<T keyName="download-portfolio-text" defaultValue="Download my portfolio below to see more of my work." />
-			
+			<T
+				keyName="download-portfolio-text"
+				defaultValue="Download my portfolio below to see more of my work."
+			/>
 		</h3>
 		<button
 			class="relative uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
 			on:click={openPopup}
-							>
-							<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
+		>
+			<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
 		</button>
-		<Popup popupClass={'w-full mr-10 items-start justify-start bg-primary-200'} position={'w-auto top-auto mt-20 translate-x-0 translate-y-0'} bind:this={popup}>
+		<Popup
+			popupClass={'w-full mr-10 items-start justify-start bg-primary-200'}
+			position={'w-auto top-auto mt-20 translate-x-0 translate-y-0'}
+			bind:this={popup}
+		>
 			<div class="font-sans font-normal uppercase space-x-2 translate-x-0">
 				<a
 					class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900  transition-all duration-200 hover:text-primary-400"
@@ -129,5 +135,4 @@
 			</div>
 		</Popup>
 	</div>
-
 </section>
