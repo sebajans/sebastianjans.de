@@ -10,7 +10,7 @@ export let cvItems = [
     fromMonth: '08',
     toYear: '2022',
     toMonth: '04',
-    shortdescription: 'Webdesign, Printing Materials, Marketing, Manufactoring',
+    shortdescription: 'Web design, printing materials, marketing, manufacturing',
     info: 'I worked as a Web and Graphic Designer. As this was a Start-Up company, i was also involved in the manufacturing process. I learned about the inner workings of the company and was therefore also able to focus on the key aspects of the company in the marketing materials.'
   },
   {
@@ -24,8 +24,8 @@ export let cvItems = [
     fromMonth: '08',
     toYear: '2020',
     toMonth: '08',
-    shortdescription: 'Laboratory work, preparation of samples, MS Office use',
-    info: 'In this Institute i worked as a Research Assistant. I learned a lot about the research process and the importance of attention to detail. I also gained experience in conducting experiments and collecting and analyzing data. I also learned the importance of being organized and keeping accurate records of my work.'
+    shortdescription: 'Laboratory work, preparation of samples, MS office use',
+    info: 'In this institute i worked as a research assistant. I learned a lot about the research process and the importance of attention to detail. I also gained experience in conducting experiments and collecting and analyzing data. I also learned the importance of being organized and keeping accurate records of my work.'
   },
   {
     category: 'job',
@@ -52,7 +52,7 @@ export let cvItems = [
     fromMonth: '09',
     toYear: '2023',
     toMonth: '06',
-    shortdescription: 'Principles of Design Engineering, Typography, Color Theory, Visual communication',
+    shortdescription: 'Principles of design engineering, typography, color theory, visual communication',
     info: 'Universiat Politécnica de Valencia. I learned about the principles and practices of Design Engineering. I studied topics such as typography, color theory, and visual communication, as well as more technical subjects such as design software and printing processes.'
   },
   {
@@ -61,12 +61,12 @@ export let cvItems = [
     image: 'img/logo-uni-stuttgart.svg',
     name: 'B. Sc. in Materials Science',
     role: 'University of Stuttgart',
-    location: 'Stuttgart, DE',
+    location: 'Stuttgart, GER',
     fromYear: '2016',
     fromMonth: '10',
     toYear: '2020',
     toMonth: '09',
-    shortdescription: 'Fundamentals of Materials Science, Material properties and behavior, metals, plastics, ceramics',
+    shortdescription: 'Fundamentals of materials science, material properties and behavior, metals, plastics, ceramics',
     info: 'University of Stuttgart. As a materials science major, I learned about the properties and behavior of different materials, such as metals, ceramics, and polymers. Additionally, I gained experience in conducting experiments and analyzing data to better understand the behavior of materials.'
   },
   {
@@ -75,12 +75,12 @@ export let cvItems = [
     image: 'img/logo_gympl.webp',
     name: 'High School Graduation',
     role: 'Gymnasium Plochingen',
-    location: 'Plochingen, DE',
+    location: 'Plochingen, GER',
     fromYear: '2007',
     fromMonth: '11',
     toYear: '2015',
     toMonth: '07',
     shortdescription: 'Highest degree of general education in Germany, favorite subjects were math, physics and art',
-    info: 'Gymnasium Plochingen. In High school, my favorite subjects were math, physics and art. I always liked logic and wanted to figure out how things work, while trying to live out my creative side.'
+    info: 'Gymnasium Plochingen. In high school, my favorite subjects were math, physics and art. I always liked logic and wanted to figure out how things work, while trying to live out my creative side.'
   }
 ];

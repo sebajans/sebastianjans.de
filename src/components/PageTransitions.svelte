@@ -5,7 +5,7 @@
 </script>
 
 {#key pathname}
-  <div class="w-screen" style="grid-row: 1 / -1; grid-column: 1 / -1;" 
+  <div class="z-[3] w-full" style="grid-row: 1 / -1; grid-column: 1 / -1;" 
     in:fly="{{ x: 10, duration: 350, delay: 250 }}"
     out:fly="{{ x: -10, duration: 350 }}" 
     >

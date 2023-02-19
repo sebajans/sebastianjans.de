@@ -54,20 +54,52 @@ module.exports = {
       boxShadow: {
         innerxl: 'inset 30px 0px 60px -15px rgba(229, 229, 229, 1)',
       },
+
       keyframes: {
         rotatebox: {
           '0%': { transform: 'rotateX( -20deg) rotateY( -50deg)' },
           '50%': { transform: 'rotateX( -200deg) rotateY( -230deg)' },
           '100%': { transform: 'rotateX( -19deg) rotateY( -49deg)' },
+        },
+        blobpulse: {
+          '0%': {
+            rotate: '0deg',
+            opacity: '1',
+          },
+          '33%': {
+            transform: 'scale( 2 1)',
+            opacity: '0.9',
+          },
+          '66%': {
+            transform: 'scale(1 1.5)',
+            opacity: '0.7',
+          },
+          '100%': {
+            rotate: '360deg',
+            opacity: '1',
+          },
+        },
+        blobpulsesmall: {
+          '0%, 100%': {
+            rotate: '-40deg',
+            opacity: '1',
+          },
+          '50%': {
+            transform: 'scale(0.5 2)',
+            rotate: '40deg',
+            opacity: '0.4',
+          },
         }
+      },
+      animation: {
+        blobpulse: 'blobpulse 20s linear infinite',
+        blobpulsesmall: 'blobpulsesmall 10s ease-in-out infinite',
+        rotatebox: 'rotatebox 5s linear infinite',
       },
       height: {
         works: 'calc(100% - 6rem)',
         worksmd: 'calc(100% - 10rem)',
       },
-      animation: {
-        rotatebox: 'rotatebox 5s linear infinite',
-      }
     },
   },
   plugins: [

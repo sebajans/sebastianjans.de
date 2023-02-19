@@ -19,7 +19,7 @@
       <h2 class="text-primary-600 font-sans uppercase font-medium tracking-wider text-2xl py-2"><T keyName="personal-data" defaultValue="Personal Data" /></h2>
       <div class="grid gap-x-2 gap-y-1.5 grid-cols-[minmax(0,40%)_minmax(0,_1fr)] grid-rows-[1fr_repeat(4,_1.5rem)] justify-center align-baseline w-full h-auto">
         <h3 class="align-baseline text-base"><T keyName="direction" defaultValue="Direction" /></h3>
-        <p class="text-left text-sm mt-0.5 align-baseline ">Carrer de Boix 7, Apt 6 <br>46003 Valencia, Valencia</p>
+        <p class="text-left text-sm mt-0.5 align-baseline ">Calle Azucena 10, Piso 20<br>46003 Valencia, Valencia</p>
         <h3 class="align-baseline text-base"><T keyName="telephone" defaultValue="Telephone" /></h3>
         <p class="text-left text-sm mt-0.5 align-baseline h-auto">+49 176 644 673 44</p>
         <h3 class="align-baseline text-base">E-Mail</h3>
@@ -57,7 +57,7 @@
       <div class="flex flex-row flex-wrap">
         <h3 class="w-4/6"><T keyName="south-america" defaultValue="Round trip through South America" /></h3>
         <h3 class="w-2/6 text-sm text-right font-medium mt-1.5">11/2015 - 06/2016</h3>
-        <p class="w-full text-sm pb-2"><T keyName="south-america-description" defaultValue="Insight into new cultures, consolidation of spanish skills" /></p>
+        <p class="w-full text-sm pb-2"><T keyName="south-america-description" defaultValue="Insight into new cultures, consolidation of Spanish skills" /></p>
         <h3 class="w-4/6"><T keyName="great-britain" defaultValue="Language trips in Great Britain" /></h3>
         <h3 class="w-2/6 text-sm text-right font-medium mt-1.5">08/2013 & 08/2014</h3>
         <p class="w-full text-sm"><T keyName="great-britain-description" defaultValue="Living with a host family in Rochester with English classes" /></p>

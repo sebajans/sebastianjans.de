@@ -23,7 +23,7 @@ function updatePosition(event:any) {
 	<div class="absolute z-20 backdrop-blur-none border-2 border-primary-600 h-20 w-20 translate-x-1/2 -translate-y-1/2 "></div>
 </div>
 
-<Circle x={x} y={y} />
+
 
 <main on:mousemove={updatePosition}>
   ...

@@ -12,7 +12,10 @@
 	import localeDe from '../i18n/de.json';
 	import Footer from "../components/Footer.svelte";
 	import PageTransitions from "../components/PageTransitions.svelte";
-	/** @type {import('./$types').LayoutData} */
+	import { Svrollbar } from 'svrollbar'
+	import Blob from "../components/Blob.svelte";
+	import MouseCursor from "../components/MouseCursor.svelte";
+		/** @type {import('./$types').LayoutData} */
 	export let data:any;
 
 	let initialized = false;
@@ -28,7 +31,8 @@
 		}
 		initialized = true;
 	});
-	
+	let viewport: Element
+	let contents: Element
 
 	const tolgeeConfig = {
 		preloadFallback: true,
@@ -41,47 +45,45 @@
 		apiKey: import.meta.env.VITE_TOLGEE_API_KEY
 	};
 
-	// scrollbar
-	let timer:any;
 
-  function handleScroll(e:any) {
-    let el = e.target;
-    el.classList.add("scroll");
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      el.classList.remove("scroll");
-    }, 100);
-  }
 </script>
 
+
+<Blob />
+<!-- <MouseCursor /> -->
 {#if initialized}
-	<TolgeeProvider config={tolgeeConfig}>
-		<NavBar {showMenu} />
-		<main on:scroll={handleScroll} style="display:grid"
-		class="inner min-h-screen min-h-screen-ios pt-24 md:pt-28 relative mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
-			<h1
-			class="transition-all py-0 md:py-3 md:top-6 top-5 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
+<TolgeeProvider config={tolgeeConfig}>
+	<NavBar {showMenu} />
+	<main bind:this={viewport} style="display:grid"
+	class=" viewport min-h-screen w-full min-h-screen-ios pt-24 md:pt-28 relative mx-auto bg-primary-50 dark:bg-primary-900 transition-colors duration-300">
+	<!-- <MouseCursor /> -->
+	<h1
+			class="z-[3] transition-all py-0 md:py-3 md:top-6 top-5 absolute md:left-44 left-24 duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold"
 			>
 			{$pageTitle}
 			</h1>
 			<PageTransitions pathname={data.pathname}>
-				<div class="{$mainClass} mx-4 md:ml-44 ">
+				<div bind:this={contents} class="{$mainClass} mx-4 md:ml-44 ">
 					<slot />
 				</div>
 			</PageTransitions>
+			
 			<Footer/>
+			<Svrollbar {viewport} {contents} />
 		</main>
 
 	</TolgeeProvider>
 {/if}
 
 <style>
-  /* .inner {
+  .inner {
     overflow-x: hidden;
 		overflow-y: overlay;
     width: 100vw;
-  } */
+  }
   .scroll {
     overflow-y: auto;
   }
+
+	
 </style>
