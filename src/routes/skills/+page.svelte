@@ -108,9 +108,7 @@
 				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
 					<T keyName="skill-{categoryName}-text" defaultValue={skills.categorydescription} />
 				</p>
-				<div
-					class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap p-3 rounded-md backdrop-blur-sm shadow-md shadow-primary-800/10 dark:bg-primary-700/50 bg-primary-200/50"
-				>
+				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap highlight-content p-3">
 					{#each skills.categoryArray as skill}
 						<div class="flex flex-row items-center h-7">
 							<img

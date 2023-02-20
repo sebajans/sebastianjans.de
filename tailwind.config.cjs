@@ -100,6 +100,9 @@ module.exports = {
         works: 'calc(100% - 6rem)',
         worksmd: 'calc(100% - 10rem)',
       },
+      // borderWidth: {
+      //   1: '1px',
+      // },
     },
   },
   plugins: [

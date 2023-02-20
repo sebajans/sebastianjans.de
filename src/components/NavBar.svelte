@@ -18,7 +18,7 @@
 		showMenu = !showMenu;
 	}
 	$: languageStore;
-	
+
 	export let offset = 100;
 	export let tolerance = 3;
 	$: showMenu;
@@ -26,12 +26,12 @@
 	let y = 0;
 	let lastY = 0;
 
-	function updateClass(y:number) {
+	function updateClass(y: number) {
 		const dy = lastY - y;
 		lastY = y;
 		return deriveClass(y, dy);
 	}
-	function deriveClass(y:number, dy:number) {
+	function deriveClass(y: number, dy: number) {
 		// show if at top of page
 		if (y < offset) {
 			return (headerClass = true);
@@ -49,24 +49,29 @@
 	}
 
 	$: headerClass = updateClass(y);
-
 </script>
+
 <svelte:window bind:scrollY={y} />
 
 <header
-	class="{showMenu ? 'h-screen h-screen-ios' : 'h-0 md:h-screen md:h-screen-ios'} md:backdrop-blur-2xl transition-transform md:w-40 z-30 fixed inset-y-0 flex justify-between flex-col w-full"
+	class="{showMenu
+		? 'h-screen h-screen-ios'
+		: 'h-0 md:h-screen md:h-screen-ios'} md:backdrop-blur-2xl border-r border-primary-900/[0.02] dark:border-primary-50/[0.02] bg-gradient-to-bl from-primary-900/[0.02] to-primary-900/[0.06] dark:from-primary-50/[0.02] dark:to-primary-50/[0.06]   transition-transform md:w-40 z-30 fixed inset-y-0 flex justify-between flex-col w-full"
 >
 	<BackdropBlur {showMenu} />
 	<!-- LOGO -->
-	<a aria-label="Back to Home" href="/" 
-		class="{headerClass || showMenu 
-			? ''
-			: 'opacity-0 md:opacity-100 backdrop-blur-none'}
-		{showMenu ? 'mt-8 md:mt-4 scale-125 md:scale-100 mr-[0%]' : 'translate-x-1/2 mr-[100%]'} ease-out group hover:translate-y-2 md:w-20 w-20 md:h-20 h-20 rounded-br-md md:my-4 md:mx-8 self-center relative transition-all duration-200 md:translate-x-0 z-50 group">
-		<Logo className={'p-2'} />
+	<a
+		aria-label="Back to Home"
+		href="/"
+		class="{headerClass || showMenu ? '' : 'opacity-0 md:opacity-100 backdrop-blur-none'}
+		{showMenu
+			? 'mt-8 md:mt-4 scale-125 md:scale-100 mr-[0%]'
+			: 'translate-x-1/2 mr-[100%]'} ease-out group hover:translate-y-2 md:w-20 w-20 md:h-20 h-20 rounded-br-md md:my-10 md:mx-8 self-center relative transition-all duration-200 md:translate-x-0 z-50 group"
+	>
+		<Logo className={'p-2 md:p-1.5'} />
 	</a>
 	<!-- actual nav -->
-	
+
 	<nav
 		class="{showMenu
 			? ' '

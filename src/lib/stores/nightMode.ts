@@ -12,22 +12,22 @@ function userPrefersDark() {
     //       sessionData  === 'dark' ||
     //       (!(sessionData) && window.matchMedia('(prefers-color-scheme: dark)').matches)
     //       );
-    const sessionData = window.sessionStorage.getItem(key)
+    const sessionData = window.localStorage.getItem(key)
     if (sessionData) {
         return "true" === sessionData;
     }
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
+
 }
 
 function persistDarkMode(dark: boolean) {
-        document.body.classList.toggle('dark', dark);
+    document.body.classList.toggle('dark', dark);
     if (dark) {
         document.body.classList.add('dark');
-        sessionStorage.theme = 'dark';
+        localStorage.theme = 'dark';
     } else {
         document.body.classList.remove('dark');
-        sessionStorage.theme = 'light';
+        localStorage.theme = 'light';
     }
 }
 

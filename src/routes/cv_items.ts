@@ -2,7 +2,8 @@ export let cvItems = [
   {
     category: 'job',
     id: 1,
-    image: 'img/logo-kamado.webp',
+    image: 'cv_items/logo-kamado.webp',
+    imageDark: '',
     name: 'KamadoB10 Germany',
     role: 'Web and Graphic Designer',
     location: 'Ebersbach, DE',
@@ -16,7 +17,8 @@ export let cvItems = [
   {
     category: 'job',
     id: 2,
-    image: 'img/ditf-logo-weis.svg',
+    image: 'cv_items/logo-ditf-weiss.svg',
+    imageDark: 'cv_items/logo-ditf-weiss.svg',
     name: 'DITF',
     role: 'Research Assistant',
     location: 'Denkendorf, DE',
@@ -30,7 +32,8 @@ export let cvItems = [
   {
     category: 'job',
     id: 3,
-    image: 'img/logo-letratec.png',
+    image: 'cv_items/logo-letratec.webp',
+    imageDark: '',
     name: 'Letratec',
     role: 'Intern',
     location: 'Buenos Aires, AR',
@@ -44,7 +47,8 @@ export let cvItems = [
   {
     category: 'education',
     id: 1,
-    image: 'img/logo_UPV_principal.svg',
+    image: 'cv_items/logo-upv.svg',
+    imageDark: '',
     name: 'M. Eng. in Design Engineering',
     role: 'Universitat Politécnica de Valencia',
     location: 'Valencia, ES',
@@ -58,7 +62,8 @@ export let cvItems = [
   {
     category: 'education',
     id: 2,
-    image: 'img/logo-uni-stuttgart.svg',
+    image: 'cv_items/logo-uni-stuttgart.svg',
+    imageDark: '',
     name: 'B. Sc. in Materials Science',
     role: 'University of Stuttgart',
     location: 'Stuttgart, GER',
@@ -72,7 +77,8 @@ export let cvItems = [
   {
     category: 'education',
     id: 3,
-    image: 'img/logo_gympl.webp',
+    image: 'cv_items/logo-gympl.webp',
+    imageDark: '',
     name: 'High School Graduation',
     role: 'Gymnasium Plochingen',
     location: 'Plochingen, GER',

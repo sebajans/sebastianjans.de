@@ -2,11 +2,12 @@
 	import '../app.css';
 	import { beforeUpdate } from 'svelte';
 	import { onMount } from 'svelte';
-	import NavBar from '../components/NavBar.svelte';
 	import { TolgeeProvider } from '@tolgee/svelte';
 	import { nightMode } from '$lib/stores/nightMode';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { pageTitle } from '$lib/stores/pageTitle';
+	import NavBar from '../components/NavBar.svelte';
+
 	import localeEn from '../i18n/en.json';
 	import localeEs from '../i18n/es.json';
 	import localeDe from '../i18n/de.json';
@@ -14,7 +15,7 @@
 	import PageTransitions from '../components/PageTransitions.svelte';
 	import { Svrollbar } from 'svrollbar';
 	import Blob from '../components/Blob.svelte';
-	import MouseCursor from '../components/MouseCursor.svelte';
+
 	/** @type {import('./$types').LayoutData} */
 	export let data: any;
 
@@ -22,15 +23,17 @@
 	let showMenu = false;
 	let showHeader = false;
 
-	beforeUpdate(() => (showMenu = false));
-	beforeUpdate(() => (showHeader = false));
+	beforeUpdate(() => ((showMenu = false), (showHeader = false)));
+	// beforeUpdate(() => (showHeader = false));
 
 	onMount(() => {
 		if (nightMode.userPrefersDark()) {
+			console.log('test');
 			nightMode.setDarkMode(true);
 		}
 		initialized = true;
 	});
+
 	let viewport: Element;
 	let contents: Element;
 
@@ -47,7 +50,6 @@
 </script>
 
 <Blob />
-<!-- <MouseCursor /> -->
 {#if initialized}
 	<TolgeeProvider config={tolgeeConfig}>
 		<NavBar {showMenu} />
@@ -72,14 +74,3 @@
 		</main>
 	</TolgeeProvider>
 {/if}
-
-<style>
-	.inner {
-		overflow-x: hidden;
-		overflow-y: overlay;
-		width: 100vw;
-	}
-	.scroll {
-		overflow-y: auto;
-	}
-</style>

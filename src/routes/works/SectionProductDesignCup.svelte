@@ -52,8 +52,7 @@
 				style:transform={`translate3d(0, calc(150% - ${sectionScroll} * 150%), 0)`}
 				style:opacity={`calc(-50% + ${sectionScroll} * 150%)`}
 				class="w-full h-full overflow-hidden 
-			 col-start-4 row-start-1 col-span-6 row-span-5 md:col-span-8 md:row-span-2
-			  rounded-md"
+			 col-start-4 row-start-1 md:row-start-1 md:col-start-5 col-span-6 row-span-5 md:col-span-8 md:row-span-2"
 			>
 				<h1 class="md:pb-4 text-2xl md:text-4xl text-left font-sans font-bold">
 					<T keyName="Cupholder-title" defaultValue="Cupholder" />
@@ -114,7 +113,7 @@
 				<CupHolderModelClose
 					imgClass="{zoomIn
 						? 'opacity-100 w-24 h-24'
-						: 'opacity-0 w-5 h-5'} pointer-events-none left-[8.5%] top-[8.7%] border-[1px] transition-all duration-300 aspect-square rounded-full bg-primary-50 dark:bg-primary-900 absolute object-contain text-primary-900 dark:text-primary-50"
+						: 'opacity-0 w-5 h-5'} pointer-events-none left-[8.5%] top-[8.7%] border transition-all duration-300 aspect-square rounded-full bg-primary-50 dark:bg-primary-900 absolute object-contain text-primary-900 dark:text-primary-50"
 				/>
 			</div>
 			<div

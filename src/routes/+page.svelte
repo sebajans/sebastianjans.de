@@ -5,6 +5,7 @@
 	import { mainClass } from '$lib/stores/mainClass';
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
+	import { nightMode } from '$lib/stores/nightMode';
 	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	pageTitle.set('');
@@ -47,14 +48,18 @@
 	let minYEdu: any;
 	let scroll: any;
 	let startAnimationWork: boolean = false,
-		startAnimationEdu: boolean = false;
+		startAnimationEdu: boolean = false,
+		startAnimationAchi: boolean = false;
 
 	$: if (scroll > minYWork * 1.5) {
 		startAnimationWork = true;
 	}
 
-	$: if (scroll > minYEdu * 1.5) {
+	$: if (scroll > minYWork * 2.5) {
 		startAnimationEdu = true;
+	}
+	$: if (scroll > minYWork * 3.5) {
+		startAnimationAchi = true;
 	}
 </script>
 
@@ -151,13 +156,14 @@
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
-		<div class="pb-20 flex flex-row w-full flex-wrap md:flex-nowrap justify-center">
-			<img
-				src={profilePicture}
-				alt="profile"
-				class="w-full h-full object-cover object-top md:w-1/5 max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 mb-2 aspect-square rounded-xl"
-			/>
-			<div class="md:pl-4 md:w-4/5 text-sm md:text-base flex flex-col">
+		<div class="pb-20 w-full justify-center">
+			<!-- flex flex-row flex-wrap md:flex-nowrap  -->
+			<div class="md:pr-4 text-sm md:text-base ">
+				<img
+					src={profilePicture}
+					alt="profile"
+					class="w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
+				/>
 				<p class="md:w-full mb-2 text-justify md:text-xl">
 					{$t({
 						key: 'front-about-text',
@@ -203,15 +209,14 @@
 				{#if item.category === 'job'}
 					<div
 						in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
-						class="w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start"
+						class="w-full flex sm:flex-row flex-col sm:space-x-4 items-end sm:items-start "
 					>
 						<div
-							class="md:w-1/5 backdrop-blur-md shadow-md w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200/70"
-						>
-							<img class="object-contain aspect-square w-64" src={item.image} alt={item.name} />
-						</div>
+							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
+							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-32 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
+						/>
 						<div
-							class="md:w-4/5 backdrop-blur-md shadow-md bg-primary-50/50 dark:bg-primary-900/50 self-stretch px-3  rounded-md w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-center"
+							class="md:w-4/5 py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-center"
 						>
 							<!-- {@const frMonth = item.fromMonth.toString() } -->
 							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
@@ -251,15 +256,14 @@
 				{#if item.category === 'education'}
 					<div
 						in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
-						class="w-full flex sm:flex-row flex-col sm:space-x-4 items-center md:items-start"
+						class="w-full flex sm:flex-row flex-col sm:space-x-4 items-end sm:items-start "
 					>
 						<div
-							class="md:w-1/5 backdrop-blur-md shadow-md w-full max-w-[16rem] max-h-[16rem] p-2 h-full md:h-1/5 flex rounded-lg justify-center items-center aspect-square bg-primary-200/70"
-						>
-							<img class="object-contain aspect-square w-64" src={item.image} alt={item.name} />
-						</div>
+							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
+							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-32 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
+						/>
 						<div
-							class="sm:w-4/5 backdrop-blur-md shadow-md bg-primary-50/50 dark:bg-primary-900/50 self-stretch px-3 rounded-md w-full max-w-[16rem] sm:max-w-xl flex flex-col justify-center"
+							class="md:w-4/5 py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-center"
 						>
 							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 								<T keyName={item.name} defaultValue={item.name} />
@@ -274,6 +278,54 @@
 					</div>
 				{/if}
 			{/each}
+		{/if}
+	</div>
+</section>
+
+<section
+	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	id="cv_edu"
+>
+	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
+		{#if startAnimationAchi}
+			<h1
+				in:fly={{ y: 50, duration: 500 }}
+				class="text-center md:text-left text-primary-900 dark:text-primary-50"
+			>
+				{$t({ key: 'my-achievements', defaultValue: 'Achievements' })}
+			</h1>
+			<div
+				in:fly={{ y: 50, duration: 500, delay: 250 }}
+				class="w-full flex flex-col sm:space-y-4 items-end sm:items-start "
+			>
+				<div
+					style:background-image={`url('/cv_items/certificate-tau-cencored.webp')`}
+					class="bg-cover bg-no-repeat bg-center bg-origin-content md:w-1/2 z-10 pointer-events-none w-32 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
+				/>
+				<div
+					class="md:w-1/2 py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"
+				>
+					<!-- <h2 class="font-sans text-primary-900 dark:text-primary-200 text-2xl">
+						<T keyName="achievement-title" defaultValue="Second place" />
+					</h2> -->
+					<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+						<T
+							keyName="achievement-title"
+							defaultValue="TAU Cerámica: III Concurso de Diseño De Una Pieza Cerámica"
+						/>
+					</h2>
+					<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+						<T keyName="achievement-date" defaultValue="10/02/2022" />
+					</h3>
+					<p class="text-sm text-justify">
+						<T
+							keyName="achievement-text"
+							defaultValue="I achieved second place in the graphic design contest. The objective was to design a ceramic tile, fitting to the famous Estacion Norte in Valencia."
+						/>
+					</p>
+					<button class="btn btn-navajo w-fit">See project</button>
+				</div>
+			</div>
 		{/if}
 	</div>
 </section>
