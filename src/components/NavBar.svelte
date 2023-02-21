@@ -17,6 +17,9 @@
 	function toggleMenu() {
 		showMenu = !showMenu;
 	}
+	function hideMenuMobile() {
+		showMenu = false;
+	}
 	$: languageStore;
 
 	export let offset = 100;
@@ -80,7 +83,7 @@
 		<SocialMenu />
 		<ul aria-label="Navigation Bar" class="flex font-sans flex-col gap-4 flex-grow self-center">
 			{#each navItems as { link, text }}
-				<NavButton on:click={toggleMenu} {link} {text} />
+				<NavButton on:click={hideMenuMobile} {link} {text} />
 			{/each}
 		</ul>
 	</nav>

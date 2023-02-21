@@ -55,7 +55,7 @@
 	<div
 		class="relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
 	>
-		<p class="max-w-4xl my-4 px-3 text-left w-full sm:w-2/5">
+		<p class="max-w-4xl box-content my-4 px-3 text-left w-full sm:w-2/5">
 			<T
 				keyName="logo-design-paragraph"
 				defaultValue="These logotypes show some of my previous logo design works."

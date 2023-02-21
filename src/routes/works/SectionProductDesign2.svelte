@@ -143,8 +143,9 @@
 				</div>
 
 				<div
-					class="w-full flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-auto md:h-fit "
+					class="w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center box-content uppercase font-medium justify-center h-auto md:h-fit "
 				>
+					<!-- class="w-full flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-auto md:h-fit " -->
 					{#each options.slice(0, 5) as option}
 						<div
 							class="md:space-y-2 space-x-2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-0.5 md:mb-2"

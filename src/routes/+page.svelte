@@ -213,11 +213,9 @@
 					>
 						<div
 							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
-							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-32 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
+							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-32 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
 						/>
-						<div
-							class="md:w-4/5 py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-center"
-						>
+						<div class="md:w-4/5 box-content self-stretch">
 							<!-- {@const frMonth = item.fromMonth.toString() } -->
 							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 								<T keyName={item.name} defaultValue={item.name} />
@@ -262,9 +260,7 @@
 							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
 							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-32 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
 						/>
-						<div
-							class="md:w-4/5 py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-center"
-						>
+						<div class="md:w-4/5 box-content self-stretch">
 							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 								<T keyName={item.name} defaultValue={item.name} />
 							</h2>
@@ -280,50 +276,78 @@
 			{/each}
 		{/if}
 	</div>
+	<ButtonScrollToSection section={'cv_cert'}
+		>{$t({ key: 'achievements', defaultValue: 'Achievements' })}</ButtonScrollToSection
+	>
 </section>
 
 <section
 	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
-	id="cv_edu"
+	id="cv_cert"
 >
-	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
+	<div class="space-y-4 max-w-4xl w-full mx-auto pt-14">
 		{#if startAnimationAchi}
 			<h1
 				in:fly={{ y: 50, duration: 500 }}
 				class="text-center md:text-left text-primary-900 dark:text-primary-50"
 			>
-				{$t({ key: 'my-achievements', defaultValue: 'Achievements' })}
+				{$t({ key: 'my-achievements', defaultValue: 'Achievements & Certificates' })}
 			</h1>
-			<div
-				in:fly={{ y: 50, duration: 500, delay: 250 }}
-				class="w-full flex flex-col sm:space-y-4 items-end sm:items-start "
-			>
+			<div class="flex sm:flew-row space-x-4">
 				<div
-					style:background-image={`url('/cv_items/certificate-tau-cencored.webp')`}
-					class="bg-cover bg-no-repeat bg-center bg-origin-content md:w-1/2 z-10 pointer-events-none w-32 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
-				/>
-				<div
-					class="md:w-1/2 py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"
+					in:fly={{ y: 50, duration: 500, delay: 250 }}
+					class="w-full flex flex-col sm:space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
 				>
-					<!-- <h2 class="font-sans text-primary-900 dark:text-primary-200 text-2xl">
-						<T keyName="achievement-title" defaultValue="Second place" />
-					</h2> -->
-					<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
-						<T
-							keyName="achievement-title"
-							defaultValue="TAU Cerámica: III Concurso de Diseño De Una Pieza Cerámica"
-						/>
-					</h2>
-					<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-						<T keyName="achievement-date" defaultValue="10/02/2022" />
-					</h3>
-					<p class="text-sm text-justify">
-						<T
-							keyName="achievement-text"
-							defaultValue="I achieved second place in the graphic design contest. The objective was to design a ceramic tile, fitting to the famous Estacion Norte in Valencia."
-						/>
-					</p>
-					<button class="btn btn-navajo w-fit">See project</button>
+					<div
+						style:background-image={`url('/cv_items/certificate-tau-cencored.webp')`}
+						class="bg-[length:101%_101%] bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
+					/>
+					<div
+						class=" py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"
+					>
+						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+							<T
+								keyName="achievement-title"
+								defaultValue="III Concurso de Diseño De Una Pieza Cerámica"
+							/>
+						</h2>
+						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+							<T keyName="achievement-date" defaultValue="10/02/2022" />
+						</h3>
+						<p class="text-sm text-justify">
+							<T
+								keyName="achievement-text"
+								defaultValue="TAU Cerámica: I achieved second place in the graphic design contest. The objective was to design a ceramic tile, fitting to the famous Estacion Norte in Valencia."
+							/>
+						</p>
+						<!-- <button class="btn btn-navajo w-fit">See project</button> -->
+					</div>
+				</div>
+				<div
+					in:fly={{ y: 50, duration: 500, delay: 250 }}
+					class="w-full flex flex-col sm:space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
+				>
+					<div
+						style:background-image={`url('/cv_items/certificate-designing-for-a-sustainable-future.webp')`}
+						class="bg-cover bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
+					/>
+					<div
+						class=" py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"
+					>
+						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+							<T keyName="achievement-title" defaultValue="Designing for a sustainable Future" />
+						</h2>
+						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+							<T keyName="achievement-date" defaultValue="21/02/2023" />
+						</h3>
+						<p class="text-sm text-justify">
+							<T
+								keyName="achievement-text"
+								defaultValue="The online course explored design thinking applied to sustainability. It covered topics from AI to rewilding, emphasizing empathy, technology's problem-solving potential, and innovative solutions to the climate crisis."
+							/>
+						</p>
+						<!-- <button class="btn btn-navajo w-fit">See project</button> -->
+					</div>
 				</div>
 			</div>
 		{/if}

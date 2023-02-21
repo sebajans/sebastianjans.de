@@ -66,6 +66,7 @@
 				on:click|preventDefault={scrollIntoView}
 				in:fly={{ x: 100, duration: 400, delay: 100 * i }}
 				href="#{item.id}"
+				type="button"
 				alt={item.id}
 				class="md:py-4 py-2 backdrop-blur-md  duration-300 delay-[50] rounded-l-lg text-left w-full pl-3 transition-all {item.color} "
 			>
@@ -80,7 +81,7 @@
 <SectionLogos />
 <SectionGraphicDesignStuttgart {scroll} {windowHeight} />
 <SectionGraphicDesign2 {scroll} {windowHeight} />
-<SectionGraphicDesign3 {scroll} {windowHeight} />
+<!-- <SectionGraphicDesign3 {scroll} {windowHeight} /> -->
 <SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
 
@@ -100,7 +101,7 @@
 			/>
 		</h3>
 		<button
-			class="relative uppercase font-sans bg-primary-800 w-auto mt-4 px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
+			class="relative uppercase font-sans btn btn-highlight w-auto mt-4  rounded-lg text-primary-50"
 			on:click={openPopup}
 		>
 			<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
