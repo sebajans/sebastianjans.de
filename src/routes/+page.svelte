@@ -162,7 +162,7 @@
 				<img
 					src={profilePicture}
 					alt="profile"
-					class="w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
+					class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
 				/>
 				<p class="md:w-full mb-2 text-justify md:text-xl">
 					{$t({
@@ -285,7 +285,7 @@
 	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_cert"
 >
-	<div class="space-y-4 max-w-4xl w-full mx-auto pt-14">
+	<div class="space-y-4 max-w-4xl w-full mx-auto pt-14 ">
 		{#if startAnimationAchi}
 			<h1
 				in:fly={{ y: 50, duration: 500 }}
@@ -293,10 +293,12 @@
 			>
 				{$t({ key: 'my-achievements', defaultValue: 'Achievements & Certificates' })}
 			</h1>
-			<div class="flex sm:flew-row flex-col space-y-4 sm:space-x-4">
+			<div
+				class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4"
+			>
 				<div
 					in:fly={{ y: 50, duration: 500, delay: 250 }}
-					class="w-full flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
+					class="w-full md:w-1/2 flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
 				>
 					<div
 						style:background-image={`url('/cv_items/certificate-tau-cencored.webp')`}
@@ -325,7 +327,7 @@
 				</div>
 				<div
 					in:fly={{ y: 50, duration: 500, delay: 250 }}
-					class="w-full flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
+					class="w-full md:w-1/2 flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
 				>
 					<div
 						style:background-image={`url('/cv_items/certificate-designing-for-a-sustainable-future.webp')`}
