@@ -72,7 +72,7 @@
 </svelte:head>
 <svelte:window bind:scrollY={scroll} />
 <section
-	class="relative w-full h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
+	class="relative w-full h-[calc(100vh_-_112px)] max-h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
 	<div class="relative pb-[calc(100vh_-_112px)] flex flex-col w-full max-w-2xl my-auto mx-auto ">
 		{#if visible}
@@ -213,9 +213,9 @@
 					>
 						<div
 							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
-							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-32 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
+							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
 						/>
-						<div class="md:w-4/5 box-content self-stretch">
+						<div class="md:w-4/5  box-content sm:self-stretch">
 							<!-- {@const frMonth = item.fromMonth.toString() } -->
 							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 								<T keyName={item.name} defaultValue={item.name} />
@@ -239,7 +239,7 @@
 
 <section
 	bind:offsetHeight={minYEdu}
-	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class=" pt-4 md:pt-20 pb-20 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
@@ -258,10 +258,10 @@
 					>
 						<div
 							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
-							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-32 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
+							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
 						/>
 						<div class="md:w-4/5 box-content self-stretch">
-							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+							<h2 class="font-sans mr-28 sm:mr-0 text-primary-900 dark:text-primary-50 text-2xl">
 								<T keyName={item.name} defaultValue={item.name} />
 							</h2>
 							<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
@@ -293,14 +293,14 @@
 			>
 				{$t({ key: 'my-achievements', defaultValue: 'Achievements & Certificates' })}
 			</h1>
-			<div class="flex sm:flew-row space-x-4">
+			<div class="flex sm:flew-row flex-col space-y-4 sm:space-x-4">
 				<div
 					in:fly={{ y: 50, duration: 500, delay: 250 }}
-					class="w-full flex flex-col sm:space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
+					class="w-full flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
 				>
 					<div
 						style:background-image={`url('/cv_items/certificate-tau-cencored.webp')`}
-						class="bg-[length:101%_101%] bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
+						class="bg-[length:101%_101%] bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
 					/>
 					<div
 						class=" py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"
@@ -325,11 +325,11 @@
 				</div>
 				<div
 					in:fly={{ y: 50, duration: 500, delay: 250 }}
-					class="w-full flex flex-col sm:space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
+					class="w-full flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
 				>
 					<div
 						style:background-image={`url('/cv_items/certificate-designing-for-a-sustainable-future.webp')`}
-						class="bg-cover bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
+						class="bg-cover bg-no-repeat bg-center bg-origin-content z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
 					/>
 					<div
 						class=" py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"

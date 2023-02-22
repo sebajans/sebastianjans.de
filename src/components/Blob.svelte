@@ -36,26 +36,25 @@
 		smaller = false;
 	}}
 />
-<!-- on:wheel={randomBlobPosition} -->
 <div
 	style:left={`${$coords.x}px`}
 	style:top={`${$coords.y}px`}
 	style:transform={`scale(${$scale}) translate(-50%,-50%)`}
 	class="bg-gradient-to-tl from-primary-100/40 to-primary-800/40 transition-[filter]
   {smaller ? 'brightness-125' : ''}
-  animate-blobpulse z-[1] rounded-full -translate-x-1/2 -translate-y-1/2 origin-top-left aspect-square fixed h-64"
+  animate-blobpulse z-[1] rounded-full -translate-x-1/2 -translate-y-1/2 origin-top-left aspect-square fixed h-64 hidden sm:visible"
 />
 <div
 	style:left={`${$coords.x}px`}
 	style:bottom={`${$coords.y}px`}
 	style:transform={`scale(${$scale}) translate(150%,-50%)`}
-	class="bg-gradient-to-tl from-primary-200/10 to-primary-400/10 animate-blobpulsesmall z-[2] rounded-full -translate-x-1/2 -translate-y-1/2 origin-top aspect-square fixed h-32"
+	class="bg-gradient-to-tl from-primary-200/10 to-primary-400/10 animate-blobpulsesmall z-[2] hidden sm:visible rounded-full -translate-x-1/2 -translate-y-1/2 origin-top aspect-square fixed h-32"
 />
 <div
 	style:right={`${$coords.x}px`}
 	style:top={`${$coords.y}px`}
 	style:transform={`scale(${$scale}) translate(-150%,-50%)`}
-	class="bg-gradient-to-tl from-primary-200/20 to-primary-400/20 animate-blobpulsesmall z-[2] rounded-full -translate-x-1/2 -translate-y-1/2 origin-top aspect-square fixed h-40"
+	class="bg-gradient-to-tl from-primary-200/20 to-primary-400/20 animate-blobpulsesmall z-[2] hidden sm:visible rounded-full -translate-x-1/2 -translate-y-1/2 origin-top aspect-square fixed h-40"
 />
 <!-- <div
 	style:right={`${$position.x}px`}
@@ -68,5 +67,5 @@ to-primary-400/40 animate-blobpulsesmall z-[1] rounded-full -translate-x-1/2 -tr
 <div
 	class="
 {smaller ? 'backdrop-blur-[100px] ' : 'backdrop-blur-[120px]'}
- transition-all fixed h-full w-full z-[2]"
+ transition-all fixed h-full w-full z-[2] hidden sm:visible"
 />

@@ -2,7 +2,8 @@
 	export let showMenu: boolean = false;
 </script>
 
-<button on:click
+<button
+	on:click
 	aria-label="Open Navigation Menu"
 	class="{showMenu
 		? ''
