@@ -16,12 +16,12 @@
 </script>
 
 {#if visible}
-<div
-	transition:fade={{ duration: 150 }}
-	on:click={hide}
-	on:keydown={hide}
-	class="fixed z-40 backdrop-blur-[1px] top-0 left-0 w-screen h-screen bg-primary-900/30"
-/>
+	<div
+		transition:fade={{ duration: 150 }}
+		on:click={hide}
+		on:keydown={hide}
+		class="fixed z-40 backdrop-blur-[1px] top-0 left-0 w-screen h-screen bg-primary-900/30"
+	/>
 	<div
 		on:click|stopPropagation
 		on:keydown|stopPropagation
@@ -29,8 +29,8 @@
 		class="{position} absolute w-auto h-auto z-50 "
 	>
 		<div
-		transition:scale={{duration: 200}}
-			class="{popupClass} hover:shadow-primary-600/80 shadow-primary-600/50 transition-all duration-500 delay-75 pl-2.5 pr-4 py-4 rounded-lg shadow-lg text-primary-50 dark:text-primary-900
+			transition:scale={{ duration: 200 }}
+			class="{popupClass} hover:shadow-primary-600/50 shadow-primary-600/50 transition-all duration-500 delay-75 pl-2.5 pr-4 py-4 rounded-lg shadow-lg text-primary-50 dark:text-primary-900
 			"
 		>
 			<slot />

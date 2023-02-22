@@ -8,7 +8,7 @@
 </script>
 
 <section
-	id="graphicdesign2"
+	id="graphicdesign-trels"
 	class="w-full relative h-screen h-screen-ios overflow-hidden md:pl-44 px-6"
 >
 	<div

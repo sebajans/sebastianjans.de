@@ -1,5 +1,4 @@
 <script lang="ts">
-	import PageTransitions from '../components/PageTransitions.svelte';
 	import { getTranslate, T } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
@@ -8,6 +7,8 @@
 	import { nightMode } from '$lib/stores/nightMode';
 	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
+	import SvelteSeo from 'svelte-seo';
+
 	pageTitle.set('');
 	mainClass.set('');
 
@@ -63,13 +64,13 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Welcome</title>
-	<meta
-		name="description"
-		content="Online Portfolio for Sebastian Jans, a Product and Graphic Designer."
-	/>
-</svelte:head>
+<SvelteSeo
+	title="Sebastian Jans | Welcome"
+	description="Online Portfolio for Sebastian Jans, a Product and Graphic Designer"
+	keywords="Freelance product designer, online digital portfolio, front-end svelte developer, how to find someone to design a product, diseñador de productos"
+/>
+<!-- keywords="portfolio, product design, Industrial design, Design thinking, User experience design (UX design), User interface design (UI design), Graphic design, Branding, 3D modeling, Prototype development, Sketching, CAD design, Product innovation, Design strategy, Design research, User-centered design, Human factors engineering, Design for manufacturability, Product testing, Materials science, Sustainable design, Valencia, Germany, Deutschland, Wernau" -->
+
 <svelte:window bind:scrollY={scroll} />
 <section
 	class="relative w-full h-[calc(100vh_-_112px)] max-h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
@@ -293,64 +294,52 @@
 			>
 				{$t({ key: 'my-achievements', defaultValue: 'Achievements & Certificates' })}
 			</h1>
-			<div
-				class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4"
-			>
-				<div
-					in:fly={{ y: 50, duration: 500, delay: 250 }}
-					class="w-full md:w-1/2 flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
-				>
-					<div
-						style:background-image={`url('/cv_items/certificate-tau-cencored.webp')`}
-						class="bg-[length:101%_101%] bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
-					/>
-					<div
-						class=" py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"
-					>
-						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
-							<T
-								keyName="achievement-title"
-								defaultValue="III Concurso de Diseño De Una Pieza Cerámica"
+			<div class="grid gap-4 sm:grid-cols-2">
+				<!-- class="flex flex-col h-full sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4" -->
+				{#each cvItems as item}
+					{#if item.category === 'certificate'}
+						<div
+							in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
+							class="w-full h-full flex flex-col space-y-4 grow sm:max-w-none"
+						>
+							<div
+								style:background-image={`url('${item.image}')`}
+								class="bg-cover bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
 							/>
-						</h2>
-						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-							<T keyName="achievement-date" defaultValue="10/02/2022" />
-						</h3>
-						<p class="text-sm text-justify">
-							<T
-								keyName="achievement-text"
-								defaultValue="TAU Cerámica: I achieved second place in the graphic design contest. The objective was to design a ceramic tile, fitting to the famous Estacion Norte in Valencia."
-							/>
-						</p>
-						<!-- <button class="btn btn-navajo w-fit">See project</button> -->
-					</div>
-				</div>
-				<div
-					in:fly={{ y: 50, duration: 500, delay: 250 }}
-					class="w-full md:w-1/2 flex flex-col space-y-4 items-end sm:items-start max-w-md sm:max-w-none"
-				>
-					<div
-						style:background-image={`url('/cv_items/certificate-designing-for-a-sustainable-future.webp')`}
-						class="bg-cover bg-no-repeat bg-center bg-origin-content z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
-					/>
-					<div
-						class=" py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 self-stretch px-3  rounded-md w-full flex flex-col justify-start"
-					>
-						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
-							<T keyName="achievement-title" defaultValue="Designing for a sustainable Future" />
-						</h2>
-						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-							<T keyName="achievement-date" defaultValue="21/02/2023" />
-						</h3>
-						<p class="text-sm text-justify">
-							<T
-								keyName="achievement-text"
-								defaultValue="The online course explored design thinking applied to sustainability. It covered topics from AI to rewilding, emphasizing empathy, technology's problem-solving potential, and innovative solutions to the climate crisis."
-							/>
-						</p>
-						<!-- <button class="btn btn-navajo w-fit">See project</button> -->
-					</div>
-				</div>
+							<div
+								class="h-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md w-full flex flex-col justify-start"
+							>
+								<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+									<T keyName="achievement-title" defaultValue={item.name} />
+								</h2>
+								<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
+									<T keyName="achievement-date" defaultValue={item.fromYear} />
+								</h3>
+								<p class="text-sm text-justify mb-2">
+									<T keyName="achievement-text" defaultValue={item.shortdescription} />
+								</p>
+								{#if item.link?.includes('https')}
+									<a
+										class="w-fit mt-auto ml-auto"
+										target="_blank"
+										rel="noreferrer noopener"
+										href={item.link}
+									>
+										<button class="btn btn-navajo w-fit">
+											<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
+										</button>
+									</a>
+								{:else}
+									<a class="w-fit mt-auto ml-auto" href={item.link}>
+										<button class="btn btn-navajo w-fit">
+											<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
+										</button>
+									</a>
+								{/if}
+							</div>
+						</div>
+					{/if}
+				{/each}
 			</div>
 		{/if}
 	</div>

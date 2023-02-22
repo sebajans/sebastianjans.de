@@ -9,7 +9,7 @@
 	const t = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
 
-	mainClass.set('pb-14 justify-center items-center');
+	mainClass.set('pb-14 my-auto');
 
 	let popup: any;
 

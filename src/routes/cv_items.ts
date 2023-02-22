@@ -88,5 +88,35 @@ export let cvItems = [
     toMonth: '07',
     shortdescription: 'Highest degree of general education in Germany, favorite subjects were math, physics and art',
     info: 'Gymnasium Plochingen. In high school, my favorite subjects were math, physics and art. I always liked logic and wanted to figure out how things work, while trying to live out my creative side.'
-  }
+  },
+  {
+    category: 'certificate',
+    id: 1,
+    link: '/works#graphicdesign-trels',
+    image: 'cv_items/certificate-tau-censored.webp',
+    name: 'III Concurso de Diseño De Una Pieza Cerámica',
+    fromYear: '10/02/2022',
+    shortdescription: 'TAU Cerámica: I achieved second place in the graphic design contest. The objective was to design a ceramic tile, fitting to the famous Estacion Norte in Valencia.',
+    info: 'See Project',
+  },
+  {
+    category: 'certificate',
+    id: 2,
+    link: 'https://www.futurelearn.com/profiles/19981862',
+    image: 'cv_items/certificate-designing-for-a-sustainable-future.webp',
+    name: 'Designing for a sustainable Future',
+    fromYear: '21/02/2023',
+    shortdescription: "The online course explored design thinking applied to sustainability. It covered topics from AI to rewilding, emphasizing empathy, technology's problem-solving potential, and innovative solutions to the climate crisis.",
+    info: 'See Certificate',
+  },
+  {
+    category: 'certificate',
+    id: 3,
+    link: 'https://static.semrush.com/academy/certificates/3d9e1fe2f3/sebastian-jans_2.pdf',
+    image: 'cv_items/certificate-seo-crash-course.webp',
+    name: 'SEO Crash Course',
+    fromYear: '22/02/2023',
+    shortdescription: "A crash course about SEO, teaching me the value of keywords and the importance of finding your right target audience.",
+    info: 'See Certificate',
+  },
 ];

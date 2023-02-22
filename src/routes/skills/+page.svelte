@@ -10,7 +10,7 @@
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
 	import Popup from '../../components/Popup.svelte';
 
-	mainClass.set('pb-14 ');
+	mainClass.set('pb-14 my-auto');
 
 	let visible: boolean = false;
 	let duration: number;
@@ -33,7 +33,7 @@
 	<meta name="description" content="Skills of Sebastian Jans as a Designer." />
 </svelte:head>
 
-<div class=" sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto">
+<div class="sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto">
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">
@@ -73,6 +73,7 @@
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
+						rel="noopener noreferrer"
 						aria-label="Download English CV"
 						href="CV/CV_EN.pdf"
 					>
@@ -81,6 +82,7 @@
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
+						rel="noopener noreferrer"
 						aria-label="Download German CV"
 						href="CV/CV_DE.pdf"
 					>
@@ -89,6 +91,7 @@
 					<a
 						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 						target="_blank"
+						rel="noopener noreferrer"
 						aria-label="Download Spanish CV"
 						href="CV/CV_ES.pdf"
 					>
@@ -127,4 +130,19 @@
 			</div>
 		{/each}
 	{/if}
+</div>
+<div
+	class="max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 my-8 justify-center box-content  w-auto mx-auto "
+>
+	<p class="mr-auto">
+		<T
+			keyName="skills-convince"
+			defaultValue="If you're still hesitant, feel free to give me a brief call, and we can chat about your business!"
+		/>
+	</p>
+	<a href="/contact">
+		<button class="btn btn-highlight w-fit whitespace-nowrap">
+			<T keyName="skills-convince-button" defaultValue="Contact me" />
+		</button>
+	</a>
 </div>

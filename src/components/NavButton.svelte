@@ -13,7 +13,7 @@
 	<button aria-label="Navigate to {text}" on:click class="group items-stretch w-full">
 		<a
 			class="navbutton {isActive
-				? 'dark:bg-primary-50 bg-primary-900 dark:text-primary-900 text-primary-50 dark:group-hover:text-primary-50 group-hover:text-primary-900 font-normal  '
+				? 'dark:bg-primary-50 bg-primary-900 dark:text-primary-900 text-primary-50 dark:group-hover:bg-primary-50/80 group-hover:bg-primary-900/80 font-normal  '
 				: 'dark:from-primary-50/20 dark:to-primary-50/10 from-primary-900/10 to-primary-900/20 dark:border-primary-50/10 border-primary-900/5 font-light'}
 				group-hover:from-primary-800/30 group-hover:to-primary-800/40
 				dark:group-hover:from-primary-50/20 dark:group-hover:to-primary-50/30 

@@ -13,7 +13,7 @@
 	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import Popup from '../../components/Popup.svelte';
-
+	import SvelteSeo from 'svelte-seo';
 	// Tolgee t translation
 	const t = getTranslate();
 
@@ -21,7 +21,7 @@
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
 	// mainClass.set('pt-0 pr-0 pl-0 md:pl-0 min-h-screen');
-	mainClass.set('mr-0 ml-0 md:!ml-0');
+	// mainClass.set('mr-0  md:!ml-0 w-screen');
 
 	// function to scroll section ankerpoint into view
 	function scrollIntoView({ target }: { target: any }) {
@@ -45,34 +45,53 @@
 	<title>{$pageTitle}</title>
 	<meta name="description" content="Overview of the Works of Sebastian Jans." />
 </svelte:head>
-
+<SvelteSeo
+	title="Sebastian Jans | Welcome"
+	description="Overview of the Design works of Sebastian Jans"
+	keywords="Freelance product design, minimalistic logo design, front-end svelte development, custom webdesign solutions, diseñador de productos"
+/>
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
+
+<!-- {#each sectionNames as item, i}
+	<button
+		on:click|preventDefault={scrollIntoView}
+		in:fly={{ x: 100, duration: 400, delay: 100 * i }}
+		href="#{item.id}"
+		type="button"
+		alt={item.id}
+		class="md:py-4 mb-4 max-w-3xl right-0 w-36 font-sans py-2 backdrop-blur-md sticky top-[6rem] duration-300 delay-[50] rounded-l-lg text-left pl-3 transition-all {item.color} "
+	>
+		<T keyName="works-{item.id}" defaultValue={item.text} />
+	</button>
+{/each} -->
 
 <section
 	id="start"
-	class="relative w-full md:pl-44 flex flex-col md:flex-row items-center justify-center overflow-hidden min-h-[calc(100vh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)] h-screen-ios"
+	class="relative w-screen md:pl-44 flex ml-auto min-h-[calc(100vh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)] h-screen-ios"
 >
-	<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-4 md:mb-0">
-		<T
-			keyName="intro-works"
-			defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
-		/>
-	</h2>
-	<div
-		class="md:w-2/3 pl-4 md:pl-8 text-2xl md:text-3xl w-full font-sans space-y-4 mb-auto md:my-auto"
-	>
-		{#each sectionNames as item, i}
-			<button
-				on:click|preventDefault={scrollIntoView}
-				in:fly={{ x: 100, duration: 400, delay: 100 * i }}
-				href="#{item.id}"
-				type="button"
-				alt={item.id}
-				class="md:py-4 py-2 backdrop-blur-md  duration-300 delay-[50] rounded-l-lg text-left w-full pl-3 transition-all {item.color} "
-			>
-				<T keyName="works-{item.id}" defaultValue={item.text} />
-			</button>
-		{/each}
+	<div class="flex w-full my-auto  flex-col h-full md:flex-row items-center justify-start">
+		<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-4 md:mb-0">
+			<T
+				keyName="intro-works"
+				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
+			/>
+		</h2>
+		<div
+			class="md:w-2/3 pl-4 md:pl-8 text-2xl  md:text-3xl w-full font-sans space-y-4 mb-auto md:my-auto"
+		>
+			{#each sectionNames as item, i}
+				<button
+					on:click|preventDefault={scrollIntoView}
+					in:fly={{ x: 100, duration: 400, delay: 100 * i }}
+					href="#{item.id}"
+					type="button"
+					alt={item.id}
+					class="md:py-4 py-2 backdrop-blur-md sticky top-[6rem] duration-300 delay-[50] rounded-l-lg text-left w-full pl-3 transition-all {item.color} "
+				>
+					<T keyName="works-{item.id}" defaultValue={item.text} />
+				</button>
+			{/each}
+		</div>
 	</div>
 </section>
 
@@ -81,7 +100,7 @@
 <SectionLogos />
 <SectionGraphicDesignStuttgart {scroll} {windowHeight} />
 <SectionGraphicDesign2 {scroll} {windowHeight} />
-<!-- <SectionGraphicDesign3 {scroll} {windowHeight} /> -->
+<SectionGraphicDesign3 {scroll} {windowHeight} />
 <SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
 
@@ -115,6 +134,7 @@
 				<a
 					class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900  transition-all duration-200 hover:text-primary-400"
 					target="_blank"
+					rel="noopener noreferrer"
 					href="CV/CV_EN.pdf"
 				>
 					EN</a
@@ -122,6 +142,7 @@
 				<a
 					class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 					target="_blank"
+					rel="noopener noreferrer"
 					href="CV/CV_DE.pdf"
 				>
 					ES</a
@@ -129,6 +150,7 @@
 				<a
 					class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
 					target="_blank"
+					rel="noopener noreferrer"
 					href="CV/CV_ES.pdf"
 				>
 					DE</a
