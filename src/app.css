@@ -4,13 +4,13 @@
 @layer base {
   html {
     overflow-x: hidden;
-    /* overflow-y: auto; */
-    width: 100vw
-  }
-  html {
-    /* hide scrollbar */
+    height: 100%;
+    width: 100vw;
     -ms-overflow-style: none;
      scrollbar-width: none;
+   }
+   body {
+    min-height: 100dvh;
    }
  
    html::-webkit-scrollbar {

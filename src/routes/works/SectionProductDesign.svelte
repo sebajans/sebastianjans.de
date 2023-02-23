@@ -39,7 +39,7 @@
 
 	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
 		<div
-			class="md:pl-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2 grid-rows-[0.5fr_0.5fr_auto] gap-4"
+			class="md:ml-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2 grid-rows-[0.5fr_0.5fr_auto] gap-4"
 		>
 			{#if showProduct}
 				<div

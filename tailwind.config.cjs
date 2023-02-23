@@ -37,6 +37,11 @@ module.exports = {
       current: 'currentColor',
     },
     extend: {
+      gridRowStart: {
+        '10': '10',
+        '11': '11',
+      },
+
       gridTemplateRows: {
         '8': 'repeat(8, minmax(0, 1fr))',
         '9': 'repeat(9, minmax(0, 1fr))',

@@ -21,7 +21,7 @@
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
 	// mainClass.set('pt-0 pr-0 pl-0 md:pl-0 min-h-screen');
-	// mainClass.set('mr-0  md:!ml-0 w-screen');
+	mainClass.set('mr-0 !ml-0 w-screen');
 
 	// function to scroll section ankerpoint into view
 	function scrollIntoView({ target }: { target: any }) {
@@ -67,7 +67,7 @@
 
 <section
 	id="start"
-	class="relative w-screen md:pl-44 flex ml-auto min-h-[calc(100vh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)] h-screen-ios"
+	class="relative md:pl-44 flex ml-auto min-h-[calc(100vh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)] h-screen-ios"
 >
 	<div class="flex w-full my-auto  flex-col h-full md:flex-row items-center justify-start">
 		<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-4 md:mb-0">
@@ -77,7 +77,7 @@
 			/>
 		</h2>
 		<div
-			class="md:w-2/3 pl-4 md:pl-8 text-2xl  md:text-3xl w-full font-sans space-y-4 mb-auto md:my-auto"
+			class="md:w-2/3 pl-4 md:pl-8 text-2xl translate-x-4 md:text-3xl w-full font-sans space-y-4 mb-auto md:my-auto"
 		>
 			{#each sectionNames as item, i}
 				<button
@@ -100,14 +100,14 @@
 <SectionLogos />
 <SectionGraphicDesignStuttgart {scroll} {windowHeight} />
 <SectionGraphicDesign2 {scroll} {windowHeight} />
-<SectionGraphicDesign3 {scroll} {windowHeight} />
+<SectionGraphicDesign3 />
 <SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
 
 <section
 	id="end"
 	style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at top right, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50 relative w-full md:pl-44 pt-28 flex justify-center overflow-x-hidden min-h-screen bg-primary-50 dark:bg-primary-900 h-screen h-screen-ios pb-24 px-3"
+	class="bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50 relative w-full md:pl-44 pt-28 flex justify-center overflow-x-hidden min-h-screen bg-primary-50 dark:bg-primary-900 h-[100dvh] min-h-screen-ios pb-24 px-3"
 >
 	<div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">
 		<h1 class="w-full text-5xl text-right">

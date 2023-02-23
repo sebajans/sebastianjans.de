@@ -68,7 +68,6 @@
 					<slot />
 				</div>
 			</PageTransitions>
-
 			<Footer />
 			<Svrollbar {viewport} {contents} />
 		</main>
