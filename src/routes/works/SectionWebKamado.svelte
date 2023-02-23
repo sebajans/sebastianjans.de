@@ -39,8 +39,10 @@
 			rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-3xl"
 			>
 				<img
+					width="320"
+					height="584"
 					alt="website-kamadob10-front-mobile"
-					class="h-[calc(100%_-_2.75rem)] rounded-t-[0.75rem] object-cover object-top px-0.5 pt-0.5 md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+					class="h-[calc(100%_-_2.75rem)] mx-auto rounded-t-[0.75rem] object-cover object-top px-0.5 pt-0.5 md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem] md:px-1 md:pt-1"
 					src={srcKamadoMobile}
 				/>
 				<div class="relative mt-2 mb-2 flex flex-row space-x-2 md:mb-3">
@@ -72,6 +74,8 @@
 					{/each}
 				</div>
 				<img
+					width="688"
+					height="462"
 					alt="website-kamado-front"
 					class="h-[calc(100%_-_1rem)] rounded-lg object-cover md:h-[calc(100%_-_1.75rem)]"
 					src={srcKamadoFront}

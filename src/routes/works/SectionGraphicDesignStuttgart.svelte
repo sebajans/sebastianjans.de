@@ -24,6 +24,8 @@
 			class="md:row-[1_/_span_5] md:col-[1_/_span_6] row-[4_/_span_6] col-[1_/_span_7] w-full"
 		>
 			<img
+				width="420"
+				height="390"
 				alt="graphic-design-shirts"
 				class="object-contain rounded-lg"
 				src="/graphicdesign/graphic-shirts.webp"
@@ -34,6 +36,8 @@
 			class="self-center row-[9_/_span_3] col-[1_/_span_9] w-full md:row-[6_/_span_6] md:col-[3_/_span_9]"
 		>
 			<img
+				width="642"
+				height="388"
 				class="scale-125 md:scale-100"
 				alt="graphic-design-table"
 				src="/graphicdesign/table.svg"
@@ -44,6 +48,8 @@
 			class="row-[7_/_span_5] col-[2_/_span_4] md:row-[6_/_span_4] md:col-[4_/_span_4] w-full self-center md:self-start"
 		>
 			<img
+				width="272"
+				height="116"
 				alt="graphic-design-innerside"
 				class="object-contain self-start rounded-lg"
 				src="/graphicdesign/graphic-innerside.webp"
@@ -54,6 +60,8 @@
 			class="row-[5_/_span_5] self-end col-[6_/_span_3] md:row-[4_/_span_4] md:col-[8_/_span_3] w-full sm:self-end"
 		>
 			<img
+				width="198"
+				height="208"
 				alt="graphic-design-outerside"
 				class="object-contain rounded-lg"
 				src="/graphicdesign/graphic-outerside.webp"

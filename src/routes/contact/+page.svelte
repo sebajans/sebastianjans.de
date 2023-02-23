@@ -107,17 +107,19 @@
 				</div>
 				<div class="flex items-center col-span-2 sm:col-span-1">
 					<div class="flex items-center h-5 ">
-						<input
-							name="remember"
-							type="checkbox"
-							value=""
-							class="w-4 h-4 bg-primary-50 rounded border focus:ring-3 focus:!ring-primary-300 dark:bg-primary-700 dark:border-primary-600 dark:focus:!ring-primary-600 dark:ring-offset-primary-800"
-							required
-						/>
 						<label
 							for="remember"
-							class="ml-2 text-sm font-medium w-full text-primary-900 dark:text-primary-50"
-							><T keyName="i-agree" defaultValue="I agree with the " /><button
+							class="text-sm font-medium w-full text-primary-900 dark:text-primary-50"
+						>
+							<input
+								name="remember"
+								type="checkbox"
+								value=""
+								class="w-4 h-4 mr-2 bg-primary-50 rounded border focus:ring-3 focus:!ring-primary-300 dark:bg-primary-700 dark:border-primary-600 dark:focus:!ring-primary-600 dark:ring-offset-primary-800"
+								required
+							/>
+
+							<T keyName="i-agree" defaultValue="I agree with the " /><button
 								on:click={openPopup}
 								class="group font-bold text-primary-500 dark:text-primary-400 hover:text-primary-400 dark:hover:text-primary-600"
 								><T keyName="terms-and-conditions" defaultValue="terms and conditions." />

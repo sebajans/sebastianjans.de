@@ -30,6 +30,8 @@
 			 rounded-md"
 			>
 				<img
+					width="222"
+					height="275"
 					src="/productdesign/cupholder/Cupholder_compressed.webp"
 					alt="The cupholder in the compressed form"
 					class="w-full h-full object-contain rounded-md sepia"
@@ -43,6 +45,8 @@
 			 bg-gradient-to-tr from-primary-500 to-primary-500/20 dark:to-primary-100/70 rounded-md"
 			>
 				<img
+					width="222"
+					height="570"
 					src="/productdesign/cupholder/render-1.webp"
 					alt="The cupholder fully extended, showing the LED indicator"
 					class="w-full h-full object-cover sepia"
@@ -72,6 +76,8 @@
 			col-start-5 row-start-6 col-span-5 row-span-3 md:col-start-5 md:row-start-3 md:col-span-5 md:row-span-4 bg-gradient-to-tl from-primary-500 to-primary-500/20 dark:to-primary-100/70 rounded-md"
 			>
 				<img
+					width="282"
+					height="373"
 					src="/productdesign/cupholder/cupholder51.webp"
 					alt=""
 					class="w-full h-full rounded-md object-cover object-center sepia"
@@ -86,6 +92,8 @@
 			 bg-gradient-to-tr from-primary-500 to-primary-500/20 dark:to-primary-100/70 rounded-md"
 			>
 				<img
+					width="161"
+					height="275"
 					src="/productdesign/cupholder/render-4.webp"
 					alt=""
 					class="w-full h-full object-cover sepia brightness-200"
@@ -124,6 +132,8 @@
 			col-start-1 row-start-[9] col-span-5 row-span-4 md:col-start-8 md:row-start-7 md:col-span-5 md:row-span-3 bg-gradient-to-br from-primary-500 to-primary-500/20 dark:to-primary-100/70 rounded-md"
 			>
 				<img
+					width="234"
+					height="267"
 					src="/productdesign/cupholder/Cupholder_top_opened.webp"
 					alt=""
 					class="w-full h-full object-cover object-top pt-2 px-2 md:px-6 sepia brightness-100"

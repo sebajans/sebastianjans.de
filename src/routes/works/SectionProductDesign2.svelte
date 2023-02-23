@@ -45,7 +45,6 @@
 	$: selectedItem = options.find((x) => x.value == selected);
 </script>
 
-<!-- radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%),  -->
 <section
 	id="productdesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
@@ -132,6 +131,8 @@
 							class="absolute opacity-100 dark:opacity-70 md:left-1/2 md:-translate-x-1/2 top-1/2 -translate-y-1/2  w-[366px] h-[240px] items-center flex overflow-hidden"
 						>
 							<img
+								width="366"
+								height="366"
 								in:fade={{ delay: 1000, duration: 500 }}
 								out:fade={{ delay: 100, duration: 300 }}
 								src="/productdesign/bench_edited.webp"

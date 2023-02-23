@@ -24,11 +24,9 @@
 	let showHeader = false;
 
 	beforeUpdate(() => ((showMenu = false), (showHeader = false)));
-	// beforeUpdate(() => (showHeader = false));
 
 	onMount(() => {
 		if (nightMode.userPrefersDark()) {
-			console.log('test');
 			nightMode.setDarkMode(true);
 		}
 		initialized = true;
@@ -49,7 +47,9 @@
 	};
 </script>
 
-<Blob />
+<div class="motion-reduce:hidden">
+	<Blob />
+</div>
 {#if initialized}
 	<TolgeeProvider config={tolgeeConfig}>
 		<NavBar {showMenu} />

@@ -50,10 +50,10 @@
 
 <section
 	id="graphicdesign-trels"
-	class="w-full relative h-screen h-screen-ios overflow-hidden md:pl-44 px-6"
+	class="w-full relative flex h-screen h-screen-ios overflow-hidden md:pl-44 px-6"
 >
 	<div
-		class="gap-4 max-w-4xl grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 w-full h-works md:h-worksmd mx-auto my-auto "
+		class="gap-4 max-w-4xl max-h-[56rem] grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 w-full h-works md:h-worksmd mx-auto my-auto "
 	>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileTitle.svg')"
@@ -72,13 +72,13 @@
 				The reception area features wooden ornaments, ceramic tiles and many forms of trencadís, a artistic form of mosaic. The tracks area itself has the same yellow facade as the outside, accompanied by a metallic construct and many glass windows. -->
 		</p>
 		<div
-			class="flex flex-col md:flex-row justify-around items-center
+			class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 items-center
 			col-start-7 row-start-6 col-span-3 row-span-4 md:row-start-6 md:col-start-8  md:col-span-5 md:row-span-1"
 		>
 			<button on:click={showTile} class="btn btn-highlight w-full h-fit">
 				{showTiles ? 'Show Tile' : 'Show Grid'}
 			</button>
-			<button class="btn btn-highlight w-full h-fit" on:click={() => rotateTiles()}>
+			<button class="btn btn-highlight w-full h-fit" on:click={rotateTiles}>
 				{rotating ? 'Pause Rotation' : 'Start Rotation'}</button
 			>
 		</div>
@@ -104,6 +104,8 @@
 					class=" relative w-full aspect-square items-start "
 				>
 					<img
+						width="364"
+						height="364"
 						style="transform: rotateY(-5deg)"
 						alt="especimen-tipografico"
 						class="absolute object-contain h-full z-10"

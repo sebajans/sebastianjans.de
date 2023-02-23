@@ -14,6 +14,7 @@
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import Popup from '../../components/Popup.svelte';
 	import SvelteSeo from 'svelte-seo';
+	import WorksHeader from '../../components/WorksHeader.svelte';
 	// Tolgee t translation
 	const t = getTranslate();
 
@@ -86,7 +87,7 @@
 					href="#{item.id}"
 					type="button"
 					alt={item.id}
-					class="md:py-4 py-2 backdrop-blur-md sticky top-[6rem] duration-300 delay-[50] rounded-l-lg text-left w-full pl-3 transition-all {item.color} "
+					class="md:py-4 py-2 backdrop-blur-md duration-300 delay-[50] rounded-l-lg text-left w-full pl-3 transition-all {item.color} "
 				>
 					<T keyName="works-{item.id}" defaultValue={item.text} />
 				</button>
@@ -95,8 +96,15 @@
 	</div>
 </section>
 
+<!-- <WorksHeader backgroundColor="bg-primary-200 dark:bg-primary-700">
+	<T keyName="works-webdev" defaultValue="Webdesign" />
+</WorksHeader> -->
+
 <SectionWebRJ {scroll} {windowHeight} />
 <SectionWebKamado {scroll} {windowHeight} />
+<!-- <WorksHeader backgroundColor="bg-primary-300 dark:bg-primary-600">
+	<T keyName="works-webdev" defaultValue="Webdesign" />
+</WorksHeader> -->
 <SectionLogos />
 <SectionGraphicDesignStuttgart {scroll} {windowHeight} />
 <SectionGraphicDesign2 {scroll} {windowHeight} />

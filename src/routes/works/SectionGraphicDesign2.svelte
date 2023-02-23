@@ -16,6 +16,8 @@
 	>
 		<!-- style:transform={`translate3d(calc(-100% + ${sectionScroll} * 100%),0, 0)`} -->
 		<img
+			width="448"
+			height="640"
 			alt="especimen-tipografico"
 			class="mb-4 md:mr-4 object-contain rounded-lg w-1/2 h-auto max-h-[60%] md:max-h-[70%] max-w-[80%]"
 			src="/graphicdesign/especimen-tipografico.webp"

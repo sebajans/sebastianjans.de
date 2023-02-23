@@ -161,6 +161,8 @@
 			<!-- flex flex-row flex-wrap md:flex-nowrap  -->
 			<div class="md:pr-4 text-sm md:text-base ">
 				<img
+					width="200"
+					height="200"
 					src={profilePicture}
 					alt="profile"
 					class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"

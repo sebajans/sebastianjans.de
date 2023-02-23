@@ -47,6 +47,8 @@
 					{/each}
 				</div>
 				<img
+					width="900"
+					height="612"
 					alt="website-rena-front-1"
 					class="object-cover h-[calc(100%_-_1rem)] md:h-[calc(100%_-_1.75rem)] rounded-md md:rounded-lg"
 					src={srcRenaImg1}
@@ -69,6 +71,8 @@
 					{/each}
 				</div>
 				<img
+					width="770"
+					height="520"
 					src={srcRenaImg2}
 					alt="website-rena-front-2"
 					class="h-[calc(100%_-_1rem)] md:h-[calc(100%_-_1.75rem)] object-cover rounded-lg "
