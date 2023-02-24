@@ -11,7 +11,7 @@
 	let now: number = new Date().getFullYear();
 </script>
 
-<div class="absolute z-10 bottom-0 inset-x-0 md:ml-44 py-5 pl-16 pr-2 text-xs text-center">
+<div class="absolute z-10 bottom-0 inset-x-0 md:ml-40 py-5 px-2 text-xs text-center">
 	<!--		<button aria-label="View Privacy PopUp" class="hover:text-primary-500" on:click={toggleButton}>Privacy</button> -->
 	&copy; Sebastian Jans, {now} –
 	<button

@@ -7,10 +7,7 @@
 	$: sectionScroll = scrollInSection(scroll, 4, windowHeight);
 </script>
 
-<section
-	id="graphicdesign2"
-	class="w-full relative h-screen h-screen-ios overflow-hidden md:pl-44 px-6"
->
+<section id="graphicdesign2" class="relative px-6">
 	<div
 		class="max-w-4xl flex w-full h-works md:h-worksmd md:px-0 md:flex-row sm:mx-auto flex-col my-auto items-center justify-center"
 	>

@@ -12,7 +12,9 @@
    body {
     min-height: 100dvh;
    }
- 
+   section {
+    @apply max-w-4xl my-auto mx-auto h-[100dvh] h-screen-ios
+   }
    html::-webkit-scrollbar {
      /* hide scrollbar */
      display: none;

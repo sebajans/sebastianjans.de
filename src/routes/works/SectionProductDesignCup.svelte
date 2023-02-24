@@ -11,11 +11,9 @@
 	$: sectionScroll = scrollInSection(scroll, 6, windowHeight);
 </script>
 
-<section
-	id="productdesign"
-	style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="bg-gradient-to-bl from-primary-500/50 w-full justify-center relative h-screen min-h-screen min-h-screen-ios overflow-hidden flex flex-col "
->
+<!-- style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%);"
+bg-gradient-to-bl from-primary-500/50 -->
+<section id="productdesign" class="justify-center relative flex flex-col ">
 	<div
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>

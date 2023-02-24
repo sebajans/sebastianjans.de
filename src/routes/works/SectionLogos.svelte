@@ -40,13 +40,14 @@
 	let activeNumber: number = -1;
 </script>
 
+<!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%); "
+bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 <section
 	on:mousemove={handleMousemove}
 	on:keydown={() => (activeNumber = -1)}
 	on:click={() => (activeNumber = -1)}
 	id="logodesign"
-	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%); "
-	class="bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30 w-full flex flex-col items-end h-screen h-screen-ios overflow-hidden md:pl-52"
+	class="flex flex-col"
 >
 	<WorksHeader backgroundColor="bg-primary-300 dark:bg-primary-600">
 		<T keyName="works-logodesign" defaultValue="Logo Design" />

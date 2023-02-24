@@ -45,11 +45,9 @@
 	$: selectedItem = options.find((x) => x.value == selected);
 </script>
 
-<section
-	id="productdesign"
-	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="bg-gradient-to-bl from-primary-500/50 w-full relative h-screen min-h-screen min-h-screen-ios overflow-hidden flex flex-col "
->
+<!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
+bg-gradient-to-bl from-primary-500/50  -->
+<section id="productdesign" class="relative flex flex-col ">
 	<WorksHeader backgroundColor="bg-primary-500 dark:bg-primary-400">
 		<T keyName="works-productdesign" defaultValue="Product Design" />
 	</WorksHeader>

@@ -13,12 +13,9 @@
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
 </script>
 
-<section
-	id="kamadoB10"
-	class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden h-screen-ios  md:pl-44"
->
+<section id="kamadoB10" class="relative flex w-full flex-col items-center justify-center">
 	<div
-		class="mx-auto p-4 my-auto grid h-works md:h-worksmd max-h-[56rem] w-full max-w-4xl grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
+		class="grid h-works md:h-worksmd max-h-[56rem] w-full grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
 	>
 		<div
 			id="kb10-logo"
@@ -66,7 +63,7 @@
 			<div
 				id="kb10-browser-front"
 				style:transform={`translate3d(0,calc(100% - 100 * ${sectionScroll}%), 0)`}
-				class="h-full w-fit self-center aspect-[14/10] shadow-primary-900/30 shadow-md backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
+				class="h-full w-fit self-center aspect-[13/10] shadow-primary-900/30 shadow-md backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
 			>
 				<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 					{#each Array(3) as _}

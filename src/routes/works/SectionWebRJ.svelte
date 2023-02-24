@@ -12,19 +12,18 @@
 	let srcRenaImg2 = 'img/website-rena-front-2.webp';
 	let srcRenaLogo = '../logos/logo-rj-l.webp';
 	let srcRenaLogoDark = '../logos/logo-rj-l-white.webp';
+	console.log('loaded');
 </script>
 
-<section
-	id="websites"
-	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="bg-gradient-to-bl from-primary-200/50 dark:from-primary-700/30 via-transparent to-transparent md:pl-44  w-full flex flex-col relative h-screen h-screen-ios overflow-hidden justify-center items-center"
->
+<!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);" -->
+<!-- bg-gradient-to-bl from-primary-200/50 dark:from-primary-700/30 via-transparent to-transparent  -->
+<section id="websites" class="flex flex-col relative">
 	<WorksHeader backgroundColor="bg-primary-200 dark:bg-primary-700">
 		<T keyName="works-webdev" defaultValue="Webdesign" />
 	</WorksHeader>
 
 	<div
-		class="w-full p-4 max-w-4xl h-works md:h-worksmd max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
+		class="p-4 h-works md:h-worksmd max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
 	>
 		<div
 			id="rena-logo"

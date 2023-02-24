@@ -121,17 +121,17 @@
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-1.webp')"
 			class="bg-no-repeat bg-cover rounded-md
-			col-start-1 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-1  md:col-span-4 md:row-span-3 bg-primary-500"
+			col-start-1 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-1  md:col-span-4 md:row-span-3"
 		/>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-2.webp')"
 			class="bg-no-repeat bg-cover rounded-md
-			col-start-4 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-5  md:col-span-4 md:row-span-3 bg-primary-500"
+			col-start-4 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-5  md:col-span-4 md:row-span-3"
 		/>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-3.webp')"
 			class="bg-no-repeat bg-cover rounded-md
-			col-start-7 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-9  md:col-span-4 md:row-span-3 bg-primary-500"
+			col-start-7 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-9  md:col-span-4 md:row-span-3"
 		/>
 	</div>
 </section>

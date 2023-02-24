@@ -17,12 +17,12 @@
 
 	$: beforeUpdate(() => (showMenu = false));
 
-	function updateClass(y:number) {
+	function updateClass(y: number) {
 		const dy = lastY - y;
 		lastY = y;
 		return deriveClass(y, dy);
 	}
-	function deriveClass(y:number, dy:number) {
+	function deriveClass(y: number, dy: number) {
 		// show if at top of page
 		if (y < offset) {
 			return (headerClass = true);
@@ -45,22 +45,25 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header on:mouseenter={ () => showHeader = true}
-	on:mouseleave={ () => showHeader = false}
+<header
+	on:mouseenter={() => (showHeader = true)}
+	on:mouseleave={() => (showHeader = false)}
 	class=" {headerClass || showHeader
 		? 'translate-y-0 h-24 max-h-24'
 		: '-translate-y-full md:translate-y-0 h-20 max-h-16 '} fixed duration-300 top-0 w-full  flex z-40 transition-all backdrop-blur-md dark:bg-primary-900/40 bg-primary-50/40"
 >
 	<!-- <slot/> -->
-		<a aria-label="Back to Home" href="/" class="{headerClass || showHeader
+	<a
+		aria-label="Back to Home"
+		href="/"
+		class="{headerClass || showHeader
 			? 'w-20 h-20 md:left-2 top-2'
-			: 'w-16 h-16 '} md:fixed md:mx-8 top-0 absolute md:left-0 left-1/2 transition-all duration-150 md:translate-x-0 z-50 group">
-			<Logo className={headerClass || showHeader ? 'w-16 h-16' : 'translate-x-2 w-12 h-12'} />
-		</a>
-
-	<div
-		class="relative items-center w-full md:pl-44 px-4 mx-auto z-40 flex justify-between "
+			: 'w-16 h-16 '} md:fixed md:mx-8 top-0 absolute md:left-0 left-1/2 transition-all duration-150 md:translate-x-0 z-50 group"
 	>
+		<Logo className={headerClass || showHeader ? 'w-16 h-16' : 'translate-x-2 w-12 h-12'} />
+	</a>
+
+	<div class="relative items-center w-full md:pl-44 px-4 mx-auto z-40 flex justify-between ">
 		<!-- page title -->
 		<h1
 			class="{headerClass || showHeader
@@ -69,9 +72,5 @@
 		>
 			{$pageTitle}
 		</h1>
-		<!-- icons to the right -->
-		<!-- <div class="hidden md:flex h-10">
-			<SocialMenu  />
-		</div> -->
 	</div>
 </header>
