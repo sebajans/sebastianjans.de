@@ -30,10 +30,10 @@
 			path: './SectionGraphicDesign3.svelte'
 		},
 		{
-			path: './SectionProductDesignCup.svelte'
+			path: './SectionProductDesign2.svelte'
 		},
 		{
-			path: './SectionProductDesign2.svelte'
+			path: './SectionProductDesignCup.svelte'
 		},
 		{
 			path: './SectionEnd.svelte'

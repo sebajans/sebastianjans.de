@@ -55,7 +55,7 @@ bg-gradient-to-bl from-primary-500/50  -->
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>
 		<div
-			class="md:ml-44 px-4  flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4"
+			class="flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4"
 		>
 			<h1
 				class="md:pt-3 md:pb-4 md:pl-0 text-2xl md:text-4xl text-center md:text-left font-sans font-bold"

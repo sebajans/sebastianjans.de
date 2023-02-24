@@ -18,7 +18,7 @@ bg-gradient-to-bl from-primary-500/50 -->
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>
 		<div
-			class="md:pl-44 gap-4 md:gap-5 p-4 h-full grid justify-center grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 items-center max-w-4xl w-full sm:w-full"
+			class="gap-4 md:gap-5 h-full grid justify-center grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 items-center max-w-4xl w-full sm:w-full"
 		>
 			<div
 				style:transform={`translate3d(calc(-50% + ${sectionScroll} * 50%),calc(-100% + ${sectionScroll} * 100%), 0)`}
