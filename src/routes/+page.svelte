@@ -8,9 +8,9 @@
 	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	import SvelteSeo from 'svelte-seo';
+	import Lazy from '../components/Lazy.svelte';
 
 	pageTitle.set('');
-	mainClass.set('');
 
 	const t = getTranslate();
 	let profilePicture = 'img/profile-pic.webp';
@@ -62,6 +62,20 @@
 	$: if (scroll > minYWork * 3.5) {
 		startAnimationAchi = true;
 	}
+
+	let cvSections = [
+		{
+			path: './frontWork.svelte'
+		},
+		{
+			path: './frontEdu.svelte'
+		},
+		{
+			path: './frontCertificates.svelte'
+		}
+	];
+
+	let windowHeight: number = 0;
 </script>
 
 <SvelteSeo
@@ -71,7 +85,7 @@
 />
 <!-- keywords="portfolio, product design, Industrial design, Design thinking, User experience design (UX design), User interface design (UI design), Graphic design, Branding, 3D modeling, Prototype development, Sketching, CAD design, Product innovation, Design strategy, Design research, User-centered design, Human factors engineering, Design for manufacturability, Product testing, Materials science, Sustainable design, Valencia, Germany, Deutschland, Wernau" -->
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 <section
 	class="relative w-full h-[calc(100vh_-_112px)] max-h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
@@ -149,6 +163,7 @@
 		{$t({ key: 'about-me', defaultValue: 'About me' })}
 	</ButtonScrollToSection>
 </section>
+
 <section
 	id="aboutme"
 	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
@@ -197,6 +212,14 @@
 	</div>
 </section>
 
+<!-- {#each cvSections as section}
+	<Lazy this={() => import('./frontWork.svelte')}>
+		<div class="bg-primary-500" slot="loading">Loading...</div>
+		<svelte:fragment slot="component" let:Component>
+			<Component {scroll} {minYWork} />
+		</svelte:fragment>
+	</Lazy>
+{/each} -->
 <section
 	bind:offsetHeight={minYWork}
 	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
@@ -285,10 +308,10 @@
 </section>
 
 <section
-	class=" pt-4 md:pt-20 pb-40 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class=" pt-4 md:pt-20  pb-20 relative w-full h-fit min-h-screen min-h-screen-ios flex flex-col justfiy-center "
 	id="cv_cert"
 >
-	<div class="space-y-4 max-w-4xl w-full mx-auto pt-14 ">
+	<div class="space-y-4 max-w-4xl w-full h-full mx-auto pt-14 ">
 		{#if startAnimationAchi}
 			<h1
 				in:fly={{ y: 50, duration: 500 }}
@@ -296,7 +319,7 @@
 			>
 				{$t({ key: 'my-achievements', defaultValue: 'Achievements & Certificates' })}
 			</h1>
-			<div class="grid gap-4 sm:grid-cols-2">
+			<div class="grid gap-4 sm:grid-cols-2 min-h-screen">
 				<!-- class="flex flex-col h-full sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4" -->
 				{#each cvItems as item}
 					{#if item.category === 'certificate'}

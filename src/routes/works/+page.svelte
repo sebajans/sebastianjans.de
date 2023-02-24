@@ -70,26 +70,23 @@
 />
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 
-<section
-	id="start"
-	class="relative flex min-h-[calc(100vh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
->
-	<div class="flex w-full my-auto  flex-col h-full md:flex-row items-center justify-start">
-		<h2 class="text-left mx-4 md:ml-0 md:w-1/3 text-base mb-4 md:mb-0">
+<section id="start" class="relative flex h-[calc(100vh_-_3.5rem)] md:h-[calc(100vh_-_7rem)]">
+	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
+		<h2 class="text-left mx-4 md:w-1/2 text-base mb-4 md:mb-0">
 			<T
 				keyName="intro-works"
 				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
 			/>
 		</h2>
 		<div
-			class="md:w-2/3  text-2xl translate-x-4 md:text-3xl w-full flex flex-col font-sans space-y-4 mb-auto md:my-auto"
+			class="md:w-1/2 text-2xl md:text-3xl w-full flex flex-col font-sans space-y-4 mb-auto md:my-auto"
 		>
 			{#each sectionNames as section, i}
 				<button
-					style="width:{`calc(100%-${i * 16}px)`}"
+					style="width:{`calc(100% - ${i * 16}px)`}"
 					on:click|preventDefault={() => scrollIntoView(section.id)}
 					in:fly={{ x: 100, duration: 400, delay: 100 * i }}
-					class="md:py-4 py-2 backdrop-blur-md duration-300 delay-[50] rounded-l-lg text-left pl-3 transition-all {section.color} "
+					class="md:py-4 ml-auto py-2 backdrop-blur-md duration-300 delay-[50] rounded-lg text-left pl-3 transition-all {section.color} "
 					>{i + 1}
 					<!-- alt={section.id} -->
 					<T keyName="works-{section.id}" defaultValue={section.text} />
