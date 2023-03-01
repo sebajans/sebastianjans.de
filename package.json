@@ -41,6 +41,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/amp": "^1.0.2",
 		"@threlte/core": "^5.0.9",
 		"@threlte/extras": "^4.9.3",
 		"@tolgee/svelte": "^4.9.2",

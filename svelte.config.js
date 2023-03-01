@@ -8,13 +8,14 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		inlineStyleThreshold: Infinity,
 	},
 	preprocess: [
-    preprocess({
-      postcss: true,
-    }),
-  ],
+		preprocess({
+			postcss: true,
+		}),
+	],
 };
 
 // export default {

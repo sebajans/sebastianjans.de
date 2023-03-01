@@ -65,14 +65,14 @@ bg-gradient-to-bl overflow-hidden from-primary-400/50 dark:from-primary-500/30  
 				src="/graphicdesign/graphic-outerside.webp"
 			/>
 		</div>
-		<div
-			class="row-[1_/_span_3] col-[1_/_span_9] box-content transform md:row-[1_/_span_2] md:col-[8_/_span_5] w-full text-justify"
+		<p
+			class="row-[1_/_span_3] col-[1_/_span_9]  h-min box-content transform md:row-[1_/_span_2] md:col-[8_/_span_5] w-full text-justify"
 			style:transform={`translate3d(0,calc(100% - ${sectionScroll} * 100%), 0)`}
 		>
 			<T
 				keyName="works-p-fachschaft"
 				defaultValue="This flyer was made for my student union in order to attract more people into the world of materials science. The University branding guidelines "
 			/>
-		</div>
+		</p>
 	</div>
 </section>

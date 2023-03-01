@@ -9,6 +9,7 @@
 	import SocialMenu from '../components/SocialMenu.svelte';
 	import Logo from './Logo.svelte';
 	import { getLanguageStore } from '@tolgee/svelte';
+	import { draw } from 'svelte/transition';
 
 	const languageStore = getLanguageStore();
 	export let showMenu = false;
@@ -69,7 +70,7 @@
 		class="{headerClass || showMenu ? '' : 'opacity-0 md:opacity-100 backdrop-blur-none'}
 		{showMenu
 			? 'mt-8 md:mt-4 scale-125 md:scale-100 mr-[0%]'
-			: 'translate-x-1/2 mr-[100%]'} ease-out group hover:translate-y-2 md:w-20 w-20 md:h-20 h-20 rounded-br-md md:mt-10 md:mx-8 self-center relative transition-all duration-200 md:translate-x-0 z-50 group"
+			: 'translate-x-1/2 mr-[100%]'} ease-out group hover:scale-105 md:w-20 w-20 md:h-20 h-20 rounded-br-md md:mt-10 md:mx-8 self-center relative transition-all duration-200 md:translate-x-0 z-50 group"
 	>
 		<Logo className={'p-2 md:p-1.5'} />
 	</a>

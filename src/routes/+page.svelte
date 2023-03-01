@@ -9,6 +9,7 @@
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import Lazy from '../components/Lazy.svelte';
+	import viewport from '../components/useViewportAction';
 
 	pageTitle.set('');
 
@@ -44,24 +45,12 @@
 			}
 		};
 	}
-
+	let animationAbout = false;
+	function AboutAnimation() {
+		animationAbout = true;
+	}
 	let minYWork: any;
-	let minYEdu: any;
 	let scroll: any;
-	let startAnimationWork: boolean = false,
-		startAnimationEdu: boolean = false,
-		startAnimationAchi: boolean = false;
-
-	$: if (scroll > minYWork * 1.5) {
-		startAnimationWork = true;
-	}
-
-	$: if (scroll > minYWork * 2.5) {
-		startAnimationEdu = true;
-	}
-	$: if (scroll > minYWork * 3.5) {
-		startAnimationAchi = true;
-	}
 
 	let cvSections = [
 		{
@@ -165,6 +154,8 @@
 </section>
 
 <section
+	use:viewport
+	on:enterViewport={AboutAnimation}
 	id="aboutme"
 	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
 >
@@ -172,39 +163,40 @@
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
-		<div class="pb-20 w-full justify-center">
-			<!-- flex flex-row flex-wrap md:flex-nowrap  -->
-			<div class="md:pr-4 text-sm md:text-base ">
+		<div class="pb-20 w-full justify-center md:pr-4 text-sm md:text-base">
+			{#if animationAbout}
 				<img
+					in:fly={{ duration: 2000 }}
 					width="200"
 					height="200"
 					src={profilePicture}
 					alt="profile"
 					class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
 				/>
-				<p class="md:w-full mb-2 text-justify md:text-xl">
-					{$t({
-						key: 'front-about-text',
-						defaultValue:
-							'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
-					})}
-				</p>
+			{/if}
 
-				<p class="md:w-full mb-2 text-justify md:text-xl">
-					{$t({
-						key: 'front-about-text-2',
-						defaultValue:
-							'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
-					})}
-				</p>
-				<p class="md:w-full mb-2 text-justify md:text-xl">
-					{$t({
-						key: 'front-about-text-3',
-						defaultValue:
-							'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
-					})}
-				</p>
-			</div>
+			<p class="md:w-full mb-2 text-justify md:text-xl">
+				{$t({
+					key: 'front-about-text',
+					defaultValue:
+						'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
+				})}
+			</p>
+
+			<p class="md:w-full mb-2 text-justify md:text-xl">
+				{$t({
+					key: 'front-about-text-2',
+					defaultValue:
+						'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
+				})}
+			</p>
+			<p class="md:w-full mb-2 text-justify md:text-xl">
+				{$t({
+					key: 'front-about-text-3',
+					defaultValue:
+						'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
+				})}
+			</p>
 		</div>
 		<ButtonScrollToSection section={'cv_jobs'}
 			>{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</ButtonScrollToSection
@@ -212,160 +204,21 @@
 	</div>
 </section>
 
-<!-- {#each cvSections as section}
-	<Lazy this={() => import('./frontWork.svelte')}>
-		<div class="bg-primary-500" slot="loading">Loading...</div>
-		<svelte:fragment slot="component" let:Component>
-			<Component {scroll} {minYWork} />
-		</svelte:fragment>
-	</Lazy>
-{/each} -->
-<section
-	bind:offsetHeight={minYWork}
-	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
-	id="cv_jobs"
->
-	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
-		{#if startAnimationWork}
-			<!-- in:fly={{ y: 50, duration: 500 * animationspeed }}  -->
-			<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">
-				{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}
-			</h1>
-			{#each cvItems as item}
-				{#if item.category === 'job'}
-					<div
-						in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
-						class="w-full flex sm:flex-row flex-col sm:space-x-4 items-end sm:items-start "
-					>
-						<div
-							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
-							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
-						/>
-						<div class="md:w-4/5  box-content sm:self-stretch">
-							<!-- {@const frMonth = item.fromMonth.toString() } -->
-							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
-								<T keyName={item.name} defaultValue={item.name} />
-							</h2>
-							<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-								{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
-							</h3>
-							<p class="text-sm text-justify">
-								<T keyName="text-{item.name}" defaultValue={item.info} />
-							</p>
-						</div>
-					</div>
-				{/if}
-			{/each}
-		{/if}
-	</div>
-	<ButtonScrollToSection section={'cv_edu'}
-		>{$t({ key: 'my-education', defaultValue: 'My Education' })}</ButtonScrollToSection
-	>
-</section>
-
-<section
-	bind:offsetHeight={minYEdu}
-	class=" pt-4 md:pt-20 pb-20 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
-	id="cv_edu"
->
-	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
-		{#if startAnimationEdu}
-			<h1
-				in:fly={{ y: 50, duration: 500 }}
-				class="text-center md:text-left text-primary-900 dark:text-primary-50"
-			>
-				{$t({ key: 'my-education', defaultValue: 'My Education' })}
-			</h1>
-			{#each cvItems as item}
-				{#if item.category === 'education'}
-					<div
-						in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
-						class="w-full flex sm:flex-row flex-col sm:space-x-4 items-end sm:items-start "
-					>
-						<div
-							style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
-							class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
-						/>
-						<div class="md:w-4/5 box-content self-stretch">
-							<h2 class="font-sans mr-28 sm:mr-0 text-primary-900 dark:text-primary-50 text-2xl">
-								<T keyName={item.name} defaultValue={item.name} />
-							</h2>
-							<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-								{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
-							</h3>
-							<p class="text-sm text-justify">
-								<T keyName="text-{item.name}" defaultValue={item.info} />
-							</p>
-						</div>
-					</div>
-				{/if}
-			{/each}
-		{/if}
-	</div>
-	<ButtonScrollToSection section={'cv_cert'}
-		>{$t({ key: 'achievements', defaultValue: 'Achievements' })}</ButtonScrollToSection
-	>
-</section>
-
-<section
-	class=" pt-4 md:pt-20  pb-20 relative w-full h-fit min-h-screen min-h-screen-ios flex flex-col justfiy-center "
-	id="cv_cert"
->
-	<div class="space-y-4 max-w-4xl w-full h-full mx-auto pt-14 ">
-		{#if startAnimationAchi}
-			<h1
-				in:fly={{ y: 50, duration: 500 }}
-				class="text-center md:text-left text-primary-900 dark:text-primary-50"
-			>
-				{$t({ key: 'my-achievements', defaultValue: 'Achievements & Certificates' })}
-			</h1>
-			<div class="grid gap-4 sm:grid-cols-2 min-h-screen">
-				<!-- class="flex flex-col h-full sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4" -->
-				{#each cvItems as item}
-					{#if item.category === 'certificate'}
-						<div
-							in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
-							class="w-full h-full flex flex-col space-y-4 grow sm:max-w-none"
-						>
-							<div
-								style:background-image={`url('${item.image}')`}
-								class="bg-cover bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
-							/>
-							<div
-								class="h-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md w-full flex flex-col justify-start"
-							>
-								<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
-									<T keyName="achievement-title" defaultValue={item.name} />
-								</h2>
-								<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-									<T keyName="achievement-date" defaultValue={item.fromYear} />
-								</h3>
-								<p class="text-sm text-justify mb-2">
-									<T keyName="achievement-text" defaultValue={item.shortdescription} />
-								</p>
-								{#if item.link?.includes('https')}
-									<a
-										class="w-fit mt-auto ml-auto"
-										target="_blank"
-										rel="noreferrer noopener"
-										href={item.link}
-									>
-										<button class="btn btn-navajo w-fit">
-											<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
-										</button>
-									</a>
-								{:else}
-									<a class="w-fit mt-auto ml-auto" href={item.link}>
-										<button class="btn btn-navajo w-fit">
-											<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
-										</button>
-									</a>
-								{/if}
-							</div>
-						</div>
-					{/if}
-				{/each}
-			</div>
-		{/if}
-	</div>
-</section>
+<Lazy this={() => import('./frontWork.svelte')}>
+	<div class="bg-primary-500" slot="loading">Loading...</div>
+	<svelte:fragment slot="component" let:Component>
+		<Component />
+	</svelte:fragment>
+</Lazy>
+<Lazy this={() => import('./frontEdu.svelte')}>
+	<div class="bg-primary-500" slot="loading">Loading...</div>
+	<svelte:fragment slot="component" let:Component>
+		<Component />
+	</svelte:fragment>
+</Lazy>
+<Lazy this={() => import('./frontCert.svelte')}>
+	<div class="bg-primary-500" slot="loading">Loading...</div>
+	<svelte:fragment slot="component" let:Component>
+		<Component />
+	</svelte:fragment>
+</Lazy>

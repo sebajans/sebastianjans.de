@@ -7,19 +7,17 @@
 	$: sectionScroll = scrollInSection(scroll, 4, windowHeight);
 </script>
 
-<section id="graphicdesign2" class="relative px-6">
+<section id="graphicdesign2" class="relative">
 	<div
-		class="max-w-4xl flex w-full h-works md:h-worksmd md:px-0 md:flex-row sm:mx-auto flex-col my-auto items-center justify-center"
+		class="max-w-4xl flex w-full h-works md:h-worksmd md:flex-row mx-auto flex-col my-auto items-center justify-center"
 	>
-		<!-- style:transform={`translate3d(calc(-100% + ${sectionScroll} * 100%),0, 0)`} -->
 		<img
 			width="448"
 			height="640"
 			alt="especimen-tipografico"
-			class="mb-4 md:mr-4 object-contain rounded-lg w-1/2 h-auto max-h-[60%] md:max-h-[70%] max-w-[80%]"
+			class="mb-4 md:mr-4 object-contain rounded-lg w-1/2 h-auto"
 			src="/graphicdesign/especimen-tipografico.webp"
 		/>
-		<!-- style:transform={`translate3d(calc(100% - ${sectionScroll} * 100%),0, 0)`} -->
 		<p class=" h-auto w-full md:w-1/2 text-justify">
 			<T
 				keyName="works-p-especimen"

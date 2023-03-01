@@ -4,7 +4,6 @@
 	import { onMount } from 'svelte';
 	import { TolgeeProvider } from '@tolgee/svelte';
 	import { nightMode } from '$lib/stores/nightMode';
-	import { mainClass } from '$lib/stores/mainClass';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import NavBar from '../components/NavBar.svelte';
 
@@ -47,7 +46,7 @@
 	};
 </script>
 
-<div class="motion-reduce:hidden">
+<div id="blob-motion" class="motion-reduce:hidden">
 	<Blob />
 </div>
 {#if initialized}
@@ -66,7 +65,6 @@
 			<PageTransitions pathname={data.pathname}>
 				<div bind:this={contents} class="my-auto mx-4 md:ml-44 ">
 					<slot />
-					<!-- {$mainClass} -->
 				</div>
 			</PageTransitions>
 			<Footer />
