@@ -8,9 +8,9 @@
 	import SvelteSeo from 'svelte-seo';
 	import Lazy from '../components/Lazy.svelte';
 	import viewport from '../components/useViewportAction';
-	import FrontCert from './FrontCert.svelte';
-	import FrontEdu from './FrontEdu.svelte';
-	import FrontWork from './FrontWork.svelte';
+	import FrontCert from './FrontModules/FrontCert.svelte';
+	import FrontEdu from './FrontModules/FrontEdu.svelte';
+	import FrontWork from './FrontModules/FrontWork.svelte';
 
 	pageTitle.set('');
 
