@@ -10,7 +10,22 @@ export async function GET() {
       xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
       xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
     >
-      <!-- <url> elements go here -->
+      <url>
+        <loc>https://sebastianjans.de</loc>
+        <lastmod>2023-03-03T13:15:01+00:00</lastmod>
+      </url>
+      <url>
+        <loc>https://sebastianjans.de/works</loc>
+        <lastmod>2023-02-27T18:04:35+00:00</lastmod>
+      </url>
+      <url>
+        <loc>https://sebastianjans.de/skills</loc>
+        <lastmod>2023-02-24T02:01:07+00:00</lastmod>
+      </url>
+      <url>
+        <loc>https://sebastianjans.de/contact</loc>
+        <lastmod>2023-02-24T02:01:07+00:00</lastmod>
+      </url>
     </urlset>`.trim(),
     {
       headers: {
