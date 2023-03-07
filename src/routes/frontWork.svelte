@@ -1,5 +1,4 @@
 <script lang="ts">
-	export let minYWork;
 	import { T } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
 	import { cvItems } from './cv_items';
@@ -8,7 +7,6 @@
 </script>
 
 <section
-	bind:offsetHeight={minYWork}
 	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
 	id="cv_jobs"
 >

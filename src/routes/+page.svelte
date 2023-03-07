@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { getTranslate, T } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
-	import { mainClass } from '$lib/stores/mainClass';
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
-	import { nightMode } from '$lib/stores/nightMode';
 	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import Lazy from '../components/Lazy.svelte';
 	import viewport from '../components/useViewportAction';
+	import FrontCert from './FrontCert.svelte';
+	import FrontEdu from './FrontEdu.svelte';
+	import FrontWork from './FrontWork.svelte';
 
 	pageTitle.set('');
 
@@ -49,20 +50,26 @@
 	function AboutAnimation() {
 		animationAbout = true;
 	}
-	let minYWork: any;
 	let scroll: any;
 
-	let cvSections = [
-		{
-			path: './frontWork.svelte'
-		},
-		{
-			path: './frontEdu.svelte'
-		},
-		{
-			path: './frontCertificates.svelte'
-		}
-	];
+	// let cvSections = [
+	// 	{
+	// 		path: './FrontWork.svelte'
+	// 	},
+	// 	{
+	// 		path: './FrontEdu.svelte'
+	// 	},
+	// 	{
+	// 		path: './FrontCertificates.svelte'
+	// 	}
+	// ];
+
+	// onMount(async () => {
+	// 	for (section in cvSections) {
+	// 		Thing = (await import(section)).default;
+	// 		console.log(Thing);
+	// 	}
+	// });
 
 	let windowHeight: number = 0;
 </script>
@@ -76,9 +83,9 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 <section
-	class="relative w-full h-[calc(100vh_-_112px)] max-h-[calc(100vh_-_112px)] h-screen-ios flex flex-col justfiy-center items-center content-center"
+	class="relative w-full min-h-[calc(100dvh_-_6rem)] flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative pb-[calc(100vh_-_112px)] flex flex-col w-full max-w-2xl my-auto mx-auto ">
+	<div class="relative pb-[calc(100vh_-_6rem)] flex flex-col w-full max-w-2xl my-auto mx-auto ">
 		{#if visible}
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
 				<span
@@ -153,9 +160,9 @@
 	</ButtonScrollToSection>
 </section>
 
+<!-- on:enterViewport={AboutAnimation} -->
 <section
 	use:viewport
-	on:enterViewport={AboutAnimation}
 	id="aboutme"
 	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
 >
@@ -164,16 +171,16 @@
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
 		<div class="pb-20 w-full justify-center md:pr-4 text-sm md:text-base">
-			{#if animationAbout}
-				<img
-					in:fly={{ duration: 2000 }}
-					width="200"
-					height="200"
-					src={profilePicture}
-					alt="profile"
-					class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
-				/>
-			{/if}
+			<!-- {#if animationAbout} -->
+			<img
+				in:fly={{ duration: 2000 }}
+				width="200"
+				height="200"
+				src={profilePicture}
+				alt="profile"
+				class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
+			/>
+			<!-- {/if} -->
 
 			<p class="md:w-full mb-2 text-justify md:text-xl">
 				{$t({
@@ -204,11 +211,15 @@
 	</div>
 </section>
 
+<FrontWork />
+<FrontEdu />
+<FrontCert />
+<!-- 
 <Lazy this={() => import('./frontWork.svelte')}>
 	<div class="bg-primary-500" slot="loading">Loading...</div>
-	<svelte:fragment slot="component" let:Component>
-		<Component />
-	</svelte:fragment>
+<svelte:fragment slot="component" let:Component>
+	<Component />
+</svelte:fragment>
 </Lazy>
 <Lazy this={() => import('./frontEdu.svelte')}>
 	<div class="bg-primary-500" slot="loading">Loading...</div>
@@ -221,4 +232,4 @@
 	<svelte:fragment slot="component" let:Component>
 		<Component />
 	</svelte:fragment>
-</Lazy>
+</Lazy> -->

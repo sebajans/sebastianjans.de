@@ -13,7 +13,9 @@
     min-height: 100dvh;
    }
    section {
-    @apply max-w-4xl my-auto mx-auto h-[100dvh] h-screen-ios
+    @apply max-w-4xl my-auto mx-auto  h-screen-ios;
+    min-height: 100vh;
+    min-height: 100dvh;
    }
    html::-webkit-scrollbar {
      /* hide scrollbar */

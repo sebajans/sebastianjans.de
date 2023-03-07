@@ -1,5 +1,4 @@
 <script lang="ts">
-	export let minYEdu;
 	import { T } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
 	import { cvItems } from './cv_items';
@@ -8,7 +7,6 @@
 </script>
 
 <section
-	bind:offsetHeight={minYEdu}
 	class=" pt-4 md:pt-20 pb-20 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
