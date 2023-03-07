@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { T } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
-	import { cvItems } from '../cv_items';
+	import { cvItems } from './cv_items';
 </script>
 
 <section

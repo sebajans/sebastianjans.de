@@ -2,7 +2,7 @@
 	import { T } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
 	import { cvItems } from './cv_items';
-	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
+	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';
 	import { nightMode } from '$lib/stores/nightMode';
 </script>
 

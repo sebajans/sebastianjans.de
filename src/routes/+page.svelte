@@ -3,7 +3,7 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
-	import { cvItems } from './cv_items';
+	// import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import Lazy from '../components/Lazy.svelte';
