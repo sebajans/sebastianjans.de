@@ -4,7 +4,6 @@
 	import { LogoItems } from './logoitems';
 	import { nightMode } from '$lib/stores/nightMode';
 	import { fly } from 'svelte/transition';
-	import WorksHeader from '../../components/WorksHeader.svelte';
 
 	type m = { x: number; y: number };
 	let m = { x: 0, y: 0 };
@@ -49,10 +48,6 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 	id="logodesign"
 	class="flex flex-col"
 >
-	<WorksHeader backgroundColor="bg-primary-300 dark:bg-primary-600">
-		<T keyName="works-logodesign" defaultValue="Logo Design" />
-	</WorksHeader>
-
 	<div
 		class="relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
 	>

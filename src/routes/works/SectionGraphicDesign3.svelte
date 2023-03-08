@@ -96,16 +96,14 @@
 					{/each}
 				</div>
 			{:else}
-				<div
-					style="transform-style: preserve-3d; transform: translateZ(20px);"
-					class=" relative w-full aspect-square items-start "
-				>
+				<!-- style="transform-style: preserve-3d; transform: translateZ(20px);" -->
+				<div class=" relative w-full aspect-square items-start ">
+					<!-- style="transform: rotateY(-5deg)" -->
 					<img
 						width="364"
 						height="364"
-						style="transform: rotateY(-5deg)"
 						alt="especimen-tipografico"
-						class="absolute object-contain h-full z-10"
+						class="absolute object-contain h-full"
 						src="/graphicdesign/CeramicTile.webp"
 					/>
 					<div

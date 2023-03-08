@@ -18,10 +18,6 @@
 <!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);" -->
 <!-- bg-gradient-to-bl from-primary-200/50 dark:from-primary-700/30 via-transparent to-transparent  -->
 <section id="websites" class="flex flex-col relative">
-	<WorksHeader backgroundColor="bg-primary-200 dark:bg-primary-700">
-		<T keyName="works-webdev" defaultValue="Webdesign" />
-	</WorksHeader>
-
 	<div
 		class="p-4 h-works md:h-worksmd max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
 	>

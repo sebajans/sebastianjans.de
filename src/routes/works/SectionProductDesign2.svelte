@@ -48,9 +48,6 @@
 <!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
 bg-gradient-to-bl from-primary-500/50  -->
 <section id="productdesign" class="relative flex flex-col ">
-	<WorksHeader backgroundColor="bg-primary-500 dark:bg-primary-400">
-		<T keyName="works-productdesign" defaultValue="Product Design" />
-	</WorksHeader>
 	<div
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>

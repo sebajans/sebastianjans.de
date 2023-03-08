@@ -6,39 +6,59 @@
 	import { sectionNames } from './sectionNames';
 	import SvelteSeo from 'svelte-seo';
 	import WorksHeader from '../../components/WorksHeader.svelte';
-	import Lazy from '../../components/Lazy.svelte';
-	import component from 'svelte-seo';
-	// Tolgee t translation
-	const t = getTranslate();
-	let workSections = [
-		{
-			path: './SectionWebRJ.svelte'
-		},
-		{
-			path: './SectionWebKamado.svelte'
-		},
-		{
-			path: './SectionLogos.svelte'
-		},
-		{
-			path: './SectionGraphicDesignStuttgart.svelte'
-		},
-		{
-			path: './SectionGraphicDesign2.svelte'
-		},
-		{
-			path: './SectionGraphicDesign3.svelte'
-		},
-		{
-			path: './SectionProductDesign2.svelte'
-		},
-		{
-			path: './SectionProductDesignCup.svelte'
-		},
-		{
-			path: './SectionEnd.svelte'
-		}
-	];
+	// import Lazy from '../../components/Lazy.svelte';
+	import SectionWebRJ from './SectionWebRJ.svelte';
+	import SectionWebKamado from './SectionWebKamado.svelte';
+	import SectionLogos from './SectionLogos.svelte';
+	import SectionGraphicDesignStuttgart from './SectionGraphicDesignStuttgart.svelte';
+	import SectionGraphicDesign2 from './SectionGraphicDesign2.svelte';
+	import SectionGraphicDesign3 from './SectionGraphicDesign3.svelte';
+	import SectionProductDesign2 from './SectionProductDesign2.svelte';
+	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
+	import SectionEnd from './SectionEnd.svelte';
+	// import component from 'svelte-seo';
+
+	const t = getTranslate(); // Tolgee t translation
+
+	// let workSections: { name: string; path: string }[] = [
+	// 	{
+	// 		name: 'SectionWebRJ',
+	// 		path: './SectionWebRJ.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionWebKamado',
+	// 		path: './SectionWebKamado.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionLogos',
+	// 		path: './SectionLogos.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionGraphicDesignStuttgart',
+	// 		path: './SectionGraphicDesignStuttgart.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionGraphicDesign2',
+	// 		path: './SectionGraphicDesign2.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionGraphicDesign3',
+	// 		path: './SectionGraphicDesign3.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionProductDesign2',
+	// 		path: './SectionProductDesign2.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionProductDesignCup',
+	// 		path: './SectionProductDesignCup.svelte'
+	// 	},
+	// 	{
+	// 		name: 'SectionEnd',
+	// 		path: './SectionEnd.svelte'
+	// 	}
+	// ];
+
 	// settings for Layout main class and Title
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
@@ -69,8 +89,10 @@
 	keywords="Freelance product design, minimalistic logo design, front-end svelte development, custom webdesign solutions, diseñador de productos"
 />
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
-
-<section id="start" class="relative flex h-[calc(100vh_-_3.5rem)] md:h-[calc(100vh_-_7rem)]">
+<section
+	id="start"
+	class="relative flex min-h-[calc(100dvh_-_3.5rem)] md:min-h-[calc(100dvh_-_7rem)]"
+>
 	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
 		<h2 class="text-left mx-4 md:w-1/2 text-base mb-4 md:mb-0">
 			<T
@@ -87,8 +109,7 @@
 					on:click|preventDefault={() => scrollIntoView(section.id)}
 					in:fly={{ x: 100, duration: 400, delay: 100 * i }}
 					class="md:py-4 ml-auto py-2 backdrop-blur-md duration-300 delay-[50] rounded-lg text-left pl-3 transition-all {section.color} "
-					>{i + 1}
-					<!-- alt={section.id} -->
+				>
 					<T keyName="works-{section.id}" defaultValue={section.text} />
 				</button>
 			{/each}
@@ -96,15 +117,33 @@
 	</div>
 </section>
 
-<!-- <WorksHeader backgroundColor="bg-primary-200 dark:bg-primary-700">
+<div class="fixed top-0 h-0 w-20 right-0 z-30" />
+<WorksHeader backgroundColor="bg-primary-200/70 dark:bg-primary-700/70">
 	<T keyName="works-webdev" defaultValue="Webdesign" />
-</WorksHeader> -->
-
-{#each workSections as section}
+</WorksHeader>
+<SectionWebRJ {scroll} {windowHeight} />
+<SectionWebKamado {scroll} {windowHeight} />
+<WorksHeader backgroundColor="bg-primary-300/70 dark:bg-primary-600/70">
+	<T keyName="works-logodesign" defaultValue="Logo Design" />
+</WorksHeader>
+<SectionLogos />
+<WorksHeader backgroundColor="bg-primary-400/70 dark:bg-primary-500/70">
+	<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
+</WorksHeader>
+<SectionGraphicDesignStuttgart {scroll} {windowHeight} />
+<SectionGraphicDesign2 {scroll} {windowHeight} />
+<SectionGraphicDesign3 />
+<WorksHeader backgroundColor="bg-primary-500/70 dark:bg-primary-400/70">
+	<T keyName="works-productdesign" defaultValue="Product Design" />
+</WorksHeader>
+<SectionProductDesign2 />
+<SectionProductDesignCup {scroll} {windowHeight} />
+<SectionEnd />
+<!-- {#each workSections as section}
 	<Lazy this={() => import(section.path)}>
 		<div class="bg-primary-500" slot="loading">Loading...</div>
 		<svelte:fragment slot="component" let:Component>
 			<Component {scroll} {windowHeight} />
 		</svelte:fragment>
 	</Lazy>
-{/each}
+{/each} -->

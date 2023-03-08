@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { T } from '@tolgee/svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
-	import WorksHeader from '../../components/WorksHeader.svelte';
-
 	export let scroll: number;
 	export let windowHeight: number;
 	$: sectionScroll = scrollInSection(scroll, 3, windowHeight);
@@ -11,9 +9,6 @@
 <!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
 bg-gradient-to-bl overflow-hidden from-primary-400/50 dark:from-primary-500/30  -->
 <section id="graphicdesign" class="flex flex-col items-end ">
-	<WorksHeader backgroundColor="bg-primary-400 dark:bg-primary-500">
-		<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
-	</WorksHeader>
 	<div
 		class="w-full p-4 max-w-4xl  h-works md:h-worksmd mx-auto my-auto grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-6"
 	>
