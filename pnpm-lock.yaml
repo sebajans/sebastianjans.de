@@ -6,7 +6,7 @@ specifiers:
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/adapter-netlify': 1.0.5
   '@sveltejs/amp': ^1.0.2
-  '@sveltejs/kit': 1.2.9
+  '@sveltejs/kit': 1.11.0
   '@threlte/core': ^5.0.9
   '@threlte/extras': ^4.9.3
   '@tolgee/svelte': ^5.0.0
@@ -33,7 +33,7 @@ specifiers:
   vitest: ^0.29.0
 
 dependencies:
-  '@sveltejs/amp': 1.0.2_@sveltejs+kit@1.2.9
+  '@sveltejs/amp': 1.0.2_@sveltejs+kit@1.11.0
   '@threlte/core': 5.0.9
   '@threlte/extras': 4.9.3_three@0.148.0
   '@tolgee/svelte': 5.3.0_svelte@3.55.1
@@ -43,9 +43,9 @@ dependencies:
 devDependencies:
   '@playwright/test': 1.30.0
   '@rvxlab/tailwind-plugin-ios-full-height': 1.1.0_tailwindcss@3.2.7
-  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.2.9
-  '@sveltejs/adapter-netlify': 1.0.5_@sveltejs+kit@1.2.9
-  '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.1.2
+  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.11.0
+  '@sveltejs/adapter-netlify': 1.0.5_@sveltejs+kit@1.11.0
+  '@sveltejs/kit': 1.11.0_svelte@3.55.1+vite@4.1.2
   '@types/three': 0.148.1
   '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
   '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
@@ -341,36 +341,36 @@ packages:
       tailwindcss: 3.2.7_postcss@8.4.21
     dev: true
 
-  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.2.9:
+  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.11.0:
     resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.1.2
+      '@sveltejs/kit': 1.11.0_svelte@3.55.1+vite@4.1.2
       import-meta-resolve: 2.2.1
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.5_@sveltejs+kit@1.2.9:
+  /@sveltejs/adapter-netlify/1.0.5_@sveltejs+kit@1.11.0:
     resolution: {integrity: sha512-CQpSf2y29+DdaSELLWb4P5ewWSPUFRfJn2DwtiDZ+YOiIVhUk0caudFZoscH1GAP/sFrJekIMtawP542BjWA1g==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
       '@iarna/toml': 2.2.5
-      '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.1.2
+      '@sveltejs/kit': 1.11.0_svelte@3.55.1+vite@4.1.2
       esbuild: 0.16.17
       set-cookie-parser: 2.5.1
     dev: true
 
-  /@sveltejs/amp/1.0.2_@sveltejs+kit@1.2.9:
+  /@sveltejs/amp/1.0.2_@sveltejs+kit@1.11.0:
     resolution: {integrity: sha512-RAJLkZS6oYyF9T2ww/4QyUj3YDqnDIc2tFFi6WJ0EceLrmx107SNEhrhvTUCxECu5oIcA2s9GJtvaBplnjouWQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.2.9_svelte@3.55.1+vite@4.1.2
+      '@sveltejs/kit': 1.11.0_svelte@3.55.1+vite@4.1.2
     dev: false
 
-  /@sveltejs/kit/1.2.9_svelte@3.55.1+vite@4.1.2:
-    resolution: {integrity: sha512-zHuYwMgCJpmgYoQ1EOIgNFNkBTKqErHH+fqZVfNmEw2hICoKZHIjqm8/fetRUtF71dqXq0TmPS/HuCCBHXQiZw==}
+  /@sveltejs/kit/1.11.0_svelte@3.55.1+vite@4.1.2:
+    resolution: {integrity: sha512-PwViZcMoLgEU/jhLoSyjf5hSrHS67wvSm0ifBo4prP9irpGa5HuPOZeVDTL5tPDSBoKxtdYi1zlGdoiJfO86jA==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -384,14 +384,14 @@ packages:
       devalue: 4.3.0
       esm-env: 1.0.0
       kleur: 4.1.5
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       mime: 3.0.0
       sade: 1.8.1
       set-cookie-parser: 2.5.1
       sirv: 2.0.2
       svelte: 3.55.1
       tiny-glob: 0.2.9
-      undici: 5.16.0
+      undici: 5.20.0
       vite: 4.1.2
     transitivePeerDependencies:
       - supports-color
@@ -1497,6 +1497,12 @@ packages:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
 
+  /magic-string/0.30.0:
+    resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
+
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -2262,8 +2268,8 @@ packages:
     resolution: {integrity: sha512-LQc2s/ZDMaCN3QLpa+uzHUOQ7SdV0qgv3VBXOolQGXTaaZpIur6PwUclF5nN2hNkiTRcUugXd1zFOW3FLJ135Q==}
     dev: true
 
-  /undici/5.16.0:
-    resolution: {integrity: sha512-KWBOXNv6VX+oJQhchXieUznEmnJMqgXMbs0xxH2t8q/FUAWSJvOSr/rMaZKnX5RIVq7JDn0JbP4BOnKG2SGXLQ==}
+  /undici/5.20.0:
+    resolution: {integrity: sha512-J3j60dYzuo6Eevbawwp1sdg16k5Tf768bxYK4TUJRH7cBM4kFCbf3mOnM/0E3vQYXvpxITbbWmBafaDbxLDz3g==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
