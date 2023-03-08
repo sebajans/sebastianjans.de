@@ -1,7 +1,6 @@
-<script context="module">
+<!-- <script context="module">
 	export const prerender = true;
-</script>
-
+</script> -->
 <script lang="ts">
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { fly } from 'svelte/transition';
