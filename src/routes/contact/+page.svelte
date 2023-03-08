@@ -64,14 +64,15 @@
 				netlify
 				netlify-honeypot="botfield"
 			>
+				<!-- action="/success" -->
+
 				<!-- id="staticform" -->
-				<!-- action="https://api.staticforms.xyz/submit" -->
 				<!-- <input type="hidden" name="accessKey" value="6b38c3a8-57ad-4413-a90b-8386e25f71e7" />
 					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->
 				<!-- Replace with the url you want to redirect to -->
 				<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
 				<input type="hidden" name="form-name" value="test" />
-				<input type="text" name="bot-field" />
+				<!-- <input type="text" name="bot-field" /> -->
 
 				<div>
 					<label for="Full_name" class="label"
