@@ -1,7 +1,6 @@
-<script context="module">
+<!-- <script context="module">
 	export const prerender = true;
-</script>
-
+</script> -->
 <script lang="ts">
 	import { getTranslate, T } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
