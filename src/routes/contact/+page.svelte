@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script lang="ts">
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { fly } from 'svelte/transition';
@@ -53,13 +57,22 @@
 		class="relative w-full overflow-auto highlight-content mb-24 md:mb-0"
 	>
 		<div class="w-full transition duration-300 ">
-			<form class="grid gap-6 grid-cols-2" name="contact" method="POST" data-netlify="true">
+			<form
+				class="grid gap-6 grid-cols-2"
+				name="contact"
+				method="POST"
+				netlify
+				netlify-honeypot="botfield"
+			>
 				<!-- id="staticform" -->
 				<!-- action="https://api.staticforms.xyz/submit" -->
 				<!-- <input type="hidden" name="accessKey" value="6b38c3a8-57ad-4413-a90b-8386e25f71e7" />
 					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->
 				<!-- Replace with the url you want to redirect to -->
 				<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
+				<input type="hidden" name="form-name" value="test" />
+				<input type="text" name="bot-field" />
+
 				<div>
 					<label for="Full_name" class="label"
 						><T keyName="full-name" defaultValue="Full Name" />
