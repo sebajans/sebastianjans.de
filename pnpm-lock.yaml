@@ -9,7 +9,7 @@ specifiers:
   '@sveltejs/kit': 1.2.9
   '@threlte/core': ^5.0.9
   '@threlte/extras': ^4.9.3
-  '@tolgee/svelte': ^4.9.2
+  '@tolgee/svelte': ^5.0.0
   '@types/three': ^0.148.1
   '@typescript-eslint/eslint-plugin': ^5.52.0
   '@typescript-eslint/parser': ^5.52.0
@@ -36,7 +36,7 @@ dependencies:
   '@sveltejs/amp': 1.0.2_@sveltejs+kit@1.2.9
   '@threlte/core': 5.0.9
   '@threlte/extras': 4.9.3_three@0.148.0
-  '@tolgee/svelte': 4.9.2
+  '@tolgee/svelte': 5.3.0_svelte@3.55.1
   svrollbar: 0.12.0
   three: 0.148.0
 
@@ -426,19 +426,23 @@ packages:
       - three
     dev: false
 
-  /@tolgee/core/4.9.2:
-    resolution: {integrity: sha512-+wVYDN2AU5cUHLDw++tA0Bm/pHkltEhC4IvTR7qTJICG/15PpmvhCfQ717Q/hKSjG6QNaap/Qt/eCSp0PI5+SQ==}
+  /@tolgee/core/5.3.0:
+    resolution: {integrity: sha512-TRoja45YFZf5HRJXgswOTWUrMVy+GjO4YPPEdgsl5wbSwiZwnsqBpVAklwHaMEy+z0f3lNdyxV143xrRVgM/xg==}
     dev: false
 
-  /@tolgee/svelte/4.9.2:
-    resolution: {integrity: sha512-za9k+JJKwORBwwGDhBPETMHyhxHULq4jgyAa/wCuBdzI1uTi6DfGnY9xsKuo0o6lmkRCW4ZMqPYoRXGzSlB4WQ==}
+  /@tolgee/svelte/5.3.0_svelte@3.55.1:
+    resolution: {integrity: sha512-JZewqjm/hNdx/j7KtoCqfQyvpWy+4vEAuSPuRlYWRkEiK7NFVG8M8DNkmEsOxcQ+owhCk8zBC1admvAi5bik/Q==}
+    peerDependencies:
+      svelte: ^3.29.0
     dependencies:
-      '@tolgee/core': 4.9.2
-      '@tolgee/ui': 4.9.2
+      '@tolgee/web': 5.3.0
+      svelte: 3.55.1
     dev: false
 
-  /@tolgee/ui/4.9.2:
-    resolution: {integrity: sha512-rna8kC31yGtn1JYKERTDT6jvOhhkM0xO0Z5cv8OvKODvn9eyGaHtNieCchoVVbFxWfPOGmqp8pBPKFj0D9gEgQ==}
+  /@tolgee/web/5.3.0:
+    resolution: {integrity: sha512-glzhp2Ip55jVwqaczfH0bscjeJyLBIfEODQ1ZHNtrKs7Xdpz6ObczLhEQ6M4UtcnchLLIW0U45olzZjbADzrxA==}
+    dependencies:
+      '@tolgee/core': 5.3.0
     dev: false
 
   /@types/chai-subset/1.3.3:
