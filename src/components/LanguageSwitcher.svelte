@@ -3,9 +3,9 @@
 	import { onMount } from 'svelte';
 
 	const tolgee = getTolgee(['language']);
-	function handleLanguageChange(e: Event) {
-		$tolgee.changeLanguage((e.currentTarget as HTMLSelectElement).value);
-	}
+	// function handleLanguageChange(e: Event) {
+	// 	$tolgee.changeLanguage((e.currentTarget as HTMLSelectElement).value);
+	// }
 
 	let availableLangs = [
 		{ lang: 'de', fullLanguage: 'Deutsch' },
