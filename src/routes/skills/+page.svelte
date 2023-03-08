@@ -6,7 +6,7 @@
 	import { T, getTranslate } from '@tolgee/svelte';
 	import { skillItems } from './skillItems';
 	import { afterNavigate } from '$app/navigation';
-	const t = getTranslate();
+	const { t } = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
 	import Popup from '../../components/Popup.svelte';
 

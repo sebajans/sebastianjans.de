@@ -3,7 +3,7 @@
 	import { getTranslate, T } from '@tolgee/svelte';
 	import { cvItems } from '../FrontModules/cv_items';
 	import { skillItems } from '../skills/skillItems';
-	const t = getTranslate();
+	const { t } = getTranslate();
 
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'CV' }));
 </script>

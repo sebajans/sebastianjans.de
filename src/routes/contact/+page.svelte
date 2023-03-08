@@ -9,7 +9,7 @@
 	import Popup from '../../components/Popup.svelte';
 	import TermsOfService from '../../components/TermsOfService.svelte';
 
-	const t = getTranslate();
+	const { t } = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));
 
 	mainClass.set('pb-14 my-auto');

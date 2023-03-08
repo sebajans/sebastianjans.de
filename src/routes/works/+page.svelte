@@ -18,7 +18,7 @@
 	import SectionEnd from './SectionEnd.svelte';
 	// import component from 'svelte-seo';
 
-	const t = getTranslate(); // Tolgee t translation
+	const { t } = getTranslate(); // Tolgee t translation
 
 	// let workSections: { name: string; path: string }[] = [
 	// 	{
