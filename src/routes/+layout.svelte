@@ -2,7 +2,8 @@
 	import '../app.css';
 	import { beforeUpdate } from 'svelte';
 	import { onMount } from 'svelte';
-	import { TolgeeProvider } from '@tolgee/svelte';
+	// import { TolgeeProvider } from '@tolgee/svelte';
+	import { TolgeeProvider, Tolgee, DevTools, FormatSimple } from '@tolgee/svelte';
 	import { nightMode } from '$lib/stores/nightMode';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import NavBar from '../components/NavBar.svelte';
@@ -34,23 +35,38 @@
 	let viewport: Element;
 	let contents: Element;
 
-	const tolgeeConfig = {
-		preloadFallback: true,
-		staticData: {
-			en: localeEn,
-			es: localeEs,
-			de: localeDe
-		},
-		apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
-		apiKey: import.meta.env.VITE_TOLGEE_API_KEY
-	};
+	const tolgee = Tolgee()
+		.use(DevTools())
+		.use(FormatSimple())
+		.init({
+			language: 'en',
+
+			apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
+			apiKey: import.meta.env.VITE_TOLGEE_API_KEY,
+			staticData: {
+				en: localeEn,
+				es: localeEs,
+				de: localeDe
+			}
+		});
+
+	// const tolgeeConfig = {
+	// 	preloadFallback: true,
+	// 	staticData: {
+	// 		en: localeEn,
+	// 		es: localeEs,
+	// 		de: localeDe
+	// 	},
+	// 	apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
+	// 	apiKey: import.meta.env.VITE_TOLGEE_API_KEY
+	// };
 </script>
 
 <div id="blob-motion" class="motion-reduce:hidden">
 	<Blob />
 </div>
 {#if initialized}
-	<TolgeeProvider config={tolgeeConfig}>
+	<TolgeeProvider {tolgee}>
 		<NavBar {showMenu} />
 		<main
 			bind:this={viewport}

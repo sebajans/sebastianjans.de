@@ -17,7 +17,7 @@
 
 	pageTitle.set('');
 
-	const t = getTranslate();
+	const { t } = getTranslate();
 	let profilePicture = 'img/profile-pic.webp';
 
 	let visible = false;

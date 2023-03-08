@@ -8,10 +8,12 @@
 	import BackdropBlur from './BackdropBlur.svelte';
 	import SocialMenu from '../components/SocialMenu.svelte';
 	import Logo from './Logo.svelte';
-	import { getLanguageStore } from '@tolgee/svelte';
+	import { getTolgee } from '@tolgee/svelte';
+	// import { getLanguageStore } from '@tolgee/svelte';
 	import { draw } from 'svelte/transition';
 
-	const languageStore = getLanguageStore();
+	const languageStore = getTolgee(['language']);
+	// const languageStore = getLanguageStore();
 	export let showMenu = false;
 	$: onMount(() => (showMenu = false));
 
