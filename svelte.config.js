@@ -15,7 +15,7 @@ const config = {
 		// output: {
 		// 	dir: 'build'
 		// },
-		// target: '#svelte',
+		target: '#svelte',
 		prerender: {
 			crawl: true,
 			// enabled: true,

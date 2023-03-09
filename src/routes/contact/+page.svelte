@@ -71,7 +71,7 @@
 					<label for="Full_name" class="label"
 						><T keyName="full-name" defaultValue="Full Name" />
 					</label>
-					<input class="input" name="$Full_name" type="text" placeholder="John" required />
+					<input class="input" name="name" type="text" placeholder="John" required />
 				</div>
 				<div>
 					<label for="email" class="label"
