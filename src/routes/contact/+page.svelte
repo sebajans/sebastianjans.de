@@ -57,13 +57,8 @@
 		class="relative w-full overflow-auto highlight-content mb-24 md:mb-0"
 	>
 		<div class="w-full transition duration-300 ">
-			<form
-				class="grid gap-6 grid-cols-2"
-				name="contact"
-				method="POST"
-				data-netlify="true"
-				netlify-honeypot="bot-field"
-			>
+			<form class="grid gap-6 grid-cols-2" name="contact" method="POST" data-netlify="true">
+				<!-- netlify-honeypot="bot-field" -->
 				<!-- action="/success" -->
 				<!-- <input type="hidden" name="accessKey" value="6b38c3a8-57ad-4413-a90b-8386e25f71e7" />
 					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->

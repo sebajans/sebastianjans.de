@@ -69,7 +69,7 @@
   }
 
   .input {
-      @apply focus:!ring-primary-300/70 focus:outline-none transition-all focus:bg-primary-50 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50/80 block w-full p-2.5 dark:bg-primary-50 dark:border-primary-600 dark:text-primary-900 text-primary-50
+      @apply focus:!ring-primary-300/70 focus:outline-none transition-all focus:bg-primary-50 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50/80 block w-full p-2.5 dark:bg-primary-50 dark:border-primary-600 dark:text-primary-900 text-primary-900
   }
 
 
