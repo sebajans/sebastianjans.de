@@ -3,9 +3,6 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	// preprocess: preprocess(),
 	preprocess: [
 		preprocess({
 			postcss: true,
@@ -15,12 +12,12 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		inlineStyleThreshold: Infinity,
-		output: 'build',
+		output: {
+			dir: 'build'
+		},
+		target: '#svelte',
 	},
-	target: '#svelte',
-	output: {
-		dir: 'build'
-	},
+
 	prerender: {
 		crawl: true,
 		enabled: true,
@@ -29,9 +26,4 @@ const config = {
 	},
 };
 
-// export default {
-//   kit: {
-//     adapter: adapter()
-//   }
-// };
 export default config;
