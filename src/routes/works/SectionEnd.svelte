@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { T } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+
 	import Popup from '../../components/Popup.svelte';
 
 	let popup: any;

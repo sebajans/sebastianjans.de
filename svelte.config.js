@@ -15,6 +15,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		inlineStyleThreshold: Infinity,
+		output: 'build',
 	},
 	target: '#svelte',
 	prerender: {

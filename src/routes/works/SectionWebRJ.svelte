@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { T } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+
 	import { scrollInSection } from '../../components/scrollInSection';
 	import { nightMode } from '$lib/stores/nightMode';
 	import WorksHeader from '../../components/WorksHeader.svelte';

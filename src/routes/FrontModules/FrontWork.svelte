@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { T } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+
 	import { fly } from 'svelte/transition';
 	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';

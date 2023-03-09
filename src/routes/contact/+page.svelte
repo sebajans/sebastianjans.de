@@ -60,8 +60,8 @@
 				class="grid gap-6 grid-cols-2"
 				name="contact"
 				method="POST"
-				netlify
-				netlify-honeypot="botfield"
+				data-netlify="true"
+				netlify-honeypot="bot-field"
 			>
 				<!-- action="/success" -->
 
@@ -70,8 +70,8 @@
 					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->
 				<!-- Replace with the url you want to redirect to -->
 				<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
-				<input type="hidden" name="form-name" value="test" />
-				<!-- <input type="text" name="bot-field" /> -->
+				<input type="hidden" name="form-name" value="contact" />
+				<input type="hidden" name="bot-field" />
 
 				<div>
 					<label for="Full_name" class="label"

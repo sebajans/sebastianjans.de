@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { T } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+
 	import { LogoItems } from './logoitems';
 	import { nightMode } from '$lib/stores/nightMode';
 	import { fly } from 'svelte/transition';

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { T } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+
 	import { fade } from 'svelte/transition';
 	import BenchBottom from './product-items/BenchBottom.svelte';
 	import BenchFront from './product-items/BenchFront.svelte';

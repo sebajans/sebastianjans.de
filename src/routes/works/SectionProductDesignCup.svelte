@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { T } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+
 	import CupholderModel from './product-items/CupholderModel.svelte';
 	import CupHolderModelClose from './product-items/CupHolderModelClose.svelte';
 	import { scrollInSection } from '../../components/scrollInSection';
