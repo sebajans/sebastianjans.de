@@ -1,7 +1,7 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
-		"outDir": "./built",
+		"outDir": "./build",
 		"allowJs": true,
 		"checkJs": true,
 		"esModuleInterop": true,
@@ -16,7 +16,7 @@
 		"./**/*"
 	],
 	"exclude": [
-		"./built/**/*"
+		"./build/**/*"
 	],
 }
 
