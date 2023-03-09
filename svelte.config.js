@@ -12,9 +12,9 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		inlineStyleThreshold: Infinity,
-		output: {
-			dir: 'build'
-		},
+		// output: {
+		// 	dir: 'build'
+		// },
 		target: '#svelte',
 	},
 
