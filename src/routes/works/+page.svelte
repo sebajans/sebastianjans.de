@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { mainClass } from '$lib/stores/mainClass';
 	import { pageTitle } from '$lib/stores/pageTitle';
-	import { T, getTranslate } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { getTranslate } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
 	import { sectionNames } from './sectionNames';
 	import SvelteSeo from 'svelte-seo';

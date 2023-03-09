@@ -5,7 +5,8 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { fly } from 'svelte/transition';
 	import { mainClass } from '$lib/stores/mainClass';
-	import { T, getTranslate } from '@tolgee/svelte';
+	import { getTranslate } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
 	import Popup from '../../components/Popup.svelte';
 	import TermsOfService from '../../components/TermsOfService.svelte';
 
@@ -64,8 +65,6 @@
 				netlify-honeypot="bot-field"
 			>
 				<!-- action="/success" -->
-
-				<!-- id="staticform" -->
 				<!-- <input type="hidden" name="accessKey" value="6b38c3a8-57ad-4413-a90b-8386e25f71e7" />
 					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->
 				<!-- Replace with the url you want to redirect to -->

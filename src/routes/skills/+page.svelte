@@ -3,7 +3,9 @@
 	import { fly } from 'svelte/transition';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
-	import { T, getTranslate } from '@tolgee/svelte';
+	import { getTranslate } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+
 	import { skillItems } from './skillItems';
 	import { afterNavigate } from '$app/navigation';
 	const { t } = getTranslate();

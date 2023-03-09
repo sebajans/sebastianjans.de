@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	// import { T } from '@tolgee/svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import T from '@tolgee/svelte/T.svelte';
 
 	export let link: string;
 	export let text: string;

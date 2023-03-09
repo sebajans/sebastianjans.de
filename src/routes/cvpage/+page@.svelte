@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { pageTitle } from '$lib/stores/pageTitle';
-	import { getTranslate, T } from '@tolgee/svelte';
+	import { getTranslate } from '@tolgee/svelte';
+	import T from '@tolgee/svelte/T.svelte';
 	import { cvItems } from '../FrontModules/cv_items';
 	import { skillItems } from '../skills/skillItems';
 	const { t } = getTranslate();
