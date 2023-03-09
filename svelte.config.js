@@ -16,14 +16,16 @@ const config = {
 		// 	dir: 'build'
 		// },
 		// target: '#svelte',
+		prerender: {
+			crawl: true,
+			// enabled: true,
+			entries: ['*', '/contact'],
+			// force: true,
+
+			// pages: ['*'],
+		},
 	},
 
-	prerender: {
-		crawl: true,
-		enabled: true,
-		force: true,
-		pages: ['*'],
-	},
 };
 
 export default config;
