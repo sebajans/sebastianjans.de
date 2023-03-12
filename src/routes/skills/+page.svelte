@@ -35,7 +35,7 @@
 	<meta name="description" content="Skills of Sebastian Jans as a Designer." />
 </svelte:head>
 
-<div class="sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto">
+<div class="sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto ">
 	{#if visible}
 		<div class="relative">
 			<p in:fly={{ y: 30, duration }} class="text-base text-left">
@@ -134,7 +134,7 @@
 	{/if}
 </div>
 <div
-	class="max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 my-8 justify-center box-content  w-auto mx-auto "
+	class="max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 mb-16 md:mb-0 my-8 justify-center box-content  w-auto mx-auto "
 >
 	<p class="mr-auto">
 		<T
