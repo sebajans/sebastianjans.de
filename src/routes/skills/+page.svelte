@@ -134,7 +134,7 @@
 	{/if}
 </div>
 <div
-	class="max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 mb-16 md:mb-0 my-8 justify-center box-content  w-auto mx-auto "
+	class="max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 mb-16 my-8 justify-center box-content  w-auto mx-auto "
 >
 	<p class="mr-auto">
 		<T
