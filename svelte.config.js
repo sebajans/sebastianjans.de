@@ -19,10 +19,10 @@ const config = {
 		prerender: {
 			crawl: true,
 			// enabled: true,
-			entries: ['*', '/contact'],
 			// force: true,
-
 			// pages: ['*'],
+			entries: ['*', '/contact'],
+
 		},
 	},
 
