@@ -18,7 +18,7 @@
 		"@playwright/test": "^1.36.1",
 		"@rvxlab/tailwind-plugin-ios-full-height": "^1.1.0",
 		"@sveltejs/adapter-auto": "^2.1.0",
-		"@sveltejs/adapter-netlify": "2.0.6",
+		"@sveltejs/adapter-netlify": "2.0.8",
 		"@sveltejs/kit": "^1.22.3",
 		"@types/three": "^0.148.1",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
