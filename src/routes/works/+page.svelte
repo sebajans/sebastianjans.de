@@ -140,11 +140,3 @@
 <SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
 <SectionEnd />
-<!-- {#each workSections as section}
-	<Lazy this={() => import(section.path)}>
-		<div class="bg-primary-500" slot="loading">Loading...</div>
-		<svelte:fragment slot="component" let:Component>
-			<Component {scroll} {windowHeight} />
-		</svelte:fragment>
-	</Lazy>
-{/each} -->
