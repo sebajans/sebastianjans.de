@@ -8,8 +8,8 @@
 	import { afterNavigate } from '$app/navigation';
 	// import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
-	import SvelteSeo from 'svelte-seo';
-	import Lazy from '../components/Lazy.svelte';
+	// import SvelteSeo from 'svelte-seo';
+	// import Lazy from '../components/Lazy.svelte';
 	import viewport from '../components/useViewportAction';
 	import FrontCert from './FrontModules/FrontCert.svelte';
 	import FrontEdu from './FrontModules/FrontEdu.svelte';
@@ -55,29 +55,10 @@
 	}
 	let scroll: any;
 
-	// let cvSections = [
-	// 	{
-	// 		path: './FrontWork.svelte'
-	// 	},
-	// 	{
-	// 		path: './FrontEdu.svelte'
-	// 	},
-	// 	{
-	// 		path: './FrontCertificates.svelte'
-	// 	}
-	// ];
-
-	// onMount(async () => {
-	// 	for (section in cvSections) {
-	// 		Thing = (await import(section)).default;
-	// 		console.log(Thing);
-	// 	}
-	// });
-
 	let windowHeight: number = 0;
 </script>
 
-<SvelteSeo
+<!-- <SvelteSeo
 	title="Sebastian Jans Design | Welcome"
 	description="Online Portfolio for Sebastian Jans, a Product and Graphic Designer"
 	keywords="Freelance product designer, online digital portfolio, front-end svelte developer, how to find someone to design a product, diseñador de productos"
@@ -89,14 +70,14 @@
 		type: 'website',
 		site_name: 'Sebastian Jans Design'
 	}}
-/>
+/> -->
 <!-- keywords="portfolio, product design, Industrial design, Design thinking, User experience design (UX design), User interface design (UI design), Graphic design, Branding, 3D modeling, Prototype development, Sketching, CAD design, Product innovation, Design strategy, Design research, User-centered design, Human factors engineering, Design for manufacturability, Product testing, Materials science, Sustainable design, Valencia, Germany, Deutschland, Wernau" -->
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
-<section
+<!-- <section
 	class="relative w-full min-h-[calc(100dvh_-_6rem)] flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative pb-[calc(100vh_-_6rem)] flex flex-col w-full max-w-2xl my-auto mx-auto ">
+	<div class="relative pb-[calc(100vh_-_6rem)] flex flex-col w-full max-w-2xl my-auto mx-auto">
 		{#if visible}
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
 				<span
@@ -169,13 +150,13 @@
 	<ButtonScrollToSection section={'aboutme'}>
 		{$t({ key: 'about-me', defaultValue: 'About me' })}
 	</ButtonScrollToSection>
-</section>
+</section> -->
 
 <!-- on:enterViewport={AboutAnimation} -->
 <section
 	use:viewport
 	id="aboutme"
-	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 "
+	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20"
 >
 	<div class="sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
@@ -189,7 +170,7 @@
 				height="200"
 				src={profilePicture}
 				alt="profile"
-				class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right  max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
+				class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
 			/>
 			<!-- {/if} -->
 
