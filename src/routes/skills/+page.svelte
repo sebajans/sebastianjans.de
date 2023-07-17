@@ -38,7 +38,7 @@
 <div class="sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto ">
 	{#if visible}
 		<div class="relative">
-			<p in:fly={{ y: 30, duration }} class="text-base text-left">
+			<p in:fly|global={{ y: 30, duration }} class="text-base text-left">
 				<T
 					keyName="skills-text-intro"
 					defaultValue="
@@ -104,7 +104,7 @@
 		</div>
 		{#each Object.entries(skillItems) as [categoryName, skills], i}
 			<div
-				in:fly={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
+				in:fly|global={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
 				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
 			>
 				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">

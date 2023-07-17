@@ -108,7 +108,7 @@
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
 					on:click|preventDefault={() => scrollIntoView(section.id)}
-					in:fly={{ x: 100, duration: 400, delay: 100 * i }}
+					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
 					class="md:py-4 ml-auto py-2 backdrop-blur-md duration-300 delay-[50] rounded-lg text-left pl-3 transition-all {section.color} "
 				>
 					<T keyName="works-{section.id}" defaultValue={section.text} />

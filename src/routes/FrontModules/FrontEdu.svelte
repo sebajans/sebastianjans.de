@@ -13,7 +13,7 @@
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
 		<h1
-			in:fly={{ y: 50, duration: 500 }}
+			in:fly|global={{ y: 50, duration: 500 }}
 			class="text-center md:text-left text-primary-900 dark:text-primary-50"
 		>
 			<T keyName="my-education" defaultValue="my-education" />
@@ -21,7 +21,7 @@
 		{#each cvItems as item}
 			{#if item.category === 'education'}
 				<div
-					in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
+					in:fly|global={{ y: 50, duration: 500, delay: 250 * item.id }}
 					class="w-full flex sm:flex-row flex-col sm:space-x-4 items-end sm:items-start "
 				>
 					<div

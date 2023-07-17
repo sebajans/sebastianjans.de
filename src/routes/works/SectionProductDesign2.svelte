@@ -129,8 +129,8 @@ bg-gradient-to-bl from-primary-500/50  -->
 							<img
 								width="366"
 								height="366"
-								in:fade={{ delay: 1000, duration: 500 }}
-								out:fade={{ delay: 100, duration: 300 }}
+								in:fade|global={{ delay: 1000, duration: 500 }}
+								out:fade|global={{ delay: 100, duration: 300 }}
 								src="/productdesign/bench_edited.webp"
 								class="w-full aspect-auto"
 								alt="bench"

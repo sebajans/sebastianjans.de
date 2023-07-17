@@ -72,7 +72,7 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 			>
 				{#each LogoItems as logo, i}
 					<!-- {#each (LogoItems.sort(() => Math.random())) as logo, i} -->
-					<!-- in:fly={{delay: i*50, y: 20, duration: 50}}  -->
+					<!-- in:fly|global={{delay: i*50, y: 20, duration: 50}}  -->
 					<div class="logo-individual flex justify-center items-center transition-all duration-200">
 						<button
 							on:keydown
@@ -92,7 +92,7 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 			<div
 				on:keydown|stopPropagation
 				on:click|stopPropagation
-				transition:fly={{ x: -300, duration: 300 }}
+				transition:fly|global={{ x: -300, duration: 300 }}
 				class="{LogoItems[activeNumber]
 					? 'translate-x-0'
 					: 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5"

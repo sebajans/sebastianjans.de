@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<div
-		in:fly={{ y: 30, duration: 450 }}
+		in:fly|global={{ y: 30, duration: 450 }}
 		class="relative w-full overflow-auto highlight-content mb-24 md:mb-0"
 	>
 		<div class="w-full transition duration-300 ">

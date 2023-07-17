@@ -11,7 +11,7 @@
 >
 	<div class="space-y-4 max-w-4xl w-full h-full mx-auto pt-14 ">
 		<h1
-			in:fly={{ y: 50, duration: 500 }}
+			in:fly|global={{ y: 50, duration: 500 }}
 			class="text-center md:text-left text-primary-900 dark:text-primary-50"
 		>
 			<T keyName="my-achievements" defaultValue="My Achievements & Certifications" />
@@ -21,7 +21,7 @@
 			{#each cvItems as item}
 				{#if item.category === 'certificate'}
 					<div
-						in:fly={{ y: 50, duration: 500, delay: 250 * item.id }}
+						in:fly|global={{ y: 50, duration: 500, delay: 250 * item.id }}
 						class="w-full h-full flex flex-col space-y-4 grow sm:max-w-none"
 					>
 						<div
