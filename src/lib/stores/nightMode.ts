@@ -6,18 +6,11 @@ function userPrefersDark() {
     if (import.meta.env.SSR) {
         return false;
     }
-
-
-    //   return (
-    //       sessionData  === 'dark' ||
-    //       (!(sessionData) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    //       );
     const sessionData = window.localStorage.getItem(key)
     if (sessionData) {
         return "true" === sessionData;
     }
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
-
 }
 
 function persistDarkMode(dark: boolean) {

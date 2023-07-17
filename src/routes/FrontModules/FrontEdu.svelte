@@ -8,7 +8,7 @@
 </script>
 
 <section
-	class=" pt-4 md:pt-20 pb-20 md:pb-20 relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
+	class=" pt-4 md:pt-20 pb-20 md:pb-20 relative h-full w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center"
 	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">

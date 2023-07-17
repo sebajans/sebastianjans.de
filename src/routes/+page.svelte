@@ -84,7 +84,7 @@
 	openGraph={{
 		title: 'Sebastian Jans | Product and Graphic Design',
 		description: 'Visit my Online Portfolio to see my works.',
-		image: 'https://sebastianjans.de/Front-image.png',
+		// image: 'https://sebastianjans.de/Front-image.png',
 		url: 'https://sebastianjans.de/',
 		type: 'website',
 		site_name: 'Sebastian Jans Design'
@@ -225,22 +225,3 @@
 <FrontWork />
 <FrontEdu />
 <FrontCert />
-<!-- 
-<Lazy this={() => import('./frontWork.svelte')}>
-	<div class="bg-primary-500" slot="loading">Loading...</div>
-<svelte:fragment slot="component" let:Component>
-	<Component />
-</svelte:fragment>
-</Lazy>
-<Lazy this={() => import('./frontEdu.svelte')}>
-	<div class="bg-primary-500" slot="loading">Loading...</div>
-	<svelte:fragment slot="component" let:Component>
-		<Component />
-	</svelte:fragment>
-</Lazy>
-<Lazy this={() => import('./frontCert.svelte')}>
-	<div class="bg-primary-500" slot="loading">Loading...</div>
-	<svelte:fragment slot="component" let:Component>
-		<Component />
-	</svelte:fragment>
-</Lazy> -->

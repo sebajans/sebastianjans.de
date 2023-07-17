@@ -6,7 +6,7 @@
 </script>
 
 <section
-	class=" pt-4 md:pt-20  pb-20 relative w-full h-fit min-h-screen min-h-screen-ios flex flex-col justfiy-center "
+	class=" pt-4 md:pt-20  pb-20 relative w-full h-full min-h-screen min-h-screen-ios flex flex-col justfiy-center "
 	id="cv_cert"
 >
 	<div class="space-y-4 max-w-4xl w-full h-full mx-auto pt-14 ">
