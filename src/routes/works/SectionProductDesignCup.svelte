@@ -46,7 +46,7 @@ bg-gradient-to-bl from-primary-500/50 -->
 				<img
 					width="222"
 					height="570"
-					src="/productdesign/cupholder/render-1.webp"
+					src="/productdesign/cupholder/1_cupholder-frontal-full.webp"
 					alt="The cupholder fully extended, showing the LED indicator"
 					class="w-full h-full object-cover sepia"
 				/>
