@@ -21,13 +21,14 @@
 	let profilePicture = 'img/profile-pic.webp';
 
 	let visible = false;
-	let animationspeed: number;
-	let animationdelay: number;
+	let animationspeed: number | null = null;
+	let animationdelay: number = 0;
+	
 	afterNavigate(({ from }) => {
-		animationspeed = from === null ? 0.08 : 10;
-		animationdelay = from === null ? 1 : 0;
-		visible = true;
-	});
+  visible = true;
+  animationspeed = from === null ? 0.08 : 10;
+  animationdelay = from === null ? 1 : 0;
+});
 
 	function typewriter(node: any, { delay = 0, speed = 1 }) {
 		const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
@@ -38,7 +39,9 @@
 
 		const text = node.textContent;
 		const duration = text.length / speed;
-		delay = delay * animationdelay;
+		// if (animationdelay !== null) {
+		// 	delay = delay * animationdelay;
+		// }
 
 		return {
 			delay,
@@ -49,6 +52,7 @@
 			}
 		};
 	}
+	
 	let animationAbout = false;
 	function AboutAnimation() {
 		animationAbout = true;
@@ -74,23 +78,23 @@
 <!-- keywords="portfolio, product design, Industrial design, Design thinking, User experience design (UX design), User interface design (UI design), Graphic design, Branding, 3D modeling, Prototype development, Sketching, CAD design, Product innovation, Design strategy, Design research, User-centered design, Human factors engineering, Design for manufacturability, Product testing, Materials science, Sustainable design, Valencia, Germany, Deutschland, Wernau" -->
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
-<!-- <section
-	class="relative w-full min-h-[calc(100dvh_-_6rem)] flex flex-col justfiy-center items-center content-center"
+<section
+	class="relative w-full  md:-mt-28 min-h-screen min-h-screen-ios flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative pb-[calc(100vh_-_6rem)] flex flex-col w-full max-w-2xl my-auto mx-auto">
-		{#if visible}
+	<div class="relative pb-[calc(100vh_-_6rem)] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
+		{#if visible && animationspeed != null && animationdelay != null}
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
 				<span
 					style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
 					class="w-full select-none text-primary-500 font-bold font-display text-left leading-[0.2] h-auto
 				text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
-					in:typewriter|global={{ speed: animationspeed * 0.15, delay: 100 * animationdelay }}
+					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 100 * animationdelay }}
 				>
 					{$t({ key: 'hello', defaultValue: 'Hello' })}
 				</span>
 				<span
 					style:transform={`translate3d(0, ${scroll * -2}px, 0)`}
-					in:typewriter|global={{ speed: animationspeed * 0.2, delay: 750 * animationdelay }}
+					in:fly|global={{ y: animationspeed *1000 * 0.2, delay: 750 * animationdelay }}
 					class="w-full select-none font-display italic text-right leading-[0.5] h-auto
 				text-[clamp(5vh,15vh,28vw)] md:text-[clamp(5vh,15vh,6rem)]"
 				>
@@ -98,7 +102,7 @@
 				</span>
 				<span
 					style:transform={`translate3d(0, ${scroll * -0.8}px, 0)`}
-					in:typewriter|global={{ speed: animationspeed * 0.3, delay: 1100 * animationdelay }}
+					in:fly|global={{ y: animationspeed *1000 * 0.3, delay: 1100 * animationdelay }}
 					class="w-full z-10 select-none text-primary-600 dark:text-primary-300 font-bold font-display italic text-center leading-[1.2] h-auto
 				text-[clamp(5vh,14vh,13vw)] md:text-[clamp(5vh,14vh,7rem)]"
 				>
@@ -106,7 +110,7 @@
 				</span>
 				<span
 					style:transform={`translate3d(0, ${scroll * -4}px, 0)`}
-					in:typewriter|global={{ speed: animationspeed * 0.3, delay: 1500 * animationdelay }}
+					in:fly|global={{ y: animationspeed *1000 * 0.3, delay: 1500 * animationdelay }}
 					class="w-full select-none font-display font-bold text-left leading-[0.2] h-auto
 				text-[clamp(2vh,6vh,10vw)] md:text-[clamp(2vh,6vh,5rem)]"
 				>
@@ -114,7 +118,7 @@
 				</span>
 				<span
 					style:transform={`translate3d(0, ${scroll * -2.8}px, 0)`}
-					in:typewriter|global={{ speed: animationspeed * 0.2, delay: 1750 * animationdelay }}
+					in:fly|global={{ y: animationspeed *1000 * 0.2, delay: 1750 * animationdelay }}
 					class="w-full select-none italic font-normal font-display text-right leading-[0] h-auto
 				text-[clamp(1rem,8vh,10vw)] md:text-[clamp(1rem,8vh,5rem)]"
 				>
@@ -122,7 +126,7 @@
 				</span>
 				<span
 					style:transform={`translate3d(0, ${scroll * -1}px, 0)`}
-					in:typewriter|global={{ speed: animationspeed * 0.15, delay: 1900 * animationdelay }}
+					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 1900 * animationdelay }}
 					class="w-full z-10 select-none text-primary-500 dark:text-primary-600 italic font-bold font-display text-center leading-[1] h-auto
 				text-[clamp(5vh,16vh,16vw)] md:text-[clamp(5vh,16vh,9rem)]"
 				>
@@ -147,18 +151,19 @@
 			</div>
 		{/if}
 	</div>
-	<ButtonScrollToSection section={'aboutme'}>
-		{$t({ key: 'about-me', defaultValue: 'About me' })}
-	</ButtonScrollToSection>
-</section> -->
+
+		<ButtonScrollToSection section={'aboutme'}>
+			{$t({ key: 'about-me', defaultValue: 'About me' })}
+		</ButtonScrollToSection>
+</section>
 
 <!-- on:enterViewport={AboutAnimation} -->
 <section
 	use:viewport
 	id="aboutme"
-	class="relative w-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20"
+	class="relative w-full !min-h-[100dvh] min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20"
 >
-	<div class="sm:mb-auto md:my-auto mx-auto max-w-4xl mb-auto">
+	<div class=" sm:mb-auto md:my-auto mx-auto max-w-4xl my-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>

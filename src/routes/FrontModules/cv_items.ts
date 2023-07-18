@@ -55,7 +55,7 @@ export let cvItems = [
     fromYear: '2021',
     fromMonth: '09',
     toYear: '2023',
-    toMonth: '06',
+    toMonth: '07',
     shortdescription: 'Principles of design engineering, typography, color theory, visual communication',
     info: 'Universiat Politécnica de Valencia. I learned about the principles and practices of Design Engineering. I studied topics such as typography, color theory, and visual communication, as well as more technical subjects such as design software and printing processes.'
   },

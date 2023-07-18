@@ -28,7 +28,7 @@
 					<T keyName="direction" defaultValue="Direction" />
 				</h3>
 				<p class="text-left text-sm mt-0.5 align-baseline ">
-					Calle Azucena 10, Piso 20<br />46003 Valencia, Valencia
+					Calle Azucena 10, Piso 20<br />46025 Valencia, Valencia
 				</p>
 				<h3 class="align-baseline text-base">
 					<T keyName="telephone" defaultValue="Telephone" />

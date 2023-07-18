@@ -92,7 +92,7 @@
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 <section
 	id="start"
-	class="relative flex min-h-[calc(100dvh_-_3.5rem)] md:min-h-[calc(100dvh_-_7rem)]"
+	class="relative w-screen flex min-h-[calc(100dvh_-_3.5rem)] md:min-h-[calc(100dvh_-_7rem)]"
 >
 	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
 		<h2 class="text-left mx-4 md:w-1/2 text-base mb-4 md:mb-0">
@@ -102,7 +102,7 @@
 			/>
 		</h2>
 		<div
-			class="md:w-1/2 text-2xl md:text-3xl w-full flex flex-col font-sans space-y-4 mb-auto md:my-auto"
+			class="md:w-1/2 text-2xl md:text-3xl w-full pl-4 flex flex-col font-sans space-y-4 mb-auto md:my-auto"
 		>
 			{#each sectionNames as section, i}
 				<button
