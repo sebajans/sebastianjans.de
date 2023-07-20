@@ -53,20 +53,16 @@
 							</p>
 							{#if item.link?.includes('https')}
 								<a
-									class="w-fit mt-auto ml-auto"
+									class="w-fit mt-auto ml-auto btn btn-navajo"
 									target="_blank"
 									rel="noreferrer noopener"
 									href={item.link}
 								>
-									<button class="btn btn-navajo w-fit">
 										<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
-									</button>
 								</a>
 							{:else}
-								<a class="w-fit mt-auto ml-auto" href={item.link}>
-									<button class="btn btn-navajo w-fit">
+								<a class="w-fit mt-auto ml-auto btn btn-navajo" href={item.link}>
 										<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
-									</button>
 								</a>
 							{/if}
 						</div>

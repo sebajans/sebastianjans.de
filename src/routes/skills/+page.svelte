@@ -142,9 +142,7 @@
 			defaultValue="If you're still hesitant, feel free to give me a brief call, and we can chat about your business!"
 		/>
 	</p>
-	<a href="/contact">
-		<button class="btn btn-highlight w-fit whitespace-nowrap">
+	<a class="btn btn-highlight w-fit whitespace-nowrap" href="/contact">
 			<T keyName="skills-convince-button" defaultValue="Contact me" />
-		</button>
 	</a>
 </div>
