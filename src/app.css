@@ -88,6 +88,9 @@
   .h-works {
 		height: calc(100svh - 10rem);
 	}
+  .h-worksmd {
+		height: calc(100% - 10rem);
+	}
 
   @media print {
     body * {

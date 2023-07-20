@@ -1,26 +1,38 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
-	import { scrollInSection } from '$lib/functions/scrollInSection';
 	import { settingsState } from '$lib/stores/settingsState';
-
-	export let scroll: number;
-	export let windowHeight: number;
-	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);
+	import { fly, fade } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
+	
+	import IntersectionObserver from 'svelte-intersection-observer';
 
 	let srcKamadoLogoDark = '/logos/logo-kamadob10-white.webp';
 	let srcKamadoLogo = '/logos/logo-kamadob10.webp';
 	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
+
+	import { scrollInSection } from '$lib/functions/scrollInSection';
+	export let scroll: number;
+	export let windowHeight: number;
+	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);
+
+	let element: HTMLElement;
+  let intersecting:boolean;
+
 </script>
 
-<section id="kamadoB10" class="relative flex w-full flex-col items-center justify-center">
+<IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}
+>	
+<section bind:this={element} id="kamadoB10" class="relative flex w-full flex-col items-center justify-center">
 	<div
-		class="grid h-works md:h-worksmd max-h-[56rem] w-full grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
+		class="grid h-works md:h-worksmd max-h-[38rem] w-full grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
 	>
-		<div
+	{#if intersecting}
+		<div 
+		in:fade={{ duration: 700, easing: cubicOut}}
+		out:fade={{ duration: 300, easing: cubicOut}}
 			id="kb10-logo"
-			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
 			style:background-image={$settingsState.darkMode
 				? `url('${srcKamadoLogoDark}')`
 				: `url('${srcKamadoLogo}')`}
@@ -28,11 +40,12 @@
 		/>
 		<!-- PHONE -->
 		<div
+		in:fly|global={{ x: -300, duration: 500, delay: 200, easing: cubicOut}}
+		out:fly|global={{ y: -200, duration: 800, delay: 0, easing: cubicOut}}
 			class="col-[7_/_span_2] row-[3_/_span_10] flex h-full w-full justify-start md:justify-end md:col-[1_/_span_4] md:row-[1_/_span_12] "
-		>
+			>
 			<div
 				id="kb10-browser-phone"
-				style:transform={`translate3d(calc(-100% + 100 * ${sectionScroll}%),0, 0)`}
 				class="relative z-10 aspect-[10/19.6] h-full max-h-[40rem]  w-auto self-center
 			rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-3xl"
 			>
@@ -59,11 +72,12 @@
 		</div>
 		<!-- BROSWER -->
 		<div
-			class="col-[1_/_span_6] row-[1_/_span_8] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
+		class="col-[1_/_span_6] row-[1_/_span_8] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
 		>
-			<div
+		<div
+		in:fly|global={{ y: -100, duration: 500, delay: 200, easing: cubicOut}}
+		out:fly|global={{ y: -200, duration: 500, delay: 100, easing: cubicOut}}
 				id="kb10-browser-front"
-				style:transform={`translate3d(0,calc(100% - 100 * ${sectionScroll}%), 0)`}
 				class="h-full w-fit self-center aspect-[13/10] shadow-primary-900/30 shadow-md backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
 			>
 				<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
@@ -82,14 +96,18 @@
 		</div>
 
 		<p
+		in:fly|global={{ x: 300, duration: 500, delay: 200, easing: cubicOut}}
+		out:fly|global={{ y: -200, duration: 500, delay: 100, easing: cubicOut}}
 			class="col-[1_/_span_6] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
-			style:transform={`translate3d(calc(200% - ${sectionScroll} * 200%),0, 0)`}
 		>
 			<T
 				keyName="works-p-kamado"
 				defaultValue="This website was for my former employer, who produces high-end handmade kamado grills. The objective for this website to appeal to high-end customers and highlight the USPs."
 			/>
 		</p>
+		{/if}
 	</div>
 </section>
+</IntersectionObserver>
+
 <!-- before:h-4 before:rounded-b-md before:w-1/2 before:bg-primary-700/70 before:backdrop-blur-xl before:absolute before:mt-1 before:left-1/2 before:-translate-x-1/2  -->

@@ -2,7 +2,6 @@
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
 	import { scrollInSection } from '$lib/functions/scrollInSection';
-	import { draw, fade } from 'svelte/transition';
 	import TableFront from './product-items/TableFront.svelte';
 	import TableSide from './product-items/TableSide.svelte';
 	import TableTop from './product-items/TableTop.svelte';

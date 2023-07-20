@@ -1,9 +1,8 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
-
+	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
-	let showTiles: boolean = false;
 
 	let tileOrientation = [
 		{ id: 1, rotation: 0 },
@@ -18,10 +17,11 @@
 			rotation: Math.floor(Math.random() * 4) * 90
 		}));
 	}
-	$: console.log(showTiles);
 
+	let showTiles: boolean = false;
 	let rotating: boolean = false;
 	let intervalId: any;
+
 	function startAutoRotation() {
 		rotating = true;
 		intervalId = setInterval(() => {
@@ -66,8 +66,6 @@
 				keyName="works-p-trels"
 				defaultValue="This is a an award-winning project for my university. It was created for estacion Norte in Valencia, one of the biggest attractions in the city. The elements incorporate various elements from the inside, the reception area and the tracks-area."
 			/>
-			<!-- The exterior of the station consists of a yellow facade and various artistic elements, such as green, orange and red ornaments. 
-				The reception area features wooden ornaments, ceramic tiles and many forms of trencadís, a artistic form of mosaic. The tracks area itself has the same yellow facade as the outside, accompanied by a metallic construct and many glass windows. -->
 		</p>
 		<div
 			class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 items-center
@@ -80,12 +78,13 @@
 				{rotating ? 'Pause Rotation' : 'Start Rotation'}</button
 			>
 		</div>
-		<!-- style="perspective: 8rem; perspective-origin: 50% 50%; transition-property: opacity, transform;" -->
 		<div
-			class="col-start-1 row-start-6 col-span-5 row-span-5 md:row-start-1 md:col-start-8  md:col-span-5 md:row-span-5"
+			class="h-full w-full col-start-1 row-start-6 col-span-5 row-span-5 md:row-start-1 md:col-start-8  md:col-span-5 md:row-span-5"
 		>
 			{#if showTiles}
-				<div class="grid grid-cols-2 w-full grid-rows-2 aspect-square">
+				<div 
+				in:fade={{duration: 300, delay: 0}} 
+				class="grid grid-cols-2 w-full grid-rows-2 aspect-square">
 					{#each tileOrientation as tile}
 						<div class="overflow-clip">
 							<div
@@ -97,13 +96,14 @@
 					{/each}
 				</div>
 			{:else}
-				<!-- style="transform-style: preserve-3d; transform: translateZ(20px);" -->
-				<div class=" relative w-full aspect-square items-start ">
-					<!-- style="transform: rotateY(-5deg)" -->
+				<div
+				in:fade={{duration: 300, delay: 0}} 
+
+				class=" relative w-full aspect-square items-start ">
 					<img
 						width="364"
 						height="364"
-						alt="especimen-tipografico"
+						alt="single-ceramic-tile"
 						class="absolute object-contain h-full"
 						src="/graphicdesign/CeramicTile.webp"
 					/>

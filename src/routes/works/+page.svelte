@@ -16,6 +16,10 @@
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
 	import SectionEnd from './SectionEnd.svelte';
+
+	import IntersectionObserver from 'svelte-intersection-observer';
+	
+
 	import { scrollIntoView } from '$lib/functions/scrollIntoView';
 
 
@@ -29,6 +33,16 @@
 
 	let scroll: number = 0;
 	let windowHeight: number = 0;
+
+	let elementWeb: HTMLElement;
+	let intersectingWeb: boolean;
+	let elementLogo: HTMLElement;
+	let intersectingLogo: boolean;
+	let elementGraphicDesign: HTMLElement;
+	let intersectingGraphicDesign: boolean;
+	let elementProduct: HTMLElement;
+	let intersectingProduct: boolean;
+	
 </script>
 
 <svelte:head>
@@ -72,27 +86,52 @@
 
 <div class="fixed top-0 h-0 w-20 right-0 z-30" />
 
-<WorksHeader backgroundColor="bg-primary-200/50 dark:bg-primary-700/50">
+<WorksHeader show={intersectingWeb} backgroundColor="bg-primary-200/50 dark:bg-primary-700/50">
 	<T keyName="works-webdev" defaultValue="Webdesign" />
 </WorksHeader>
 
-<SectionWebRJ />
-<SectionWebKamado {scroll} {windowHeight} />
-<WorksHeader backgroundColor="bg-primary-300/50 dark:bg-primary-600/50">
-	<T keyName="works-logodesign" defaultValue="Logo Design" />
-</WorksHeader>
-<SectionLogos />
 
-<WorksHeader backgroundColor="bg-primary-400/50 dark:bg-primary-500/50">
+<IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
+	<div bind:this={elementWeb}>
+		<SectionWebRJ />
+		<SectionWebKamado {scroll} {windowHeight} />
+	</div>
+</IntersectionObserver>
+
+	<WorksHeader show={intersectingLogo} backgroundColor="bg-primary-300/50 dark:bg-primary-600/50">
+		<T keyName="works-logodesign" defaultValue="Logo Design" />
+	</WorksHeader>
+
+	
+	<IntersectionObserver element={elementLogo} bind:intersecting={intersectingLogo}>
+	<div bind:this={elementLogo}>
+	<SectionLogos />
+</div>
+</IntersectionObserver>
+
+
+<WorksHeader  show={intersectingGraphicDesign} backgroundColor="bg-primary-400/50 dark:bg-primary-500/50">
 	<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 </WorksHeader>
-<SectionGraphicDesignStuttgart {scroll} {windowHeight} />
+	
+<IntersectionObserver element={elementGraphicDesign} bind:intersecting={intersectingGraphicDesign}>
+<div bind:this={elementGraphicDesign}>
+<SectionGraphicDesignStuttgart />
 <SectionGraphicDesign2 {scroll} {windowHeight} />
 <SectionGraphicDesign3 />
+</div>
+</IntersectionObserver>
 
-<WorksHeader backgroundColor="bg-primary-500/50 dark:bg-primary-400/50">
+
+<WorksHeader show={intersectingProduct} backgroundColor="bg-primary-500/50 dark:bg-primary-400/50">
 	<T keyName="works-productdesign" defaultValue="Product Design" />
 </WorksHeader>
+	
+<IntersectionObserver element={elementProduct} bind:intersecting={intersectingProduct}>
+<div bind:this={elementProduct}>
 	<SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
+</div>
+</IntersectionObserver>
+
 <SectionEnd /> 

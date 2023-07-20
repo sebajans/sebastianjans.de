@@ -169,8 +169,8 @@ bg-gradient-to-bl from-primary-500/50 -->
 	</div>
 </section>
 
-<style>
+<!-- <style>
 	.h-works {
 		height: calc(100svh - 10rem);
 	}
-</style>
+</style> -->
