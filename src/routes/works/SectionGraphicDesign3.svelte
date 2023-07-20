@@ -60,7 +60,7 @@
 		/>
 
 		<p
-			class="text-justify text-sm md:text-base col-start-1 row-start-3 col-span-9 row-span-5 md:row-start-3 md:col-start-1 md:col-span-6 md:row-span-4"
+			class="text-justify text-sm md:text-base col-start-1 row-start-3 col-span-9 row-span-3 md:row-start-3 md:col-start-1 md:col-span-6 md:row-span-4"
 		>
 			<T
 				keyName="works-p-trels"
@@ -71,20 +71,20 @@
 			class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 items-center
 			col-start-7 row-start-6 col-span-3 row-span-4 md:row-start-6 md:col-start-8  md:col-span-5 md:row-span-1"
 		>
-			<button on:click={showTile} class="btn btn-highlight w-full h-fit">
+			<button on:click={showTile} class="btn standardButton w-full h-fit">
 				{showTiles ? 'Show Tile' : 'Show Grid'}
 			</button>
-			<button class="btn btn-highlight w-full h-fit" on:click={rotateTiles}>
+			<button class="btn standardButton w-full h-fit" on:click={rotateTiles}>
 				{rotating ? 'Pause Rotation' : 'Start Rotation'}</button
 			>
 		</div>
 		<div
-			class="h-full w-full col-start-1 row-start-6 col-span-5 row-span-5 md:row-start-1 md:col-start-8  md:col-span-5 md:row-span-5"
+			class="h-full w-full object-top col-start-1 row-start-6 col-span-5 row-span-5 md:row-start-1 md:col-start-8  md:col-span-5 md:row-span-5"
 		>
 			{#if showTiles}
 				<div 
 				in:fade={{duration: 300, delay: 0}} 
-				class="grid grid-cols-2 w-full grid-rows-2 aspect-square">
+				class="grid grid-cols-2 h-auto w-full grid-rows-2 aspect-square">
 					{#each tileOrientation as tile}
 						<div class="overflow-clip">
 							<div
@@ -99,7 +99,7 @@
 				<div
 				in:fade={{duration: 300, delay: 0}} 
 
-				class=" relative w-full aspect-square items-start ">
+				class=" relative md:w-full h-full aspect-square items-start ">
 					<img
 						width="364"
 						height="364"
@@ -131,3 +131,11 @@
 		/>
 	</div>
 </section>
+
+<style>
+	.standardButton {
+		@apply items-center justify-center text-center text-primary-900  dark:text-primary-50 dark:from-primary-50/40 dark:to-primary-50/30 from-primary-900/30 to-primary-900/20 dark:border-primary-50/10 border-primary-900/10 font-light  bg-gradient-to-tr box-border py-3.5 px-3 h-auto md:backdrop-blur-sm flex border transition-all ease-in duration-300 rounded-lg hover:from-primary-900/30 hover:to-primary-900/40
+				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
+				hover:border-primary-900/50 dark:hover:border-primary-50/50;
+	}
+</style>

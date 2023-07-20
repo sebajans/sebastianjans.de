@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { mainClass } from '$lib/stores/mainClass';
 	import { pageTitle } from '$lib/stores/pageTitle';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
-	import { getTranslate } from '@tolgee/svelte';
+	
 	import { fly } from 'svelte/transition';
-	import { workSectionNames } from '$lib/lists/workSectionNames';
+	
 	import SvelteSeo from 'svelte-seo';
+	
+	import { workSectionNames } from '$lib/lists/workSectionNames';
 	import WorksHeader from '../../components/WorksHeader.svelte';
+	
 	import SectionWebRJ from './SectionWebRJ.svelte';
 	import SectionWebKamado from './SectionWebKamado.svelte';
 	import SectionLogos from './SectionLogos.svelte';
@@ -18,18 +19,15 @@
 	import SectionEnd from './SectionEnd.svelte';
 
 	import IntersectionObserver from 'svelte-intersection-observer';
-	
-
 	import { scrollIntoView } from '$lib/functions/scrollIntoView';
 
+	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { getTranslate } from '@tolgee/svelte';
 
 	const { t } = getTranslate(); // Tolgee t translation
 
-	// settings for Layout main class and Title
-	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
-	// mainClass.set('pt-0 pr-0 pl-0 md:pl-0 min-h-screen');
-	mainClass.set('mr-0 !ml-0 w-screen');
+	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
 	let scroll: number = 0;
 	let windowHeight: number = 0;
@@ -84,12 +82,11 @@
 	</div>
 </section>
 
-<div class="fixed top-0 h-0 w-20 right-0 z-30" />
+<div class="fixed md:block top-0 h-0 w-20 right-0 z-30" />
 
-<WorksHeader show={intersectingWeb} backgroundColor="bg-primary-200/50 dark:bg-primary-700/50">
+<WorksHeader show={intersectingWeb} backgroundColor="bg-primary-200/60 dark:bg-primary-700/60">
 	<T keyName="works-webdev" defaultValue="Webdesign" />
 </WorksHeader>
-
 
 <IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
 	<div bind:this={elementWeb}>
@@ -98,40 +95,39 @@
 	</div>
 </IntersectionObserver>
 
-	<WorksHeader show={intersectingLogo} backgroundColor="bg-primary-300/50 dark:bg-primary-600/50">
-		<T keyName="works-logodesign" defaultValue="Logo Design" />
-	</WorksHeader>
+<WorksHeader show={intersectingLogo} backgroundColor="bg-primary-300/60 dark:bg-primary-600/60">
+	<T keyName="works-logodesign" defaultValue="Logo Design" />
+</WorksHeader>
 
 	
-	<IntersectionObserver element={elementLogo} bind:intersecting={intersectingLogo}>
+<IntersectionObserver element={elementLogo} bind:intersecting={intersectingLogo}>
 	<div bind:this={elementLogo}>
-	<SectionLogos />
-</div>
+		<SectionLogos />
+	</div>
 </IntersectionObserver>
 
 
-<WorksHeader  show={intersectingGraphicDesign} backgroundColor="bg-primary-400/50 dark:bg-primary-500/50">
+<WorksHeader  show={intersectingGraphicDesign} backgroundColor="bg-primary-400/60 dark:bg-primary-500/60">
 	<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 </WorksHeader>
 	
 <IntersectionObserver element={elementGraphicDesign} bind:intersecting={intersectingGraphicDesign}>
-<div bind:this={elementGraphicDesign}>
-<SectionGraphicDesignStuttgart />
-<SectionGraphicDesign2 {scroll} {windowHeight} />
-<SectionGraphicDesign3 />
-</div>
+	<div bind:this={elementGraphicDesign}>
+		<SectionGraphicDesignStuttgart />
+		<SectionGraphicDesign2 />
+		<SectionGraphicDesign3 />
+	</div>
 </IntersectionObserver>
 
-
-<WorksHeader show={intersectingProduct} backgroundColor="bg-primary-500/50 dark:bg-primary-400/50">
+<WorksHeader show={intersectingProduct} backgroundColor="bg-primary-500/60 dark:bg-primary-400/60">
 	<T keyName="works-productdesign" defaultValue="Product Design" />
 </WorksHeader>
 	
 <IntersectionObserver element={elementProduct} bind:intersecting={intersectingProduct}>
-<div bind:this={elementProduct}>
-	<SectionProductDesign2 />
-<SectionProductDesignCup {scroll} {windowHeight} />
-</div>
+	<div bind:this={elementProduct}>
+		<SectionProductDesign2 />
+		<SectionProductDesignCup />
+	</div>
 </IntersectionObserver>
 
 <SectionEnd /> 

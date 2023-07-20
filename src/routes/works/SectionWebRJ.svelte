@@ -27,8 +27,8 @@
 	>
 	{#if intersecting}
 		<div 
-		in:fade={{ duration: 700, easing: cubicOut}}
-		out:fade={{ duration: 300, easing: cubicOut}}
+			in:fade={{ duration: 700, easing: cubicOut}}
+			out:fade={{ duration: 300, easing: cubicOut}}
 			id="rena-logo"
 			style:background-image={$settingsState.darkMode ? `url('${srcRenaLogoDark}')` : `url('${srcRenaLogo}')`}
 			class=" row-[1_/_span_2] col-[1_/_span_4] sm:row-[1_/_span_3] sm:col-[1_/_span_] bg-contain bg-no-repeat bg-top bg-origin-content"

@@ -49,7 +49,7 @@
 
 <section id="productdesign" class="relative w-full flex flex-col ">
 	<div
-		class="px-4 flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
+		class="px-4 flex my-auto flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>
 		<div
 			class="flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4"
