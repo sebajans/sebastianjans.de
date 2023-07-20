@@ -1,15 +1,10 @@
-<!-- <script context="module">
-	export const prerender = true;
-</script> -->
 <script lang="ts">
 	import { getTranslate, T } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
-	// import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	// import SvelteSeo from 'svelte-seo';
-	// import Lazy from '../components/Lazy.svelte';
 	import viewport from '../components/useViewportAction';
 	import FrontCert from './FrontModules/FrontCert.svelte';
 	import FrontEdu from './FrontModules/FrontEdu.svelte';
@@ -39,9 +34,6 @@
 
 		const text = node.textContent;
 		const duration = text.length / speed;
-		// if (animationdelay !== null) {
-		// 	delay = delay * animationdelay;
-		// }
 
 		return {
 			delay,
@@ -53,10 +45,6 @@
 		};
 	}
 	
-	let animationAbout = false;
-	function AboutAnimation() {
-		animationAbout = true;
-	}
 	let scroll: any;
 
 	let windowHeight: number = 0;
@@ -79,9 +67,9 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 <section
-	class="relative w-full  md:-mt-28 min-h-screen min-h-screen-ios flex flex-col justfiy-center items-center content-center"
+	class="px-4 md:px-0 relative w-full -mt-24 sm:-mt-28 min-h-[100svh] flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative pb-[calc(100vh_-_6rem)] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
+	<div class="relative pb-[100svh] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
 		{#if visible && animationspeed != null && animationdelay != null}
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
 				<span
@@ -152,6 +140,7 @@
 		{/if}
 	</div>
 
+
 		<ButtonScrollToSection section={'aboutme'}>
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</ButtonScrollToSection>
@@ -161,7 +150,7 @@
 <section
 	use:viewport
 	id="aboutme"
-	class="relative w-full !min-h-[100dvh] min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20"
+	class="px-4 md:px-0 bg- relative w-full !min-h-[100svh] min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20"
 >
 	<div class=" sm:mb-auto md:my-auto mx-auto max-w-4xl my-auto">
 		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">

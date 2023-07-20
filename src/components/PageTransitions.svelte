@@ -11,7 +11,7 @@
 {#key pathname}
 	{#if isMobile}
 		<div
-			class="z-[3] overflow-x-clip w-full flex justify-center"
+			class="z-[3] overflow-x-clip w-screen flex justify-center"
 			style="grid-row: 1 / -1; grid-column: 1 / -1;"
 		>
 			<slot />

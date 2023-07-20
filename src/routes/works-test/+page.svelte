@@ -68,10 +68,10 @@ let zoomIn: boolean = false;
 
 <section
 	id="start"
-	class="relative w-screen flex min-h-[calc(100dvh_-_3.5rem)] md:min-h-[calc(100dvh_-_7rem)]"
+	class="relative w-full flex min-h-[calc(100svh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
 >
 	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
-		<h2 class="text-left mx-4 md:w-1/2 text-base mb-4 md:mb-0">
+		<h2 class="text-left md:w-1/2 text-base mb-4 md:mb-0">
 			<T
 				keyName="intro-works"
 				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
@@ -94,20 +94,20 @@ let zoomIn: boolean = false;
 	</div>
 </section>
 
-<WorksHeader backgroundColor="bg-primary-200/70 dark:bg-primary-700/70">
+<!-- <WorksHeader backgroundColor="bg-primary-200/70 dark:bg-primary-700/70">
 	<T keyName="works-webdev" defaultValue="Webdesign" />
-</WorksHeader>
+</WorksHeader> -->
 
 
 
-<section  id="productdesign" class="justify-center relative flex flex-col ">
+<!-- <section  id="productdesign" class="max-h-screen justify-center relative flex flex-col ">
 	<div
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>
 		<div
 			class="gap-4 md:gap-5 h-full grid justify-center grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 items-center max-w-4xl w-full sm:w-full"
 		>
-		<IntersectionObserver threshold={0.2} element={element1} bind:intersecting={intersecting1}>
+		<IntersectionObserver once threshold={0.2} element={element1} bind:intersecting={intersecting1}>
 
 		<div bind:this={element1}
 		class="
@@ -124,7 +124,7 @@ let zoomIn: boolean = false;
 				/>
 		</div>
 	</IntersectionObserver>
-	<IntersectionObserver threshold={0.2} element={element2} bind:intersecting={intersecting2}>
+	<IntersectionObserver once threshold={0.2} element={element2} bind:intersecting={intersecting2}>
 		<div bind:this={element2}
 				class="
 				w-full h-full overflow-hidden 
@@ -140,7 +140,7 @@ let zoomIn: boolean = false;
 				/>
 			</div>
 		</IntersectionObserver>
-		<IntersectionObserver threshold={0.2} element={element3} bind:intersecting={intersecting3}>
+		<IntersectionObserver once threshold={0.2} element={element3} bind:intersecting={intersecting3}>
 			<div bind:this={element3}	
 				class="{intersecting3 ? '' : 'translate-y-1/2 opacity-0'} transition-all duration-500 delay-150 w-full h-full overflow-hidden 
 			 col-start-4 row-start-1 md:row-start-1 md:col-start-5 col-span-6 row-span-5 md:col-span-8 md:row-span-2"
@@ -156,7 +156,7 @@ let zoomIn: boolean = false;
 				</p>
 			</div>
 		</IntersectionObserver>
-		<IntersectionObserver threshold={0.2} element={element4} bind:intersecting={intersecting4}>
+		<IntersectionObserver once threshold={0.2} element={element4} bind:intersecting={intersecting4}>
 	
 			<div bind:this={element4}	
 				id="center"
@@ -172,7 +172,7 @@ let zoomIn: boolean = false;
 				/>
 			</div>
 		</IntersectionObserver>
-		<IntersectionObserver threshold={0.2} element={element5} bind:intersecting={intersecting5}>
+		<IntersectionObserver once threshold={0.2} element={element5} bind:intersecting={intersecting5}>
 	
 			<div bind:this={element5}
 				id="bottom-center"
@@ -189,7 +189,7 @@ let zoomIn: boolean = false;
 				/>
 			</div>
 		</IntersectionObserver>
-		<IntersectionObserver threshold={0.2} element={element6} bind:intersecting={intersecting6}>
+		<IntersectionObserver once threshold={0.2} element={element6} bind:intersecting={intersecting6}>
 	
 			<div bind:this={element6}
 				class="{intersecting6 ? '' : 'translate-y-1/2 opacity-0'} transition-all duration-500 delay-150 relative w-full h-full 
@@ -215,7 +215,7 @@ let zoomIn: boolean = false;
 				/>
 			</div>
 		</IntersectionObserver>
-		<IntersectionObserver threshold={0.2} element={element7} bind:intersecting={intersecting7}>
+		<IntersectionObserver once threshold={0.2} element={element7} bind:intersecting={intersecting7}>
 	
 			<div bind:this={element7}
 				id="bottom-right"
@@ -237,4 +237,4 @@ let zoomIn: boolean = false;
 	</div>
 </section>
 
-<section class="h-screen "></section>
+<section class="h-screen "></section> -->

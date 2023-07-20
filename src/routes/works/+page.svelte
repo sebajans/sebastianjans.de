@@ -90,12 +90,13 @@
 	keywords="Freelance product design, minimalistic logo design, front-end svelte development, custom webdesign solutions, diseñador de productos"
 />
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
+
 <section
 	id="start"
-	class="relative w-screen flex min-h-[calc(100dvh_-_3.5rem)] md:min-h-[calc(100dvh_-_7rem)]"
+	class="relative w-full flex min-h-[calc(100svh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
 >
 	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
-		<h2 class="text-left mx-4 md:w-1/2 text-base mb-4 md:mb-0">
+		<h2 class="text-left md:w-1/2 text-base mb-4 md:mb-0">
 			<T
 				keyName="intro-works"
 				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
@@ -119,6 +120,7 @@
 </section>
 
 <div class="fixed top-0 h-0 w-20 right-0 z-30" />
+
 <WorksHeader backgroundColor="bg-primary-200/70 dark:bg-primary-700/70">
 	<T keyName="works-webdev" defaultValue="Webdesign" />
 </WorksHeader>
@@ -128,6 +130,7 @@
 	<T keyName="works-logodesign" defaultValue="Logo Design" />
 </WorksHeader>
 <SectionLogos />
+<!-- 
 <WorksHeader backgroundColor="bg-primary-400/70 dark:bg-primary-500/70">
 	<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 </WorksHeader>
@@ -139,4 +142,4 @@
 </WorksHeader>
 <SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
-<SectionEnd />
+<SectionEnd /> -->
