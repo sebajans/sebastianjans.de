@@ -25,16 +25,7 @@
 		%sveltekit.head%
 	</head>
 	<body  data-sveltekit-preload-data="hover">
-		<script is:inline>
-			const darkMode = sessionStorage.getItem("darkMode");
-        if (null !== darkMode) {
-            document.body.classList.add(
-                darkMode === "true" ? "dark" : "light"
-            );
-        }
-		</script>
-		<div class="relative antialiased  font-serif min-h-screen min-h-screen-ios bg-primary-50 dark:bg-primary-900 text-primary-900 dark:text-primary-50" style="display: contents">%sveltekit.body%</div>
-	<!-- "/static/netlify-form-helper.html" -->
+		<div style="display: contents">%sveltekit.body%</div>
 		<form name="contact" netlify netlify-honeypot="bot-field" hidden>
 			<input type="text" name="name" >
 			<input type="email" name="email" >

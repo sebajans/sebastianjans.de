@@ -16,7 +16,7 @@ bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50  -->
 		<h1 class="w-full text-5xl text-right">
 			<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />
 		</h1>
-		<h3 class="w-full md:w-2/3 self-end text-2xl text-right py-4">
+		<h3 class="dark:text-primary-50 w-full md:w-2/3 self-end text-2xl text-right py-4">
 			<T
 				keyName="download-portfolio-text"
 				defaultValue="Download my portfolio below to see more of my work."

@@ -2,8 +2,8 @@
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
 	import { scrollInSection } from '../../components/scrollInSection';
-	import { nightMode } from '$lib/stores/nightMode';
-	import WorksHeader from '../../components/WorksHeader.svelte';
+
+	import { settingsState } from '$lib/stores/settingsState';
 
 	export let scroll: number;
 	export let windowHeight: number;
@@ -25,7 +25,7 @@
 		<div
 			id="rena-logo"
 			style:transform={`translate3d(0,calc(200% - ${sectionScroll}* 200%), 0)`}
-			style:background-image={$nightMode ? `url('${srcRenaLogoDark}')` : `url('${srcRenaLogo}')`}
+			style:background-image={$settingsState.darkMode ? `url('${srcRenaLogoDark}')` : `url('${srcRenaLogo}')`}
 			class="row-[1_/_span_2] col-[1_/_span_4] sm:row-[1_/_span_3] sm:col-[1_/_span_] bg-contain bg-no-repeat bg-top bg-origin-content"
 		/>
 

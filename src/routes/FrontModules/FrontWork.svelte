@@ -4,7 +4,7 @@
 	import { fly } from 'svelte/transition';
 	import { cvItems } from './cv_items';
 	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';
-	import { nightMode } from '$lib/stores/nightMode';
+	import { settingsState } from '$lib/stores/settingsState';
 </script>
 
 
@@ -29,7 +29,7 @@
 					class="snap-center snap-always md:snap-none w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start "
 				>
 					<div
-						style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
+						style:background-image={$settingsState.darkMode ? `url('${item.image}')` : `url('${item.image}')`}
 						class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 md:translate-y-0 md:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
 					/>
 					<div class="md:w-4/5 box-content self-stretch">

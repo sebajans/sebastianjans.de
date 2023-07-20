@@ -1,23 +1,14 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { nightMode } from '$lib/stores/nightMode';
-
-	// onMount(() => {
-	// 	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-	// 		darkMode = e.matches;
-	// 	});
-	// });
-	// let darkMode = isDarkMode();
-	// $: toggleColorScheme(darkMode);
+	import { settingsState, toggleDarkMode } from "$lib/stores/settingsState";
 </script>
 
 <button
 	aria-label="DarkModeToggle"
 	class="p-2 h-10 w-10 relative overflow-hidden rounded-md transition-colors duration-250 hover:text-primary-300 dark:hover:text-primary-500 bg-primary-900/20 hover:bg-primary-900 text-primary-900 dark:bg-primary-50/20 dark:hover:bg-primary-50 dark:text-primary-50"
-	on:click={nightMode.toggleDarkMode}
+	on:click={toggleDarkMode}
 >
 	<div
-		class="{$nightMode
+		class="{$settingsState.darkMode
 			? 'rotate-90'
 			: ''} -translate-y-[50%] absolute h-6 w-6 origin-[50%_400%] transition-transform duration-500"
 	>
@@ -37,7 +28,7 @@
 		</svg>
 	</div>
 	<div
-		class="{$nightMode
+		class="{$settingsState.darkMode
 			? 'rotate-0'
 			: '-rotate-90'} -translate-y-[50%] absolute h-6 w-6 origin-[50%_400%] transition-transform duration-500"
 	>
@@ -59,4 +50,3 @@
 	<slot />
 </button>
 
-<!-- https://v2.tailwindcss.com/docs/dark-mode -->

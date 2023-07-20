@@ -7,7 +7,6 @@
 	import { sectionNames } from './sectionNames';
 	import SvelteSeo from 'svelte-seo';
 	import WorksHeader from '../../components/WorksHeader.svelte';
-	// import Lazy from '../../components/Lazy.svelte';
 	import SectionWebRJ from './SectionWebRJ.svelte';
 	import SectionWebKamado from './SectionWebKamado.svelte';
 	import SectionLogos from './SectionLogos.svelte';
@@ -96,12 +95,12 @@
 	class="relative w-full flex min-h-[calc(100svh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
 >
 	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
-		<h2 class="text-left md:w-1/2 text-base mb-4 md:mb-0">
+		<p class="text-left md:w-1/2 text-base mb-4 md:mb-0">
 			<T
 				keyName="intro-works"
 				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
 			/>
-		</h2>
+		</p>
 		<div
 			class="md:w-1/2 text-2xl md:text-3xl w-full pl-4 flex flex-col font-sans space-y-4 mb-auto md:my-auto"
 		>
@@ -110,7 +109,7 @@
 					style="width:{`calc(100% - ${i * 16}px)`}"
 					on:click|preventDefault={() => scrollIntoView(section.id)}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
-					class="md:py-4 ml-auto py-2 backdrop-blur-md duration-300 delay-[50] rounded-lg text-left pl-3 transition-all {section.color} "
+					class="dark:text-primary-50 md:py-4 ml-auto py-2 backdrop-blur-md duration-300 delay-75 rounded-lg text-left pl-3 transition-all {section.color} "
 				>
 					<T keyName="works-{section.id}" defaultValue={section.text} />
 				</button>

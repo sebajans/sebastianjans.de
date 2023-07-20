@@ -103,30 +103,29 @@ module.exports = {
         },
         blobpulse: {
           '0%': {
-            rotate: '0deg',
             opacity: '1',
           },
           '33%': {
-            transform: 'scale( 2 1)',
+            transform: 'scale( 2, 1)',
             opacity: '0.9',
           },
           '66%': {
-            transform: 'scale(1 1.5)',
+            transform: 'scale(1, 1.5)',
             opacity: '0.7',
           },
           '100%': {
-            rotate: '360deg',
+            transform: 'rotate(360deg)',
             opacity: '1',
           },
         },
         blobpulsesmall: {
           '0%, 100%': {
-            rotate: '-40deg',
+            transform: 'rotate(-40deg)',
             opacity: '1',
           },
           '50%': {
-            transform: 'scale(0.5 2)',
-            rotate: '40deg',
+            transform: 'scale(0.5, 2) rotate(40deg)',
+            // rotate: '40deg',
             opacity: '0.4',
           },
         }

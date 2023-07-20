@@ -41,7 +41,7 @@
 			inquiries. "
 			/>
 		</p>
-		<div class="flex flex-row h-fit flex-wrap">
+		<div class="dark:text-primary-100 flex flex-row h-fit flex-wrap">
 			<span class="w-1/4 font-sans font-semibold uppercase"
 				><T keyName="my-phone" defaultValue="Phone: " /></span
 			>

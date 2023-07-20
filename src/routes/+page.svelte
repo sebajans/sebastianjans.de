@@ -50,6 +50,10 @@
 	let windowHeight: number = 0;
 </script>
 
+<svelte:head>
+<title>Sebastian Jans Design | Welcome</title>
+</svelte:head>
+
 <!-- <SvelteSeo
 	title="Sebastian Jans Design | Welcome"
 	description="Online Portfolio for Sebastian Jans, a Product and Graphic Designer"
@@ -74,7 +78,7 @@
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
 				<span
 					style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
-					class="w-full select-none text-primary-500 font-bold font-display text-left leading-[0.2] h-auto
+					class="welcomeText text-primary-500 font-bold  text-left leading-[0.2] 
 				text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
 					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 100 * animationdelay }}
 				>
@@ -83,7 +87,7 @@
 				<span
 					style:transform={`translate3d(0, ${scroll * -2}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.2, delay: 750 * animationdelay }}
-					class="w-full select-none font-display italic text-right leading-[0.5] h-auto
+					class="welcomeText text-primary-900 dark:text-primary-100  italic text-right leading-[0.5] 
 				text-[clamp(5vh,15vh,28vw)] md:text-[clamp(5vh,15vh,6rem)]"
 				>
 					{$t({ key: 'and', defaultValue: 'and' })}
@@ -91,7 +95,7 @@
 				<span
 					style:transform={`translate3d(0, ${scroll * -0.8}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.3, delay: 1100 * animationdelay }}
-					class="w-full z-10 select-none text-primary-600 dark:text-primary-300 font-bold font-display italic text-center leading-[1.2] h-auto
+					class="welcomeText z-10 text-primary-600 dark:text-primary-300 font-bold  italic text-center leading-[1.2] 
 				text-[clamp(5vh,14vh,13vw)] md:text-[clamp(5vh,14vh,7rem)]"
 				>
 					{$t({ key: 'welcome', defaultValue: 'welcome' })}
@@ -99,7 +103,7 @@
 				<span
 					style:transform={`translate3d(0, ${scroll * -4}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.3, delay: 1500 * animationdelay }}
-					class="w-full select-none font-display font-bold text-left leading-[0.2] h-auto
+					class="welcomeText text-primary-900 dark:text-primary-100  font-bold text-left leading-[0.2] 
 				text-[clamp(2vh,6vh,10vw)] md:text-[clamp(2vh,6vh,5rem)]"
 				>
 					{$t({ key: 'to_my', defaultValue: 'to my' })}
@@ -107,7 +111,7 @@
 				<span
 					style:transform={`translate3d(0, ${scroll * -2.8}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.2, delay: 1750 * animationdelay }}
-					class="w-full select-none italic font-normal font-display text-right leading-[0] h-auto
+					class="welcomeText text-primary-900 dark:text-primary-100 italic font-normal  text-right leading-[0] 
 				text-[clamp(1rem,8vh,10vw)] md:text-[clamp(1rem,8vh,5rem)]"
 				>
 					{$t({ key: 'online', defaultValue: 'Online' })}
@@ -115,7 +119,7 @@
 				<span
 					style:transform={`translate3d(0, ${scroll * -1}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 1900 * animationdelay }}
-					class="w-full z-10 select-none text-primary-500 dark:text-primary-600 italic font-bold font-display text-center leading-[1] h-auto
+					class="welcomeText z-10 text-primary-500 dark:text-primary-600 italic font-bold  text-center leading-[1] 
 				text-[clamp(5vh,16vh,16vw)] md:text-[clamp(5vh,16vh,9rem)]"
 				>
 					{$t({ key: 'Portfolio', defaultValue: 'Portfolio!' })}
@@ -200,3 +204,9 @@
 <FrontWork />
 <FrontEdu />
 <FrontCert />
+
+<style>
+	.welcomeText {
+		@apply w-full select-none h-auto;
+	}
+</style>

@@ -71,12 +71,12 @@ let zoomIn: boolean = false;
 	class="relative w-full flex min-h-[calc(100svh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
 >
 	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
-		<h2 class="text-left md:w-1/2 text-base mb-4 md:mb-0">
+		<p class="text-left md:w-1/2 text-base mb-4 md:mb-0">
 			<T
 				keyName="intro-works"
 				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
 			/>
-		</h2>
+		</p>
 		<div
 			class="md:w-1/2 text-2xl md:text-3xl w-full pl-4 flex flex-col font-sans space-y-4 mb-auto md:my-auto"
 		>

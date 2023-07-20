@@ -2,12 +2,11 @@
 	import '../app.css';
 	import { beforeUpdate } from 'svelte';
 	import { onMount } from 'svelte';
-	// import { TolgeeProvider } from '@tolgee/svelte';
 	import { TolgeeProvider, Tolgee, DevTools, FormatSimple } from '@tolgee/svelte';
-	import { nightMode } from '$lib/stores/nightMode';
 	import { pageTitle } from '$lib/stores/pageTitle';
-	import NavBar from '../components/NavBar.svelte';
+	import { settingsState} from '$lib/stores/settingsState';
 
+	import NavBar from '../components/NavBar.svelte';
 	import localeEn from '../i18n/en.json';
 	import localeEs from '../i18n/es.json';
 	import localeDe from '../i18n/de.json';
@@ -26,9 +25,6 @@
 	beforeUpdate(() => ((showMenu = false), (showHeader = false)));
 
 	onMount(() => {
-		if (nightMode.userPrefersDark()) {
-			nightMode.setDarkMode(true);
-		}
 		initialized = true;
 	});
 
@@ -62,6 +58,12 @@
 	// };
 </script>
 
+<div
+  class="relative antialiased  font-serif min-h-screen min-h-screen-ios bg-primary-50 dark:bg-primary-900 text-primary-900 dark:text-primary-50 {$settingsState.darkMode
+    ? 'dark'
+    : 'light'}"
+  style="display: contents; overflow:hidden;"
+>
 <div id="blob-motion" class="motion-reduce:hidden">
 	<Blob />
 </div>
@@ -88,3 +90,4 @@
 		</main>
 	</TolgeeProvider>
 {/if}
+</div>

@@ -11,13 +11,9 @@
 
 <li class="grow h-14 max-h-32 items-stretch w-full ">
 		<a  aria-label="Navigate to {text}"
-			class="navbutton {isActive
-				? 'dark:bg-primary-50 bg-primary-900 dark:text-primary-900 text-primary-50 dark:group-hover:bg-primary-50/80 group-hover:bg-primary-900/80 font-normal  '
-				: 'dark:from-primary-50/20 dark:to-primary-50/10 from-primary-900/10 to-primary-900/20 dark:border-primary-50/10 border-primary-900/5 font-light'}
-				hover:from-primary-800/30 hover:to-primary-800/40
-				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
-				hover:border-primary-900/50 dark:hover:border-primary-50/50
-				 buttonStyle
+			class="navButton {isActive
+				? 'isActive '
+				: 'isNotActive'}
 				"
 			href={link}
 		>
@@ -26,7 +22,15 @@
 </li>
 
 <style>
-	.buttonStyle {
-		@apply bg-gradient-to-tr box-border text-lg text-left py-3.5 px-3 h-auto md:backdrop-blur-sm flex border border-transparent transition-all ease-in duration-300 rounded-lg
+	.navButton {
+		@apply bg-gradient-to-tr box-border text-lg text-left py-3.5 px-3 h-auto md:backdrop-blur-sm flex border border-transparent transition-all ease-in duration-300 rounded-lg hover:from-primary-800/30 hover:to-primary-800/40
+				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
+				hover:border-primary-900/50 dark:hover:border-primary-50/50;
+	}
+	.isActive {
+		@apply text-primary-50 dark:bg-primary-50 bg-primary-900 dark:text-primary-900 font-normal;
+	}
+	.isNotActive {
+		@apply dark:from-primary-50/20 dark:to-primary-50/10 from-primary-900/10 to-primary-900/20 dark:border-primary-50/10 border-primary-900/5 font-light;
 	}
 </style>

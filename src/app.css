@@ -38,9 +38,11 @@
     -ms-hyphens: auto;
     hyphens: auto;
   }
-  p {
+  p, li, h1, h2, label {
       @apply text-primary-900 dark:text-primary-100;
   }
+
+
   .inverted {
       @apply dark:text-primary-900 text-primary-100;
   }

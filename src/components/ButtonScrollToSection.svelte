@@ -33,7 +33,7 @@
 			out:fly={{ y: -50, duration: 500, delay: 0 }}
 			aria-label="scrollIntoView"
 			on:click|preventDefault={scrollIntoView}
-			class=" hover:text-primary-400 text-center h-auto w-auto left-1/2 transform hover:scale-95 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-4 md:bottom-4"
+			class="text-primary-900 dark:text-primary-100 hover:text-primary-400 dark:hover:text-primary-500 text-center h-auto w-auto left-1/2 transform hover:scale-95 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-4 md:bottom-4"
 			href="#{section}"
 		>
 			<span class="pointer-events-none leading-9 font-sans font-normal tracking-wide">
@@ -53,10 +53,10 @@
 	{/if}
 </IntersectionObserver>
 
-<style>
+<!-- <style>
 	.transitions-button {
 		transition-property: opacity, transform;
 		transition-duration: 500ms, 300ms;
 		transition-delay: 0s, 0.2s;
 	}
-</style>
+</style> -->

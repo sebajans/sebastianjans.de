@@ -2,7 +2,7 @@
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
 	import { scrollInSection } from '../../components/scrollInSection';
-	import { nightMode } from '$lib/stores/nightMode';
+	import { settingsState } from '$lib/stores/settingsState';
 
 	export let scroll: number;
 	export let windowHeight: number;
@@ -21,7 +21,7 @@
 		<div
 			id="kb10-logo"
 			style:transform={`translate3d(0,calc(80% - ${sectionScroll}* 80%), 0)`}
-			style:background-image={$nightMode
+			style:background-image={$settingsState.darkMode
 				? `url('${srcKamadoLogoDark}')`
 				: `url('${srcKamadoLogo}')`}
 			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-left-bottom bg-no-repeat bg-origin-content md:col-[5_/_span_6] md:row-[1_/_span_2]"

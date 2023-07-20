@@ -3,7 +3,7 @@
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
 	import { LogoItems } from './logoitems';
-	import { nightMode } from '$lib/stores/nightMode';
+	import { settingsState } from '$lib/stores/settingsState';
 	import { fly } from 'svelte/transition';
 
 	type m = { x: number; y: number };
@@ -77,7 +77,7 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 						<button
 							on:keydown
 							on:click={() => (activeNumber = i)}
-							style:background-image={$nightMode
+							style:background-image={$settingsState.darkMode
 								? `url('${logo.imageDark}')`
 								: `url('${logo.image}')`}
 							class="bg-contain bg-no-repeat bg-center bg-origin-content w-full max-w-[120px] md:max-w-[160px] aspect-square p-2 duration-200 transition-all"
@@ -98,7 +98,7 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 					: 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5"
 			>
 				<div
-					style:background-image={$nightMode
+					style:background-image={$settingsState.darkMode
 						? `url('${LogoItems[activeNumber].imageDark}')`
 						: `url('${LogoItems[activeNumber].image}')`}
 					class=" bg-contain bg-no-repeat bg-center bg-origin-content h-1/2 aspect-square p-2 md:p-4 duration-200 transition-all my-auto"

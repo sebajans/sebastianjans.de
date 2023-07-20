@@ -46,8 +46,7 @@
 	$: selectedItem = options.find((x) => x.value == selected);
 </script>
 
-<!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
-bg-gradient-to-bl from-primary-500/50  -->
+
 <section id="productdesign" class="relative flex flex-col ">
 	<div
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
@@ -67,7 +66,7 @@ bg-gradient-to-bl from-primary-500/50  -->
 					<div
 						class="
 					{imageVisible ? 'translate-x-[74px] opacity-0' : ''}
-					duration- 1000 
+					duration- 1000 dark:text-primary-100
 					translate-y-[4px] h-[216px] w-auto md:my-10 relative"
 						style="perspective: 25rem; perspective-origin: 50% 50%; transition-property: opacity, transform; 
 					{imageVisible
