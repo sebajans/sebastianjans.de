@@ -11,7 +11,7 @@
 
 	import CupholderModel from '../works/product-items/CupholderModel.svelte';
 import CupHolderModelClose from '../works/product-items/CupHolderModelClose.svelte';
-import { scrollInSection } from '../../components/scrollInSection';
+import { scrollInSection } from '$lib/functions/scrollInSection';
 
 
 	const { t } = getTranslate(); // Tolgee t translation

@@ -47,7 +47,7 @@
 </script>
 
 
-<section id="productdesign" class="relative w-[calc(100vw_-_2rem)] flex flex-col ">
+<section id="productdesign" class="relative w-full flex flex-col ">
 	<div
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SocialMediaButton from './SocialMediaButton.svelte';
-	import { socialMedia } from './socialMedia';
+	import { socialMedia } from '$lib/lists/socialMedia';
 	import DarkModeButton from './DarkModeButton.svelte';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
 	import T from '@tolgee/svelte/T.svelte'; // change import statement

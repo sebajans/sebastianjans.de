@@ -76,7 +76,7 @@
 	<T keyName="works-webdev" defaultValue="Webdesign" />
 </WorksHeader>
 
-<SectionWebRJ {scroll} {windowHeight} />
+<SectionWebRJ />
 <SectionWebKamado {scroll} {windowHeight} />
 <WorksHeader backgroundColor="bg-primary-300/50 dark:bg-primary-600/50">
 	<T keyName="works-logodesign" defaultValue="Logo Design" />

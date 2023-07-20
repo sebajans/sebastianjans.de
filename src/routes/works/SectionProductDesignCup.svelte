@@ -5,7 +5,7 @@
 	import CupholderModel from './product-items/CupholderModel.svelte';
 	import CupHolderModelClose from './product-items/CupHolderModelClose.svelte';
 	
-	import { scrollInSection } from '../../components/scrollInSection';
+	import { scrollInSection } from '$lib/functions/scrollInSection';
 	$: sectionScroll = scrollInSection(scroll, 6, windowHeight);
 	let zoomIn: boolean = false;
 

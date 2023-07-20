@@ -1,7 +1,7 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
-	import { scrollInSection } from '../../components/scrollInSection';
+	import { scrollInSection } from '$lib/functions/scrollInSection';
 	import { draw, fade } from 'svelte/transition';
 	import TableFront from './product-items/TableFront.svelte';
 	import TableSide from './product-items/TableSide.svelte';

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import NavButton from './NavButton.svelte';
-	import { navItems } from './navItems';
+	import { navItems } from '$lib/lists/navItems';
 	import { onMount } from 'svelte';
 	import MenuToggle from './MenuToggle.svelte';
 	import BackdropBlur from './BackdropBlur.svelte';

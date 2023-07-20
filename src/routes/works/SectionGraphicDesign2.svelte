@@ -1,7 +1,7 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
-	import { scrollInSection } from '../../components/scrollInSection';
+	import { scrollInSection } from '$lib/functions/scrollInSection';
 
 	export let scroll: number;
 	export let windowHeight: number;
