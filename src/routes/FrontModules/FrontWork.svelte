@@ -7,28 +7,33 @@
 	import { nightMode } from '$lib/stores/nightMode';
 </script>
 
+
 <section
-	class="px-4 md:px-0 relative w-full h-full min-h-screen min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20 pb-32"
+	class=" md:px-0 pt-4 md:pt-20 pb-20 md:pb-20 relative h-full w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] min-h-screen  flex flex-col justfiy-center content-center"
 	id="cv_jobs"
 >
-	<div class="relative space-y-4 max-w-4xl w-full mx-auto my-auto">
-		<!-- in:fly|global={{ y: 50, duration: 500 * animationspeed }}  -->
-		<h1 class="text-center md:text-left text-primary-900 dark:text-primary-50">
-			<T keyName="work-experience" defaultValue="Work Experience" />
-		</h1>
+	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
+		<h1
+			in:fly|global={{ y: 50, duration: 500 }}
+			class="text-center md:text-left text-primary-900 dark:text-primary-50"
+		>
+		<T keyName="work-experience" defaultValue="Work Experience" />
+	</h1>
+		<ul 
+		class="hs snap-x snap-mandatory overflow-x-auto">
+		 <div class="h-px w-px"></div>
 		{#each cvItems as item}
 			{#if item.category === 'job'}
-				<div
+				<li
 					in:fly|global={{ y: 50, duration: 500, delay: 250 * item.id }}
-					class="w-full flex sm:flex-row flex-col sm:space-x-4 items-end sm:items-start "
+					class="snap-center snap-always md:snap-none w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start "
 				>
 					<div
 						style:background-image={$nightMode ? `url('${item.image}')` : `url('${item.image}')`}
-						class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 sm:mt-0 translate-y-[3.75rem] -translate-x-4 sm:translate-y-0 sm:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
+						class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 md:translate-y-0 md:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
 					/>
-					<div class="md:w-4/5  box-content sm:self-stretch">
-						<!-- {@const frMonth = item.fromMonth.toString() } -->
-						<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
+					<div class="md:w-4/5 box-content self-stretch">
+						<h2 class="font-sans mr-28 md:mr-0 text-primary-900 dark:text-primary-50 text-2xl">
 							<T keyName={item.name} defaultValue={item.name} />
 						</h2>
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
@@ -38,11 +43,44 @@
 							<T keyName="text-{item.name}" defaultValue={item.info} />
 						</p>
 					</div>
-				</div>
+				</li>
 			{/if}
 		{/each}
+		<div class="h-px w-px"></div>
+
+	</ul>
+
 	</div>
 	<ButtonScrollToSection section={'cv_edu'}>
-		<T keyName="my-education" defaultValue="my-education" />
-	</ButtonScrollToSection>
+		<T keyName="achievements" defaultValue="Achievements" /></ButtonScrollToSection
+	>
 </section>
+
+<style>
+	:root {
+		--gutter: 20px;
+	}
+	
+	.hs::-webkit-scrollbar {
+		display: none;
+	}
+	.hs {
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+	
+	.hs {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 1rem repeat(var(--total), calc(100% - var(--gutter) * 2)) 1rem ;
+		grid-template-rows: minmax(0px, 1fr);
+	}
+	
+	@media (min-width: 768px) {
+			.hs {
+				/* grid-template-columns: repeat(var(--total), calc(50% - var(--gutter) * 2)); */
+				grid-template-columns: 1fr;
+
+			}
+		}
+	</style>
