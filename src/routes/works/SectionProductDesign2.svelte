@@ -47,26 +47,26 @@
 </script>
 
 
-<section id="productdesign" class="relative w-full flex flex-col ">
+<section id="productdesign" class="relative  flex flex-col ">
 	<div
-		class="px-4 flex my-auto flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
+		class="px-4  flex my-auto flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>
 		<div
-			class="flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4"
+			class="flex  justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4"
 		>
 			<h1
 				class="md:pt-3 md:pb-4 md:pl-0 text-2xl md:text-4xl text-center md:text-left font-sans font-bold"
 			>
 				<T keyName="Cat-Bench" defaultValue="Cat Bench" />
 			</h1>
-			<div class="flex flex-row flex-wrap md:flex-nowrap w-full">
+			<div class=" flex flex-row flex-wrap md:flex-nowrap w-[calc(100vw_-_2rem)]">
 				<div
 					class="scale-[0.8] -translate-y-6 md:scale-100 flex w-full md:w-4/5 justify-center items-center relative"
 				>
 					<div
-						class="
+						class=" 
 					{imageVisible ? 'translate-x-[74px] opacity-0' : ''}
-					duration- 1000 dark:text-primary-100
+					 dark:text-primary-100
 					translate-y-[4px] h-[216px] w-auto md:my-10 relative"
 						style="perspective: 25rem; perspective-origin: 50% 50%; transition-property: opacity, transform; 
 					{imageVisible
@@ -141,10 +141,9 @@
 				<div
 					class="w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center box-content uppercase font-medium justify-center h-auto md:h-fit "
 				>
-					<!-- class="w-full flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center flex flex-row md:flex-col bg-primary-900/10 dark:bg-primary-50/10 p-4 rounded-md  uppercase font-medium justify-center h-auto md:h-fit " -->
 					{#each options.slice(0, 5) as option}
 						<div
-							class="md:space-y-2 space-x-2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-0.5 md:mb-2"
+							class="space-y-2 space-x-2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-0.5 md:mb-2"
 						>
 							<input
 								on:keydown
@@ -156,13 +155,14 @@
 								value={option.value}
 								class="md:mt-2"
 							/>
-							<label for={option.value} class="font-normal pr-4">
+							<label for={option.value} class="standardButton font-normal pr-4">
+								<span class="radio-button"></span>
 								<T keyName="option-{option.value}" defaultValue={option.value} />
 							</label>
 						</div>
 					{/each}
 					<button
-						class="w-full uppercase mt-1 py-1 md:py-1.5 px-3 border-2 border-primary-400 transition-all duration-150 hover:bg-primary-400 text-primary-400 hover:text-primary-50 rounded-md"
+						class="{imageVisible ? 'bg-primary-900 !text-primary-50 dark:bg-primary-50 dark:text-primary-900' : ''} standardButton w-full uppercase mt-1 py-1 md:py-1.5 px-3 transition-all duration-150"
 						on:click={showResult}
 					>
 						<T keyName="result" defaultValue="result" />
@@ -178,3 +178,31 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.standardButton {
+		@apply items-center justify-center text-center text-primary-900  dark:text-primary-50 dark:from-primary-50/40 dark:to-primary-50/30 from-primary-900/30 to-primary-900/20 dark:border-primary-50/10 border-primary-900/10 font-light  bg-gradient-to-tr box-border py-2 px-3 h-auto md:backdrop-blur-sm flex border transition-all ease-in duration-300 rounded-lg hover:from-primary-900/30 hover:to-primary-900/40
+				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
+				hover:border-primary-900/50 dark:hover:border-primary-50/50
+				
+	}
+
+	input[type="radio"]:checked + label {
+		@apply bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900;
+	}
+
+	input[type="radio"] {
+		opacity: 0;
+		position: fixed;
+		width: 0;
+	}
+	/* label {
+		@apply inline-block bg-primary-900/10 py-2 px-3
+	} */
+
+    /* input[type="radio"]:focus + label .radio-button {
+        box-shadow: 0 0 0 2px var(--primary-900);
+    } */
+
+	
+</style>
