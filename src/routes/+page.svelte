@@ -5,7 +5,6 @@
 	import { afterNavigate } from '$app/navigation';
 	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
 	// import SvelteSeo from 'svelte-seo';
-	import viewport from '../components/useViewportAction';
 	import FrontCert from './FrontModules/FrontCert.svelte';
 	import FrontEdu from './FrontModules/FrontEdu.svelte';
 	import FrontWork from './FrontModules/FrontWork.svelte';
@@ -25,25 +24,25 @@
   animationdelay = from === null ? 1 : 0;
 });
 
-	function typewriter(node: any, { delay = 0, speed = 1 }) {
-		const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
+	// function typewriter(node: any, { delay = 0, speed = 1 }) {
+	// 	const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
 
-		if (!valid) {
-			throw new Error(`This transition only works on elements with a single text node child`);
-		}
+	// 	if (!valid) {
+	// 		throw new Error(`This transition only works on elements with a single text node child`);
+	// 	}
 
-		const text = node.textContent;
-		const duration = text.length / speed;
+	// 	const text = node.textContent;
+	// 	const duration = text.length / speed;
 
-		return {
-			delay,
-			duration,
-			tick: (t: number) => {
-				const i = ~~(text.length * t);
-				node.textContent = text.slice(0, i);
-			}
-		};
-	}
+	// 	return {
+	// 		delay,
+	// 		duration,
+	// 		tick: (t: number) => {
+	// 			const i = ~~(text.length * t);
+	// 			node.textContent = text.slice(0, i);
+	// 		}
+	// 	};
+	// }
 	
 	let scroll: any;
 
@@ -150,9 +149,8 @@
 		</ButtonScrollToSection>
 </section>
 
-<!-- on:enterViewport={AboutAnimation} -->
+
 <section
-	use:viewport
 	id="aboutme"
 	class="px-4 md:px-0 bg- relative w-full !min-h-[100svh] min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20"
 >

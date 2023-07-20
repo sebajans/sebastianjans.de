@@ -81,7 +81,7 @@
 				{$pageTitle}
 			</h1>
 			<PageTransitions pathname={data.pathname}>
-				<div bind:this={contents} class="my-auto mx-4 md:ml-44 ">
+				<div bind:this={contents} class="my-auto  md:ml-44 ">
 					<slot />
 				</div>
 			</PageTransitions>

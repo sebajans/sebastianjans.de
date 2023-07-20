@@ -1,13 +1,13 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
-
 	import { fade } from 'svelte/transition';
+
+
 	import BenchBottom from './product-items/BenchBottom.svelte';
 	import BenchFront from './product-items/BenchFront.svelte';
 	import BenchSideL from './product-items/BenchSideL.svelte';
 	import BenchSideR from './product-items/BenchSideR.svelte';
 	import BenchTop from './product-items/BenchTop.svelte';
-	import WorksHeader from '../../components/WorksHeader.svelte';
 
 	function showResult() {
 		imageVisible = true;
@@ -47,7 +47,7 @@
 </script>
 
 
-<section id="productdesign" class="relative flex flex-col ">
+<section id="productdesign" class="relative w-[calc(100vw_-_2rem)] flex flex-col ">
 	<div
 		class="flex flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>

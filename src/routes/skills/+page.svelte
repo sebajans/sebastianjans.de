@@ -6,7 +6,7 @@
 	import { getTranslate } from '@tolgee/svelte';
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
-	import { skillItems } from './skillItems';
+	import { skillItems } from '$lib/lists/skillItems';
 	import { afterNavigate } from '$app/navigation';
 	const { t } = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
@@ -35,7 +35,7 @@
 	<meta name="description" content="Skills of Sebastian Jans as a Designer." />
 </svelte:head>
 
-<div class="sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto ">
+<div class="px-4 sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto ">
 	{#if visible}
 		<div class="relative">
 			<p in:fly|global={{ y: 30, duration }} class="text-base text-left">
@@ -133,8 +133,10 @@
 		{/each}
 	{/if}
 </div>
+<div class="px-4">
+
 <div
-	class="max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 mb-16 my-8 justify-center box-content  w-auto mx-auto "
+	class=" max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 mb-16 my-8 justify-center box-content  w-auto mx-auto "
 >
 	<p class="mr-auto">
 		<T
@@ -145,4 +147,5 @@
 	<a class="btn btn-highlight w-fit whitespace-nowrap" href="/contact">
 			<T keyName="skills-convince-button" defaultValue="Contact me" />
 	</a>
+</div>
 </div>

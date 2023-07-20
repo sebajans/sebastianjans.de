@@ -2,8 +2,9 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { getTranslate } from '@tolgee/svelte';
 	import T from '@tolgee/svelte/T.svelte';
-	import { cvItems } from '../FrontModules/cv_items';
-	import { skillItems } from '../skills/skillItems';
+	import { cvItems } from '$lib/lists/cvItems';
+	import { skillItems } from '$lib/lists/skillItems';
+
 	const { t } = getTranslate();
 
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'CV' }));

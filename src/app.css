@@ -85,6 +85,9 @@
 
 /* @layer utilities {
   } */
+  .h-works {
+		height: calc(100svh - 10rem);
+	}
 
   @media print {
     body * {

@@ -32,21 +32,21 @@
 <!-- style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%);"
 bg-gradient-to-bl from-primary-500/50 -->
 
-<section  id="productdesign" class="max-h-screen justify-center relative flex flex-col ">
+<section  id="productdesign" class="px-4 max-h-screen justify-center relative flex flex-col ">
 	<div
 		class="flex flex-row-reverse md:flex-row h-works !md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>
 		<div
-			class="gap-4 md:gap-5 !h-full grid justify-center grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 items-center max-w-4xl w-full sm:w-full"
+			class="gap-4 md:gap-5 h-full grid justify-center grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 items-center max-w-4xl w-full sm:w-full"
 		>
 		<IntersectionObserver once threshold={0.2} element={element1} bind:intersecting={intersecting1}>
 
 		<div bind:this={element1}
-		class="
-		w-full h-full overflow-hidden 
-		col-start-1 row-start-1 col-span-3 row-span-2 md:col-span-4 md:row-span-3
-		rounded-md"
-		>
+			class="
+			w-full h-full overflow-hidden 
+			col-start-1 row-start-1 col-span-3 row-span-2 md:col-span-4 md:row-span-3
+			rounded-md"
+			>
 			<img
 					width="222"
 					height="275"
@@ -169,3 +169,8 @@ bg-gradient-to-bl from-primary-500/50 -->
 	</div>
 </section>
 
+<style>
+	.h-works {
+		height: calc(100svh - 10rem);
+	}
+</style>

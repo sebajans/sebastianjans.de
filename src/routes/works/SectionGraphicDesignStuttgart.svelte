@@ -62,7 +62,7 @@ bg-gradient-to-bl overflow-hidden from-primary-400/50 dark:from-primary-500/30  
 			/>
 		</div>
 		<p
-			class="row-[1_/_span_3] col-[1_/_span_9]  h-min box-content transform md:row-[1_/_span_2] md:col-[8_/_span_5] w-full text-justify"
+			class="row-[1_/_span_3] col-[1_/_span_9] h-min box-content transform md:row-[1_/_span_2] md:col-[8_/_span_5] text-justify"
 			style:transform={`translate3d(0,calc(100% - ${sectionScroll} * 100%), 0)`}
 		>
 			<T

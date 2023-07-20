@@ -10,7 +10,7 @@
 </script>
 
 <li class="grow h-14 max-h-32 items-stretch w-full ">
-		<a  aria-label="Navigate to {text}"
+		<a on:click aria-label="Navigate to {text}"
 			class="navButton {isActive
 				? 'isActive '
 				: 'isNotActive'}

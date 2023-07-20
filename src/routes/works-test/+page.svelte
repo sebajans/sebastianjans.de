@@ -7,7 +7,7 @@
 	import IntersectionObserver from 'svelte-intersection-observer';
 
 	import WorksHeader from '../../components/WorksHeader.svelte';
-	import {sectionNames} from '../works/sectionNames';
+	import {workSectionNames} from '$lib/lists/workSectionNames';
 
 	import CupholderModel from '../works/product-items/CupholderModel.svelte';
 import CupHolderModelClose from '../works/product-items/CupHolderModelClose.svelte';
@@ -80,7 +80,7 @@ let zoomIn: boolean = false;
 		<div
 			class="md:w-1/2 text-2xl md:text-3xl w-full pl-4 flex flex-col font-sans space-y-4 mb-auto md:my-auto"
 		>
-			{#each sectionNames as section, i}
+			{#each workSectionNames as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
 					on:click|preventDefault={() => scrollIntoView(section.id)}

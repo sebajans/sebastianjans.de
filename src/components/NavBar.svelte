@@ -20,6 +20,7 @@
 	function hideMenuMobile() {
 		showMenu = false;
 	}
+	$: console.log("showMenu", showMenu)
 	$: languageStore;
 
 	export let offset = 100;

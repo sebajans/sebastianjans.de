@@ -2,7 +2,7 @@
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
 	import { fly } from 'svelte/transition';
-	import { cvItems } from './cv_items';
+	import { cvItems } from '$lib/lists/cvItems';
 	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';
 	import { settingsState } from '$lib/stores/settingsState';
 </script>

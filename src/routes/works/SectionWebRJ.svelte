@@ -1,9 +1,10 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { settingsState } from '$lib/stores/settingsState';
 
+	import IntersectionObserver from 'svelte-intersection-observer';
 	import { scrollInSection } from '../../components/scrollInSection';
 
-	import { settingsState } from '$lib/stores/settingsState';
 
 	export let scroll: number;
 	export let windowHeight: number;
@@ -13,7 +14,9 @@
 	let srcRenaImg2 = 'img/website-rena-front-2.webp';
 	let srcRenaLogo = '../logos/logo-rj-l.webp';
 	let srcRenaLogoDark = '../logos/logo-rj-l-white.webp';
-	console.log('loaded');
+	
+
+
 </script>
 
 <!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);" -->

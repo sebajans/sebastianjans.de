@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 
-	import { LogoItems } from './logoitems';
+	import { logoItems } from '$lib/lists/logoItems';
 	import { settingsState } from '$lib/stores/settingsState';
 	import { fly } from 'svelte/transition';
 
@@ -47,7 +47,7 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 	on:keydown={() => (activeNumber = -1)}
 	on:click={() => (activeNumber = -1)}
 	id="logodesign"
-	class="flex flex-col"
+	class="flex flex-col px-4"
 >
 	<div
 		class="relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
@@ -70,9 +70,8 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 					? ''
 					: 'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300"
 			>
-				{#each LogoItems as logo, i}
-					<!-- {#each (LogoItems.sort(() => Math.random())) as logo, i} -->
-					<!-- in:fly|global={{delay: i*50, y: 20, duration: 50}}  -->
+				{#each logoItems as logo, i}
+
 					<div class="logo-individual flex justify-center items-center transition-all duration-200">
 						<button
 							on:keydown
@@ -88,27 +87,27 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 			</div>
 		</div>
 
-		{#if LogoItems[activeNumber]}
+		{#if logoItems[activeNumber]}
 			<div
 				on:keydown|stopPropagation
 				on:click|stopPropagation
 				transition:fly|global={{ x: -300, duration: 300 }}
-				class="{LogoItems[activeNumber]
+				class="{logoItems[activeNumber]
 					? 'translate-x-0'
 					: 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5"
 			>
 				<div
 					style:background-image={$settingsState.darkMode
-						? `url('${LogoItems[activeNumber].imageDark}')`
-						: `url('${LogoItems[activeNumber].image}')`}
+						? `url('${logoItems[activeNumber].imageDark}')`
+						: `url('${logoItems[activeNumber].image}')`}
 					class=" bg-contain bg-no-repeat bg-center bg-origin-content h-1/2 aspect-square p-2 md:p-4 duration-200 transition-all my-auto"
 				/>
 				<div class="pb-4">
 					<h2 class="font-sans text-3xl text-center pb-2">
-						{LogoItems[activeNumber].title}
+						{logoItems[activeNumber].title}
 					</h2>
 					<p class="text-center">
-						{LogoItems[activeNumber].text}
+						{logoItems[activeNumber].text}
 					</p>
 				</div>
 

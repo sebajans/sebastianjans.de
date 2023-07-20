@@ -2,7 +2,7 @@
 	import T from '@tolgee/svelte/T.svelte';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { cvItems } from './cv_items';
+	import { cvItems } from '$lib/lists/cvItems';
 
 
 	onMount(() => {

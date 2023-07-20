@@ -49,7 +49,7 @@
 	}
 </script>
 
-<section id="graphicdesign-trels" class="w-full relative flex ">
+<section id="graphicdesign-trels" class="px-4 w-full relative flex ">
 	<div
 		class="gap-4 max-w-4xl max-h-[56rem] grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 w-full h-works md:h-worksmd mx-auto my-auto "
 	>

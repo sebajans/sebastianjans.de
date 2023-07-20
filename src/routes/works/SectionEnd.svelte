@@ -11,7 +11,7 @@
 
 <!-- style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at top right, var(--tw-gradient-from) 0%, transparent 30%);"
 bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50  -->
-<section id="end" class="relative flex justify-center ">
+<section id="end" class="px-4 w-full relative flex justify-center ">
 	<div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">
 		<h1 class="w-full text-5xl text-right">
 			<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />

@@ -1,6 +1,6 @@
 const path = '/logos'
 
-export const LogoItems = [
+export const logoItems = [
   {
     title: 'Chilis',
     text: 'A logo for a spicy mexican sauce. Colourful and playful!',

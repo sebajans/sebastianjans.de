@@ -1,4 +1,4 @@
-export const sectionNames = [
+export const workSectionNames = [
   {
     id: 'websites',
     start: 1,

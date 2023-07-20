@@ -49,7 +49,7 @@
 			<span class="w-1/4 font-sans font-semibold uppercase"
 				><T keyName="my-mail" defaultValue="Mail: " /></span
 			>
-			<span class="w-3/4">sebajans@icloud.com</span>
+			<span class="w-3buttonStyle/4">sebajans@icloud.com</span>
 		</div>
 	</div>
 	<div
@@ -69,8 +69,8 @@
 					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->
 				<!-- Replace with the url you want to redirect to -->
 				<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
-				<input type="hidden" name="form-name" value="contact" />
-				<input type="hidden" name="bot-field" />
+				<input type="hidden" name="form-name" value="contact" >
+				<input type="hidden" name="bot-field" >
 
 				<div>
 					<label for="Full_name" class="label"

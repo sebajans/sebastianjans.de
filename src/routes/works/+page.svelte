@@ -4,7 +4,7 @@
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 	import { getTranslate } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
-	import { sectionNames } from './sectionNames';
+	import { workSectionNames } from '$lib/lists/workSectionNames';
 	import SvelteSeo from 'svelte-seo';
 	import WorksHeader from '../../components/WorksHeader.svelte';
 	import SectionWebRJ from './SectionWebRJ.svelte';
@@ -16,64 +16,16 @@
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
 	import SectionEnd from './SectionEnd.svelte';
-	// import component from 'svelte-seo';
+	import { scrollIntoView } from '$lib/functions/scrollIntoView';
+
 
 	const { t } = getTranslate(); // Tolgee t translation
-
-	// let workSections: { name: string; path: string }[] = [
-	// 	{
-	// 		name: 'SectionWebRJ',
-	// 		path: './SectionWebRJ.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionWebKamado',
-	// 		path: './SectionWebKamado.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionLogos',
-	// 		path: './SectionLogos.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionGraphicDesignStuttgart',
-	// 		path: './SectionGraphicDesignStuttgart.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionGraphicDesign2',
-	// 		path: './SectionGraphicDesign2.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionGraphicDesign3',
-	// 		path: './SectionGraphicDesign3.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionProductDesign2',
-	// 		path: './SectionProductDesign2.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionProductDesignCup',
-	// 		path: './SectionProductDesignCup.svelte'
-	// 	},
-	// 	{
-	// 		name: 'SectionEnd',
-	// 		path: './SectionEnd.svelte'
-	// 	}
-	// ];
 
 	// settings for Layout main class and Title
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
 	// mainClass.set('pt-0 pr-0 pl-0 md:pl-0 min-h-screen');
 	mainClass.set('mr-0 !ml-0 w-screen');
-
-	// function to scroll section ankerpoint into view
-
-	function scrollIntoView(target: string) {
-		var el = document.getElementById(target);
-		if (!el) return;
-		el.scrollIntoView({
-			behavior: 'smooth'
-		});
-	}
 
 	let scroll: number = 0;
 	let windowHeight: number = 0;
@@ -92,7 +44,7 @@
 
 <section
 	id="start"
-	class="relative w-full flex min-h-[calc(100svh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
+	class="px-4 relative w-full flex min-h-[calc(100svh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
 >
 	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
 		<p class="text-left md:w-1/2 text-base mb-4 md:mb-0">
@@ -104,7 +56,7 @@
 		<div
 			class="md:w-1/2 text-2xl md:text-3xl w-full pl-4 flex flex-col font-sans space-y-4 mb-auto md:my-auto"
 		>
-			{#each sectionNames as section, i}
+			{#each workSectionNames as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
 					on:click|preventDefault={() => scrollIntoView(section.id)}
@@ -120,25 +72,27 @@
 
 <div class="fixed top-0 h-0 w-20 right-0 z-30" />
 
-<WorksHeader backgroundColor="bg-primary-200/70 dark:bg-primary-700/70">
+<WorksHeader backgroundColor="bg-primary-200/50 dark:bg-primary-700/50">
 	<T keyName="works-webdev" defaultValue="Webdesign" />
 </WorksHeader>
+
 <SectionWebRJ {scroll} {windowHeight} />
 <SectionWebKamado {scroll} {windowHeight} />
-<WorksHeader backgroundColor="bg-primary-300/70 dark:bg-primary-600/70">
+<WorksHeader backgroundColor="bg-primary-300/50 dark:bg-primary-600/50">
 	<T keyName="works-logodesign" defaultValue="Logo Design" />
 </WorksHeader>
 <SectionLogos />
-<!-- debug from here -->
-<WorksHeader backgroundColor="bg-primary-400/70 dark:bg-primary-500/70">
+
+<WorksHeader backgroundColor="bg-primary-400/50 dark:bg-primary-500/50">
 	<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 </WorksHeader>
 <SectionGraphicDesignStuttgart {scroll} {windowHeight} />
 <SectionGraphicDesign2 {scroll} {windowHeight} />
 <SectionGraphicDesign3 />
-<WorksHeader backgroundColor="bg-primary-500/70 dark:bg-primary-400/70">
+
+<WorksHeader backgroundColor="bg-primary-500/50 dark:bg-primary-400/50">
 	<T keyName="works-productdesign" defaultValue="Product Design" />
 </WorksHeader>
-<SectionProductDesign2 />
+	<SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
-<SectionEnd />
+<SectionEnd /> 
