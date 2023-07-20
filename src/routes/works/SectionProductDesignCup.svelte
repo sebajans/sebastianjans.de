@@ -53,8 +53,8 @@ bg-gradient-to-bl from-primary-500/50 -->
 	</IntersectionObserver>
 	<IntersectionObserver once threshold={0.2} element={element2} bind:intersecting={intersecting2}>
 		<div bind:this={element2}
-				class="
-				w-full h-full overflow-hidden 
+				class=" {intersecting2 ? '' : '-translate-x-1/2 opacity-0'}
+				w-full h-full overflow-hidden  transition-all duration-500 delay-150
 			col-start-1 row-start-3 col-span-3 row-span-3 md:col-span-4 md:row-span-6
 			 bg-gradient-to-tr from-primary-500 to-primary-500/20 dark:to-primary-100/70 rounded-md"
 			>
@@ -63,7 +63,7 @@ bg-gradient-to-bl from-primary-500/50 -->
 					height="570"
 					src="/productdesign/cupholder/1_cupholder-frontal-full.webp"
 					alt="The cupholder fully extended, showing the LED indicator"
-					class="{intersecting2 ? '' : '-translate-x-1/2 opacity-0'} transition-all duration-500 delay-150  w-full h-full object-cover sepia"
+					class="   w-full h-full object-cover sepia"
 				/>
 			</div>
 		</IntersectionObserver>

@@ -139,11 +139,11 @@
 				</div>
 
 				<div
-					class="w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center box-content uppercase font-medium justify-center h-auto md:h-fit "
+					class="w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center box-content uppercase font-medium justify-between h-auto md:h-fit "
 				>
 					{#each options.slice(0, 5) as option}
 						<div
-							class="space-y-2 space-x-2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-0.5 md:mb-2"
+							class="space-y-2 space-x -2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-0.5 md:mb-2"
 						>
 							<input
 								on:keydown
@@ -162,7 +162,7 @@
 						</div>
 					{/each}
 					<button
-						class="{imageVisible ? 'bg-primary-900 !text-primary-50 dark:bg-primary-50 dark:text-primary-900' : ''} standardButton w-full uppercase mt-1 py-1 md:py-1.5 px-3 transition-all duration-150"
+						class="mt-3 {imageVisible ? 'bg-primary-900 !text-primary-50 dark:bg-primary-50 dark:!text-primary-900' : ''} standardButton w-full uppercase mt-1 py-1 md:py-1.5 px-3 transition-all duration-150"
 						on:click={showResult}
 					>
 						<T keyName="result" defaultValue="result" />
@@ -181,7 +181,7 @@
 
 <style>
 	.standardButton {
-		@apply items-center justify-center text-center text-primary-900  dark:text-primary-50 dark:from-primary-50/40 dark:to-primary-50/30 from-primary-900/30 to-primary-900/20 dark:border-primary-50/10 border-primary-900/10 font-light  bg-gradient-to-tr box-border py-2 px-3 h-auto md:backdrop-blur-sm flex border transition-all ease-in duration-300 rounded-lg hover:from-primary-900/30 hover:to-primary-900/40
+		@apply items-center justify-center text-center text-primary-900 dark:text-primary-50 dark:from-primary-50/40 dark:to-primary-50/30 from-primary-900/30 to-primary-900/20 dark:border-primary-50/10 border-primary-900/10 font-light  bg-gradient-to-tr box-border py-1.5 px-2 h-auto md:backdrop-blur-sm flex border transition-all ease-in duration-300 rounded-lg hover:from-primary-900/30 hover:to-primary-900/40
 				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
 				hover:border-primary-900/50 dark:hover:border-primary-50/50
 				
