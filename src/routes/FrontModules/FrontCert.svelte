@@ -20,8 +20,8 @@
 
 </script>
 
-<section class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] h-full min-h-screen min-h-screen-ios flex flex-col justfiy-center" id="cv_cert">
-	<div class="space-y-4 max-w-4xl w-full  mx-auto  pt-14">
+<section class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] h-full min-h-screen min-h-screen-ios flex flex-col justfiy-center" id="cv_cert">
+	<div class="space-y-4 max-w-4xl w-full  mx-auto">
 		<h1 in:fly|global={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">
 			<T keyName="my-achievements" defaultValue="My Achievements & Certifications" />
 		</h1>
@@ -73,6 +73,8 @@
 					</li>
 				{/if}
 			{/each}
+			<div class="h-px w-px"></div>
+
 				</ul>
 	</div>
 </section>
@@ -102,65 +104,5 @@
 			grid-template-columns: repeat(var(--total), calc(50% - var(--gutter) * 2));
 		}
 	}
-
-/* .hs::before,
-.hs::after {
-  content: ‘’;
-} */
-
-/* .app {
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
-}
-.app > * {
-  grid-column: 2 / -2;
-}
-.app > .full {
-  grid-column: 1 / -1;
-} */
 </style>
 
-
-<!-- <section class="pt-4 md:pt-20 pb-20 relative w-full h-full min-h-screen min-h-screen-ios flex flex-col justify-center" id="cv_cert">
-	<div class="space-y-4 max-w-4xl w-full h-full mx-auto pt-14">
-		<h1 in:fly|global={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">
-			<T keyName="my-achievements" defaultValue="My Achievements & Certifications" />
-		</h1>
-		<div class="overflow-x-auto ">
-			<div class="flex space-x-4  align-top">
-				{#each cvItems as item}
-					{#if item.category === 'certificate'}
-						<div in:fly|global={{ y: 50, duration: 500, delay: 250 * item.id }} class="w-full space-y-4 content-stre flex-shrink-0 sm:w-1/2">
-							<div style:background-image={`url('${item.image}')`} class="bg-cover bg-no-repeat bg-center bg-origin-content z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/21] border border-primary-200/90 dark:border-primary-50/5">
-							</div>
-							<div class="p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 rounded-md w-full flex flex-col justify-start">
-								<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
-									<T keyName="achievement-title" defaultValue={item.name} />
-								</h2>
-								<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-									<T keyName="achievement-date" defaultValue={item.fromYear} />
-								</h3>
-								<p class="text-sm  text-justify mb-2">
-									<T keyName="achievement-text" defaultValue={item.shortdescription} />
-								</p>
-								{#if item.link?.includes('https')}
-									<a class="w-fit mt-auto ml-auto" target="_blank" rel="noreferrer noopener" href={item.link}>
-										<button class="btn btn-navajo w-fit">
-											<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
-										</button>
-									</a>
-								{:else}
-									<a class="w-fit mt-auto ml-auto" href={item.link}>
-										<button class="btn btn-navajo w-fit">
-											<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
-										</button>
-									</a>
-								{/if}
-							</div>
-						</div>
-					{/if}
-				{/each}
-			</div>
-		</div>
-	</div>
-</section> -->

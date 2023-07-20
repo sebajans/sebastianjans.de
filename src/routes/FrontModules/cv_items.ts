@@ -94,7 +94,7 @@ export let cvItems = [
     id: 1,
     link: '/works#graphicdesign-trels',
     image: 'cv_items/certificate-tau-censored.webp',
-    name: 'III Concurso de Diseño De Una Pieza Cerámica',
+    name: 'Design contest of a ceramic tile',
     fromYear: '10/02/2022',
     shortdescription: 'TAU Cerámica: I achieved second place in the graphic design contest. The objective was to design a ceramic tile, fitting to the famous Estacion Norte in Valencia.',
     info: 'See Project',
@@ -106,7 +106,7 @@ export let cvItems = [
     image: 'cv_items/certificate-designing-for-a-sustainable-future.webp',
     name: 'Designing for a sustainable Future',
     fromYear: '21/02/2023',
-    shortdescription: "The online course explored design thinking applied to sustainability. It covered topics from AI to rewilding, emphasizing empathy, technology's problem-solving potential, and innovative solutions to the climate crisis.",
+    shortdescription: "This course explored design thinking for sustainability, covering AI, rewilding, tech's problem-solving, and climate crisis solutions.",
     info: 'See Certificate',
   },
   {

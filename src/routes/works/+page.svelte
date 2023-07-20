@@ -130,7 +130,7 @@
 	<T keyName="works-logodesign" defaultValue="Logo Design" />
 </WorksHeader>
 <SectionLogos />
-<!-- 
+<!-- debug from here -->
 <WorksHeader backgroundColor="bg-primary-400/70 dark:bg-primary-500/70">
 	<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 </WorksHeader>
@@ -142,4 +142,4 @@
 </WorksHeader>
 <SectionProductDesign2 />
 <SectionProductDesignCup {scroll} {windowHeight} />
-<SectionEnd /> -->
+<SectionEnd />
