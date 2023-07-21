@@ -71,7 +71,7 @@
 			{#each workSectionNames as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
-					on:click|preventDefault={() => scrollIntoView(section.id)}
+					on:click|preventDefault={() => scrollIntoView(section.id, section.start*500)}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
 					class="dark:text-primary-50 md:py-4 ml-auto py-2 backdrop-blur-md duration-300 delay-75 rounded-lg text-left pl-3 transition-all {section.color} "
 				>

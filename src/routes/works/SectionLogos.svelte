@@ -47,13 +47,15 @@
 	id="logodesign"
 	class="flex flex-col px-4 relative "
 	>
+	{#if activeNumber !== -1}
 	<div 
 	role="button"
 	tabindex="0"
 	on:click={() => (activeNumber = -1)}
 	on:keydown={() => (activeNumber = -1)}
-	class="absolute inset-0 z-[0] bg-transparent">
+	class="absolute inset-0 z-[1] bg-transparent cursor-default">
 	</div>
+	{/if}
 
 	<div
 		class="relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
