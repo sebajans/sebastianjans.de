@@ -34,7 +34,7 @@ id="aboutme">
 		<ul 
 		 class="hs snap-x snap-mandatory overflow-x-auto">
 			<li class="h-px w-px"></li>
-			<li class="snap-center pb-20 w-full justify-center md:pr-4 text-sm md:text-base">
+			<li class="snap-center w-full justify-center md:pr-4 text-sm md:text-base">
 				<!-- {#if animationAbout} -->
 				<img
 					in:fly|global={{ duration: 2000 }}
@@ -80,7 +80,7 @@ id="aboutme">
 							</h2>
 							<ul class="list-likes">
 								<li class="list-li">
-									<T keyName="likes-item-1" defaultValue="Puzzles" />
+									<T keyName="likes-item-1" defaultValue="Orange juice" />
 								</li>
 								<li class="list-li">
 									<T keyName="likes-item-2" defaultValue="Traveling" />
@@ -92,13 +92,10 @@ id="aboutme">
 									<T keyName="likes-item-4" defaultValue="Cats" />
 								</li>
 								<li class="list-li">
-									<T keyName="likes-item-5" defaultValue="Overengineering things" />
+									<T keyName="likes-item-5" defaultValue="Puzzles" />
 								</li>
 								<li class="list-li">
 									<T keyName="likes-item-6" defaultValue="Gaming" />
-								</li>
-								<li class="list-li">
-									<T keyName="likes-item-7" defaultValue="Learning new things" />
 								</li>
 
 							</ul>
@@ -149,12 +146,19 @@ id="aboutme">
 }
 
 ul .list-likes {
-	@apply py-3 space-y-3;
+	@apply pt-3 space-y-3;
+}
+
+.list-li::before {
+	content: '';
+	@apply translate-y-px w-3 h-3 inline-block rounded-full border backdrop-blur-md mr-2 border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/25 dark:to-primary-50/10;
 }
 
 .list-li {
-	@apply py-0.5 px-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md;
+	@apply py-0.5 px-2 
+	;
 }
+/* backdrop-blur-md border border-primary-900/5 dark:border-primary-50/5 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md */
 
 .hs::-webkit-scrollbar {
   display: none;
@@ -173,7 +177,7 @@ ul .list-likes {
 
 @media (min-width: 768px) {
 		.hs {
-			grid-template-columns: repeat(5, calc(50% - var(--gutter) * 2));
+			grid-template-columns: 1rem calc(100% - var(--gutter) * 2) repeat(2,  calc(50% - var(--gutter) * 2)) 1rem;
 		}
 	}
 </style>

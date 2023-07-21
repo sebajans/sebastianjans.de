@@ -184,12 +184,12 @@
 	.standardButton {
 		@apply items-center justify-center text-center text-primary-900 dark:text-primary-50 dark:from-primary-50/40 dark:to-primary-50/30 from-primary-900/30 to-primary-900/20 dark:border-primary-50/10 border-primary-900/10 font-light  bg-gradient-to-tr box-border py-1.5 px-2 h-auto md:backdrop-blur-sm flex border transition-all ease-in duration-300 rounded-lg hover:from-primary-900/30 hover:to-primary-900/40
 				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
-				hover:border-primary-900/50 dark:hover:border-primary-50/50
+				hover:border-primary-900/50 dark:hover:border-primary-50/50 hover:cursor-pointer;
 				
 	}
 
 	input[type="radio"]:checked + label {
-		@apply bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900;
+		@apply bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900 ;
 	}
 
 	input[type="radio"] {

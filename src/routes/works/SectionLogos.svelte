@@ -40,15 +40,21 @@
 	let activeNumber: number = -1;
 </script>
 
-<!-- style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%); "
-bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
-<section
-	on:mousemove={handleMousemove}
-	on:keydown={() => (activeNumber = -1)}
-	on:click={() => (activeNumber = -1)}
+
+<!-- on:mousemove={handleMousemove} -->
+<section 
+	aria-label="Logo Design Section"
 	id="logodesign"
-	class="flex flex-col px-4"
->
+	class="flex flex-col px-4 relative "
+	>
+	<div 
+	role="button"
+	tabindex="0"
+	on:click={() => (activeNumber = -1)}
+	on:keydown={() => (activeNumber = -1)}
+	class="absolute inset-0 z-[0] bg-transparent">
+	</div>
+
 	<div
 		class="relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
 	>
@@ -60,20 +66,23 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 		</p>
 		<div
 			class=" w-full"
-			style:transform={`translate3d(calc(0.05*${offset.x}px), calc(0.05*${offset.y}px), 0)`}
-		>
+			>
+			<!-- style:transform={`translate3d(calc(0.05*${offset.x}px), calc(0.05*${offset.y}px), 0)`} -->
 			<div
 				id="logos"
+				role="grid"
+				tabindex="0"
 				on:keydown|stopPropagation
 				on:click|stopPropagation
 				class="logo-main {activeNumber === -1
 					? ''
 					: 'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300"
 			>
-				{#each logoItems as logo, i}
+				{#each logoItems as logo, i }
 
 					<div class="logo-individual flex justify-center items-center transition-all duration-200">
 						<button
+						role="gridcell"
 							on:keydown
 							on:click={() => (activeNumber = i)}
 							style:background-image={$settingsState.darkMode
@@ -89,6 +98,8 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 
 		{#if logoItems[activeNumber]}
 			<div
+			role="button"
+			tabindex="0"
 				on:keydown|stopPropagation
 				on:click|stopPropagation
 				transition:fly|global={{ x: -300, duration: 300 }}
@@ -125,6 +136,7 @@ bg-gradient-to-bl from-primary-300/50 dark:from-primary-600/30  -->
 			</div>
 		{/if}
 	</div>
+
 </section>
 
 <style>
