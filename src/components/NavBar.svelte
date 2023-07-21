@@ -72,7 +72,7 @@
 			? 'mt-8 md:mt-4 scale-125 md:scale-100 mr-[0%]'
 			: 'translate-x-1/2 mr-[100%]'} ease-out group hover:scale-105 md:w-20 w-20 md:h-20 h-20 rounded-br-md md:mt-10 md:mx-8 self-center relative transition-all duration-200 md:translate-x-0 z-50 group"
 	>
-		<Logo className={'p-2 md:p-1.5'} />
+		<Logo className={'p-3 md:p-1.5'} />
 	</a>
 	<!-- actual nav -->
 

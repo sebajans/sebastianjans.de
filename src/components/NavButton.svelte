@@ -9,7 +9,7 @@
 	$: isActive = link === '/' ? $page.url.pathname === link : $page.url.pathname.startsWith(link);
 </script>
 
-<li class="grow h-14 max-h-32 items-stretch w-full ">
+<li class="grow h-12 md:h-14 max-h-32 items-stretch w-full ">
 		<a on:click aria-label="Navigate to {text}"
 			class="navButton {isActive
 				? 'isActive '
@@ -23,7 +23,7 @@
 
 <style>
 	.navButton {
-		@apply bg-gradient-to-tr box-border text-lg text-left py-3.5 px-3 h-auto md:backdrop-blur-sm flex border border-transparent transition-all ease-in duration-300 rounded-lg hover:from-primary-800/30 hover:to-primary-800/40
+		@apply bg-gradient-to-tr box-border text-lg text-left py-2.5 md:py-3.5 px-3 h-auto md:backdrop-blur-sm flex border border-transparent transition-all ease-in duration-300 rounded-lg hover:from-primary-800/30 hover:to-primary-800/40
 				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
 				hover:border-primary-900/50 dark:hover:border-primary-50/50;
 	}

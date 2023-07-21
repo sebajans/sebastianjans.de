@@ -83,15 +83,15 @@ export const skillItems = {
     categoryArray: [
       {
         iconLink: 'skills-icons/de.svg',
-        name: 'German', progress: 'w-[100%] '
+        name: 'German', progress: 'Native'
       },
       {
         iconLink: 'skills-icons/es.svg',
-        name: 'Spanish', progress: 'w-[90%] '
+        name: 'Spanish', progress: 'Native'
       },
       {
         iconLink: 'skills-icons/gb.svg',
-        name: 'English', progress: 'w-[85%] '
+        name: 'English', progress: 'Bilingual'
       }
     ]
   }

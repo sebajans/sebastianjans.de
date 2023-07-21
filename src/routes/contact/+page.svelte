@@ -31,9 +31,9 @@
 </svelte:head>
 
 <!-- https://www.staticforms.xyz -->
-<div class=" flex flex-col justify-center mx-auto items-center my-auto max-w-4xl hide-scrollbar">
-	<div class="grid w-full sm:grid-cols-2 gap-6 pb-3 ">
-		<p class="w-full pb-4 text-justify">
+<div class="px-4 flex flex-col justify-center mx-auto items-center my-auto max-w-4xl hide-scrollbar">
+	<div class="grid w-full sm:grid-cols-2 gap-3 md:gap-6 pb-3 ">
+		<p class="w-full md:pb-4 text-justify">
 			<T
 				keyName="contact-text"
 				defaultValue="
@@ -93,7 +93,7 @@
 				<div>
 					<label for="phone" class="label"
 						><T keyName="Phone-number" defaultValue="Phone number" />
-						<span class="font-light">(<T keyName="optional" defaultValue="optional" />)</span
+						<span class="text-xs font-light">(<T keyName="optional" defaultValue="optional" />)</span
 						></label
 					>
 					<!-- https://stackoverflow.com/questions/17260238/how-to-insert-space-every-4-characters-for-iban-registering -->
@@ -101,7 +101,7 @@
 				</div>
 				<div>
 					<label for="company" class="label"
-						><T keyName="Company" defaultValue="Company" /><span class="font-light"
+						><T keyName="Company" defaultValue="Company" /><span class="text-xs font-light"
 							>(<T keyName="optional" defaultValue="optional" />)</span
 						></label
 					>

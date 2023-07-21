@@ -27,7 +27,7 @@
 				height="390"
 				alt="graphic-design-shirts"
 				class="object-contain rounded-lg"
-				src="/graphicdesign/graphic-shirts.webp"
+				src="/graphicdesign/graphic-shirts.svg"
 			/>
 		</div>
 		<div
@@ -40,7 +40,7 @@
 				height="388"
 				class="scale-125 md:scale-100"
 				alt="graphic-design-table"
-				src="/graphicdesign/table.svg"
+				src="/graphicdesign/graphic-table.svg"
 			/>
 		</div>
 		<div

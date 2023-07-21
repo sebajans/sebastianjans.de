@@ -59,7 +59,7 @@
 			>
 				<T keyName="Cat-Bench" defaultValue="Cat Bench" />
 			</h1>
-			<div class=" flex flex-row flex-wrap md:flex-nowrap w-[calc(100vw_-_2rem)]">
+			<div class=" flex flex-row flex-wrap md:flex-nowrap w-[calc(100vw_-_2rem)] md:w-auto ">
 				<div
 					class="scale-[0.8] -translate-y-6 md:scale-100 flex w-full md:w-4/5 justify-center items-center relative"
 				>
@@ -139,11 +139,11 @@
 				</div>
 
 				<div
-					class="w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans self-center box-content uppercase font-medium justify-between h-auto md:h-fit "
+					class="w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans  box-content uppercase font-medium items-stretch justify-between h-auto md:h-fit "
 				>
 					{#each options.slice(0, 5) as option}
 						<div
-							class="space-y-2 space-x -2 flex flex-row justify-start items-center md:justify-start md:w-full text-sm mb-0.5 md:mb-2"
+							class=" text-sm mb-0.5 md:mb-2"
 						>
 							<input
 								on:keydown
@@ -155,12 +155,13 @@
 								value={option.value}
 								class="md:mt-2"
 							/>
-							<label for={option.value} class="standardButton font-normal pr-4">
+							<label for={option.value} class=" standardButton w-full font-normal pr-4">
 								<span class="radio-button"></span>
 								<T keyName="option-{option.value}" defaultValue={option.value} />
 							</label>
 						</div>
 					{/each}
+					<div class="h-px mt-2 md:mt-1 mx-auto w-full  bg-primary-900/50 dark:bg-primary-50/50"></div>
 					<button
 						class="mt-3 {imageVisible ? 'bg-primary-900 !text-primary-50 dark:bg-primary-50 dark:!text-primary-900' : ''} standardButton w-full uppercase mt-1 py-1 md:py-1.5 px-3 transition-all duration-150"
 						on:click={showResult}
@@ -196,13 +197,4 @@
 		position: fixed;
 		width: 0;
 	}
-	/* label {
-		@apply inline-block bg-primary-900/10 py-2 px-3
-	} */
-
-    /* input[type="radio"]:focus + label .radio-button {
-        box-shadow: 0 0 0 2px var(--primary-900);
-    } */
-
-	
 </style>

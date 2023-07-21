@@ -102,7 +102,7 @@
 				</div>
 			</Popup>
 		</div>
-		{#each Object.entries(skillItems) as [categoryName, skills], i}
+		{#each Object.entries(skillItems).filter(([categoryName, skills]) => categoryName !== 'Language Skills') as [categoryName, skills], i}
 			<div
 				in:fly|global={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
 				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
@@ -127,6 +127,49 @@
 								{skill.name}
 							</span>
 						</div>
+						<!-- <div class="flex flex-row items-center h-7">
+							<span
+								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
+							>
+								{skill.progress}
+							</span>
+						</div> -->
+					{/each}
+				</div>
+			</div>
+		{/each}
+		{#each Object.entries(skillItems).filter(([categoryName, skills]) => categoryName === 'Language Skills') as [categoryName, skills], i}
+			<div
+				in:fly|global={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
+				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
+			>
+				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
+					<T keyName="skill-{categoryName}-title" defaultValue={categoryName} />
+				</h2>
+				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
+					<T keyName="skill-{categoryName}-text" defaultValue={skills.categorydescription} />
+				</p>
+				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap highlight-content p-3">
+					{#each skills.categoryArray as skill}
+						<div class="flex flex-row items-center h-7">
+							<img
+								src={skill.iconLink}
+								class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
+								alt={skill.name}
+							/>
+							<span
+								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
+							>
+								{skill.name}
+							</span>
+						</div>
+						<div class="flex flex-row items-center h-7">
+							<span
+								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
+							>
+								{skill.progress}
+							</span>
+						</div>
 					{/each}
 				</div>
 			</div>
@@ -138,14 +181,24 @@
 <div
 	class=" max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 mb-16 my-8 justify-center box-content  w-auto mx-auto "
 >
-	<p class="mr-auto">
+	<p class="mr-auto pb-2 md:pb-0">
 		<T
 			keyName="skills-convince"
 			defaultValue="If you're still hesitant, feel free to give me a brief call, and we can chat about your business!"
 		/>
 	</p>
-	<a class="btn btn-highlight w-fit whitespace-nowrap" href="/contact">
+	<a class="btn standardButton w-full md:w-fit whitespace-nowrap" href="/contact">
 			<T keyName="skills-convince-button" defaultValue="Contact me" />
 	</a>
 </div>
 </div>
+
+<style>
+	.standardButton {
+		@apply items-center justify-center text-center text-primary-900 dark:text-primary-50 dark:from-primary-50/40 dark:to-primary-50/30 from-primary-900/30 to-primary-900/20 dark:border-primary-50/10 border-primary-900/10 font-light  bg-gradient-to-tr box-border 
+		py-2 px-4 h-auto md:backdrop-blur-sm flex border transition-all ease-in duration-300 rounded-lg hover:from-primary-900/30 hover:to-primary-900/40
+				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
+				hover:border-primary-900/50 dark:hover:border-primary-50/50
+				
+	}
+	</style>

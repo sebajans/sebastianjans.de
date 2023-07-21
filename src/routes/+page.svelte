@@ -8,11 +8,11 @@
 	import FrontCert from './FrontModules/FrontCert.svelte';
 	import FrontEdu from './FrontModules/FrontEdu.svelte';
 	import FrontWork from './FrontModules/FrontWork.svelte';
+	import FrontAbout from './FrontModules/FrontAbout.svelte';
 
 	pageTitle.set('');
 
 	const { t } = getTranslate();
-	let profilePicture = 'img/profile-pic.webp';
 
 	let visible = false;
 	let animationspeed: number | null = null;
@@ -149,55 +149,7 @@
 		</ButtonScrollToSection>
 </section>
 
-
-<section
-	id="aboutme"
-	class="px-4 md:px-0 bg- relative w-full !min-h-[100svh] min-h-screen-ios flex flex-col justfiy-center content-center pt-4 md:pt-20"
->
-	<div class=" sm:mb-auto md:my-auto mx-auto max-w-4xl my-auto">
-		<h1 class="pb-4 md:pl-0 text-3xl md:text-4xl text-center md:text-left font-sans font-bold">
-			{$t({ key: 'about-me', defaultValue: 'About me' })}
-		</h1>
-		<div class="pb-20 w-full justify-center md:pr-4 text-sm md:text-base">
-			<!-- {#if animationAbout} -->
-			<img
-				in:fly|global={{ duration: 2000 }}
-				width="200"
-				height="200"
-				src={profilePicture}
-				alt="profile"
-				class="w-1/3 md:w-1/5 h-full ml-4 mb-4 object-cover object-top float-right max-w-[12rem] max-h-[12rem] md:max-w-[16rem] md:max-h-[16rem] md:grow-0 aspect-square rounded-xl"
-			/>
-			<!-- {/if} -->
-
-			<p class="md:w-full mb-2 text-justify md:text-xl">
-				{$t({
-					key: 'front-about-text',
-					defaultValue:
-						'I am 25 years old and from Germany. I studied my Bachelors in Materials Science while i was self-teaching myself all kinds of Design capabilities. After finishing my degree i decided to persue a different career path in the field of Design. '
-				})}
-			</p>
-
-			<p class="md:w-full mb-2 text-justify md:text-xl">
-				{$t({
-					key: 'front-about-text-2',
-					defaultValue:
-						'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
-				})}
-			</p>
-			<p class="md:w-full mb-2 text-justify md:text-xl">
-				{$t({
-					key: 'front-about-text-3',
-					defaultValue:
-						'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
-				})}
-			</p>
-		</div>
-		<ButtonScrollToSection section={'cv_jobs'}
-			>{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</ButtonScrollToSection
-		>
-	</div>
-</section>
+<FrontAbout />
 
 <FrontWork />
 <FrontEdu />
