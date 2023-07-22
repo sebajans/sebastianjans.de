@@ -17,12 +17,18 @@
 
 {#if visible}
 	<div
+	aria-label="Close popup"
+	role="button"
+	tabindex="0"
 		transition:fade|global={{ duration: 150 }}
 		on:click={hide}
 		on:keydown={hide}
 		class="fixed z-40 backdrop-blur-[1px] top-0 left-0 w-screen h-screen bg-primary-900/30"
 	/>
 	<div
+	aria-label="Close popup"
+	role="button"
+	tabindex="0"
 		on:click|stopPropagation
 		on:keydown|stopPropagation
 		transition:fade|global={{ duration: 150 }}

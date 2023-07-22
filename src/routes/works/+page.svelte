@@ -10,6 +10,7 @@
 	
 	import SectionWebRJ from './SectionWebRJ.svelte';
 	import SectionWebKamado from './SectionWebKamado.svelte';
+	import SectionWebDMaier from './SectionWebDMaier.svelte';
 	import SectionLogos from './SectionLogos.svelte';
 	import SectionGraphicDesignStuttgart from './SectionGraphicDesignStuttgart.svelte';
 	import SectionGraphicDesign2 from './SectionGraphicDesign2.svelte';
@@ -92,6 +93,7 @@
 	<div bind:this={elementWeb}>
 		<SectionWebRJ />
 		<SectionWebKamado {scroll} {windowHeight} />
+		<SectionWebDMaier />
 	</div>
 </IntersectionObserver>
 

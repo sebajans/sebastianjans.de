@@ -36,24 +36,24 @@
 			style:background-image={$settingsState.darkMode
 				? `url('${srcKamadoLogoDark}')`
 				: `url('${srcKamadoLogo}')`}
-			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-left-bottom bg-no-repeat bg-origin-content md:col-[5_/_span_6] md:row-[1_/_span_2]"
+			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-center md:bg-left-bottom bg-no-repeat bg-origin-content md:col-[5_/_span_6] md:row-[1_/_span_2]"
 		/>
 		<!-- PHONE -->
 		<div
 		in:fly|global={{ x: -300, duration: 500, delay: 200, easing: cubicOut}}
 		out:fly|global={{ y: -200, duration: 800, delay: 0, easing: cubicOut}}
-			class="col-[7_/_span_2] row-[3_/_span_10] flex h-full w-full justify-start md:justify-end md:col-[1_/_span_4] md:row-[1_/_span_12] "
+			class="col-[5_/_span_4] row-[3_/_span_7] flex h-full w-full justify-end md:justify-end md:col-[1_/_span_4] md:row-[1_/_span_12] "
 			>
 			<div
 				id="kb10-browser-phone"
-				class="relative z-10 aspect-[10/19.6] h-full max-h-[40rem]  w-auto self-center
-			rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-3xl"
+				class="relative z-10 aspect-[10/19.6] md:aspect-[10/19.6] h-full max-h-[40rem]  w-auto self-center
+			rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-[8%_/_5%] overflow-hidden"
 			>
 				<img
 					width="320"
 					height="584"
 					alt="website-kamadob10-front-mobile"
-					class="h-[calc(100%_-_2.75rem)] mx-auto rounded-t-[0.75rem] object-cover object-top px-0.5 pt-0.5 md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+					class="h-[calc(100%_-_2.75rem)] ml-auto md:mx-auto rounded-t-[0.75rem] object-cover object-top px-0.5 pt-0.5 md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem] md:px-1 md:pt-1"
 					src={srcKamadoMobile}
 				/>
 				<div class="relative mt-2 mb-2 flex flex-row space-x-2 md:mb-3">
@@ -98,7 +98,7 @@
 		<p
 		in:fly|global={{ x: 300, duration: 500, delay: 200, easing: cubicOut}}
 		out:fly|global={{ y: -200, duration: 500, delay: 100, easing: cubicOut}}
-			class="col-[1_/_span_6] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
+			class="col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
 		>
 			<T
 				keyName="works-p-kamado"

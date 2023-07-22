@@ -1,41 +1,24 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte';
-	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { cvItems } from '$lib/lists/cvItems';
 	let profilePicture = 'img/profile-pic.webp';
 	import { getTranslate } from '@tolgee/svelte';
 	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';
 
 	const { t } = getTranslate();
 
-
-	// onMount(() => {
-	// 	const lists: NodeListOf<HTMLElement> = document.querySelectorAll('.hs');
-	// 	console.log("lists", lists);
-	// 	lists.forEach(el => {
-	// 		const listItems = el.querySelectorAll('li');
-	// 		const n = listItems.length;
-	// 		const total = n + 2; // Add 2 for the empty columns
-	// 		// console.log("total", total);
-			
-	// 		document.documentElement.style.setProperty('--total', total.toString());
-	// 	});
-	// });
-
 </script>
 
-<section class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] h-full min-h-screen min-h-screen-ios flex flex-col justfiy-center" 
+<section class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] h-full min-h-screen flex flex-col justfiy-center" 
 id="aboutme">
-	<div class="space-y-4 max-w-4xl w-full my-auto  mx-auto">
+	<div class="space-y-4 max-w-4xl w-full my-auto h-full mx-auto">
 		<h1 in:fly|global={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
 		<ul 
-		 class="hs snap-x snap-mandatory overflow-x-auto">
+		 class="hs items-start h-full snap-x snap-mandatory overflow-x-auto">
 			<li class="h-px w-px"></li>
 			<li class="snap-center w-full justify-center md:pr-4 text-sm md:text-base">
-				<!-- {#if animationAbout} -->
 				<img
 					in:fly|global={{ duration: 2000 }}
 					width="200"

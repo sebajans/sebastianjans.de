@@ -107,7 +107,7 @@
 				transition:fly|global={{ x: -300, duration: 300 }}
 				class="{logoItems[activeNumber]
 					? 'translate-x-0'
-					: 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-r-xl md:rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5"
+					: 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5"
 			>
 				<div
 					style:background-image={$settingsState.darkMode
