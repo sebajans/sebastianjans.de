@@ -92,7 +92,7 @@
 <IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
 	<div bind:this={elementWeb}>
 		<SectionWebRJ />
-		<SectionWebKamado {scroll} {windowHeight} />
+		<SectionWebKamado />
 		<SectionWebDMaier />
 	</div>
 </IntersectionObserver>

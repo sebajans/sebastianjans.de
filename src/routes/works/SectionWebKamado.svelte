@@ -12,11 +12,6 @@
 	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
 
-	import { scrollInSection } from '$lib/functions/scrollInSection';
-	export let scroll: number;
-	export let windowHeight: number;
-	$: sectionScroll = scrollInSection(scroll, 1, windowHeight);
-
 	let element: HTMLElement;
   let intersecting:boolean;
 

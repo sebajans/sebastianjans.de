@@ -11,14 +11,14 @@
 
 <section class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] h-full min-h-screen flex flex-col justfiy-center" 
 id="aboutme">
-	<div class="space-y-4 max-w-4xl w-full my-auto h-full mx-auto">
+	<div class="space-y-4 max-w-4xl w-full my-auto h-full mx-auto border-primary-900/5 dark:border-primary-50/10 md:border md:pl-3 py-2 md:py-3 md:rounded-md">
 		<h1 in:fly|global={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
-		<ul 
+		<ul
 		 class="hs items-start h-full snap-x snap-mandatory overflow-x-auto">
-			<li class="h-px w-px"></li>
-			<li class="snap-center w-full justify-center md:pr-4 text-sm md:text-base">
+			<!-- <li class="h-px w-px"></li> -->
+			<li class="snap-center w-full justify-center pl-3 md:pl-0 md:pr-4 text-sm md:text-base">
 				<img
 					in:fly|global={{ duration: 2000 }}
 					width="200"
@@ -154,13 +154,13 @@ ul .list-likes {
 .hs {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 2rem repeat(3, calc(100% - var(--gutter) * 2)) 2rem ;
+  grid-template-columns: repeat(3, calc(100% - var(--gutter) * 2)) 2rem ;
   grid-template-rows: minmax(150px, 1fr);
 }
 
 @media (min-width: 768px) {
 		.hs {
-			grid-template-columns: 1rem calc(100% - var(--gutter) * 2) repeat(2,  calc(50% - var(--gutter) * 2)) 1rem;
+			grid-template-columns: calc(100% - var(--gutter) * 2) repeat(2,  calc(50% - var(--gutter) * 2)) 1rem;
 		}
 	}
 </style>
