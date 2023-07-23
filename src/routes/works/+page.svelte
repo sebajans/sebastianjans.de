@@ -8,6 +8,7 @@
 	import { workSectionNames } from '$lib/lists/workSectionNames';
 	import WorksHeader from '../../components/WorksHeader.svelte';
 	
+	import SectionWebRR from './SectionWebRR.svelte';
 	import SectionWebRJ from './SectionWebRJ.svelte';
 	import SectionWebKamado from './SectionWebKamado.svelte';
 	import SectionWebDMaier from './SectionWebDMaier.svelte';
@@ -92,6 +93,7 @@
 <IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
 	<div bind:this={elementWeb}>
 		<SectionWebRJ />
+		<SectionWebRR />
 		<SectionWebKamado />
 		<SectionWebDMaier />
 	</div>

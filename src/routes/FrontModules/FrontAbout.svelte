@@ -2,8 +2,8 @@
 	import T from '@tolgee/svelte/T.svelte';
 	import { fly } from 'svelte/transition';
 	let profilePicture = 'img/profile-pic.webp';
-	import { getTranslate } from '@tolgee/svelte';
 	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';
+	import { getTranslate } from '@tolgee/svelte';
 
 	const { t } = getTranslate();
 
@@ -141,7 +141,6 @@ ul .list-likes {
 	@apply py-0.5 px-2 
 	;
 }
-/* backdrop-blur-md border border-primary-900/5 dark:border-primary-50/5 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md */
 
 .hs::-webkit-scrollbar {
   display: none;
