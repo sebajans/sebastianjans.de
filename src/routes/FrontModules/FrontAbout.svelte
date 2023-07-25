@@ -90,12 +90,12 @@ id="aboutme">
 						class="snap-center snap-always md:snap-start w-full h-full flex flex-col space-y-4 grow sm:max-w-none"
 					>
 						<div
-							class="h-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md w-full flex flex-col justify-start"
+							class="h-full  w-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md flex flex-col justify-start"
 						>
 							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
 								<T keyName="dislikes-title" defaultValue="Some things i dislike" />
 							</h2>
-							<ul class="list-likes">
+							<ul class="list-likes ">
 								<li class="list-li">
 									<T keyName="dislikes-item-1" defaultValue="Coffee" />
 								</li>

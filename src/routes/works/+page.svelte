@@ -35,13 +35,36 @@
 	let windowHeight: number = 0;
 
 	let elementWeb: HTMLElement;
-	let intersectingWeb: boolean;
+	let intersectingWeb: boolean = false;
+	let isVisibleLogo = false; // Separate state variable to control div visibility
+
+	$: {
+		if (intersectingWeb) {
+      isVisibleLogo = true;
+    }
+	}
+
 	let elementLogo: HTMLElement;
-	let intersectingLogo: boolean;
+	let intersectingLogo: boolean = false;
+	let isVisibleGraphicDesign = false; // Separate state variable to control div visibility
+
+	$: {
+		if (intersectingLogo) {
+      isVisibleGraphicDesign = true;
+    }
+	}
 	let elementGraphicDesign: HTMLElement;
-	let intersectingGraphicDesign: boolean;
+	let intersectingGraphicDesign: boolean = false;
+	let isVisibleProduct = false;
+
+	$: {
+		if (intersectingGraphicDesign) {
+      isVisibleProduct = true; 
+    }
+	}
 	let elementProduct: HTMLElement;
-	let intersectingProduct: boolean;
+	let intersectingProduct: boolean = false;
+	
 	
 </script>
 
@@ -73,9 +96,11 @@
 			{#each workSectionNames as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
-					on:click|preventDefault={() => scrollIntoView(section.id, section.start*500)}
+					on:click|preventDefault={() => {isVisibleProduct = true; isVisibleGraphicDesign = true; isVisibleLogo = true; setTimeout(() => {
+						scrollIntoView(section.id, section.start*500)}
+						, 200);}}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
-					class="dark:text-primary-50 md:py-4 ml-auto py-2 backdrop-blur-md duration-300 delay-75 rounded-lg text-left pl-3 transition-all {section.color} "
+					class="dark:text-primary-50 md:py-4 ml-auto py-2 duration-150 rounded-lg text-left pl-3 transition-all {section.color} "
 				>
 					<T keyName="works-{section.id}" defaultValue={section.text} />
 				</button>
@@ -90,7 +115,7 @@
 	<T keyName="works-webdev" defaultValue="Webdesign" />
 </WorksHeader>
 
-<IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
+<IntersectionObserver once element={elementWeb} bind:intersecting={intersectingWeb}>
 	<div bind:this={elementWeb}>
 		<SectionWebRJ />
 		<SectionWebRR />
@@ -105,9 +130,11 @@
 
 	
 <IntersectionObserver element={elementLogo} bind:intersecting={intersectingLogo}>
+	{#if isVisibleLogo}
 	<div bind:this={elementLogo}>
 		<SectionLogos />
 	</div>
+	{/if}
 </IntersectionObserver>
 
 
@@ -116,11 +143,13 @@
 </WorksHeader>
 	
 <IntersectionObserver element={elementGraphicDesign} bind:intersecting={intersectingGraphicDesign}>
-	<div bind:this={elementGraphicDesign}>
-		<SectionGraphicDesignStuttgart />
-		<SectionGraphicDesign2 />
-		<SectionGraphicDesign3 />
-	</div>
+	{#if isVisibleGraphicDesign}
+		<div bind:this={elementGraphicDesign}>
+			<SectionGraphicDesignStuttgart />
+			<SectionGraphicDesign2 />
+			<SectionGraphicDesign3 />
+		</div>
+	{/if}
 </IntersectionObserver>
 
 <WorksHeader show={intersectingProduct} backgroundColor="bg-primary-500/60 dark:bg-primary-400/60">
@@ -128,10 +157,12 @@
 </WorksHeader>
 	
 <IntersectionObserver element={elementProduct} bind:intersecting={intersectingProduct}>
-	<div bind:this={elementProduct}>
-		<SectionProductDesign2 />
-		<SectionProductDesignCup />
-	</div>
+	{#if isVisibleProduct}
+		<div bind:this={elementProduct}>
+			<SectionProductDesign2 />
+			<SectionProductDesignCup />
+		</div>
+	{/if}
 </IntersectionObserver>
 
 <SectionEnd /> 

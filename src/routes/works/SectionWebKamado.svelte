@@ -23,21 +23,19 @@
 	<div
 		class="grid h-works md:h-worksmd max-h-[38rem] w-full grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
 	>
-	{#if intersecting}
+	<!-- {#if intersecting} -->
 		<div 
-		in:fade={{ duration: 700, easing: cubicOut}}
-		out:fade={{ duration: 300, easing: cubicOut}}
 			id="kb10-logo"
 			style:background-image={$settingsState.darkMode
 				? `url('${srcKamadoLogoDark}')`
 				: `url('${srcKamadoLogo}')`}
-			class="col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-center md:bg-left-bottom bg-no-repeat bg-origin-content md:col-[5_/_span_6] md:row-[1_/_span_2]"
+			class="{intersecting ? '' : 'translate-x-20 opacity-0' } transition-all duration-500 delay-200
+			col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-center md:bg-left-bottom bg-no-repeat bg-origin-content md:col-[5_/_span_6] md:row-[1_/_span_2]"
 		/>
-		<!-- PHONE -->
+
 		<div
-		in:fly|global={{ x: -300, duration: 500, delay: 200, easing: cubicOut}}
-		out:fly|global={{ y: -200, duration: 800, delay: 0, easing: cubicOut}}
-			class="col-[5_/_span_4] row-[3_/_span_7] flex h-full w-full justify-end md:justify-end md:col-[1_/_span_4] md:row-[1_/_span_12] "
+			class="{intersecting ? '' : '-translate-x-1/3 opacity-0' } transition-all duration-500
+			col-[5_/_span_4] row-[3_/_span_7] flex h-full w-full justify-end md:justify-end md:col-[1_/_span_4] md:row-[1_/_span_12] "
 			>
 			<div
 				id="kb10-browser-phone"
@@ -65,13 +63,13 @@
 				/>
 			</div>
 		</div>
-		<!-- BROSWER -->
+
 		<div
-		class="col-[1_/_span_6] row-[1_/_span_8] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
+		class="
+{intersecting ? '' : 'translate-y-1/2 opacity-0' } transition-all delay-500 duration-700
+		col-[1_/_span_6] row-[1_/_span_8] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
 		>
 		<div
-		in:fly|global={{ y: -100, duration: 500, delay: 200, easing: cubicOut}}
-		out:fly|global={{ y: -200, duration: 500, delay: 100, easing: cubicOut}}
 				id="kb10-browser-front"
 				class="h-full w-fit self-center aspect-[13/10] shadow-primary-900/30 shadow-md backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
 			>
@@ -91,18 +89,16 @@
 		</div>
 
 		<p
-		in:fly|global={{ x: 300, duration: 500, delay: 200, easing: cubicOut}}
-		out:fly|global={{ y: -200, duration: 500, delay: 100, easing: cubicOut}}
-			class="col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
+			class="
+{intersecting ? '' : 'translate-x-1/2 opacity-0' } transition-all delay-300 duration-500
+			col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[5_/_span_6]  md:row-[3_/_span_3]"
 		>
 			<T
 				keyName="works-p-kamado"
 				defaultValue="This website was for my former employer, who produces high-end handmade kamado grills. The objective for this website to appeal to high-end customers and highlight the USPs."
 			/>
 		</p>
-		{/if}
+		<!-- {/if} -->
 	</div>
 </section>
 </IntersectionObserver>
-
-<!-- before:h-4 before:rounded-b-md before:w-1/2 before:bg-primary-700/70 before:backdrop-blur-xl before:absolute before:mt-1 before:left-1/2 before:-translate-x-1/2  -->

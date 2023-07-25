@@ -25,19 +25,15 @@
 	<div
 		class="p-4 h-works md:h-worksmd max-h-[56rem] mx-auto my-auto grid grid-cols-8 grid-rows-12 sm:grid-cols-10 sm:grid-rows-12 gap-6"
 	>
-	{#if intersecting}
 		<div 
-			in:fade={{ duration: 700, easing: cubicOut}}
-			out:fade={{ duration: 300, easing: cubicOut}}
+			
 			id="rena-logo"
 			style:background-image={$settingsState.darkMode ? `url('${srcRenaLogoDark}')` : `url('${srcRenaLogo}')`}
-			class=" row-[1_/_span_2] col-[1_/_span_4] sm:row-[1_/_span_3] sm:col-[1_/_span_] bg-contain bg-no-repeat bg-top bg-origin-content"
+			class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all duration-500  row-[1_/_span_2] col-[1_/_span_4] sm:row-[1_/_span_3] sm:col-[1_/_span_] bg-contain bg-no-repeat bg-top bg-origin-content"
 		/>
-		
+
 		<div 
-			in:fly|global={{ y: 50, duration: 500, delay: 200, easing: cubicOut}}
-			out:fly|global={{ y: -50, duration: 500, delay: 100, easing: cubicOut}}
-			class="row-[3_/_span_6] col-[2_/_span_7] sm:row-[4_/_span_10] sm:col-[1_/_span_5] w-full h-full flex mx-auto justify-end translate-x-12 md:translate-x-0 z-10"
+			class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all duration-700 delay-300 row-[3_/_span_6] col-[2_/_span_7] sm:row-[4_/_span_10] sm:col-[1_/_span_5] w-full h-full flex mx-auto justify-end translate-x-12 md:translate-x-0 z-10"
 		>
 			<div
 				id="rj-browser-window"
@@ -58,11 +54,10 @@
 				/>
 			</div>
 		</div>
-
 		<div
-		in:fly|global={{ y: 200, duration: 1000, delay: 200, easing: cubicOut}}
-		out:fly|global={{ y: -100, duration: 300, delay: 100, easing: cubicOut}}
-			class="row-[5_/_span_5]  col-[1_/_span_5]  sm:row-[1_/_span_8] sm:col-[5_/_span_6] w-full h-full flex mx-auto justify-start sm:justify-start"
+			class="{intersecting ? '' : 'translate-y-1/4 opacity-0' } transition-all duration-500 delay-[250ms]
+			row-[5_/_span_5] col-[1_/_span_5]  sm:row-[1_/_span_8] sm:col-[5_/_span_6] 
+			w-full h-full flex mx-auto justify-start sm:justify-start"
 		>
 			<div
 				id="rj-browser-2"
@@ -84,16 +79,15 @@
 				/>
 			</div>
 		</div>
-		<p in:fly={{ y: 50, duration: 1000, delay: 300, easing: cubicOut}}
-		out:fly={{ y: -50, duration: 300, delay: 100, easing: cubicOut}}
-			class="transition-all duration-1000 delay-300 row-[10_/_span_3] col-[1_/_span_8] sm:row-[9_/_span_4] sm:col-[6_/_span_5] h-full w-full self-center text-justify"
+		<p 
+			class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all duration-1000 delay-250 row-[10_/_span_3] col-[1_/_span_8] sm:row-[9_/_span_4] sm:col-[6_/_span_5] h-full w-full self-center text-justify"
 		>
 			<T
 				keyName="works-p-rj"
 				defaultValue="This is the website I created for a make-up stylist. It is primarily aimed at a female audience, so the colour scheme is mainly purple, red and white. The website includes a full-screen front page and a menu bar."
 			/>
 		</p>
-		{/if}
+		<!-- {/if} -->
 	</div>
 </section>
 </IntersectionObserver>

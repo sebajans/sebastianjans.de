@@ -139,4 +139,14 @@ export let cvItems = [
     shortdescription: "A course about User Experience, where i learned how to collect and analyze user data.",
     info: 'See Certificate',
   },
+  {
+    category: 'certificate',
+    id: 6,
+    link: 'https://www.linkedin.com/learning/certificates/3682dd110047f940bda4fec58b928c17a320a7236ec6f3745165abb4ce267bf4',
+    image: 'cv_items/certificate-ux-3.webp',
+    name: 'UX Design: 3 Creating User Personas',
+    fromYear: '24/07/2023',
+    shortdescription: "A course about creating User Personas, where i learned how to create user personas, both assumption and data-driven persona, for a User-Centered Design-Process.",
+    info: 'See Certificate',
+  },
 ];

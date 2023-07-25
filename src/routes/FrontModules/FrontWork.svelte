@@ -21,7 +21,7 @@
 	</h1>
 		<ul 
 		class="hs snap-x snap-mandatory overflow-x-auto">
-		 <div class="h-px w-px"></div>
+		 <li class="h-px w-px"></li>
 		{#each cvItems as item}
 			{#if item.category === 'job'}
 				<li
@@ -46,7 +46,7 @@
 				</li>
 			{/if}
 		{/each}
-		<div class="h-px w-px"></div>
+		<li class="h-px w-px"></li>
 
 	</ul>
 

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
-
+	import IntersectionObserver from 'svelte-intersection-observer';
+	
 	import { logoItems } from '$lib/lists/logoItems';
 	import { settingsState } from '$lib/stores/settingsState';
 	import { fly } from 'svelte/transition';
@@ -12,14 +13,13 @@
 	() => (n = getDivPosition());
 
 	let offset = { x: 0, y: 0 };
-	// $: console.log("n: " + n.x + n.y,"offset "+ offset.x + offset.y)
-	function handleMousemove(event: any) {
-		m.x = event.clientX;
-		m.y = event.clientY;
-		n = getDivPosition();
-		offset.x = Math.round(n.x - m.x);
-		offset.y = Math.round(n.y - m.y);
-	}
+	// function handleMousemove(event: any) {
+	// 	m.x = event.clientX;
+	// 	m.y = event.clientY;
+	// 	n = getDivPosition();
+	// 	offset.x = Math.round(n.x - m.x);
+	// 	offset.y = Math.round(n.y - m.y);
+	// }
 	function getDivPosition() {
 		let div: any = document.getElementById('logos');
 		let rect = div.getBoundingClientRect();
@@ -38,11 +38,16 @@
 	});
 
 	let activeNumber: number = -1;
+
+	let element: HTMLElement;
+  let intersecting:boolean;
+
 </script>
 
+<IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}
+>	
 
-<!-- on:mousemove={handleMousemove} -->
-<section 
+<section bind:this={element}
 	aria-label="Logo Design Section"
 	id="logodesign"
 	class="flex flex-col px-4 relative "
@@ -57,17 +62,18 @@
 	</div>
 	{/if}
 
-	<div
-		class="relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
+	<div 
+		class="{intersecting ? '' : '-translate-x-1/2 opacity-0' } transition-all duration-500
+		relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
 	>
 		<p class="max-w-4xl box-content my-4 px-3 text-left sm:w-2/5">
 			<T
 				keyName="logo-design-paragraph"
-				defaultValue="These logotypes show some of my previous logo design works."
+				defaultValue="These logotypes show some of my previous logo design works. Click on them to check out a little bit more about the project."
 			/>
 		</p>
-		<div
-			class=" w-full"
+		<div 
+			class="{intersecting ? '' : 'scale-75 translate-x-1/4 opacity-0' } transition-all duration-500 delay-500 w-full"
 			>
 			<!-- style:transform={`translate3d(calc(0.05*${offset.x}px), calc(0.05*${offset.y}px), 0)`} -->
 			<div
@@ -107,7 +113,7 @@
 				transition:fly|global={{ x: -300, duration: 300 }}
 				class="{logoItems[activeNumber]
 					? 'translate-x-0'
-					: 'translate-x-full'} max-h-[calc(100vh_-_5.5rem)] rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5"
+					: 'translate-x-full'} z-[11] cursor-default max-h-[calc(100vh_-_5.5rem)] rounded-xl shadow-primary-900/30 shadow-md bg-primary-300 dark:bg-primary-600 absolute flex flex-col w-4/5 md:w-3/5  h-4/5 p-4 items-center justify-between left-0 md:right-2/5"
 			>
 				<div
 					style:background-image={$settingsState.darkMode
@@ -117,10 +123,18 @@
 				/>
 				<div class="pb-4">
 					<h2 class="font-sans text-3xl text-center pb-2">
-						{logoItems[activeNumber].title}
+						<T
+				keyName="logo-design-{logoItems[activeNumber].title}"
+				defaultValue="{logoItems[activeNumber].title}"
+			/>
+						<!-- {logoItems[activeNumber].title} -->
 					</h2>
 					<p class="text-center">
-						{logoItems[activeNumber].text}
+						<T
+				keyName="logo-design-{logoItems[activeNumber].title}-text"
+				defaultValue="{logoItems[activeNumber].text}"
+			/>
+						<!-- {logoItems[activeNumber].text} -->
 					</p>
 				</div>
 
@@ -140,6 +154,7 @@
 	</div>
 
 </section>
+</IntersectionObserver>	
 
 <style>
 	.logo-main:hover .logo-individual {

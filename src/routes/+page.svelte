@@ -68,6 +68,8 @@
 /> -->
 <!-- keywords="portfolio, product design, Industrial design, Design thinking, User experience design (UX design), User interface design (UI design), Graphic design, Branding, 3D modeling, Prototype development, Sketching, CAD design, Product innovation, Design strategy, Design research, User-centered design, Human factors engineering, Design for manufacturability, Product testing, Materials science, Sustainable design, Valencia, Germany, Deutschland, Wernau" -->
 
+<!-- https://stackoverflow.com/questions/58133329/how-to-use-css-backdrop-filter-on-text -->
+
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 <section
 	class="px-4 md:px-0 relative w-full -mt-24 sm:-mt-28 min-h-[100svh] flex flex-col justfiy-center items-center content-center"
@@ -75,50 +77,74 @@
 	<div class="relative pb-[100svh] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
 		{#if visible && animationspeed != null && animationdelay != null}
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
-				<span
+				<!-- backdrop-blur-md border-primary-900/5 dark:border-primary-50/10 md:bg-gradient-to-br  md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 -->
+				<!-- <span 
 					style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
-					class="welcomeText text-primary-500 font-bold  text-left leading-[0.2] 
+					style:opacity={`100% - ${scroll * -0.2}`}
+					class="welcomeText outlinedText text-primary-500/80 font-bold  text-left leading-[0.2] 
+				text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
+					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 100 * animationdelay }}
+				>
+					{$t({ key: 'hello', defaultValue: 'Hello' })}
+				</span> -->
+				<!-- <div class="h-auto w-full"> -->
+
+					<!-- <div style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
+						class="aspect-[2268/721] w-full test-clipPath-2 z-20"></div> -->
+						<!-- </div> -->
+						<!-- /* width:2268px;
+							height: 721px; */ -->
+							
+							<span 
+							style="filter: Opacity({`calc(100% - ${scroll * 0.15}%)`})"
+					style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
+					class="text-backdrop-blur text-primary-800 dark:text-primary-300 welcomeText z-[11] h-fit font-bold  text-left 
 				text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
 					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 100 * animationdelay }}
 				>
 					{$t({ key: 'hello', defaultValue: 'Hello' })}
 				</span>
 				<span
+				style="filter: Opacity({`calc(100% - ${scroll * 0.15}%)`})"
 					style:transform={`translate3d(0, ${scroll * -2}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.2, delay: 750 * animationdelay }}
-					class="welcomeText text-primary-900 dark:text-primary-100  italic text-right leading-[0.5] 
+					class="text-backdrop-blur -mt-[20%] welcomeText text-primary-900 dark:text-primary-100  italic text-right 
 				text-[clamp(5vh,15vh,28vw)] md:text-[clamp(5vh,15vh,6rem)]"
 				>
 					{$t({ key: 'and', defaultValue: 'and' })}
 				</span>
 				<span
+				style="filter: Opacity({`calc(100% - ${scroll * 0.15}%)`})"
 					style:transform={`translate3d(0, ${scroll * -0.8}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.3, delay: 1100 * animationdelay }}
-					class="welcomeText z-10 text-primary-600 dark:text-primary-300 font-bold  italic text-center leading-[1.2] 
+					class="text-backdrop-blur -mt-[15%] welcomeText z-10  text-primary-500 dark:text-primary-500 font-bold  italic text-center
 				text-[clamp(5vh,14vh,13vw)] md:text-[clamp(5vh,14vh,7rem)]"
 				>
 					{$t({ key: 'welcome', defaultValue: 'welcome' })}
 				</span>
 				<span
+				style="filter: Opacity({`calc(100% - ${scroll * 0.15}%)`})"
 					style:transform={`translate3d(0, ${scroll * -4}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.3, delay: 1500 * animationdelay }}
-					class="welcomeText text-primary-900 dark:text-primary-100  font-bold text-left leading-[0.2] 
+					class="text-backdrop-blur -mt-[10%] welcomeText text-primary-900 dark:text-primary-100  font-bold text-left
 				text-[clamp(2vh,6vh,10vw)] md:text-[clamp(2vh,6vh,5rem)]"
 				>
 					{$t({ key: 'to_my', defaultValue: 'to my' })}
 				</span>
 				<span
+				style="filter: Opacity({`calc(100% - ${scroll * 0.15}%)`})"
 					style:transform={`translate3d(0, ${scroll * -2.8}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.2, delay: 1750 * animationdelay }}
-					class="welcomeText text-primary-900 dark:text-primary-100 italic font-normal  text-right leading-[0] 
+					class="text-backdrop-blur -mt-[10%] welcomeText text-primary-900 dark:text-primary-100 italic font-normal  text-right
 				text-[clamp(1rem,8vh,10vw)] md:text-[clamp(1rem,8vh,5rem)]"
 				>
 					{$t({ key: 'online', defaultValue: 'Online' })}
 				</span>
 				<span
+				style="filter: Opacity({`calc(100% - ${scroll * 0.15}%)`})"
 					style:transform={`translate3d(0, ${scroll * -1}px, 0)`}
 					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 1900 * animationdelay }}
-					class="welcomeText z-10 text-primary-500 dark:text-primary-600 italic font-bold  text-center leading-[1] 
+					class="text-backdrop-blur -mt-[10%] welcomeText z-10 text-primary-400 dark:text-primary-600 italic font-bold  text-center
 				text-[clamp(5vh,16vh,16vw)] md:text-[clamp(5vh,16vh,9rem)]"
 				>
 					{$t({ key: 'Portfolio', defaultValue: 'Portfolio!' })}
@@ -150,7 +176,6 @@
 </section>
 
 <FrontAbout />
-
 <FrontWork />
 <FrontEdu />
 <FrontCert />
@@ -159,4 +184,18 @@
 	.welcomeText {
 		@apply w-full select-none h-auto;
 	}
+
+
+
+ .text-backdrop-blur {
+	 mask: linear-gradient(red, red) text;
+	-webkit-mask: linear-gradient(red, red) text;
+	/* filter: Opacity(85%); */
+	grid-area: 1/1;
+	backdrop-filter: blur(calc(3px));
+	-webkit-backdrop-filter: blur(calc(3px));
+ }
+
+ /* <text x="0.8" y=".2" font-weight="700" font-size="1"> Hello </text> */
+
 </style>

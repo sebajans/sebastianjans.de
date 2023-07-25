@@ -19,13 +19,13 @@
 			<T keyName="my-education" defaultValue="my-education" />
 		</h1>
 		<ul 
-		class="hs snap-x snap-mandatory overflow-x-auto">
-		 <div class="h-px w-px"></div>
+		class="hs snap-x snap-mandatory md:space-y-1 overflow-x-auto">
+		 <li class="h-px w-px"></li>
 		{#each cvItems as item}
 			{#if item.category === 'education'}
 				<li
 					in:fly|global={{ y: 50, duration: 500, delay: 250 * item.id }}
-					class="snap-center snap-always md:snap-none w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start "
+					class="snap-center snap-always md:snap-none w-full flex md:flex-row flex-col md:space-x-3 items-end md:items-start "
 				>
 					<div
 						style:background-image={$settingsState.darkMode ? `url('${item.image}')` : `url('${item.image}')`}
@@ -45,7 +45,7 @@
 				</li>
 			{/if}
 		{/each}
-		<div class="h-px w-px"></div>
+		<li class="h-px w-px"></li>
 
 	</ul>
 

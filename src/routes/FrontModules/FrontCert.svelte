@@ -28,7 +28,7 @@
 		<!-- style="grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); grid-auto-columns: minmax(400px,1fr);" -->
 		<ul 
 		 class="hs snap-x snap-mandatory overflow-x-auto">
-			<div class="h-px w-px"></div>
+			<li class="h-px w-px"></li>
 			{#each cvItems as item}
 				{#if item.category === 'certificate'}
 					<li
@@ -43,13 +43,13 @@
 							class="h-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md w-full flex flex-col justify-start"
 						>
 							<h2 class="font-sans text-primary-900 dark:text-primary-50 text-2xl">
-								<T keyName="achievement-title" defaultValue={item.name} />
+								<T keyName="achievement-title-{item.name}" defaultValue={item.name} />
 							</h2>
 							<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-								<T keyName="achievement-date" defaultValue={item.fromYear} />
+								{item.fromYear}
 							</h3>
 							<p class="text-sm text-justify mb-2">
-								<T keyName="achievement-text" defaultValue={item.shortdescription} />
+								<T keyName="achievement-text-{item.name}" defaultValue={item.shortdescription} />
 							</p>
 							{#if item.link?.includes('https')}
 								<a
@@ -58,20 +58,19 @@
 									rel="noreferrer noopener"
 									href={item.link}
 								>
-										<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
+										<T keyName="certificate-button-{item.info}" defaultValue={item.info} />
 								</a>
 							{:else}
 								<a class="w-fit mt-auto ml-auto btn btn-navajo" href={item.link}>
-										<T keyName="certificate-button-{item.id}" defaultValue={item.info} />
+										<T keyName="certificate-button-{item.info}" defaultValue={item.info} />
 								</a>
 							{/if}
 						</div>
 					</li>
 				{/if}
 			{/each}
-			<div class="h-px w-px"></div>
-
-				</ul>
+			<li class="h-px w-px"></li>
+		</ul>
 	</div>
 </section>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 	import { fade } from 'svelte/transition';
-
+	import IntersectionObserver from 'svelte-intersection-observer';
 
 	import BenchBottom from './product-items/BenchBottom.svelte';
 	import BenchFront from './product-items/BenchFront.svelte';
@@ -44,24 +44,31 @@
 	let selected = 'perspective';
 	let imageVisible = false;
 	$: selectedItem = options.find((x) => x.value == selected);
+
+	let element: HTMLElement;
+  let intersecting:boolean;
 </script>
 
 
-<section id="productdesign" class="relative  flex flex-col ">
+<IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}
+>	
+<section bind:this={element} id="productdesign" class="relative  flex flex-col ">
 	<div
 		class="px-4  flex my-auto flex-row-reverse md:flex-row h-works md:h-worksmd max-h-[56rem] w-full justify-center items-center"
 	>
 		<div
-			class="flex  justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4"
+			class="flex justify-center flex-col items-center max-w-4xl w-full sm:w-full h-full md:space-y-8 space-y-4"
 		>
 			<h1
-				class="md:pt-3 md:pb-4 md:pl-0 text-2xl md:text-4xl text-center md:text-left font-sans font-bold"
+				class="	{intersecting ? '' : 'translate-y-2/3 opacity-0' } transition-all duration-500 
+				md:pt-3 md:pb-4 md:pl-0 text-2xl md:text-4xl text-center md:text-left font-sans font-bold"
 			>
 				<T keyName="Cat-Bench" defaultValue="Cat Bench" />
 			</h1>
 			<div class=" flex flex-row flex-wrap md:flex-nowrap w-[calc(100vw_-_2rem)] md:w-auto ">
-				<div
-					class="scale-[0.8] -translate-y-6 md:scale-100 flex w-full md:w-4/5 justify-center items-center relative"
+				<div 
+					class="	{intersecting ? '' : '-translate-x-1/3 opacity-0' } transition-all duration-500 delay-300
+					scale-[0.8] -translate-y-6 md:scale-100 flex w-full md:w-4/5 justify-center items-center relative"
 				>
 					<div
 						class=" 
@@ -139,7 +146,8 @@
 				</div>
 
 				<div
-					class="w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans  box-content uppercase font-medium items-stretch justify-between h-auto md:h-fit "
+					class="	{intersecting ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500 delay-500
+					w-full flex flex-row md:flex-col flex-wrap md:flex-nowrap flex-auto md:w-1/5 md:ml-4 font-sans  box-content uppercase font-medium items-stretch justify-between h-auto md:h-fit "
 				>
 					{#each options.slice(0, 5) as option}
 						<div
@@ -170,7 +178,8 @@
 					</button>
 				</div>
 			</div>
-			<p class="mt-4 text-sm md:text-base">
+			<p class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-700
+			mt-4 text-sm md:text-base">
 				<T
 					keyName="description-product-design-1"
 					defaultValue="This bench is a project that i created with the intention of having multiple purposes. It had to fit a tight corner on my balcony and also serve as a sleeping spot for my cat."
@@ -179,6 +188,7 @@
 		</div>
 	</div>
 </section>
+</IntersectionObserver>
 
 <style>
 	.standardButton {

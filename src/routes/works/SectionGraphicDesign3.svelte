@@ -2,6 +2,8 @@
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import IntersectionObserver from 'svelte-intersection-observer';
+
 
 
 	let tileOrientation = [
@@ -47,20 +49,27 @@
 			startAutoRotation();
 		}
 	}
+
+
+	let element: HTMLElement;
+  let intersecting:boolean;
 </script>
 
-<section id="graphicdesign-trels" class="px-4 w-full relative flex ">
+
+<IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}
+>	
+<section bind:this={element} id="graphicdesign-trels" class="px-4 w-full relative flex">
 	<div
 		class="gap-4 max-w-4xl max-h-[56rem] grid grid-cols-9 grid-rows-12 md:grid-cols-12 md:grid-rows-9 w-full h-works md:h-worksmd mx-auto my-auto "
 	>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileTitle.svg')"
-			class="bg-no-repeat bg-contain
+			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 bg-no-repeat bg-contain
 			col-start-1 row-start-1 col-span-9 row-span-2 md:row-start-1 md:col-start-1  md:col-span-6 md:row-span-2"
 		/>
 
 		<p
-			class="text-justify text-sm md:text-base col-start-1 row-start-3 col-span-9 row-span-3 md:row-start-3 md:col-start-1 md:col-span-6 md:row-span-4"
+			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-150 text-justify text-sm md:text-base col-start-1 row-start-3 col-span-9 row-span-3 md:row-start-3 md:col-start-1 md:col-span-6 md:row-span-4"
 		>
 			<T
 				keyName="works-p-trels"
@@ -68,18 +77,40 @@
 			/>
 		</p>
 		<div
-			class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 items-center
+			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-300 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 items-center
 			col-start-7 row-start-6 col-span-3 row-span-4 md:row-start-6 md:col-start-8  md:col-span-5 md:row-span-1"
 		>
 			<button on:click={showTile} class="btn standardButton w-full h-fit">
-				{showTiles ? 'Show Tile' : 'Show Grid'}
+				<!-- {showTiles ? 'show tile' : 'show grid'} -->
+				{#if showTiles}
+				<T
+				keyName="works-trels-show-tile"
+				defaultValue="show Tile"
+			/>
+			{:else}
+			<T
+			keyName="works-trels-show-grid"
+			defaultValue="show grid"
+		/>
+				{/if}
 			</button>
 			<button class="btn standardButton w-full h-fit" on:click={rotateTiles}>
-				{rotating ? 'Pause Rotation' : 'Start Rotation'}</button
+				{#if rotating}
+				<T
+				keyName="works-trels-pause-rotation"
+				defaultValue="Pause Rotation"
+			/>
+			{:else}
+			<T
+			keyName="works-trels-start-rotation"
+			defaultValue="Start Rotation"
+		/>
+				{/if}
+				</button
 			>
 		</div>
-		<div
-			class="h-full w-full object-top col-start-1 row-start-6 col-span-5 row-span-5 md:row-start-1 md:col-start-8  md:col-span-5 md:row-span-5"
+		<div 
+			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-300 h-full w-full object-top col-start-1 row-start-6 col-span-5 row-span-5 md:row-start-1 md:col-start-8  md:col-span-5 md:row-span-5"
 		>
 			{#if showTiles}
 				<div 
@@ -116,21 +147,22 @@
 		</div>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-1.webp')"
-			class="bg-no-repeat bg-cover rounded-md
+			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-700 bg-no-repeat bg-cover rounded-md
 			col-start-1 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-1  md:col-span-4 md:row-span-3"
 		/>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-2.webp')"
-			class="bg-no-repeat bg-cover rounded-md
+			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-[850ms] bg-no-repeat bg-cover rounded-md
 			col-start-4 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-5  md:col-span-4 md:row-span-3"
 		/>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-3.webp')"
-			class="bg-no-repeat bg-cover rounded-md
+			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-1000 bg-no-repeat bg-cover rounded-md
 			col-start-7 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-9  md:col-span-4 md:row-span-3"
 		/>
 	</div>
 </section>
+</IntersectionObserver>
 
 <style>
 	.standardButton {

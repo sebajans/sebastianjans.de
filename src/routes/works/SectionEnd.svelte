@@ -1,29 +1,33 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
-
 	import Popup from '../../components/Popup.svelte';
+	import IntersectionObserver from 'svelte-intersection-observer';
 
 	let popup: any;
 	function openPopup() {
 		popup.show();
 	}
+
+	let element: HTMLElement;
+  let intersecting:boolean;
 </script>
 
-<!-- style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%), radial-gradient(at top right, var(--tw-gradient-from) 0%, transparent 30%);"
-bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50  -->
-<section id="end" class="px-4 w-full relative flex justify-center ">
+
+<IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}
+>	
+<section bind:this={element} id="end" class="px-4 w-full relative flex justify-center ">
 	<div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">
-		<h1 class="w-full text-4xl md:text-5xl text-right">
+		<h1 class="{intersecting ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500  w-full text-4xl md:text-5xl text-right">
 			<T keyName="download-portfolio-header" defaultValue="Didn't see enough?" />
 		</h1>
-		<h3 class="dark:text-primary-200 w-3/4 md:w-2/3 self-end text-xl md:text-2xl text-right py-4">
+		<h3 class="{intersecting ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500 delay-100 dark:text-primary-200 w-3/4 md:w-2/3 self-end text-xl md:text-2xl text-right py-4">
 			<T
 				keyName="download-portfolio-text"
 				defaultValue="Download my portfolio below to see more of my work."
 			/>
 		</h3>
 		<button
-			class="relative uppercase font-sans btn standardButton w-auto mt-4  rounded-lg text-primary-50"
+			class="{intersecting ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500 delay-200 relative uppercase font-sans btn standardButton w-auto mt-4  rounded-lg text-primary-50"
 			on:click={openPopup}
 		>
 			<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
@@ -62,6 +66,8 @@ bg-gradient-to-bl from-primary-600/50 dark:from-primary-700/50  -->
 		</Popup>
 	</div>
 </section>
+
+</IntersectionObserver>
 
 <style>
 		.standardButton {
