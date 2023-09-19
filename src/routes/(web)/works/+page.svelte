@@ -121,7 +121,7 @@
 		<SectionWebRJ />
 		<SectionWebRR />
 		<SectionWebKamado />
-		<SectionWebBrazie />
+		<!-- <SectionWebBrazie /> -->
 		<SectionWebDMaier />
 	</div>
 </IntersectionObserver>
