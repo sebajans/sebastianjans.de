@@ -7,8 +7,8 @@
 	import { mainClass } from '$lib/stores/mainClass';
 	import { getTranslate } from '@tolgee/svelte';
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
-	import Popup from '../../components/Popup.svelte';
-	import TermsOfService from '../../components/TermsOfService.svelte';
+	import Popup from '$components/Popup.svelte';
+	import TermsOfService from '$components/TermsOfService.svelte';
 
 	const { t } = getTranslate();
 	pageTitle.set($t({ key: 'contact-title', defaultValue: 'Contact' }));

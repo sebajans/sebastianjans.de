@@ -6,7 +6,7 @@
 	import SvelteSeo from 'svelte-seo';
 	
 	import { workSectionNames } from '$lib/lists/workSectionNames';
-	import WorksHeader from '../../components/WorksHeader.svelte';
+	import WorksHeader from '$components/WorksHeader.svelte';
 	
 	import SectionWebRR from './SectionWebRR.svelte';
 	import SectionWebRJ from './SectionWebRJ.svelte';
@@ -25,6 +25,7 @@
 
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
 	import { getTranslate } from '@tolgee/svelte';
+	import SectionWebBrazie from './SectionWebBrazie.svelte';
 
 	const { t } = getTranslate(); // Tolgee t translation
 
@@ -120,6 +121,7 @@
 		<SectionWebRJ />
 		<SectionWebRR />
 		<SectionWebKamado />
+		<SectionWebBrazie />
 		<SectionWebDMaier />
 	</div>
 </IntersectionObserver>

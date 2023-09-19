@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { beforeUpdate } from 'svelte';
-	import Logo from '../components/Logo.svelte';
+	import Logo from '$components/Logo.svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 
-	import SocialMenu from '../components/SocialMenu.svelte';
+	import SocialMenu from '$components/SocialMenu.svelte';
 	// export let duration = "300ms"
 	export let offset = 0;
 	export let tolerance = 0;

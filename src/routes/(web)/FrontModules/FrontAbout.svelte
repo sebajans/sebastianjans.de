@@ -2,12 +2,14 @@
 	import T from '@tolgee/svelte/T.svelte';
 	import { fly } from 'svelte/transition';
 	let profilePicture = 'img/profile-pic.webp';
-	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';
+	import ButtonScrollToSection from '$components/ButtonScrollToSection.svelte';
 	import { getTranslate } from '@tolgee/svelte';
 
 	const { t } = getTranslate();
 
 </script>
+
+
 
 <section class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] h-full min-h-screen flex flex-col justfiy-center" 
 id="aboutme">

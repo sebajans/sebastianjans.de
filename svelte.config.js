@@ -11,6 +11,10 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		alias: {
+			$components: "src/components",
+			// $i18n: "src/i18n",
+		},
 		inlineStyleThreshold: Infinity,
 		// output: {
 		// 	dir: 'build'

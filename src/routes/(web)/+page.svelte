@@ -3,49 +3,34 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { fly } from 'svelte/transition';
 	import { afterNavigate } from '$app/navigation';
-	import ButtonScrollToSection from '../components/ButtonScrollToSection.svelte';
+	import ButtonScrollToSection from '$components/ButtonScrollToSection.svelte';
 	// import SvelteSeo from 'svelte-seo';
 	import FrontCert from './FrontModules/FrontCert.svelte';
 	import FrontEdu from './FrontModules/FrontEdu.svelte';
 	import FrontWork from './FrontModules/FrontWork.svelte';
 	import FrontAbout from './FrontModules/FrontAbout.svelte';
+	import { onMount } from 'svelte';
 
 	pageTitle.set('');
-
 	const { t } = getTranslate();
 
 	let visible = false;
-	let animationspeed: number | null = null;
-	let animationdelay: number = 0;
+	let animationspeed: number | null = 0.08
+	let animationdelay: number = 1;
 	
 	afterNavigate(({ from }) => {
-  visible = true;
-  animationspeed = from === null ? 0.08 : 10;
-  animationdelay = from === null ? 1 : 0;
-});
+		visible = true;
+		animationspeed = from === null ? 0.08 : 10;
+		animationdelay = from === null ? 1 : 0;
+	});
 
-	// function typewriter(node: any, { delay = 0, speed = 1 }) {
-	// 	const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
-
-	// 	if (!valid) {
-	// 		throw new Error(`This transition only works on elements with a single text node child`);
-	// 	}
-
-	// 	const text = node.textContent;
-	// 	const duration = text.length / speed;
-
-	// 	return {
-	// 		delay,
-	// 		duration,
-	// 		tick: (t: number) => {
-	// 			const i = ~~(text.length * t);
-	// 			node.textContent = text.slice(0, i);
-	// 		}
-	// 	};
-	// }
+	onMount(() => {
+		visible = true;
+		// animationspeed = 0.08
+		// animationdelay = 1
+	})
 	
 	let scroll: any;
-
 	let windowHeight: number = 0;
 </script>
 
@@ -76,30 +61,12 @@
 >
 	<div class="relative pb-[100svh] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
 		{#if visible && animationspeed != null && animationdelay != null}
-			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">
-				<!-- backdrop-blur-md border-primary-900/5 dark:border-primary-50/10 md:bg-gradient-to-br  md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 -->
-				<!-- <span 
-					style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
-					style:opacity={`100% - ${scroll * -0.2}`}
-					class="welcomeText outlinedText text-primary-500/80 font-bold  text-left leading-[0.2] 
-				text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
-					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 100 * animationdelay }}
-				>
-					{$t({ key: 'hello', defaultValue: 'Hello' })}
-				</span> -->
-				<!-- <div class="h-auto w-full"> -->
-
-					<!-- <div style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
-						class="aspect-[2268/721] w-full test-clipPath-2 z-20"></div> -->
-						<!-- </div> -->
-						<!-- /* width:2268px;
-							height: 721px; */ -->
-							
-							<span 
+			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">							
+				<span 
 							style="filter: Opacity({`calc(100% - ${scroll * 0.15}%)`})"
 					style:transform={`translate3d(0, ${scroll * -0.2}px, 0)`}
 					class="text-backdrop-blur text-primary-800 dark:text-primary-300 welcomeText z-[11] h-fit font-bold  text-left 
-				text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
+					text-[clamp(10vh,30vh,32vw)] md:text-[clamp(10vh,30vh,15rem)]"
 					in:fly|global={{ y: animationspeed *1000 * 0.15, delay: 100 * animationdelay }}
 				>
 					{$t({ key: 'hello', defaultValue: 'Hello' })}

@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import MenuToggle from './MenuToggle.svelte';
 	import BackdropBlur from './BackdropBlur.svelte';
-	import SocialMenu from '../components/SocialMenu.svelte';
+	import SocialMenu from '$components/SocialMenu.svelte';
 	import Logo from './Logo.svelte';
 	import { getTolgee } from '@tolgee/svelte';
 	import { draw } from 'svelte/transition';

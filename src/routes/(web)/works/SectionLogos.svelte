@@ -53,13 +53,13 @@
 	class="flex flex-col px-4 relative "
 	>
 	{#if activeNumber !== -1}
-	<div 
-	role="button"
-	tabindex="0"
-	on:click={() => (activeNumber = -1)}
-	on:keydown={() => (activeNumber = -1)}
-	class="absolute inset-0 z-[1] bg-transparent cursor-default">
-	</div>
+		<div 
+		role="button"
+		tabindex="0"
+		on:click={() => (activeNumber = -1)}
+		on:keydown={() => (activeNumber = -1)}
+		class="absolute inset-0 z-[1] bg-transparent cursor-default">
+		</div>
 	{/if}
 
 	<div 
@@ -100,7 +100,6 @@
 						/>
 					</div>
 				{/each}
-				<!-- </div> -->
 			</div>
 		</div>
 

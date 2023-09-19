@@ -130,7 +130,7 @@
 			<img
 				class="rounded-full mt-10 w-40 h-40 object-cover object-top"
 				alt="profile-pic"
-				src="img/profile-pic.webp"
+				src="/img/profile-pic.webp"
 			/>
 			<h2>
 				{$t({ key: 'skills-title', defaultValue: 'Skills' })}

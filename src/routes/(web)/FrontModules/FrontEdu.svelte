@@ -3,30 +3,29 @@
 
 	import { fly } from 'svelte/transition';
 	import { cvItems } from '$lib/lists/cvItems';
-	import ButtonScrollToSection from '../../components/ButtonScrollToSection.svelte';
+	import ButtonScrollToSection from '$components/ButtonScrollToSection.svelte';
 	import { settingsState } from '$lib/stores/settingsState';
 </script>
 
-
 <section
-	class=" md:px-0 pt-4 md:pt-20 pb-20 md:pb-20 relative h-full w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] min-h-screen  flex flex-col justfiy-center content-center"
-	id="cv_jobs"
+	class=" md:px-0 pt-4 md:pt-20 pb-20 md:pb-20 relative h-full w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] min-h-screen flex flex-col justfiy-center content-center"
+	id="cv_edu"
 >
 	<div class="space-y-4 max-w-4xl w-full mx-auto my-auto">
 		<h1
 			in:fly|global={{ y: 50, duration: 500 }}
 			class="text-center md:text-left text-primary-900 dark:text-primary-50"
 		>
-		<T keyName="work-experience" defaultValue="Work Experience" />
-	</h1>
+			<T keyName="my-education" defaultValue="my-education" />
+		</h1>
 		<ul 
-		class="hs snap-x snap-mandatory overflow-x-auto">
+		class="hs snap-x snap-mandatory md:space-y-1 overflow-x-auto">
 		 <li class="h-px w-px"></li>
 		{#each cvItems as item}
-			{#if item.category === 'job'}
+			{#if item.category === 'education'}
 				<li
 					in:fly|global={{ y: 50, duration: 500, delay: 250 * item.id }}
-					class="snap-center snap-always md:snap-none w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start "
+					class="snap-center snap-always md:snap-none w-full flex md:flex-row flex-col md:space-x-3 items-end md:items-start "
 				>
 					<div
 						style:background-image={$settingsState.darkMode ? `url('${item.image}')` : `url('${item.image}')`}
@@ -51,8 +50,8 @@
 	</ul>
 
 	</div>
-	<ButtonScrollToSection section={'cv_edu'}>
-		<T keyName="education" defaultValue="Education" /></ButtonScrollToSection
+	<ButtonScrollToSection section={'cv_cert'}>
+		<T keyName="achievements" defaultValue="Achievements" /></ButtonScrollToSection
 	>
 </section>
 

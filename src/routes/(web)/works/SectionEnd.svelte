@@ -1,6 +1,6 @@
 <script lang="ts">
 	import T from '@tolgee/svelte/T.svelte'; // change import statement
-	import Popup from '../../components/Popup.svelte';
+	import Popup from '$components/Popup.svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
 	let popup: any;

@@ -10,7 +10,7 @@
 	import { afterNavigate } from '$app/navigation';
 	const { t } = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
-	import Popup from '../../components/Popup.svelte';
+	import Popup from '$components/Popup.svelte';
 
 	mainClass.set('pb-14 my-auto');
 
