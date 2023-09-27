@@ -1,32 +1,64 @@
-export const skillItems = {
+export interface SkillCategory {
+  categorydescription: string;
+  categoryArray: {
+    name: string;
+    fieldOfWork: string[];
+    iconLink: string;
+    progress: string;
+  }[];
+}
+
+export type SkillItems = {
+  [key: string]: SkillCategory;
+};
+
+export const skillItems: SkillItems = {
   Webdesign: {
     categorydescription:
       'I am always learning about the newest advancements in the world of web development.',
     categoryArray: [
       {
+        name: 'HTML',
+        fieldOfWork: ['webdev'],
         iconLink: 'skills-icons/html.svg',
-        name: 'HTML', progress: 'w-[75.5%] '
+        progress: 'w-[75.5%] ',
       },
       {
+        name: 'CSS',
+        fieldOfWork: ['webdev'],
         iconLink: 'skills-icons/css.svg',
-        name: 'CSS', progress: 'w-[75.5%] '
+        progress: 'w-[75.5%] ',
       },
       {
+        name: 'TailwindCSS',
+        fieldOfWork: ['webdev'],
         iconLink: 'skills-icons/tailwindcss.svg',
-        name: 'TailwindCSS', progress: 'w-[50.5%] '
+        progress: 'w-[50.5%] ',
       },
       {
+        name: 'Typescript',
+        fieldOfWork: ['webdev'],
         iconLink: 'skills-icons/typescript.svg',
-        name: 'Typescript', progress: 'w-[50.5%] '
+        progress: 'w-[50.5%] ',
       },
       {
+        name: 'Svelte',
+        fieldOfWork: ['webdev'],
         iconLink: 'skills-icons/svelte.svg',
-        name: 'Svelte', progress: 'w-[35.5%] '
+        progress: 'w-[35.5%] ',
       },
       {
+        name: 'Wordpress',
+        fieldOfWork: ['webdev'],
         iconLink: 'skills-icons/wordpress.svg',
-        name: 'Wordpress', progress: 'w-[75.5%] '
-      }
+        progress: 'w-[75.5%] ',
+      },
+      {
+        name: 'Github',
+        fieldOfWork: ['webdev'],
+        iconLink: 'skills-icons/github.svg',
+        progress: 'w-[75.5%] ',
+      },
     ]
   },
 
@@ -34,12 +66,16 @@ export const skillItems = {
     categorydescription: 'Coming up with creative and smart product solutions is my passion.',
     categoryArray: [
       {
+        name: 'AD Fusion 360',
+        fieldOfWork: ['productdesign'],
         iconLink: 'skills-icons/autodesk-fusion-360.svg',
-        name: 'AD Fusion 360', progress: 'w-[75.5%] '
+        progress: 'w-[75.5%] ',
       },
       {
+        name: 'AD 3DS Max',
+        fieldOfWork: ['productdesign'],
         iconLink: 'skills-icons/autodesk-3ds.svg',
-        name: 'AD 3DS Max', progress: 'w-[50.5%] '
+        progress: 'w-[50.5%] ',
       }
     ]
   },
@@ -48,32 +84,46 @@ export const skillItems = {
       'All the important tools to provide assets for most graphic design needs.',
     categoryArray: [
       {
+        name: 'Affinity Photo',
+        fieldOfWork: ['webdev', 'graphic'],
         iconLink: 'skills-icons/AffinityPhoto.svg',
-        name: 'Affinity Photo', progress: 'w-[75.5%] '
+        progress: 'w-[75.5%] ',
       },
       {
+        name: 'Adobe Photoshop',
+        fieldOfWork: ['graphic'],
         iconLink: 'skills-icons/adobe-photoshop.svg',
-        name: 'Adobe Photoshop', progress: 'w-[75.5%] '
+        progress: 'w-[75.5%] ',
       },
       {
+        name: 'Affinity Designer',
+        fieldOfWork: ['webdev', 'graphic'],
         iconLink: 'skills-icons/AffinityDesigner.svg',
-        name: 'Affinity Designer', progress: 'w-[100.5%] '
+        progress: 'w-[100.5%] ',
       },
       {
+        name: 'Adobe Illustrator',
+        fieldOfWork: ['graphic'],
         iconLink: 'skills-icons/adobe-illustrator.svg',
-        name: 'Adobe Illustrator', progress: 'w-[100.5%] '
+        progress: 'w-[100.5%] ',
       },
       {
+        name: 'Affinity Publisher',
+        fieldOfWork: ['webdev', 'graphic'],
         iconLink: 'skills-icons/AffinityPublisher.svg',
-        name: 'Affinity Publisher', progress: 'w-[75.5%] '
+        progress: 'w-[75.5%] ',
       },
       {
+        name: 'Adobe InDesign',
+        fieldOfWork: ['graphic'],
         iconLink: 'skills-icons/adobe-indesign.svg',
-        name: 'Adobe InDesign', progress: 'w-[75.5%] '
+        progress: 'w-[75.5%] ',
       },
       {
+        name: 'Figma',
+        fieldOfWork: ['webdev', 'graphic'],
         iconLink: 'skills-icons/figma2.svg',
-        name: 'Figma', progress: 'w-[25.5%] '
+        progress: 'w-[25.5%] ',
       }
     ]
   },
@@ -82,16 +132,22 @@ export const skillItems = {
       'The set of languages i am fluent with, i can help you reach the broadest audience in the western world',
     categoryArray: [
       {
+        name: 'German',
+        fieldOfWork: ['webdev', 'graphic'],
         iconLink: 'skills-icons/de.svg',
-        name: 'German', progress: 'Native'
+        progress: 'Native',
       },
       {
+        name: 'Spanish',
+        fieldOfWork: ['webdev', 'graphic'],
         iconLink: 'skills-icons/es.svg',
-        name: 'Spanish', progress: 'Native'
+        progress: 'Native',
       },
       {
+        name: 'English',
+        fieldOfWork: ['webdev', 'graphic'],
         iconLink: 'skills-icons/gb.svg',
-        name: 'English', progress: 'Bilingual'
+        progress: 'Bilingual',
       }
     ]
   }

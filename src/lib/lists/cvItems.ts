@@ -1,6 +1,7 @@
 export let cvItems = [
   {
     category: 'job',
+    fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
     id: 1,
     image: 'cv_items/logo-kamado.webp',
     imageDark: '',
@@ -16,6 +17,7 @@ export let cvItems = [
   },
   {
     category: 'job',
+    fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
     id: 2,
     image: 'cv_items/logo-ditf-weiss.svg',
     imageDark: 'cv_items/logo-ditf-weiss.svg',
@@ -31,6 +33,7 @@ export let cvItems = [
   },
   {
     category: 'job',
+    fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
     id: 3,
     image: 'cv_items/logo-letratec.webp',
     imageDark: '',
@@ -46,6 +49,7 @@ export let cvItems = [
   },
   {
     category: 'education',
+    fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
     id: 1,
     image: 'cv_items/logo-upv.svg',
     imageDark: '',
@@ -61,6 +65,7 @@ export let cvItems = [
   },
   {
     category: 'education',
+    fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
     id: 2,
     image: 'cv_items/logo-uni-stuttgart.svg',
     imageDark: '',
@@ -76,6 +81,7 @@ export let cvItems = [
   },
   {
     category: 'education',
+    fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
     id: 3,
     image: 'cv_items/logo-gympl.webp',
     imageDark: '',
@@ -91,6 +97,7 @@ export let cvItems = [
   },
   {
     category: 'certificate',
+    fieldOfWork: ['webdev'],
     id: 1,
     link: '/works#graphicdesign-trels',
     image: 'cv_items/certificate-tau-censored.webp',
@@ -101,6 +108,7 @@ export let cvItems = [
   },
   {
     category: 'certificate',
+    fieldOfWork: ['webdev'],
     id: 2,
     link: 'https://www.futurelearn.com/profiles/19981862',
     image: 'cv_items/certificate-designing-for-a-sustainable-future.webp',
@@ -111,6 +119,7 @@ export let cvItems = [
   },
   {
     category: 'certificate',
+    fieldOfWork: ['webdev'],
     id: 3,
     link: 'https://static.semrush.com/academy/certificates/3d9e1fe2f3/sebastian-jans_2.pdf',
     image: 'cv_items/certificate-seo-crash-course.webp',
@@ -121,6 +130,7 @@ export let cvItems = [
   },
   {
     category: 'certificate',
+    fieldOfWork: [''],
     id: 4,
     link: 'https://www.linkedin.com/learning/certificates/c6873bdf46d353871733e92e89b0db4d0631d2dc7f7fd2689fb62006c4985bfc?trk=share_certificate',
     image: 'cv_items/certificate-ux-1.webp',
@@ -131,6 +141,7 @@ export let cvItems = [
   },
   {
     category: 'certificate',
+    fieldOfWork: [''],
     id: 5,
     link: 'https://www.linkedin.com/learning/certificates/214fc26fd55146d90e74b44a0848dca7aa27108a3ba38e76d090d572f97a741f?trk=share_certificate',
     image: 'cv_items/certificate-ux-2.webp',
@@ -141,6 +152,7 @@ export let cvItems = [
   },
   {
     category: 'certificate',
+    fieldOfWork: [''],
     id: 6,
     link: 'https://www.linkedin.com/learning/certificates/3682dd110047f940bda4fec58b928c17a320a7236ec6f3745165abb4ce267bf4',
     image: 'cv_items/certificate-ux-3.webp',
@@ -151,6 +163,7 @@ export let cvItems = [
   },
   {
     category: 'certificate',
+    fieldOfWork: [''],
     id: 7,
     link: 'https://www.linkedin.com/learning/certificates/6e37851ffa5cc013ca88d08cc8dfd110b959696936d17ad6baeed549f2991bb0',
     image: 'cv_items/certificate-ux-4.webp',
@@ -161,7 +174,8 @@ export let cvItems = [
   },
   {
     category: 'certificate',
-    id: 7,
+    fieldOfWork: [''],
+    id: 8,
     link: 'https://www.linkedin.com/learning/certificates/3008fcaefbb7739657edf4b7d4c6cbd39ebf454627fb15655829d031a5f7a04e',
     image: 'cv_items/certificate-ux-5.webp',
     name: 'UX Design: 5 Scenarios and Storyboards',
@@ -171,7 +185,8 @@ export let cvItems = [
   },
   {
     category: 'certificate',
-    id: 7,
+    fieldOfWork: [''],
+    id: 9,
     link: 'https://www.linkedin.com/learning/certificates/32d4b46530d2b61837813dddde492570b89e52ae38aeda6d77cedda821c65ee1',
     image: 'cv_items/certificate-ux-6.webp',
     name: 'UX Design: 6 Paper Prototyping',
@@ -181,10 +196,22 @@ export let cvItems = [
   },
   {
     category: 'certificate',
-    id: 7,
+    fieldOfWork: [''],
+    id: 10,
     link: 'https://www.linkedin.com/learning/certificates/6eba4b816966f5113b18ec1c274dbb9b581d32ad1deb204ff640745a4e2a1025',
     image: 'cv_items/certificate-ux-7.webp',
     name: 'UX Design: 7 Implementation Planning',
+    fromYear: '14/08/2023',
+    shortdescription: "This course taught me about the importance of implementation planning in the design process. I learned how to create implementation plans, and how to use them to create a better user experience.",
+    info: 'See Certificate',
+  },
+  {
+    category: 'certificate',
+    fieldOfWork: ['webdev'],
+    id: 11,
+    link: 'https://www.linkedin.com/learning/certificates/6eba4b816966f5113b18ec1c274dbb9b581d32ad1deb204ff640745a4e2a1025',
+    image: 'cv_items/certificate-ux-7.webp',
+    name: 'UX Design Course',
     fromYear: '14/08/2023',
     shortdescription: "This course taught me about the importance of implementation planning in the design process. I learned how to create implementation plans, and how to use them to create a better user experience.",
     info: 'See Certificate',

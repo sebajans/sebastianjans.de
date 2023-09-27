@@ -12,14 +12,14 @@
    body {
     min-height: 100svh;
    }
+   html::-webkit-scrollbar {
+     display: none;
+   }
+   
    section {
     @apply max-w-4xl my-auto mx-auto  h-screen-ios;
     min-height: 100vh;
     min-height: 100svh;
-   }
-   html::-webkit-scrollbar {
-
-     display: none;
    }
 
   h1 {
@@ -91,17 +91,3 @@
   .h-worksmd {
 		height: calc(100% - 10rem);
 	}
-
-  @media print {
-    body * {
-      visibility: hidden;
-    }
-    #section-to-print, #section-to-print * {
-      visibility: visible;
-    }
-    #section-to-print {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-  }
