@@ -43,7 +43,7 @@
 	"dependencies": {
 		"@sveltejs/amp": "^1.0.2",
 		"@threlte/core": "^5.0.9",
-		"@threlte/extras": "^4.9.3",
+		"@threlte/extras": "^6.0.0",
 		"@tolgee/svelte": "^5.12.0",
 		"svrollbar": "^0.12.0",
 		"three": "^0.148.0"
