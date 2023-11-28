@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2(@sveltejs/kit@1.25.0)
   '@threlte/core':
-    specifier: ^5.0.9
-    version: 5.0.9
+    specifier: ^7.0.0
+    version: 7.0.0(svelte@4.2.0)(three@0.148.0)
   '@threlte/extras':
     specifier: ^4.9.3
     version: 4.9.3(three@0.148.0)
@@ -505,8 +505,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@threlte/core@5.0.9:
-    resolution: {integrity: sha512-3u8SGLD/fzOh0sEf1MDa0FVpp7oLqdEUR8nvGEkWZvGDwKUlhe0XxSmXNzvAYwCSnNLsYYfwiAWy8wBrVkoRlg==}
+  /@threlte/core@7.0.0(svelte@4.2.0)(three@0.148.0):
+    resolution: {integrity: sha512-O6RKg67BDIqiBF9KtlpbVRx1vIYZ/UFTb5WiElYihJ53s7HBgH/lrQOytLTWdMiZsPHTeA5v+nQ/Bn51beNyRA==}
+    peerDependencies:
+      svelte: '>=4'
+      three: '>=0.133'
+    dependencies:
+      svelte: 4.2.0
+      three: 0.148.0
     dev: false
 
   /@threlte/extras@4.9.3(three@0.148.0):

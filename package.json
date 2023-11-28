@@ -42,7 +42,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/amp": "^1.0.2",
-		"@threlte/core": "^5.0.9",
+		"@threlte/core": "^7.0.0",
 		"@threlte/extras": "^4.9.3",
 		"@tolgee/svelte": "^5.12.0",
 		"svrollbar": "^0.12.0",
