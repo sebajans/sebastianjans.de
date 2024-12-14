@@ -38,7 +38,7 @@
 						<div
 							style:background-image={`url('${item.image}')`}
 							class="bg-cover bg-no-repeat bg-center bg-origin-content  z-10 pointer-events-none w-full flex rounded-md justify-center aspect-[29/_21] border border-primary-200/90 dark:border-primary-50/5"
-						/>
+						></div>
 						<div
 							class="h-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md w-full flex flex-col justify-start"
 						>

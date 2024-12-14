@@ -1,17 +1,21 @@
+<!-- @migration-task Error while migrating Svelte code: `<svelte:window>` does not support non-event attributes or spread attributes
+https://svelte.dev/e/illegal_element_attribute -->
 <script lang="ts">
-	import { spring } from 'svelte/motion';
+	import { Spring } from 'svelte/motion';
 
-	let position = spring({ x: 0, y: 0 });
-	let coords = spring(
+	let position = new Spring({ x: 0, y: 0 });
+	let coords = new Spring(
 		{ x: 0, y: 0 },
 		{
 			stiffness: 0.05,
 			damping: 0.25
 		}
 	);
-	let scale = spring(1);
+	let scale = new Spring(1);
 	let smaller: boolean = false;
 
+	let innerHeight: number
+	let innerWidth: number
 	// const randomBlobPosition = (e: any) => {
 	// 	let r1: number, r2: number;
 	// 	r1 = Math.random() * innerHeight;
@@ -22,8 +26,8 @@
 </script>
 
 <svelte:window
-	{innerHeight}
-	{innerWidth}
+	bind:innerHeight={innerHeight}
+	bind:innerWidth={innerWidth}
 	on:mousemove={(e) => {
 		coords.set({ x: e.clientX, y: e.clientY });
 	}}

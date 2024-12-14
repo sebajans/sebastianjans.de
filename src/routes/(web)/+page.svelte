@@ -14,9 +14,9 @@
 	pageTitle.set('');
 	const { t } = getTranslate();
 
-	let visible = false;
-	let animationspeed: number | null = 0.08
-	let animationdelay: number = 1;
+	let visible = $state(false);
+	let animationspeed: number | null = $state(0.08)
+	let animationdelay: number = $state(1);
 	
 	afterNavigate(({ from }) => {
 		visible = true;
@@ -30,8 +30,8 @@
 		// animationdelay = 1
 	})
 	
-	let scroll: any;
-	let windowHeight: number = 0;
+	let scroll: any = $state();
+	let windowHeight: number = $state(0);
 </script>
 
 <svelte:head>

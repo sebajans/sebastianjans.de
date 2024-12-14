@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { beforeUpdate } from 'svelte';
+	// import { beforeUpdate } from 'svelte';
 	import Logo from '$components/Logo.svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 
@@ -15,7 +15,7 @@
 	let y = 0;
 	let lastY = 0;
 
-	$: beforeUpdate(() => (showMenu = false));
+	// $: beforeUpdate(() => (showMenu = false));
 
 	function updateClass(y: number) {
 		const dy = lastY - y;
@@ -46,6 +46,8 @@
 <svelte:window bind:scrollY={y} />
 
 <header
+	role="navigation"
+	aria-label="Page Header"
 	on:mouseenter={() => (showHeader = true)}
 	on:mouseleave={() => (showHeader = false)}
 	class=" {headerClass || showHeader
@@ -60,7 +62,7 @@
 			? 'w-20 h-20 md:left-2 top-2'
 			: 'w-16 h-16 '} md:fixed md:mx-8 top-0 absolute md:left-0 left-1/2 transition-all duration-150 md:translate-x-0 z-50 group"
 	>
-		<Logo className={headerClass || showHeader ? 'w-16 h-16' : 'translate-x-2 w-12 h-12'} />
+		<Logo class={headerClass || showHeader ? 'w-16 h-16' : 'translate-x-2 w-12 h-12'} />
 	</a>
 
 	<div class="relative items-center w-full md:pl-44 px-4 mx-auto z-40 flex justify-between ">

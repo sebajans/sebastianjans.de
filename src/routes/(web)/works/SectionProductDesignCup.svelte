@@ -5,22 +5,22 @@
 	import CupholderModel from './product-items/CupholderModel.svelte';
 	import CupHolderModelClose from './product-items/CupHolderModelClose.svelte';
 	
-	let zoomIn: boolean = false;
+	let zoomIn: boolean = $state(false);
 
-	let element1: HTMLElement;
-  let intersecting1:boolean;
-	let element2: HTMLElement;
-  let intersecting2:boolean;
-	let element3: HTMLElement;
-	let intersecting3:boolean;
-	let element4: HTMLElement;
-	let intersecting4:boolean;
-	let element5: HTMLElement;
-	let intersecting5:boolean;
-	let element6: HTMLElement;
-	let intersecting6:boolean;
-	let element7: HTMLElement;
-	let intersecting7:boolean;
+	let element1: HTMLElement = $state();
+  let intersecting1:boolean = $state();
+	let element2: HTMLElement = $state();
+  let intersecting2:boolean = $state();
+	let element3: HTMLElement = $state();
+	let intersecting3:boolean = $state();
+	let element4: HTMLElement = $state();
+	let intersecting4:boolean = $state();
+	let element5: HTMLElement = $state();
+	let intersecting5:boolean = $state();
+	let element6: HTMLElement = $state();
+	let intersecting6:boolean = $state();
+	let element7: HTMLElement = $state();
+	let intersecting7:boolean = $state();
 
 </script>
 
@@ -130,11 +130,11 @@ bg-gradient-to-bl from-primary-500/50 -->
 						: 'opacity-100'} transition-all duration-300 w-full h-full p-1 object-top object-contain text-primary-900 dark:text-primary-50"
 				/>
 				<button
-					on:click={() => (zoomIn = !zoomIn)}
+					onclick={() => (zoomIn = !zoomIn)}
 					class="{zoomIn
 						? ''
 						: 'animate-ping'} absolute w-6 h-6 left-[6%] top-[7%] rounded-full border-[0.5px] bg-primary-50/50 dark:bg-primary-900/50 border-primary-900 dark:border-primary-50"
-				/>
+				></button>
 				<CupHolderModelClose
 					imgClass="{zoomIn
 						? 'opacity-100 w-24 h-24'

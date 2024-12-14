@@ -2,8 +2,8 @@
 	import { T } from '@tolgee/svelte'; // change import statement
 	import IntersectionObserver from 'svelte-intersection-observer';
 
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement = $state();
+  let intersecting:boolean = $state();
 </script>
 
 <IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}

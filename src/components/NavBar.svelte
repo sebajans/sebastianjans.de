@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import NavButton from './NavButton.svelte';
 	import { navItems } from '$lib/lists/navItems';
 	import { onMount } from 'svelte';
@@ -11,8 +13,6 @@
 
 	const languageStore = getTolgee(['language']);
 
-	export let showMenu = false;
-	$: onMount(() => (showMenu = false));
 
 	function toggleMenu() {
 		showMenu = !showMenu;
@@ -20,14 +20,16 @@
 	function hideMenuMobile() {
 		showMenu = false;
 	}
-	$: console.log("showMenu", showMenu)
-	$: languageStore;
 
-	export let offset = 100;
-	export let tolerance = 3;
-	$: showMenu;
-	let headerClass: boolean = false;
-	let y = 0;
+	interface Props {
+		showMenu?: boolean;
+		offset?: number;
+		tolerance?: number;
+	}
+
+	let { showMenu = $bindable(false), offset = 100, tolerance = 3 }: Props = $props();
+	let headerClass: boolean = $state(false);
+	let y = $state(0);
 	let lastY = 0;
 
 	function updateClass(y: number) {
@@ -52,7 +54,21 @@
 		return (headerClass = true);
 	}
 
-	$: headerClass = updateClass(y);
+	run(() => {
+		onMount(() => (showMenu = false));
+	});
+	run(() => {
+		console.log("showMenu", showMenu)
+	});
+	run(() => {
+		languageStore;
+	});
+	run(() => {
+		showMenu;
+	});
+	run(() => {
+		headerClass = updateClass(y);
+	});
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -72,7 +88,7 @@
 			? 'mt-8 md:mt-4 scale-125 md:scale-100 mr-[0%]'
 			: 'translate-x-1/2 mr-[100%]'} ease-out group hover:scale-105 md:w-20 w-20 md:h-20 h-20 rounded-br-md md:mt-10 md:mx-8 self-center relative transition-all duration-200 md:translate-x-0 z-50 group"
 	>
-		<Logo className={'p-3 md:p-1.5'} />
+		<Logo class={'p-3 md:p-1.5'} />
 	</a>
 	<!-- actual nav -->
 

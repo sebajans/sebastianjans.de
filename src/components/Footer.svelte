@@ -3,7 +3,7 @@
 	import TermsOfService from './TermsOfService.svelte';
 	import { T } from '@tolgee/svelte'; // change import statement
 
-	let popup: any;
+	let popup: any = $state();
 	function openPopup() {
 		popup.show();
 	}
@@ -17,7 +17,7 @@
 	<button
 		aria-label="View Terms of Service PopUp"
 		class="hover:text-primary-500 font-bold"
-		on:click={openPopup}
+		onclick={openPopup}
 	>
 		<T keyName="terms-of-service" defaultValue="Terms of Service" /></button
 	>

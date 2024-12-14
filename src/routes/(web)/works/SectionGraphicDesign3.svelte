@@ -6,12 +6,12 @@
 
 
 
-	let tileOrientation = [
+	let tileOrientation = $state([
 		{ id: 1, rotation: 0 },
 		{ id: 2, rotation: 0 },
 		{ id: 3, rotation: 0 },
 		{ id: 4, rotation: 0 }
-	];
+	]);
 
 	function rotateAll() {
 		tileOrientation = tileOrientation.map((tile) => ({
@@ -20,8 +20,8 @@
 		}));
 	}
 
-	let showTiles: boolean = false;
-	let rotating: boolean = false;
+	let showTiles: boolean = $state(false);
+	let rotating: boolean = $state(false);
 	let intervalId: any;
 
 	function startAutoRotation() {
@@ -51,8 +51,8 @@
 	}
 
 
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement = $state();
+  let intersecting:boolean = $state();
 </script>
 
 
@@ -66,7 +66,7 @@
 			style:background-image="url('/graphicdesign/CeramicTileTitle.svg')"
 			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 bg-no-repeat bg-contain
 			col-start-1 row-start-1 col-span-9 row-span-2 md:row-start-1 md:col-start-1  md:col-span-6 md:row-span-2"
-		/>
+		></div>
 
 		<p
 			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-150 text-justify text-sm md:text-base col-start-1 row-start-3 col-span-9 row-span-3 md:row-start-3 md:col-start-1 md:col-span-6 md:row-span-4"
@@ -80,7 +80,7 @@
 			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-300 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 items-center
 			col-start-7 row-start-6 col-span-3 row-span-4 md:row-start-6 md:col-start-8  md:col-span-5 md:row-span-1"
 		>
-			<button on:click={showTile} class="btn standardButton w-full h-fit">
+			<button onclick={showTile} class="btn standardButton w-full h-fit">
 				<!-- {showTiles ? 'show tile' : 'show grid'} -->
 				{#if showTiles}
 				<T
@@ -94,7 +94,7 @@
 		/>
 				{/if}
 			</button>
-			<button class="btn standardButton w-full h-fit" on:click={rotateTiles}>
+			<button class="btn standardButton w-full h-fit" onclick={rotateTiles}>
 				{#if rotating}
 				<T
 				keyName="works-trels-pause-rotation"
@@ -122,7 +122,7 @@
 								style:background-image="url('/graphicdesign/CeramicTileSmall.webp')"
 								style="transform: rotate({tile.rotation}deg);"
 								class="bg-no-repeat transition-all duration-500 bg-cover h-full w-full"
-							/>
+							></div>
 						</div>
 					{/each}
 				</div>
@@ -141,7 +141,7 @@
 					<div
 						style="transform: translateZ(-10px) translateY(200px) rotateY(-5deg) rotateX(90deg)"
 						class="bg-gradient-to-t from-primary-800/40 via-primary-800/90 to-primary-800/40 blur-[6px] absolute h-8 z-0 w-full"
-					/>
+					></div>
 				</div>
 			{/if}
 		</div>
@@ -149,17 +149,17 @@
 			style:background-image="url('/graphicdesign/CeramicTileMockup-1.webp')"
 			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-700 bg-no-repeat bg-cover rounded-md
 			col-start-1 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-1  md:col-span-4 md:row-span-3"
-		/>
+		></div>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-2.webp')"
 			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-[850ms] bg-no-repeat bg-cover rounded-md
 			col-start-4 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-5  md:col-span-4 md:row-span-3"
-		/>
+		></div>
 		<div
 			style:background-image="url('/graphicdesign/CeramicTileMockup-3.webp')"
 			class="{intersecting ? '' : 'translate-y-1/3 opacity-0' } transition-all duration-500 delay-1000 bg-no-repeat bg-cover rounded-md
 			col-start-7 row-start-11 col-span-3 row-span-2 md:row-start-7 md:col-start-9  md:col-span-4 md:row-span-3"
-		/>
+		></div>
 	</div>
 </section>
 </IntersectionObserver>

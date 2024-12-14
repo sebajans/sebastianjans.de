@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { T } from '@tolgee/svelte'; // change import statement
 
 	import { scrollInSection } from '$lib/functions/scrollInSection';
@@ -6,15 +8,17 @@
 	import TableSide from './product-items/TableSide.svelte';
 	import TableTop from './product-items/TableTop.svelte';
 
-	let moveToRight: boolean = false;
+	let moveToRight: boolean = $state(false);
 
-	let scroll: number = 0;
-	let windowHeight: number;
-	$: sectionScroll = scrollInSection(scroll, 5, windowHeight);
-	let showProduct: Boolean = false;
-	$: if (sectionScroll >= 0.75 && scroll > 1) {
-		showProduct = true;
-	}
+	let scroll: number = $state(0);
+	let windowHeight: number = $state();
+	let sectionScroll = $derived(scrollInSection(scroll, 5, windowHeight));
+	let showProduct: Boolean = $state(false);
+	run(() => {
+		if (sectionScroll >= 0.75 && scroll > 1) {
+			showProduct = true;
+		}
+	});
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
@@ -25,7 +29,7 @@
 	class="bg-gradient-to-bl from-primary-500/50 dark:from-primary-400/30 w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
 >
 	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
-		<div class="w-[calc(100vw_-_56rem)] h-auto" />
+		<div class="w-[calc(100vw_-_56rem)] h-auto"></div>
 
 		<div class="max-w-4xl w-full">
 			<h2
@@ -34,7 +38,7 @@
 				<T keyName="works-productdesign" defaultValue="Product Design" />
 			</h2>
 		</div>
-		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-500 dark:bg-primary-400" />
+		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-500 dark:bg-primary-400"></div>
 	</div>
 
 	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
@@ -95,7 +99,7 @@
 				</div>
 				<button
 					class="uppercase h-fit self-center font-sans bg-primary-800 w-auto px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
-					on:click={() => (moveToRight = !moveToRight)}
+					onclick={() => (moveToRight = !moveToRight)}
 				>
 					<T keyName="change-view-button" defaultValue="View Images" />
 				</button>

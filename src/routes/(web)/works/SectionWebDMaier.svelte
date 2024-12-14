@@ -8,8 +8,8 @@
 	let srcDMaierMobile = 'img/website-dmaier-front-mobile.webp';
 	let srcDMaier = 'img/website-dmaier.webp';
 
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement = $state();
+  let intersecting:boolean = $state();
 
 </script>
 
@@ -26,7 +26,7 @@
 					: `url('${srcDmaierLogo}')`}
 				class="{intersecting ? '' : 'translate-y-1/2 opacity-0' } transition-all duration-500 col-[5_/_span_4] row-[1_/_span_2] h-full w-full bg-contain bg-center md:bg-left-bottom bg-no-repeat bg-origin-content md:col-[1_/_span_6] md:row-[1_/_span_2]
 				"
-				/>
+				></div>
 			<p
 				class="{intersecting ? '' : 'translate-y-1/2 opacity-0' } transition-all delay-300 duration-500 col-[1_/_span_8] row-[10_/_span_3] text-justify md:col-[1_/_span_6]  md:row-[3_/_span_3]"
 			>
@@ -44,7 +44,7 @@
 				>
 					<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 						{#each Array(3) as _}
-							<div class="dark:bg-pimary-90/80 h-2 w-2 rounded-full bg-primary-50/80 md:h-3 md:w-3" />
+							<div class="dark:bg-pimary-90/80 h-2 w-2 rounded-full bg-primary-50/80 md:h-3 md:w-3"></div>
 						{/each}
 					</div>
 					<img
@@ -72,17 +72,17 @@
 						src={srcDMaierMobile}
 					/>
 					<div class="relative mt-2 mb-2 flex flex-row space-x-2 md:mb-3">
-						<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-r-full bg-primary-50/80 md:h-6" />
+						<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-r-full bg-primary-50/80 md:h-6"></div>
 						<span
 							class="dark:bg-pimary-90/80 h-5 w-full rounded-md bg-primary-50/80 p-0.5 text-center font-sans text-xs text-primary-900/80 shadow-lg md:h-6 md:text-sm"
 						>
 							dmaier-gmbh.de
 						</span>
-						<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-l-full bg-primary-50/80 md:h-6" />
+						<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-l-full bg-primary-50/80 md:h-6"></div>
 					</div>
 					<div
 						class="absolute bottom-1 left-1/2 h-0.5 w-2/5 -translate-x-1/2 self-center rounded-full bg-primary-50/80 md:h-1"
-					/>
+					></div>
 				</div>
 			</div>
 			<div
@@ -101,17 +101,17 @@
 						src="img/website-dmaier-mobile.webp"
 					/>
 					<div class="relative mt-2 mb-1 flex flex-row space-x-2 md:mb-3">
-						<div class="dark:bg-pimary-90/80 h-4 w-1 rounded-r-full bg-primary-50/80 md:h-6" />
+						<div class="dark:bg-pimary-90/80 h-4 w-1 rounded-r-full bg-primary-50/80 md:h-6"></div>
 						<span
 							class="dark:bg-pimary-90/80 h-4 w-full rounded-[4px] md:rounded-md bg-primary-50/80 p-px text-center font-sans text-[0.6rem]  text-primary-900/80 shadow-lg md:h-6 md:text-sm"
 						>
 							dmaier-gmbh.de
 						</span>
-						<div class="dark:bg-pimary-90/80 h-4 w-1 rounded-l-full bg-primary-50/80 md:h-6" />
+						<div class="dark:bg-pimary-90/80 h-4 w-1 rounded-l-full bg-primary-50/80 md:h-6"></div>
 					</div>
 					<div
 						class="absolute bottom-1 left-1/2 h-0.5 w-2/5 -translate-x-1/2 self-center rounded-full bg-primary-50/80 md:h-1"
-					/>
+					></div>
 				</div>
 			</div>
 		</div>

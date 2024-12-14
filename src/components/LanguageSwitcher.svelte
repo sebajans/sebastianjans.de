@@ -13,7 +13,11 @@
 		{ lang: 'es', fullLanguage: 'Español' }
 	];
 
-	export let langExpanded = false;
+	interface Props {
+		langExpanded?: boolean;
+	}
+
+	let { langExpanded = $bindable(false) }: Props = $props();
 
 	onMount(() => {
 		langExpanded = false;
@@ -33,8 +37,8 @@
 	class="{langExpanded
 		? 'w-[5.5rem]'
 		: 'w-10'} group overflow-hidden duration-300 transition-all items-center justify-center h-10 font-sans flex flex-row relative rounded-md text-primary-50 bg-primary-900/20 hover:bg-primary-900 dark:bg-primary-50/20 dark:hover:bg-primary-50"
-	on:click={expandMenu}
-	on:focus={expandMenu}
+	onclick={expandMenu}
+	onfocus={expandMenu}
 >
 	<!-- on:mouseenter={expandMenu}
 	on:mouseleave={expandMenu} -->
@@ -51,7 +55,7 @@
 				<button
 					type="button"
 					aria-label="Open Language Switcher (Currently selected language: {$tolgee.getLanguage()})"
-					on:click={() => {
+					onclick={() => {
 						$tolgee.changeLanguage(language.lang);
 					}}
 					class="w-5 px-0.5 transition-all hover:scale-110 uppercase duration-250 group-hover:text-primary-200 dark:group-hover:text-primary-700 hover:!text-primary-500 dark:hover:text-primary-400  dark:text-primary-900"

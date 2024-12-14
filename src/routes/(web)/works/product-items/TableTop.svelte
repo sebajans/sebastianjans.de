@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let moveToRight: boolean;
-	export let imgClass: string;
+	interface Props {
+		moveToRight: boolean;
+		imgClass: string;
+	}
+
+	let { moveToRight, imgClass }: Props = $props();
 </script>
 
 <svg

@@ -15,7 +15,7 @@
 
 	mainClass.set('pb-14 my-auto');
 
-	let popup: any;
+	let popup: any = $state();
 
 	function openPopup() {
 		popup.show();
@@ -115,7 +115,7 @@
 					<label for="message" class="label"
 						><T keyName="Your-message" defaultValue="Your Message" /></label
 					>
-					<textarea name="message" class="h-20 input" placeholder="Enter your message" required />
+					<textarea name="message" class="h-20 input" placeholder="Enter your message" required></textarea>
 				</div>
 				<div class="flex items-center col-span-2 sm:col-span-1">
 					<div class="flex items-center h-5 ">
@@ -132,7 +132,7 @@
 							/>
 
 							<T keyName="i-agree" defaultValue="I agree with the " /><button
-								on:click={openPopup}
+								onclick={openPopup}
 								class="group font-bold text-primary-500 dark:text-primary-400 hover:text-primary-400 dark:hover:text-primary-600"
 								><T keyName="terms-and-conditions" defaultValue="terms and conditions." />
 								<svg

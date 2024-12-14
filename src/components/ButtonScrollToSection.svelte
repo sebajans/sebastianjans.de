@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { preventDefault } from 'svelte/legacy';
+
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import {fly} from 'svelte/transition';
 
@@ -19,9 +21,14 @@
 			button.parentNode?.removeChild(button);
 		}
 	}
-	export let section: string;
-	let element: HTMLElement;
-	let intersecting: boolean;
+	interface Props {
+		section: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { section, children }: Props = $props();
+	let element: HTMLElement = $state();
+	let intersecting: boolean = $state();
 </script>
 
 <IntersectionObserver threshold={0.2} element={element} bind:intersecting={intersecting}>
@@ -32,12 +39,12 @@
 			in:fly={{ y: 50, duration: 300, delay: 3000 }}
 			out:fly={{ y: -50, duration: 500, delay: 0 }}
 			aria-label="scrollIntoView"
-			on:click|preventDefault={scrollIntoView}
+			onclick={preventDefault(scrollIntoView)}
 			class="text-primary-900 dark:text-primary-100 hover:text-primary-400 dark:hover:text-primary-500 text-center h-auto w-auto left-1/2 transform hover:scale-95 -translate-x-1/2 subpixel-antialiased z-10 absolute bottom-4 md:bottom-4"
 			href="#{section}"
 		>
 			<span class="pointer-events-none leading-9 font-sans font-normal tracking-wide">
-				<slot />
+				{@render children?.()}
 			</span><br>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

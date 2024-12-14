@@ -12,8 +12,8 @@
 	let srcRenaLogo = '../logos/logo-rj-l.webp';
 	let srcRenaLogoDark = '../logos/logo-rj-l-white.webp';
 	
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement = $state();
+  let intersecting:boolean = $state();
   
 </script>
 
@@ -30,7 +30,7 @@
 			id="rena-logo"
 			style:background-image={$settingsState.darkMode ? `url('${srcRenaLogoDark}')` : `url('${srcRenaLogo}')`}
 			class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all duration-500  row-[1_/_span_2] col-[1_/_span_4] sm:row-[1_/_span_3] sm:col-[1_/_span_] bg-contain bg-no-repeat bg-top bg-origin-content"
-		/>
+		></div>
 
 		<div 
 			class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all duration-700 delay-300 row-[3_/_span_6] col-[2_/_span_7] sm:row-[4_/_span_10] sm:col-[1_/_span_5] w-full h-full flex mx-auto justify-end translate-x-12 md:translate-x-0 z-10"
@@ -42,7 +42,7 @@
 			>
 				<div class="w-full flex flex-row space-x-1 md:space-x-2 md:p-2 p-1">
 					{#each Array(3) as _}
-						<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80" />
+						<div class="rounded-full w-2 h-2 md:h-3 md:w-3 bg-primary-50/80 dark:bg-pimary-90/80"></div>
 					{/each}
 				</div>
 				<img
@@ -67,7 +67,7 @@
 					{#each Array(3) as _}
 						<div
 							class="rounded-full w-1.5 h-1.5 md:h-2.5 md:w-2.5 bg-primary-50/80 dark:bg-pimary-900/80"
-						/>
+						></div>
 					{/each}
 				</div>
 				<img

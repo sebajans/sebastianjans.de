@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let socialIcon: any;
-	export let socialLink: string;
-	export let socialMediaName: string;
+	interface Props {
+		socialIcon: any;
+		socialLink: string;
+		socialMediaName: string;
+	}
+
+	let { socialIcon, socialLink, socialMediaName }: Props = $props();
 </script>
 
 <a 

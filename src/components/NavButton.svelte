@@ -1,16 +1,23 @@
 <script lang="ts">
+	import { createBubbler } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { page } from '$app/stores';
 	import { T } from '@tolgee/svelte';
 
-	export let link: string;
-	export let text: string;
-	let isActive: boolean;
+	interface Props {
+		link: string;
+		text: string;
+	}
 
-	$: isActive = link === '/' ? $page.url.pathname === link : $page.url.pathname.startsWith(link);
+	let { link, text }: Props = $props();
+	let isActive: boolean = $derived(link === '/' ? $page.url.pathname === link : $page.url.pathname.startsWith(link));
+
+	
 </script>
 
 <li class="grow h-12 md:h-14 max-h-32 items-stretch w-full ">
-		<a on:click aria-label="Navigate to {text}"
+		<a onclick={bubble('click')} aria-label="Navigate to {text}"
 			class="navButton {isActive
 				? 'isActive '
 				: 'isNotActive'}

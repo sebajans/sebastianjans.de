@@ -1,3 +1,5 @@
+<!-- @migration-task Error while migrating Svelte code: Identifier 'm' has already been declared
+https://svelte.dev/e/js_parse_error -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { T } from '@tolgee/svelte'; // change import statement

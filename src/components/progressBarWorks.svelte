@@ -1,11 +1,22 @@
 <script lang="ts">
-	let scroll:any;
+  import { run } from 'svelte/legacy';
+
+	let scroll:any = $state();
 	// let windowHeight;
   import { onMount } from "svelte";
-  export let sectionTitle:string;
-	export let sectionHeight:number // get from window
-  export let start: number; // between 1 and 10
-  export let end: number; // between 1 and 10
+  interface Props {
+    sectionTitle: string;
+    sectionHeight: number;
+    start: number; // between 1 and 10
+    end: number; // between 1 and 10
+  }
+
+  let {
+    sectionTitle,
+    sectionHeight = $bindable(),
+    start,
+    end
+  }: Props = $props();
 	
   let pageWidth;
   
@@ -22,14 +33,17 @@
   // })
 
   console.log(sectionHeight)
-  let test:any
+  let test:any = $state()
   onMount(() => sectionHeight = windowHeight)
   console.log("test " + sectionHeight)
   console.log("tast "+ test)
   let endSection = sectionHeight * end
   let totalSectionlength = sectionsPerCategory * sectionHeight
   
-  $: progressSectionWebsites = ((scroll - sectionHeight) / totalSectionlength) * 100;
+  let progressSectionWebsites;
+  run(() => {
+    progressSectionWebsites = ((scroll - sectionHeight) / totalSectionlength) * 100;
+  });
 	if (progressSectionWebsites < 0) {
 		progressSectionWebsites = 0;
 	}

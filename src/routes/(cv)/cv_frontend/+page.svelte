@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import { getTranslate } from "@tolgee/svelte";
   import T from "@tolgee/svelte";
   import { cvItems } from "$lib/lists/cvItems";
@@ -44,9 +46,9 @@
     },
   ];
 
-  let filteredCvItems = cvItems;
-  let filteredSkillItems = skillItems;
-  let filteredIntroText = introtext;
+  let filteredCvItems = $state(cvItems);
+  let filteredSkillItems = $state(skillItems);
+  let filteredIntroText = $state(introtext);
 
   function selectCategory(fieldOfWork: string[] = ["webdev"]) {
     filteredCvItems = cvItems.filter((item) =>
@@ -71,7 +73,9 @@
     );
   }
 
-  $: console.log(filteredIntroText);
+  run(() => {
+    console.log(filteredIntroText);
+  });
 
   const { t } = getTranslate();
 </script>
@@ -82,21 +86,21 @@
   >
     <div>
       <span class="mx-2 dark:text-primary-50">Categories:</span>
-      <button class="btn btn-navajo" on:click={() => selectCategory(["webdev"])}
+      <button class="btn btn-navajo" onclick={() => selectCategory(["webdev"])}
         >Web dev</button
       >
       <button
         class="btn btn-navajo"
-        on:click={() => selectCategory(["graphicdesign"])}
+        onclick={() => selectCategory(["graphicdesign"])}
         >Graphic design</button
       >
       <button
         class="btn btn-navajo"
-        on:click={() => selectCategory(["productdesign"])}
+        onclick={() => selectCategory(["productdesign"])}
         >Product design</button
       >
     </div>
-    <button class="btn btn-navajo" on:click={printPage}>print page</button>
+    <button class="btn btn-navajo" onclick={printPage}>print page</button>
     <div class="flex flex-row space-x-2">
       <LanguageSwitcher />
       <DarkModeButton />
@@ -211,7 +215,7 @@
       </div>
       <div
         class="col-start-2 col-span-1 row-span-4 h-[25.7cm] border-primary-500 border-l-2 border-r-2"
-      />
+></div>
       <div
         class="row-start-4 col-start-3 row-span-1 pt-4 border-t-2 border-primary-600"
       >
@@ -367,7 +371,7 @@
       </div>
       <div
         class="col-start-2 col-span-1 row-start-1 row-span-full h-[25.7cm] border-primary-500 border-l-2 border-r-2"
-      />
+></div>
       <div class="row-start-1 col-start-3 col-span-1">
         <h2 class="!pt-0">
           {$t({

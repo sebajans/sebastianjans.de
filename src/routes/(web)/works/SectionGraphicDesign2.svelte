@@ -3,8 +3,8 @@
 
 	import IntersectionObserver from 'svelte-intersection-observer';
 
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement = $state();
+  let intersecting:boolean = $state();
 </script>
 
 

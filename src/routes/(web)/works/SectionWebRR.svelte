@@ -5,15 +5,15 @@
 	import IntersectionObserver from 'svelte-intersection-observer';
 
 
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement = $state();
+  let intersecting:boolean = $state();
 	
-	let elementPlay: HTMLElement;
-  let intersectingPlay:boolean;
-	let elementLevel: HTMLElement;
-  let intersectingLevel:boolean;
-	let elementSettings: HTMLElement;
-  let intersectingSettings:boolean;
+	let elementPlay: HTMLElement = $state();
+  let intersectingPlay:boolean = $state();
+	let elementLevel: HTMLElement = $state();
+  let intersectingLevel:boolean = $state();
+	let elementSettings: HTMLElement = $state();
+  let intersectingSettings:boolean = $state();
 
 </script>
 

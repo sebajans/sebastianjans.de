@@ -13,6 +13,11 @@
 		LanguageStorage,
 		LanguageDetector } from '@tolgee/svelte';
 	import { onMount } from 'svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
   
     const tolgee = Tolgee()
 		.use(DevTools())
@@ -50,7 +55,7 @@
 >
 	<!-- {#if initialized} -->
 		<TolgeeProvider {tolgee}>
-			<slot />	
+			{@render children?.()}	
 		</TolgeeProvider>
 	<!-- {/if} -->
 </div>

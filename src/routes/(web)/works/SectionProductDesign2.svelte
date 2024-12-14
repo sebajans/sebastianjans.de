@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { createBubbler } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { T } from '@tolgee/svelte'; // change import statement
 	import { fade } from 'svelte/transition';
 	import IntersectionObserver from 'svelte-intersection-observer';
@@ -41,12 +44,12 @@
 		}
 	];
 
-	let selected = 'perspective';
-	let imageVisible = false;
-	$: selectedItem = options.find((x) => x.value == selected);
+	let selected = $state('perspective');
+	let imageVisible = $state(false);
+	let selectedItem = $derived(options.find((x) => x.value == selected));
 
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement = $state();
+  let intersecting:boolean = $state();
 </script>
 
 
@@ -154,8 +157,8 @@
 							class=" text-sm mb-0.5 md:mb-2"
 						>
 							<input
-								on:keydown
-								on:click={() => (imageVisible = false)}
+								onkeydown={bubble('keydown')}
+								onclick={() => (imageVisible = false)}
 								id={option.value}
 								type="radio"
 								name="rotate-cube-side"
@@ -172,7 +175,7 @@
 					<div class="h-px mt-2 md:mt-1 mx-auto w-full  bg-primary-900/50 dark:bg-primary-50/50"></div>
 					<button
 						class="mt-3 {imageVisible ? 'bg-primary-900 !text-primary-50 dark:bg-primary-50 dark:!text-primary-900' : ''} standardButton w-full uppercase mt-1 py-1 md:py-1.5 px-3 transition-all duration-150"
-						on:click={showResult}
+						onclick={showResult}
 					>
 						<T keyName="result" defaultValue="result" />
 					</button>

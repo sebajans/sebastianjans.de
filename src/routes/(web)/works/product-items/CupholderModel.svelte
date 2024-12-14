@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let imgClass: string;
+	interface Props {
+		imgClass: string;
+	}
+
+	let { imgClass }: Props = $props();
 </script>
 
 <!-- <?xml version="1.0" encoding="UTF-8"?> -->

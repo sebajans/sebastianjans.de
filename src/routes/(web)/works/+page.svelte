@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run, preventDefault } from 'svelte/legacy';
+
 	import { pageTitle } from '$lib/stores/pageTitle';
 	
 	import { fly } from 'svelte/transition';
@@ -32,39 +34,39 @@
 
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
-	let scroll: number = 0;
-	let windowHeight: number = 0;
+	let scroll: number = $state(0);
+	let windowHeight: number = $state(0);
 
-	let elementWeb: HTMLElement;
-	let intersectingWeb: boolean = false;
-	let isVisibleLogo = false; // Separate state variable to control div visibility
+	let elementWeb: HTMLElement = $state();
+	let intersectingWeb: boolean = $state(false);
+	let isVisibleLogo = $state(false); // Separate state variable to control div visibility
 
-	$: {
+	run(() => {
 		if (intersectingWeb) {
       isVisibleLogo = true;
     }
-	}
+	});
 
-	let elementLogo: HTMLElement;
-	let intersectingLogo: boolean = false;
-	let isVisibleGraphicDesign = false; // Separate state variable to control div visibility
+	let elementLogo: HTMLElement = $state();
+	let intersectingLogo: boolean = $state(false);
+	let isVisibleGraphicDesign = $state(false); // Separate state variable to control div visibility
 
-	$: {
+	run(() => {
 		if (intersectingLogo) {
       isVisibleGraphicDesign = true;
     }
-	}
-	let elementGraphicDesign: HTMLElement;
-	let intersectingGraphicDesign: boolean = false;
-	let isVisibleProduct = false;
+	});
+	let elementGraphicDesign: HTMLElement = $state();
+	let intersectingGraphicDesign: boolean = $state(false);
+	let isVisibleProduct = $state(false);
 
-	$: {
+	run(() => {
 		if (intersectingGraphicDesign) {
       isVisibleProduct = true; 
     }
-	}
-	let elementProduct: HTMLElement;
-	let intersectingProduct: boolean = false;
+	});
+	let elementProduct: HTMLElement = $state();
+	let intersectingProduct: boolean = $state(false);
 	
 	
 </script>
@@ -97,9 +99,9 @@
 			{#each workSectionNames as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
-					on:click|preventDefault={() => {isVisibleProduct = true; isVisibleGraphicDesign = true; isVisibleLogo = true; setTimeout(() => {
+					onclick={preventDefault(() => {isVisibleProduct = true; isVisibleGraphicDesign = true; isVisibleLogo = true; setTimeout(() => {
 						scrollIntoView(section.id, section.start*500)}
-						, 200);}}
+						, 200);})}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
 					class="dark:text-primary-50 md:py-4 ml-auto py-2 duration-150 rounded-lg text-left pl-3 transition-all {section.color} "
 				>
@@ -110,7 +112,7 @@
 	</div>
 </section>
 
-<div class="fixed md:block top-0 h-0 w-20 right-0 z-30" />
+<div class="fixed md:block top-0 h-0 w-20 right-0 z-30"></div>
 
 <WorksHeader show={intersectingWeb} backgroundColor="bg-primary-200/60 dark:bg-primary-700/60">
 	<T keyName="works-webdev" defaultValue="Webdesign" />

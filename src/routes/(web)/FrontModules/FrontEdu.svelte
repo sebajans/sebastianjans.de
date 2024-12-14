@@ -30,7 +30,7 @@
 					<div
 						style:background-image={$settingsState.darkMode ? `url('${item.image}')` : `url('${item.image}')`}
 						class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 md:translate-y-0 md:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg  justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
-					/>
+					></div>
 					<div class="md:w-4/5 box-content self-stretch">
 						<h2 class="font-sans mr-28 md:mr-0 text-primary-900 dark:text-primary-50 text-2xl">
 							<T keyName={item.name} defaultValue={item.name} />
