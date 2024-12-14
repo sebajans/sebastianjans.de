@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Popup from './Popup.svelte';
 	import TermsOfService from './TermsOfService.svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 
 	let popup: any;
 	function openPopup() {

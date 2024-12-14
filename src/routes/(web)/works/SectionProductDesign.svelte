@@ -1,5 +1,5 @@
 <script lang="ts">
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 
 	import { scrollInSection } from '$lib/functions/scrollInSection';
 	import TableFront from './product-items/TableFront.svelte';

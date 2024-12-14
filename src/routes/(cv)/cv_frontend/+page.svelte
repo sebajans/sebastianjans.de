@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getTranslate } from "@tolgee/svelte";
-  import T from "@tolgee/svelte/T.svelte";
+  import T from "@tolgee/svelte";
   import { cvItems } from "$lib/lists/cvItems";
   import { skillItems, type SkillItems } from "$lib/lists/skillItems";
   import DarkModeButton from "$components/DarkModeButton.svelte";

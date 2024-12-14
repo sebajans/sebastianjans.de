@@ -17,9 +17,10 @@
 	"devDependencies": {
 		"@playwright/test": "^1.49.1",
 		"@rvxlab/tailwind-plugin-ios-full-height": "^1.1.0",
-		"@sveltejs/adapter-auto": "^2.1.1",
-		"@sveltejs/adapter-netlify": "2.0.8",
-		"@sveltejs/kit": "^1.30.4",
+		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/adapter-netlify": "^3.0.2",
+		"@sveltejs/kit": "^2.11.1",
+		"@sveltejs/vite-plugin-svelte": "^3.1.2",
 		"@types/three": "^0.148.1",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
@@ -37,7 +38,7 @@
 		"tailwindcss": "^3.4.16",
 		"tslib": "^2.8.1",
 		"typescript": "^5.7.2",
-		"vite": "^4.5.5"
+		"vite": "^5.4.11"
 	},
 	"type": "module",
 	"dependencies": {

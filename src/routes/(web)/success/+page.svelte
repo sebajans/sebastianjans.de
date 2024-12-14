@@ -1,5 +1,5 @@
 <script>
-	import T from '@tolgee/svelte/T.svelte';
+	import { T } from '@tolgee/svelte';
 </script>
 
 <div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">

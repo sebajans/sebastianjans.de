@@ -23,7 +23,7 @@
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { scrollIntoView } from '$lib/functions/scrollIntoView';
 
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 	import { getTranslate } from '@tolgee/svelte';
 	import SectionWebBrazie from './SectionWebBrazie.svelte';
 

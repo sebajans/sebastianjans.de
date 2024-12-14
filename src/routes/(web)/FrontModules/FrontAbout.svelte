@@ -1,5 +1,5 @@
 <script lang="ts">
-	import T from '@tolgee/svelte/T.svelte';
+	import { T } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
 	let profilePicture = 'img/profile-pic.webp';
 	import ButtonScrollToSection from '$components/ButtonScrollToSection.svelte';

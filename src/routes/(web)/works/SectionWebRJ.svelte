@@ -1,5 +1,5 @@
 <script lang="ts">
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 	import { settingsState } from '$lib/stores/settingsState';
 	import { fly, fade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';

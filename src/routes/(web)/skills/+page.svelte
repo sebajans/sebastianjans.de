@@ -4,7 +4,7 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { getTranslate } from '@tolgee/svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 
 	import { skillItems } from '$lib/lists/skillItems';
 	import { afterNavigate } from '$app/navigation';

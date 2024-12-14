@@ -1,5 +1,5 @@
 <script lang="ts">
-	import T from '@tolgee/svelte/T.svelte';
+	import { T } from '@tolgee/svelte';
 
 	import IntersectionObserver from 'svelte-intersection-observer';
 

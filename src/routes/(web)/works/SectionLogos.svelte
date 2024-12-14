@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 	import IntersectionObserver from 'svelte-intersection-observer';
 	
 	import { logoItems } from '$lib/lists/logoItems';

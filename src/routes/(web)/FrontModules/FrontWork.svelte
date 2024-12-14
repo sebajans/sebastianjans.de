@@ -1,5 +1,5 @@
 <script lang="ts">
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 
 	import { fly } from 'svelte/transition';
 	import { cvItems } from '$lib/lists/cvItems';

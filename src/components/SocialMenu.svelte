@@ -3,7 +3,7 @@
 	import { socialMedia } from '$lib/lists/socialMedia';
 	import DarkModeButton from './DarkModeButton.svelte';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 </script>
 
 <div class="flex flex-col space-y-4 justify-center items-center md:space-x-0 h-auto mb-6">

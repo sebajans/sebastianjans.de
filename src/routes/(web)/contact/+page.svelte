@@ -6,7 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { getTranslate } from '@tolgee/svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 	import Popup from '$components/Popup.svelte';
 	import TermsOfService from '$components/TermsOfService.svelte';
 
