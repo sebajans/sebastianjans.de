@@ -7,20 +7,20 @@
 	
 	let zoomIn: boolean = $state(false);
 
-	let element1: HTMLElement = $state();
-  let intersecting1:boolean = $state();
-	let element2: HTMLElement = $state();
-  let intersecting2:boolean = $state();
-	let element3: HTMLElement = $state();
-	let intersecting3:boolean = $state();
-	let element4: HTMLElement = $state();
-	let intersecting4:boolean = $state();
-	let element5: HTMLElement = $state();
-	let intersecting5:boolean = $state();
-	let element6: HTMLElement = $state();
-	let intersecting6:boolean = $state();
-	let element7: HTMLElement = $state();
-	let intersecting7:boolean = $state();
+	let element1: HTMLElement | undefined = $state();
+  let intersecting1:boolean | undefined = $state();
+	let element2: HTMLElement | undefined = $state();
+  let intersecting2:boolean | undefined = $state();
+	let element3: HTMLElement | undefined = $state();
+	let intersecting3:boolean | undefined = $state();
+	let element4: HTMLElement | undefined = $state();
+	let intersecting4:boolean | undefined = $state();
+	let element5: HTMLElement | undefined = $state();
+	let intersecting5:boolean | undefined = $state();
+	let element6: HTMLElement | undefined = $state();
+	let intersecting6:boolean | undefined = $state();
+	let element7: HTMLElement | undefined = $state();
+	let intersecting7:boolean | undefined = $state();
 
 </script>
 
@@ -124,12 +124,13 @@ bg-gradient-to-bl from-primary-500/50 -->
 			  rounded-md"
 			>
 				<CupholderModel
-					on:click={() => (zoomIn = false)}
+					onclick={() => (zoomIn = false)}
 					imgClass="{zoomIn
 						? 'opacity-50'
 						: 'opacity-100'} transition-all duration-300 w-full h-full p-1 object-top object-contain text-primary-900 dark:text-primary-50"
 				/>
 				<button
+					aria-label="Zoom in"
 					onclick={() => (zoomIn = !zoomIn)}
 					class="{zoomIn
 						? ''

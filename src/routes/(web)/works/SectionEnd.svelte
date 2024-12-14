@@ -1,7 +1,5 @@
-<!-- @migration-task Error while migrating Svelte code: Expected token ;
-https://svelte.dev/e/expected_token -->
 <script lang="ts">
-	import { T } from '@tolgee/svelte'; // change import statement
+	import { T } from '@tolgee/svelte';
 	import Popup from '$components/Popup.svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
@@ -10,8 +8,8 @@ https://svelte.dev/e/expected_token -->
 		popup.show();
 	}
 
-	let element: HTMLElement;
-  let intersecting:boolean;
+	let element: HTMLElement | undefined = $state();
+  let intersecting:boolean | undefined = $state();
 </script>
 
 
@@ -30,7 +28,7 @@ https://svelte.dev/e/expected_token -->
 		</h3>
 		<button
 			class="{intersecting ? '' : 'translate-x-1/3 opacity-0' } dark:bg-primary-300 transition-all duration-500 delay-200 relative uppercase font-sans btn standardButton w-auto mt-4  rounded-lg text-primary-50"
-			on:click={openPopup}
+			onclick={openPopup}
 		>
 			<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
 		</button>

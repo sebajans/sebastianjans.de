@@ -1,23 +1,17 @@
 <script lang="ts">
 	interface Props {
 		imgClass: string;
+		onclick: (e: Event) => void;
 	}
 
-	let { imgClass }: Props = $props();
+	let { imgClass, onclick }: Props = $props();
 </script>
+	<div
+	role="presentation"
+	{onclick}
+	>
 
-<!-- <?xml version="1.0" encoding="UTF-8"?> -->
-<!-- <svg
-	width="100%"
-	height="100%"
-	viewBox="0 0 342 537"
-	version="1.1"
-	xmlns="http://www.w3.org/2000/svg"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xml:space="preserve"
-	class={imgClass}
-	style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
-> -->
+	
 <svg
 	class={imgClass}
 	clip-rule="evenodd"
@@ -1139,3 +1133,4 @@
 		<path d="m149.03 200.75c1.222 0.533 2.852 0.644 4.258 0.289" fill="none" stroke-width="1px" />
 	</g>
 </svg>
+</div>

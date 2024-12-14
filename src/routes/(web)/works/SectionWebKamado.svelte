@@ -12,8 +12,8 @@
 	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
 
-	let element: HTMLElement = $state();
-  let intersecting:boolean = $state();
+	let element: HTMLElement | undefined = $state();
+  let intersecting: boolean | undefined = $state();
 
 </script>
 

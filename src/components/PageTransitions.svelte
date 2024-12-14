@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
+	
 	interface Props {
 		pathname?: string;
 		children?: import('svelte').Snippet;

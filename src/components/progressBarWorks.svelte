@@ -1,9 +1,6 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
-	let scroll:any = $state();
-	// let windowHeight;
   import { onMount } from "svelte";
+	
   interface Props {
     sectionTitle: string;
     sectionHeight: number;
@@ -18,33 +15,29 @@
     end
   }: Props = $props();
 	
-  let pageWidth;
+  let scroll:any = $state();
+  // let pageWidth;
+  let sectionsPerCategory: number = end - start
   
   // amount of full page Sections
-  let sectionsPerCategory: number = end - start
 
   let startSection = sectionHeight * start
   console.log("startSection "+ startSection)
   let windowHeight: number
 
-  // onMount(async () => {
-  //   let sectionHeight2 = test
-  //   return sectionHeight2
-  // })
-
-  console.log(sectionHeight)
-  let test:any = $state()
+  // let test:any = $state()
   onMount(() => sectionHeight = windowHeight)
-  console.log("test " + sectionHeight)
-  console.log("tast "+ test)
+  // console.log("test " + sectionHeight)
+  // console.log("tast "+ test)
   let endSection = sectionHeight * end
   let totalSectionlength = sectionsPerCategory * sectionHeight
   
   let progressSectionWebsites;
-  run(() => {
+  $effect(() => {
     progressSectionWebsites = ((scroll - sectionHeight) / totalSectionlength) * 100;
   });
-	if (progressSectionWebsites < 0) {
+
+	if (progressSectionWebsites && progressSectionWebsites < 0) {
 		progressSectionWebsites = 0;
 	}
   // console.log(startSection, endSection, sectionsPerCategory)
@@ -52,7 +45,7 @@
   // $: console.log(startSection, scroll, endSection )
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerHeight={test}/>
+<svelte:window bind:scrollY={scroll} />
 
 <div
 	class="

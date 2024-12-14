@@ -5,7 +5,6 @@
 	}
 
 	let { showMenu = false, toggleMenu }: Props = $props();
-
 </script>
 
 <button

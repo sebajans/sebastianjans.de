@@ -1,13 +1,11 @@
-<!-- @migration-task Error while migrating Svelte code: Can't migrate code with beforeUpdate. Please migrate by hand. -->
 <script lang="ts">
-	import { beforeUpdate } from 'svelte';
+	// import { beforeUpdate } from 'svelte';
 	import { onMount } from 'svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import NavBar from '$components/NavBar.svelte';
 	
 	import Footer from '$components/Footer.svelte';
 	import PageTransitions from '$components/PageTransitions.svelte';
-	import { Svrollbar } from 'svrollbar';
 	import Blob from '$components/Blob.svelte';
 
 	/** @type {import('./$types').LayoutData} */
@@ -16,7 +14,7 @@
 	let showMenu = false;
 	let showHeader = false;
 	
-	beforeUpdate(() => ((showMenu = false), (showHeader = false)));
+	// beforeUpdate(() => ((showMenu = false), (showHeader = false)));
 	
 	let initialized = false;
 	onMount(() => {

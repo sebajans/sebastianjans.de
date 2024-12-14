@@ -1,5 +1,6 @@
 <!-- @migration-task Error while migrating Svelte code: Identifier 'm' has already been declared
 https://svelte.dev/e/js_parse_error -->
+<!-- TODO migration-task -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { T } from '@tolgee/svelte'; // change import statement
@@ -9,8 +10,8 @@ https://svelte.dev/e/js_parse_error -->
 	import { settingsState } from '$lib/stores/settingsState';
 	import { fly } from 'svelte/transition';
 
-	type m = { x: number; y: number };
-	let m = { x: 0, y: 0 };
+	type M = { x: number; y: number };
+	let m: M = { x: 0, y: 0 };
 	let n = { x: 0, y: 0 };
 	() => (n = getDivPosition());
 
@@ -92,6 +93,7 @@ https://svelte.dev/e/js_parse_error -->
 
 					<div class="logo-individual flex justify-center items-center transition-all duration-200">
 						<button
+						aria-label="Logo Design"
 						role="gridcell"
 							on:keydown
 							on:click={() => (activeNumber = i)}
@@ -99,7 +101,7 @@ https://svelte.dev/e/js_parse_error -->
 								? `url('${logo.imageDark}')`
 								: `url('${logo.image}')`}
 							class="bg-contain bg-no-repeat bg-center bg-origin-content w-full max-w-[120px] md:max-w-[160px] aspect-square p-2 duration-200 transition-all"
-						/>
+							></button>
 					</div>
 				{/each}
 			</div>
@@ -121,7 +123,7 @@ https://svelte.dev/e/js_parse_error -->
 						? `url('${logoItems[activeNumber].imageDark}')`
 						: `url('${logoItems[activeNumber].image}')`}
 					class=" bg-contain bg-no-repeat bg-center bg-origin-content h-1/2 aspect-square p-2 md:p-4 duration-200 transition-all my-auto"
-				/>
+					></div>
 				<div class="pb-4">
 					<h2 class="font-sans text-3xl text-center pb-2">
 						<T
@@ -140,15 +142,16 @@ https://svelte.dev/e/js_parse_error -->
 				</div>
 
 				<button
+				aria-label="Close"
 					class="absolute z-20 group top-4 right-4 h-6 w-6 group font-sans hover:text-primary-500"
 					on:click={() => (activeNumber = -1)}
 				>
 					<span
 						class="transition-all transform group-hover:rotate-[135deg] rotate-45 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
-					/>
+					></span>
 					<span
 						class="transition-all transform -rotate-45 group-hover:rotate-45 -translate-y-0.5 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
-					/>
+					></span>
 				</button>
 			</div>
 		{/if}

@@ -1,17 +1,13 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import NavButton from './NavButton.svelte';
 	import { navItems } from '$lib/lists/navItems';
-	import { onMount } from 'svelte';
 	import MenuToggle from './MenuToggle.svelte';
 	import BackdropBlur from './BackdropBlur.svelte';
 	import SocialMenu from '$components/SocialMenu.svelte';
 	import Logo from './Logo.svelte';
 	import { getTolgee } from '@tolgee/svelte';
-	import { draw } from 'svelte/transition';
 
-	const languageStore = getTolgee(['language']);
+	// const languageStore = getTolgee(['language']);
 
 	function toggleMenu() {
 		showMenu = !showMenu;

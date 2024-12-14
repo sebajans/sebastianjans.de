@@ -48,8 +48,8 @@
 	let imageVisible = $state(false);
 	let selectedItem = $derived(options.find((x) => x.value == selected));
 
-	let element: HTMLElement = $state();
-  let intersecting:boolean = $state();
+	let element: HTMLElement | undefined = $state();
+  let intersecting:boolean | undefined = $state();
 </script>
 
 

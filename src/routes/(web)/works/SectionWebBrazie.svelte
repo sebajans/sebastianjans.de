@@ -12,8 +12,8 @@
 	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
 	let srcKamadoFront = 'img/website-kamadob10-front.webp';
 
-	let element: HTMLElement = $state();
-  let intersecting:boolean = $state();
+	let element: HTMLElement | undefined = $state();
+  let intersecting:boolean | undefined = $state();
 
 </script>
 
@@ -25,7 +25,7 @@
 	>
 	<!-- {#if intersecting} -->
 		<div 
-			id="kb10-logo"
+			id="brazie-logo"
 			style:background-image={$settingsState.darkMode
 				? `url('${srcKamadoLogoDark}')`
 				: `url('${srcKamadoLogo}')`}
@@ -38,11 +38,13 @@
 			col-[5_/_span_4] row-[3_/_span_7] flex h-full w-full justify-end md:justify-end md:col-[1_/_span_4] md:row-[1_/_span_12] "
 			>
 			<div
-				id="kb10-browser-phone"
+				id="brazie-browser-phone"
 				class="relative z-10 aspect-[10/19.6] md:aspect-[10/19.6] h-full max-h-[40rem]  w-auto self-center
 			rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:rounded-[8%_/_5%] overflow-hidden"
 			>
-			<iframe class="w-full h-[calc(100%_-_2.75rem)] md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem]" src="https://brazie.eu" name="iframe"></iframe>
+			<iframe
+				title="kamadob10"
+			 class="w-full h-[calc(100%_-_2.75rem)] md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem]" src="https://brazie.eu" name="iframe"></iframe>
 			<!-- <a href="https://brazie.eu" target="iframe">SO</a> -->
 				<!-- <img
 					width="320"
@@ -75,7 +77,7 @@
 		col-[1_/_span_6] row-[1_/_span_8] flex h-full w-full -translate-x-1/3 justify-end md:justify-start md:col-[4_/_span_6] md:row-[6_/_span_7] md:translate-x-0"
 		>
 		<div
-				id="kb10-browser-front"
+				id="brazie-browser-front"
 				class="h-full w-fit self-center aspect-[13/10] shadow-primary-900/30 shadow-md backdrop-blur-sm p-0.5 md:p-0.5 bg-primary-400/50 dark:bg-primary-700/50 flex flex-col rounded-lg"
 			>
 				<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">

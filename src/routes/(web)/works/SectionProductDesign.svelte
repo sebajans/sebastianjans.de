@@ -11,8 +11,8 @@
 	let moveToRight: boolean = $state(false);
 
 	let scroll: number = $state(0);
-	let windowHeight: number = $state();
-	let sectionScroll = $derived(scrollInSection(scroll, 5, windowHeight));
+	let windowHeight: number | undefined = $state();
+	let sectionScroll = $derived(scrollInSection(scroll, 5, windowHeight ?? 0));
 	let showProduct: Boolean = $state(false);
 	run(() => {
 		if (sectionScroll >= 0.75 && scroll > 1) {

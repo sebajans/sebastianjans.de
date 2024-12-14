@@ -27,8 +27,8 @@
 	}
 
 	let { section, children }: Props = $props();
-	let element: HTMLElement = $state();
-	let intersecting: boolean = $state();
+	let element: HTMLElement | undefined = $state();
+	let intersecting: boolean | undefined = $state();
 </script>
 
 <IntersectionObserver threshold={0.2} element={element} bind:intersecting={intersecting}>

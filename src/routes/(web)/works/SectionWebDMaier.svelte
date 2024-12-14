@@ -8,8 +8,8 @@
 	let srcDMaierMobile = 'img/website-dmaier-front-mobile.webp';
 	let srcDMaier = 'img/website-dmaier.webp';
 
-	let element: HTMLElement = $state();
-  let intersecting:boolean = $state();
+	let element: HTMLElement | undefined = $state();
+  let intersecting:boolean | undefined = $state();
 
 </script>
 

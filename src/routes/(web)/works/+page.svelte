@@ -21,13 +21,14 @@
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
 	import SectionEnd from './SectionEnd.svelte';
+	// TODO: Brazie needs content
+	import SectionWebBrazie from './SectionWebBrazie.svelte';
 
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { scrollIntoView } from '$lib/functions/scrollIntoView';
 
 	import { T } from '@tolgee/svelte'; // change import statement
 	import { getTranslate } from '@tolgee/svelte';
-	import SectionWebBrazie from './SectionWebBrazie.svelte';
 
 	const { t } = getTranslate(); // Tolgee t translation
 
@@ -37,7 +38,7 @@
 	let scroll: number = $state(0);
 	let windowHeight: number = $state(0);
 
-	let elementWeb: HTMLElement = $state();
+	let elementWeb: HTMLElement | undefined = $state();
 	let intersectingWeb: boolean = $state(false);
 	let isVisibleLogo = $state(false); // Separate state variable to control div visibility
 
@@ -47,7 +48,7 @@
     }
 	});
 
-	let elementLogo: HTMLElement = $state();
+	let elementLogo: HTMLElement | undefined = $state();
 	let intersectingLogo: boolean = $state(false);
 	let isVisibleGraphicDesign = $state(false); // Separate state variable to control div visibility
 
@@ -56,7 +57,7 @@
       isVisibleGraphicDesign = true;
     }
 	});
-	let elementGraphicDesign: HTMLElement = $state();
+	let elementGraphicDesign: HTMLElement | undefined = $state();
 	let intersectingGraphicDesign: boolean = $state(false);
 	let isVisibleProduct = $state(false);
 
@@ -65,7 +66,7 @@
       isVisibleProduct = true; 
     }
 	});
-	let elementProduct: HTMLElement = $state();
+	let elementProduct: HTMLElement | undefined = $state();
 	let intersectingProduct: boolean = $state(false);
 	
 	
@@ -123,7 +124,7 @@
 		<SectionWebRJ />
 		<SectionWebRR />
 		<SectionWebKamado />
-		<!-- <SectionWebBrazie /> -->
+		<SectionWebBrazie />
 		<SectionWebDMaier />
 	</div>
 </IntersectionObserver>

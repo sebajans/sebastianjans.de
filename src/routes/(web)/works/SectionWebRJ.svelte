@@ -12,8 +12,8 @@
 	let srcRenaLogo = '../logos/logo-rj-l.webp';
 	let srcRenaLogoDark = '../logos/logo-rj-l-white.webp';
 	
-	let element: HTMLElement = $state();
-  let intersecting:boolean = $state();
+	let element: HTMLElement | undefined = $state();
+  let intersecting:boolean | undefined = $state();
   
 </script>
 
