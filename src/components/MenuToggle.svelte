@@ -1,16 +1,15 @@
 <script lang="ts">
-	import { createBubbler } from 'svelte/legacy';
-
-	const bubble = createBubbler();
 	interface Props {
 		showMenu?: boolean;
+		toggleMenu: () => void;
 	}
 
-	let { showMenu = false }: Props = $props();
+	let { showMenu = false, toggleMenu }: Props = $props();
+
 </script>
 
 <button
-	onclick={bubble('click')}
+	onclick={() => toggleMenu()}
 	aria-label="Open Navigation Menu"
 	class="{showMenu
 		? ''

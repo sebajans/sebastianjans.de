@@ -10,9 +10,11 @@
 		popupClass?: string;
 		position?: string;
 		children?: import('svelte').Snippet;
+		onclick?: (e: Event) => void;
+		onkeydown?: (e: KeyboardEvent) => void;
 	}
 
-	let { popupClass = 'left-0 w-full', position = 'left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-full', children }: Props = $props();
+	let { onclick, onkeydown, popupClass = 'left-0 w-full', position = 'left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-full', children }: Props = $props();
 
 	export function show() {
 		visible = true;
@@ -31,16 +33,16 @@
 		transition:fade|global={{ duration: 150 }}
 		onclick={hide}
 		onkeydown={hide}
-		class="fixed z-40 backdrop-blur-[1px] top-0 left-0 w-screen h-screen bg-primary-900/30"
+		class="fixed z-40 cursor-default backdrop-blur-[1px] top-0 left-0 w-screen h-screen bg-primary-900/30"
 	></div>
 	<div
 	aria-label="Close popup"
 	role="button"
 	tabindex="0"
-		onclick={stopPropagation(bubble('click'))}
-		onkeydown={stopPropagation(bubble('keydown'))}
+		{onclick}
+		{onkeydown}
 		transition:fade|global={{ duration: 150 }}
-		class="{position} absolute w-auto h-auto z-50 "
+		class="{position} absolute cursor-default w-auto h-auto z-50 "
 	>
 		<div
 			transition:scale|global={{ duration: 200 }}

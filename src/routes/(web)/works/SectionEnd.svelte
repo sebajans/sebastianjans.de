@@ -29,7 +29,7 @@ https://svelte.dev/e/expected_token -->
 			/>
 		</h3>
 		<button
-			class="{intersecting ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500 delay-200 relative uppercase font-sans btn standardButton w-auto mt-4  rounded-lg text-primary-50"
+			class="{intersecting ? '' : 'translate-x-1/3 opacity-0' } dark:bg-primary-300 transition-all duration-500 delay-200 relative uppercase font-sans btn standardButton w-auto mt-4  rounded-lg text-primary-50"
 			on:click={openPopup}
 		>
 			<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />

@@ -13,7 +13,6 @@
 
 	const languageStore = getTolgee(['language']);
 
-
 	function toggleMenu() {
 		showMenu = !showMenu;
 	}
@@ -54,19 +53,7 @@
 		return (headerClass = true);
 	}
 
-	run(() => {
-		onMount(() => (showMenu = false));
-	});
-	run(() => {
-		console.log("showMenu", showMenu)
-	});
-	run(() => {
-		languageStore;
-	});
-	run(() => {
-		showMenu;
-	});
-	run(() => {
+	$effect(() => {
 		headerClass = updateClass(y);
 	});
 </script>
@@ -79,7 +66,6 @@
 		: 'h-0 md:h-screen md:h-screen-ios'} md:backdrop-blur-2xl border-r border-primary-900/[0.02] dark:border-primary-50/[0.02] bg-gradient-to-bl from-primary-900/[0.02] to-primary-900/[0.06] dark:from-primary-50/[0.02] dark:to-primary-50/[0.06]   transition-transform md:w-40 z-30 fixed inset-y-0 flex justify-between flex-col w-full"
 >
 	<BackdropBlur {showMenu} />
-	<!-- LOGO -->
 	<a
 		aria-label="Back to Home"
 		href="/"
@@ -90,8 +76,6 @@
 	>
 		<Logo class={'p-3 md:p-1.5'} />
 	</a>
-	<!-- actual nav -->
-
 	<nav
 		class="{showMenu
 			? ' '
@@ -100,9 +84,9 @@
 		<SocialMenu />
 		<ul aria-label="Navigation Bar" class="flex font-sans flex-col gap-4 flex-grow self-center">
 			{#each navItems as { link, text }}
-				<NavButton on:click={hideMenuMobile} {link} {text} />
+				<NavButton onclick={hideMenuMobile} {link} {text} />
 			{/each}
 		</ul>
 	</nav>
-	<MenuToggle on:click={toggleMenu} {showMenu} />
+	<MenuToggle {toggleMenu} {showMenu} />
 </header>

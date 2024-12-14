@@ -1,5 +1,3 @@
-<!-- @migration-task Error while migrating Svelte code: `<svelte:window>` does not support non-event attributes or spread attributes
-https://svelte.dev/e/illegal_element_attribute -->
 <script lang="ts">
 	import { Spring } from 'svelte/motion';
 
@@ -29,41 +27,41 @@ https://svelte.dev/e/illegal_element_attribute -->
 	bind:innerHeight={innerHeight}
 	bind:innerWidth={innerWidth}
 	on:mousemove={(e) => {
-		coords.set({ x: e.clientX, y: e.clientY });
+		coords.target = { x: e.clientX, y: e.clientY };
 	}}
 	on:mousedown={(e) => {
-		scale.set(0.5);
+		scale.target = 0.5;
 		smaller = true;
 	}}
 	on:mouseup={(e) => {
-		scale.set(1);
+		scale.target = 1;
 		smaller = false;
 	}}
 />
 <div
-	style:left={`${$coords.x}px`}
-	style:top={`${$coords.y}px`}
-	style:transform={`scale(${$scale}) translate(-50%,-50%)`}
+	style:left={`${coords.current.x}px`}
+	style:top={`${coords.current.y}px`}
+	style:transform={`scale(${scale.current}) translate(-50%,-50%)`}
 	class="bg-gradient-to-tl from-primary-100/40 to-primary-800/40 transition-[filter]
   {smaller ? 'brightness-125' : ''}
   animate-blobpulse z-[1] rounded-full -translate-x-1/2 -translate-y-1/2 origin-top-left aspect-square fixed h-64 hidden sm:block"
-/>
+></div>
 <div
-	style:left={`${$coords.x}px`}
-	style:bottom={`${$coords.y}px`}
-	style:transform={`scale(${$scale}) translate(150%,-50%)`}
+	style:left={`${coords.current.x}px`}
+	style:bottom={`${coords.current.y}px`}
+	style:transform={`scale(${scale.current}) translate(150%,-50%)`}
 	class="bg-gradient-to-tl from-primary-200/10 to-primary-400/10 animate-blobpulsesmall z-[2] hidden sm:block rounded-full -translate-x-1/2 -translate-y-1/2 origin-top aspect-square fixed h-32"
-/>
+></div>
 <div
-	style:right={`${$coords.x}px`}
-	style:top={`${$coords.y}px`}
-	style:transform={`scale(${$scale}) translate(-150%,-50%)`}
+	style:right={`${coords.current.x}px`}
+	style:top={`${coords.current.y}px`}
+	style:transform={`scale(${scale.current}) translate(-150%,-50%)`}
 	class="bg-gradient-to-tl from-primary-200/20 to-primary-400/20 animate-blobpulsesmall z-[2] hidden sm:block rounded-full -translate-x-1/2 -translate-y-1/2 origin-top aspect-square fixed h-40"
-/>
+></div>
 <!-- <div
 	style:right={`${$position.x}px`}
 	style:top={`${$position.y}px`}
-	style:transform={`scale(${$scale}) translate(150%,50%)`}
+	style:transform={`scale(${scale.current}) translate(150%,50%)`}
 	class="bg-gradient-to-tl from-primary-900/40
 to-primary-400/40 animate-blobpulsesmall z-[1] rounded-full -translate-x-1/2 -translate-y-1/2 origin-bottom aspect-square fixed h-48"
 /> -->
@@ -72,4 +70,4 @@ to-primary-400/40 animate-blobpulsesmall z-[1] rounded-full -translate-x-1/2 -tr
 	class="
 {smaller ? 'backdrop-blur-[100px] ' : 'backdrop-blur-[120px]'}
  transition-all fixed h-full w-full z-[2] hidden sm:block"
-/>
+></div>
