@@ -10,7 +10,8 @@
 	import FrontWork from './FrontModules/FrontWork.svelte';
 	import FrontAbout from './FrontModules/FrontAbout.svelte';
 	import { onMount } from 'svelte';
-
+	import Hero from './Hero.svelte';
+	
 	pageTitle.set('');
 	const { t } = getTranslate();
 
@@ -56,10 +57,11 @@
 <!-- https://stackoverflow.com/questions/58133329/how-to-use-css-backdrop-filter-on-text -->
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
+<Hero />
 <section
 	class="px-4 md:px-0 relative w-full -mt-24 sm:-mt-28 min-h-[100svh] flex flex-col justfiy-center items-center content-center"
 >
-	<div class="relative pb-[100svh] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
+	<!-- <div class="relative pb-[100svh] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
 		{#if visible && animationspeed != null && animationdelay != null}
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">							
 				<span 
@@ -134,7 +136,7 @@
 				</p>
 			</div>
 		{/if}
-	</div>
+	</div> -->
 
 
 		<ButtonScrollToSection section={'aboutme'}>

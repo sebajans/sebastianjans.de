@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import { getTranslate } from "@tolgee/svelte";
-  import T from "@tolgee/svelte";
+  import { T } from "@tolgee/svelte";
   import { cvItems } from "$lib/lists/cvItems";
   import { skillItems, type SkillItems } from "$lib/lists/skillItems";
   import DarkModeButton from "$components/DarkModeButton.svelte";
@@ -19,6 +17,8 @@
     // console.log(body);
     window.print();
   }
+
+  const { t } = getTranslate();
 
   interface IntroItems {
     fieldOfWork: string[];
@@ -73,11 +73,7 @@
     );
   }
 
-  run(() => {
-    console.log(filteredIntroText);
-  });
-
-  const { t } = getTranslate();
+  
 </script>
 
 <div class="hide-on-print sticky top-0 inset-x-0 pt-4 px-4">

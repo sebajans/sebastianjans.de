@@ -54,9 +54,21 @@ export const skillItems: SkillItems = {
         progress: 'w-[75.5%] ',
       },
       {
-        name: 'Github',
+        name: 'Git',
         fieldOfWork: ['webdev'],
         iconLink: 'skills-icons/github.svg',
+        progress: 'w-[75.5%] ',
+      },
+      {
+        name: 'ReactJs',
+        fieldOfWork: ['webdev'],
+        iconLink: 'skills-icons/react-js.svg',
+        progress: 'w-[75.5%] ',
+      },
+      {
+        name: 'Vue',
+        fieldOfWork: ['webdev'],
+        iconLink: 'skills-icons/vue-js.svg',
         progress: 'w-[75.5%] ',
       },
     ]

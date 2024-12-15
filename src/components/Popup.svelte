@@ -1,8 +1,4 @@
-<!-- Popup.svelte -->
 <script lang="ts">
-	import { createBubbler, stopPropagation } from 'svelte/legacy';
-
-	const bubble = createBubbler();
 	let visible = $state(false);
 	import { fade, scale } from 'svelte/transition';
 
@@ -51,6 +47,7 @@
 		>
 			{@render children?.()}
 			<button
+				aria-label="Close popup"
 				class="absolute group top-4 right-4 h-6 w-6 group font-sans hover:text-primary-500"
 				onclick={hide}
 			>

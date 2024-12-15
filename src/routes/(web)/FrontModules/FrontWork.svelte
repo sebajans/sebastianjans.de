@@ -37,7 +37,7 @@
 							<T keyName={item.name} defaultValue={item.name} />
 						</h2>
 						<h3 class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm">
-							{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
+							{item.fromMonth}/{item.fromYear} - {item.toMonth}{item.toYear ? "/" + item.toYear : ""}
 						</h3>
 						<p class="text-sm text-justify">
 							<T keyName="text-{item.name}" defaultValue={item.info} />

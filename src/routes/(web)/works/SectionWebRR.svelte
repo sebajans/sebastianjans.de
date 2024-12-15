@@ -35,17 +35,17 @@
 				<li
 					class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
 				>
-					<img
+					<enhanced:img
 						alt="website-RR-front-mobile"
 						class="
 						col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-						src="img/website-RR/website-RR-mobile-front.webp"
+						src="img/website-RR/website-RR-mobile-front.webp?enhanced"
 					/>
-					<img
+					<enhanced:img
 						alt="website-RR-front-desktop"
 						class="
 						h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-						src="img/website-RR/website-RR-front.webp"
+						src="img/website-RR/website-RR-front.webp?enhanced"
 					/>
 					<div class="col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
 						<h3 class="pb-1"><T
@@ -65,17 +65,17 @@
 					<li bind:this={elementPlay}
 						class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
 					>
-						<img
+						<enhanced:img
 							alt="website-RR-play-mobile"
 							class="{intersectingPlay ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500
 							col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-mobile-play.webp"
+							src="img/website-RR/website-RR-mobile-play.webp?enhanced"
 						/>
-						<img
+						<enhanced:img
 							alt="website-RR-play-desktop"
 							class="{intersectingPlay ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-150 duration-500
 							h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-play.webp"
+							src="img/website-RR/website-RR-play.webp?enhanced"
 						/>
 						<div class="{intersectingPlay ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-300 duration-500 col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
 							<h3 class="pb-1"><T
@@ -96,17 +96,17 @@
 					<li bind:this={elementLevel}
 						class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
 					>
-						<img
+						<enhanced:img
 							alt="website-RR-level-mobile"
 							class="{intersectingLevel ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500
 							col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-mobile-level.webp"
+							src="img/website-RR/website-RR-mobile-level.webp?enhanced"
 						/>
-						<img
+						<enhanced:img
 							alt="website-RR-level-desktop"
 							class="{intersectingLevel ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-150 duration-500
-							h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-level.webp"
+							h-full sm:h-auto w-full row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+							src="img/website-RR/website-RR-level.webp?enhanced"
 						/>
 						<div class="{intersectingLevel ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-300 duration-500 col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
 							<h3 class="pb-1"><T
@@ -127,17 +127,17 @@
 					<li bind:this={elementSettings}
 							class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
 					>
-						<img
+						<enhanced:img
 							alt="website-RR-settings-mobile"
 							class="{intersectingSettings ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500
 							col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-mobile-settings.webp"
+							src="img/website-RR/website-RR-mobile-settings.webp?enhanced"
 						/>
-						<img
+						<enhanced:img
 							alt="website-RR-settings-desktop"
 							class="{intersectingSettings ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-150 duration-500
 							h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-settings.webp"
+							src="img/website-RR/website-RR-settings.webp?enhanced"
 						/>
 						<div class="{intersectingSettings ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-300 duration-500 col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
 							<h3 class="pb-1"><T

@@ -87,7 +87,7 @@ https://svelte.dev/e/js_parse_error -->
 				on:click|stopPropagation
 				class="logo-main {activeNumber === -1
 					? ''
-					: 'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} transform max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300"
+					: 'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} trans form max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300"
 			>
 				{#each logoItems as logo, i }
 
@@ -147,10 +147,10 @@ https://svelte.dev/e/js_parse_error -->
 					on:click={() => (activeNumber = -1)}
 				>
 					<span
-						class="transition-all transform group-hover:rotate-[135deg] rotate-45 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
+						class="transition-all group-hover:rotate-[135deg] rotate-45 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
 					></span>
 					<span
-						class="transition-all transform -rotate-45 group-hover:rotate-45 -translate-y-0.5 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
+						class="transition-all -rotate-45 group-hover:rotate-45 -translate-y-0.5 block h-0.5 w-6 group-hover:bg-primary-600 dark:group-hover:bg-primary-100 bg-primary-900 dark:bg-primary-400 duration-250 "
 					></span>
 				</button>
 			</div>
