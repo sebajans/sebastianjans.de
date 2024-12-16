@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { T } from '@tolgee/svelte'; // change import statement
+	import { T } from '@tolgee/svelte';
 	import { getTranslate } from '@tolgee/svelte';
 	const { t } = getTranslate();
 	import IntersectionObserver from 'svelte-intersection-observer';

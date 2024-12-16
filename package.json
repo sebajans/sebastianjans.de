@@ -25,6 +25,7 @@
 		"@typescript-eslint/eslint-plugin": "^8.18.0",
 		"@typescript-eslint/parser": "^8.18.0",
 		"autoprefixer": "^10.4.20",
+		"bits-ui": "^0.21.16",
 		"clsx": "^2.1.1",
 		"cssnano": "^6.1.2",
 		"eslint": "^9.17.0",

@@ -14,7 +14,7 @@
 	let windowHeight: number | undefined = $state();
 	let sectionScroll = $derived(scrollInSection(scroll, 5, windowHeight ?? 0));
 	let showProduct: Boolean = $state(false);
-	run(() => {
+	$effect(() => {
 		if (sectionScroll >= 0.75 && scroll > 1) {
 			showProduct = true;
 		}

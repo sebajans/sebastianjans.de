@@ -10,8 +10,8 @@
 </script>
 
 <div 
-class="top-0  w-screen md:w-full
-sticky  md:top-12 h-20 md:h-16 z-20 inset-x-0 md:right-0 flex flex-row mt-0 md:mt-4">
+class="top-0  w-screen md:w-fit
+sticky  md:top-12 h-20 md:h-16 z-20 inset-x-0 md:left-full md:right-0 flex flex-row mt-0 md:mt-4">
 <!-- <div class="w-[calc(100vw_-_56rem)] h-full" /> -->
 	<div class="max-w-4xl w-full">
 		{#if show}

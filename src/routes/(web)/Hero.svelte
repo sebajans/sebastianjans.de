@@ -44,17 +44,12 @@
         "Ich designe digitale und physische Produkte mit einem Fokus auf Benutzererfahrung.",
         "Ich bin ein kreativer Denker mit einer Leidenschaft für Problemlösung.",
       ],
-
     },
     es: {
       title: "Bienvenidos!",
       my_name_is: "Mi nombre es ",
       and_i_am_a: "y soy un",
-      profession: [
-        "desarrollador",
-        "diseñador",
-        "creador",
-      ],
+      profession: ["desarrollador", "diseñador", "creador"],
       professionDescription: [
         "Creo hermosas páginas web y aplicaciones web de alto rendimiento.",
         "Diseño productos digitales y físicos con un enfoque en la experiencia del usuario.",
@@ -69,7 +64,7 @@
   let key: LanguageKey =
     ($currentLanguage.getLanguage() as LanguageKey) || "en";
 
-    $effect(() => {
+  $effect(() => {
     const intervalId = setInterval(() => {
       activeIndex = (activeIndex + 1) % introElements[key].profession.length;
     }, interval);
@@ -118,18 +113,16 @@
               {/each}
             </Typewriter>
             <div class="!h-10">
-
-            
-            {#key activeIndex}
-              <h3
-                class="font-light dark:text-primary-200 text-2xl sm:text-3xl leading-relaxed mb-2 sm:mb-4"
-                in:fly={{ y: 20, duration: 300, delay: 350 }}
-                out:fly={{ y: -20, duration: 300 }}
-              >
-                {value.professionDescription[activeIndex] || ""}
-              </h3>
-            {/key}
-          </div>
+              {#key activeIndex}
+                <h3
+                  class="font-light dark:text-primary-200 text-2xl sm:text-3xl leading-relaxed mb-2 sm:mb-4"
+                  in:fly={{ y: 10, duration: 300, delay: 350 }}
+                  out:fly={{ y: -10, duration: 300 }}
+                >
+                  {value.professionDescription[activeIndex] || ""}
+                </h3>
+              {/key}
+            </div>
           {/if}
         {/each}
       </div>
