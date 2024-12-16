@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { T } from '@tolgee/svelte';
+	// import clsx from 'clsx';
 
 	interface Props {
 		link: string;

@@ -13,6 +13,8 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$components: "src/components",
+			"@/*": "./path/to/lib/*",
+
 			// $i18n: "src/i18n",
 		},
 		inlineStyleThreshold: Infinity,

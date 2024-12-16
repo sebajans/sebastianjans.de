@@ -58,9 +58,9 @@
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
 <Hero />
-<section
+<!-- <section
 	class="px-4 md:px-0 relative w-full -mt-24 sm:-mt-28 min-h-[100svh] flex flex-col justfiy-center items-center content-center"
->
+> -->
 	<!-- <div class="relative pb-[100svh] md:pb-[calc(100vh)] flex flex-col w-full max-w-2xl my-auto mx-auto">
 		{#if visible && animationspeed != null && animationdelay != null}
 			<div class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-center">							
@@ -138,11 +138,11 @@
 		{/if}
 	</div> -->
 
-
+<!-- 
 		<ButtonScrollToSection section={'aboutme'}>
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</ButtonScrollToSection>
-</section>
+</section> -->
 
 <FrontAbout />
 <FrontWork />
