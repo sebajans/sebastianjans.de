@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ResponsiveScreen from "$components/ResponsiveScreen.svelte";
   import { T } from "@tolgee/svelte";
 
   const { showWebServices, isVisible } = $props();
@@ -18,51 +19,63 @@
     },
     {
       name: "SEO",
-      value: 85,
+      value: 91,
     },
   ];
 </script>
 
 <section
   id="websites"
-  class="md:h-worksmd h-works max-h-[56rem] w-full row-start-1 col-start-1
-{showWebServices
-    ? 'translate-x-0 opacity-100'
-    : 'translate-x-full opacity-0'} transition-all duration-500"
+  class="md:h-worksmd h-works max-h-[56rem] w-full items-center justify-center flex flex-col row-start-1 col-start-1 transition-all duration-500"
 >
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-    {#each performanceResults as result}
-      <div
-        class="relative p-4 aspect-square w-full flex flex-col justify-between"
-      >
-        <!-- {#if isVisible} -->
-        <div class="relative dark:text-primary-50 w-full h-full transition-all">
-          <span
-            class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center"
+  <div class="flex flex-row items-center my-auto">
+    <div class="flex flex-col w-full">
+      <h2 class="text-left">
+        <T keyName="h-ux" defaultValue="The user comes first" />
+      </h2>
+      <p class="text-left">
+        <T
+          keyName="p-latest-technologies"
+          defaultValue="At the heart of my web development philosophy is a commitment to crafting lightning-fast, high-performance websites that are as accessible as they are sleek. I leverage cutting-edge technologies to ensure your web presence not only loads in a flash but also welcomes every user, regardless of their abilities. Blending speed and accessibility, I create web experiences that leave a lasting impression."
+        />
+      </p>
+    </div>
+    <div class="w-full flex items-center justify-center p-4">
+      <div class="grid grid-cols-2 w-fit sm:grid-cols-2 gap-6">
+        {#each performanceResults as result}
+          <div
+            class="relative flex items-center justify-center aspect-square dark:text-primary-50 w-full h-full transition-all"
           >
-            <T keyName="span-{result.name}" defaultValue={result.name} />
-          </span>
-          <svg class="w-fit h-fit -rotate-90" viewBox="0 0 100 100">
-            <circle
-              class="stroke-[4] stroke-primary-600 dark:stroke-primary-400 fill-none"
-              cx="50"
-              cy="50"
-              r="48"
-              stroke-linecap="round"
-              style="stroke-dasharray: 301; stroke-dashoffset: 301; "
+            <span
+              class="absolute inset-0 z-10 flex items-center justify-center text-center"
             >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="301"
-                to={(100 - result.value) * 3.01}
-                dur="1s"
-                fill="freeze"
-              />
-            </circle>
-          </svg>
-        </div>
-        <!-- {/if} -->
+              <T keyName="span-{result.name}" defaultValue={result.name} />
+            </span>
+            <svg
+              class="w-full aspect-square max-w-40 -rotate-90"
+              viewBox="0 0 100 100"
+            >
+              <circle
+                class="stroke-[4] stroke-primary-600 dark:stroke-primary-400 fill-none"
+                cx="50"
+                cy="50"
+                r="48"
+                stroke-linecap="round"
+                style="stroke-dasharray: 301; stroke-dashoffset: 301; "
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  from="301"
+                  to={(100 - result.value) * 3.01}
+                  dur="1s"
+                  fill="freeze"
+                />
+              </circle>
+            </svg>
+          </div>
+        {/each}
       </div>
-    {/each}
+    </div>
   </div>
+  <ResponsiveScreen />
 </section>

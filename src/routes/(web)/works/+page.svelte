@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { run, preventDefault } from "svelte/legacy";
+  import { preventDefault } from "svelte/legacy";
 
   import { pageTitle } from "$lib/stores/pageTitle";
   import Button from "$lib/components/ui/button/button.svelte";
@@ -29,7 +29,7 @@
 
   import { T } from "@tolgee/svelte"; // change import statement
   import { getTranslate } from "@tolgee/svelte";
-    import SectionWebServices from "./SectionWebServices.svelte";
+  import SectionWebServices from "./SectionWebServices.svelte";
 
   const { t } = getTranslate(); // Tolgee t translation
 
@@ -42,7 +42,7 @@
   let intersectingWeb: boolean = $state(false);
   let isVisibleLogo = $state(false); // Separate state variable to control div visibility
 
-  run(() => {
+  $effect(() => {
     if (intersectingWeb) {
       isVisibleLogo = true;
     }
@@ -52,7 +52,7 @@
   let intersectingLogo: boolean = $state(false);
   let isVisibleGraphicDesign = $state(false); // Separate state variable to control div visibility
 
-  run(() => {
+  $effect(() => {
     if (intersectingLogo) {
       isVisibleGraphicDesign = true;
     }
@@ -61,7 +61,7 @@
   let intersectingGraphicDesign: boolean = $state(false);
   let isVisibleProduct = $state(false);
 
-  run(() => {
+  $effect(() => {
     if (intersectingGraphicDesign) {
       isVisibleProduct = true;
     }
@@ -70,6 +70,11 @@
   let intersectingProduct: boolean = $state(false);
 
   let showWebServices = $state(true);
+
+$effect(() => {
+	console.log("intersectingWeb", intersectingWeb);
+});
+
 </script>
 
 <svelte:head>
@@ -122,40 +127,55 @@
 
 <div class="fixed md:block top-0 h-0 w-20 right-0 z-30"></div>
 
+{#snippet buttons()}
+	{#if intersectingWeb}
+		<div 
+		in:fly={{x: 200, duration: 300, delay: 300}}
+		out:fly={{x: 200, duration: 300, delay: 0}}
+		class="flex flex-row gap-2 items-center justify-center">
+			<Button
+				class="font-sans {showWebServices ? 'bg-primary-200' : 'bg-primary-500'}"
+				variant="default"
+				size="lg"
+				onclick={() => {
+					showWebServices = false;
+					setTimeout(() => {
+						scrollIntoView("websites", 500);
+					}, 200);
+				}}>Works</Button
+			>
+			<Button
+				variant="default"
+				class="font-sans {showWebServices ? 'bg-primary-500' : 'bg-primary-200'}"
+				size="lg"
+				onclick={() => {
+					showWebServices = true;
+					setTimeout(() => {
+						scrollIntoView("websites", 500);
+					}, 0);
+				}}>Services</Button
+			>
+		</div>
+	{/if}
+{/snippet}
 <WorksHeader
   show={intersectingWeb}
+  {buttons}
   backgroundColor="bg-primary-200/60 dark:bg-primary-700/60"
 >
-<div class="flex flex-col gap-2">
-  <T keyName="works-webdev" defaultValue="Webdesign" />
-
-<div class="flex flex-row gap-2 items-center justify-center">
-
-	<Button
-	class="font-sans"
-	variant="ghost"
-
-	size="sm"
-	onclick={() => (showWebServices = false)}>Works</Button>
-	<Button
-	variant="ghost"
-	class="font-sans "
-	size="sm"
-	onclick={() => (showWebServices = true)}>Services</Button
-	>
-</div>
-</div>
+  <div class="flex flex-col gap-2">
+    <T keyName="works-webdev" defaultValue="Webdesign" />
+  </div>
 </WorksHeader>
 
 <IntersectionObserver
-  once
   element={elementWeb}
   bind:intersecting={intersectingWeb}
 >
-  <div bind:this={elementWeb} class="flex flex-col relative">
 
+  <div bind:this={elementWeb} class="">
     {#if showWebServices}
-		<SectionWebServices isVisible={showWebServices} showWebServices />
+      <SectionWebServices isVisible={showWebServices} showWebServices />
     {:else}
       <SectionWebRJ />
       <SectionWebRR />
