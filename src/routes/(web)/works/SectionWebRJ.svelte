@@ -4,6 +4,7 @@
 	import { fly, fade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 
+	import Button from '$lib/components/ui/button/button.svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
 
@@ -78,6 +79,7 @@
 					class="h-[calc(100%_-_1rem)] md:h-[calc(100%_-_1.75rem)] object-cover rounded-lg "
 				/>
 			</div>
+			
 		</div>
 		<p 
 			class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all duration-1000 delay-250 row-[10_/_span_3] col-[1_/_span_8] sm:row-[9_/_span_4] sm:col-[6_/_span_5] h-full w-full self-center text-justify"
@@ -87,6 +89,9 @@
 				defaultValue="This is the website I created for a make-up stylist. It is primarily aimed at a female audience, so the colour scheme is mainly purple, red and white. The website includes a full-screen front page and a menu bar."
 			/>
 		</p>
+		<Button class="" href="works/project-renatajans">
+			<T keyName="read-more" defaultValue="Read more" />
+		</Button>
 		<!-- {/if} -->
 	</div>
 </section>

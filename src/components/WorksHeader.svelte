@@ -18,7 +18,7 @@ sticky  md:top-12 h-20 md:h-16 z-20 inset-x-0 md:left-full md:right-0 flex flex-
 		{#if show}
 			<h2
 			in:fly={{x: 200, duration: 300, delay: 300}}
-			out:fly={{x: 200, duration: 300, delay: 0}}
+			out:fly={{y: -200, duration: 300, delay: 0}}
 				class="{backgroundColor} md:mr-2 backdrop-blur-lg text-right md:text-right w-full md:w-fit ml-auto pr-8 pl-3  md:rounded-md font-sans py-6 md:py-3 text-2xl md:text-4xl "
 			>
 				{@render children?.()}
