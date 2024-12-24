@@ -60,13 +60,22 @@
 
   let activeIndex: number = $state(-1);
   let interval = 3200;
+  let initialDelay = 300;
   type LanguageKey = keyof typeof introElements;
   let key: LanguageKey =
     ($currentLanguage.getLanguage() as LanguageKey) || "en";
 
   $effect(() => {
+    let firstLoad = true;
     const intervalId = setInterval(() => {
-      activeIndex = (activeIndex + 1) % introElements[key].profession.length;
+      if (firstLoad) {
+        setTimeout(() => {
+          activeIndex = (activeIndex + 1) % introElements[key].profession.length;
+          firstLoad = false;
+        }, initialDelay);
+      } else {
+        activeIndex = (activeIndex + 1) % introElements[key].profession.length;
+      }
     }, interval);
     return () => clearInterval(intervalId);
   });
@@ -80,18 +89,18 @@
   >
     {#if visible}
       <div
-        class="absolute inset-0 h-full min-h-max flex flex-col justify-center items-start"
+        class="absolute [--cursor-width:4px] [--cursor-color:#000] dark:[--cursor-color:#fff] inset-0 h-full min-h-max flex flex-col justify-center items-start"
       >
         {#each Object.entries(introElements) as [key, value]}
           {#if $currentLanguage.getLanguage() === key}
             <Typewriter {...props}>
               <h1
-                class="[--cursor-color:#000] dark:[--cursor-color:#fff] text-6xl mb-2 sm:mb-4"
+                class=" text-6xl mb-2 sm:mb-4"
               >
                 {value.title}
               </h1>
               <h2
-                class="font-light text-primary-800 dark:text-white [--cursor-color:#000] dark:[--cursor-color:#fff] text-3xl sm:text-4xl leading-relaxed mb-1 sm:mb-2"
+                class="font-light  text-primary-800 dark:text-white text-3xl sm:text-4xl leading-relaxed mb-1 sm:mb-2"
               >
                 <span>{value.my_name_is}</span>
                 <span class="font-bold">Sebastian Jans</span>
@@ -102,11 +111,12 @@
               mode="loop"
               wordInterval={3000}
               interval={30}
-              delay={2500}
+              blinkCount={2}
+              delay={2100}
             >
               {#each value.profession as profession}
                 <h2
-                  class="font-medium text-primary-500 dark:text-primary-400 [--cursor-color:#000] dark:[--cursor-color:#fff] text-3xl sm:text-4xl leading-relaxed mb-2 sm:mb-4"
+                  class="font-medium text-primary-500 dark:text-primary-400 text-3xl sm:text-4xl leading-relaxed mb-2 sm:mb-4"
                 >
                   {profession}.
                 </h2>
