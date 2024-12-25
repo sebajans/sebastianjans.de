@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onDestroy } from "svelte";
-  import { T } from "@tolgee/svelte";
 
   const interval = 3000;
   let modes = [0, 1, 2, 3];
@@ -18,19 +17,7 @@
   });
 </script>
 
-<div class="mb-auto flex flex-col gap-y-4">
-  <div class="flex md:flex-row-reverse items-center">
-    <div class="w-full">
-      <h2 class="text-left">
-        <T keyName="h-responsive" defaultValue="We are mobile-first" />
-      </h2>
-      <p class="text-left">
-        <T
-          keyName="p-responsive-design"
-          defaultValue="I build websites that are mobile-first and responsive. This means that your website will look great on any device, from a smartphone to a desktop computer. I also make sure that your website is accessible to everyone, including people with disabilities."
-        />
-      </p>
-    </div>
+
     <div class="flex justify-center w-full items-center">
       <div class="flex h-80 flex-row justify-center items-center relative">
         <!-- {#if intersectingMobileFirst} -->
@@ -135,5 +122,4 @@
         <!-- {/if} -->
       </div>
     </div>
-  </div>
-</div>
+
