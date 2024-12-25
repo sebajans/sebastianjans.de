@@ -86,7 +86,7 @@
 					{/if}
 					{/each}
 				</Carousel.Content>
-				<div class="flex justify-between py-2">
+				<div class="flex justify-between mt-6">
 
 					<Carousel.Previous class="relative !translate-x-0 left-0 bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />
 					<Carousel.Next class="relative !translate-x-0 right-0 bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />

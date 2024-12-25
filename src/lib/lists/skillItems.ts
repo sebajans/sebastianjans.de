@@ -71,6 +71,12 @@ export const skillItems: SkillItems = {
         iconLink: 'skills-icons/vue-js.svg',
         progress: 'w-[75.5%] ',
       },
+      {
+        name: 'ThreeJs',
+        fieldOfWork: ['webdev'],
+        iconLink: 'skills-icons/threejs.svg',
+        progress: 'w-[75.5%] ',
+      },
     ]
   },
 

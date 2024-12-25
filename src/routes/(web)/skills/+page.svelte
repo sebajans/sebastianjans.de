@@ -120,7 +120,7 @@ https://svelte.dev/e/expected_token -->
 						<div class="flex flex-row items-center h-7">
 							<img
 								src={skill.iconLink}
-								class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
+								class="pointer-events-none text-white inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
 								alt={skill.name}
 							/>
 							<span
@@ -156,7 +156,7 @@ https://svelte.dev/e/expected_token -->
 						<div class="flex flex-row items-center h-7">
 							<img
 								src={skill.iconLink}
-								class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
+								class="pointer-events-none text-white inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
 								alt={skill.name}
 							/>
 							<span

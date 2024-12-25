@@ -8,7 +8,9 @@ https://svelte.dev/e/js_parse_error -->
 	
 	import { logoItems } from '$lib/lists/logoItems';
 	import { settingsState } from '$lib/stores/settingsState';
-	import { fly } from 'svelte/transition';
+	import { fly, scale } from 'svelte/transition';
+	import { writable } from 'svelte/store';
+	import { tick } from 'svelte';
 
 	type M = { x: number; y: number };
 	let m: M = { x: 0, y: 0 };
@@ -45,26 +47,59 @@ https://svelte.dev/e/js_parse_error -->
 	let element: HTMLElement;
   let intersecting:boolean;
 
+
+	let localLogoItems = writable(logoItems.slice(0, 9));
+
+	let activeLocalLogoItems = writable(logoItems.slice(0, 9));
+	let discardedLogoItems = writable(logoItems.slice(9));
+
+	function updateLocalLogoItems() {
+		setInterval(() => {
+			activeLocalLogoItems.update(activeItems => {
+				if (activeItems.length < 9) return activeItems;
+
+				const newActiveItems = [...activeItems];
+				let newDiscardedItems = [];
+
+				discardedLogoItems.update(discardedItems => {
+					newDiscardedItems = [...discardedItems];
+
+					const randomActiveIndex = Math.floor(Math.random() * newActiveItems.length);
+					const randomDiscardedIndex = Math.floor(Math.random() * newDiscardedItems.length);
+
+					const [movedItem] = newDiscardedItems.splice(randomDiscardedIndex, 1, newActiveItems[randomActiveIndex]);
+					newActiveItems[randomActiveIndex] = movedItem;
+
+					return newDiscardedItems;
+				});
+
+				return newActiveItems;
+			});
+			tick();
+		}, 3000);
+	}
+
+	onMount(() => {
+		updateLocalLogoItems();
+	});
 </script>
 
 <IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}
 >	
-
+{#if activeNumber !== -1}
+<div 
+role="button"
+tabindex="0"
+on:click={() => (activeNumber = -1)}
+on:keydown={() => (activeNumber = -1)}
+class="absolute inset-0 z-[1] bg-transparent cursor-default">
+</div>
+{/if}
 <section bind:this={element}
 	aria-label="Logo Design Section"
 	id="logodesign"
 	class="flex flex-col px-4 relative "
 	>
-	{#if activeNumber !== -1}
-		<div 
-		role="button"
-		tabindex="0"
-		on:click={() => (activeNumber = -1)}
-		on:keydown={() => (activeNumber = -1)}
-		class="absolute inset-0 z-[1] bg-transparent cursor-default">
-		</div>
-	{/if}
-
 	<div 
 		class="{intersecting ? '' : '-translate-x-1/2 opacity-0' } transition-all duration-500
 		relative my-auto mx-auto h-works md:h-worksmd max-w-4xl w-full  flex flex-col md:flex-row items-center justify-center"
@@ -89,9 +124,8 @@ https://svelte.dev/e/js_parse_error -->
 					? ''
 					: 'scale-75 translate-x-20 opacity-30 !blur-[2px] pointer-events-none'} trans form max-h-[calc(100vh_-_5.5rem)] aspect-square group w-full max-w-3/5 gap-5 grid grid-rows-3 grid-cols-3 justify-center items-center transition-all duration-300"
 			>
-				{#each logoItems as logo, i }
-
-					<div class="logo-individual flex justify-center items-center transition-all duration-200">
+				{#each $activeLocalLogoItems as logo, i }
+					<div transition:scale class="logo-individual flex justify-center items-center transition-all duration-200">
 						<button
 						aria-label="Logo Design"
 						role="gridcell"
@@ -107,7 +141,7 @@ https://svelte.dev/e/js_parse_error -->
 			</div>
 		</div>
 
-		{#if logoItems[activeNumber]}
+		{#if $activeLocalLogoItems[activeNumber]}
 			<div
 			role="button"
 			tabindex="0"
