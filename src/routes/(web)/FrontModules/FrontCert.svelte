@@ -3,34 +3,49 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { cvItems } from '$lib/lists/cvItems';
+  import * as Carousel from "$lib/components/ui/carousel/index.js";
+    import { on } from 'svelte/events';
 
 
-	onMount(() => {
-		const lists: NodeListOf<HTMLElement> = document.querySelectorAll('.hs');
-		console.log("lists", lists);
-		lists.forEach(el => {
-			const listItems = el.querySelectorAll('li');
-			const n = listItems.length;
-			const total = n + 2; // Add 2 for the empty columns
-			// console.log("total", total);
+	// onMount(() => {
+	// 	const lists: NodeListOf<HTMLElement> = document.querySelectorAll('.hs');
+	// 	console.log("lists", lists);
+	// 	lists.forEach(el => {
+	// 		const listItems = el.querySelectorAll('li');
+	// 		const n = listItems.length;
+	// 		const total = n + 2; // Add 2 for the empty columns
+	// 		// console.log("total", total);
 			
-			document.documentElement.style.setProperty('--total', total.toString());
-		});
-	});
+	// 		document.documentElement.style.setProperty('--total', total.toString());
+	// 	});
+	// });
 
+	let slidesToScroll = 1;
+
+	let width: number;
+
+	function updateSlidesToScroll() {
+		if (width >= 640) {
+			slidesToScroll = 2;
+		} else {
+			slidesToScroll = 1;
+		}
+	}
+
+	onMount(updateSlidesToScroll);
 </script>
+<svelte:window on:resize={updateSlidesToScroll} bind:innerWidth={width} />
 
 <section class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] h-full min-h-screen min-h-screen-ios flex flex-col justfiy-center" id="cv_cert">
 	<div class="space-y-4 max-w-4xl w-full  mx-auto">
 		<h1 in:fly|global={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">
 			<T keyName="my-achievements" defaultValue="My Achievements & Certifications" />
 		</h1>
-		<!-- style="grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); grid-auto-columns: minmax(400px,1fr);" -->
-		<ul 
-		 class="hs snap-x snap-mandatory overflow-x-auto">
-			<li class="h-px w-px"></li>
-			{#each cvItems as item}
-				{#if item.category === 'certificate'}
+		<Carousel.Root orientation="horizontal" opts={{slidesToScroll: slidesToScroll}} class="px-4 md:px-0" >
+      <Carousel.Content >
+        {#each cvItems as item}
+          {#if item.category === "certificate"}
+            <Carousel.Item class="snap-start sm:basis-1/2 h-full min-h-[11rem] w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start">
 					<li
 						in:fly|global={{ y: 50, duration: 500, delay: 250 * item.id }}
 						class="snap-center snap-always md:snap-start w-full h-full flex flex-col space-y-4 grow sm:max-w-none"
@@ -67,37 +82,16 @@
 							{/if}
 						</div>
 					</li>
-				{/if}
-			{/each}
-			<li class="h-px w-px"></li>
-		</ul>
+				</Carousel.Item>
+					{/if}
+					{/each}
+				</Carousel.Content>
+				<div class="flex justify-between py-2">
+
+					<Carousel.Previous class="relative !translate-x-0 left-0 bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />
+					<Carousel.Next class="relative !translate-x-0 right-0 bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />
+				</div>
+			</Carousel.Root>
 	</div>
 </section>
-
-<style>
-:root {
-  --gutter: 20px;
-}
-
-.hs::-webkit-scrollbar {
-  display: none;
-}
-.hs {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.hs {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1rem repeat(var(--total), calc(100% - var(--gutter) * 2)) ;
-  grid-template-rows: minmax(150px, 1fr);
-}
-
-@media (min-width: 768px) {
-		.hs {
-			grid-template-columns: repeat(var(--total), calc(50% - var(--gutter) * 2));
-		}
-	}
-</style>
 

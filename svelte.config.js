@@ -13,7 +13,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$components: "src/components",
-			"@/*": "./path/to/lib/*",
+			"@/*": "src/lib/*",
 
 			// $i18n: "src/i18n",
 		},
