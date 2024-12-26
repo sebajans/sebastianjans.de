@@ -23,7 +23,7 @@
       </p>
     </div>
     <div class="w-full flex items-center justify-center p-4">
-      <div class="grid grid-cols-2 w-fit sm:grid-cols-3 gap-6">
+      <div class="grid grid-cols-3 w-fit sm:grid-cols-3 gap-6">
         {#each service.subServices as item}
           <div
             class="relative flex flex-col items-center justify-center aspect-square dark:text-primary-50 w-full h-full transition-all"
