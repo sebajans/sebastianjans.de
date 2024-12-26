@@ -3,7 +3,6 @@
 	import { onMount } from 'svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import NavBar from '$components/NavBar.svelte';
-	import "iconify-icon";
 
 	import Footer from '$components/Footer.svelte';
 	import PageTransitions from '$components/PageTransitions.svelte';

@@ -1,6 +1,9 @@
+import type { Component } from "svelte";
+import ServiceIcon from "./ServiceComponent.svelte";
 export interface SubService {
   id: number; // Unique ID for sub-service
   name: string;
+  component?: string | Component;
   price: number;
   description: string; // Added description field for subService
 }
@@ -110,15 +113,32 @@ export const services: MainService[] = [
         description: "Complete branding suite with additional services.",
       },],
     subServices: [
-      { id: 11, name: "Logo", price: 50, description: "Unique logo design for your brand." },
-      { id: 12, name: "Colours", price: 30, description: "Custom color palette selection." },
-      { id: 13, name: "Typography", price: 100, description: "Tailored typography choices for brand." },
-      { id: 14, name: "Usage Guide", price: 80, description: "Guide on using your logo effectively." },
-      { id: 15, name: "Patterns", price: 70, description: "Pattern creation for brand consistency." },
-      { id: 16, name: "Mockups", price: 90, description: "Visual mockups for branding materials." },
-      { id: 17, name: "Iconography", price: 60, description: "Creation of brand-specific icons." },
-      { id: 18, name: "Brand Strategy", price: 120, description: "Strategic planning for brand development." },
-      { id: 19, name: "Naming", price: 110, description: "Assistance in brand name selection." },
+      { id: 11,
+        component: "logo", name: "Logo", price: 50, description: "Unique logo design for your brand." },
+      { id: 12, 
+        component: "color",
+        name: "Colours", price: 30, description: "Custom color palette selection." },
+      { id: 13,
+        component: "typography",
+         name: "Typography", price: 100, description: "Tailored typography choices for brand." },
+      { id: 14,
+        component: "guide",
+         name: "Usage Guide", price: 80, description: "Guide on using your logo effectively." },
+      { id: 15,
+        component: "pattern",
+         name: "Patterns", price: 70, description: "Pattern creation for brand consistency." },
+      { id: 16,
+        component: "mockup",
+         name: "Mockups", price: 90, description: "Visual mockups for branding materials." },
+      { id: 17,
+        component: "icon",
+         name: "Iconography", price: 60, description: "Creation of brand-specific icons." },
+      { id: 18,
+        component: "strategy",
+         name: "Brand Strategy", price: 120, description: "Strategic planning for brand development." },
+      { id: 19,
+        component: "naming",
+         name: "Naming", price: 110, description: "Assistance in brand name selection." },
       // { id:"", name: "Stationery Design", price: 85, description: "Design for business stationery items." },
       // Add more sub-services for Branding
     ],

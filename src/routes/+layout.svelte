@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { settingsState} from '$lib/stores/settingsState';
+	import "iconify-icon";
 
   import localeEn from '../i18n/en.json';
 	import localeEs from '../i18n/es.json';
