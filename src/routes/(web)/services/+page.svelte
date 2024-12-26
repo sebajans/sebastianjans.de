@@ -4,25 +4,13 @@
   import { pageTitle } from "$lib/stores/pageTitle";
   import Button from "$lib/components/ui/button/button.svelte";
   import { fly } from "svelte/transition";
+  import { services } from "./services";
 
   import SvelteSeo from "svelte-seo";
 
   import { workSectionNames } from "$lib/lists/workSectionNames";
   import WorksHeader from "$components/WorksHeader.svelte";
-
-  // import SectionWebRR from "./SectionWebRR.svelte";
-  // import SectionWebRJ from "./SectionWebRJ.svelte";
-  // import SectionWebKamado from "./SectionWebKamado.svelte";
-  // import SectionWebDMaier from "./SectionWebDMaier.svelte";
-  // import SectionLogos from "./SectionLogos.svelte";
-  // import SectionGraphicDesignStuttgart from "./SectionGraphicDesignStuttgart.svelte";
-  // import SectionGraphicDesign2 from "./SectionGraphicDesign2.svelte";
-  // import SectionGraphicDesign3 from "./SectionGraphicDesign3.svelte";
-  // import SectionProductDesign2 from "./SectionProductDesign2.svelte";
-  // import SectionProductDesignCup from "./SectionProductDesignCup.svelte";
   import SectionEnd from "../works/SectionEnd.svelte";
-  // TODO: Brazie needs content
-  // import SectionWebBrazie from "./SectionWebBrazie.svelte";
 
   import IntersectionObserver from "svelte-intersection-observer";
   import { scrollIntoView } from "$lib/functions/scrollIntoView";
@@ -31,10 +19,11 @@
   import { getTranslate } from "@tolgee/svelte";
   import SectionWebTechnology from "./SectionWebTechnology.svelte";
   import SectionWebMobileFirst from "./SectionWebMobileFirst.svelte";
+    import SectionBranding from "./SectionBranding.svelte";
 
   const { t } = getTranslate(); // Tolgee t translation
 
-  pageTitle.set($t({ key: "works-title", defaultValue: "Works" }));
+  pageTitle.set($t({ key: "services-title", defaultValue: "Services" }));
 
   let scroll: number = $state(0);
   let windowHeight: number = $state(0);
@@ -81,10 +70,10 @@
   <title>{$pageTitle}</title>
   <meta name="description" content="Overview of the Works of Sebastian Jans." />
 </svelte:head>
-<!-- TODO: adjust svelteSEO to display services -->
+
 <SvelteSeo
-  title="Sebastian Jans | Welcome"
-  description="Overview of the Design works of Sebastian Jans"
+  title="Sebastian Jans | Services"
+  description="Overview of the services of Sebastian Jans"
   keywords="Freelance product design, minimalistic logo design, front-end svelte development, custom webdesign solutions, diseñador de productos"
 />
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
@@ -105,7 +94,7 @@
     <div
       class="md:w-1/2 text-2xl md:text-3xl w-full pl-4 flex flex-col font-sans space-y-4 mb-auto md:my-auto"
     >
-      {#each workSectionNames as section, i}
+      {#each services as section, i}
         <button
           style="width:{`calc(100% - ${i * 16}px)`}"
           onclick={preventDefault(() => {
@@ -113,13 +102,13 @@
             isVisibleGraphicDesign = true;
             isVisibleLogo = true;
             setTimeout(() => {
-              scrollIntoView(section.id, section.start * 500);
+              scrollIntoView(section.slug, section.id * 500);
             }, 200);
           })}
           in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
           class="dark:text-primary-50 md:py-4 ml-auto py-2 duration-150 rounded-lg text-left pl-3 transition-all {section.color} "
         >
-          <T keyName="works-{section.id}" defaultValue={section.text} />
+          <T keyName="works-{section.slug}" defaultValue={section.name} />
         </button>
       {/each}
     </div>
@@ -184,7 +173,7 @@
   show={intersectingLogo}
   backgroundColor="bg-primary-300/60 dark:bg-primary-600/60"
 >
-  <T keyName="works-logodesign" defaultValue="Logo Design" />
+  <T keyName="services-branding" defaultValue={services[1].name} />
 </WorksHeader>
 
 <IntersectionObserver
@@ -193,7 +182,7 @@
 >
   {#if isVisibleLogo}
     <div bind:this={elementLogo}>
-      <!-- TODO: Branding -->
+      <SectionBranding service={services[1]} />
       <!-- <SectionLogos /> -->
     </div>
   {/if}
