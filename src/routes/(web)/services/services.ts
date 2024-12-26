@@ -3,7 +3,7 @@ import ServiceIcon from "./ServiceComponent.svelte";
 export interface SubService {
   id: number; // Unique ID for sub-service
   name: string;
-  component?: string | Component;
+  component?: string;
   price: number;
   description: string; // Added description field for subService
 }
@@ -69,15 +69,15 @@ export const services: MainService[] = [
       },
     ],
     subServices: [
-      { id: 21, name: "Frontend Development", price: 80, description: "Creation of user-facing website components." },
-      { id: 22, name: "Landing Page Design", price: 120, description: "Design of the landing page." },
-      { id: 23, name: "Responsive Design", price: 100, description: "Ensuring adaptability across devices." },
+      { id: 21, component: "front-end", name: "Frontend Development", price: 80, description: "Creation of user-facing website components." },
+      { id: 22, component: "landing-page", name: "Landing Page Design", price: 120, description: "Design of the landing page." },
+      { id: 23, component: "responsive", name: "Responsive Design", price: 100, description: "Ensuring adaptability across devices." },
       // { id:"", name: "Database Design", price: 110, description: "Efficient data organization and management." },
-      { id: 24, name: "UI Framework Setup", price: 90, description: "Implementation of UI frameworks." },
-      // { id: 25, name: "API Integration", price: 85, description: "Integration of third-party APIs." },
-      { id: 26, name: "Testing & Debugging", price: 95, description: "Thorough testing and bug fixing." },
-      { id: 27, name: "Content Management System", price: 130, description: "Integration of CMS for content control." },
-      { id: 28, name: "E-commerce Functionality", price: 140, description: "Setup for online selling functionality." },
+      { id: 24, component: "ui-ux", name: "UI Framework Setup", price: 90, description: "Implementation of UI frameworks." },
+      // { id: 25, component: "landing-page", name: "API Integration", price: 85, description: "Integration of third-party APIs." },
+      { id: 26, component: "testing", name: "Testing & Debugging", price: 95, description: "Thorough testing and bug fixing." },
+      { id: 27, component: "content-management", name: "Content Management System", price: 130, description: "Integration of CMS for content control." },
+      { id: 28, component: "ecommerce", name: "E-commerce Functionality", price: 140, description: "Setup for online selling functionality." },
       // { id:"", name: "Web Hosting Setup", price: 70, description: "Configuration of web hosting services." },
       // Other sub-services for Web Development & Design with descriptions
     ],
@@ -181,15 +181,33 @@ export const services: MainService[] = [
       },
     ],
     subServices: [
-      { id: 31, name: "Illustrations", price: 70, description: "Artistic visual representations." },
-      { id: 32, name: "Print Design", price: 90, description: "Designs for print materials." },
-      { id: 33, name: "Packaging Design", price: 110, description: "Attractive packaging designs." },
-      { id: 34, name: "Publication Design", price: 80, description: "Designs for publications." },
-      { id: 35, name: "Digital Art", price: 75, description: "Artwork created digitally." },
-      { id: 36, name: "Typography Design", price: 95, description: "Creative typography designs." },
-      { id: 37, name: "Brand Identity Design", price: 120, description: "Development of brand identities." },
-      { id: 38, name: "Motion Graphics", price: 130, description: "Dynamic visual elements." },
-      { id: 39, name: "Visual Identity Design", price: 100, description: "Creation of visual identities." },
+      { id: 31, 
+        component: "illustration",
+         name: "Illustrations", price: 70, description: "Artistic visual representations." },
+      { id: 32, 
+        component: "print",
+         name: "Print Design", price: 90, description: "Designs for print materials." },
+      { id: 33, 
+        component: "package",
+         name: "Packaging Design", price: 110, description: "Attractive packaging designs." },
+      { id: 34, 
+        component: "publication",
+         name: "Publication Design", price: 80, description: "Designs for publications." },
+      // { id: 35, 
+      //   component: "",
+      //    name: "Digital Art", price: 75, description: "Artwork created digitally." },
+      // { id: 36, 
+      //   component: "",
+      //    name: "Typography Design", price: 95, description: "Creative typography designs." },
+      { id: 37, 
+        component: "brand",
+         name: "Brand Identity Design", price: 120, description: "Development of brand identities." },
+      { id: 38, 
+        component: "motion",
+         name: "Motion Graphics", price: 130, description: "Dynamic visual elements." },
+      { id: 39, 
+        component: "identity",
+         name: "Visual Identity Design", price: 100, description: "Creation of visual identities." },
       // Other sub-services for Graphic Design with descriptions
     ],
   },

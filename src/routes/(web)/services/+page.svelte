@@ -19,7 +19,10 @@
   import { getTranslate } from "@tolgee/svelte";
   import SectionWebTechnology from "./SectionWebTechnology.svelte";
   import SectionWebMobileFirst from "./SectionWebMobileFirst.svelte";
-    import SectionBranding from "./SectionBranding.svelte";
+  import SectionBranding from "./SectionBranding.svelte";
+  import SectionGraphicDesign from "./SectionGraphicDesign.svelte";
+  import SectionProductDesign from "./SectionProductDesign.svelte";
+  import SectionWebDevelopment from "./SectionWebDevelopment.svelte";
 
   const { t } = getTranslate(); // Tolgee t translation
 
@@ -30,20 +33,20 @@
 
   let elementWeb: HTMLElement | undefined = $state();
   let intersectingWeb: boolean = $state(false);
-  let isVisibleLogo = $state(false); // Separate state variable to control div visibility
+  let isVisibleBranding = $state(false); // Separate state variable to control div visibility
 
   $effect(() => {
     if (intersectingWeb) {
-      isVisibleLogo = true;
+      isVisibleBranding = true;
     }
   });
 
-  let elementLogo: HTMLElement | undefined = $state();
-  let intersectingLogo: boolean = $state(false);
+  let elementBranding: HTMLElement | undefined = $state();
+  let intersectingBranding: boolean = $state(false);
   let isVisibleGraphicDesign = $state(false); // Separate state variable to control div visibility
 
   $effect(() => {
-    if (intersectingLogo) {
+    if (intersectingBranding) {
       isVisibleGraphicDesign = true;
     }
   });
@@ -100,7 +103,7 @@
           onclick={preventDefault(() => {
             isVisibleProduct = true;
             isVisibleGraphicDesign = true;
-            isVisibleLogo = true;
+            isVisibleBranding = true;
             setTimeout(() => {
               scrollIntoView(section.slug, section.id * 500);
             }, 200);
@@ -166,24 +169,26 @@
   <div bind:this={elementWeb} class="">
     <SectionWebTechnology />
     <SectionWebMobileFirst />
+    <SectionWebDevelopment service={services[0]} />
+
   </div></IntersectionObserver
 >
 
 <WorksHeader
-  show={intersectingLogo}
+  show={intersectingBranding}
   backgroundColor="bg-primary-300/60 dark:bg-primary-600/60"
 >
   <T keyName="services-branding" defaultValue={services[1].name} />
 </WorksHeader>
 
 <IntersectionObserver
-  element={elementLogo}
-  bind:intersecting={intersectingLogo}
+  element={elementBranding}
+  bind:intersecting={intersectingBranding}
 >
-  {#if isVisibleLogo}
-    <div bind:this={elementLogo}>
+  {#if isVisibleBranding}
+    <div bind:this={elementBranding}>
       <SectionBranding service={services[1]} />
-      <!-- <SectionLogos /> -->
+      <!-- <SectionBrandings /> -->
     </div>
   {/if}
 </IntersectionObserver>
@@ -201,6 +206,8 @@
 >
   {#if isVisibleGraphicDesign}
     <div bind:this={elementGraphicDesign}>
+      <SectionGraphicDesign service={services[2]} />
+
       <!-- TODO: Display graphic design services, flyers, printing materials, web items -->
     </div>
   {/if}
@@ -219,7 +226,10 @@
 >
   {#if isVisibleProduct}
     <div bind:this={elementProduct}>
+
       <!-- TODO: some 3D stuff, web platforms -->
+      <SectionProductDesign service={services[3]} />
+
       <!-- <SectionProductDesign2 />
       <SectionProductDesignCup /> -->
     </div>
