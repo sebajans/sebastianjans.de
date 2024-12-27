@@ -166,12 +166,12 @@
 </WorksHeader>
 
 <IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
-  <div bind:this={elementWeb} class="">
+  <section bind:this={elementWeb} class="">
     <SectionWebTechnology />
     <SectionWebMobileFirst />
     <SectionWebDevelopment service={services[0]} />
 
-  </div></IntersectionObserver
+  </section></IntersectionObserver
 >
 
 <WorksHeader
@@ -186,10 +186,10 @@
   bind:intersecting={intersectingBranding}
 >
   {#if isVisibleBranding}
-    <div bind:this={elementBranding}>
+    <section id="branding" bind:this={elementBranding}>
       <SectionBranding service={services[1]} />
       <!-- <SectionBrandings /> -->
-    </div>
+    </section>
   {/if}
 </IntersectionObserver>
 
@@ -205,11 +205,11 @@
   bind:intersecting={intersectingGraphicDesign}
 >
   {#if isVisibleGraphicDesign}
-    <div bind:this={elementGraphicDesign}>
+    <section id="graphic-design" bind:this={elementGraphicDesign}>
       <SectionGraphicDesign service={services[2]} />
 
       <!-- TODO: Display graphic design services, flyers, printing materials, web items -->
-    </div>
+    </section>
   {/if}
 </IntersectionObserver>
 
@@ -225,14 +225,14 @@
   bind:intersecting={intersectingProduct}
 >
   {#if isVisibleProduct}
-    <div bind:this={elementProduct}>
+    <section id="product-design" bind:this={elementProduct}>
 
       <!-- TODO: some 3D stuff, web platforms -->
       <SectionProductDesign service={services[3]} />
 
       <!-- <SectionProductDesign2 />
       <SectionProductDesignCup /> -->
-    </div>
+    </section>
   {/if}
 </IntersectionObserver>
 

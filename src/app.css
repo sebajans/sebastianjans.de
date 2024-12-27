@@ -93,7 +93,11 @@
    }
    
    section {
-    @apply max-w-4xl my-auto mx-auto  h-screen-ios;
+    @apply max-w-4xl my-auto mx-auto;
+   }
+
+   /* section .full-screen */
+   section  {
     min-height: 100vh;
     min-height: 100svh;
    }

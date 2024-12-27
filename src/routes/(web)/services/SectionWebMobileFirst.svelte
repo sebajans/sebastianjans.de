@@ -3,10 +3,9 @@
   import { T } from "@tolgee/svelte";
 </script>
 
-<section
-  class="md:h-worksmd max-h-full md:max-h-[56rem] px-2 w-full items-center justify-center flex flex-col row-start-1 col-start-1 transition-all duration-500"
+<div
+  class=" px-2 w-full items-center justify-center flex flex-col transition-all duration-500"
 >
-  <div class="mb-auto flex flex-col gap-y-4">
     <div class="flex flex-col md:flex-row-reverse items-center">
       <div class="w-full">
         <h2 class="text-left">
@@ -21,5 +20,4 @@
       </div>
       <ResponsiveScreen />
     </div>
-  </div>
-</section>
+</div>

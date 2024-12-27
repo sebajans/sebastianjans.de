@@ -6,8 +6,7 @@
   const { service }: { service: MainService } = $props();
 </script>
 
-<section
-  id="branding"
+<div
   class="md:h-worksmd h-works px-2 md:max-h-[56rem] w-full items-center justify-center flex flex-col row-start-1 col-start-1 transition-all duration-500"
 >
   <div class="flex flex-col sm:fle x-row items-center my-auto">
@@ -45,4 +44,4 @@
       </div>
     </div>
   </div>
-</section>
+</div>
