@@ -3,8 +3,8 @@
   import { T } from "@tolgee/svelte";
 </script>
 
-<div
-  class=" px-2 w-full items-center justify-center flex flex-col transition-all duration-500"
+<section
+  class="min-h-[50svh] px-2 w-full snap-center items-center justify-center flex flex-col transition-all duration-500"
 >
     <div class="flex flex-col md:flex-row-reverse items-center">
       <div class="w-full">
@@ -20,4 +20,4 @@
       </div>
       <ResponsiveScreen />
     </div>
-</div>
+</section>

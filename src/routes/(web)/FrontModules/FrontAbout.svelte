@@ -4,8 +4,10 @@
 	let profilePicture = 'img/profile-pic.webp';
 	import ButtonScrollToSection from '$components/ButtonScrollToSection.svelte';
 	import { getTranslate } from '@tolgee/svelte';
+  import * as Carousel from "$lib/components/ui/carousel/index.js";
 
 	const { t } = getTranslate();
+	let slidesToScroll = 1;
 
 </script>
 
@@ -17,10 +19,9 @@ id="aboutme">
 		<h1 in:fly|global={{ y: 50, duration: 500 }} class="text-center md:text-left text-primary-900 dark:text-primary-50">
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
-		<ul
-		 class="hs items-start h-full snap-x snap-mandatory overflow-x-auto">
-			<!-- <li class="h-px w-px"></li> -->
-			<li class="snap-center w-full justify-center pl-3 md:pl-0 md:pr-4 text-sm md:text-base">
+		<Carousel.Root orientation="horizontal" opts={{slidesToScroll: slidesToScroll}} class="px-4 md:px-0" >
+      <Carousel.Content >
+			<Carousel.Item class="snap-center min-h-[18rem] justify-center w-full md:space-x-4 pl-3 md:pl-0 md:pr-4 text-sm md:text-base">
 				<img
 					in:fly|global={{ duration: 2000 }}
 					width="200"
@@ -52,11 +53,8 @@ id="aboutme">
 							'My key strengths include a keen eye for detail, a talent for crafting clean and intuitive layouts, and the ability to bring ideas to life with beautiful and effective visuals.'
 					})}
 				</p>
-			</li>
-					<li
-						in:fly|global={{ y: 50, duration: 500, delay: 250 }}
-						class="snap-center snap-always md:snap-start w-full h-full flex flex-col space-y-4 grow sm:max-w-none"
-					>
+		</Carousel.Item>
+		<Carousel.Item class="snap-center sm:basis-1/2 h-full min-h-[11rem] w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start">
 						<div
 							class="h-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md w-full flex flex-col justify-start"
 						>
@@ -86,11 +84,9 @@ id="aboutme">
 							</ul>
 
 						</div>
-					</li>
-					<li
-						in:fly|global={{ y: 50, duration: 500, delay: 250 }}
-						class="snap-center snap-always md:snap-start w-full h-full flex flex-col space-y-4 grow sm:max-w-none"
-					>
+					</Carousel.Item>
+					<Carousel.Item class="snap-center mr-4 sm:basis-1/2 h-full min-h-[11rem] w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start">
+			
 						<div
 							class="h-full  w-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  rounded-md flex flex-col justify-start"
 						>
@@ -115,10 +111,14 @@ id="aboutme">
 								</li>
 							</ul>
 						</div>
-					</li>
-			<li class="h-px w-px"></li>
+					</Carousel.Item>
+				</Carousel.Content>
+				<div class="flex justify-between translate-y-6 pr-4">
 
-				</ul>
+					<Carousel.Previous class="relative !translate-x-0 left-0 bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />
+					<Carousel.Next class="relative !translate-x-0 right-0 bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />
+				</div>
+			</Carousel.Root>
 				<ButtonScrollToSection section={'cv_jobs'}
 				>{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}</ButtonScrollToSection
 			>

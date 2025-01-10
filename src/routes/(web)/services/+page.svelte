@@ -166,12 +166,12 @@
 </WorksHeader>
 
 <IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
-  <section bind:this={elementWeb} class="">
+  <div bind:this={elementWeb} >
     <SectionWebTechnology />
     <SectionWebMobileFirst />
     <SectionWebDevelopment service={services[0]} />
 
-  </section></IntersectionObserver
+  </div></IntersectionObserver
 >
 
 <WorksHeader

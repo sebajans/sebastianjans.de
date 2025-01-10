@@ -59,8 +59,8 @@
   };
 
   let activeIndex: number = $state(-1);
-  let interval = 3200;
-  let initialDelay = 300;
+  let interval = 3560;
+  let initialDelay = 120;
   type LanguageKey = keyof typeof introElements;
   let key: LanguageKey =
     ($currentLanguage.getLanguage() as LanguageKey) || "en";

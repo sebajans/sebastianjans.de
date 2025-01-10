@@ -93,14 +93,14 @@
    }
    
    section {
-    @apply max-w-4xl my-auto mx-auto;
+    @apply max-w-4xl my-auto mx-auto min-h-svh;
    }
 
    /* section .full-screen */
-   section  {
+   /* section  {
     min-height: 100vh;
     min-height: 100svh;
-   }
+   } */
 
   h1 {
       @apply pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold;
