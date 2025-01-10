@@ -25,12 +25,12 @@
       <div class="grid grid-cols-1 w-full sm:grid-cols-2 items-center gap-6 h-full">
         <div class="flex flex-col w-full">
           <h2 class="text-left">
-            <T keyName="h-ux" defaultValue="The user comes first" />
+            <T keyName="h-web-services" defaultValue="From start to finish, i've got you covered" />
           </h2>
           <p class="text-left">
             <T
-              keyName="p-branding-intro"
-              defaultValue="Did you just create your new company or are you seeking to adapt your existing business to the ever changing market dynamics? Or do you perhaps just want to attract new clients?"
+              keyName="p-web-services-text"
+              defaultValue="I offer a range of services to help you build your website from start to finish. Whether you need help with design, development, or marketing, I've got you covered. I'll work with you to create a website that meets your needs and helps you achieve your goals."
             />
           </p>
         </div>
@@ -39,11 +39,9 @@
           {opts}
           on:mouseenter={() => {
             plugin.stop();
-            // console.log("stop");
           }}
           on:mouseleave={() => {
             plugin.reset();
-            // console.log("play");
           }}
           orientation="vertical"
           class="px-4 md:px-0 w-full"

@@ -160,7 +160,6 @@ $effect(() => {
 {/snippet}
 <WorksHeader
   show={intersectingWeb}
-  {buttons}
   backgroundColor="bg-primary-200/60 dark:bg-primary-700/60"
 >
   <div class="flex flex-col gap-2">
@@ -172,19 +171,14 @@ $effect(() => {
   element={elementWeb}
   bind:intersecting={intersectingWeb}
 >
-
   <div bind:this={elementWeb} class="">
-    {#if showWebServices}
-      <SectionWebServices isVisible={showWebServices} showWebServices />
-    {:else}
       <SectionWebRJ />
       <SectionWebRR />
       <SectionWebKamado />
       <SectionWebBrazie />
       <SectionWebDMaier />
-    {/if}
-  </div></IntersectionObserver
->
+  </div>
+</IntersectionObserver>
 
 <WorksHeader
   show={intersectingLogo}
