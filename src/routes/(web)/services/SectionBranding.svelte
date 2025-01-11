@@ -24,53 +24,21 @@
   $effect(() => {
     const intervalId = setInterval(() => {
       activeIndex = (activeIndex + 1) % 4;
+      if (activeIndex === 0) {
+      fancyClass = !fancyClass;
+      }
     }, interval);
     return () => clearInterval(intervalId);
   });
 
-  // interface Item {
-  //   name: string;
-  //   description: string;
-  //   component: Snippet<[any]>;
-  // }
-  // const items: Item[] = [
-  //   {
-  //     name: "Colors",
-  //     description: "Choose from a wide range of colors",
-  //     component: () => colors(),
-  //   },
-  //   {
-  //     name: "Typography",
-  //     description: "Choose from a wide range of typography",
-  //     component: () => typography(),
-  //   },
-  //   {
-  //     name: "Patterns",
-  //     description: "Choose from a wide range of patterns",
-  //     component: () => patterns(),
-  //   },
-  //   {
-  //     name: "Logos",
-  //     description: "Choose from a wide range of logos",
-  //     component: () => logos(),
-  //   },
-  // ];
-
-  let fancyClass = $state(true);
-
-//   $effect(() => {
-// if (activeIndex === 1) {
-//   fancyClass = true;
-// } else {
-//   fancyClass = false;
-// }
-//   });
+  let fancyClass = $state(false);
 
 </script>
 
 {#snippet colors()}
   <span in:fly={{ x: 20, duration: 500 }}> Colors </span>
-  <div in:fly={{ x: 15, duration: 800, delay: 200 }} class="flex w-full h-10">
+  <div in:fly={{ x: 15, duration: 800, delay: 200 }} class="w-full gap-2 h-full justify-between flex flex-col">
+  <div class="flex w-full h-full">
     <div class="rounded-md bg-primary-500 w-12 mr-2"></div>
     <div class="rounded-md overflow-clip flex w-full">
       <div class="bg-primary-50 w-full"></div>
@@ -85,7 +53,7 @@
       <div class="bg-primary-900 w-full"></div>
     </div>
   </div>
-  <div class="flex w-full h-10">
+  <div class="flex w-full h-full">
     <div class="rounded-md bg-fountain-blue-500 w-12 mr-2"></div>
     <div class="rounded-md overflow-clip flex w w-full">
       <div class="bg-fountain-blue-50 w-full"></div>
@@ -100,7 +68,7 @@
       <div class="bg-fountain-blue-900 w-full"></div>
     </div>
   </div>
-  <div class="flex w-full h-10">
+  <div class="flex w-full h-full">
     <div class="rounded-md bg-gray-500 w-12 mr-2"></div>
     <div class="rounded-md overflow-clip flex w w-full">
       <div class="bg-gray-50 w-full"></div>
@@ -113,6 +81,7 @@
       <div class="bg-gray-700 w-full"></div>
       <div class="bg-gray-800 w-full"></div>
       <div class="bg-gray-900 w-full"></div>
+    </div>
     </div>
   </div>
 {/snippet}
@@ -261,22 +230,22 @@
     ></div>
   </div>
 {/snippet}
-<div
+<section
   class="md:h-worksmd h-works px-2 md:max-h-[56rem] w-full items-center justify-center flex flex-col row-start-1 col-start-1 transition-all duration-500"
 >
-  <div class="flex flex-col sm:fle x-row items-center my-auto">
+  <div class="flex flex-col gap-y-8">
     <div class="flex flex-col w-full">
-      <h2 class="text-left">
-        <T keyName="h-ux" defaultValue="The user comes first" />
+      <h2 >
+        <T keyName="h-services-branding" defaultValue="Create your brand from scratch!" />
       </h2>
-      <p class="text-left">
+      <p >
         <T
           keyName="p-branding-intro"
           defaultValue="Did you just create your new company or are you seeking to adapt your existing business to the ever changing market dynamics? Or do you perhaps just want to attract new clients?"
         />
       </p>
     </div>
-    <div class="w-full flex items-center gap-2 justify-center p-4">
+    <div class="w-full flex items-center gap-2 justify-center">
       <Carousel.Root
       plugins={[plugin]}
       {opts}
@@ -373,7 +342,7 @@
       </div> -->
     </div>
   </div>
-</div>
+</section>
 
 <style>
   .pattern-1 {
