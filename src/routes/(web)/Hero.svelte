@@ -70,7 +70,8 @@
     const intervalId = setInterval(() => {
       if (firstLoad) {
         setTimeout(() => {
-          activeIndex = (activeIndex + 1) % introElements[key].profession.length;
+          activeIndex =
+            (activeIndex + 1) % introElements[key].profession.length;
           firstLoad = false;
         }, initialDelay);
       } else {
@@ -94,13 +95,11 @@
         {#each Object.entries(introElements) as [key, value]}
           {#if $currentLanguage.getLanguage() === key}
             <Typewriter {...props}>
-              <h1
-                class=" text-6xl mb-2 sm:mb-4"
-              >
+              <h1 class=" text-6xl mb-2 sm:mb-4">
                 {value.title}
               </h1>
               <h2
-                class="font-light  text-primary-800 dark:text-white text-3xl sm:text-4xl leading-relaxed mb-1 sm:mb-2"
+                class="font-light text-primary-800 dark:text-white text-3xl sm:text-4xl leading-relaxed mb-1 sm:mb-2"
               >
                 <span>{value.my_name_is}</span>
                 <span class="font-bold">Sebastian Jans</span>

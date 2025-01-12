@@ -8,24 +8,27 @@
   import { fly } from "svelte/transition";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
   import Autoplay from "embla-carousel-autoplay";
-  
-  const {  service }: { service: MainService } = $props();
-  
+  const { service }: { service: MainService } = $props();
+
   const plugin = Autoplay({ delay: 1000, stopOnInteraction: false });
   const opts = {
     loop: true,
     duration: 4000,
     easing: "linear",
   };
-  
+
   let activeIndex: number = $state(1);
-  
+
+  let paused: boolean = $state(false);
+
   let interval = 6000;
   $effect(() => {
     const intervalId = setInterval(() => {
-      activeIndex = (activeIndex + 1) % 4;
-      if (activeIndex === 0) {
-      fancyClass = !fancyClass;
+      if (!paused) {
+        activeIndex = (activeIndex + 1) % 4;
+        if (activeIndex === 0) {
+          fancyClass = !fancyClass;
+        }
       }
     }, interval);
     return () => clearInterval(intervalId);
@@ -33,55 +36,61 @@
 
   let fancyClass = $state(false);
 
+  function togglePause() {
+    paused = !paused;
+  }
 </script>
 
 {#snippet colors()}
   <span in:fly={{ x: 20, duration: 500 }}> Colors </span>
-  <div in:fly={{ x: 15, duration: 800, delay: 200 }} class="w-full gap-2 h-full justify-between flex flex-col">
-  <div class="flex w-full h-full">
-    <div class="rounded-md bg-primary-500 w-12 mr-2"></div>
-    <div class="rounded-md overflow-clip flex w-full">
-      <div class="bg-primary-50 w-full"></div>
-      <div class="bg-primary-100 w-full"></div>
-      <div class="bg-primary-200 w-full"></div>
-      <div class="bg-primary-300 w-full"></div>
-      <div class="bg-primary-400 w-full"></div>
-      <div class="bg-primary-500 w-full"></div>
-      <div class="bg-primary-600 w-full"></div>
-      <div class="bg-primary-700 w-full"></div>
-      <div class="bg-primary-800 w-full"></div>
-      <div class="bg-primary-900 w-full"></div>
+  <div
+    in:fly={{ x: 15, duration: 800, delay: 200 }}
+    class="w-full gap-2 h-full justify-between flex flex-col"
+  >
+    <div class="flex w-full h-full">
+      <div class="rounded-md bg-primary-500 w-12 mr-2"></div>
+      <div class="rounded-md overflow-clip flex w-full">
+        <div class="bg-primary-50 w-full"></div>
+        <div class="bg-primary-100 w-full"></div>
+        <div class="bg-primary-200 w-full"></div>
+        <div class="bg-primary-300 w-full"></div>
+        <div class="bg-primary-400 w-full"></div>
+        <div class="bg-primary-500 w-full"></div>
+        <div class="bg-primary-600 w-full"></div>
+        <div class="bg-primary-700 w-full"></div>
+        <div class="bg-primary-800 w-full"></div>
+        <div class="bg-primary-900 w-full"></div>
+      </div>
     </div>
-  </div>
-  <div class="flex w-full h-full">
-    <div class="rounded-md bg-fountain-blue-500 w-12 mr-2"></div>
-    <div class="rounded-md overflow-clip flex w w-full">
-      <div class="bg-fountain-blue-50 w-full"></div>
-      <div class="bg-fountain-blue-100 w-full"></div>
-      <div class="bg-fountain-blue-200 w-full"></div>
-      <div class="bg-fountain-blue-300 w-full"></div>
-      <div class="bg-fountain-blue-400 w-full"></div>
-      <div class="bg-fountain-blue-500 w-full"></div>
-      <div class="bg-fountain-blue-600 w-full"></div>
-      <div class="bg-fountain-blue-700 w-full"></div>
-      <div class="bg-fountain-blue-800 w-full"></div>
-      <div class="bg-fountain-blue-900 w-full"></div>
+    <div class="flex w-full h-full">
+      <div class="rounded-md bg-fountain-blue-500 w-12 mr-2"></div>
+      <div class="rounded-md overflow-clip flex w w-full">
+        <div class="bg-fountain-blue-50 w-full"></div>
+        <div class="bg-fountain-blue-100 w-full"></div>
+        <div class="bg-fountain-blue-200 w-full"></div>
+        <div class="bg-fountain-blue-300 w-full"></div>
+        <div class="bg-fountain-blue-400 w-full"></div>
+        <div class="bg-fountain-blue-500 w-full"></div>
+        <div class="bg-fountain-blue-600 w-full"></div>
+        <div class="bg-fountain-blue-700 w-full"></div>
+        <div class="bg-fountain-blue-800 w-full"></div>
+        <div class="bg-fountain-blue-900 w-full"></div>
+      </div>
     </div>
-  </div>
-  <div class="flex w-full h-full">
-    <div class="rounded-md bg-gray-500 w-12 mr-2"></div>
-    <div class="rounded-md overflow-clip flex w w-full">
-      <div class="bg-gray-50 w-full"></div>
-      <div class="bg-gray-100 w-full"></div>
-      <div class="bg-gray-200 w-full"></div>
-      <div class="bg-gray-300 w-full"></div>
-      <div class="bg-gray-400 w-full"></div>
-      <div class="bg-gray-500 w-full"></div>
-      <div class="bg-gray-600 w-full"></div>
-      <div class="bg-gray-700 w-full"></div>
-      <div class="bg-gray-800 w-full"></div>
-      <div class="bg-gray-900 w-full"></div>
-    </div>
+    <div class="flex w-full h-full">
+      <div class="rounded-md bg-gray-500 w-12 mr-2"></div>
+      <div class="rounded-md overflow-clip flex w w-full">
+        <div class="bg-gray-50 w-full"></div>
+        <div class="bg-gray-100 w-full"></div>
+        <div class="bg-gray-200 w-full"></div>
+        <div class="bg-gray-300 w-full"></div>
+        <div class="bg-gray-400 w-full"></div>
+        <div class="bg-gray-500 w-full"></div>
+        <div class="bg-gray-600 w-full"></div>
+        <div class="bg-gray-700 w-full"></div>
+        <div class="bg-gray-800 w-full"></div>
+        <div class="bg-gray-900 w-full"></div>
+      </div>
     </div>
   </div>
 {/snippet}
@@ -94,25 +103,25 @@
   >
     <div class="flex w-full items-end gap-1">
       <span class="font-sans text-2xl font-semibold leading-none">Title</span>
-      <span class="w-full h-px bg-primary-9000 dark:bg-primary-50"></span>
+      <span class="w-full h-px bg-primary-900 dark:bg-primary-50"></span>
       <span class="font-sans text-xs leading-none">30rem</span>
     </div>
 
     <div class="flex w-full items-end gap-1">
       <span class="font-sans text-xl leading-none">Subtitle</span>
-      <span class="w-full h-px bg-primary-9000 dark:bg-primary-50"></span>
+      <span class="w-full h-px bg-primary-900 dark:bg-primary-50"></span>
       <span class="font-sans text-xs leading-none">20rem</span>
     </div>
 
     <div class="flex w-full items-end gap-1">
       <span class="font-sans font-light text-base leading-none">Body</span>
-      <span class="w-full h-px bg-primary-9000 dark:bg-primary-50"></span>
+      <span class="w-full h-px bg-primary-900 dark:bg-primary-50"></span>
       <span class="font-sans text-xs leading-none">15rem</span>
     </div>
 
     <div class="flex w-full items-end gap-1">
       <span class="font-sans text-xs leading-none">Caption</span>
-      <span class="w-full h-px bg-primary-9000 dark:bg-primary-50"></span>
+      <span class="w-full h-px bg-primary-900 dark:bg-primary-50"></span>
       <span class="font-sans text-xs leading-none">12rem</span>
     </div>
   </div>
@@ -235,10 +244,13 @@
 >
   <div class="flex flex-col gap-y-8">
     <div class="flex flex-col w-full">
-      <h2 >
-        <T keyName="h-services-branding" defaultValue="Create your brand from scratch!" />
+      <h2>
+        <T
+          keyName="h-services-branding"
+          defaultValue="Create your brand from scratch!"
+        />
       </h2>
-      <p >
+      <p>
         <T
           keyName="p-branding-intro"
           defaultValue="Did you just create your new company or are you seeking to adapt your existing business to the ever changing market dynamics? Or do you perhaps just want to attract new clients?"
@@ -247,49 +259,51 @@
     </div>
     <div class="w-full flex items-center gap-2 justify-center">
       <Carousel.Root
-      plugins={[plugin]}
-      {opts}
-      on:mousenter={() => plugin.stop}
-      on:mouseleave={() => plugin.reset}
-      orientation="vertical"
-      class="px-4 md:px-0 w-full"
-    >
-      <Carousel.Content class="h-[24rem] sm:h-[24rem] md:h-[28rem] ">
-        {#each service.subServices as item}
-          <Carousel.Item
-            class="basis-1/2 sm:basis-1/3 dark:text-primary-50 w-full "
-          >
-            <div
-              class=" h-full min-h-[8rem] relative flex flex-col items-start justify-start dark:text-primary-50 w-full transition-all backdrop-blur-md border-transparent md:bg-transp arent dark:border-transparent !bg-opacity-0 hover:!bg-opacity-100 hover:border-primary-900/5 dark:hover:border-primary-50/10 md:hover:bg-gradient-to-br !bg-primaryO riginal-200 md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3 md:rounded-md md:border"
+        plugins={[plugin]}
+        {opts}
+        on:mousenter={() => plugin.stop}
+        on:mouseleave={() => plugin.reset}
+        orientation="vertical"
+        class="px-4 md:px-0 w-full"
+      >
+        <Carousel.Content class="h-[24rem] sm:h-[24rem] md:h-[28rem] ">
+          {#each service.subServices as item}
+            <Carousel.Item
+              class="basis-1/2 sm:basis-1/3 dark:text-primary-50 w-full "
             >
-              <ServiceComponent
-                name={item.component ? item.component : ""}
-                class="text-5xl h-12"
-              />
-              <h3 class=" z-10 flex items-start justify-start text-start">
-                <T keyName="h3-{item.name}" defaultValue={item.name} />
-              </h3>
-              <span
-                class=" z-10 flex items-start justify-start text-sm text-start"
+              <div
+                class=" h-full min-h-[8rem] relative flex flex-col items-start justify-start dark:text-primary-50 w-full transition-all backdrop-blur-md border-transparent md:bg-transp arent dark:border-transparent !bg-opacity-0 hover:!bg-opacity-100 hover:border-primary-900/5 dark:hover:border-primary-50/10 md:hover:bg-gradient-to-br !bg-primaryO riginal-200 md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3 md:rounded-md md:border"
               >
-                <T
-                  keyName="span-{item.name}-description"
-                  defaultValue={item.description}
+                <ServiceComponent
+                  name={item.component ? item.component : ""}
+                  class="text-5xl h-12"
                 />
-              </span>
-            </div>
-          </Carousel.Item>
-        {/each}
-      </Carousel.Content>
-    </Carousel.Root>
+                <h3 class=" z-10 flex items-start justify-start text-start">
+                  <T keyName="h3-{item.name}" defaultValue={item.name} />
+                </h3>
+                <span
+                  class=" z-10 flex items-start justify-start text-sm text-start"
+                >
+                  <T
+                    keyName="span-{item.name}-description"
+                    defaultValue={item.description}
+                  />
+                </span>
+              </div>
+            </Carousel.Item>
+          {/each}
+        </Carousel.Content>
+      </Carousel.Root>
       <div class="w-full">
-        <div class="{fancyClass
-              ? 'skew-x-12 scale-90 rotate-[12deg] '
-              : ''} transition-transform flex items-center flex-col">
+        <div
+          class="{fancyClass
+            ? 'skew-x-12 scale-90 rotate-[12deg] '
+            : ''} transition-transform flex items-center flex-col"
+        >
           <div
             class="
         {fancyClass
-              ? 'outline-8 outline-primary-100 '
+              ? 'outline-8 outline-primary-200 dark:outline-primary-300 '
               : 'outline-none'} outline
          h-full aspect-video gap-4 relative flex flex-col items-start justify-start dark:text-primary-50 w-full transition-all border-primary-900/5 dark:border-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3 md:rounded-md md:border"
           >
@@ -303,46 +317,54 @@
               {@render logos()}
             {/if}
           </div>
-          <div class="{fancyClass ? "opacity-100 max-h-16" : "opacity-0 max-h-0"} rounded-br-lg h-14 w-24 transition-all bg-primary-100"></div>
-          <div class="{fancyClass ? "opacity-100 max-h-8 duration-75" : "opacity-0 max-h-0"} skew-x-[-60deg] rounded-br-md rounded-bl-md h-4 -translate-x-4 -translate-y-px w-[5.8rem]  transition-all bg-primary-100">
-          </div>
-
+          <div
+            class="{fancyClass
+              ? 'opacity-100 max-h-16'
+              : 'opacity-0 max-h-0'} rounded-br-lg h-14 w-24 transition-all bg-primary-300 dark:bg-primary-300"
+          ></div>
+          <div
+            class="{fancyClass
+              ? 'opacity-100 max-h-8 duration-75'
+              : 'opacity-0 max-h-0'} skew-x-[-60deg] rounded-br-md rounded-bl-md h-4 -translate-x-4 -translate-y-px w-[5.8rem] transition-all bg-primary-300 dark:bg-primary-300"
+          ></div>
         </div>
         <Button
-          variant="default"
-          size="lg"
-          class="font-sans mt-8"
+          variant="ghost"
+          size="default"
+          class="font-sans mt-8 hover:bg-primary-900 hover:text-primary-50 hover:dark:bg-primary-50 w-fit hover:dark:text-primary-900 dark:text-primary-50 transition-all border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3"
           on:click={() => {
             fancyClass = !fancyClass;
           }}
         >
           View them on your real devices
         </Button>
+        <Button
+          variant="ghost"
+          size="default"
+          class="font-sans mt-8 hover:bg-primary-900 hover:text-primary-50 hover:dark:bg-primary-50 w-fit hover:dark:text-primary-900 dark:text-primary-50 transition-all border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3"
+          on:click={togglePause}
+        >
+          {paused ? "Resume" : "Pause"}
+          {#if !paused}
+            <iconify-icon
+              icon="material-symbols:play-arrow-rounded"
+              class=" text-current"
+            ></iconify-icon>
+          {:else}
+            <iconify-icon
+              icon="material-symbols:pause-rounded"
+              class=" text-current"
+            ></iconify-icon>
+          {/if}
+        </Button>
       </div>
-      
-      <!-- <div class="grid grid-cols-3 w-full sm:grid-cols-3 gap-6">
-        {#each service.subServices as item}
-          <div
-            class="relative flex flex-col items-center justify-center aspect-square dark:text-primary-50 w-full h-full transition-all"
-          >
-            {#if item.component}
-              <ServiceComponent name={item.component} class="text-5xl" />
-            {/if}
-            <h3 class=" z-10 flex items-center justify-center text-center">
-              <T keyName="h3-{item.name}" defaultValue={item.name} />
-            </h3>
-            <span class=" z-10 flex items-center justify-center text-center">
-              <T
-                keyName="span-{item.name}-description"
-                defaultValue={item.description}
-              />
-            </span>
-          </div>
-        {/each}
-      </div> -->
     </div>
+    <Button variant="default" size="lg" class="w-fit" href="/works#logodesign">
+      <T keyName="services-branding-cta" defaultValue="See some of my works!" />
+    </Button>
   </div>
 </section>
+serv
 
 <style>
   .pattern-1 {

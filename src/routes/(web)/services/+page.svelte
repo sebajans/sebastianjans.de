@@ -166,11 +166,10 @@
 </WorksHeader>
 
 <IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
-  <div bind:this={elementWeb} >
+  <div bind:this={elementWeb}>
     <SectionWebTechnology />
     <SectionWebMobileFirst />
     <SectionWebDevelopment service={services[0]} />
-
   </div></IntersectionObserver
 >
 
@@ -188,7 +187,6 @@
   {#if isVisibleBranding}
     <section id="branding" bind:this={elementBranding}>
       <SectionBranding service={services[1]} />
-      <!-- <SectionBrandings /> -->
     </section>
   {/if}
 </IntersectionObserver>
@@ -207,8 +205,6 @@
   {#if isVisibleGraphicDesign}
     <section id="graphic-design" bind:this={elementGraphicDesign}>
       <SectionGraphicDesign service={services[2]} />
-
-      <!-- TODO: Display graphic design services, flyers, printing materials, web items -->
     </section>
   {/if}
 </IntersectionObserver>
@@ -226,7 +222,6 @@
 >
   {#if isVisibleProduct}
     <section id="product-design" bind:this={elementProduct}>
-
       <!-- TODO: some 3D stuff, web platforms -->
       <SectionProductDesign service={services[3]} />
 

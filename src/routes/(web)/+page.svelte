@@ -1,40 +1,40 @@
 <script lang="ts">
-	import { pageTitle } from '$lib/stores/pageTitle';
-	import { fly } from 'svelte/transition';
-	import { afterNavigate } from '$app/navigation';
-	import ButtonScrollToSection from '$components/ButtonScrollToSection.svelte';
-	// import SvelteSeo from 'svelte-seo';
-	import FrontCert from './FrontModules/FrontCert.svelte';
-	import FrontEdu from './FrontModules/FrontEdu.svelte';
-	import FrontWork from './FrontModules/FrontWork.svelte';
-	import FrontAbout from './FrontModules/FrontAbout.svelte';
-	import { onMount } from 'svelte';
-	import Hero from './Hero.svelte';
-	
-	pageTitle.set('');
+  import { pageTitle } from "$lib/stores/pageTitle";
+  import { fly } from "svelte/transition";
+  import { afterNavigate } from "$app/navigation";
+  import ButtonScrollToSection from "$components/ButtonScrollToSection.svelte";
+  // import SvelteSeo from 'svelte-seo';
+  import FrontCert from "./FrontModules/FrontCert.svelte";
+  import FrontEdu from "./FrontModules/FrontEdu.svelte";
+  import FrontWork from "./FrontModules/FrontWork.svelte";
+  import FrontAbout from "./FrontModules/FrontAbout.svelte";
+  import { onMount } from "svelte";
+  import Hero from "./Hero.svelte";
 
-	let visible = $state(false);
-	let animationspeed: number | null = $state(0.08)
-	let animationdelay: number = $state(1);
-	
-	afterNavigate(({ from }) => {
-		visible = true;
-		animationspeed = from === null ? 0.08 : 10;
-		animationdelay = from === null ? 1 : 0;
-	});
+  pageTitle.set("");
 
-	onMount(() => {
-		visible = true;
-		// animationspeed = 0.08
-		// animationdelay = 1
-	})
-	
-	let scroll: any = $state();
-	let windowHeight: number = $state(0);
+  let visible = $state(false);
+  let animationspeed: number | null = $state(0.08);
+  let animationdelay: number = $state(1);
+
+  afterNavigate(({ from }) => {
+    visible = true;
+    animationspeed = from === null ? 0.08 : 10;
+    animationdelay = from === null ? 1 : 0;
+  });
+
+  onMount(() => {
+    visible = true;
+    // animationspeed = 0.08
+    // animationdelay = 1
+  });
+
+  let scroll: any = $state();
+  let windowHeight: number = $state(0);
 </script>
 
 <svelte:head>
-<title>Sebastian Jans Design | Welcome</title>
+  <title>Sebastian Jans Design | Welcome</title>
 </svelte:head>
 
 <!-- <SvelteSeo

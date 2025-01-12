@@ -18,17 +18,17 @@
   <iconify-icon icon="fluent:card-ui-24-filled" class={className}
   ></iconify-icon>
 {:else if name === "testing"}
-  <iconify-icon icon="mdi:user-details" class={className}
-  ></iconify-icon>
+  <iconify-icon icon="mdi:user-details" class={className}></iconify-icon>
 {:else if name === "responsive"}
-  <iconify-icon icon="material-symbols:responsive-layout-rounded" class={className}
+  <iconify-icon
+    icon="material-symbols:responsive-layout-rounded"
+    class={className}
   ></iconify-icon>
 {:else if name === "content-management"}
   <iconify-icon icon="fluent:content-view-gallery-16-filled" class={className}
   ></iconify-icon>
 {:else if name === "ecommerce"}
-  <iconify-icon icon="mdi:shop" class={className}
-  ></iconify-icon>
+  <iconify-icon icon="mdi:shop" class={className}></iconify-icon>
 {:else if name === "logo"}
   <iconify-icon icon="material-symbols:activity-zone" class={className}
   ></iconify-icon>
@@ -64,18 +64,15 @@
 {:else if name === "print"}
   <iconify-icon icon="material-symbols:book-5-rounded" class={className}
   ></iconify-icon>
-  {:else if name === "business-card"}
+{:else if name === "business-card"}
   <iconify-icon icon="mdi:card-account-details" class={className}
   ></iconify-icon>
 {:else if name === "illustration"}
-  <iconify-icon icon="mdi:draw" class={className}
-  ></iconify-icon>
-  {:else if name === "social-media"}
-  <iconify-icon icon="mdi:instagram" class={className}
-  ></iconify-icon>
+  <iconify-icon icon="mdi:draw" class={className}></iconify-icon>
+{:else if name === "social-media"}
+  <iconify-icon icon="mdi:instagram" class={className}></iconify-icon>
 {:else if name === "identity"}
-  <iconify-icon icon="mdi:perm-identity" class={className}
-  ></iconify-icon>
+  <iconify-icon icon="mdi:perm-identity" class={className}></iconify-icon>
 {:else if name === "brand"}
   <iconify-icon icon="heroicons:rectangle-group-20-solid" class={className}
   ></iconify-icon>
@@ -83,21 +80,16 @@
   <iconify-icon icon="material-symbols-light:animated-images" class={className}
   ></iconify-icon>
 {:else if name === "research"}
-  <iconify-icon icon="mdi:test-tube" class={className}
-  ></iconify-icon>
+  <iconify-icon icon="mdi:test-tube" class={className}></iconify-icon>
 {:else if name === "wireframe"}
-<iconify-icon icon="mdi:card-bulleted-outline" class={className}
-></iconify-icon>
+  <iconify-icon icon="mdi:card-bulleted-outline" class={className}
+  ></iconify-icon>
 {:else if name === "interaction"}
-<iconify-icon icon="mdi:gesture-touch-hold" class={className}
-></iconify-icon>
+  <iconify-icon icon="mdi:gesture-touch-hold" class={className}></iconify-icon>
 {:else if name === "testing"}
-<iconify-icon icon="mdi:flask" class={className}
-></iconify-icon>
+  <iconify-icon icon="mdi:flask" class={className}></iconify-icon>
 {:else if name === "prototype"}
-<iconify-icon icon="mdi:code-block-braces" class={className}
-></iconify-icon>
+  <iconify-icon icon="mdi:code-block-braces" class={className}></iconify-icon>
 {:else if name === "3d"}
-<iconify-icon icon="mdi:f133d" class={className}
-></iconify-icon>
+  <iconify-icon icon="mdi:f133d" class={className}></iconify-icon>
 {/if}

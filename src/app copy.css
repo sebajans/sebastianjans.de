@@ -7,87 +7,86 @@
     height: 100%;
     width: 100vw;
     -ms-overflow-style: none;
-     scrollbar-width: none;
-   }
-   body {
+    scrollbar-width: none;
+  }
+  body {
     min-height: 100svh;
-   }
-   html::-webkit-scrollbar {
-     display: none;
-   }
-   
-   section {
+  }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  section {
     @apply max-w-4xl my-auto mx-auto  h-screen-ios;
     min-height: 100vh;
     min-height: 100svh;
-   }
+  }
 
   h1 {
-      @apply pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold;
-      
+    @apply pb-2 md:pl-0 text-3xl md:text-4xl text-left font-sans font-bold;
   }
 
   h2 {
-      @apply text-xl;
+    @apply text-xl;
   }
   h3 {
-      @apply text-lg font-sans;
+    @apply text-lg font-sans;
   }
   p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
   }
-  p, li, h1, h2, label {
-      @apply text-primary-900 dark:text-primary-100;
+  p,
+  li,
+  h1,
+  h2,
+  label {
+    @apply text-primary-900 dark:text-primary-100;
   }
-
 
   .inverted {
-      @apply dark:text-primary-900 text-primary-100;
+    @apply dark:text-primary-900 text-primary-100;
   }
   label {
-    @apply font-sans font-light
+    @apply font-sans font-light;
   }
 }
 
 @layer components {
   .highlight-content {
-    @apply bg-gradient-to-tr shadow-primary-800/5 dark:shadow-primary-400/5 backdrop-blur-md shadow-md rounded-lg p-4 from-primary-300/40 to-primary-300/60 dark:from-primary-600/30 dark:to-primary-600/50 border border-primary-300/20 dark:border-primary-600/10
+    @apply bg-gradient-to-tr shadow-primary-800/5 dark:shadow-primary-400/5 backdrop-blur-md shadow-md rounded-lg p-4 from-primary-300/40 to-primary-300/60 dark:from-primary-600/30 dark:to-primary-600/50 border border-primary-300/20 dark:border-primary-600/10;
   }
   .box-content {
-    @apply py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  px-3  rounded-md w-fit flex flex-col justify-center
+    @apply py-2 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10  px-3  rounded-md w-fit flex flex-col justify-center;
   }
   .btn {
-      @apply transition-all duration-300 text-center px-4 py-2 rounded-md font-sans uppercase text-sm bg-[length:100%_300%] hover:bg-[length:100%_100%];
+    @apply transition-all duration-300 text-center px-4 py-2 rounded-md font-sans uppercase text-sm bg-[length:100%_300%] hover:bg-[length:100%_100%];
   }
 
   .btn-highlight {
-      @apply backdrop-blur-md shadow-sm hover:shadow-none rounded-lg px-5 py-2.5 bg-gradient-to-t dark:from-primary-400/90 dark:to-primary-500/90 from-primary-600/10 to-primary-500/70 border dark:border-primary-500/40 border-primary-600/5 
-
+    @apply backdrop-blur-md shadow-sm hover:shadow-none rounded-lg px-5 py-2.5 bg-gradient-to-t dark:from-primary-400/90 dark:to-primary-500/90 from-primary-600/10 to-primary-500/70 border dark:border-primary-500/40 border-primary-600/5;
   }
   .btn-navajo {
-      @apply bg-primary-50 text-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 dark:bg-primary-900 dark:text-primary-50
+    @apply bg-primary-50 text-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 dark:bg-primary-900 dark:text-primary-50;
   }
 
   .input {
-      @apply focus:!ring-primary-300/70 focus:outline-none transition-all focus:bg-primary-50 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50/80 block w-full p-2.5 dark:bg-primary-50 dark:border-primary-600 dark:text-primary-900 text-primary-900
+    @apply focus:!ring-primary-300/70 focus:outline-none transition-all focus:bg-primary-50 focus:ring-1 placeholder-primary-400 font-medium text-sm rounded-md bg-primary-50/80 block w-full p-2.5 dark:bg-primary-50 dark:border-primary-600 dark:text-primary-900 text-primary-900;
   }
-
 
   .label {
-      @apply block mb-2 dark:text-primary-50 font-medium text-primary-900 
+    @apply block mb-2 dark:text-primary-50 font-medium text-primary-900;
   }
 }
-
 
 @tailwind utilities;
 
 /* @layer utilities {
   } */
-  .h-works {
-		height: calc(100svh - 10rem);
-	}
-  .h-worksmd {
-		height: calc(100% - 10rem);
-	}
+.h-works {
+  height: calc(100svh - 10rem);
+}
+.h-worksmd {
+  height: calc(100% - 10rem);
+}

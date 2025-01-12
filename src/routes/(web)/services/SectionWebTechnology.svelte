@@ -41,10 +41,10 @@
       <div class="grid grid-cols-2 w-fit sm:grid-cols-2 gap-6">
         {#each performanceResults as result}
           <div
-            class="relative flex items-center justify-center aspect-square dark:text-primary-50 w-full h-full transition-all"
+            class="relative flex items-center justify-center aspect-square dark:text-primary-50 w-full h-full transition-all p-1"
           >
             <span
-              class="absolute inset-0 z-10 flex items-center justify-center text-center"
+              class="absolute inset-0 z-10 items-center justify-center text-center border rounded-full overflow-clip flex dark:text-primary-50 border-primary-900/5 dark:border-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10"
             >
               <T keyName="span-{result.name}" defaultValue={result.name} />
             </span>
@@ -53,7 +53,7 @@
               viewBox="0 0 100 100"
             >
               <circle
-                class="stroke-[4] stroke-primary-600 dark:stroke-primary-400 fill-none"
+                class="stroke-[4] stroke-primary-600 dark:stroke-primary-500 fill-none"
                 cx="50"
                 cy="50"
                 r="48"

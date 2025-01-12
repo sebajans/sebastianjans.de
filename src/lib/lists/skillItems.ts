@@ -15,158 +15,159 @@ export type SkillItems = {
 export const skillItems: SkillItems = {
   Webdesign: {
     categorydescription:
-      'I am always learning about the newest advancements in the world of web development.',
+      "I am always learning about the newest advancements in the world of web development.",
     categoryArray: [
       {
-        name: 'HTML',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/html.svg',
-        progress: 'w-[75.5%] ',
+        name: "HTML",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/html.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'CSS',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/css.svg',
-        progress: 'w-[75.5%] ',
+        name: "CSS",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/css.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'TailwindCSS',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/tailwindcss.svg',
-        progress: 'w-[50.5%] ',
+        name: "TailwindCSS",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/tailwindcss.svg",
+        progress: "w-[50.5%] ",
       },
       {
-        name: 'Typescript',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/typescript.svg',
-        progress: 'w-[50.5%] ',
+        name: "Typescript",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/typescript.svg",
+        progress: "w-[50.5%] ",
       },
       {
-        name: 'Svelte',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/svelte.svg',
-        progress: 'w-[35.5%] ',
+        name: "Svelte",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/svelte.svg",
+        progress: "w-[35.5%] ",
       },
       {
-        name: 'Wordpress',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/wordpress.svg',
-        progress: 'w-[75.5%] ',
+        name: "Wordpress",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/wordpress.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'Git',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/github.svg',
-        progress: 'w-[75.5%] ',
+        name: "Git",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/github.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'ReactJs',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/react-js.svg',
-        progress: 'w-[75.5%] ',
+        name: "ReactJs",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/react-js.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'Vue',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/vue-js.svg',
-        progress: 'w-[75.5%] ',
+        name: "Vue",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/vue-js.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'ThreeJs',
-        fieldOfWork: ['webdev'],
-        iconLink: 'skills-icons/threejs.svg',
-        progress: 'w-[75.5%] ',
+        name: "ThreeJs",
+        fieldOfWork: ["webdev"],
+        iconLink: "skills-icons/threejs.svg",
+        progress: "w-[75.5%] ",
       },
-    ]
+    ],
   },
 
-  'Product Design – 3D Modelling': {
-    categorydescription: 'Coming up with creative and smart product solutions is my passion.',
-    categoryArray: [
-      {
-        name: 'AD Fusion 360',
-        fieldOfWork: ['productdesign'],
-        iconLink: 'skills-icons/autodesk-fusion-360.svg',
-        progress: 'w-[75.5%] ',
-      },
-      {
-        name: 'AD 3DS Max',
-        fieldOfWork: ['productdesign'],
-        iconLink: 'skills-icons/autodesk-3ds.svg',
-        progress: 'w-[50.5%] ',
-      }
-    ]
-  },
-  'Graphic & Logo Design': {
+  "Product Design – 3D Modelling": {
     categorydescription:
-      'All the important tools to provide assets for most graphic design needs.',
+      "Coming up with creative and smart product solutions is my passion.",
     categoryArray: [
       {
-        name: 'Affinity Photo',
-        fieldOfWork: ['webdev', 'graphic'],
-        iconLink: 'skills-icons/AffinityPhoto.svg',
-        progress: 'w-[75.5%] ',
+        name: "AD Fusion 360",
+        fieldOfWork: ["productdesign"],
+        iconLink: "skills-icons/autodesk-fusion-360.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'Adobe Photoshop',
-        fieldOfWork: ['graphic'],
-        iconLink: 'skills-icons/adobe-photoshop.svg',
-        progress: 'w-[75.5%] ',
+        name: "AD 3DS Max",
+        fieldOfWork: ["productdesign"],
+        iconLink: "skills-icons/autodesk-3ds.svg",
+        progress: "w-[50.5%] ",
       },
-      {
-        name: 'Affinity Designer',
-        fieldOfWork: ['webdev', 'graphic'],
-        iconLink: 'skills-icons/AffinityDesigner.svg',
-        progress: 'w-[100.5%] ',
-      },
-      {
-        name: 'Adobe Illustrator',
-        fieldOfWork: ['graphic'],
-        iconLink: 'skills-icons/adobe-illustrator.svg',
-        progress: 'w-[100.5%] ',
-      },
-      {
-        name: 'Affinity Publisher',
-        fieldOfWork: ['webdev', 'graphic'],
-        iconLink: 'skills-icons/AffinityPublisher.svg',
-        progress: 'w-[75.5%] ',
-      },
-      {
-        name: 'Adobe InDesign',
-        fieldOfWork: ['graphic'],
-        iconLink: 'skills-icons/adobe-indesign.svg',
-        progress: 'w-[75.5%] ',
-      },
-      {
-        name: 'Figma',
-        fieldOfWork: ['webdev', 'graphic'],
-        iconLink: 'skills-icons/figma2.svg',
-        progress: 'w-[25.5%] ',
-      }
-    ]
+    ],
   },
-  'Language Skills': {
+  "Graphic & Logo Design": {
     categorydescription:
-      'The set of languages i am fluent with, i can help you reach the broadest audience in the western world',
+      "All the important tools to provide assets for most graphic design needs.",
     categoryArray: [
       {
-        name: 'German',
-        fieldOfWork: ['webdev', 'graphic'],
-        iconLink: 'skills-icons/de.svg',
-        progress: 'Native',
+        name: "Affinity Photo",
+        fieldOfWork: ["webdev", "graphic"],
+        iconLink: "skills-icons/AffinityPhoto.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'Spanish',
-        fieldOfWork: ['webdev', 'graphic'],
-        iconLink: 'skills-icons/es.svg',
-        progress: 'Native',
+        name: "Adobe Photoshop",
+        fieldOfWork: ["graphic"],
+        iconLink: "skills-icons/adobe-photoshop.svg",
+        progress: "w-[75.5%] ",
       },
       {
-        name: 'English',
-        fieldOfWork: ['webdev', 'graphic'],
-        iconLink: 'skills-icons/gb.svg',
-        progress: 'Bilingual',
-      }
-    ]
-  }
+        name: "Affinity Designer",
+        fieldOfWork: ["webdev", "graphic"],
+        iconLink: "skills-icons/AffinityDesigner.svg",
+        progress: "w-[100.5%] ",
+      },
+      {
+        name: "Adobe Illustrator",
+        fieldOfWork: ["graphic"],
+        iconLink: "skills-icons/adobe-illustrator.svg",
+        progress: "w-[100.5%] ",
+      },
+      {
+        name: "Affinity Publisher",
+        fieldOfWork: ["webdev", "graphic"],
+        iconLink: "skills-icons/AffinityPublisher.svg",
+        progress: "w-[75.5%] ",
+      },
+      {
+        name: "Adobe InDesign",
+        fieldOfWork: ["graphic"],
+        iconLink: "skills-icons/adobe-indesign.svg",
+        progress: "w-[75.5%] ",
+      },
+      {
+        name: "Figma",
+        fieldOfWork: ["webdev", "graphic"],
+        iconLink: "skills-icons/figma2.svg",
+        progress: "w-[25.5%] ",
+      },
+    ],
+  },
+  "Language Skills": {
+    categorydescription:
+      "The set of languages i am fluent with, i can help you reach the broadest audience in the western world",
+    categoryArray: [
+      {
+        name: "German",
+        fieldOfWork: ["webdev", "graphic"],
+        iconLink: "skills-icons/de.svg",
+        progress: "Native",
+      },
+      {
+        name: "Spanish",
+        fieldOfWork: ["webdev", "graphic"],
+        iconLink: "skills-icons/es.svg",
+        progress: "Native",
+      },
+      {
+        name: "English",
+        fieldOfWork: ["webdev", "graphic"],
+        iconLink: "skills-icons/gb.svg",
+        progress: "Bilingual",
+      },
+    ],
+  },
 };

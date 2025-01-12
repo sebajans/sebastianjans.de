@@ -6,15 +6,10 @@
 //   });
 // }
 
-
-
-
-
-
 export function scrollIntoView(target: string, duration: number = 800) {
   const el = document.getElementById(target);
   if (!el) return;
-  console.log("target", target)
+  console.log("target", target);
   const elementPosition = el.getBoundingClientRect().top;
   const startingY = window.pageYOffset;
   const diff = elementPosition - 60; // You can adjust this value to offset the final position from the top

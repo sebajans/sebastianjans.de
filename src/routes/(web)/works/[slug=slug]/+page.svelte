@@ -9,13 +9,13 @@
   const { t } = getTranslate(); // Tolgee t translation
 
   import type { ProjectData } from "$lib/lists/projects";
-import Button from "$lib/components/ui/button/button.svelte";
- import WireframeWindow from "$components/WireframeWindow.svelte";
+  import Button from "$lib/components/ui/button/button.svelte";
+  import WireframeWindow from "$components/WireframeWindow.svelte";
   import WireframeWindowMobile from "$components/WireframeWindowMobile.svelte";
   import SliderWithHandle from "$components/SliderWithHandle.svelte";
 
   let project = projectItems.find(
-    (item) => item.slug === $page.params.slug
+    (item) => item.slug === $page.params.slug,
   ) as ProjectData;
 
   // let validproject = project as (typeof projectItems)[number] | undefined;
@@ -25,7 +25,7 @@ import Button from "$lib/components/ui/button/button.svelte";
     $t({
       key: `${project.slug}-title`,
       defaultValue: `Project: ${project.clientName}`,
-    })
+    }),
   );
 </script>
 

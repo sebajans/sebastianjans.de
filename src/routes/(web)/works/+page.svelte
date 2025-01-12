@@ -71,10 +71,9 @@
 
   let showWebServices = $state(true);
 
-$effect(() => {
-	console.log("intersectingWeb", intersectingWeb);
-});
-
+  $effect(() => {
+    console.log("intersectingWeb", intersectingWeb);
+  });
 </script>
 
 <svelte:head>
@@ -128,35 +127,40 @@ $effect(() => {
 <div class="fixed md:block top-0 h-0 w-20 right-0 z-30"></div>
 
 {#snippet buttons()}
-	{#if intersectingWeb}
-		<div 
-		in:fly={{x: 200, duration: 300, delay: 300}}
-		out:fly={{x: 200, duration: 300, delay: 0}}
-		class="flex flex-row gap-2 items-center justify-center">
-			<Button
-				class="font-sans {showWebServices ? 'bg-primary-200' : 'bg-primary-500'}"
-				variant="default"
-				size="lg"
-				onclick={() => {
-					showWebServices = false;
-					setTimeout(() => {
-						scrollIntoView("websites", 500);
-					}, 200);
-				}}>Works</Button
-			>
-			<Button
-				variant="default"
-				class="font-sans {showWebServices ? 'bg-primary-500' : 'bg-primary-200'}"
-				size="lg"
-				onclick={() => {
-					showWebServices = true;
-					setTimeout(() => {
-						scrollIntoView("websites", 500);
-					}, 0);
-				}}>Services</Button
-			>
-		</div>
-	{/if}
+  {#if intersectingWeb}
+    <div
+      in:fly={{ x: 200, duration: 300, delay: 300 }}
+      out:fly={{ x: 200, duration: 300, delay: 0 }}
+      class="flex flex-row gap-2 items-center justify-center"
+    >
+      <Button
+        class="font-sans {showWebServices
+          ? 'bg-primary-200'
+          : 'bg-primary-500'}"
+        variant="default"
+        size="lg"
+        onclick={() => {
+          showWebServices = false;
+          setTimeout(() => {
+            scrollIntoView("websites", 500);
+          }, 200);
+        }}>Works</Button
+      >
+      <Button
+        variant="default"
+        class="font-sans {showWebServices
+          ? 'bg-primary-500'
+          : 'bg-primary-200'}"
+        size="lg"
+        onclick={() => {
+          showWebServices = true;
+          setTimeout(() => {
+            scrollIntoView("websites", 500);
+          }, 0);
+        }}>Services</Button
+      >
+    </div>
+  {/if}
 {/snippet}
 <WorksHeader
   show={intersectingWeb}
@@ -167,16 +171,13 @@ $effect(() => {
   </div>
 </WorksHeader>
 
-<IntersectionObserver
-  element={elementWeb}
-  bind:intersecting={intersectingWeb}
->
+<IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
   <div bind:this={elementWeb} class="">
-      <SectionWebRJ />
-      <SectionWebRR />
-      <SectionWebKamado />
-      <SectionWebBrazie />
-      <SectionWebDMaier />
+    <SectionWebRJ />
+    <SectionWebRR />
+    <SectionWebKamado />
+    <SectionWebBrazie />
+    <SectionWebDMaier />
   </div>
 </IntersectionObserver>
 

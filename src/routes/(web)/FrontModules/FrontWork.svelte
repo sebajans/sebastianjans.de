@@ -19,40 +19,50 @@
     >
       <T keyName="work-experience" defaultValue="Work Experience" />
     </h1>
-    <Carousel.Root orientation="vertical" opts={{slidesToScroll: 3}} class="px-4 md:px-0" >
+    <Carousel.Root
+      orientation="vertical"
+      opts={{ slidesToScroll: 3 }}
+      class="px-4 md:px-0"
+    >
       <Carousel.Content class="h-[44rem] sm:h-[42rem] md:h-[38rem]">
         {#each cvItems as item}
           {#if item.category === "job"}
-            <Carousel.Item class="basis-1/3 sm:basis-1/3 h-full min-h-[11rem] w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start">
-                <div
-                  style:background-image={$settingsState.darkMode
-                    ? `url('${item.image}')`
-                    : `url('${item.image}')`}
-                  class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 md:translate-y-0 md:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
-                ></div>
-                <div class="md:w-4/5 box-content self-stretch">
-                  <h2
-                    class="font-sans mr-28 md:mr-0 text-primary-900 dark:text-primary-50 text-2xl"
-                  >
-                    <T keyName={item.name} defaultValue={item.name} />
-                  </h2>
-                  <h3
-                    class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm"
-                  >
-                    {item.fromMonth}/{item.fromYear} - {item.toMonth}{item.toYear
-                      ? "/" + item.toYear
-                      : ""}
-                  </h3>
-                  <p class="text-sm text-justify">
-                    <T keyName="text-{item.name}" defaultValue={item.info} />
-                  </p>
-                </div>
+            <Carousel.Item
+              class="basis-1/3 sm:basis-1/3 h-full min-h-[11rem] w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start"
+            >
+              <div
+                style:background-image={$settingsState.darkMode
+                  ? `url('${item.image}')`
+                  : `url('${item.image}')`}
+                class="bg-contain bg-no-repeat bg-center bg-origin-content md:w-1/5 z-10 pointer-events-none backdrop-blur-md w-28 -mt-14 md:mt-0 translate-y-[3.75rem] -translate-x-4 md:translate-y-0 md:-translate-x-0 max-w-[16rem] max-h-[16rem] p-2 flex rounded-lg justify-center aspect-square border border-primary-200/90 dark:border-primary-50/5 bg-primary-200/70 dark:bg-primary-100/80"
+              ></div>
+              <div class="md:w-4/5 box-content self-stretch">
+                <h2
+                  class="font-sans mr-28 md:mr-0 text-primary-900 dark:text-primary-50 text-2xl"
+                >
+                  <T keyName={item.name} defaultValue={item.name} />
+                </h2>
+                <h3
+                  class="mt-0.5 mb-2 text-primary-700 dark:text-primary-200 font-sans text-sm"
+                >
+                  {item.fromMonth}/{item.fromYear} - {item.toMonth}{item.toYear
+                    ? "/" + item.toYear
+                    : ""}
+                </h3>
+                <p class="text-sm text-justify">
+                  <T keyName="text-{item.name}" defaultValue={item.info} />
+                </p>
+              </div>
             </Carousel.Item>
           {/if}
         {/each}
       </Carousel.Content>
-      <Carousel.Previous class="bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />
-      <Carousel.Next class="bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none" />
+      <Carousel.Previous
+        class="bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none"
+      />
+      <Carousel.Next
+        class="bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none"
+      />
     </Carousel.Root>
   </div>
   <ButtonScrollToSection section={"cv_edu"}>
@@ -76,10 +86,9 @@
   .hs {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1rem repeat(
-        var(--total),
-        calc(100% - var(--gutter) * 2)
-      ) 1rem;
+    grid-template-columns:
+      1rem repeat(var(--total), calc(100% - var(--gutter) * 2))
+      1rem;
     grid-template-rows: minmax(0px, 1fr);
   }
 

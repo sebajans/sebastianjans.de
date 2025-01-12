@@ -3,24 +3,26 @@ import { writable } from "svelte/store";
 
 export interface SettingsState {
   darkMode: boolean;
-  reducedMotion: boolean,
+  reducedMotion: boolean;
 }
 
 export const initialSettingsState: SettingsState = {
   darkMode: userPrefersDark(),
   reducedMotion: false,
-}
+};
 
 let stored = initialSettingsState;
 if (browser) {
-  if (localStorage["settingState"]) stored = JSON.parse(localStorage["settingState"]);
+  if (localStorage["settingState"])
+    stored = JSON.parse(localStorage["settingState"]);
 }
 
 export const settingsState = writable(stored);
 
-if (browser) settingsState.subscribe(state => {
-  localStorage.settingState = JSON.stringify(state)
-});
+if (browser)
+  settingsState.subscribe((state) => {
+    localStorage.settingState = JSON.stringify(state);
+  });
 
 export function toggleDarkMode() {
   settingsState.update((settings) => {
@@ -32,7 +34,6 @@ export function toggleDarkMode() {
     return newSettings;
   });
 }
-
 
 // Function to determine user's preferred color scheme
 function userPrefersDark() {

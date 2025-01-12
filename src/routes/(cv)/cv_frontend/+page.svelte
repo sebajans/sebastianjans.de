@@ -52,11 +52,11 @@
 
   function selectCategory(fieldOfWork: string[] = ["webdev"]) {
     filteredCvItems = cvItems.filter((item) =>
-      item.fieldOfWork.some((field) => fieldOfWork.includes(field))
+      item.fieldOfWork.some((field) => fieldOfWork.includes(field)),
     );
 
     filteredIntroText = introtext.filter((item) =>
-      item.fieldOfWork.some((field) => fieldOfWork.includes(field))
+      item.fieldOfWork.some((field) => fieldOfWork.includes(field)),
     );
 
     filteredSkillItems = Object.entries(skillItems).reduce(
@@ -64,16 +64,14 @@
         acc[categoryName] = {
           categorydescription: skills.categorydescription,
           categoryArray: skills.categoryArray.filter((skill) =>
-            skill.fieldOfWork.some((field) => fieldOfWork.includes(field))
+            skill.fieldOfWork.some((field) => fieldOfWork.includes(field)),
           ),
         };
         return acc;
       },
-      {} as SkillItems
+      {} as SkillItems,
     );
   }
-
-  
 </script>
 
 <div class="hide-on-print sticky top-0 inset-x-0 pt-4 px-4">
@@ -87,13 +85,11 @@
       >
       <button
         class="btn btn-navajo"
-        onclick={() => selectCategory(["graphicdesign"])}
-        >Graphic design</button
+        onclick={() => selectCategory(["graphicdesign"])}>Graphic design</button
       >
       <button
         class="btn btn-navajo"
-        onclick={() => selectCategory(["productdesign"])}
-        >Product design</button
+        onclick={() => selectCategory(["productdesign"])}>Product design</button
       >
     </div>
     <button class="btn btn-navajo" onclick={printPage}>print page</button>
@@ -211,7 +207,7 @@
       </div>
       <div
         class="col-start-2 col-span-1 row-span-4 h-[25.7cm] border-primary-500 border-l-2 border-r-2"
-></div>
+      ></div>
       <div
         class="row-start-4 col-start-3 row-span-1 pt-4 border-t-2 border-primary-600"
       >
@@ -367,7 +363,7 @@
       </div>
       <div
         class="col-start-2 col-span-1 row-start-1 row-span-full h-[25.7cm] border-primary-500 border-l-2 border-r-2"
-></div>
+      ></div>
       <div class="row-start-1 col-start-3 col-span-1">
         <h2 class="!pt-0">
           {$t({
