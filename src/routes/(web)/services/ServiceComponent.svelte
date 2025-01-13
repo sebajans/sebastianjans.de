@@ -55,6 +55,9 @@
 {:else if name === "naming"}
   <iconify-icon icon="fluent:code-text-16-filled" class={className}
   ></iconify-icon>
+{:else if name === "photo"}
+  <iconify-icon icon="material-symbols:photo-prints-rounded" class={className}
+  ></iconify-icon>
 {:else if name === "package"}
   <iconify-icon icon="material-symbols:package-2" class={className}
   ></iconify-icon>

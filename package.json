@@ -11,8 +11,11 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test:unit": "vitest",
-    "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "lint": "eslint --fix .",
+
+    "format": "pnpm run prettier src",
+    "prettier": "prettier -w -u"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",

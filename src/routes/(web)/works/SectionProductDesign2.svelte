@@ -174,7 +174,7 @@
                   name="rotate-cube-side"
                   bind:group={selected}
                   value={option.value}
-                  class="md:mt-2"
+                  class="md:mt-2 "
                 />
                 <label
                   for={option.value}

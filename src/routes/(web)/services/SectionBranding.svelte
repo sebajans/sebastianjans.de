@@ -257,7 +257,7 @@
         />
       </p>
     </div>
-    <div class="w-full flex items-center gap-2 justify-center">
+    <div class="w-full flex items-center gap-6 justify-center">
       <Carousel.Root
         plugins={[plugin]}
         {opts}
@@ -272,7 +272,7 @@
               class="basis-1/2 sm:basis-1/3 dark:text-primary-50 w-full "
             >
               <div
-                class=" h-full min-h-[8rem] relative flex flex-col items-start justify-start dark:text-primary-50 w-full transition-all backdrop-blur-md border-transparent md:bg-transp arent dark:border-transparent !bg-opacity-0 hover:!bg-opacity-100 hover:border-primary-900/5 dark:hover:border-primary-50/10 md:hover:bg-gradient-to-br !bg-primaryO riginal-200 md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3 md:rounded-md md:border"
+                class="h-full min-h-[8rem] relative flex flex-col items-start justify-start dark:text-primary-50 w-full transition-all backdrop-blur-md border-transparent md:bg-transp arent dark:border-transparent !bg-opacity-0 hover:!bg-opacity-100 hover:border-primary-900/5 dark:hover:border-primary-50/10 md:hover:bg-gradient-to-br !bg-primaryO riginal-200 md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3 md:rounded-md md:border"
               >
                 <ServiceComponent
                   name={item.component ? item.component : ""}
@@ -303,9 +303,9 @@
           <div
             class="
         {fancyClass
-              ? 'outline-8 outline-primary-200 dark:outline-primary-300 '
-              : 'outline-none'} outline
-         h-full aspect-video gap-4 relative flex flex-col items-start justify-start dark:text-primary-50 w-full transition-all border-primary-900/5 dark:border-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3 md:rounded-md md:border"
+              ? ' border-primary-200 border-[8px] dark:border-primary-700 '
+              : ' border-transparent border dark:border-transparent'} 
+         h-full aspect-video gap-4 relative flex flex-col items-start justify-start dark:text-primary-50 w-full transition-all border-primary-900/5 dark:border-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3 md:rounded-md"
           >
             {#if activeIndex === 0}
               {@render colors()}
@@ -320,51 +320,54 @@
           <div
             class="{fancyClass
               ? 'opacity-100 max-h-16'
-              : 'opacity-0 max-h-0'} rounded-br-lg h-14 w-24 transition-all bg-primary-300 dark:bg-primary-300"
+              : 'opacity-0 max-h-0'} rounded-br-lg h-14 w-24 transition-all bg-primary-300 dark:bg-primary-800"
           ></div>
           <div
             class="{fancyClass
               ? 'opacity-100 max-h-8 duration-75'
-              : 'opacity-0 max-h-0'} skew-x-[-60deg] rounded-br-md rounded-bl-md h-4 -translate-x-4 -translate-y-px w-[5.8rem] transition-all bg-primary-300 dark:bg-primary-300"
+              : 'opacity-0 max-h-0'} skew-x-[-60deg] rounded-br-md rounded-bl-md h-4 -translate-x-4 -translate-y-px w-[5.8rem] transition-all bg-primary-300 dark:bg-primary-800"
           ></div>
         </div>
-        <Button
-          variant="ghost"
-          size="default"
-          class="font-sans mt-8 hover:bg-primary-900 hover:text-primary-50 hover:dark:bg-primary-50 w-fit hover:dark:text-primary-900 dark:text-primary-50 transition-all border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3"
-          on:click={() => {
-            fancyClass = !fancyClass;
-          }}
-        >
-          View them on your real devices
-        </Button>
-        <Button
-          variant="ghost"
-          size="default"
-          class="font-sans mt-8 hover:bg-primary-900 hover:text-primary-50 hover:dark:bg-primary-50 w-fit hover:dark:text-primary-900 dark:text-primary-50 transition-all border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3"
-          on:click={togglePause}
-        >
-          {paused ? "Resume" : "Pause"}
-          {#if !paused}
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              class=" text-current"
-            ></iconify-icon>
-          {:else}
-            <iconify-icon
-              icon="material-symbols:pause-rounded"
-              class=" text-current"
-            ></iconify-icon>
-          {/if}
-        </Button>
+        <div class="mt-8 flex flex-row gap-2">
+          <Button
+            variant="ghost"
+            size="lg"
+            class="font-sans h-10 hover:bg-primary-900 hover:text-primary-50 hover:dark:bg-primary-50 w-fit hover:dark:text-primary-900 dark:text-primary-50 transition-all border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 px-2 md:px-3"
+            on:click={() => {
+              fancyClass = !fancyClass;
+            }}
+          >
+            View them on your real devices
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            class="font-sans hover:bg-primary-900 hover:text-primary-50 hover:dark:bg-primary-50  hover:dark:text-primary-900 dark:text-primary-50 transition-all border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10"
+            on:click={togglePause}
+          >
+            <span class="sr-only">
+              {paused ? "Resume" : "Pause"}
+            </span>
+            {#if !paused}
+              <iconify-icon
+                icon="material-symbols:play-arrow-rounded"
+                class="text-2xl text-current"
+              ></iconify-icon>
+            {:else}
+              <iconify-icon
+                icon="material-symbols:pause-rounded"
+                class="text-2xl text-current"
+              ></iconify-icon>
+            {/if}
+          </Button>
+        </div>
       </div>
     </div>
-    <Button variant="default" size="lg" class="w-fit" href="/works#logodesign">
+    <Button variant="default" class="w-fit " href="/works#logodesign">
       <T keyName="services-branding-cta" defaultValue="See some of my works!" />
     </Button>
   </div>
 </section>
-serv
 
 <style>
   .pattern-1 {

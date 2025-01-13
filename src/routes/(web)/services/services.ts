@@ -303,10 +303,10 @@ export const services: MainService[] = [
       },
       {
         id: 33,
-        component: "package",
-        name: "Packaging Design",
+        component: "photo",
+        name: "Photo Editing",
         price: 110,
-        description: "Attractive packaging designs.",
+        description: "Photo retouching and editing.",
       },
       {
         id: 34,
