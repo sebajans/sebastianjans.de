@@ -75,7 +75,7 @@
             >
               <T keyName="likes-title" defaultValue="Some things i like" />
             </h2>
-            <ul class="list-likes">
+            <ul class="pt-3 space-y-3">
               <li class="list-li">
                 <T keyName="likes-item-1" defaultValue="Orange juice" />
               </li>
@@ -111,7 +111,7 @@
                 defaultValue="Some things i dislike"
               />
             </h2>
-            <ul class="list-likes">
+            <ul class="pt-3 space-y-3">
               <li class="list-li">
                 <T keyName="dislikes-item-1" defaultValue="Coffee" />
               </li>
@@ -150,10 +150,6 @@
 </section>
 
 <style>
-  ul .list-likes {
-    @apply pt-3 space-y-3;
-  }
-
   .list-li::before {
     content: "";
     @apply translate-y-px w-3 h-3 inline-block rounded-full border backdrop-blur-md mr-2 border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br  from-primary-900/10 to-primary-900/5 dark:from-primary-50/25 dark:to-primary-50/10;

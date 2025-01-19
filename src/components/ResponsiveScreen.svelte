@@ -3,7 +3,7 @@
 
   const interval = 3000;
   let modes = [0, 1, 2, 3];
-  let currentModeIndex = 2;
+  let currentModeIndex = 0;
 
   function cycleModes() {
     currentModeIndex = (currentModeIndex + 1) % modes.length;
@@ -11,10 +11,10 @@
 
   const timer = setInterval(cycleModes, interval);
   let currentMode = modes[currentModeIndex];
-  $: currentMode = modes[currentModeIndex];
-  onDestroy(() => {
-    clearInterval(timer);
-  });
+  // $: currentMode = modes[currentModeIndex];
+  // onDestroy(() => {
+  //   clearInterval(timer);
+  // });
 </script>
 
 <div class="flex justify-center w-full items-center">

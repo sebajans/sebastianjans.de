@@ -21,7 +21,7 @@
   import SectionWebMobileFirst from "./SectionWebMobileFirst.svelte";
   import SectionBranding from "./SectionBranding.svelte";
   import SectionGraphicDesign from "./SectionGraphicDesign.svelte";
-  import SectionProductDesign from "./SectionProductDesign.svelte";
+  // import SectionProductDesign from "./SectionProductDesign.svelte";
   import SectionWebDevelopment from "./SectionWebDevelopment.svelte";
 
   const { t } = getTranslate(); // Tolgee t translation
@@ -216,20 +216,17 @@
   <T keyName="works-productdesign" defaultValue="Product Design" />
 </WorksHeader>
 
-<IntersectionObserver
+<!-- TODO: some 3D stuff, web platforms -->
+<!-- <IntersectionObserver
   element={elementProduct}
   bind:intersecting={intersectingProduct}
 >
   {#if isVisibleProduct}
     <section id="product-design" bind:this={elementProduct}>
-      <!-- TODO: some 3D stuff, web platforms -->
       <SectionProductDesign service={services[3]} />
-
-      <!-- <SectionProductDesign2 />
-      <SectionProductDesignCup /> -->
     </section>
   {/if}
-</IntersectionObserver>
+</IntersectionObserver> -->
 
 <!-- TODO: Adjust, change to "check out my works!"
 
