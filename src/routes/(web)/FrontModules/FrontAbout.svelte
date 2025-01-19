@@ -26,11 +26,11 @@
     <Carousel.Root
       orientation="horizontal"
       opts={{ slidesToScroll: slidesToScroll }}
-      class="px-4 md:px-0"
+      class="px-0 md:px-0"
     >
-      <Carousel.Content>
+      <Carousel.Content class="-ml-4">
         <Carousel.Item
-          class="snap-center min-h-[18rem] justify-center w-full md:space-x-4 pl-3 md:pl-0 md:pr-4 text-sm md:text-base"
+          class="snap-center min-h-[20rem] md:min-h-[18rem] justify-center w-full pl-6 pr-2 text-sm md:text-base"
         >
           <img
             in:fly|global={{ duration: 2000 }}
@@ -65,7 +65,7 @@
           </p>
         </Carousel.Item>
         <Carousel.Item
-          class="snap-center sm:basis-1/2 h-full min-h-[11rem] w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start"
+          class="snap-center sm:basis-1/2 h-full min-h-[11rem] w-full flex md:flex-row flex-col pl-6 pr-2 items-end md:items-start"
         >
           <div
             class="h-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 rounded-md w-full flex flex-col justify-start"
@@ -98,7 +98,7 @@
           </div>
         </Carousel.Item>
         <Carousel.Item
-          class="snap-center mr-4 sm:basis-1/2 h-full min-h-[11rem] w-full flex md:flex-row flex-col md:space-x-4 items-end md:items-start"
+          class="snap-center sm:basis-1/2 h-full min-h-[11rem] w-full flex md:flex-row flex-col pl-6 pr-2 items-end md:items-start"
         >
           <div
             class="h-full w-full p-3 backdrop-blur-md border border-primary-900/5 dark:border-primary-50/10 bg-gradient-to-br from-primary-900/10 to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 rounded-md flex flex-col justify-start"
@@ -131,7 +131,7 @@
           </div>
         </Carousel.Item>
       </Carousel.Content>
-      <div class="flex justify-between translate-y-6 pr-4">
+      <div class="flex justify-between translate-y-6 px-2 md:px-4">
         <Carousel.Previous
           class="relative !translate-x-0 left-0 bg-primary-900 dark:bg-primary-50 hover:bg-primary-500 dark:hover:bg-primary-500 border-none"
         />
@@ -150,10 +150,6 @@
 </section>
 
 <style>
-  :root {
-    --gutter: 20px;
-  }
-
   ul .list-likes {
     @apply pt-3 space-y-3;
   }
@@ -167,27 +163,4 @@
     @apply py-0.5 px-2;
   }
 
-  .hs::-webkit-scrollbar {
-    display: none;
-  }
-  .hs {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .hs {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, calc(100% - var(--gutter) * 2)) 2rem;
-    grid-template-rows: minmax(150px, 1fr);
-  }
-
-  @media (min-width: 768px) {
-    .hs {
-      grid-template-columns: calc(100% - var(--gutter) * 2) repeat(
-          2,
-          calc(50% - var(--gutter) * 2)
-        ) 1rem;
-    }
-  }
 </style>

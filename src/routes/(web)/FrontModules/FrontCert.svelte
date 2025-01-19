@@ -4,20 +4,6 @@
   import { fly } from "svelte/transition";
   import { cvItems } from "$lib/lists/cvItems";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
-  import { on } from "svelte/events";
-
-  // onMount(() => {
-  // 	const lists: NodeListOf<HTMLElement> = document.querySelectorAll('.hs');
-  // 	console.log("lists", lists);
-  // 	lists.forEach(el => {
-  // 		const listItems = el.querySelectorAll('li');
-  // 		const n = listItems.length;
-  // 		const total = n + 2; // Add 2 for the empty columns
-  // 		// console.log("total", total);
-
-  // 		document.documentElement.style.setProperty('--total', total.toString());
-  // 	});
-  // });
 
   let slidesToScroll = 1;
 

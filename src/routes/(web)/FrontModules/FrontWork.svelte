@@ -69,33 +69,3 @@
     <T keyName="education" defaultValue="Education" /></ButtonScrollToSection
   >
 </section>
-
-<style>
-  :root {
-    --gutter: 20px;
-  }
-
-  .hs::-webkit-scrollbar {
-    display: none;
-  }
-  .hs {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .hs {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns:
-      1rem repeat(var(--total), calc(100% - var(--gutter) * 2))
-      1rem;
-    grid-template-rows: minmax(0px, 1fr);
-  }
-
-  @media (min-width: 768px) {
-    .hs {
-      /* grid-template-columns: repeat(var(--total), calc(50% - var(--gutter) * 2)); */
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
