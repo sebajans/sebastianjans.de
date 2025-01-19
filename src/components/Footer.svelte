@@ -16,19 +16,20 @@
 >
 	<!--		<button aria-label="View Privacy PopUp" class="hover:text-primary-500" on:click={toggleButton}>Privacy</button> -->
 	&copy; Sebastian Jans, {now} –
-	<button
+	<a
 		aria-label="View Terms of Service PopUp"
 		class="font-bold hover:text-primary-500"
+		href="terms"
 		onclick={openPopup}
 	>
-		<T keyName="terms-of-service" defaultValue="Terms of Service" /></button
+		<T keyName="terms-of-service" defaultValue="Terms of Service" /></a
 	>
 </div>
 
-<Popup
+<!-- <Popup
 	popupClass={'w-[90vw] md:w-[70vw] !pl-8  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
 	position={'top-[15vh] left-[5vw] md:left-[15vw]'}
 	bind:this={popup}
 >
 	<TermsOfService />
-</Popup>
+</Popup> -->

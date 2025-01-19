@@ -10,7 +10,7 @@
 
 	import { workSectionNames } from '$lib/lists/workSectionNames';
 	import WorksHeader from '$components/WorksHeader.svelte';
-	import SectionEnd from '../works/SectionEnd.svelte';
+	import SectionEndServices from './SectionEndServices.svelte';
 
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { scrollIntoView } from '$lib/functions/scrollIntoView';
@@ -59,14 +59,7 @@
 			isVisibleProduct = true;
 		}
 	});
-	let elementProduct: HTMLElement | undefined = $state();
-	let intersectingProduct: boolean = $state(false);
-
 	let showWebServices = $state(true);
-
-	$effect(() => {
-		console.log('intersectingWeb', intersectingWeb);
-	});
 </script>
 
 <svelte:head>
@@ -95,7 +88,7 @@
 		<div
 			class="mb-auto flex w-full flex-col space-y-4 pl-4 font-sans text-2xl md:my-auto md:w-1/2 md:text-3xl"
 		>
-			{#each services as section, i}
+			{#each services.slice(0,3) as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
 					onclick={preventDefault(() => {
@@ -191,9 +184,6 @@
 	{/if}
 </IntersectionObserver>
 
-<WorksHeader show={intersectingProduct} backgroundColor="bg-primary-500/60 dark:bg-primary-400/60">
-	<T keyName="works-productdesign" defaultValue="Product Design" />
-</WorksHeader>
 
 <!-- TODO: some 3D stuff, web platforms -->
 <!-- <IntersectionObserver
@@ -208,8 +198,7 @@
 </IntersectionObserver> -->
 
 <!-- TODO: Adjust, change to "check out my works!"
-
 TODO: Add slot for texts
 TODO: Add slot for buttons/links
 -->
-<SectionEnd />
+<SectionEndServices />

@@ -68,7 +68,7 @@
 									? `url('${project.logoDark}')`
 									: `url('${project.logo}')`}
 								class="h-full w-full bg-contain bg-center bg-no-repeat bg-origin-content transition-all duration-500"
-							/>
+								></div>
 						</div>
 						<div class="col-span-3 p-4 md:col-span-2">
 							<p>
@@ -128,7 +128,7 @@
 									style="background-color: {color}; width: calc(100% / {project.colors?.length})"
 									style:width="calc(1/{project.colors?.length})%"
 									class=""
-								/>
+									></div>
 							{/each}
 						</div>
 					</Box>

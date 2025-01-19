@@ -1,6 +1,6 @@
-<div class="z-40 w-full space-y-2 py-10 text-justify">
+<div class="z-40 w-full space-y-2 py-10 container max-w-4xl text-justify">
 	<h1><strong>Terms and Conditions</strong></h1>
-	<p class="inverted">
+	<p class="">
 		Welcome to Sebastian Jans Design!<br />
 		These terms and conditions outline the rules and regulations for the use of Sebastian Jans Design's
 		Website, located at www.sebastianjans.de.
@@ -21,7 +21,7 @@
 		as referring to same.
 	</p>
 	<h3><strong>Cookies</strong></h3>
-	<p class="inverted">
+	<p class="">
 		We employ the use of cookies. By accessing Sebastian Jans Design, you agreed to use cookies in
 		agreement with the Sebastian Jans Design's Privacy Policy.
 		<br />
@@ -32,7 +32,7 @@
 		cookies.
 	</p>
 	<h3><strong>License</strong></h3>
-	<p class="inverted">
+	<p class="">
 		Unless otherwise stated, Sebastian Jans Design and/or its licensors own the intellectual
 		property rights for all material on Sebastian Jans Design. All intellectual property rights are
 		reserved. You may access this from Sebastian Jans Design for your own personal use subjected to
@@ -46,7 +46,7 @@
 		<li>Reproduce, duplicate or copy material from Sebastian Jans Design</li>
 		<li>Redistribute content from Sebastian Jans Design</li>
 	</ul>
-	<p class="inverted">
+	<p class="">
 		This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the
 		help of the<a href="https://www.termsandconditionsgenerator.com/"
 			>Free Terms and Conditions Generator</a
@@ -86,7 +86,7 @@
 			activities or unlawful activity.
 		</li>
 	</ul>
-	<p class="inverted">
+	<p class="">
 		You hereby grant Sebastian Jans Design a non-exclusive license to use, reproduce, edit and
 		authorize others to use, reproduce and edit any of your Comments in any and all forms, formats
 		or media.
@@ -94,7 +94,7 @@
 	</p>
 
 	<h3><strong>Hyperlinking to our Content</strong></h3>
-	<p class="inverted">
+	<p class="">
 		The following organizations may link to our Website without prior written approval:<br />
 	</p>
 	<ul>
@@ -110,7 +110,7 @@
 			malls, and charity fundraising groups which may not hyperlink to our Web site.
 		</li>
 	</ul>
-	<p class="inverted">
+	<p class="">
 		These organizations may link to our home page, to publications or to other Website information
 		so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship,
 		endorsement or approval of the linking party and its products and/or services; and (c) fits
@@ -129,7 +129,7 @@
 		<li>accounting, law and consulting firms; and</li>
 		<li>educational institutions and trade associations.</li>
 	</ul>
-	<p class="inverted">
+	<p class="">
 		We will approve link requests from these organizations if we decide that: (a) the link would not
 		make us look unfavorably to ourselves or to our accredited businesses; (b) the organization does
 		not have any negative records with us; (c) the benefit to us from the visibility of the
@@ -159,21 +159,21 @@
 			context and format of content on the linking party’s site.
 		</li>
 	</ul>
-	<p class="inverted">
+	<p class="">
 		No use of Sebastian Jans Design's logo or other artwork will be allowed for linking absent a
 		trademark license agreement.
 		<br />
 	</p>
 
 	<h3><strong>iFrames</strong></h3>
-	<p class="inverted">
+	<p class="">
 		Without prior approval and written permission, you may not create frames around our Webpages
 		that alter in any way the visual presentation or appearance of our Website.
 		<br />
 	</p>
 
 	<h3><strong>Content Liability</strong></h3>
-	<p class="inverted">
+	<p class="">
 		We shall not be hold responsible for any content that appears on your Website. You agree to
 		protect and defend us against all claims that is rising on your Website. No link(s) should
 		appear on any Website that may be interpreted as libelous, obscene or criminal, or which
@@ -183,10 +183,10 @@
 	</p>
 
 	<h3><strong>Your Privacy</strong></h3>
-	<p class="inverted">Please read Privacy Policy</p>
+	<p class="">Please read Privacy Policy</p>
 
 	<h3><strong>Reservation of Rights</strong></h3>
-	<p class="inverted">
+	<p class="">
 		We reserve the right to request that you remove all links or any particular link to our Website.
 		You approve to immediately remove all links to our Website upon request. We also reserve the
 		right to amen these terms and conditions and it’s linking policy at any time. By continuously
@@ -194,7 +194,7 @@
 	</p>
 
 	<h3><strong>Removal of links from our website</strong></h3>
-	<p class="inverted">
+	<p class="">
 		If you find any link on our Website that is offensive for any reason, you are free to contact
 		and inform us any moment. We will consider requests to remove links but we are not obligated to
 		or so or to respond to you directly. We do not ensure that the information on this website is
@@ -203,7 +203,7 @@
 	</p>
 
 	<h3><strong>Disclaimer</strong></h3>
-	<p class="inverted">
+	<p class="">
 		To the maximum extent permitted by applicable law, we exclude all representations, warranties
 		and conditions relating to our website and the use of this website. Nothing in this disclaimer
 		will:
@@ -217,7 +217,7 @@
 		</li>
 		<li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
 	</ul>
-	<p class="inverted">
+	<p class="">
 		The limitations and prohibitions of liability set in this Section and elsewhere in this
 		disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising
 		under the disclaimer, including liabilities arising in contract, in tort and for breach of
@@ -227,7 +227,7 @@
 		As long as the website and the information and services on the website are provided free of
 		charge, we will not be liable for any loss or damage of any nature.
 	</p>
-	<p class="inverted">
+	<p class="">
 		All Preparation materials, visuals and sketches, including all electronic files used to create
 		the project remain the property of Sebastian Jans.
 	</p>

@@ -22,7 +22,7 @@
 	});
 </script>
 
-<div
+<section
 	class="col-start-1 row-start-1 flex h-works w-full flex-col items-center justify-center px-2 transition-all duration-500 md:h-worksmd md:max-h-[56rem]"
 >
 	<div class="sm:fle x-row my-auto flex flex-col items-center gap-y-8">
@@ -255,7 +255,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 <style>
 	.container-item {
