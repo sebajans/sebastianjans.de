@@ -59,7 +59,7 @@
 <header
 	class="{showMenu
 		? 'h-[100dvh]'
-		: 'h-0 md:h-screen md:h-screen-ios'} fixed inset-y-0 z-30 flex w-full flex-col justify-between border-r border-primary-900/[0.02] bg-gradient-to-bl from-primary-900/[0.02] to-primary-900/[0.06] transition-transform dark:border-primary-50/[0.02] dark:from-primary-50/[0.02] dark:to-primary-50/[0.06] md:w-40 md:backdrop-blur-2xl"
+		: 'h-0 md:h-screen md:h-screen-ios'} fixed inset-y-0 z-30 flex w-full flex-col justify-between border-r border-primary-900/[0.02] bg-linear-to-bl from-primary-900/[0.02] to-primary-900/[0.06] transition-transform dark:border-primary-50/[0.02] dark:from-primary-50/[0.02] dark:to-primary-50/[0.06] md:w-40 md:backdrop-blur-2xl"
 >
 	<BackdropBlur {showMenu} />
 	<a
@@ -78,7 +78,7 @@
 			: 'pointer-events-none translate-y-[100%] opacity-0 md:pointer-events-auto md:translate-y-0 md:opacity-100'} relative z-30 h-auto w-screen max-w-sm space-y-3 self-center overflow-hidden p-3 pb-16 transition-transform duration-300 md:w-40 md:translate-y-0 md:overflow-visible md:rounded-tr-xl md:pb-4"
 	>
 		<SocialMenu />
-		<ul aria-label="Navigation Bar" class="flex flex-grow flex-col gap-4 self-center font-sans">
+		<ul aria-label="Navigation Bar" class="flex grow flex-col gap-4 font-sans">
 			{#each navItems as { link, text }}
 				<NavButton onclick={hideMenuMobile} {link} {text} />
 			{/each}

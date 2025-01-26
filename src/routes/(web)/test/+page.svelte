@@ -2,7 +2,7 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import * as Threlte from '@threlte/core';
 	import * as Three from 'three';
-	import * as Utils from 'three/src/math/MathUtils';
+	// import * as Utils from 'three/src/math/MathUtils';
 	import * as Extra from '@threlte/extras';
 	import { Spring } from 'svelte/motion';
 

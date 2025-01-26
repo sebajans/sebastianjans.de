@@ -94,7 +94,7 @@ https://svelte.dev/e/js_parse_error -->
 			tabindex="0"
 			on:click={() => (activeNumber = -1)}
 			on:keydown={() => (activeNumber = -1)}
-			class="absolute inset-0 z-[1] cursor-default bg-transparent"
+			class="absolute inset-0 z-1 cursor-default bg-transparent"
 		></div>
 	{/if}
 	<section
@@ -127,7 +127,7 @@ https://svelte.dev/e/js_parse_error -->
 					on:click|stopPropagation
 					class="logo-main {activeNumber === -1
 						? ''
-						: 'pointer-events-none translate-x-20 scale-75 opacity-30 !blur-[2px]'} trans form max-w-3/5 group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
+						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} trans form max-w-3/5 group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
 				>
 					{#each $activeLocalLogoItems as logo, i}
 						<div
@@ -158,7 +158,7 @@ https://svelte.dev/e/js_parse_error -->
 					transition:fly|global={{ x: -300, duration: 300 }}
 					class="{logoItems[activeNumber]
 						? 'translate-x-0'
-						: 'translate-x-full'} md:right-2/5 absolute left-0 z-[11] flex h-4/5 max-h-[calc(100vh_-_5.5rem)] w-4/5 cursor-default flex-col items-center justify-between rounded-xl bg-primary-300 p-4 shadow-md shadow-primary-900/30 dark:bg-primary-600 md:w-3/5"
+						: 'translate-x-full'} md:right-2/5 absolute left-0 z-11 flex h-4/5 max-h-[calc(100vh_-_5.5rem)] w-4/5 cursor-default flex-col items-center justify-between rounded-xl bg-primary-300 p-4 shadow-md shadow-primary-900/30 dark:bg-primary-600 md:w-3/5"
 				>
 					<div
 						style:background-image={$settingsState.darkMode
@@ -202,10 +202,12 @@ https://svelte.dev/e/js_parse_error -->
 </IntersectionObserver>
 
 <style>
+	@reference "tailwindcss"
+
 	.logo-main:hover .logo-individual {
 		@apply scale-90 opacity-60 blur-[2px];
 	}
 	.logo-main .logo-individual:hover {
-		@apply scale-100 opacity-100 blur-0;
+		@apply scale-100 opacity-100 blur-none;
 	}
 </style>

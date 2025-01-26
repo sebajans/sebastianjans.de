@@ -53,7 +53,7 @@
 			<div
 				class="{intersecting
 					? ''
-					: '-translate-x-16 translate-y-8  opacity-0'} z-[11] col-[6_/_span_3] row-[5_/_span_5] w-full self-end transition-all delay-500 duration-1000 sm:self-end md:col-[8_/_span_3] md:row-[4_/_span_4]"
+					: '-translate-x-16 translate-y-8  opacity-0'} z-11 col-[6_/_span_3] row-[5_/_span_5] w-full self-end transition-all delay-500 duration-1000 sm:self-end md:col-[8_/_span_3] md:row-[4_/_span_4]"
 			>
 				<img
 					width="198"

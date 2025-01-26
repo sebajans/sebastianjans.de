@@ -38,7 +38,7 @@
 			>
 				<div
 					id="rj-browser-window"
-					class=" z-10 flex aspect-[14/10] h-full w-fit flex-col rounded-md bg-primary-300/80 p-0.5 shadow-xl backdrop-blur-sm dark:bg-primary-600/60 md:rounded-lg md:p-1"
+					class=" z-10 flex aspect-14/10 h-full w-fit flex-col rounded-md bg-primary-300/80 p-0.5 shadow-xl backdrop-blur-xs dark:bg-primary-600/60 md:rounded-lg md:p-1"
 				>
 					<div class="flex w-full flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 						{#each Array(3) as _}
@@ -65,7 +65,7 @@
 			>
 				<div
 					id="rj-browser-2"
-					class=" flex aspect-[14/10] h-full w-fit flex-col self-center rounded-lg bg-primary-400/50 p-0.5 shadow-lg shadow-primary-900/50 backdrop-blur-sm dark:bg-primary-700/50 md:p-0.5"
+					class=" flex aspect-14/10 h-full w-fit flex-col self-center rounded-lg bg-primary-400/50 p-0.5 shadow-lg shadow-primary-900/50 backdrop-blur-xs dark:bg-primary-700/50 md:p-0.5"
 				>
 					<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 						{#each Array(3) as _}

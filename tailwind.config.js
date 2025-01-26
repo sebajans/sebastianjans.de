@@ -1,5 +1,4 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
-// const iOSHeight = require('@rvxlab/tailwind-plugin-ios-full-height');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 
@@ -200,17 +199,14 @@ const config = {
 		//   addVariant('child', '& > *');
 		//   addVariant('child-hover', '& > *:hover');
 		// },
-		// iOSHeight,
 		// require('autoprefixer'),
 		plugin(function ({ addUtilities }) {
 			addUtilities({
 				'.hide-scrollbar': {
 					/* IE and Edge */
 					'-ms-overflow-style': 'none',
-
 					/* Firefox */
 					'scrollbar-width': 'none',
-
 					/* Safari and Chrome */
 					'&::-webkit-scrollbar': {
 						display: 'none'

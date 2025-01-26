@@ -53,7 +53,7 @@
 									class="pointer-events-none z-10 flex aspect-[29/_21] w-full justify-center rounded-md border border-primary-200/90 bg-cover bg-center bg-no-repeat bg-origin-content dark:border-primary-50/5"
 								></div>
 								<div
-									class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-gradient-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
+									class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-linear-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
 								>
 									<h2 class="font-sans text-2xl text-primary-900 dark:text-primary-50">
 										<T keyName="achievement-title-{item.name}" defaultValue={item.name} />
@@ -89,10 +89,10 @@
 			</Carousel.Content>
 			<div class="mt-6 flex justify-between">
 				<Carousel.Previous
-					class="relative left-0 !translate-x-0 border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="relative left-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
 				/>
 				<Carousel.Next
-					class="relative right-0 !translate-x-0 border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="relative right-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
 				/>
 			</div>
 		</Carousel.Root>

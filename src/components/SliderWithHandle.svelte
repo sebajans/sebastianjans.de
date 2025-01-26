@@ -49,19 +49,19 @@
 			style="top: 0; left: calc({sliderOffset * 100}% - 1px);"
 			on:mousedown|preventDefault={handleStart}
 			on:touchstart|preventDefault={handleStart}
-		/>
+		></div>
 	</div>
 
 	<div class="user-select-none pointer-events-none absolute inset-y-0 left-0 h-full w-full">
 		<div
-			class="user-select-none pointer-events-none absolute inset-y-0 right-0 z-[1] h-full w-full"
+			class="user-select-none pointer-events-none absolute inset-y-0 right-0 z-1 h-full w-full"
 			style="clip-path: polygon(100% 0, {sliderOffset * 100}% 0, {sliderOffset *
 				100}% 100%, 100% 100% );"
 		>
 			<img class="h-full w-full object-cover object-left-top" src={lowerImage} alt="Lower" />
 		</div>
 		<div
-			class="user-select-none pointer-events-none absolute inset-y-0 left-0 z-[2] h-full w-full"
+			class="user-select-none pointer-events-none absolute inset-y-0 left-0 z-2 h-full w-full"
 			style="clip-path: polygon(0 0, {sliderOffset * 100}% 0, {sliderOffset * 100}% 100%, 0% 100%);"
 		>
 			<img class="h-full w-full object-cover object-left-top" src={upperImage} alt="Upper" />
@@ -70,6 +70,8 @@
 </div>
 
 <style>
+	@reference "tailwindcss"
+
 	.slider:after {
 		@apply absolute left-0 top-1/2 h-5 w-5 -translate-x-[9px] -translate-y-1/2 rotate-45 content-[""];
 	}

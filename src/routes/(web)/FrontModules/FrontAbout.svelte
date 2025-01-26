@@ -68,28 +68,28 @@
 					class="flex h-full min-h-[11rem] w-full snap-center flex-col items-end pl-6 pr-2 sm:basis-1/2 md:flex-row md:items-start"
 				>
 					<div
-						class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-gradient-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
+						class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-linear-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
 					>
 						<h2 class="font-sans text-2xl text-primary-900 dark:text-primary-50">
 							<T keyName="likes-title" defaultValue="Some things i like" />
 						</h2>
 						<ul class="space-y-3 pt-3">
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="likes-item-1" defaultValue="Orange juice" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="likes-item-2" defaultValue="Traveling" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="likes-item-3" defaultValue="Staying up late" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="likes-item-4" defaultValue="Cats" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="likes-item-5" defaultValue="Puzzles" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="likes-item-6" defaultValue="Gaming" />
 							</li>
 						</ul>
@@ -99,25 +99,25 @@
 					class="flex h-full min-h-[11rem] w-full snap-center flex-col items-end pl-6 pr-2 sm:basis-1/2 md:flex-row md:items-start"
 				>
 					<div
-						class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-gradient-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
+						class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-linear-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
 					>
 						<h2 class="font-sans text-2xl text-primary-900 dark:text-primary-50">
 							<T keyName="dislikes-title" defaultValue="Some things i dislike" />
 						</h2>
 						<ul class="space-y-3 pt-3">
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="dislikes-item-1" defaultValue="Coffee" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="dislikes-item-2" defaultValue="Public speaking" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="dislikes-item-3" defaultValue="Comic Sans MS" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="dislikes-item-4" defaultValue="Horror movies" />
 							</li>
-							<li class="list-li">
+							<li class="list-li px-2 py-0.5">
 								<T keyName="dislikes-item-5" defaultValue="Bad Communication" />
 							</li>
 						</ul>
@@ -126,10 +126,10 @@
 			</Carousel.Content>
 			<div class="flex translate-y-6 justify-between px-2 md:px-4">
 				<Carousel.Previous
-					class="relative left-0 !translate-x-0 border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="relative left-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
 				/>
 				<Carousel.Next
-					class="relative right-0 !translate-x-0 border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="relative right-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
 				/>
 			</div>
 		</Carousel.Root>
@@ -143,12 +143,10 @@
 </section>
 
 <style>
+@reference "tailwindcss"
 	.list-li::before {
 		content: '';
-		@apply mr-2 inline-block h-3 w-3 translate-y-px rounded-full border border-primary-900/5 bg-gradient-to-br from-primary-900/10 to-primary-900/5 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/25 dark:to-primary-50/10;
-	}
-
-	.list-li {
-		@apply px-2 py-0.5;
+		@apply inline-block translate-y-px rounded-full border  bg-linear-to-br mr-2 h-3 w-3 border-primary-900/5 from-primary-900/10 to-primary-900/5 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/25 dark:to-primary-50/10;
+		
 	}
 </style>

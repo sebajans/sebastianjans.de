@@ -45,7 +45,7 @@
 						{#each service.subServices as item}
 							<Carousel.Item class="w-full basis-1/2 dark:text-primary-50 sm:basis-1/3 ">
 								<div
-									class=" md:bg-transp arent !bg-primaryO riginal-200 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent !bg-opacity-0 px-2 py-2 backdrop-blur-md transition-all hover:border-primary-900/5 hover:!bg-opacity-100 dark:border-transparent dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:rounded-md md:border md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3 md:hover:bg-gradient-to-br"
+									class=" md:bg-transp arent bg-primaryO! riginal-200 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent bg-opacity-0! px-2 py-2 backdrop-blur-md transition-all hover:border-primary-900/5 hover:bg-opacity-100! dark:border-transparent dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:rounded-md md:border md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3 md:hover:bg-linear-to-br"
 								>
 									<ServiceComponent
 										name={item.component ? item.component : ''}

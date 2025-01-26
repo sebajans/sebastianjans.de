@@ -245,7 +245,7 @@
 					{#each service.subServices as item}
 						<Carousel.Item class="w-full basis-1/2 dark:text-primary-50 sm:basis-1/3 ">
 							<div
-								class="md:bg-transp arent !bg-primaryO riginal-200 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent !bg-opacity-0 px-2 py-2 backdrop-blur-md transition-all hover:border-primary-900/5 hover:!bg-opacity-100 dark:border-transparent dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:rounded-md md:border md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3 md:hover:bg-gradient-to-br"
+								class="md:bg-transp arent bg-primaryO! riginal-200 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent bg-opacity-0! px-2 py-2 backdrop-blur-md transition-all hover:border-primary-900/5 hover:bg-opacity-100! dark:border-transparent dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:rounded-md md:border md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3 md:hover:bg-linear-to-br"
 							>
 								<ServiceComponent
 									name={item.component ? item.component : ''}
@@ -273,7 +273,7 @@
         {fancyClass
 							? ' border-[8px] border-primary-200 dark:border-primary-700 '
 							: ' border border-transparent dark:border-transparent'} 
-         relative flex aspect-video h-full w-full flex-col items-start justify-start gap-4 border-primary-900/5 px-2 py-2 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:rounded-md md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
+         relative flex aspect-video h-full w-full flex-col items-start justify-start gap-4 border-primary-900/5 px-2 py-2 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:rounded-md md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
 					>
 						{#if activeIndex === 0}
 							{@render colors()}
@@ -300,7 +300,7 @@
 					<Button
 						variant="ghost"
 						size="lg"
-						class="h-10 w-fit border-primary-900/5 bg-gradient-to-br px-2 py-2 font-sans transition-all hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 hover:dark:bg-primary-50 hover:dark:text-primary-900 md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
+						class="h-10 w-fit border-primary-900/5 bg-linear-to-br px-2 py-2 font-sans transition-all hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900 md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
 						on:click={() => {
 							fancyClass = !fancyClass;
 						}}
@@ -310,7 +310,7 @@
 					<Button
 						variant="ghost"
 						size="icon"
-						class="border-primary-900/5 bg-gradient-to-br font-sans transition-all  hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 hover:dark:bg-primary-50 hover:dark:text-primary-900 md:from-primary-900/10 md:to-primary-900/5"
+						class="border-primary-900/5 bg-linear-to-br font-sans transition-all  hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900 md:from-primary-900/10 md:to-primary-900/5"
 						on:click={togglePause}
 					>
 						<span class="sr-only">

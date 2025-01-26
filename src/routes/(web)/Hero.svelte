@@ -113,7 +113,7 @@
 								</h2>
 							{/each}
 						</Typewriter>
-						<div class="!h-10">
+						<div class="h-10!">
 							{#key activeIndex}
 								<h3
 									class="mb-2 text-2xl font-light leading-relaxed dark:text-primary-200 sm:mb-4 sm:text-3xl"

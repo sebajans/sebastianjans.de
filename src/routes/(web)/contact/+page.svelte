@@ -131,7 +131,7 @@
 								name="remember"
 								type="checkbox"
 								value=""
-								class="focus:ring-3 mr-2 h-4 w-4 rounded border bg-primary-50 focus:!ring-primary-300 dark:border-primary-600 dark:bg-primary-700 dark:ring-offset-primary-800 dark:focus:!ring-primary-600"
+								class="focus:ring-3 mr-2 h-4 w-4 rounded border bg-primary-50 focus:ring-primary-300! dark:border-primary-600 dark:bg-primary-700 dark:ring-offset-primary-800 dark:focus:ring-primary-600!"
 								required
 							/>
 
@@ -159,7 +159,7 @@
 				</div>
 				<button
 					type="submit"
-					class="btn btn-highlight col-span-2 w-full rounded-md px-5 py-2.5 text-center font-sans text-base font-medium tracking-wide text-primary-900 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:text-primary-50 dark:focus:ring-primary-800 sm:col-span-1 sm:w-auto"
+					class="btn btn-highlight col-span-2 w-full rounded-md px-5 py-2.5 text-center font-sans text-base font-medium tracking-wide text-primary-900 focus:outline-hidden focus:ring-4 focus:ring-primary-300 dark:text-primary-50 dark:focus:ring-primary-800 sm:col-span-1 sm:w-auto"
 				>
 					<T keyName="Submit" defaultValue="Submit" />
 				</button>
@@ -172,7 +172,7 @@
 </div>
 
 <Popup
-	popupClass={'w-[90vw] md:w-[70vw] !pl-8  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
+	popupClass={'w-[90vw] md:w-[70vw] pl-8!  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
 	position={'top-[15vh] left-[5vw] md:left-[15vw]'}
 	bind:this={popup}
 >

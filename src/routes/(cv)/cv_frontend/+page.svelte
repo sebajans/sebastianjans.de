@@ -95,10 +95,10 @@
 <page class="section-to-print space-y-10">
 	<div
 		id="page-1"
-		class="flex !h-[29.7cm] !w-[21cm] justify-center bg-primary-50 p-[2cm] outline outline-1 outline-offset-1 dark:bg-primary-900"
+		class="flex h-[29.7cm]! w-[21cm]! justify-center bg-primary-50 p-[2cm] outline outline-1 outline-offset-1 dark:bg-primary-900"
 	>
 		<div
-			class=" grid h-[25.7cm] grid-cols-[10.5cm,_0.2cm,_5.5cm] grid-rows-12 gap-x-[0.4cm] gap-y-[0.5cm]"
+			class=" grid h-[25.7cm] grid-cols-[10.5cm__0.2cm__5.5cm] grid-rows-12 gap-x-[0.4cm] gap-y-[0.5cm]"
 		>
 			<div class="col-start-1 row-span-3 row-start-1 flex flex-col">
 				<h1 class="pb-3 text-right font-sans text-[2.5rem] font-normal uppercase leading-8">
@@ -120,7 +120,7 @@
 			</div>
 
 			<div class="col-start-1 row-span-4 row-start-4 border-t-2 border-primary-600 pt-4">
-				<h2 class="mt-0 !pt-0">
+				<h2 class="mt-0 pt-0!">
 					{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -146,8 +146,8 @@
 					{/each}
 				</div>
 			</div>
-			<div class="col-start-1 row-span-3 row-start-[8] border-t-2 border-primary-600 pt-4">
-				<h2 class="!pt-0">
+			<div class="col-start-1 row-span-3 row-start-8 border-t-2 border-primary-600 pt-4">
+				<h2 class="pt-0!">
 					{$t({ key: 'my-education', defaultValue: 'Education' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -177,7 +177,7 @@
 				class="col-span-1 col-start-2 row-span-4 h-[25.7cm] border-l-2 border-r-2 border-primary-500"
 			></div>
 			<div class="col-start-3 row-span-1 row-start-4 border-t-2 border-primary-600 pt-4">
-				<h2 class="!pt-0">
+				<h2 class="pt-0!">
 					<T keyName="personal-data" defaultValue="Personal Data" />
 				</h2>
 				<div
@@ -220,9 +220,9 @@
 				/>
 			</div>
 			<div
-				class="col-span-1 col-start-3 row-span-6 row-start-[8] border-t-2 border-primary-600 pt-4"
+				class="col-span-1 col-start-3 row-span-6 row-start-8 border-t-2 border-primary-600 pt-4"
 			>
-				<h2 class="!pt-0">
+				<h2 class="pt-0!">
 					{$t({ key: 'skills-title', defaultValue: 'Skills' })}
 				</h2>
 				{#each Object.entries(filteredSkillItems) as [categoryName, skills], i}
@@ -244,11 +244,11 @@
 	</div>
 	<div
 		id="page-2"
-		class="flex !h-[29.7cm] !w-[21cm] justify-center bg-primary-50 p-[2cm] outline outline-1 outline-offset-1 dark:bg-primary-900"
+		class="flex h-[29.7cm]! w-[21cm]! justify-center bg-primary-50 p-[2cm] outline outline-1 outline-offset-1 dark:bg-primary-900"
 	>
 		<div class=" grid max-h-[25.7cm] grid-cols-[10.5cm_0.2cm_5.5cm] gap-x-[0.4cm] gap-y-[0.5cm]">
 			<div class="col-span-1 row-span-1 row-start-1 flex flex-col">
-				<h2 class="!pt-0">
+				<h2 class="pt-0!">
 					{$t({ key: 'experience-abroad', defaultValue: 'experience abroad' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -279,7 +279,7 @@
 				</div>
 				<!-- </div>
       <div class="col-span-1 row-start-2 row-span-1 col-start-1"> -->
-				<h2 class="mt-8 !pt-0">
+				<h2 class="mt-8 pt-0!">
 					{$t({ key: 'my-certificate', defaultValue: 'Certificates' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -303,7 +303,7 @@
 				class="col-span-1 col-start-2 row-span-full row-start-1 h-[25.7cm] border-l-2 border-r-2 border-primary-500"
 			></div>
 			<div class="col-span-1 col-start-3 row-start-1">
-				<h2 class="!pt-0">
+				<h2 class="pt-0!">
 					{$t({
 						key: 'language-skills-title',
 						defaultValue: 'Language Skills'

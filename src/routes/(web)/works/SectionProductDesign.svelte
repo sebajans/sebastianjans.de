@@ -26,7 +26,7 @@
 <section
 	id="productdesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="relative flex h-screen w-full flex-col overflow-hidden bg-gradient-to-bl from-primary-500/50 h-screen-ios dark:from-primary-400/30"
+	class="relative flex h-screen w-full flex-col overflow-hidden bg-linear-to-bl from-primary-500/50 h-screen-ios dark:from-primary-400/30"
 >
 	<div class="mt-4 flex h-auto w-full flex-row md:mt-24">
 		<div class="h-auto w-[calc(100vw_-_56rem)]"></div>
@@ -65,7 +65,7 @@
 					<img
 						class="{moveToRight
 							? 'opacity-100 '
-							: 'translate-x-full opacity-0'} absolute z-10 m-4 h-auto w-full translate-y-3 rounded-xl bg-primary-300/50 object-contain pt-3 shadow-md shadow-primary-900/30 backdrop-blur-sm transition-all duration-500"
+							: 'translate-x-full opacity-0'} absolute z-10 m-4 h-auto w-full translate-y-3 rounded-xl bg-primary-300/50 object-contain pt-3 shadow-md shadow-primary-900/30 backdrop-blur-xs transition-all duration-500"
 						src="/productdesign/table-img-2.webp"
 						alt="bench"
 					/>

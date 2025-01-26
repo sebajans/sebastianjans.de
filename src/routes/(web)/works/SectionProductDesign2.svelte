@@ -173,7 +173,7 @@
 						></div>
 						<button
 							class="mt-3 {imageVisible
-								? 'bg-primary-900 !text-primary-50 dark:bg-primary-50 dark:!text-primary-900'
+								? 'bg-primary-900 text-primary-50! dark:bg-primary-50 dark:text-primary-900!'
 								: ''} standardButton mt-1 w-full px-3 py-1 uppercase transition-all duration-150 md:py-1.5"
 							onclick={showResult}
 						>
@@ -196,10 +196,8 @@
 </IntersectionObserver>
 
 <style>
-	.standardButton {
-		@apply box-border flex h-auto items-center justify-center rounded-lg border border-primary-900/10 bg-gradient-to-tr from-primary-900/30 to-primary-900/20 px-2 py-1.5 text-center font-light text-primary-900 transition-all duration-300 ease-in hover:cursor-pointer hover:border-primary-900/50 hover:from-primary-900/30 hover:to-primary-900/40 dark:border-primary-50/10 dark:from-primary-50/40 dark:to-primary-50/30 dark:text-primary-50 dark:hover:border-primary-50/50 dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 md:backdrop-blur-sm;
-	}
-
+	@reference "tailwindcss"
+	
 	input[type='radio']:checked + label {
 		@apply bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900;
 	}

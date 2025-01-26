@@ -56,7 +56,7 @@
 							$tolgee.changeLanguage(language.lang);
 						}
 					}}
-					class="duration-250 w-5 cursor-pointer px-0.5 uppercase transition-all hover:scale-110 hover:!text-primary-500 group-hover:text-primary-200 dark:text-primary-900 dark:hover:text-primary-400 dark:group-hover:text-primary-700"
+					class="duration-250 w-5 cursor-pointer px-0.5 uppercase transition-all hover:scale-110 hover:text-primary-500! group-hover:text-primary-200 dark:text-primary-900 dark:hover:text-primary-400 dark:group-hover:text-primary-700"
 				>
 					{language.lang}
 				</div>

@@ -58,12 +58,12 @@
 				</div>
 			{/each}
 			<div
-				class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center *:h-fit *:!rounded"
+				class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center *:h-fit *:rounded!"
 			>
 				{#if activeIndex === 0}
 					<div
 						in:scale={{ duration: 500 }}
-						class="relative -mb-4 flex aspect-[29.7/21] h-full w-48 flex-row items-start justify-start self-end border-primary-900/5 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+						class="relative -mb-4 flex aspect-[29.7/21] h-full w-48 flex-row items-start justify-start self-end border-primary-900/5 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 					>
 						<div
 							class="flex h-full w-full flex-col border-r border-primary-900/5 dark:border-primary-50/10"
@@ -78,61 +78,61 @@
 				{:else if activeIndex === 1}
 					<div
 						in:scale={{ duration: 500 }}
-						class="relative mt-4 flex aspect-[29.7/21] h-full w-72 flex-row items-start justify-start border-primary-900/5 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:rounded-md md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+						class="relative mt-4 flex aspect-[29.7/21] h-full w-72 flex-row items-start justify-start border-primary-900/5 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:rounded-md md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 					>
 						<div
 							class="flex h-full w-full flex-col gap-1.5 border-r border-primary-900/5 p-2 dark:border-primary-50/10 md:p-3"
 						>
 							<div
-								class="mb-1 h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2.5 md:w-14 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="mb-1 h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2.5 md:w-14 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div
-								class="h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-2/3 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-2/3 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div
-								class="h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-2/3 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-2/3 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div
-								class="h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-2/3 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-2/3 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div
-								class="h-full w-10 !rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="h-full w-10 rounded! border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 						</div>
 						<div
 							class="grid h-full w-full grid-cols-2 grid-rows-3 gap-1.5 border-primary-900/5 p-2 dark:border-primary-50/10 md:p-3"
 						>
 							<div
-								class="h-full w-10 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="h-full w-10 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div class="flex flex-col justify-center gap-1.5">
 								<div
-									class="h-2.5 w-2/3 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+									class="h-2.5 w-2/3 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 								></div>
 								<div
-									class="w-full rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-1/3 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+									class="w-full rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-1/3 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 								></div>
 							</div>
 							<div class="flex flex-col justify-center gap-1.5">
 								<div
-									class="h-2.5 w-2/3 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+									class="h-2.5 w-2/3 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 								></div>
 								<div
-									class="w-full rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-1/3 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+									class="w-full rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-1/3 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 								></div>
 							</div>
 							<div
-								class="h-full w-10 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="h-full w-10 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div
-								class="h-full w-10 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="h-full w-10 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-full md:w-full md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div class="flex flex-col justify-center gap-1.5">
 								<div
-									class="h-2.5 w-2/3 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+									class="h-2.5 w-2/3 rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 								></div>
 								<div
-									class="w-full rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-1/3 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+									class="w-full rounded-sm border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-1/3 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 								></div>
 							</div>
 						</div>
@@ -140,38 +140,38 @@
 				{:else if activeIndex === 2}
 					<div
 						in:scale={{ duration: 500 }}
-						class="relative flex aspect-[21/29.7] h-full w-24 flex-col items-start justify-start gap-1.5 self-end border-primary-900/5 px-2 py-2 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:rounded-md md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
+						class="relative flex aspect-[21/29.7] h-full w-24 flex-col items-start justify-start gap-1.5 self-end border-primary-900/5 px-2 py-2 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:rounded-md md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
 					>
 						<div
-							class="mb-1 h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2.5 md:w-14 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+							class="mb-1 h-2 w-10 rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2.5 md:w-14 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 						></div>
 						<div
-							class="h-2 w-full rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+							class="h-2 w-full rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 						></div>
 						<div
-							class="h-2 w-full rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+							class="h-2 w-full rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 						></div>
 						<div
-							class="h-2 w-full rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+							class="h-2 w-full rounded-lg border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 						></div>
 						<div
-							class="h-1/3 w-full !rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+							class="h-1/3 w-full rounded! border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 						></div>
 					</div>
 				{:else if activeIndex === 3}
 					<div
 						in:scale={{ duration: 500 }}
-						class="relative flex aspect-[15/10] h-full w-16 flex-row items-center justify-center gap-1 border-primary-900/5 px-1 py-1 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:rounded-md md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 md:px-1.5 md:py-1.5"
+						class="relative flex aspect-15/10 h-full w-16 flex-row items-center justify-center gap-1 border-primary-900/5 px-1 py-1 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:scale-150 md:rounded-md md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5 md:px-1.5 md:py-1.5"
 					>
 						<div
-							class="mb-0 h-2 w-2 shrink-0 rounded-full border border-primary-900/10 transition-all dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 md:h-4 md:w-4 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+							class="mb-0 h-2 w-2 shrink-0 rounded-full border border-primary-900/10 transition-all dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 md:h-4 md:w-4 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 						></div>
 						<div>
 							<div
-								class="mb-0 h-2 w-2 rounded-full border border-primary-900/10 transition-all dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-6 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="mb-0 h-2 w-2 rounded-full border border-primary-900/10 transition-all dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-6 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 							<div
-								class="mb-0 mt-1 h-2 w-2 rounded-full border border-primary-900/10 transition-all dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-6 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="mb-0 mt-1 h-2 w-2 rounded-full border border-primary-900/10 transition-all dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 md:h-2 md:w-6 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							></div>
 						</div>
 					</div>
@@ -179,7 +179,7 @@
 					<div class="group relative flex h-80 flex-row items-center justify-center">
 						<div class="h-fit max-h-80 w-auto">
 							<div
-								class="relative z-10 flex aspect-[9/20] w-36 flex-col overflow-clip rounded-md border border-primary-900/5 transition-all duration-1000 ease-[cubic-bezier(0.85,0,0.15,1)] dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+								class="relative z-10 flex aspect-9/20 w-36 flex-col overflow-clip rounded-md border border-primary-900/5 transition-all duration-1000 ease-[cubic-bezier(0.85,0,0.15,1)] dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 							>
 								<div
 									class="flex h-8 flex-row justify-around gap-2 border-b border-primary-900/10 dark:border-primary-50/20"
@@ -198,13 +198,13 @@
 										</div>
 										<div class="mb-4 flex flex-row gap-2 px-1">
 											<div
-												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 											></div>
 											<div
-												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 											></div>
 											<div
-												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 											></div>
 										</div>
 										<div
@@ -217,13 +217,13 @@
 										</div>
 										<div class="mb-4 flex flex-row gap-2 px-1">
 											<div
-												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 											></div>
 											<div
-												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 											></div>
 											<div
-												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+												class="aspect-square h-4 w-4 rounded border border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 											></div>
 										</div>
 									</div>
@@ -232,19 +232,19 @@
 									class="flex flex-row justify-around gap-2 border-t border-primary-900/10 px-1 py-2 dark:border-primary-50/20"
 								>
 									<div
-										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5
+										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5
                     "
 									></div>
 									<div
-										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5
+										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5
                     "
 									></div>
 									<div
-										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5
+										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5
                     "
 									></div>
 									<div
-										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5
+										class="mb-0 h-4 w-4 rounded border border-primary-900/10 transition-all dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 md:h-5 md:w-5 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5
                     "
 									></div>
 								</div>

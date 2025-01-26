@@ -36,7 +36,7 @@
 		class=" viewport relative mx-auto min-h-[100svh] w-screen bg-primary-50 pt-24 transition-colors duration-300 min-h-screen-ios dark:bg-primary-900 md:pt-28"
 	>
 		<h1
-			class="absolute left-24 top-5 z-[3] py-0 pl-0 text-left font-sans text-3xl font-bold transition-all duration-300 md:left-44 md:top-12 md:py-3 md:text-4xl"
+			class="absolute left-24 top-5 z-3 py-0 pl-0 text-left font-sans text-3xl font-bold transition-all duration-300 md:left-44 md:top-12 md:py-3 md:text-4xl"
 		>
 			{$pageTitle}
 		</h1>

@@ -24,7 +24,7 @@
 </script>
 
 <!-- style="background:radial-gradient(at left bottom, var(--tw-gradient-from) 0%, transparent 30%);"
-bg-gradient-to-bl from-primary-500/50 -->
+bg-linear-to-bl from-primary-500/50 -->
 
 <section id="productdesign" class="relative flex max-h-screen flex-col justify-center px-4">
 	<div
@@ -67,7 +67,7 @@ bg-gradient-to-bl from-primary-500/50 -->
 					bind:this={element2}
 					class=" {intersecting2 ? '' : '-translate-x-1/2 opacity-0'}
 				col-span-3 col-start-1 row-span-3 row-start-3 h-full w-full
-			overflow-hidden rounded-md bg-gradient-to-tr from-primary-500 to-primary-500/20 transition-all
+			overflow-hidden rounded-md bg-linear-to-tr from-primary-500 to-primary-500/20 transition-all
 			 delay-150 duration-500 dark:to-primary-100/70 md:col-span-4 md:row-span-6"
 				>
 					<img
@@ -115,7 +115,7 @@ bg-gradient-to-bl from-primary-500/50 -->
 					class="{intersecting4
 						? ''
 						: 'translate-y-1/2 opacity-0'} col-span-5 col-start-5 row-span-3 row-start-6 aspect-auto h-full
-			overflow-hidden rounded-md bg-gradient-to-tl from-primary-500 to-primary-500/20 transition-all delay-150 duration-500 dark:to-primary-100/70 md:col-span-5 md:col-start-5 md:row-span-4 md:row-start-3"
+			overflow-hidden rounded-md bg-linear-to-tl from-primary-500 to-primary-500/20 transition-all delay-150 duration-500 dark:to-primary-100/70 md:col-span-5 md:col-start-5 md:row-span-4 md:row-start-3"
 				>
 					<img
 						width="282"
@@ -138,7 +138,7 @@ bg-gradient-to-bl from-primary-500/50 -->
 					class="{intersecting5
 						? ''
 						: 'translate-y-1/2 opacity-0'} col-span-4 col-start-1 row-span-3 row-start-6 h-full w-full
-			overflow-hidden rounded-md bg-gradient-to-tr from-primary-500 to-primary-500/20 transition-all delay-150 duration-500
+			overflow-hidden rounded-md bg-linear-to-tr from-primary-500 to-primary-500/20 transition-all delay-150 duration-500
 			 dark:to-primary-100/70 md:col-span-3 md:col-start-5 md:row-span-3 md:row-start-7"
 				>
 					<img
@@ -160,7 +160,7 @@ bg-gradient-to-bl from-primary-500/50 -->
 					bind:this={element6}
 					class="{intersecting6
 						? ''
-						: 'translate-y-1/2 opacity-0'} relative col-span-4 col-start-6 row-span-4 row-start-[9] h-full
+						: 'translate-y-1/2 opacity-0'} relative col-span-4 col-start-6 row-span-4 row-start-9 h-full
 			 w-full rounded-md transition-all delay-150 duration-500 md:col-span-3 md:col-start-10 md:row-span-4
 			  md:row-start-3"
 				>
@@ -195,8 +195,8 @@ bg-gradient-to-bl from-primary-500/50 -->
 					id="bottom-right"
 					class="{intersecting7
 						? ''
-						: 'translate-y-1/2 opacity-0'} col-span-5 col-start-1 row-span-4 row-start-[9] h-full w-full
-			overflow-hidden rounded-md bg-gradient-to-br from-primary-500 to-primary-500/20 transition-all delay-150 duration-500 dark:to-primary-100/70 md:col-span-5 md:col-start-8 md:row-span-3 md:row-start-7"
+						: 'translate-y-1/2 opacity-0'} col-span-5 col-start-1 row-span-4 row-start-9 h-full w-full
+			overflow-hidden rounded-md bg-linear-to-br from-primary-500 to-primary-500/20 transition-all delay-150 duration-500 dark:to-primary-100/70 md:col-span-5 md:col-start-8 md:row-span-3 md:row-start-7"
 				>
 					<img
 						width="234"

@@ -44,13 +44,13 @@
 						class="relative flex aspect-square h-full w-full items-center justify-center p-1 transition-all dark:text-primary-50"
 					>
 						<span
-							class="absolute inset-0 z-10 flex items-center justify-center overflow-clip rounded-full border border-primary-900/5 text-center dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5"
+							class="absolute inset-0 z-10 flex items-center justify-center overflow-clip rounded-full border border-primary-900/5 text-center dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5"
 						>
 							<T keyName="span-{result.name}" defaultValue={result.name} />
 						</span>
 						<svg class="aspect-square w-full max-w-40 -rotate-90" viewBox="0 0 100 100">
 							<circle
-								class="fill-none stroke-primary-600 stroke-[4] dark:stroke-primary-500"
+								class="fill-none stroke-primary-600 stroke-4 dark:stroke-primary-500"
 								cx="50"
 								cy="50"
 								r="48"

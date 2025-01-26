@@ -27,7 +27,7 @@
 </div>
 
 <!-- <Popup
-	popupClass={'w-[90vw] md:w-[70vw] !pl-8  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
+	popupClass={'w-[90vw] md:w-[70vw] pl-8!  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
 	position={'top-[15vh] left-[5vw] md:left-[15vw]'}
 	bind:this={popup}
 >

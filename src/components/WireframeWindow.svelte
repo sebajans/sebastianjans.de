@@ -14,7 +14,7 @@
 	outerClass="{show
 		? ''
 		: 'opacity-0'} {className} after:right-0 before:top-0 after:top-0 after:h-[calc(100%_-_0px)] after:z-10 before:z-10 
-					aspect-[14/10] bg-white dark:bg-gray-800 transition-all duration-500 flex mx-auto justify-end w-fit h-full "
+					aspect-14/10 bg-white dark:bg-gray-800 transition-all duration-500 flex mx-auto justify-end w-fit h-full "
 	innerClass="before:left-0 after:z-10 before:bottom-0.5 before:z-10 after:bottom-0.5 h-full w-full "
 >
 	<div

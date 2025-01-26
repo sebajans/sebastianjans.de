@@ -51,7 +51,7 @@
 						</span>
 						<svg class="aspect-square w-full max-w-40 -rotate-90" viewBox="0 0 100 100">
 							<circle
-								class="fill-none stroke-primary-600 stroke-[4] dark:stroke-primary-400"
+								class="fill-none stroke-primary-600 stroke-4 dark:stroke-primary-400"
 								cx="50"
 								cy="50"
 								r="48"

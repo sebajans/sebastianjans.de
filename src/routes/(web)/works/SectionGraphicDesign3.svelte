@@ -134,7 +134,7 @@
 						/>
 						<div
 							style="transform: translateZ(-10px) translateY(200px) rotateY(-5deg) rotateX(90deg)"
-							class="absolute z-0 h-8 w-full bg-gradient-to-t from-primary-800/40 via-primary-800/90 to-primary-800/40 blur-[6px]"
+							class="absolute z-0 h-8 w-full bg-linear-to-t from-primary-800/40 via-primary-800/90 to-primary-800/40 blur-[6px]"
 						></div>
 					</div>
 				{/if}
@@ -164,8 +164,3 @@
 	</section>
 </IntersectionObserver>
 
-<style>
-	.standardButton {
-		@apply box-border flex h-auto items-center justify-center rounded-lg border border-primary-900/10 bg-gradient-to-tr from-primary-900/30 to-primary-900/20 px-3 py-3.5 text-center font-light text-primary-900 transition-all duration-300 ease-in hover:border-primary-900/50 hover:from-primary-900/30 hover:to-primary-900/40 dark:border-primary-50/10 dark:from-primary-50/40 dark:to-primary-50/30 dark:text-primary-50 dark:hover:border-primary-50/50 dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 md:backdrop-blur-sm;
-	}
-</style>

@@ -43,10 +43,10 @@
 			<ul
 				class="{intersecting
 					? ''
-					: 'translate-y-1/2 opacity-0'} hs h-full snap-x snap-mandatory items-start overflow-x-auto border-primary-900/5 py-2 backdrop-blur-md transition-all delay-300 duration-700 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 md:overflow-y-clip md:rounded-md md:border md:bg-gradient-to-br md:from-primary-900/10 md:to-primary-900/5 md:py-3"
+					: 'translate-y-1/2 opacity-0'} hs h-full snap-x snap-mandatory items-start overflow-x-auto border-primary-900/5 py-2 backdrop-blur-md transition-all delay-300 duration-700 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 md:overflow-y-clip md:rounded-md md:border md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5 md:py-3"
 			>
 				<li
-					class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr,_3fr]"
+					class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 				>
 					<enhanced:img
 						alt="website-RR-front-mobile"
@@ -82,7 +82,7 @@
 				>
 					<li
 						bind:this={elementPlay}
-						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr,_3fr]"
+						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 					>
 						<enhanced:img
 							alt="website-RR-play-mobile"
@@ -123,7 +123,7 @@
 				>
 					<li
 						bind:this={elementLevel}
-						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr,_3fr]"
+						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 					>
 						<enhanced:img
 							alt="website-RR-level-mobile"
@@ -164,7 +164,7 @@
 				>
 					<li
 						bind:this={elementSettings}
-						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr,_3fr]"
+						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 					>
 						<enhanced:img
 							alt="website-RR-settings-mobile"

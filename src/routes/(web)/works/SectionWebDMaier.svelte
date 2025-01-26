@@ -48,7 +48,7 @@
 			>
 				<div
 					id="kb10-browser-front"
-					class="flex aspect-[13/10] h-full w-fit flex-col self-center rounded-lg bg-primary-400/50 p-0.5 shadow-md shadow-primary-900/30 backdrop-blur-sm dark:bg-primary-700/50 md:p-0.5"
+					class="flex aspect-13/10 h-full w-fit flex-col self-center rounded-lg bg-primary-400/50 p-0.5 shadow-md shadow-primary-900/30 backdrop-blur-xs dark:bg-primary-700/50 md:p-0.5"
 				>
 					<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 						{#each Array(3) as _}
@@ -69,12 +69,12 @@
 			<div
 				class="{intersecting
 					? ''
-					: 'translate-x-1/2 opacity-0'} z-[11] col-[4_/_span_4] row-[4_/_span_6] flex h-full w-full justify-end transition-all delay-700 duration-500 md:col-[7_/_span_3] md:row-[2_/_span_9] md:justify-start"
+					: 'translate-x-1/2 opacity-0'} z-11 col-[4_/_span_4] row-[4_/_span_6] flex h-full w-full justify-end transition-all delay-700 duration-500 md:col-[7_/_span_3] md:row-[2_/_span_9] md:justify-start"
 			>
 				<div
 					id="kb10-browser-phone"
 					class="relative z-10 aspect-[10/19.6] h-full max-h-[40rem] w-auto self-center overflow-hidden
-				rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:aspect-[10/19.6] md:rounded-[8%_/_5%]"
+				rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-xs dark:bg-primary-700/60 md:aspect-[10/19.6] md:rounded-[8%_/_5%]"
 				>
 					<img
 						width="320"
@@ -105,7 +105,7 @@
 				<div
 					id="kb10-browser-phone-2"
 					class="relative z-10 aspect-[10/19.6] h-full max-h-[40rem] w-auto self-center overflow-hidden
-				rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-sm dark:bg-primary-700/60 md:aspect-[10/19.6] md:rounded-[8%_/_5%]"
+				rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-xs dark:bg-primary-700/60 md:aspect-[10/19.6] md:rounded-[8%_/_5%]"
 				>
 					<img
 						width="320"
