@@ -4,12 +4,12 @@
 	import * as Three from 'three';
 	import * as Utils from 'three/src/math/MathUtils';
 	import * as Extra from '@threlte/extras';
-	import { spring } from 'svelte/motion';
+	import { Spring } from 'svelte/motion';
 
 	const gridHelper = new Three.GridHelper(200, 20);
 	const axesHelper = new Three.AxesHelper(10);
 
-	const scale = spring(1);
+	const scale = new Spring(1);
 </script>
 
 <svelte:head>
@@ -20,7 +20,8 @@
 	/>
 </svelte:head>
 
-<Threlte.Canvas>
+<div>test</div>
+<!-- <Threlte.Canvas>
 	<Threlte.Object3DInstance object={gridHelper} />
 	<Threlte.Object3DInstance object={axesHelper} />
 
@@ -53,21 +54,21 @@
 			url="productdesign/catEntranceAssembly.glb"
 		/>
 	</Threlte.Group>
+</Threlte.Canvas> -->
 
-	<!-- <Threlte.Mesh
-	geometry={new Three.SphereGeometry(4, 64, 64)}
-	material={new Three.MeshStandardMaterial({color: 'white'})}
-		position={{ y: 4}}
-		receiveShadow
-		castShadow
-	/>
-	<Threlte.Mesh
-	geometry={new Three.PlaneGeometry(20, 20)}
-	material={new Three.MeshStandardMaterial({
-		color: 'white',
-		side: Three.DoubleSide,
-		})}
-		rotation={{ x: Utils.DEG2RAD * 90}}
-		receiveShadow
-	/> -->
-</Threlte.Canvas>
+<!-- <Threlte.Mesh
+geometry={new Three.SphereGeometry(4, 64, 64)}
+material={new Three.MeshStandardMaterial({color: 'white'})}
+	position={{ y: 4}}
+	receiveShadow
+	castShadow
+/>
+<Threlte.Mesh
+geometry={new Three.PlaneGeometry(20, 20)}
+material={new Three.MeshStandardMaterial({
+	color: 'white',
+	side: Three.DoubleSide,
+	})}
+	rotation={{ x: Utils.DEG2RAD * 90}}
+	receiveShadow
+/> -->
