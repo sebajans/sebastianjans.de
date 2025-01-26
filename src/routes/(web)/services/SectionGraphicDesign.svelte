@@ -8,17 +8,15 @@
 
 	let activeIndex: number = $state(3);
 
-	// let paused: boolean = $state(true);
-
 	let interval = 4000;
 
-	// $effect(() => {
-	// 	const intervalId = setInterval(() => {
-	// 		activeIndex = (activeIndex + 1) % 5;
+	$effect(() => {
+		const intervalId = setInterval(() => {
+			activeIndex = (activeIndex + 1) % 5;
 
-	// 	}, interval);
-	// 	return () => clearInterval(intervalId);
-	// });
+		}, interval);
+		return () => clearInterval(intervalId);
+	});
 </script>
 
 <section

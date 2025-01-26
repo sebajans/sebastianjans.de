@@ -13,9 +13,8 @@
 	{show}
 	outerClass="{show
 		? ''
-		: 'opacity-0'} {className} after:right-0 before:top-0 after:top-0 after:h-[calc(100%_-_0px)] after:z-10 before:z-10 
-					aspect-14/10 bg-white dark:bg-gray-800 transition-all duration-500 flex mx-auto justify-end w-fit h-full "
-	innerClass="before:left-0 after:z-10 before:bottom-0.5 before:z-10 after:bottom-0.5 h-full w-full "
+		: 'opacity-0'} {className}
+					aspect-14/10 bg-primary-100 dark:bg-primary-800 transition-all duration-500 flex mx-auto justify-end w-fit h-full "
 >
 	<div
 		class="box relative z-10 flex w-full before:top-0 before:right-0 after:right-0 after:bottom-0"
@@ -25,16 +24,16 @@
 		>
 			<div class="flex flex-row space-x-1 md:space-x-2">
 				{#each Array(3) as _}
-					<div class=" h-2 w-2 border border-teal-950 md:h-3.5 md:w-3.5 dark:border-white" />
+					<div class=" h-2 w-2 border dark:bg-primary-50/20 bg-primary-900/20 border-primary-900/30 dark:border-primary-50/50 rounded-lg md:h-3.5 md:w-3.5" ></div>
 				{/each}
 			</div>
 			{#if url}
 				<span
-					class=" mb-0 h-2 w-full border border-teal-950 px-2 pt-px text-center text-[0.6rem] leading-[0.8] md:h-3.5 dark:border-white"
+					class=" mb-0 h-2 w-full border dark:bg-primary-50/20 bg-primary-900/20 border-primary-900/30 dark:border-primary-50/50 rounded-lg px-2 pt-px text-center text-[0.6rem] leading-[0.8] md:h-3.5"
 				>
 					{url}
 				</span>
-				<div class=" mb-0 h-2 w-8 md:h-3.5" />
+				<div class=" mb-0 h-2 w-8 md:h-3.5" ></div>
 			{/if}
 		</div>
 	</div>

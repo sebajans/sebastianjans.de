@@ -114,8 +114,7 @@
 				{#if project.colors}
 					<Box
 						show={project !== undefined}
-						outerClass="relative p-4 col-span-2 row-span-1 items-center "
-						innerClass="flex flex-row justify-center h-full w-full"
+						outerClass="relative p-4 col-span-2 row-span-1 flex-row items-center "
 					>
 						<div class="flex h-full w-full items-center">
 							<h2>
@@ -195,8 +194,7 @@
 				{#if project.comparisonImage}
 					<Box
 						show={project !== undefined}
-						outerClass="relative col-span-2  overflow-hidden md:col-span-3 md:row-span-2 row-span-1 items-center flex"
-						innerClass="flex w-full h-full p-px pb-0.5 overflow-hidden"
+						outerClass="relative col-span-2 flex w-full h-full p-px pb-0.5 overflow-hidden md:col-span-3 md:row-span-2 row-span-1 items-center flex"
 					>
 						<SliderWithHandle
 							lowerImage={project.comparisonImage[0].lowerImage}

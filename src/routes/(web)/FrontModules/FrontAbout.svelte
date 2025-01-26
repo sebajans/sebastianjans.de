@@ -53,7 +53,7 @@
 						{$t({
 							key: 'front-about-text-2',
 							defaultValue:
-								'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
+								'I moved to Spain and started studying Design Engineering ^at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
 						})}
 					</p>
 					<p class="mb-2 text-justify md:w-full">
