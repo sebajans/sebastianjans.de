@@ -1,5 +1,5 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
-const iOSHeight = require('@rvxlab/tailwind-plugin-ios-full-height');
+// const iOSHeight = require('@rvxlab/tailwind-plugin-ios-full-height');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 
@@ -200,7 +200,7 @@ const config = {
 		//   addVariant('child', '& > *');
 		//   addVariant('child-hover', '& > *:hover');
 		// },
-		iOSHeight,
+		// iOSHeight,
 		// require('autoprefixer'),
 		plugin(function ({ addUtilities }) {
 			addUtilities({
