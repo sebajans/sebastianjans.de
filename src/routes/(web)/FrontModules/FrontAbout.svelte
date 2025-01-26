@@ -41,7 +41,7 @@
 						class="float-right mb-4 ml-4 aspect-square h-full max-h-[12rem] w-1/3 max-w-[12rem] rounded-xl object-cover object-top md:max-h-[16rem] md:w-1/5 md:max-w-[16rem] md:grow-0"
 					/>
 
-					<p class="mb-2 text-justify md:w-full md:text-xl">
+					<p class="mb-2 text-justify md:w-full">
 						{$t({
 							key: 'front-about-text',
 							defaultValue:
@@ -49,14 +49,14 @@
 						})}
 					</p>
 
-					<p class="mb-2 text-justify md:w-full md:text-xl">
+					<p class="mb-2 text-justify md:w-full">
 						{$t({
 							key: 'front-about-text-2',
 							defaultValue:
 								'I moved to Spain and started studying Design Engineering at the Universitat Politécnica de Valencia and am now working on my Master Thesis.'
 						})}
 					</p>
-					<p class="mb-2 text-justify md:w-full md:text-xl">
+					<p class="mb-2 text-justify md:w-full">
 						{$t({
 							key: 'front-about-text-3',
 							defaultValue:

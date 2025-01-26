@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { preventDefault } from 'svelte/legacy';
 
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import Button from '$lib/components/ui/button/button.svelte';
@@ -71,9 +70,16 @@
 
 	let showWebServices = $state(true);
 
-	$effect(() => {
-		console.log('intersectingWeb', intersectingWeb);
-	});
+	// $effect(() => {
+	// 	console.log('intersectingWeb', intersectingWeb);
+	// });
+
+	function preventDefault(fn: (event: Event) => void) {
+		return function (this: HTMLElement, event: Event) {
+			event.preventDefault();
+			fn.call(this, event);
+		};
+	}
 </script>
 
 <svelte:head>
@@ -113,7 +119,7 @@
 						}, 200);
 					})}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
-					class="dark:text-primary-50 ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 md:py-4 {section.color} "
+					class="dark:text-primary-50 ml-auto rounded-lg py-2 pl-3 hover:cursor-pointer text-left transition-all duration-150 md:py-4 {section.color} "
 				>
 					<T keyName="works-{section.id}" defaultValue={section.text} />
 				</button>

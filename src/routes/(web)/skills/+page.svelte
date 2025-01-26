@@ -1,18 +1,18 @@
-<!-- @migration-task Error while migrating Svelte code: Expected token ;
-https://svelte.dev/e/expected_token -->
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Button from '@/components/ui/button/button.svelte';
 	import { fly } from 'svelte/transition';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { getTranslate } from '@tolgee/svelte';
-	import { T } from '@tolgee/svelte'; // change import statement
+	import { T } from '@tolgee/svelte';
+	import Popup from '$components/Popup.svelte';
 
 	import { skillItems } from '$lib/lists/skillItems';
 	import { afterNavigate } from '$app/navigation';
+
 	const { t } = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
-	import Popup from '$components/Popup.svelte';
 
 	mainClass.set('pb-14 my-auto');
 
@@ -131,13 +131,6 @@ https://svelte.dev/e/expected_token -->
 								{skill.name}
 							</span>
 						</div>
-						<!-- <div class="flex flex-row items-center h-7">
-							<span
-								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
-							>
-								{skill.progress}
-							</span>
-						</div> -->
 					{/each}
 				</div>
 			</div>
@@ -190,8 +183,8 @@ https://svelte.dev/e/expected_token -->
 				defaultValue="If you're still hesitant, feel free to give me a brief call, and we can chat about your business!"
 			/>
 		</p>
-		<a class="btn standardButton w-full whitespace-nowrap md:w-fit" href="/contact">
+		<Button class="btn w-full whitespace-nowrap md:w-fit" href="/contact">
 			<T keyName="skills-convince-button" defaultValue="Contact me" />
-		</a>
+		</Button>
 	</div>
 </div>
