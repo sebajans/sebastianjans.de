@@ -55,14 +55,14 @@
 <IntersectionObserver once threshold={0.5} {element} bind:intersecting>
 	<section bind:this={element} id="productdesign" class="relative flex flex-col">
 		<div
-			class="my-auto flex h-works max-h-[56rem] w-full flex-row-reverse items-center justify-center px-4 md:h-worksmd md:flex-row"
+			class="h-works md:h-worksmd my-auto flex max-h-[56rem] w-full flex-row-reverse items-center justify-center px-4 md:flex-row"
 		>
 			<div
 				class="flex h-full w-full max-w-4xl flex-col items-center justify-center space-y-4 sm:w-full md:space-y-8"
 			>
 				<h1
 					class="	{intersecting ? '' : 'translate-y-2/3 opacity-0'} text-center font-sans
-				text-2xl font-bold transition-all duration-500 md:pb-4 md:pl-0 md:pt-3 md:text-left md:text-4xl"
+				text-2xl font-bold transition-all duration-500 md:pt-3 md:pb-4 md:pl-0 md:text-left md:text-4xl"
 				>
 					<T keyName="Cat-Bench" defaultValue="Cat Bench" />
 				</h1>
@@ -74,8 +74,8 @@
 						<div
 							class=" 
 					{imageVisible ? 'translate-x-[74px] opacity-0' : ''}
-					 relative
-					h-[216px] w-auto translate-y-[4px] dark:text-primary-100 md:my-10"
+					 dark:text-primary-100
+					relative h-[216px] w-auto translate-y-[4px] md:my-10"
 							style="perspective: 25rem; perspective-origin: 50% 50%; transition-property: opacity, transform; 
 					{imageVisible
 								? 'transition-duration: 1s, 500ms; transition-delay: 800ms, 0ms;'
@@ -131,7 +131,7 @@
 						</div>
 						{#if imageVisible}
 							<div
-								class="absolute top-1/2 flex h-[240px] w-[366px] -translate-y-1/2 items-center overflow-hidden opacity-100 dark:opacity-70 md:left-1/2 md:-translate-x-1/2"
+								class="absolute top-1/2 flex h-[240px] w-[366px] -translate-y-1/2 items-center overflow-hidden opacity-100 md:left-1/2 md:-translate-x-1/2 dark:opacity-70"
 							>
 								<img
 									width="366"
@@ -169,7 +169,7 @@
 							</div>
 						{/each}
 						<div
-							class="mx-auto mt-2 h-px w-full bg-primary-900/50 dark:bg-primary-50/50 md:mt-1"
+							class="bg-primary-900/50 dark:bg-primary-50/50 mx-auto mt-2 h-px w-full md:mt-1"
 						></div>
 						<button
 							class="mt-3 {imageVisible

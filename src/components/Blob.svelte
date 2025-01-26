@@ -42,21 +42,21 @@
 	style:left={`${coords.current.x}px`}
 	style:top={`${coords.current.y}px`}
 	style:transform={`scale(${scale.current}) translate(-50%,-50%)`}
-	class="bg-linear-to-tl from-primary-100/40 to-primary-800/40 transition-[filter]
+	class="from-primary-100/40 to-primary-800/40 bg-linear-to-tl transition-[filter]
   {smaller ? 'brightness-125' : ''}
-  fixed z-1 hidden aspect-square h-64 origin-top-left -translate-x-1/2 -translate-y-1/2 animate-blobpulse rounded-full sm:block"
+  animate-blobpulse fixed z-1 hidden aspect-square h-64 origin-top-left -translate-x-1/2 -translate-y-1/2 rounded-full sm:block"
 ></div>
 <div
 	style:left={`${coords.current.x}px`}
 	style:bottom={`${coords.current.y}px`}
 	style:transform={`scale(${scale.current}) translate(150%,-50%)`}
-	class="fixed z-2 hidden aspect-square h-32 origin-top -translate-x-1/2 -translate-y-1/2 animate-blobpulsesmall rounded-full bg-linear-to-tl from-primary-200/10 to-primary-400/10 sm:block"
+	class="animate-blobpulsesmall from-primary-200/10 to-primary-400/10 fixed z-2 hidden aspect-square h-32 origin-top -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-tl sm:block"
 ></div>
 <div
 	style:right={`${coords.current.x}px`}
 	style:top={`${coords.current.y}px`}
 	style:transform={`scale(${scale.current}) translate(-150%,-50%)`}
-	class="fixed z-2 hidden aspect-square h-40 origin-top -translate-x-1/2 -translate-y-1/2 animate-blobpulsesmall rounded-full bg-linear-to-tl from-primary-200/20 to-primary-400/20 sm:block"
+	class="animate-blobpulsesmall from-primary-200/20 to-primary-400/20 fixed z-2 hidden aspect-square h-40 origin-top -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-tl sm:block"
 ></div>
 <!-- <div
 	style:right={`${$position.x}px`}

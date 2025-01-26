@@ -32,7 +32,7 @@
 
 <!-- https://www.staticforms.xyz -->
 <div
-	class="mx-auto my-auto flex max-w-4xl flex-col items-center justify-center px-4 hide-scrollbar"
+	class="hide-scrollbar mx-auto my-auto flex max-w-4xl flex-col items-center justify-center px-4"
 >
 	<div class="grid w-full gap-3 pb-3 sm:grid-cols-2 md:gap-6">
 		<p class="w-full text-justify md:pb-4">
@@ -43,7 +43,7 @@
 			inquiries. "
 			/>
 		</p>
-		<div class="flex h-fit flex-row flex-wrap dark:text-primary-100">
+		<div class="dark:text-primary-100 flex h-fit flex-row flex-wrap">
 			<span class="w-1/4 font-sans font-semibold uppercase"
 				><T keyName="my-phone" defaultValue="Phone: " /></span
 			>
@@ -125,23 +125,23 @@
 					<div class="flex h-5 items-center">
 						<label
 							for="remember"
-							class="w-full text-sm font-medium text-primary-900 dark:text-primary-50"
+							class="text-primary-900 dark:text-primary-50 w-full text-sm font-medium"
 						>
 							<input
 								name="remember"
 								type="checkbox"
 								value=""
-								class="focus:ring-3 mr-2 h-4 w-4 rounded border bg-primary-50 focus:ring-primary-300! dark:border-primary-600 dark:bg-primary-700 dark:ring-offset-primary-800 dark:focus:ring-primary-600!"
+								class="bg-primary-50 focus:ring-primary-300! dark:border-primary-600 dark:bg-primary-700 dark:ring-offset-primary-800 dark:focus:ring-primary-600! mr-2 h-4 w-4 rounded border focus:ring-3"
 								required
 							/>
 
 							<T keyName="i-agree" defaultValue="I agree with the " /><button
 								onclick={openPopup}
-								class="group font-bold text-primary-500 hover:text-primary-400 dark:text-primary-400 dark:hover:text-primary-600"
+								class="group text-primary-500 hover:text-primary-400 dark:text-primary-400 dark:hover:text-primary-600 font-bold"
 								><T keyName="terms-and-conditions" defaultValue="terms and conditions." />
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									class="duration-250 -0.5 inline h-3.5 w-3.5 align-baseline transition before:p-1"
+									class="-0.5 inline h-3.5 w-3.5 align-baseline transition duration-250 before:p-1"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -159,7 +159,7 @@
 				</div>
 				<button
 					type="submit"
-					class="btn btn-highlight col-span-2 w-full rounded-md px-5 py-2.5 text-center font-sans text-base font-medium tracking-wide text-primary-900 focus:outline-hidden focus:ring-4 focus:ring-primary-300 dark:text-primary-50 dark:focus:ring-primary-800 sm:col-span-1 sm:w-auto"
+					class="btn btn-highlight text-primary-900 focus:ring-primary-300 dark:text-primary-50 dark:focus:ring-primary-800 col-span-2 w-full rounded-md px-5 py-2.5 text-center font-sans text-base font-medium tracking-wide focus:ring-4 focus:outline-hidden sm:col-span-1 sm:w-auto"
 				>
 					<T keyName="Submit" defaultValue="Submit" />
 				</button>

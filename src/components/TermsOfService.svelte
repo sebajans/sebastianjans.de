@@ -1,4 +1,4 @@
-<div class="z-40 w-full space-y-2 py-10 container max-w-4xl text-justify">
+<div class="z-40 container w-full max-w-4xl space-y-2 py-10 text-justify">
 	<h1><strong>Terms and Conditions</strong></h1>
 	<p class="">
 		Welcome to Sebastian Jans Design!<br />

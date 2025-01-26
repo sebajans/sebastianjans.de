@@ -18,19 +18,19 @@
 	innerClass="before:left-0 after:z-10 before:bottom-0.5 before:z-10 after:bottom-0.5 h-full w-full "
 >
 	<div
-		class="box relative z-10 flex w-full before:right-0 before:top-0 after:bottom-0 after:right-0"
+		class="box relative z-10 flex w-full before:top-0 before:right-0 after:right-0 after:bottom-0"
 	>
 		<div
 			class="flex w-full flex-row justify-between space-x-1 p-1 before:left-0 after:bottom-0 md:space-x-10 md:p-2"
 		>
 			<div class="flex flex-row space-x-1 md:space-x-2">
 				{#each Array(3) as _}
-					<div class=" border-teal-950 dark:border-white h-2 w-2 border md:h-3.5 md:w-3.5" />
+					<div class=" h-2 w-2 border border-teal-950 md:h-3.5 md:w-3.5 dark:border-white" />
 				{/each}
 			</div>
 			{#if url}
 				<span
-					class=" border-teal-950 dark:border-white mb-0 h-2 w-full border px-2 pt-px text-center text-[0.6rem] leading-[0.8] md:h-3.5"
+					class=" mb-0 h-2 w-full border border-teal-950 px-2 pt-px text-center text-[0.6rem] leading-[0.8] md:h-3.5 dark:border-white"
 				>
 					{url}
 				</span>

@@ -11,15 +11,15 @@
 </script>
 
 <section
-	class="justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pb-20 pt-4 md:w-[calc(100vw_-_12rem)] md:pt-20"
+	class="justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:pt-20"
 	id="aboutme"
 >
 	<div
-		class="mx-auto my-auto h-full w-full max-w-4xl space-y-4 border-primary-900/5 py-2 dark:border-primary-50/10 md:rounded-md md:border md:py-3 md:pl-3"
+		class="border-primary-900/5 dark:border-primary-50/10 mx-auto my-auto h-full w-full max-w-4xl space-y-4 py-2 md:rounded-md md:border md:py-3 md:pl-3"
 	>
 		<h1
 			in:fly|global={{ y: 50, duration: 500 }}
-			class="text-center text-primary-900 dark:text-primary-50 md:text-left"
+			class="text-primary-900 dark:text-primary-50 text-center md:text-left"
 		>
 			{$t({ key: 'about-me', defaultValue: 'About me' })}
 		</h1>
@@ -30,7 +30,7 @@
 		>
 			<Carousel.Content class="-ml-4">
 				<Carousel.Item
-					class="min-h-[20rem] w-full snap-center justify-center pl-6 pr-2 text-sm md:min-h-[18rem] md:text-base"
+					class="min-h-[20rem] w-full snap-center justify-center pr-2 pl-6 text-sm md:min-h-[18rem] md:text-base"
 				>
 					<img
 						in:fly|global={{ duration: 2000 }}
@@ -65,12 +65,12 @@
 					</p>
 				</Carousel.Item>
 				<Carousel.Item
-					class="flex h-full min-h-[11rem] w-full snap-center flex-col items-end pl-6 pr-2 sm:basis-1/2 md:flex-row md:items-start"
+					class="flex h-full min-h-[11rem] w-full snap-center flex-col items-end pr-2 pl-6 sm:basis-1/2 md:flex-row md:items-start"
 				>
 					<div
-						class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-linear-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
+						class="border-primary-900/5 from-primary-900/10 to-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 flex h-full w-full flex-col justify-start rounded-md border bg-linear-to-br p-3 backdrop-blur-md"
 					>
-						<h2 class="font-sans text-2xl text-primary-900 dark:text-primary-50">
+						<h2 class="text-primary-900 dark:text-primary-50 font-sans text-2xl">
 							<T keyName="likes-title" defaultValue="Some things i like" />
 						</h2>
 						<ul class="space-y-3 pt-3">
@@ -96,12 +96,12 @@
 					</div>
 				</Carousel.Item>
 				<Carousel.Item
-					class="flex h-full min-h-[11rem] w-full snap-center flex-col items-end pl-6 pr-2 sm:basis-1/2 md:flex-row md:items-start"
+					class="flex h-full min-h-[11rem] w-full snap-center flex-col items-end pr-2 pl-6 sm:basis-1/2 md:flex-row md:items-start"
 				>
 					<div
-						class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-linear-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
+						class="border-primary-900/5 from-primary-900/10 to-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 flex h-full w-full flex-col justify-start rounded-md border bg-linear-to-br p-3 backdrop-blur-md"
 					>
-						<h2 class="font-sans text-2xl text-primary-900 dark:text-primary-50">
+						<h2 class="text-primary-900 dark:text-primary-50 font-sans text-2xl">
 							<T keyName="dislikes-title" defaultValue="Some things i dislike" />
 						</h2>
 						<ul class="space-y-3 pt-3">
@@ -126,10 +126,10 @@
 			</Carousel.Content>
 			<div class="flex translate-y-6 justify-between px-2 md:px-4">
 				<Carousel.Previous
-					class="relative left-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative left-0 translate-x-0! border-none"
 				/>
 				<Carousel.Next
-					class="relative right-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative right-0 translate-x-0! border-none"
 				/>
 			</div>
 		</Carousel.Root>
@@ -143,10 +143,9 @@
 </section>
 
 <style>
-@reference "tailwindcss"
+	@reference "tailwindcss"
 	.list-li::before {
 		content: '';
-		@apply inline-block translate-y-px rounded-full border  bg-linear-to-br mr-2 h-3 w-3 border-primary-900/5 from-primary-900/10 to-primary-900/5 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/25 dark:to-primary-50/10;
-		
+		@apply border-primary-900/5 from-primary-900/10 to-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/25 dark:to-primary-50/10 mr-2 inline-block h-3 w-3 translate-y-px rounded-full border bg-linear-to-br backdrop-blur-md;
 	}
 </style>

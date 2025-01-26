@@ -33,7 +33,7 @@
 </svelte:head>
 
 {#if project}
-	<section class="w-full pb-20 pt-24 sm:pt-28 md:pb-28">
+	<section class="w-full pt-24 pb-20 sm:pt-28 md:pb-28">
 		<div class="mx-auto w-full max-w-4xl space-y-4">
 			<Button href="/works#{project.slug}" variant="default">
 				<!-- <span class="flex flex-row items-center"> -->
@@ -68,7 +68,7 @@
 									? `url('${project.logoDark}')`
 									: `url('${project.logo}')`}
 								class="h-full w-full bg-contain bg-center bg-no-repeat bg-origin-content transition-all duration-500"
-								></div>
+							></div>
 						</div>
 						<div class="col-span-3 p-4 md:col-span-2">
 							<p>
@@ -128,7 +128,7 @@
 									style="background-color: {color}; width: calc(100% / {project.colors?.length})"
 									style:width="calc(1/{project.colors?.length})%"
 									class=""
-									></div>
+								></div>
 							{/each}
 						</div>
 					</Box>

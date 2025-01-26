@@ -97,7 +97,7 @@
 								{value.title}
 							</h1>
 							<h2
-								class="dark:text-white mb-1 text-3xl font-light leading-relaxed text-primary-800 sm:mb-2 sm:text-4xl"
+								class="text-primary-800 mb-1 text-3xl leading-relaxed font-light sm:mb-2 sm:text-4xl dark:text-white"
 							>
 								<span>{value.my_name_is}</span>
 								<span class="font-bold">Sebastian Jans</span>
@@ -107,7 +107,7 @@
 						<Typewriter mode="loop" wordInterval={3000} interval={30} blinkCount={2} delay={2100}>
 							{#each value.profession as profession}
 								<h2
-									class="mb-2 text-3xl font-medium leading-relaxed text-primary-500 dark:text-primary-400 sm:mb-4 sm:text-4xl"
+									class="text-primary-500 dark:text-primary-400 mb-2 text-3xl leading-relaxed font-medium sm:mb-4 sm:text-4xl"
 								>
 									{profession}.
 								</h2>
@@ -116,7 +116,7 @@
 						<div class="h-10!">
 							{#key activeIndex}
 								<h3
-									class="mb-2 text-2xl font-light leading-relaxed dark:text-primary-200 sm:mb-4 sm:text-3xl"
+									class="dark:text-primary-200 mb-2 text-2xl leading-relaxed font-light sm:mb-4 sm:text-3xl"
 									in:fly={{ y: 10, duration: 300, delay: 350 }}
 									out:fly={{ y: -10, duration: 300 }}
 								>

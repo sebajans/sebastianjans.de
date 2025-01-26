@@ -88,7 +88,7 @@
 		<div
 			class="mb-auto flex w-full flex-col space-y-4 pl-4 font-sans text-2xl md:my-auto md:w-1/2 md:text-3xl"
 		>
-			{#each services.slice(0,3) as section, i}
+			{#each services.slice(0, 3) as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
 					onclick={preventDefault(() => {
@@ -100,7 +100,7 @@
 						}, 200);
 					})}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
-					class="ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 dark:text-primary-50 md:py-4 {section.color} "
+					class="dark:text-primary-50 ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 md:py-4 {section.color} "
 				>
 					<T keyName="works-{section.slug}" defaultValue={section.name} />
 				</button>
@@ -109,7 +109,7 @@
 	</div>
 </section>
 
-<div class="fixed right-0 top-0 z-30 h-0 w-20 md:block"></div>
+<div class="fixed top-0 right-0 z-30 h-0 w-20 md:block"></div>
 
 {#snippet buttons()}
 	{#if intersectingWeb}
@@ -183,7 +183,6 @@
 		</section>
 	{/if}
 </IntersectionObserver>
-
 
 <!-- TODO: some 3D stuff, web platforms -->
 <!-- <IntersectionObserver

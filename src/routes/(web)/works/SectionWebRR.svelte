@@ -18,14 +18,14 @@
 <IntersectionObserver once threshold={0.5} {element} bind:intersecting>
 	<section
 		bind:this={element}
-		class="justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pb-20 pt-4 md:w-[calc(100vw_-_12rem)] md:pt-20"
+		class="justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:pt-20"
 		id="Recyclerumble"
 	>
-		<div class="mx-auto my-auto h-works w-full max-w-4xl space-y-4 md:h-worksmd">
+		<div class="h-works md:h-worksmd mx-auto my-auto w-full max-w-4xl space-y-4">
 			<h1
 				class="{intersecting
 					? ''
-					: 'translate-y-20 opacity-0'} px-3 text-primary-900 transition-all duration-500 dark:text-primary-50 md:text-left"
+					: 'translate-y-20 opacity-0'} text-primary-900 dark:text-primary-50 px-3 transition-all duration-500 md:text-left"
 			>
 				{$t({ key: 'title-RR', defaultValue: 'Recycle Rumble' })}
 			</h1>
@@ -43,7 +43,7 @@
 			<ul
 				class="{intersecting
 					? ''
-					: 'translate-y-1/2 opacity-0'} hs h-full snap-x snap-mandatory items-start overflow-x-auto border-primary-900/5 py-2 backdrop-blur-md transition-all delay-300 duration-700 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 md:overflow-y-clip md:rounded-md md:border md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5 md:py-3"
+					: 'translate-y-1/2 opacity-0'} hs border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 md:from-primary-900/10 md:to-primary-900/5 h-full snap-x snap-mandatory items-start overflow-x-auto py-2 backdrop-blur-md transition-all delay-300 duration-700 md:overflow-y-clip md:rounded-md md:border md:bg-linear-to-br md:py-3"
 			>
 				<li
 					class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"

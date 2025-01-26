@@ -10,7 +10,7 @@
 <IntersectionObserver once threshold={0.5} {element} bind:intersecting>
 	<section bind:this={element} id="graphicdesign2" class="relative w-full px-4">
 		<div
-			class="mx-auto my-auto flex h-works w-full max-w-4xl flex-col items-center justify-center md:h-worksmd md:flex-row"
+			class="h-works md:h-worksmd mx-auto my-auto flex w-full max-w-4xl flex-col items-center justify-center md:flex-row"
 		>
 			<img
 				width="448"

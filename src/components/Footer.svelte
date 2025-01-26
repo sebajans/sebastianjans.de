@@ -12,13 +12,13 @@
 </script>
 
 <div
-	class=" absolute inset-x-0 bottom-0 z-10 px-2 py-5 text-center text-xs dark:text-primary-100 md:ml-40"
+	class=" dark:text-primary-100 absolute inset-x-0 bottom-0 z-10 px-2 py-5 text-center text-xs md:ml-40"
 >
 	<!--		<button aria-label="View Privacy PopUp" class="hover:text-primary-500" on:click={toggleButton}>Privacy</button> -->
 	&copy; Sebastian Jans, {now} –
 	<a
 		aria-label="View Terms of Service PopUp"
-		class="font-bold hover:text-primary-500"
+		class="hover:text-primary-500 font-bold"
 		href="terms"
 		onclick={openPopup}
 	>

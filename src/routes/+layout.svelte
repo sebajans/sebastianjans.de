@@ -49,7 +49,7 @@
 </script>
 
 <div
-	class="relative min-h-screen bg-primary-50 font-serif text-primary-900 antialiased min-h-screen-ios dark:bg-primary-900 dark:text-primary-50 {$settingsState.darkMode
+	class="bg-primary-50 text-primary-900 min-h-screen-ios dark:bg-primary-900 dark:text-primary-50 relative min-h-screen font-serif antialiased {$settingsState.darkMode
 		? 'dark'
 		: 'light'}"
 	style="display: contents; overflow:hidden;"

@@ -40,10 +40,10 @@
 			out:fly={{ y: -50, duration: 500, delay: 0 }}
 			aria-label="scrollIntoView"
 			onclick={preventDefault(scrollIntoView)}
-			class="absolute bottom-4 left-1/2 z-10 h-auto w-auto -translate-x-1/2 transform text-center text-primary-900 subpixel-antialiased hover:scale-95 hover:text-primary-400 dark:text-primary-100 dark:hover:text-primary-500 md:bottom-4"
+			class="text-primary-900 hover:text-primary-400 dark:text-primary-100 dark:hover:text-primary-500 absolute bottom-4 left-1/2 z-10 h-auto w-auto -translate-x-1/2 transform text-center subpixel-antialiased hover:scale-95 md:bottom-4"
 			href="#{section}"
 		>
-			<span class="pointer-events-none font-sans font-normal leading-9 tracking-wide">
+			<span class="pointer-events-none font-sans leading-9 font-normal tracking-wide">
 				{@render children?.()}
 			</span><br />
 			<svg

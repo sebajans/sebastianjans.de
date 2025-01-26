@@ -9,7 +9,7 @@
 
 <button
 	aria-label="DarkModeToggle"
-	class="duration-250 relative h-10 w-10 overflow-hidden rounded-md bg-primary-900/20 p-2 text-primary-900 transition-colors hover:bg-primary-900 hover:text-primary-300 dark:bg-primary-50/20 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-500"
+	class="bg-primary-900/20 text-primary-900 hover:bg-primary-900 hover:text-primary-300 dark:bg-primary-50/20 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-500 relative h-10 w-10 overflow-hidden rounded-md p-2 transition-colors duration-250"
 	onclick={toggleDarkMode}
 >
 	<div

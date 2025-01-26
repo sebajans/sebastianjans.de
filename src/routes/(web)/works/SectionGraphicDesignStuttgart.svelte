@@ -9,7 +9,7 @@
 <IntersectionObserver once threshold={0.5} {element} bind:intersecting>
 	<section bind:this={element} id="graphicdesign" class="flex flex-col items-end">
 		<div
-			class="mx-auto my-auto grid h-works max-h-[38rem] w-full max-w-4xl grid-cols-9 grid-rows-12 gap-6 px-4 md:h-worksmd md:grid-cols-12 md:grid-rows-9"
+			class="h-works md:h-worksmd mx-auto my-auto grid max-h-[38rem] w-full max-w-4xl grid-cols-9 grid-rows-12 gap-6 px-4 md:grid-cols-12 md:grid-rows-9"
 		>
 			<div
 				class="{intersecting

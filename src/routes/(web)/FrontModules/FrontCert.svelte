@@ -23,13 +23,13 @@
 <svelte:window on:resize={updateSlidesToScroll} bind:innerWidth={width} />
 
 <section
-	class="justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pb-20 pt-4 min-h-screen-ios md:w-[calc(100vw_-_12rem)] md:pt-20"
+	class="justfiy-center min-h-screen-ios relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:pt-20"
 	id="cv_cert"
 >
 	<div class="mx-auto w-full max-w-4xl space-y-4">
 		<h1
 			in:fly|global={{ y: 50, duration: 500 }}
-			class="text-center text-primary-900 dark:text-primary-50 md:text-left"
+			class="text-primary-900 dark:text-primary-50 text-center md:text-left"
 		>
 			<T keyName="my-achievements" defaultValue="My Achievements & Certifications" />
 		</h1>
@@ -50,15 +50,15 @@
 							>
 								<div
 									style:background-image={`url('${item.image}')`}
-									class="pointer-events-none z-10 flex aspect-[29/_21] w-full justify-center rounded-md border border-primary-200/90 bg-cover bg-center bg-no-repeat bg-origin-content dark:border-primary-50/5"
+									class="border-primary-200/90 dark:border-primary-50/5 pointer-events-none z-10 flex aspect-[29/_21] w-full justify-center rounded-md border bg-cover bg-center bg-no-repeat bg-origin-content"
 								></div>
 								<div
-									class="flex h-full w-full flex-col justify-start rounded-md border border-primary-900/5 bg-linear-to-br from-primary-900/10 to-primary-900/5 p-3 backdrop-blur-md dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10"
+									class="border-primary-900/5 from-primary-900/10 to-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 flex h-full w-full flex-col justify-start rounded-md border bg-linear-to-br p-3 backdrop-blur-md"
 								>
-									<h2 class="font-sans text-2xl text-primary-900 dark:text-primary-50">
+									<h2 class="text-primary-900 dark:text-primary-50 font-sans text-2xl">
 										<T keyName="achievement-title-{item.name}" defaultValue={item.name} />
 									</h2>
-									<h3 class="mb-2 mt-0.5 font-sans text-sm text-primary-700 dark:text-primary-200">
+									<h3 class="text-primary-700 dark:text-primary-200 mt-0.5 mb-2 font-sans text-sm">
 										{item.fromYear}
 									</h3>
 									<p class="mb-2 text-justify text-sm">
@@ -69,7 +69,7 @@
 									</p>
 									{#if item.link?.includes('https')}
 										<a
-											class="btn btn-navajo ml-auto mt-auto w-fit"
+											class="btn btn-navajo mt-auto ml-auto w-fit"
 											target="_blank"
 											rel="noreferrer noopener"
 											href={item.link}
@@ -77,7 +77,7 @@
 											<T keyName="certificate-button-{item.info}" defaultValue={item.info} />
 										</a>
 									{:else}
-										<a class="btn btn-navajo ml-auto mt-auto w-fit" href={item.link}>
+										<a class="btn btn-navajo mt-auto ml-auto w-fit" href={item.link}>
 											<T keyName="certificate-button-{item.info}" defaultValue={item.info} />
 										</a>
 									{/if}
@@ -89,10 +89,10 @@
 			</Carousel.Content>
 			<div class="mt-6 flex justify-between">
 				<Carousel.Previous
-					class="relative left-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative left-0 translate-x-0! border-none"
 				/>
 				<Carousel.Next
-					class="relative right-0 translate-x-0! border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+					class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative right-0 translate-x-0! border-none"
 				/>
 			</div>
 		</Carousel.Root>

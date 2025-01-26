@@ -27,7 +27,7 @@
 		/>
 		<slot />
 	</div>
-	<div class="relative flex flex-row space-x-2 pt-1 md:pb-3 md:pt-2">
+	<div class="relative flex flex-row space-x-2 pt-1 md:pt-2 md:pb-3">
 		<div class="box h-5 w-4 md:h-6">
 			<div />
 		</div>

@@ -44,8 +44,8 @@
 			role="slider"
 			tabindex="0"
 			aria-valuenow={sliderOffset}
-			class="slider bg-black dark:bg-teal-50 after:bg-black dark:after:bg-teal-50 absolute z-20 h-full
-      w-0.5 cursor-grab active:cursor-grabbing"
+			class="slider absolute z-20 h-full w-0.5 cursor-grab bg-black after:bg-black
+      active:cursor-grabbing dark:bg-teal-50 dark:after:bg-teal-50"
 			style="top: 0; left: calc({sliderOffset * 100}% - 1px);"
 			on:mousedown|preventDefault={handleStart}
 			on:touchstart|preventDefault={handleStart}
@@ -73,7 +73,7 @@
 	@reference "tailwindcss"
 
 	.slider:after {
-		@apply absolute left-0 top-1/2 h-5 w-5 -translate-x-[9px] -translate-y-1/2 rotate-45 content-[""];
+		@apply absolute top-1/2 left-0 h-5 w-5 -translate-x-[9px] -translate-y-1/2 rotate-45 content-[""];
 	}
 	.slider-wrapper .slider:active,
 	.slider-wrapper .slider:focus,

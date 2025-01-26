@@ -51,7 +51,7 @@ https://svelte.dev/e/expected_token -->
 				/>
 				<button
 					aria-label="Open PopUp to download CVs"
-					class="duration-250 font-bold transition hover:text-primary-500"
+					class="hover:text-primary-500 font-bold transition duration-250"
 					on:click={openPopup}
 				>
 					<T keyName="CV" defaultValue="CV" />.
@@ -77,7 +77,7 @@ https://svelte.dev/e/expected_token -->
 			>
 				<div class="space-x-2 font-sans font-normal uppercase">
 					<a
-						class="rounded-md bg-primary-300 px-3 py-2 text-primary-900 transition-all duration-200 hover:bg-primary-700 hover:text-primary-400"
+						class="bg-primary-300 text-primary-900 hover:bg-primary-700 hover:text-primary-400 rounded-md px-3 py-2 transition-all duration-200"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Download English CV"
@@ -86,7 +86,7 @@ https://svelte.dev/e/expected_token -->
 						EN</a
 					>
 					<a
-						class="rounded-md bg-primary-300 px-3 py-2 text-primary-900 transition-all duration-200 hover:bg-primary-700 hover:text-primary-400"
+						class="bg-primary-300 text-primary-900 hover:bg-primary-700 hover:text-primary-400 rounded-md px-3 py-2 transition-all duration-200"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Download German CV"
@@ -95,7 +95,7 @@ https://svelte.dev/e/expected_token -->
 						ES</a
 					>
 					<a
-						class="rounded-md bg-primary-300 px-3 py-2 text-primary-900 transition-all duration-200 hover:bg-primary-700 hover:text-primary-400"
+						class="bg-primary-300 text-primary-900 hover:bg-primary-700 hover:text-primary-400 rounded-md px-3 py-2 transition-all duration-200"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Download Spanish CV"
@@ -111,10 +111,10 @@ https://svelte.dev/e/expected_token -->
 				in:fly|global={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
 				class="grid break-inside-avoid-column grid-cols-1 gap-2 rounded-lg align-top"
 			>
-				<h2 class="font-sans text-xl font-bold uppercase text-primary-900 dark:text-primary-50">
+				<h2 class="text-primary-900 dark:text-primary-50 font-sans text-xl font-bold uppercase">
 					<T keyName="skill-{categoryName}-title" defaultValue={categoryName} />
 				</h2>
-				<p class="pb-1 font-serif text-primary-900 dark:text-primary-50">
+				<p class="text-primary-900 dark:text-primary-50 pb-1 font-serif">
 					<T keyName="skill-{categoryName}-text" defaultValue={skills.categorydescription} />
 				</p>
 				<div class="highlight-content grid h-auto w-full grid-cols-2 flex-wrap gap-3 p-3">
@@ -122,11 +122,11 @@ https://svelte.dev/e/expected_token -->
 						<div class="flex h-7 flex-row items-center">
 							<img
 								src={skill.iconLink}
-								class="text-white pointer-events-none mr-1.5 inline-block aspect-square h-full rounded-md object-fill"
+								class="pointer-events-none mr-1.5 inline-block aspect-square h-full rounded-md object-fill text-white"
 								alt={skill.name}
 							/>
 							<span
-								class="font-serif text-sm font-medium leading-4 text-primary-800 dark:text-primary-100"
+								class="text-primary-800 dark:text-primary-100 font-serif text-sm leading-4 font-medium"
 							>
 								{skill.name}
 							</span>
@@ -147,10 +147,10 @@ https://svelte.dev/e/expected_token -->
 				in:fly|global={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
 				class="grid break-inside-avoid-column grid-cols-1 gap-2 rounded-lg align-top"
 			>
-				<h2 class="font-sans text-xl font-bold uppercase text-primary-900 dark:text-primary-50">
+				<h2 class="text-primary-900 dark:text-primary-50 font-sans text-xl font-bold uppercase">
 					<T keyName="skill-{categoryName}-title" defaultValue={categoryName} />
 				</h2>
-				<p class="pb-1 font-serif text-primary-900 dark:text-primary-50">
+				<p class="text-primary-900 dark:text-primary-50 pb-1 font-serif">
 					<T keyName="skill-{categoryName}-text" defaultValue={skills.categorydescription} />
 				</p>
 				<div class="highlight-content grid h-auto w-full grid-cols-2 flex-wrap gap-3 p-3">
@@ -158,18 +158,18 @@ https://svelte.dev/e/expected_token -->
 						<div class="flex h-7 flex-row items-center">
 							<img
 								src={skill.iconLink}
-								class="text-white pointer-events-none mr-1.5 inline-block aspect-square h-full rounded-md object-fill"
+								class="pointer-events-none mr-1.5 inline-block aspect-square h-full rounded-md object-fill text-white"
 								alt={skill.name}
 							/>
 							<span
-								class="font-serif text-sm font-medium leading-4 text-primary-800 dark:text-primary-100"
+								class="text-primary-800 dark:text-primary-100 font-serif text-sm leading-4 font-medium"
 							>
 								{skill.name}
 							</span>
 						</div>
 						<div class="flex h-7 flex-row items-center">
 							<span
-								class="font-serif text-sm font-medium leading-4 text-primary-800 dark:text-primary-100"
+								class="text-primary-800 dark:text-primary-100 font-serif text-sm leading-4 font-medium"
 							>
 								{skill.progress}
 							</span>

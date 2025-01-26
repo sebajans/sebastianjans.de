@@ -6,12 +6,24 @@
 	let intersecting: boolean | undefined = $state();
 
 	const servicesSteps = [
-		{ key: 'services-step-1', value: 'Reach out to me for a friendly chat to discuss your goals and project vision.' },
-		{ key: 'services-step-2', value: 'Receive a detailed project estimate with flexible packages tailored to your needs.' },
-		{ key: 'services-step-3', value: "Next, we'll schedule a collaborative revision period to refine your project plan." },
+		{
+			key: 'services-step-1',
+			value: 'Reach out to me for a friendly chat to discuss your goals and project vision.'
+		},
+		{
+			key: 'services-step-2',
+			value: 'Receive a detailed project estimate with flexible packages tailored to your needs.'
+		},
+		{
+			key: 'services-step-3',
+			value: "Next, we'll schedule a collaborative revision period to refine your project plan."
+		},
 		{ key: 'services-step-4', value: 'Get a clear and concise project timeline.' },
 		{ key: 'services-step-5', value: 'Kick off your project.' },
-		{ key: 'services-step-6', value: 'Complete the project with thorough testing and a final review before launch.' }
+		{
+			key: 'services-step-6',
+			value: 'Complete the project with thorough testing and a final review before launch.'
+		}
 	];
 </script>
 
@@ -28,7 +40,7 @@
 			<h3
 				class="{intersecting
 					? ''
-					: '-translate-x-20 opacity-0'} w-3/4 py-4 text-xl transition-all delay-100 duration-500 dark:text-primary-200 md:w-2/3 md:text-2xl"
+					: '-translate-x-20 opacity-0'} dark:text-primary-200 w-3/4 py-4 text-xl transition-all delay-100 duration-500 md:w-2/3 md:text-2xl"
 			>
 				<T
 					keyName="get-in-touch"
@@ -38,18 +50,16 @@
 			<div
 				class="{intersecting
 					? ''
-					: '-translate-x-20 opacity-0'} w-full self-end py-4 transition-all delay-200 duration-500 dark:text-primary-200"
+					: '-translate-x-20 opacity-0'} dark:text-primary-200 w-full self-end py-4 transition-all delay-200 duration-500"
 			>
 				<ul class="grid sm:grid-cols-2 md:grid-cols-3">
 					{#each servicesSteps as step}
-						<li class="py-2 flex">
+						<li class="flex py-2">
 							<T keyName={step.key} defaultValue={step.value} />
 						</li>
 					{/each}
-					
 				</ul>
 			</div>
 		</div>
 	</section>
 </IntersectionObserver>
-

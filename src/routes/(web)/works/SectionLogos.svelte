@@ -104,8 +104,8 @@ https://svelte.dev/e/js_parse_error -->
 		class="relative flex flex-col px-4"
 	>
 		<div
-			class="{intersecting ? '' : '-translate-x-1/2 opacity-0'} relative mx-auto
-		my-auto flex h-works w-full max-w-4xl flex-col items-center justify-center transition-all duration-500 md:h-worksmd md:flex-row"
+			class="{intersecting ? '' : '-translate-x-1/2 opacity-0'} h-works md:h-worksmd
+		relative mx-auto my-auto flex w-full max-w-4xl flex-col items-center justify-center transition-all duration-500 md:flex-row"
 		>
 			<p class="my-4 box-content max-w-4xl px-3 text-left sm:w-2/5">
 				<T
@@ -127,7 +127,7 @@ https://svelte.dev/e/js_parse_error -->
 					on:click|stopPropagation
 					class="logo-main {activeNumber === -1
 						? ''
-						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} trans form max-w-3/5 group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
+						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} trans form group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full max-w-3/5 grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
 				>
 					{#each $activeLocalLogoItems as logo, i}
 						<div
@@ -158,7 +158,7 @@ https://svelte.dev/e/js_parse_error -->
 					transition:fly|global={{ x: -300, duration: 300 }}
 					class="{logoItems[activeNumber]
 						? 'translate-x-0'
-						: 'translate-x-full'} md:right-2/5 absolute left-0 z-11 flex h-4/5 max-h-[calc(100vh_-_5.5rem)] w-4/5 cursor-default flex-col items-center justify-between rounded-xl bg-primary-300 p-4 shadow-md shadow-primary-900/30 dark:bg-primary-600 md:w-3/5"
+						: 'translate-x-full'} bg-primary-300 shadow-primary-900/30 dark:bg-primary-600 absolute left-0 z-11 flex h-4/5 max-h-[calc(100vh_-_5.5rem)] w-4/5 cursor-default flex-col items-center justify-between rounded-xl p-4 shadow-md md:right-2/5 md:w-3/5"
 				>
 					<div
 						style:background-image={$settingsState.darkMode
@@ -185,14 +185,14 @@ https://svelte.dev/e/js_parse_error -->
 
 					<button
 						aria-label="Close"
-						class="group group absolute right-4 top-4 z-20 h-6 w-6 font-sans hover:text-primary-500"
+						class="group group hover:text-primary-500 absolute top-4 right-4 z-20 h-6 w-6 font-sans"
 						on:click={() => (activeNumber = -1)}
 					>
 						<span
-							class="duration-250 block h-0.5 w-6 rotate-45 bg-primary-900 transition-all group-hover:rotate-[135deg] group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100"
+							class="bg-primary-900 group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100 block h-0.5 w-6 rotate-45 transition-all duration-250 group-hover:rotate-[135deg]"
 						></span>
 						<span
-							class="duration-250 block h-0.5 w-6 -translate-y-0.5 -rotate-45 bg-primary-900 transition-all group-hover:rotate-45 group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100"
+							class="bg-primary-900 group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100 block h-0.5 w-6 -translate-y-0.5 -rotate-45 transition-all duration-250 group-hover:rotate-45"
 						></span>
 					</button>
 				</div>

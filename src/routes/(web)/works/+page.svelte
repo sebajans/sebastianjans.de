@@ -113,7 +113,7 @@
 						}, 200);
 					})}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
-					class="ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 dark:text-primary-50 md:py-4 {section.color} "
+					class="dark:text-primary-50 ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 md:py-4 {section.color} "
 				>
 					<T keyName="works-{section.id}" defaultValue={section.text} />
 				</button>
@@ -122,7 +122,7 @@
 	</div>
 </section>
 
-<div class="fixed right-0 top-0 z-30 h-0 w-20 md:block"></div>
+<div class="fixed top-0 right-0 z-30 h-0 w-20 md:block"></div>
 
 {#snippet buttons()}
 	{#if intersectingWeb}

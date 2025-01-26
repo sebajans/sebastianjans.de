@@ -26,7 +26,7 @@
 
 <section
 	id="websites"
-	class="col-start-1 row-start-1 flex h-works max-h-[56rem] w-full flex-col items-center justify-center transition-all duration-500 md:h-worksmd"
+	class="h-works md:h-worksmd col-start-1 row-start-1 flex max-h-[56rem] w-full flex-col items-center justify-center transition-all duration-500"
 >
 	<div class="my-auto flex flex-row items-center">
 		<div class="flex w-full flex-col">
@@ -44,14 +44,14 @@
 			<div class="grid w-fit grid-cols-2 gap-6 sm:grid-cols-2">
 				{#each performanceResults as result}
 					<div
-						class="relative flex aspect-square h-full w-full items-center justify-center transition-all dark:text-primary-50"
+						class="dark:text-primary-50 relative flex aspect-square h-full w-full items-center justify-center transition-all"
 					>
 						<span class="absolute inset-0 z-10 flex items-center justify-center text-center">
 							<T keyName="span-{result.name}" defaultValue={result.name} />
 						</span>
 						<svg class="aspect-square w-full max-w-40 -rotate-90" viewBox="0 0 100 100">
 							<circle
-								class="fill-none stroke-primary-600 stroke-4 dark:stroke-primary-400"
+								class="stroke-primary-600 dark:stroke-primary-400 fill-none stroke-4"
 								cx="50"
 								cy="50"
 								r="48"

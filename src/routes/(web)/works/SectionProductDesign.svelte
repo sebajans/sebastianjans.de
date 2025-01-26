@@ -26,19 +26,19 @@
 <section
 	id="productdesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="relative flex h-screen w-full flex-col overflow-hidden bg-linear-to-bl from-primary-500/50 h-screen-ios dark:from-primary-400/30"
+	class="from-primary-500/50 h-screen-ios dark:from-primary-400/30 relative flex h-screen w-full flex-col overflow-hidden bg-linear-to-bl"
 >
 	<div class="mt-4 flex h-auto w-full flex-row md:mt-24">
 		<div class="h-auto w-[calc(100vw_-_56rem)]"></div>
 
 		<div class="w-full max-w-4xl">
 			<h2
-				class="ml-auto w-fit rounded-l-md bg-primary-500 py-3 pl-3 pr-8 text-left font-sans text-4xl dark:bg-primary-400 md:text-right"
+				class="bg-primary-500 dark:bg-primary-400 ml-auto w-fit rounded-l-md py-3 pr-8 pl-3 text-left font-sans text-4xl md:text-right"
 			>
 				<T keyName="works-productdesign" defaultValue="Product Design" />
 			</h2>
 		</div>
-		<div class="h-auto w-[calc(100vw_-_56rem)] bg-primary-500 dark:bg-primary-400"></div>
+		<div class="bg-primary-500 dark:bg-primary-400 h-auto w-[calc(100vw_-_56rem)]"></div>
 	</div>
 
 	<div class="my-auto flex w-full flex-row-reverse items-center justify-center md:flex-row">
@@ -52,7 +52,7 @@
 						: 'translate-x-0 opacity-100'} relative transform duration-500"
 				>
 					<p
-						class="absolute left-1/2 top-1/2 -translate-x-2/3 -translate-y-1/2 transform font-sans font-medium uppercase tracking-wide opacity-80"
+						class="absolute top-1/2 left-1/2 -translate-x-2/3 -translate-y-1/2 transform font-sans font-medium tracking-wide uppercase opacity-80"
 					>
 						<T keyName="front-view" defaultValue="Front View" />
 					</p>
@@ -65,7 +65,7 @@
 					<img
 						class="{moveToRight
 							? 'opacity-100 '
-							: 'translate-x-full opacity-0'} absolute z-10 m-4 h-auto w-full translate-y-3 rounded-xl bg-primary-300/50 object-contain pt-3 shadow-md shadow-primary-900/30 backdrop-blur-xs transition-all duration-500"
+							: 'translate-x-full opacity-0'} bg-primary-300/50 shadow-primary-900/30 absolute z-10 m-4 h-auto w-full translate-y-3 rounded-xl object-contain pt-3 shadow-md backdrop-blur-xs transition-all duration-500"
 						src="/productdesign/table-img-2.webp"
 						alt="bench"
 					/>
@@ -75,7 +75,7 @@
 							: 'translate-x-0 opacity-100 sm:opacity-100'} duration-500"
 					>
 						<p
-							class="absolute left-1/2 top-1/2 -translate-x-1/3 -translate-y-1/2 transform font-sans font-medium uppercase tracking-wide opacity-80"
+							class="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 transform font-sans font-medium tracking-wide uppercase opacity-80"
 						>
 							<T keyName="Side-view" defaultValue="Side View" />
 						</p>
@@ -88,7 +88,7 @@
 					<span
 						class="{moveToRight
 							? '-translate-x-1/3 md:-translate-x-2/3'
-							: '-translate-x-2/3'} absolute left-1/2 top-1/2 -translate-y-1/2 transform font-sans font-medium uppercase tracking-wide opacity-80 duration-500"
+							: '-translate-x-2/3'} absolute top-1/2 left-1/2 -translate-y-1/2 transform font-sans font-medium tracking-wide uppercase opacity-80 duration-500"
 					>
 						<T keyName="Top-view" defaultValue="Top View" />
 					</span>
@@ -98,7 +98,7 @@
 					/>
 				</div>
 				<button
-					class="h-fit w-auto self-center rounded-lg bg-primary-800 px-6 py-2 font-sans uppercase text-primary-50 hover:bg-primary-700"
+					class="bg-primary-800 text-primary-50 hover:bg-primary-700 h-fit w-auto self-center rounded-lg px-6 py-2 font-sans uppercase"
 					onclick={() => (moveToRight = !moveToRight)}
 				>
 					<T keyName="change-view-button" defaultValue="View Images" />

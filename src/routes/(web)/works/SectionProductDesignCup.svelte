@@ -28,7 +28,7 @@ bg-linear-to-bl from-primary-500/50 -->
 
 <section id="productdesign" class="relative flex max-h-screen flex-col justify-center px-4">
 	<div
-		class="!md:h-worksmd flex h-works max-h-[56rem] w-full flex-row-reverse items-center justify-center md:flex-row"
+		class="!md:h-worksmd h-works flex max-h-[56rem] w-full flex-row-reverse items-center justify-center md:flex-row"
 	>
 		<div
 			class="grid h-full w-full max-w-4xl grid-cols-9 grid-rows-12 items-center justify-center gap-4 sm:w-full md:grid-cols-12 md:grid-rows-9 md:gap-5"
@@ -53,7 +53,7 @@ bg-linear-to-bl from-primary-500/50 -->
 						alt="The cupholder in the compressed form"
 						class="{intersecting1
 							? ''
-							: 'translate-y-1/2 opacity-0'} delay-250 h-full w-full rounded-md object-contain sepia transition-all duration-500"
+							: 'translate-y-1/2 opacity-0'} h-full w-full rounded-md object-contain sepia transition-all delay-250 duration-500"
 					/>
 				</div>
 			</IntersectionObserver>
@@ -66,9 +66,9 @@ bg-linear-to-bl from-primary-500/50 -->
 				<div
 					bind:this={element2}
 					class=" {intersecting2 ? '' : '-translate-x-1/2 opacity-0'}
-				col-span-3 col-start-1 row-span-3 row-start-3 h-full w-full
-			overflow-hidden rounded-md bg-linear-to-tr from-primary-500 to-primary-500/20 transition-all
-			 delay-150 duration-500 dark:to-primary-100/70 md:col-span-4 md:row-span-6"
+				from-primary-500 to-primary-500/20 dark:to-primary-100/70 col-span-3 col-start-1 row-span-3
+			row-start-3 h-full w-full overflow-hidden rounded-md bg-linear-to-tr
+			 transition-all delay-150 duration-500 md:col-span-4 md:row-span-6"
 				>
 					<img
 						width="222"
@@ -114,8 +114,8 @@ bg-linear-to-bl from-primary-500/50 -->
 					id="center"
 					class="{intersecting4
 						? ''
-						: 'translate-y-1/2 opacity-0'} col-span-5 col-start-5 row-span-3 row-start-6 aspect-auto h-full
-			overflow-hidden rounded-md bg-linear-to-tl from-primary-500 to-primary-500/20 transition-all delay-150 duration-500 dark:to-primary-100/70 md:col-span-5 md:col-start-5 md:row-span-4 md:row-start-3"
+						: 'translate-y-1/2 opacity-0'} from-primary-500 to-primary-500/20 dark:to-primary-100/70 col-span-5 col-start-5 row-span-3
+			row-start-6 aspect-auto h-full overflow-hidden rounded-md bg-linear-to-tl transition-all delay-150 duration-500 md:col-span-5 md:col-start-5 md:row-span-4 md:row-start-3"
 				>
 					<img
 						width="282"
@@ -137,9 +137,9 @@ bg-linear-to-bl from-primary-500/50 -->
 					id="bottom-center"
 					class="{intersecting5
 						? ''
-						: 'translate-y-1/2 opacity-0'} col-span-4 col-start-1 row-span-3 row-start-6 h-full w-full
-			overflow-hidden rounded-md bg-linear-to-tr from-primary-500 to-primary-500/20 transition-all delay-150 duration-500
-			 dark:to-primary-100/70 md:col-span-3 md:col-start-5 md:row-span-3 md:row-start-7"
+						: 'translate-y-1/2 opacity-0'} from-primary-500 to-primary-500/20 dark:to-primary-100/70 col-span-4 col-start-1 row-span-3
+			row-start-6 h-full w-full overflow-hidden rounded-md bg-linear-to-tr transition-all delay-150
+			 duration-500 md:col-span-3 md:col-start-5 md:row-span-3 md:row-start-7"
 				>
 					<img
 						width="161"
@@ -175,7 +175,7 @@ bg-linear-to-bl from-primary-500/50 -->
 						onclick={() => (zoomIn = !zoomIn)}
 						class="{zoomIn
 							? ''
-							: 'animate-ping'} absolute left-[6%] top-[7%] h-6 w-6 rounded-full border-[0.5px] border-primary-900 bg-primary-50/50 dark:border-primary-50 dark:bg-primary-900/50"
+							: 'animate-ping'} border-primary-900 bg-primary-50/50 dark:border-primary-50 dark:bg-primary-900/50 absolute top-[7%] left-[6%] h-6 w-6 rounded-full border-[0.5px]"
 					></button>
 					<CupHolderModelClose
 						imgClass="{zoomIn
@@ -195,8 +195,8 @@ bg-linear-to-bl from-primary-500/50 -->
 					id="bottom-right"
 					class="{intersecting7
 						? ''
-						: 'translate-y-1/2 opacity-0'} col-span-5 col-start-1 row-span-4 row-start-9 h-full w-full
-			overflow-hidden rounded-md bg-linear-to-br from-primary-500 to-primary-500/20 transition-all delay-150 duration-500 dark:to-primary-100/70 md:col-span-5 md:col-start-8 md:row-span-3 md:row-start-7"
+						: 'translate-y-1/2 opacity-0'} from-primary-500 to-primary-500/20 dark:to-primary-100/70 col-span-5 col-start-1 row-span-4
+			row-start-9 h-full w-full overflow-hidden rounded-md bg-linear-to-br transition-all delay-150 duration-500 md:col-span-5 md:col-start-8 md:row-span-3 md:row-start-7"
 				>
 					<img
 						width="234"

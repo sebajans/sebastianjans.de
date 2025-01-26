@@ -58,7 +58,7 @@
 <IntersectionObserver once threshold={0.5} {element} bind:intersecting>
 	<section bind:this={element} id="graphicdesign-trels" class="relative flex w-full px-4">
 		<div
-			class="mx-auto my-auto grid h-works max-h-[56rem] w-full max-w-4xl grid-cols-9 grid-rows-12 gap-4 md:h-worksmd md:grid-cols-12 md:grid-rows-9"
+			class="h-works md:h-worksmd mx-auto my-auto grid max-h-[56rem] w-full max-w-4xl grid-cols-9 grid-rows-12 gap-4 md:grid-cols-12 md:grid-rows-9"
 		>
 			<div
 				style:background-image="url('/graphicdesign/CeramicTileTitle.svg')"
@@ -82,7 +82,7 @@
 				class="{intersecting
 					? ''
 					: 'translate-y-1/3 opacity-0'} col-span-3 col-start-7 row-span-4 row-start-6 flex flex-col items-center space-y-4 transition-all delay-300
-			duration-500 md:col-span-5 md:col-start-8 md:row-span-1 md:row-start-6 md:flex-row md:space-x-4 md:space-y-0"
+			duration-500 md:col-span-5 md:col-start-8 md:row-span-1 md:row-start-6 md:flex-row md:space-y-0 md:space-x-4"
 			>
 				<button onclick={showTile} class="btn standardButton h-fit w-full">
 					<!-- {showTiles ? 'show tile' : 'show grid'} -->
@@ -134,7 +134,7 @@
 						/>
 						<div
 							style="transform: translateZ(-10px) translateY(200px) rotateY(-5deg) rotateX(90deg)"
-							class="absolute z-0 h-8 w-full bg-linear-to-t from-primary-800/40 via-primary-800/90 to-primary-800/40 blur-[6px]"
+							class="from-primary-800/40 via-primary-800/90 to-primary-800/40 absolute z-0 h-8 w-full bg-linear-to-t blur-[6px]"
 						></div>
 					</div>
 				{/if}
@@ -163,4 +163,3 @@
 		</div>
 	</section>
 </IntersectionObserver>
-

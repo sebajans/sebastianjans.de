@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="col-start-1 row-start-1 flex h-works w-full flex-col items-center justify-center px-2 transition-all duration-500 md:h-worksmd md:max-h-[56rem]"
+	class="h-works md:h-worksmd col-start-1 row-start-1 flex w-full flex-col items-center justify-center px-2 transition-all duration-500 md:max-h-[56rem]"
 >
 	<div class="sm:fle x-row my-auto flex flex-col items-center">
 		<div class="flex w-full flex-col">
@@ -25,7 +25,7 @@
 			<div class="grid w-fit grid-cols-2 gap-6 sm:grid-cols-3">
 				{#each service.subServices as item}
 					<div
-						class="relative flex aspect-square h-full w-full flex-col items-center justify-center transition-all dark:text-primary-50"
+						class="dark:text-primary-50 relative flex aspect-square h-full w-full flex-col items-center justify-center transition-all"
 					>
 						{#if item.component}
 							<ServiceComponent name={item.component} class="text-5xl" />

@@ -17,7 +17,7 @@
 </script>
 
 <section
-	class="col-start-1 row-start-1 flex h-works min-h-[50svh] w-full flex-col items-center justify-center px-2 transition-all duration-500 md:h-worksmd md:max-h-[56rem]"
+	class="h-works md:h-worksmd col-start-1 row-start-1 flex min-h-[50svh] w-full flex-col items-center justify-center px-2 transition-all duration-500 md:max-h-[56rem]"
 >
 	<div class="sm:fle x-row my-auto flex flex-col items-center">
 		<div class="grid h-full w-full grid-cols-1 items-center gap-6 sm:grid-cols-2">
@@ -43,9 +43,9 @@
 				>
 					<Carousel.Content class="h-[24rem] sm:h-[24rem] md:h-[28rem] ">
 						{#each service.subServices as item}
-							<Carousel.Item class="w-full basis-1/2 dark:text-primary-50 sm:basis-1/3 ">
+							<Carousel.Item class="dark:text-primary-50 w-full basis-1/2 sm:basis-1/3 ">
 								<div
-									class=" md:bg-transp arent bg-primaryO! riginal-200 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent bg-opacity-0! px-2 py-2 backdrop-blur-md transition-all hover:border-primary-900/5 hover:bg-opacity-100! dark:border-transparent dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:rounded-md md:border md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3 md:hover:bg-linear-to-br"
+									class=" md:bg-transp arent bg-primaryO! riginal-200 bg-opacity-0! hover:border-primary-900/5 hover:bg-opacity-100! dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:from-primary-900/10 md:to-primary-900/5 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent px-2 py-2 backdrop-blur-md transition-all md:rounded-md md:border md:px-3 md:py-3 md:hover:bg-linear-to-br dark:border-transparent"
 								>
 									<ServiceComponent
 										name={item.component ? item.component : ''}

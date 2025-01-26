@@ -23,7 +23,7 @@
 		class="relative flex w-full flex-col items-center justify-center"
 	>
 		<div
-			class="grid h-works max-h-[38rem] w-full grid-cols-8 grid-rows-12 gap-6 px-3 md:h-worksmd md:grid-cols-10 md:grid-rows-12"
+			class="h-works md:h-worksmd grid max-h-[38rem] w-full grid-cols-8 grid-rows-12 gap-6 px-3 md:grid-cols-10 md:grid-rows-12"
 		>
 			<!-- {#if intersecting} -->
 			<div
@@ -43,8 +43,8 @@
 			>
 				<div
 					id="brazie-browser-phone"
-					class="relative z-10 aspect-[10/19.6] h-full max-h-[40rem] w-auto self-center overflow-hidden
-			rounded-xl bg-primary-200/80 shadow-xl shadow-primary-800/40 backdrop-blur-xs dark:bg-primary-700/60 md:aspect-[10/19.6] md:rounded-[8%_/_5%]"
+					class="bg-primary-200/80 shadow-primary-800/40 dark:bg-primary-700/60 relative z-10 aspect-[10/19.6] h-full max-h-[40rem]
+			w-auto self-center overflow-hidden rounded-xl shadow-xl backdrop-blur-xs md:aspect-[10/19.6] md:rounded-[8%_/_5%]"
 				>
 					<iframe
 						title="kamadob10"
@@ -60,17 +60,17 @@
 					class="h-[calc(100%_-_2.75rem)] ml-auto md:mx-auto rounded-t-[0.75rem] object-cover object-top px-0.5 pt-0.5 md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem] md:px-1 md:pt-1"
 					src={srcKamadoMobile}
 				/> -->
-					<div class="relative mb-2 mt-2 flex flex-row space-x-2 md:mb-3">
-						<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-r-full bg-primary-50/80 md:h-6"></div>
+					<div class="relative mt-2 mb-2 flex flex-row space-x-2 md:mb-3">
+						<div class="dark:bg-pimary-90/80 bg-primary-50/80 h-5 w-1 rounded-r-full md:h-6"></div>
 						<span
-							class="dark:bg-pimary-90/80 h-5 w-full rounded-md bg-primary-50/80 p-0.5 text-center font-sans text-xs text-primary-900/80 shadow-lg md:h-6 md:text-sm"
+							class="dark:bg-pimary-90/80 bg-primary-50/80 text-primary-900/80 h-5 w-full rounded-md p-0.5 text-center font-sans text-xs shadow-lg md:h-6 md:text-sm"
 						>
 							kamadob10.eu
 						</span>
-						<div class="dark:bg-pimary-90/80 h-5 w-1 rounded-l-full bg-primary-50/80 md:h-6"></div>
+						<div class="dark:bg-pimary-90/80 bg-primary-50/80 h-5 w-1 rounded-l-full md:h-6"></div>
 					</div>
 					<div
-						class="absolute bottom-1 left-1/2 h-0.5 w-2/5 -translate-x-1/2 self-center rounded-full bg-primary-50/80 md:h-1"
+						class="bg-primary-50/80 absolute bottom-1 left-1/2 h-0.5 w-2/5 -translate-x-1/2 self-center rounded-full md:h-1"
 					></div>
 				</div>
 			</div>
@@ -85,12 +85,12 @@
 			>
 				<div
 					id="brazie-browser-front"
-					class="flex aspect-13/10 h-full w-fit flex-col self-center rounded-lg bg-primary-400/50 p-0.5 shadow-md shadow-primary-900/30 backdrop-blur-xs dark:bg-primary-700/50 md:p-0.5"
+					class="bg-primary-400/50 shadow-primary-900/30 dark:bg-primary-700/50 flex aspect-13/10 h-full w-fit flex-col self-center rounded-lg p-0.5 shadow-md backdrop-blur-xs md:p-0.5"
 				>
 					<div class="relative flex flex-row space-x-1 p-1 md:space-x-2 md:p-2">
 						{#each Array(3) as _}
 							<div
-								class="dark:bg-pimary-90/80 h-2 w-2 rounded-full bg-primary-50/80 md:h-3 md:w-3"
+								class="dark:bg-pimary-90/80 bg-primary-50/80 h-2 w-2 rounded-full md:h-3 md:w-3"
 							></div>
 						{/each}
 					</div>

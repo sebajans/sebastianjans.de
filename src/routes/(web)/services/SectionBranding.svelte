@@ -48,33 +48,33 @@
 		class="flex h-full w-full flex-col justify-between gap-2"
 	>
 		<div class="flex h-full w-full">
-			<div class="mr-2 w-12 rounded-md bg-primary-500"></div>
+			<div class="bg-primary-500 mr-2 w-12 rounded-md"></div>
 			<div class="flex w-full overflow-clip rounded-md">
-				<div class="w-full bg-primary-50"></div>
-				<div class="w-full bg-primary-100"></div>
-				<div class="w-full bg-primary-200"></div>
-				<div class="w-full bg-primary-300"></div>
-				<div class="w-full bg-primary-400"></div>
-				<div class="w-full bg-primary-500"></div>
-				<div class="w-full bg-primary-600"></div>
-				<div class="w-full bg-primary-700"></div>
-				<div class="w-full bg-primary-800"></div>
-				<div class="w-full bg-primary-900"></div>
+				<div class="bg-primary-50 w-full"></div>
+				<div class="bg-primary-100 w-full"></div>
+				<div class="bg-primary-200 w-full"></div>
+				<div class="bg-primary-300 w-full"></div>
+				<div class="bg-primary-400 w-full"></div>
+				<div class="bg-primary-500 w-full"></div>
+				<div class="bg-primary-600 w-full"></div>
+				<div class="bg-primary-700 w-full"></div>
+				<div class="bg-primary-800 w-full"></div>
+				<div class="bg-primary-900 w-full"></div>
 			</div>
 		</div>
 		<div class="flex h-full w-full">
-			<div class="mr-2 w-12 rounded-md bg-fountain-blue-500"></div>
+			<div class="bg-fountain-blue-500 mr-2 w-12 rounded-md"></div>
 			<div class="w flex w-full overflow-clip rounded-md">
-				<div class="w-full bg-fountain-blue-50"></div>
-				<div class="w-full bg-fountain-blue-100"></div>
-				<div class="w-full bg-fountain-blue-200"></div>
-				<div class="w-full bg-fountain-blue-300"></div>
-				<div class="w-full bg-fountain-blue-400"></div>
-				<div class="w-full bg-fountain-blue-500"></div>
-				<div class="w-full bg-fountain-blue-600"></div>
-				<div class="w-full bg-fountain-blue-700"></div>
-				<div class="w-full bg-fountain-blue-800"></div>
-				<div class="w-full bg-fountain-blue-900"></div>
+				<div class="bg-fountain-blue-50 w-full"></div>
+				<div class="bg-fountain-blue-100 w-full"></div>
+				<div class="bg-fountain-blue-200 w-full"></div>
+				<div class="bg-fountain-blue-300 w-full"></div>
+				<div class="bg-fountain-blue-400 w-full"></div>
+				<div class="bg-fountain-blue-500 w-full"></div>
+				<div class="bg-fountain-blue-600 w-full"></div>
+				<div class="bg-fountain-blue-700 w-full"></div>
+				<div class="bg-fountain-blue-800 w-full"></div>
+				<div class="bg-fountain-blue-900 w-full"></div>
 			</div>
 		</div>
 		<div class="flex h-full w-full">
@@ -102,26 +102,26 @@
 		in:fly={{ x: 15, duration: 800, delay: 200 }}
 	>
 		<div class="flex w-full items-end gap-1">
-			<span class="font-sans text-2xl font-semibold leading-none">Title</span>
-			<span class="h-px w-full bg-primary-900 dark:bg-primary-50"></span>
+			<span class="font-sans text-2xl leading-none font-semibold">Title</span>
+			<span class="bg-primary-900 dark:bg-primary-50 h-px w-full"></span>
 			<span class="font-sans text-xs leading-none">30rem</span>
 		</div>
 
 		<div class="flex w-full items-end gap-1">
 			<span class="font-sans text-xl leading-none">Subtitle</span>
-			<span class="h-px w-full bg-primary-900 dark:bg-primary-50"></span>
+			<span class="bg-primary-900 dark:bg-primary-50 h-px w-full"></span>
 			<span class="font-sans text-xs leading-none">20rem</span>
 		</div>
 
 		<div class="flex w-full items-end gap-1">
-			<span class="font-sans text-base font-light leading-none">Body</span>
-			<span class="h-px w-full bg-primary-900 dark:bg-primary-50"></span>
+			<span class="font-sans text-base leading-none font-light">Body</span>
+			<span class="bg-primary-900 dark:bg-primary-50 h-px w-full"></span>
 			<span class="font-sans text-xs leading-none">15rem</span>
 		</div>
 
 		<div class="flex w-full items-end gap-1">
 			<span class="font-sans text-xs leading-none">Caption</span>
-			<span class="h-px w-full bg-primary-900 dark:bg-primary-50"></span>
+			<span class="bg-primary-900 dark:bg-primary-50 h-px w-full"></span>
 			<span class="font-sans text-xs leading-none">12rem</span>
 		</div>
 	</div>
@@ -133,7 +133,7 @@
 		class="grid h-full w-full grid-flow-col grid-cols-3 grid-rows-2 flex-wrap gap-2 *:flex *:items-center *:justify-center"
 	>
 		<div
-			class="h-full gap-1 rounded-md bg-primary-900/80 text-primary-50 dark:bg-primary-50/80 dark:text-primary-900"
+			class="bg-primary-900/80 text-primary-50 dark:bg-primary-50/80 dark:text-primary-900 h-full gap-1 rounded-md"
 		>
 			<svg class="size-8" viewBox="0 0 100 100">
 				<polygon
@@ -144,7 +144,7 @@
 				/>
 			</svg>
 		</div>
-		<div class="h-full rounded-md bg-primary-900/5 dark:bg-primary-50/10">
+		<div class="bg-primary-900/5 dark:bg-primary-50/10 h-full rounded-md">
 			<svg class="size-8" viewBox="0 0 100 100">
 				<polygon
 					points="50,15 90,85 10,85"
@@ -154,7 +154,7 @@
 				/>
 			</svg>
 		</div>
-		<div class="h-full gap-1 rounded-md bg-primary-900/5 dark:bg-primary-50/10">
+		<div class="bg-primary-900/5 dark:bg-primary-50/10 h-full gap-1 rounded-md">
 			<svg class="size-8" viewBox="0 0 100 100">
 				<polygon
 					points="50,15 90,85 10,85"
@@ -163,10 +163,10 @@
 					stroke-width="8"
 				/>
 			</svg>
-			<span class="text-center font-sans text-lg font-medium uppercase tracking-wider">Logo</span>
+			<span class="text-center font-sans text-lg font-medium tracking-wider uppercase">Logo</span>
 		</div>
 		<div
-			class="h-full gap-1 rounded-md bg-primary-900/80 text-primary-50 dark:bg-primary-50/80 dark:text-primary-900"
+			class="bg-primary-900/80 text-primary-50 dark:bg-primary-50/80 dark:text-primary-900 h-full gap-1 rounded-md"
 		>
 			<svg class="size-8" viewBox="0 0 100 100">
 				<polygon
@@ -176,10 +176,10 @@
 					stroke-width="8"
 				/>
 			</svg>
-			<span class="text-center font-sans text-lg font-medium uppercase tracking-wider">Logo</span>
+			<span class="text-center font-sans text-lg font-medium tracking-wider uppercase">Logo</span>
 		</div>
 		<div
-			class="h-full flex-col rounded-md bg-primary-900/80 text-primary-50 dark:bg-primary-50/80 dark:text-primary-900"
+			class="bg-primary-900/80 text-primary-50 dark:bg-primary-50/80 dark:text-primary-900 h-full flex-col rounded-md"
 		>
 			<svg class="size-6" viewBox="0 0 100 100">
 				<polygon
@@ -189,9 +189,9 @@
 					stroke-width="10"
 				/>
 			</svg>
-			<span class="text-center font-sans text-lg font-medium uppercase tracking-wider">Logo</span>
+			<span class="text-center font-sans text-lg font-medium tracking-wider uppercase">Logo</span>
 		</div>
-		<div class="h-full flex-col rounded-md bg-primary-900/5 dark:bg-primary-50/10">
+		<div class="bg-primary-900/5 dark:bg-primary-50/10 h-full flex-col rounded-md">
 			<svg class="size-6" viewBox="0 0 100 100">
 				<polygon
 					points="50,15 90,85 10,85"
@@ -200,7 +200,7 @@
 					stroke-width="10"
 				/>
 			</svg>
-			<span class="text-center font-sans text-lg font-medium uppercase tracking-wider">Logo</span>
+			<span class="text-center font-sans text-lg font-medium tracking-wider uppercase">Logo</span>
 		</div>
 	</div>
 {/snippet}
@@ -211,14 +211,14 @@
 		in:fly={{ x: 15, duration: 800, delay: 200 }}
 		class="grid h-full w-full grid-cols-2 grid-rows-2 flex-wrap gap-2"
 	>
-		<div class="pattern-1 h-full rounded-md bg-primary-900/5 dark:bg-primary-50/10"></div>
-		<div class="pattern-2 h-full rounded-md bg-primary-900/5 dark:bg-primary-50/10"></div>
-		<div class="pattern-3 h-full rounded-md bg-primary-900/5 dark:bg-primary-50/10"></div>
-		<div class="pattern-4 h-full rounded-md bg-primary-900/5 dark:bg-primary-50/10"></div>
+		<div class="pattern-1 bg-primary-900/5 dark:bg-primary-50/10 h-full rounded-md"></div>
+		<div class="pattern-2 bg-primary-900/5 dark:bg-primary-50/10 h-full rounded-md"></div>
+		<div class="pattern-3 bg-primary-900/5 dark:bg-primary-50/10 h-full rounded-md"></div>
+		<div class="pattern-4 bg-primary-900/5 dark:bg-primary-50/10 h-full rounded-md"></div>
 	</div>
 {/snippet}
 <section
-	class="col-start-1 row-start-1 flex h-works w-full flex-col items-center justify-center px-2 transition-all duration-500 md:h-worksmd md:max-h-[56rem]"
+	class="h-works md:h-worksmd col-start-1 row-start-1 flex w-full flex-col items-center justify-center px-2 transition-all duration-500 md:max-h-[56rem]"
 >
 	<div class="flex flex-col gap-y-8">
 		<div class="flex w-full flex-col">
@@ -243,9 +243,9 @@
 			>
 				<Carousel.Content class="h-[24rem] sm:h-[24rem] md:h-[28rem] ">
 					{#each service.subServices as item}
-						<Carousel.Item class="w-full basis-1/2 dark:text-primary-50 sm:basis-1/3 ">
+						<Carousel.Item class="dark:text-primary-50 w-full basis-1/2 sm:basis-1/3 ">
 							<div
-								class="md:bg-transp arent bg-primaryO! riginal-200 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent bg-opacity-0! px-2 py-2 backdrop-blur-md transition-all hover:border-primary-900/5 hover:bg-opacity-100! dark:border-transparent dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:rounded-md md:border md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3 md:hover:bg-linear-to-br"
+								class="md:bg-transp arent bg-primaryO! riginal-200 bg-opacity-0! hover:border-primary-900/5 hover:bg-opacity-100! dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:border-primary-50/10 md:from-primary-900/10 md:to-primary-900/5 relative flex h-full min-h-[8rem] w-full flex-col items-start justify-start border-transparent px-2 py-2 backdrop-blur-md transition-all md:rounded-md md:border md:px-3 md:py-3 md:hover:bg-linear-to-br dark:border-transparent"
 							>
 								<ServiceComponent
 									name={item.component ? item.component : ''}
@@ -265,15 +265,15 @@
 			<div class="w-full">
 				<div
 					class="{fancyClass
-						? 'rotate-[12deg] skew-x-12 scale-90 '
+						? 'scale-90 rotate-[12deg] skew-x-12 '
 						: ''} flex flex-col items-center transition-transform"
 				>
 					<div
 						class="
         {fancyClass
-							? ' border-[8px] border-primary-200 dark:border-primary-700 '
+							? ' border-primary-200 dark:border-primary-700 border-[8px] '
 							: ' border border-transparent dark:border-transparent'} 
-         relative flex aspect-video h-full w-full flex-col items-start justify-start gap-4 border-primary-900/5 px-2 py-2 transition-all dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:rounded-md md:bg-linear-to-br md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
+         border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 md:from-primary-900/10 md:to-primary-900/5 relative flex aspect-video h-full w-full flex-col items-start justify-start gap-4 px-2 py-2 transition-all md:rounded-md md:bg-linear-to-br md:px-3 md:py-3"
 					>
 						{#if activeIndex === 0}
 							{@render colors()}
@@ -288,19 +288,19 @@
 					<div
 						class="{fancyClass
 							? 'max-h-16 opacity-100'
-							: 'max-h-0 opacity-0'} h-14 w-24 rounded-br-lg bg-primary-300 transition-all dark:bg-primary-800"
+							: 'max-h-0 opacity-0'} bg-primary-300 dark:bg-primary-800 h-14 w-24 rounded-br-lg transition-all"
 					></div>
 					<div
 						class="{fancyClass
 							? 'max-h-8 opacity-100 duration-75'
-							: 'max-h-0 opacity-0'} h-4 w-[5.8rem] -translate-x-4 -translate-y-px skew-x-[-60deg] rounded-bl-md rounded-br-md bg-primary-300 transition-all dark:bg-primary-800"
+							: 'max-h-0 opacity-0'} bg-primary-300 dark:bg-primary-800 h-4 w-[5.8rem] -translate-x-4 -translate-y-px skew-x-[-60deg] rounded-br-md rounded-bl-md transition-all"
 					></div>
 				</div>
 				<div class="mt-8 flex flex-row gap-2">
 					<Button
 						variant="ghost"
 						size="lg"
-						class="h-10 w-fit border-primary-900/5 bg-linear-to-br px-2 py-2 font-sans transition-all hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900 md:from-primary-900/10 md:to-primary-900/5 md:px-3 md:py-3"
+						class="border-primary-900/5 hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900 md:from-primary-900/10 md:to-primary-900/5 h-10 w-fit bg-linear-to-br px-2 py-2 font-sans transition-all md:px-3 md:py-3"
 						on:click={() => {
 							fancyClass = !fancyClass;
 						}}
@@ -310,7 +310,7 @@
 					<Button
 						variant="ghost"
 						size="icon"
-						class="border-primary-900/5 bg-linear-to-br font-sans transition-all  hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900 md:from-primary-900/10 md:to-primary-900/5"
+						class="border-primary-900/5 hover:bg-primary-900 hover:text-primary-50 dark:border-primary-50/10  dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900 md:from-primary-900/10 md:to-primary-900/5 bg-linear-to-br font-sans transition-all"
 						on:click={togglePause}
 					>
 						<span class="sr-only">

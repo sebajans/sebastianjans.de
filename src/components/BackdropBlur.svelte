@@ -13,7 +13,7 @@
 		transition:fade|global={{ duration: 150 }}
 		class="{showMenu
 			? 'md:hidden'
-			: 'hidden'} absolute inset-0 bottom-0 z-20 h-screen scale-x-150 bg-primary-100/50 backdrop-blur-2xl transition duration-300 dark:bg-primary-900/50 md:scale-x-100"
+			: 'hidden'} bg-primary-100/50 dark:bg-primary-900/50 absolute inset-0 bottom-0 z-20 h-screen scale-x-150 backdrop-blur-2xl transition duration-300 md:scale-x-100"
 	>
 		{@render children?.()}
 	</div>

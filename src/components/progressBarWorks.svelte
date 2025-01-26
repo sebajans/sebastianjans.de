@@ -58,7 +58,7 @@
 			? 'inset-x-8 mx-20'
 			: ''} w-full absolute bg-primary-200/70 dark:bg-primary-700/70 backdrop-blur-md transform h-full -z-10"
 	/> -->
-	<div class="w-full bg-primary-200/30 p-2 text-left font-sans dark:bg-primary-700/30">
+	<div class="bg-primary-200/30 dark:bg-primary-700/30 w-full p-2 text-left font-sans">
 		{sectionTitle}
 	</div>
 </div>

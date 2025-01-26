@@ -9,13 +9,13 @@
 </script>
 
 <section
-	class=" justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col content-center pb-20 pt-4 md:w-[calc(100vw_-_12rem)] md:px-0 md:pb-20 md:pt-20"
+	class=" justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col content-center pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:px-0 md:pt-20 md:pb-20"
 	id="cv_jobs"
 >
 	<div class="mx-auto my-auto w-full max-w-4xl space-y-4">
 		<h1
 			in:fly|global={{ y: 50, duration: 500 }}
-			class="pb-12 text-center text-primary-900 dark:text-primary-50 md:text-left"
+			class="text-primary-900 dark:text-primary-50 pb-12 text-center md:text-left"
 		>
 			<T keyName="work-experience" defaultValue="Work Experience" />
 		</h1>
@@ -30,13 +30,13 @@
 								style:background-image={$settingsState.darkMode
 									? `url('${item.image}')`
 									: `url('${item.image}')`}
-								class="pointer-events-none z-10 -mt-14 flex aspect-square max-h-[16rem] w-28 max-w-[16rem] -translate-x-4 translate-y-[3.75rem] justify-center rounded-lg border border-primary-200/90 bg-primary-200/70 bg-contain bg-center bg-no-repeat bg-origin-content p-2 backdrop-blur-md dark:border-primary-50/5 dark:bg-primary-100/80 md:mt-0 md:w-1/5 md:-translate-x-0 md:translate-y-0"
+								class="border-primary-200/90 bg-primary-200/70 dark:border-primary-50/5 dark:bg-primary-100/80 pointer-events-none z-10 -mt-14 flex aspect-square max-h-[16rem] w-28 max-w-[16rem] -translate-x-4 translate-y-[3.75rem] justify-center rounded-lg border bg-contain bg-center bg-no-repeat bg-origin-content p-2 backdrop-blur-md md:mt-0 md:w-1/5 md:-translate-x-0 md:translate-y-0"
 							></div>
 							<div class="box-content self-stretch md:w-4/5">
-								<h2 class="mr-28 font-sans text-2xl text-primary-900 dark:text-primary-50 md:mr-0">
+								<h2 class="text-primary-900 dark:text-primary-50 mr-28 font-sans text-2xl md:mr-0">
 									<T keyName={item.name} defaultValue={item.name} />
 								</h2>
-								<h3 class="mb-2 mt-0.5 font-sans text-sm text-primary-700 dark:text-primary-200">
+								<h3 class="text-primary-700 dark:text-primary-200 mt-0.5 mb-2 font-sans text-sm">
 									{item.fromMonth}/{item.fromYear} - {item.toMonth}{item.toYear
 										? '/' + item.toYear
 										: ''}
@@ -50,10 +50,10 @@
 				{/each}
 			</Carousel.Content>
 			<Carousel.Previous
-				class="border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+				class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 border-none"
 			/>
 			<Carousel.Next
-				class="border-none bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500"
+				class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 border-none"
 			/>
 		</Carousel.Root>
 	</div>
