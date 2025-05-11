@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { T } from '@tolgee/svelte';
 	import { cn } from '$lib/utils';
 	import Button from '@/components/ui/button/button.svelte';
@@ -11,7 +11,7 @@
 
 	let { link, text, onclick }: Props = $props();
 	let isActive: boolean = $derived(
-		link === '/' ? $page.url.pathname === link : $page.url.pathname.startsWith(link)
+		link === '/' ? page.url.pathname === link : page.url.pathname.startsWith(link)
 	);
 </script>
 

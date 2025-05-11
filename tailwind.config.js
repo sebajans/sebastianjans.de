@@ -28,18 +28,7 @@ const config = {
 				800: '#2a4d60',
 				900: '#274152'
 			},
-			primary: {
-				50: '#fff7eb',
-				100: '#ffedd1',
-				200: '#ffd39e',
-				300: '#ffb561',
-				400: '#ff8e24',
-				500: '#f56a00',
-				600: '#d54f01',
-				700: '#a63603',
-				800: '#7d2907',
-				900: '#5a1f07'
-			},
+
 			primaryAlt: {
 				50: '#fff7eb',
 				100: '#ffedd1',
@@ -158,9 +147,21 @@ const config = {
 				ring: 'hsl(var(--ring) / <alpha-value>)',
 				background: 'hsl(var(--background) / <alpha-value>)',
 				foreground: 'hsl(var(--foreground) / <alpha-value>)',
-				primary: {
-					DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
-					foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
+				// primary: {
+				// 	DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+				// 	foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
+				// },
+				'primary': {
+					50: '#fff7eb',
+					100: '#ffedd1',
+					200: '#ffd39e',
+					300: '#ffb561',
+					400: '#ff8e24',
+					500: '#f56a00',
+					600: '#d54f01',
+					700: '#a63603',
+					800: '#7d2907',
+					900: '#5a1f07'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',

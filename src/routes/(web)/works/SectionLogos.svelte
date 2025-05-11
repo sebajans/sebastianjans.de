@@ -2,6 +2,9 @@
 https://svelte.dev/e/js_parse_error -->
 <!-- TODO migration-task -->
 <script lang="ts">
+	import { createBubbler, stopPropagation } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { onMount } from 'svelte';
 	import { T } from '@tolgee/svelte'; // change import statement
 	import IntersectionObserver from 'svelte-intersection-observer';
@@ -42,10 +45,10 @@ https://svelte.dev/e/js_parse_error -->
 		return n;
 	});
 
-	let activeNumber: number = -1;
+	let activeNumber: number = $state(-1);
 
-	let element: HTMLElement;
-	let intersecting: boolean;
+	let element: HTMLElement = $state();
+	let intersecting: boolean = $state();
 
 	let localLogoItems = writable(logoItems.slice(0, 9));
 
@@ -92,8 +95,8 @@ https://svelte.dev/e/js_parse_error -->
 		<div
 			role="button"
 			tabindex="0"
-			on:click={() => (activeNumber = -1)}
-			on:keydown={() => (activeNumber = -1)}
+			onclick={() => (activeNumber = -1)}
+			onkeydown={() => (activeNumber = -1)}
 			class="absolute inset-0 z-1 cursor-default bg-transparent"
 		></div>
 	{/if}
@@ -123,8 +126,8 @@ https://svelte.dev/e/js_parse_error -->
 					id="logos"
 					role="grid"
 					tabindex="0"
-					on:keydown|stopPropagation
-					on:click|stopPropagation
+					onkeydown={stopPropagation(bubble('keydown'))}
+					onclick={stopPropagation(bubble('click'))}
 					class="logo-main {activeNumber === -1
 						? ''
 						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} trans form group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full max-w-3/5 grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
@@ -137,8 +140,8 @@ https://svelte.dev/e/js_parse_error -->
 							<button
 								aria-label="Logo Design"
 								role="gridcell"
-								on:keydown
-								on:click={() => (activeNumber = i)}
+								onkeydown={bubble('keydown')}
+								onclick={() => (activeNumber = i)}
 								style:background-image={$settingsState.darkMode
 									? `url('${logo.imageDark}')`
 									: `url('${logo.image}')`}
@@ -153,8 +156,8 @@ https://svelte.dev/e/js_parse_error -->
 				<div
 					role="button"
 					tabindex="0"
-					on:keydown|stopPropagation
-					on:click|stopPropagation
+					onkeydown={stopPropagation(bubble('keydown'))}
+					onclick={stopPropagation(bubble('click'))}
 					transition:fly|global={{ x: -300, duration: 300 }}
 					class="{logoItems[activeNumber]
 						? 'translate-x-0'
@@ -186,7 +189,7 @@ https://svelte.dev/e/js_parse_error -->
 					<button
 						aria-label="Close"
 						class="group group hover:text-primary-500 absolute top-4 right-4 z-20 h-6 w-6 font-sans"
-						on:click={() => (activeNumber = -1)}
+						onclick={() => (activeNumber = -1)}
 					>
 						<span
 							class="bg-primary-900 group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100 block h-0.5 w-6 rotate-45 transition-all duration-250 group-hover:rotate-[135deg]"

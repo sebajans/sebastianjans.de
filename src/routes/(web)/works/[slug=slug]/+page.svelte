@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { projectItems } from '$lib/lists/projects';
 	import { T, getTranslate } from '@tolgee/svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
@@ -14,7 +14,7 @@
 	import WireframeWindowMobile from '$components/WireframeWindowMobile.svelte';
 	import SliderWithHandle from '$components/SliderWithHandle.svelte';
 
-	let project = projectItems.find((item) => item.slug === $page.params.slug) as ProjectData;
+	let project = projectItems.find((item) => item.slug === page.params.slug) as ProjectData;
 
 	// let validproject = project as (typeof projectItems)[number] | undefined;
 	// console.log(project.colors?.length);

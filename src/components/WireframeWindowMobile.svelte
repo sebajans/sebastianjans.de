@@ -1,12 +1,23 @@
 <script lang="ts">
 	import Box from './Box.svelte';
 
-	export let show: boolean = true;
-	export let screenshotImage: string = '';
-	export let url: string = '';
-	export let altTag: string = '';
-	export let className: string =
-		'row-[5_/_span_5] col-[1_/_span_5] sm:row-[1_/_span_8] sm:col-[5_/_span_6]'; // Default variation is 'primary'
+	interface Props {
+		show?: boolean;
+		screenshotImage?: string;
+		url?: string;
+		altTag?: string;
+		className?: string; // Default variation is 'primary'
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		show = true,
+		screenshotImage = '',
+		url = '',
+		altTag = '',
+		className = 'row-[5_/_span_5] col-[1_/_span_5] sm:row-[1_/_span_8] sm:col-[5_/_span_6]',
+		children
+	}: Props = $props();
 </script>
 
 <Box
@@ -24,7 +35,7 @@
 			class="h-full object-cover object-top md:h-full"
 			src={screenshotImage}
 		/>
-		<slot />
+		{@render children?.()}
 	</div>
 	<div class="relative flex flex-row space-x-2 pt-1 md:pt-2 md:pb-3">
 		<div class="box h-5 w-4 md:h-6">

@@ -5,9 +5,9 @@
 	import { cvItems } from '$lib/lists/cvItems';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 
-	let slidesToScroll = 1;
+	let slidesToScroll = $state(1);
 
-	let width: number;
+	let width: number = $state();
 
 	function updateSlidesToScroll() {
 		if (width >= 640) {
@@ -20,7 +20,7 @@
 	onMount(updateSlidesToScroll);
 </script>
 
-<svelte:window on:resize={updateSlidesToScroll} bind:innerWidth={width} />
+<svelte:window onresize={updateSlidesToScroll} bind:innerWidth={width} />
 
 <section
 	class="justfiy-center min-h-screen-ios relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:pt-20"

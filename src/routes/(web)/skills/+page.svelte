@@ -16,9 +16,9 @@
 
 	mainClass.set('pb-14 my-auto');
 
-	let visible: boolean = false;
-	let duration: number;
-	let firstdelay: number;
+	let visible: boolean = $state(false);
+	let duration: number = $state();
+	let firstdelay: number = $state();
 	onMount(() => (visible = true));
 	afterNavigate(({ from }) => {
 		duration = from === null ? 450 : 0;
@@ -26,7 +26,7 @@
 		visible = true;
 	});
 
-	let popup: any;
+	let popup: any = $state();
 	function openPopup() {
 		popup.show();
 	}
@@ -52,7 +52,7 @@
 				<button
 					aria-label="Open PopUp to download CVs"
 					class="hover:text-primary-500 font-bold transition duration-250"
-					on:click={openPopup}
+					onclick={openPopup}
 				>
 					<T keyName="CV" defaultValue="CV" />.
 					<svg

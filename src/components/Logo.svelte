@@ -1,7 +1,15 @@
+<script lang="ts">
+	interface Props {
+		[key: string]: any
+	}
+
+	let { ...rest }: Props = $props();
+</script>
+
 <svg
 	height="80"
 	width="80"
-	class="{$$restProps.class} text-primary-900 hover:text-primary-800 dark:text-primary-50 dark:hover:text-primary-200 aspect-square w-full transform fill-current transition-all"
+	class="{rest.class} text-primary-900 hover:text-primary-800 dark:text-primary-50 dark:hover:text-primary-200 aspect-square w-full transform fill-current transition-all"
 	viewBox="0 0 513 513"
 	fill-rule="evenodd"
 	xmlns="http://www.w3.org/2000/svg"

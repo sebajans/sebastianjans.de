@@ -1,6 +1,8 @@
 <script lang="ts">
+	// import { preventDefault } from 'svelte/legacy';
+
 	let dragging = false;
-	let sliderOffset = 0.5; // Initial offset between 0 and 1
+	let sliderOffset = $state(0.5); // Initial offset between 0 and 1
 	let startOffset = 0; // Initial mouse/touch position on drag start
 	let currentOffset = 0; // Current mouse/touch position while dragging
 
@@ -25,6 +27,13 @@
 		}
 	}
 
+	function preventDefault(fn: (event: MouseEvent | TouchEvent) => void) {
+		return function (event: MouseEvent | TouchEvent) {
+			event.preventDefault();
+			fn.call(this, event);
+		};
+	}
+
 	function handleEnd() {
 		dragging = false;
 		currentOffset = 0;
@@ -34,8 +43,12 @@
 		window.removeEventListener('touchend', handleEnd);
 	}
 
-	export let lowerImage: string;
-	export let upperImage: string;
+	interface Props {
+		lowerImage: string;
+		upperImage: string;
+	}
+
+	let { lowerImage, upperImage }: Props = $props();
 </script>
 
 <div class="relative h-full min-h-[400px] w-full overflow-hidden">
@@ -47,8 +60,8 @@
 			class="slider absolute z-20 h-full w-0.5 cursor-grab bg-black after:bg-black
       active:cursor-grabbing dark:bg-teal-50 dark:after:bg-teal-50"
 			style="top: 0; left: calc({sliderOffset * 100}% - 1px);"
-			on:mousedown|preventDefault={handleStart}
-			on:touchstart|preventDefault={handleStart}
+			onmousedown={preventDefault(handleStart)}
+			ontouchstart={preventDefault(handleStart)}
 		></div>
 	</div>
 

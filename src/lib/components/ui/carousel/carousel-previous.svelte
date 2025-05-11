@@ -6,10 +6,15 @@
 
 	type $$Props = Props;
 
-	let className: $$Props['class'] = undefined;
-	export { className as class };
-	export let variant: VariantProps<typeof buttonVariants>['variant'] = 'outline';
-	export let size: VariantProps<typeof buttonVariants>['size'] = 'icon';
+	
+	interface Props_1 {
+		class?: $$Props['class'];
+		variant?: VariantProps<typeof buttonVariants>['variant'];
+		size?: VariantProps<typeof buttonVariants>['size'];
+		[key: string]: any
+	}
+
+	let { class: className = undefined, variant = 'outline', size = 'icon', ...rest }: Props_1 = $props();
 
 	const { orientation, canScrollPrev, scrollPrev, handleKeyDown } =
 		getEmblaContext('<Carousel.Previous/>');
@@ -28,7 +33,7 @@
 	disabled={!$canScrollPrev}
 	on:click={scrollPrev}
 	on:keydown={handleKeyDown}
-	{...$$restProps}
+	{...rest}
 >
 	<iconify-icon icon="mdi:arrow-left" class="size-3.5"></iconify-icon>
 	<span class="sr-only">Previous slide</span>

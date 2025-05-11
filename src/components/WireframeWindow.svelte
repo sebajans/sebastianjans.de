@@ -1,12 +1,21 @@
 <script lang="ts">
 	import Box from './Box.svelte';
 
-	export let show: boolean = true;
-	export let screenshotImage: string = '';
-	export let altTag: string = '';
-	export let url: string = '';
-	export let className: string =
-		'row-[5_/_span_5] col-[1_/_span_5] sm:row-[1_/_span_8] sm:col-[5_/_span_6]'; // Default variation is 'primary'
+	interface Props {
+		show?: boolean;
+		screenshotImage?: string;
+		altTag?: string;
+		url?: string;
+		className?: string; // Default variation is 'primary'
+	}
+
+	let {
+		show = true,
+		screenshotImage = '',
+		altTag = '',
+		url = '',
+		className = 'row-[5_/_span_5] col-[1_/_span_5] sm:row-[1_/_span_8] sm:col-[5_/_span_6]'
+	}: Props = $props();
 </script>
 
 <Box

@@ -2,18 +2,18 @@
 	import { Spring } from 'svelte/motion';
 
 	let position = new Spring({ x: 0, y: 0 });
-	let coords = new Spring(
+	let coords = $state(new Spring(
 		{ x: 0, y: 0 },
 		{
 			stiffness: 0.05,
 			damping: 0.25
 		}
-	);
-	let scale = new Spring(1);
-	let smaller: boolean = false;
+	));
+	let scale = $state(new Spring(1));
+	let smaller: boolean = $state(false);
 
-	let innerHeight: number;
-	let innerWidth: number;
+	let innerHeight: number = $state();
+	let innerWidth: number = $state();
 	// const randomBlobPosition = (e: any) => {
 	// 	let r1: number, r2: number;
 	// 	r1 = Math.random() * innerHeight;
@@ -26,14 +26,14 @@
 <svelte:window
 	bind:innerHeight
 	bind:innerWidth
-	on:mousemove={(e) => {
+	onmousemove={(e) => {
 		coords.target = { x: e.clientX, y: e.clientY };
 	}}
-	on:mousedown={(e) => {
+	onmousedown={(e) => {
 		scale.target = 0.5;
 		smaller = true;
 	}}
-	on:mouseup={(e) => {
+	onmouseup={(e) => {
 		scale.target = 1;
 		smaller = false;
 	}}

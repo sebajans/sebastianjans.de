@@ -8,22 +8,29 @@
 	import PageTransitions from '$components/PageTransitions.svelte';
 	import Blob from '$components/Blob.svelte';
 
-	/** @type {import('./$types').LayoutData} */
-	export let data: any;
+	
+	interface Props {
+		/** @type {import('./$types').LayoutData} */
+		data: any;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
 
 	let showMenu = false;
 	let showHeader = false;
 
 	// beforeUpdate(() => ((showMenu = false), (showHeader = false)));
 
-	let initialized = false;
+	let initialized = $state(false);
 	onMount(() => {
 		initialized = true;
 	});
 
-	let viewport: Element;
-	let contents: Element;
+	let viewport: Element | undefined = $state();
+	let contents: Element | undefined = $state();
 </script>
+
 
 <div id="blob-motion" class="motion-reduce:hidden">
 	<Blob />
@@ -42,7 +49,7 @@
 		</h1>
 		<PageTransitions pathname={data.pathname}>
 			<div bind:this={contents} class="my-auto md:ml-44">
-				<slot />
+				{@render children?.()}
 			</div>
 		</PageTransitions>
 		<Footer />

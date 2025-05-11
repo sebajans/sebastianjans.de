@@ -1,18 +1,25 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	// import { beforeUpdate } from 'svelte';
 	import Logo from '$components/Logo.svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 
 	// import SocialMenu from '$components/SocialMenu.svelte';
-	// export let duration = "300ms"
-	export let offset = 0;
-	export let tolerance = 0;
+	
 
-	export let showHeader = false;
+	interface Props {
+		// export let duration = "300ms"
+		offset?: number;
+		tolerance?: number;
+		showHeader?: boolean;
+	}
+
+	let { offset = 0, tolerance = 0, showHeader = $bindable(false) }: Props = $props();
 	// let showMenu: boolean;
 	// $: showMenu;
-	let headerClass: boolean = false;
-	let y = 0;
+	let headerClass: boolean = $state(false);
+	let y = $state(0);
 	let lastY = 0;
 
 	// $: beforeUpdate(() => (showMenu = false));
@@ -39,7 +46,9 @@
 		return (headerClass = true);
 	}
 
-	$: headerClass = updateClass(y);
+	run(() => {
+		headerClass = updateClass(y);
+	});
 	// $: console.log(showMenu, headerClass);
 </script>
 
@@ -48,8 +57,8 @@
 <header
 	role="navigation"
 	aria-label="Page Header"
-	on:mouseenter={() => (showHeader = true)}
-	on:mouseleave={() => (showHeader = false)}
+	onmouseenter={() => (showHeader = true)}
+	onmouseleave={() => (showHeader = false)}
 	class=" {headerClass || showHeader
 		? 'h-24 max-h-24 translate-y-0'
 		: 'h-20 max-h-16 -translate-y-full md:translate-y-0 '} dark:bg-primary-900/40 bg-primary-50/40 fixed top-0 z-40 flex w-full backdrop-blur-md transition-all duration-300"

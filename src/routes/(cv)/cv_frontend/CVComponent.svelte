@@ -95,7 +95,7 @@
 <page class="section-to-print space-y-10">
 	<div
 		id="page-1"
-		class="bg-primary-50 dark:bg-primary-900 flex h-[29.7cm]! w-[21cm]! justify-center p-[2cm] outline outline-1 outline-offset-1"
+		class="bg-primary-50 dark:bg-primary-900 flex h-[29.7cm]! w-[21cm]! justify-center p-[2cm] outline outline-offset-1"
 	>
 		<div
 			class=" grid h-[25.7cm] grid-cols-[10.5cm__0.2cm__5.5cm] grid-rows-12 gap-x-[0.4cm] gap-y-[0.5cm]"
@@ -120,7 +120,9 @@
 			</div>
 
 			<div class="border-primary-600 col-start-1 row-span-4 row-start-4 border-t-2 pt-4">
-				<h2 class="mt-0 pt-0!">
+				<h2
+					class="text-primary-600 mt-0 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
+				>
 					{$t({ key: 'work-experience', defaultValue: 'Work Experience' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -147,7 +149,9 @@
 				</div>
 			</div>
 			<div class="border-primary-600 col-start-1 row-span-3 row-start-8 border-t-2 pt-4">
-				<h2 class="pt-0!">
+				<h2
+					class="text-primary-600 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
+				>
 					{$t({ key: 'my-education', defaultValue: 'Education' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -177,7 +181,9 @@
 				class="border-primary-500 col-span-1 col-start-2 row-span-4 h-[25.7cm] border-r-2 border-l-2"
 			></div>
 			<div class="border-primary-600 col-start-3 row-span-1 row-start-4 border-t-2 pt-4">
-				<h2 class="pt-0!">
+				<h2
+					class="text-primary-600 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
+				>
 					<T keyName="personal-data" defaultValue="Personal Data" />
 				</h2>
 				<div
@@ -220,7 +226,9 @@
 				/>
 			</div>
 			<div class="border-primary-600 col-span-1 col-start-3 row-span-6 row-start-8 border-t-2 pt-4">
-				<h2 class="pt-0!">
+				<h2
+					class="text-primary-600 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
+				>
 					{$t({ key: 'skills-title', defaultValue: 'Skills' })}
 				</h2>
 				{#each Object.entries(filteredSkillItems) as [categoryName, skills], i}
@@ -246,7 +254,9 @@
 	>
 		<div class=" grid max-h-[25.7cm] grid-cols-[10.5cm_0.2cm_5.5cm] gap-x-[0.4cm] gap-y-[0.5cm]">
 			<div class="col-span-1 row-span-1 row-start-1 flex flex-col">
-				<h2 class="pt-0!">
+				<h2
+					class="text-primary-600 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
+				>
 					{$t({ key: 'experience-abroad', defaultValue: 'experience abroad' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -277,7 +287,9 @@
 				</div>
 				<!-- </div>
       <div class="col-span-1 row-start-2 row-span-1 col-start-1"> -->
-				<h2 class="mt-8 pt-0!">
+				<h2
+					class="text-primary-600 mt-8 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
+				>
 					{$t({ key: 'my-certificate', defaultValue: 'Certificates' })}
 				</h2>
 				<div class="flex flex-row flex-wrap">
@@ -301,7 +313,9 @@
 				class="border-primary-500 col-span-1 col-start-2 row-span-full row-start-1 h-[25.7cm] border-r-2 border-l-2"
 			></div>
 			<div class="col-span-1 col-start-3 row-start-1">
-				<h2 class="pt-0!">
+				<h2
+					class="text-primary-600 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
+				>
 					{$t({
 						key: 'language-skills-title',
 						defaultValue: 'Language Skills'
@@ -326,14 +340,11 @@
 	</div>
 </page>
 
-<style>
+<style lang="postcss">
+	@reference "tailwindcss"
 	* {
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;
-	}
-
-	h2 {
-		@apply text-primary-600 pt-2 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase;
 	}
 
 	@page {
