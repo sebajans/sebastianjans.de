@@ -1,3 +1,5 @@
+
+
 export let cvItems = [
 	{
 		category: 'job',
@@ -11,7 +13,7 @@ export let cvItems = [
 		fromYear: '2024',
 		fromMonth: '09',
 		toYear: '',
-		toMonth: 'NOW',
+		toMonth: 'Today',
 		shortdescription: 'Web design and development, marketing, product design',
 		info: 'Vivus is a Start-Up company that i co-founded. I am responsible for the technical aspects of the company, including web design and development, as well as marketing and product design. I have learned a lot about the process of starting a company and the importance of teamwork and communication in a small business.'
 	},
@@ -27,7 +29,7 @@ export let cvItems = [
 		fromYear: '2024',
 		fromMonth: '02',
 		toYear: '',
-		toMonth: 'NOW',
+		toMonth: "Today",
 		shortdescription: 'Web design and development, marketing, product design',
 		info: 'Vivus is a Start-Up company that i co-founded. I am responsible for the technical aspects of the company, including web design and development, as well as marketing and product design. I have learned a lot about the process of starting a company and the importance of teamwork and communication in a small business.'
 	},
@@ -43,7 +45,7 @@ export let cvItems = [
 		fromYear: '2023',
 		fromMonth: '10',
 		toYear: '',
-		toMonth: 'NOW',
+		toMonth: 'Today',
 		shortdescription: 'Web design and development. Graphic and UI/UX design',
 		info: 'Baukunst is a Start-Up company that i co-founded. I am responsible for the design aspects of the company, including web design and development. I also work on the front-end development of the company.'
 	},
@@ -65,7 +67,7 @@ export let cvItems = [
 	},
 	{
 		category: 'job',
-		fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
+		fieldOfWork: [ 'productdesign'],
 		id: 2,
 		image: 'cv_items/logo-ditf-weiss.svg',
 		imageDark: 'cv_items/logo-ditf-weiss.svg',
@@ -81,7 +83,7 @@ export let cvItems = [
 	},
 	{
 		category: 'job',
-		fieldOfWork: ['webdev', 'graphicdesign', 'productdesign'],
+		fieldOfWork: ['graphicdesign', 'productdesign'],
 		id: 1,
 		image: 'cv_items/logo-letratec.webp',
 		imageDark: '',

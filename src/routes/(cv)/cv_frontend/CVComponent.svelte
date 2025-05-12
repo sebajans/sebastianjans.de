@@ -5,6 +5,8 @@
 	import { skillItems, type SkillItems } from '$lib/lists/skillItems';
 	import DarkModeButton from '$components/DarkModeButton.svelte';
 	import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
+	import { select } from 'three/tsl';
+	import { onMount } from 'svelte';
 
 	function printPage() {
 		const body = document.querySelector('body');
@@ -50,7 +52,7 @@
 	let filteredSkillItems = $state(skillItems);
 	let filteredIntroText = $state(introtext);
 
-	function selectCategory(fieldOfWork: string[] = ['webdev']) {
+	function selectCategory(fieldOfWork: string[]) {
 		filteredCvItems = cvItems.filter((item) =>
 			item.fieldOfWork.some((field) => fieldOfWork.includes(field))
 		);
@@ -69,6 +71,15 @@
 			return acc;
 		}, {} as SkillItems);
 	}
+
+  onMount( () => {
+    selectCategory(['webdev']);
+  })
+
+  let showDirection = $state(false);
+  function toggleDirection() {
+    showDirection = !showDirection;
+  }
 </script>
 
 <div class="hide-on-print sticky inset-x-0 top-0 px-4 pt-4">
@@ -119,7 +130,7 @@
         </p> -->
 			</div>
 
-			<div class="border-primary-600 col-start-1 row-span-4 row-start-4 border-t-2 pt-4">
+			<div class="border-primary-600 col-start-1 row-span-5 row-start-4 border-t-2 pt-4">
 				<h2
 					class="text-primary-600 mt-0 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
 				>
@@ -128,17 +139,17 @@
 				<div class="flex flex-row flex-wrap">
 					{#each filteredCvItems as item}
 						{#if item.category === 'job'}
-							<h3 class="dark:text-primary-300 w-4/6">
+							<h3 class="dark:text-primary-300 w-2/3">
 								<T keyName={item.name} defaultValue={item.name} />
 							</h3>
-							<h3 class="dark:text-primary-300 mt-1.5 w-2/6 text-right text-sm font-medium">
-								{item.fromMonth}/{item.fromYear} - {item.toMonth}/{item.toYear}
+							<h3 class="dark:text-primary-300 mt-1.5 w-1/3 text-right text-sm font-medium">
+								{item.fromMonth}/{item.fromYear} - {item.toMonth ? item.toMonth  : ""}{item.toYear ? "/" +item.toYear : ""}
 							</h3>
-							<p class="text-primary-700 -mt-0.5 w-4/6 font-sans font-light">
+							<p class="text-primary-700 -mt-0.5 w-2/3 font-sans font-light">
 								&#8212;
 								<T keyName="role-{item.name}" defaultValue={item.role} />
 							</p>
-							<p class="text-primary-700 w-2/6 text-right font-sans text-sm">
+							<p class="text-primary-700 w-1/3 text-right font-sans text-sm">
 								<T keyName="location-{item.name}" defaultValue={item.location} />
 							</p>
 							<p class="w-full pb-1.5 text-[0.8em]">
@@ -148,7 +159,7 @@
 					{/each}
 				</div>
 			</div>
-			<div class="border-primary-600 col-start-1 row-span-3 row-start-8 border-t-2 pt-4">
+			<div class="border-primary-600 col-start-1 row-span-3 row-start-9 border-t-2 pt-4">
 				<h2
 					class="text-primary-600 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
 				>
@@ -189,12 +200,14 @@
 				<div
 					class="grid-co ls-[minmax(0,40%)_minmax(0,_1fr)] grid-rows-[1fr_rep eat(4,_1.5rem)] justify -center grid h-auto w-full gap-x-2 gap-y-0 align-baseline"
 				>
+        {#if showDirection}
 					<h3 class="dark:text-primary-300 align-baseline text-base">
 						<T keyName="direction" defaultValue="Direction" />
 					</h3>
 					<p class="mt-0.5 mb-1.5 text-left align-baseline text-xs">
-						Calle Azucena 10, Piso 20<br />46025 Valencia, Valencia
+						Calle Fra Pere Vives 22, Puerta 4<br />46009 Valencia, Valencia
 					</p>
+        {/if}
 					<h3 class="dark:text-primary-300 align-baseline text-base">
 						<T keyName="telephone" defaultValue="Telephone" />
 					</h3>
@@ -225,7 +238,7 @@
 					src="/img/profile-pic.webp"
 				/>
 			</div>
-			<div class="border-primary-600 col-span-1 col-start-3 row-span-6 row-start-8 border-t-2 pt-4">
+			<div class="border-primary-600 col-span-1 col-start-3 row-span-6 row-start-7 border-t-2 pt-4">
 				<h2
 					class="text-primary-600 pt-0 pb-1.5 font-sans text-[1.375em] font-medium tracking-wider uppercase"
 				>
