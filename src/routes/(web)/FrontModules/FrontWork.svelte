@@ -50,10 +50,10 @@
 				{/each}
 			</Carousel.Content>
 			<Carousel.Previous
-				class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 border-none"
+				class="bg-primary-900/20 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 border-none"
 			/>
 			<Carousel.Next
-				class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 border-none"
+				class="bg-primary-900/20 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 border-none"
 			/>
 		</Carousel.Root>
 	</div>

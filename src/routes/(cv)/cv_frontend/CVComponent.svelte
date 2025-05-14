@@ -356,7 +356,6 @@
 </page>
 
 <style lang="postcss">
-	@reference "tailwindcss"
 	* {
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;

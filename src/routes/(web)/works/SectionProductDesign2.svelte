@@ -1,11 +1,8 @@
 <script lang="ts">
-	import { createBubbler } from 'svelte/legacy';
-
-	const bubble = createBubbler();
-	import { T } from '@tolgee/svelte'; // change import statement
+	import { T } from '@tolgee/svelte';
 	import { fade } from 'svelte/transition';
 	import IntersectionObserver from 'svelte-intersection-observer';
-
+	import { Button } from '@/components/ui/button';
 	import BenchBottom from './product-items/BenchBottom.svelte';
 	import BenchFront from './product-items/BenchFront.svelte';
 	import BenchSideL from './product-items/BenchSideL.svelte';
@@ -148,37 +145,30 @@
 
 					<div
 						class="	{intersecting ? '' : 'translate-x-1/3 opacity-0'} box-content flex h-auto
-					w-full flex-auto flex-row flex-wrap items-stretch justify-between font-sans font-medium uppercase transition-all delay-500 duration-500 md:ml-4 md:h-fit md:w-1/5 md:flex-col md:flex-nowrap"
+					w-full  flex-row flex-wrap items-stretch gap-0.5 md:gap-2 justify-between font-sans font-medium uppercase transition-all delay-500 duration-500 md:ml-4 md:h-fit md:w-1/5 md:flex-col md:flex-nowrap"
 					>
 						{#each options.slice(0, 5) as option}
-							<div class=" mb-0.5 text-sm md:mb-2">
-								<input
-									onkeydown={bubble('keydown')}
-									onclick={() => (imageVisible = false)}
-									id={option.value}
-									type="radio"
-									name="rotate-cube-side"
-									bind:group={selected}
-									value={option.value}
-									class="md:mt-2"
-								/>
-								<label for={option.value} class=" standardButton w-full pr-4 font-normal">
-									<span class="radio-button"></span>
-									<T keyName="option-{option.value}" defaultValue={option.value} />
-								</label>
-							</div>
+							<Button
+								onclick={() => {
+									imageVisible = false;
+									selected = option.value;
+								}}
+								class=" text-sm uppercase hover:bg-primary-900/30 dark:hover:bg-primary-50/80 w-full font-normal {selected === option.value ? 'bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900' : 'bg-primary-900/10  dark:bg-primary-50/60 '}"
+							>
+								<T keyName="option-{option.value}" defaultValue={option.value} />
+							</Button>
 						{/each}
 						<div
 							class="bg-primary-900/50 dark:bg-primary-50/50 mx-auto mt-2 h-px w-full md:mt-1"
 						></div>
-						<button
-							class="mt-3 {imageVisible
-								? 'bg-primary-900 text-primary-50! dark:bg-primary-50 dark:text-primary-900!'
-								: ''} standardButton mt-1 w-full px-3 py-1 uppercase transition-all duration-150 md:py-1.5"
+						<Button
+							class="mt-3 hover:bg-primary-900/30 dark:hover:bg-primary-50/80 {imageVisible
+								? 'bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900'
+								: 'bg-primary-900/10  dark:bg-primary-50/60 '}  mt-1 w-full px-3 py-1 uppercase transition-all duration-150 md:py-1.5"
 							onclick={showResult}
 						>
 							<T keyName="result" defaultValue="result" />
-						</button>
+						</Button>
 					</div>
 				</div>
 				<p
@@ -195,16 +185,12 @@
 	</section>
 </IntersectionObserver>
 
-<style>
-	@reference "tailwindcss"
-	
-	input[type='radio']:checked + label {
-		@apply bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900;
-	}
+<!-- <style>
+
 
 	input[type='radio'] {
 		opacity: 0;
 		position: fixed;
 		width: 0;
 	}
-</style>
+</style> -->

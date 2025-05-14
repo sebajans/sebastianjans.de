@@ -7,7 +7,7 @@
 
 	let slidesToScroll = $state(1);
 
-	let width: number = $state();
+	let width: number = $state(300);
 
 	function updateSlidesToScroll() {
 		if (width >= 640) {
@@ -23,7 +23,7 @@
 <svelte:window onresize={updateSlidesToScroll} bind:innerWidth={width} />
 
 <section
-	class="justfiy-center min-h-screen-ios relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:pt-20"
+	class="justify-center min-h-screen-ios relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:pt-20"
 	id="cv_cert"
 >
 	<div class="mx-auto w-full max-w-4xl space-y-4">
@@ -89,10 +89,10 @@
 			</Carousel.Content>
 			<div class="mt-6 flex justify-between">
 				<Carousel.Previous
-					class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative left-0 translate-x-0! border-none"
+					class="bg-primary-900/20 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative left-0 translate-x-0! border-none"
 				/>
 				<Carousel.Next
-					class="bg-primary-900 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative right-0 translate-x-0! border-none"
+					class="bg-primary-900/20 hover:bg-primary-500 dark:bg-primary-50 dark:hover:bg-primary-500 relative right-0 translate-x-0! border-none"
 				/>
 			</div>
 		</Carousel.Root>

@@ -1,6 +1,4 @@
 <script lang="ts">
-	// import { preventDefault } from 'svelte/legacy';
-
 	let dragging = false;
 	let sliderOffset = $state(0.5); // Initial offset between 0 and 1
 	let startOffset = 0; // Initial mouse/touch position on drag start
@@ -83,14 +81,19 @@
 </div>
 
 <style>
-	@reference "tailwindcss"
 
 	.slider:after {
-		@apply absolute top-1/2 left-0 h-5 w-5 -translate-x-[9px] -translate-y-1/2 rotate-45 content-[""];
+		position: absolute;
+		top: 50%;
+		left: 0;
+		height: 1.25rem; /* 5 * 0.25rem */
+		width: 1.25rem; /* 5 * 0.25rem */
+		transform: translateX(-9px) translateY(-50%) rotate(45deg);
+		content: "";
 	}
 	.slider-wrapper .slider:active,
 	.slider-wrapper .slider:focus,
 	.slider-wrapper .slider:after:active {
-		@apply cursor-grabbing;
+		cursor: grabbing;
 	}
 </style>

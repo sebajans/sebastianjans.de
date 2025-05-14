@@ -158,12 +158,14 @@
 </IntersectionObserver>
 
 <style>
-	@reference "tailwindcss"
-
 	.logo-main:hover .logo-individual {
-		@apply scale-90 opacity-60 blur-[2px];
+		transform: scale(0.9);
+		opacity: 0.6;
+		filter: blur(2px);
 	}
 	.logo-main .logo-individual:hover {
-		@apply scale-100 opacity-100 blur-none;
+		transform: scale(1);
+		opacity: 1;
+		filter: none;
 	}
 </style>
