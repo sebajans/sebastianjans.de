@@ -2,15 +2,12 @@
 	import { T } from '@tolgee/svelte'; // change import statement
 
 	import { settingsState } from '$lib/stores/settingsState';
-	import { fly, fade } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
-
+import { Button } from '@/components/ui/button';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
-	let srcKamadoLogoDark = '/logos/logo-kamadob10-white.webp';
-	let srcKamadoLogo = '/logos/logo-kamadob10.webp';
-	let srcKamadoMobile = 'img/website-kamadob10-front-mobile.webp';
-	let srcKamadoFront = 'img/website-kamadob10-front.webp';
+	let srcBrazieLogoDark = '/logos/logo-brazie-white.webp';
+	let srcBrazieLogo = '/logos/logo-brazie.webp';
+	let srcBrazieFront = '/projects/website-brazie/website-brazie-gallery.webp';
 
 	let element: HTMLElement | undefined = $state();
 	let intersecting: boolean | undefined = $state();
@@ -19,7 +16,7 @@
 <IntersectionObserver once threshold={0.5} {element} bind:intersecting>
 	<section
 		bind:this={element}
-		id="kamadoB10"
+		id="brazie"
 		class="relative flex w-full flex-col items-center justify-center"
 	>
 		<div
@@ -29,8 +26,8 @@
 			<div
 				id="brazie-logo"
 				style:background-image={$settingsState.darkMode
-					? `url('${srcKamadoLogoDark}')`
-					: `url('${srcKamadoLogo}')`}
+					? `url('${srcBrazieLogoDark}')`
+					: `url('${srcBrazieLogo}')`}
 				class="{intersecting
 					? ''
 					: 'translate-x-20 opacity-0'} col-[5_/_span_4] row-[1_/_span_2] h-full
@@ -47,7 +44,7 @@
 			w-auto self-center overflow-hidden rounded-xl shadow-xl backdrop-blur-xs md:aspect-[10/19.6] md:rounded-[8%_/_5%]"
 				>
 					<iframe
-						title="kamadob10"
+						title="brazie"
 						class="h-[calc(100%_-_2.75rem)] w-full md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem]"
 						src="https://brazie.eu"
 						name="iframe"
@@ -56,16 +53,16 @@
 					<!-- <img
 					width="320"
 					height="584"
-					alt="website-kamadob10-front-mobile"
+					alt="website-brazie-front-mobile"
 					class="h-[calc(100%_-_2.75rem)] ml-auto md:mx-auto rounded-t-[0.75rem] object-cover object-top px-0.5 pt-0.5 md:h-[calc(100%_-_3.25rem)] md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-					src={srcKamadoMobile}
+					src={srcBrazieMobile}
 				/> -->
 					<div class="relative mt-2 mb-2 flex flex-row space-x-2 md:mb-3">
 						<div class="dark:bg-pimary-90/80 bg-primary-50/80 h-5 w-1 rounded-r-full md:h-6"></div>
 						<span
 							class="dark:bg-pimary-90/80 bg-primary-50/80 text-primary-900/80 h-5 w-full rounded-md p-0.5 text-center font-sans text-xs shadow-lg md:h-6 md:text-sm"
 						>
-							kamadob10.eu
+							brazie.eu
 						</span>
 						<div class="dark:bg-pimary-90/80 bg-primary-50/80 h-5 w-1 rounded-l-full md:h-6"></div>
 					</div>
@@ -97,24 +94,32 @@
 					<img
 						width="688"
 						height="462"
-						alt="website-kamado-front"
-						class="h-[calc(100%_-_1rem)] rounded-lg object-cover md:h-[calc(100%_-_1.75rem)]"
-						src={srcKamadoFront}
+						alt="website-brazie-front"
+						class="h-[calc(100%_-_1rem)] rounded-lg object-top object-cover md:h-[calc(100%_-_1.75rem)]"
+						src={srcBrazieFront}
 					/>
 				</div>
+				
 			</div>
 
-			<p
+			<div
 				class="
 {intersecting ? '' : 'translate-x-1/2 opacity-0'} col-[1_/_span_8] row-[10_/_span_3] text-justify
 			transition-all delay-300 duration-500 md:col-[5_/_span_6] md:row-[3_/_span_3]"
 			>
+			<p>
+				
 				<T
-					keyName="works-p-kamado"
-					defaultValue="This website was for my former employer, who produces high-end handmade kamado grills. The objective for this website to appeal to high-end customers and highlight the USPs."
+				keyName="works-p-brazie"
+				defaultValue="This website was for my former employer, who produces high-end handmade brazie grills. The objective for this website to appeal to high-end customers and highlight the USPs."
 				/>
 			</p>
-			<!-- {/if} -->
+						<Button class="w-fit mt-2 text-primary-50 dark:text-primary-900 hover:dark:bg-primary-200" href="works/project-brazie">
+				<T keyName="read-more" defaultValue="Read more" />
+			</Button>
+
+			</div>
+
 		</div>
 	</section>
 </IntersectionObserver>

@@ -2,7 +2,7 @@
 	import { T } from '@tolgee/svelte';
 	import Popup from '$components/Popup.svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
-
+	import { Button } from '@/components/ui/button';
 	let popup: any;
 	function openPopup() {
 		popup.show();
@@ -32,14 +32,14 @@
 					defaultValue="Download my portfolio below to see more of my work."
 				/>
 			</h3>
-			<button
+			<Button
 				class="{intersecting
 					? ''
-					: 'translate-x-1/3 opacity-0'} btn standardButton text-primary-50 dark:bg-primary-300 relative mt-4 w-auto rounded-lg font-sans uppercase transition-all delay-200 duration-500"
+					: 'translate-x-1/3 opacity-0'} btn text-primary-50 dark:text-primary-900 hover:dark:bg-primary-200 dark:bg-primary-300 relative mt-4 w-auto rounded-lg font-sans uppercase transition-all delay-200 duration-500"
 				onclick={openPopup}
 			>
 				<T keyName="download-portfolio-button" defaultValue="Download Portfolio" />
-			</button>
+			</Button>
 			<Popup
 				popupClass={'w-full mr-10 items-start justify-start bg-primary-200'}
 				position={'w-auto top-auto mt-20 translate-x-0 translate-y-0'}

@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
-
+	import { Button } from '@/components/ui/button';
 	let tileOrientation = $state([
 		{ id: 1, rotation: 0 },
 		{ id: 2, rotation: 0 },
@@ -84,21 +84,23 @@
 					: 'translate-y-1/3 opacity-0'} col-span-3 col-start-7 row-span-4 row-start-6 flex flex-col items-center space-y-4 transition-all delay-300
 			duration-500 md:col-span-5 md:col-start-8 md:row-span-1 md:row-start-6 md:flex-row md:space-y-0 md:space-x-4"
 			>
-				<button onclick={showTile} class="btn standardButton h-fit w-full">
-					<!-- {showTiles ? 'show tile' : 'show grid'} -->
+				<Button onclick={showTile} 				variant="outline"
+				class=" dark:border-primary-50/10 dark:hover:border-primary-50/50 dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 border-primary-900/10 hover:border-primary-900/50 border bg-primary-900/20 text-primary-900  hover:bg-primary-900/30  dark:bg-primary-50/40 w-full capitalize dark:text-primary-50 font-light  duration-300 ease-in md:backdrop-blur-xs">
 					{#if showTiles}
 						<T keyName="works-trels-show-tile" defaultValue="show Tile" />
 					{:else}
-						<T keyName="works-trels-show-grid" defaultValue="show grid" />
+						<T keyName="works-trels-show-grid" defaultValue="Show Grid" />
 					{/if}
-				</button>
-				<button class="btn standardButton h-fit w-full" onclick={rotateTiles}>
+				</Button>
+				<Button 
+				variant="outline"
+				class=" dark:border-primary-50/10 dark:hover:border-primary-50/50 dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 border-primary-900/10 hover:border-primary-900/50 border bg-primary-900/20 text-primary-900  hover:bg-primary-900/30  dark:bg-primary-50/40 w-full dark:text-primary-50 font-light  duration-300 ease-in md:backdrop-blur-xs" onclick={rotateTiles}>
 					{#if rotating}
 						<T keyName="works-trels-pause-rotation" defaultValue="Pause Rotation" />
 					{:else}
 						<T keyName="works-trels-start-rotation" defaultValue="Start Rotation" />
 					{/if}
-				</button>
+				</Button>
 			</div>
 			<div
 				class="{intersecting

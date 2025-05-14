@@ -93,7 +93,7 @@
 					defaultValue="This is the website I created for a make-up stylist. It is primarily aimed at a female audience, so the colour scheme is mainly purple, red and white. The website includes a full-screen front page and a menu bar."
 				/>
 			</p>
-			<Button class="" href="works/project-renatajans">
+			<Button class="w-fit text-primary-50 dark:text-primary-900 hover:dark:bg-primary-200" href="works/project-renatajans">
 				<T keyName="read-more" defaultValue="Read more" />
 			</Button>
 			<!-- {/if} -->

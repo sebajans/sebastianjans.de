@@ -17,8 +17,8 @@
 	mainClass.set('pb-14 my-auto');
 
 	let visible: boolean = $state(false);
-	let duration: number = $state();
-	let firstdelay: number = $state();
+	let duration: number = $state(0);
+	let firstdelay: number = $state(0);
 	onMount(() => (visible = true));
 	afterNavigate(({ from }) => {
 		duration = from === null ? 450 : 0;
@@ -183,7 +183,8 @@
 				defaultValue="If you're still hesitant, feel free to give me a brief call, and we can chat about your business!"
 			/>
 		</p>
-		<Button class="btn w-full whitespace-nowrap md:w-fit" href="/contact">
+		<Button
+		 class="text-primary-50 dark:text-primary-900 hover:dark:bg-primary-200 w-full whitespace-nowrap md:w-fit" href="/contact">
 			<T keyName="skills-convince-button" defaultValue="Contact me" />
 		</Button>
 	</div>

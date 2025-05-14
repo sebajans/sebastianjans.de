@@ -41,10 +41,6 @@
 	@apply bg-primary-50 text-primary-900 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-50 dark:hover:bg-primary-800;
 }
 
-@utility standardButton {
-	@apply border-primary-900/10 from-primary-900/30 to-primary-900/20 text-primary-900 hover:border-primary-900/50 hover:from-primary-900/30 hover:to-primary-900/40 dark:border-primary-50/10 dark:from-primary-50/40 dark:to-primary-50/30 dark:text-primary-50 dark:hover:border-primary-50/50 dark:hover:from-primary-50/20 dark:hover:to-primary-50/30  flex h-auto items-center justify-center rounded-lg border bg-linear-to-tr px-4 py-3 text-center font-light transition-all duration-300 ease-in md:backdrop-blur-xs;
-}
-
 @utility input {
 	@apply bg-primary-50/80 text-primary-900 placeholder-primary-400 focus:bg-primary-50 focus:ring-primary-300/70! dark:border-primary-600 dark:bg-primary-50 dark:text-primary-900 block w-full rounded-md p-2.5 text-sm font-medium transition-all focus:ring-1 focus:outline-hidden;
 }

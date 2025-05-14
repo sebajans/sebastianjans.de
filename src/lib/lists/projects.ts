@@ -47,7 +47,7 @@ export const projectItems: ProjectData[] = [
 		],
 		problemStatement: `The client wanted a website that would be easy to navigate and would showcase her work in a way that would be easy to understand and would be visually appealing.`,
 		solution:
-			'We designed and developed a comprehensive website for Renata J that combined elegant aesthetics with user-friendly navigation. Our approach included:',
+			'We designed and developed a comprehensive website for Renata Jans that combined elegant aesthetics with user-friendly navigation. Our approach included:',
 		processText: [
 			`I conducted a thorough analysis of Renata Jans brand and target audience.`,
 			`Created a visually appealing, feminine design with a modern and responsive layout.`,
@@ -55,11 +55,11 @@ export const projectItems: ProjectData[] = [
 			`Implemented intuitive navigation and clear calls to action to guide users to Renata's product offerings and services.`
 		],
 		colors: ['#FFEFF0', '#BA000C', '#3C0005', '#201230'],
-		tools: ['Wordpress', 'Elementor', 'Affinity Designer'],
+		tools: ['SvelteKit', 'TailwindCSS', 'Affinity Designer'],
 		screenshot: '/projects/website-rj/website-rena-front-1.webp',
 		screenshot2: '/projects/website-rj/website-rena-front-2.webp',
-		screenshotMobile: '/projects/website-rj/website-rena-front-Mobile-1.webp',
-		screenshotMobile2: '/projects/website-rj/website-rena-front-Mobile-4.webp'
+		// screenshotMobile: '/projects/website-rj/website-rena-front-Mobile-1.webp',
+		// screenshotMobile2: '/projects/website-rj/website-rena-front-Mobile-4.webp'
 		// photoGridPositions: [
 		//   { url: '/projects/website-rj/outfit_1_3.webp', rowspan: 1, colspan: 1 },
 		//   { url: '/projects/website-rj/outfit_1_5.webp', rowspan: 2, colspan: 2 },

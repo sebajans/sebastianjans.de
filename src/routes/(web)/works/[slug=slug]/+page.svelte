@@ -35,7 +35,7 @@
 {#if project}
 	<section class="w-full pt-24 pb-20 sm:pt-28 md:pb-28">
 		<div class="mx-auto w-full max-w-4xl space-y-4">
-			<Button href="/works#{project.slug}" variant="default">
+			<Button class="text-primary-50 dark:text-primary-900 hover:dark:bg-primary-200" href="/works#{project.slug}" variant="default">
 				<!-- <span class="flex flex-row items-center"> -->
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -81,23 +81,25 @@
 					</div>
 				</Box>
 				<WireframeWindow
-					className="col-span-2 md:col-span-3 row-span-2"
+					className="col-span-2 w-full overflow-clip md:col-span-3 row-span-2"
 					screenshotImage={project.screenshot}
 					altTag="project-screenshot-{project.slug}-1"
 					url={project.url}
 				/>
 				<WireframeWindow
-					className="col-span-2 row-span-2"
+					className="col-span-2 w-full overflow-clip row-span-2"
 					screenshotImage={project.screenshot2}
 					altTag="project-screenshot-{project.slug}-2"
 					url={project.url}
 				/>
-				<WireframeWindowMobile
-					className="col-span-1 row-span-2 w-full"
-					screenshotImage={project.screenshotMobile}
-					url={project.url}
-					altTag="project-screenshot-mobile-{project.slug}-1"
-				/>
+				{#if project.screenshotMobile && project.screenshotMobile !== ''}
+					<WireframeWindowMobile
+						className="col-span-1 row-span-2 w-full"
+						screenshotImage={project.screenshotMobile}
+						url={project.url}
+						altTag="project-screenshot-mobile-{project.slug}-1"
+					/>
+				{/if}
 				<Box
 					show={project !== undefined}
 					outerClass="p-4 col-span-2 md:col-span-3 row-span-1 items-center flex"
@@ -125,7 +127,6 @@
 							{#each project.colors as color}
 								<div
 									style="background-color: {color}; width: calc(100% / {project.colors?.length})"
-									style:width="calc(1/{project.colors?.length})%"
 									class=""
 								></div>
 							{/each}
