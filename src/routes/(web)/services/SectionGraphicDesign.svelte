@@ -13,7 +13,6 @@
 	$effect(() => {
 		const intervalId = setInterval(() => {
 			activeIndex = (activeIndex + 1) % 5;
-
 		}, interval);
 		return () => clearInterval(intervalId);
 	});
@@ -60,76 +59,76 @@
 				{#if activeIndex === 0}
 					<div
 						in:scale={{ duration: 500 }}
-						class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative -mb-4 flex aspect-[29.7/21] h-full w-48 flex-row items-start justify-start self-end transition-all md:scale-150 "
+						class="border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative -mb-4 flex aspect-[29.7/21] h-full w-48 flex-row items-start justify-start self-end bg-linear-to-tr transition-all md:scale-150"
 					>
 						<div
-							class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 flex h-full w-full flex-col border-r"
+							class="border-primary-900/5 dark:border-primary-50/10 flex h-full w-full flex-col border-r bg-linear-to-tr"
 						></div>
 						<div
-							class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 flex h-full w-full flex-col border-r"
+							class="border-primary-900/5 dark:border-primary-50/10 flex h-full w-full flex-col border-r bg-linear-to-tr"
 						></div>
 						<div
-							class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 flex h-full w-full flex-col"
+							class="border-primary-900/5 dark:border-primary-50/10 flex h-full w-full flex-col bg-linear-to-tr"
 						></div>
 					</div>
 				{:else if activeIndex === 1}
 					<div
 						in:scale={{ duration: 500 }}
-						class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative mt-4 flex aspect-[29.7/21] h-full w-72 flex-row items-start justify-start transition-all md:scale-150 md:rounded-md "
+						class="border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative mt-4 flex aspect-[29.7/21] h-full w-72 flex-row items-start justify-start bg-linear-to-tr transition-all md:scale-150 md:rounded-md"
 					>
 						<div
-							class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 flex h-full w-full flex-col gap-1.5 border-r p-2 md:p-3"
+							class="border-primary-900/5 dark:border-primary-50/10 flex h-full w-full flex-col gap-1.5 border-r bg-linear-to-tr p-2 md:p-3"
 						>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-1 h-2 w-10 rounded-lg border md:h-2.5 md:w-14 "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-1 h-2 w-10 rounded-lg border bg-linear-to-tr md:h-2.5 md:w-14"
 							></div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-10 rounded-lg border md:h-2 md:w-2/3 "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-10 rounded-lg border bg-linear-to-tr md:h-2 md:w-2/3"
 							></div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-10 rounded-lg border md:h-2 md:w-2/3 "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-10 rounded-lg border bg-linear-to-tr md:h-2 md:w-2/3"
 							></div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-10 rounded-lg border md:h-2 md:w-2/3 "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-10 rounded-lg border bg-linear-to-tr md:h-2 md:w-2/3"
 							></div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded! border md:h-full md:w-full "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded! border bg-linear-to-tr md:h-full md:w-full"
 							></div>
 						</div>
 						<div
-							class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 grid h-full w-full grid-cols-2 grid-rows-3 gap-1.5 p-2 md:p-3"
+							class="border-primary-900/5 dark:border-primary-50/10 grid h-full w-full grid-cols-2 grid-rows-3 gap-1.5 bg-linear-to-tr p-2 md:p-3"
 						>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded-sm border md:h-full md:w-full "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded-sm border bg-linear-to-tr md:h-full md:w-full"
 							></div>
 							<div class="flex flex-col justify-center gap-1.5">
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2.5 w-2/3 rounded-sm border md:h-2 "
+									class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2.5 w-2/3 rounded-sm border bg-linear-to-tr md:h-2"
 								></div>
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 w-full rounded-sm border md:h-1/3 "
+									class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 w-full rounded-sm border bg-linear-to-tr md:h-1/3"
 								></div>
 							</div>
 							<div class="flex flex-col justify-center gap-1.5">
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2.5 w-2/3 rounded-sm border md:h-2 "
+									class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2.5 w-2/3 rounded-sm border bg-linear-to-tr md:h-2"
 								></div>
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 w-full rounded-sm border md:h-1/3 "
+									class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 w-full rounded-sm border bg-linear-to-tr md:h-1/3"
 								></div>
 							</div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded-sm border md:h-full md:w-full "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded-sm border bg-linear-to-tr md:h-full md:w-full"
 							></div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded-sm border md:h-full md:w-full "
+								class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-full w-10 rounded-sm border bg-linear-to-tr md:h-full md:w-full"
 							></div>
 							<div class="flex flex-col justify-center gap-1.5">
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2.5 w-2/3 rounded-sm border md:h-2 "
+									class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2.5 w-2/3 rounded-sm border bg-linear-to-tr md:h-2"
 								></div>
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 w-full rounded-sm border md:h-1/3 "
+									class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 w-full rounded-sm border bg-linear-to-tr md:h-1/3"
 								></div>
 							</div>
 						</div>
@@ -137,38 +136,38 @@
 				{:else if activeIndex === 2}
 					<div
 						in:scale={{ duration: 500 }}
-						class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative flex aspect-[21/29.7] h-full w-24 flex-col items-start justify-start gap-1.5 self-end px-2 py-2 transition-all md:scale-150 md:rounded-md  md:px-3 md:py-3"
+						class="border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative flex aspect-[21/29.7] h-full w-24 flex-col items-start justify-start gap-1.5 self-end bg-linear-to-tr px-2 py-2 transition-all md:scale-150 md:rounded-md md:px-3 md:py-3"
 					>
 						<div
-							class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-1 h-2 w-10 rounded-lg border md:h-2.5 md:w-14 "
+							class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-1 h-2 w-10 rounded-lg border bg-linear-to-tr md:h-2.5 md:w-14"
 						></div>
 						<div
-							class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-full rounded-lg border md:h-2 "
+							class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-full rounded-lg border bg-linear-to-tr md:h-2"
 						></div>
 						<div
-							class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-full rounded-lg border md:h-2 "
+							class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-full rounded-lg border bg-linear-to-tr md:h-2"
 						></div>
 						<div
-							class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-full rounded-lg border md:h-2 "
+							class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-2 w-full rounded-lg border bg-linear-to-tr md:h-2"
 						></div>
 						<div
-							class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-1/3 w-full rounded! border "
+							class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 h-1/3 w-full rounded! border bg-linear-to-tr"
 						></div>
 					</div>
 				{:else if activeIndex === 3}
 					<div
 						in:scale={{ duration: 500 }}
-						class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative flex aspect-15/10 h-full w-16 flex-row items-center justify-center gap-1 px-1 py-1 transition-all md:scale-150 md:rounded-md  md:px-1.5 md:py-1.5"
+						class="border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative flex aspect-15/10 h-full w-16 flex-row items-center justify-center gap-1 bg-linear-to-tr px-1 py-1 transition-all md:scale-150 md:rounded-md md:px-1.5 md:py-1.5"
 					>
 						<div
-							class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 shrink-0 rounded-full border transition-all h-4 w-4 "
+							class="border-primary-900/10 dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 shrink-0 rounded-full border bg-linear-to-tr transition-all"
 						></div>
 						<div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 rounded-full border transition-all h-2 w-6 "
+								class="border-primary-900/10 dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-2 w-6 rounded-full border bg-linear-to-tr transition-all"
 							></div>
 							<div
-								class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mt-1 mb-0 rounded-full border transition-all h-2 w-6 "
+								class="border-primary-900/10 dark:border-primary-50/20 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mt-1 mb-0 h-2 w-6 rounded-full border bg-linear-to-tr transition-all"
 							></div>
 						</div>
 					</div>
@@ -176,17 +175,17 @@
 					<div class="group relative flex h-80 flex-row items-center justify-center">
 						<div class="h-fit max-h-80 w-auto">
 							<div
-								class="border-primary-900/5 bg-linear-to-tr dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative z-10 flex aspect-9/20 w-36 flex-col overflow-clip rounded-md border transition-all duration-1000 ease-[cubic-bezier(0.85,0,0.15,1)] "
+								class="border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 dark:text-primary-50 from-primary-900/10 to-primary-900/5 relative z-10 flex aspect-9/20 w-36 flex-col overflow-clip rounded-md border bg-linear-to-tr transition-all duration-1000 ease-[cubic-bezier(0.85,0,0.15,1)]"
 							>
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/20 flex h-8 flex-row justify-around gap-2 border-b"
+									class="border-primary-900/10 dark:border-primary-50/20 flex h-8 flex-row justify-around gap-2 border-b bg-linear-to-tr"
 								></div>
 								<div class="h-full overflow-clip">
 									<div
 										class="flex flex-col gap-y-2 transition-transform duration-500 group-hover:-translate-y-1/2"
 									>
 										<div
-											class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/20 relative h-2/3 w-full border-y"
+											class="border-primary-900/10 dark:border-primary-50/20 relative h-2/3 w-full border-y bg-linear-to-tr"
 										>
 											<svg class="stroke-primary-900/10 dark:stroke-primary-50/20 h-full w-full">
 												<line class="" x1="0" y1="100%" x2="100%" y2="0" />
@@ -195,17 +194,17 @@
 										</div>
 										<div class="mb-4 flex flex-row gap-2 px-1">
 											<div
-												class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border "
+												class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border bg-linear-to-tr"
 											></div>
 											<div
-												class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border "
+												class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border bg-linear-to-tr"
 											></div>
 											<div
-												class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border "
+												class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border bg-linear-to-tr"
 											></div>
 										</div>
 										<div
-											class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/20 relative h-2/3 w-full border-y transition-transform duration-500"
+											class="border-primary-900/10 dark:border-primary-50/20 relative h-2/3 w-full border-y bg-linear-to-tr transition-transform duration-500"
 										>
 											<svg class="stroke-primary-900/10 dark:stroke-primary-50/20 h-full w-full">
 												<line class="" x1="0" y1="100%" x2="100%" y2="0" />
@@ -214,34 +213,34 @@
 										</div>
 										<div class="mb-4 flex flex-row gap-2 px-1">
 											<div
-												class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border "
+												class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border bg-linear-to-tr"
 											></div>
 											<div
-												class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border "
+												class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border bg-linear-to-tr"
 											></div>
 											<div
-												class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border "
+												class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 aspect-square h-4 w-4 rounded border bg-linear-to-tr"
 											></div>
 										</div>
 									</div>
 								</div>
 								<div
-									class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/20 flex flex-row justify-around gap-2 border-t px-1 py-2"
+									class="border-primary-900/10 dark:border-primary-50/20 flex flex-row justify-around gap-2 border-t bg-linear-to-tr px-1 py-2"
 								>
 									<div
-										class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border transition-all md:h-5 md:w-5 
+										class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border bg-linear-to-tr transition-all md:h-5 md:w-5
                     "
 									></div>
 									<div
-										class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border transition-all md:h-5 md:w-5 
+										class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border bg-linear-to-tr transition-all md:h-5 md:w-5
                     "
 									></div>
 									<div
-										class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border transition-all md:h-5 md:w-5 
+										class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border bg-linear-to-tr transition-all md:h-5 md:w-5
                     "
 									></div>
 									<div
-										class="border-primary-900/10 bg-linear-to-tr dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border transition-all md:h-5 md:w-5 
+										class="border-primary-900/10 dark:border-primary-50/15 dark:from-primary-50/5 dark:to-primary-50/10 from-primary-900/10 to-primary-900/5 mb-0 h-4 w-4 rounded border bg-linear-to-tr transition-all md:h-5 md:w-5
                     "
 									></div>
 								</div>

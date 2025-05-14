@@ -151,7 +151,7 @@ const config = {
 				// 	DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
 				// 	foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
 				// },
-				'primary': {
+				primary: {
 					50: '#fff7eb',
 					100: '#ffedd1',
 					200: '#ffd39e',

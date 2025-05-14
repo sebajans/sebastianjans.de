@@ -89,7 +89,7 @@ export const logoItems: LogoItem[] = [
 		id: 11,
 		title: 'HortaTech',
 		text: 'HortaTech promotes sustainable agriculture through the use of advanced technologies and innovative practices to improve the management of water resources. Our goal is to preserve the agricultural heritage of the Huerta de Valencia, reducing environmental impact and promoting local economic development.',
-		image: `${path}/logo-hortatech.webp`,
+		image: `${path}/logo-hortatech.webp`
 	},
 	{
 		id: 12,
@@ -116,7 +116,7 @@ export const logoItems: LogoItem[] = [
 		id: 15,
 		title: 'Erzählchen',
 		text: 'Erzählchen is a brand that focuses on storytelling and creativity. The logo is designed to convey a sense of imagination and wonder.',
-		image: `${path}/logo-erzaehlchen.webp`,
+		image: `${path}/logo-erzaehlchen.webp`
 		// imageDark: `${path}/logo-erzaehlchen-white.webp`
 	}
 

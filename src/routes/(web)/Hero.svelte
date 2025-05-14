@@ -97,7 +97,7 @@
 								{value.title}
 							</h1>
 							<h2
-								class="text-primary-800 mb-1 text-3xl leading-relaxed font-light sm:mb-2 sm:text-4xl dark:text-primary-50"
+								class="text-primary-800 dark:text-primary-50 mb-1 text-3xl leading-relaxed font-light sm:mb-2 sm:text-4xl"
 							>
 								<span>{value.my_name_is}</span>
 								<span class="font-bold">Sebastian Jans</span>

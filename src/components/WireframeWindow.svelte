@@ -20,9 +20,7 @@
 
 <Box
 	{show}
-	outerClass="{show
-		? ''
-		: 'opacity-0'} {className}
+	outerClass="{show ? '' : 'opacity-0'} {className}
 					aspect-14/10 bg-primary-100 dark:bg-primary-800 transition-all duration-500 flex mx-auto justify-end w-fit h-full "
 >
 	<div
@@ -33,16 +31,18 @@
 		>
 			<div class="flex flex-row space-x-1 md:space-x-2">
 				{#each Array(3) as _}
-					<div class=" h-2 w-2 border dark:bg-primary-50/20 bg-primary-900/20 border-primary-900/30 dark:border-primary-50/50 rounded-lg md:h-3.5 md:w-3.5" ></div>
+					<div
+						class=" dark:bg-primary-50/20 bg-primary-900/20 border-primary-900/30 dark:border-primary-50/50 h-2 w-2 rounded-lg border md:h-3.5 md:w-3.5"
+					></div>
 				{/each}
 			</div>
 			{#if url}
 				<span
-					class=" mb-0 h-2 w-full border dark:bg-primary-50/20 bg-primary-900/20 border-primary-900/30 dark:border-primary-50/50 rounded-lg px-2 pt-px text-center text-[0.6rem] leading-[0.8] md:h-3.5"
+					class=" dark:bg-primary-50/20 bg-primary-900/20 border-primary-900/30 dark:border-primary-50/50 mb-0 h-2 w-full rounded-lg border px-2 pt-px text-center text-[0.6rem] leading-[0.8] md:h-3.5"
 				>
 					{url}
 				</span>
-				<div class=" mb-0 h-2 w-8 md:h-3.5" ></div>
+				<div class=" mb-0 h-2 w-8 md:h-3.5"></div>
 			{/if}
 		</div>
 	</div>

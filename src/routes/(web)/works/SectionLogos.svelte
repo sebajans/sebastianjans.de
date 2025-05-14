@@ -91,7 +91,7 @@
 					tabindex="0"
 					class="logo-main {activeId === -1
 						? ''
-						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} mx-auto trans form group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full max-w-3/5 grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
+						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} trans form group mx-auto grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full max-w-3/5 grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
 				>
 					{#each $localLogoItems as logo (logo.id)}
 						<div
@@ -105,7 +105,7 @@
 								style:background-image={$settingsState.darkMode
 									? `url('${logo.imageDark ? logo.imageDark : logo.image}')`
 									: `url('${logo.image}')`}
-								class="aspect-square w-full rounded-lg overflow-clip max-w-[120px] bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:max-w-[160px]"
+								class="aspect-square w-full max-w-[120px] overflow-clip rounded-lg bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:max-w-[160px]"
 							></button>
 						</div>
 					{/each}
@@ -121,7 +121,7 @@
 						style:background-image={$settingsState.darkMode
 							? `url('${$localLogoItems.find((logo) => logo.id === activeId)?.imageDark ? $localLogoItems.find((logo) => logo.id === activeId)?.imageDark : $localLogoItems.find((logo) => logo.id === activeId)?.image}')`
 							: `url('${$localLogoItems.find((logo) => logo.id === activeId)?.image}')`}
-						class="my-auto aspect-square w-full h-1/2 bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:p-4"
+						class="my-auto aspect-square h-1/2 w-full bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:p-4"
 					></div>
 					<div class="pb-4">
 						<h2 class="pb-2 text-center font-sans text-3xl">

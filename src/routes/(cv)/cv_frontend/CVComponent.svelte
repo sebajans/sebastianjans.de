@@ -72,14 +72,14 @@
 		}, {} as SkillItems);
 	}
 
-  onMount( () => {
-    selectCategory(['webdev']);
-  })
+	onMount(() => {
+		selectCategory(['webdev']);
+	});
 
-  let showDirection = $state(false);
-  function toggleDirection() {
-    showDirection = !showDirection;
-  }
+	let showDirection = $state(false);
+	function toggleDirection() {
+		showDirection = !showDirection;
+	}
 </script>
 
 <div class="hide-on-print sticky inset-x-0 top-0 px-4 pt-4">
@@ -143,7 +143,9 @@
 								<T keyName={item.name} defaultValue={item.name} />
 							</h3>
 							<h3 class="dark:text-primary-300 mt-1.5 w-1/3 text-right text-sm font-medium">
-								{item.fromMonth}/{item.fromYear} - {item.toMonth ? item.toMonth  : ""}{item.toYear ? "/" +item.toYear : ""}
+								{item.fromMonth}/{item.fromYear} - {item.toMonth ? item.toMonth : ''}{item.toYear
+									? '/' + item.toYear
+									: ''}
 							</h3>
 							<p class="text-primary-700 -mt-0.5 w-2/3 font-sans font-light">
 								&#8212;
@@ -200,14 +202,14 @@
 				<div
 					class="grid-co ls-[minmax(0,40%)_minmax(0,_1fr)] grid-rows-[1fr_rep eat(4,_1.5rem)] justify -center grid h-auto w-full gap-x-2 gap-y-0 align-baseline"
 				>
-        {#if showDirection}
-					<h3 class="dark:text-primary-300 align-baseline text-base">
-						<T keyName="direction" defaultValue="Direction" />
-					</h3>
-					<p class="mt-0.5 mb-1.5 text-left align-baseline text-xs">
-						Calle Fra Pere Vives 22, Puerta 4<br />46009 Valencia, Valencia
-					</p>
-        {/if}
+					{#if showDirection}
+						<h3 class="dark:text-primary-300 align-baseline text-base">
+							<T keyName="direction" defaultValue="Direction" />
+						</h3>
+						<p class="mt-0.5 mb-1.5 text-left align-baseline text-xs">
+							Calle Fra Pere Vives 22, Puerta 4<br />46009 Valencia, Valencia
+						</p>
+					{/if}
 					<h3 class="dark:text-primary-300 align-baseline text-base">
 						<T keyName="telephone" defaultValue="Telephone" />
 					</h3>

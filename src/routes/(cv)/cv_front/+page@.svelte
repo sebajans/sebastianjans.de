@@ -8,7 +8,7 @@
 </div>
 
 <style>
-		@reference "tailwindcss"
+	@reference "tailwindcss"
 
 	* {
 		box-sizing: border-box;

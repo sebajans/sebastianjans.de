@@ -52,14 +52,13 @@
 					? ''
 					: '-translate-x-20 opacity-0'} dark:text-primary-200 w-full self-end py-4 transition-all delay-200 duration-500"
 			>
-				<ul class="grid gap-3 grid-flow-col grid-rows-6 sm:grid-rows-3 md:grid-cols-2">
+				<ul class="grid grid-flow-col grid-rows-6 gap-3 sm:grid-rows-3 md:grid-cols-2">
 					{#each servicesSteps as step, i}
-						<li class="flex py-2 gap-2">
+						<li class="flex gap-2 py-2">
 							<span class="text-3xl font-bold">
 								{i + 1}.
 							</span>
 							<span class="mt-1.5">
-
 								<T keyName={step.key} defaultValue={step.value} />
 							</span>
 						</li>

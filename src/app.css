@@ -30,7 +30,7 @@
 }
 
 @utility btn {
-	@apply rounded-md bg-[length:100%_300%] px-4 py-2 text-center font-sans dark:hover:bg-primary-100 dark:hover:text-primary-50 dark:text-primary-900 text-sm uppercase transition-all duration-300 hover:bg-[length:100%_100%];
+	@apply dark:hover:bg-primary-100 dark:hover:text-primary-50 dark:text-primary-900 rounded-md bg-[length:100%_300%] px-4 py-2 text-center font-sans text-sm uppercase transition-all duration-300 hover:bg-[length:100%_100%];
 }
 
 @utility btn-highlight {

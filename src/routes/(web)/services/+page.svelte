@@ -1,5 +1,4 @@
 <script lang="ts">
-
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { fly } from 'svelte/transition';
@@ -106,7 +105,7 @@
 						}, 200);
 					})}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
-					class="dark:text-primary-50 hover:cursor-pointer ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 md:py-4 {section.color} "
+					class="dark:text-primary-50 ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 hover:cursor-pointer md:py-4 {section.color} "
 				>
 					<T keyName="works-{section.slug}" defaultValue={section.name} />
 				</button>

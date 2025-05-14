@@ -8,7 +8,6 @@
 	import PageTransitions from '$components/PageTransitions.svelte';
 	import Blob from '$components/Blob.svelte';
 
-	
 	interface Props {
 		/** @type {import('./$types').LayoutData} */
 		data: any;
@@ -30,7 +29,6 @@
 	let viewport: Element | undefined = $state();
 	let contents: Element | undefined = $state();
 </script>
-
 
 <div id="blob-motion" class="motion-reduce:hidden">
 	<Blob />

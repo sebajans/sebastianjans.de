@@ -2,13 +2,15 @@
 	import { Spring } from 'svelte/motion';
 
 	let position = new Spring({ x: 0, y: 0 });
-	let coords = $state(new Spring(
-		{ x: 0, y: 0 },
-		{
-			stiffness: 0.05,
-			damping: 0.25
-		}
-	));
+	let coords = $state(
+		new Spring(
+			{ x: 0, y: 0 },
+			{
+				stiffness: 0.05,
+				damping: 0.25
+			}
+		)
+	);
 	let scale = $state(new Spring(1));
 	let smaller: boolean = $state(false);
 

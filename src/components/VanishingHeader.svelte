@@ -6,7 +6,6 @@
 	import { pageTitle } from '$lib/stores/pageTitle';
 
 	// import SocialMenu from '$components/SocialMenu.svelte';
-	
 
 	interface Props {
 		// export let duration = "300ms"

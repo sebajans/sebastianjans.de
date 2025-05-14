@@ -40,7 +40,7 @@
 			<div
 				class="{intersecting
 					? ''
-					: '-translate-y-6 translate-x-12  opacity-0'} z-10 col-[2_/_span_4] row-[7_/_span_5] w-full self-center transition-all delay-500 duration-700 md:col-[4_/_span_4] md:row-[6_/_span_4] md:self-start"
+					: 'translate-x-12 -translate-y-6  opacity-0'} z-10 col-[2_/_span_4] row-[7_/_span_5] w-full self-center transition-all delay-500 duration-700 md:col-[4_/_span_4] md:row-[6_/_span_4] md:self-start"
 			>
 				<img
 					width="272"

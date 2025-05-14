@@ -26,6 +26,6 @@
 		class="{showMenu
 			? '-translate-y-2.5 -rotate-45 group-hover:-rotate-90'
 			: 'group-hover:-rotate-90'} 
-			bg-primary-900 group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100 block h-0.5 w-10 delay-100 duration-200 group-hover:w-9 group-hover:-translate-y-2.5 group-hover:translate-x-0.5"
+			bg-primary-900 group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100 block h-0.5 w-10 delay-100 duration-200 group-hover:w-9 group-hover:translate-x-0.5 group-hover:-translate-y-2.5"
 	></span>
 </button>

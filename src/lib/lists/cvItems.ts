@@ -1,5 +1,3 @@
-
-
 export let cvItems = [
 	{
 		category: 'job',
@@ -29,7 +27,7 @@ export let cvItems = [
 		fromYear: '2024',
 		fromMonth: '02',
 		toYear: '',
-		toMonth: "Today",
+		toMonth: 'Today',
 		shortdescription: 'Web design and development, marketing, product design',
 		info: 'Vivus is a Start-Up company that i co-founded. I am responsible for the technical aspects of the company, including web design and development, as well as marketing and product design. I have learned a lot about the process of starting a company and the importance of teamwork and communication in a small business.'
 	},
@@ -67,7 +65,7 @@ export let cvItems = [
 	},
 	{
 		category: 'job',
-		fieldOfWork: [ 'productdesign'],
+		fieldOfWork: ['productdesign'],
 		id: 2,
 		image: 'cv_items/logo-ditf-weiss.svg',
 		imageDark: 'cv_items/logo-ditf-weiss.svg',
