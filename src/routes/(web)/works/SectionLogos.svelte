@@ -1,63 +1,27 @@
-<!-- @migration-task Error while migrating Svelte code: Identifier 'm' has already been declared
-https://svelte.dev/e/js_parse_error -->
-<!-- TODO migration-task -->
 <script lang="ts">
-	import { createBubbler, stopPropagation } from 'svelte/legacy';
-
-	const bubble = createBubbler();
-	import { onMount } from 'svelte';
-	import { T } from '@tolgee/svelte'; // change import statement
+	import { onMount, onDestroy } from 'svelte';
+	import { T } from '@tolgee/svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
 	import { logoItems } from '$lib/lists/logoItems';
 	import { settingsState } from '$lib/stores/settingsState';
-	import { fly, scale } from 'svelte/transition';
 	import { writable } from 'svelte/store';
-	import { tick } from 'svelte';
+	import { fly, scale } from 'svelte/transition';
 
-	type M = { x: number; y: number };
-	let m: M = { x: 0, y: 0 };
-	let n = { x: 0, y: 0 };
-	() => (n = getDivPosition());
+	let activeId: number = -1;
+	let element: HTMLElement | undefined;
+	let intersecting: boolean = false;
 
-	let offset = { x: 0, y: 0 };
-	// function handleMousemove(event: any) {
-	// 	m.x = event.clientX;
-	// 	m.y = event.clientY;
-	// 	n = getDivPosition();
-	// 	offset.x = Math.round(n.x - m.x);
-	// 	offset.y = Math.round(n.y - m.y);
-	// }
-	function getDivPosition() {
-		let div: any = document.getElementById('logos');
-		let rect = div.getBoundingClientRect();
+	const localLogoItems = writable(logoItems.slice(0, 9));
+	const discardedLogoItems = writable(logoItems.slice(9));
 
-		type n = { x: number; y: number };
-		let n = {
-			x: rect.x + rect.width / 2,
-			y: rect.y + rect.height / 2
-		};
-		return n;
-	}
+	let interval: number | undefined;
 
 	onMount(() => {
-		let n = getDivPosition();
-		return n;
-	});
+		interval = setInterval(() => {
+			if (activeId !== -1) return;
 
-	let activeNumber: number = $state(-1);
-
-	let element: HTMLElement = $state();
-	let intersecting: boolean = $state();
-
-	let localLogoItems = writable(logoItems.slice(0, 9));
-
-	let activeLocalLogoItems = writable(logoItems.slice(0, 9));
-	let discardedLogoItems = writable(logoItems.slice(9));
-
-	function updateLocalLogoItems() {
-		setInterval(() => {
-			activeLocalLogoItems.update((activeItems) => {
+			localLogoItems.update((activeItems) => {
 				if (activeItems.length < 9) return activeItems;
 
 				const newActiveItems = [...activeItems];
@@ -81,24 +45,24 @@ https://svelte.dev/e/js_parse_error -->
 
 				return newActiveItems;
 			});
-			tick();
 		}, 3000);
-	}
+	});
 
-	onMount(() => {
-		updateLocalLogoItems();
+	onDestroy(() => {
+		clearInterval(interval);
 	});
 </script>
 
 <IntersectionObserver once threshold={0.5} {element} bind:intersecting>
-	{#if activeNumber !== -1}
-		<div
-			role="button"
-			tabindex="0"
-			onclick={() => (activeNumber = -1)}
-			onkeydown={() => (activeNumber = -1)}
+	{#if activeId !== -1}
+		<button
+			onclick={() => (activeId = -1)}
 			class="absolute inset-0 z-1 cursor-default bg-transparent"
-		></div>
+		>
+			<span class="sr-only">
+				<T keyName="close" defaultValue="Close" />
+			</span>
+		</button>
 	{/if}
 	<section
 		bind:this={element}
@@ -121,75 +85,64 @@ https://svelte.dev/e/js_parse_error -->
 					? ''
 					: 'translate-x-1/4 scale-75 opacity-0'} w-full transition-all delay-500 duration-500"
 			>
-				<!-- style:transform={`translate3d(calc(0.05*${offset.x}px), calc(0.05*${offset.y}px), 0)`} -->
 				<div
 					id="logos"
 					role="grid"
 					tabindex="0"
-					onkeydown={stopPropagation(bubble('keydown'))}
-					onclick={stopPropagation(bubble('click'))}
-					class="logo-main {activeNumber === -1
+					class="logo-main {activeId === -1
 						? ''
-						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} trans form group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full max-w-3/5 grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
+						: 'pointer-events-none translate-x-20 scale-75 opacity-30 blur-[2px]!'} mx-auto trans form group grid aspect-square max-h-[calc(100vh_-_5.5rem)] w-full max-w-3/5 grid-cols-3 grid-rows-3 items-center justify-center gap-5 transition-all duration-300"
 				>
-					{#each $activeLocalLogoItems as logo, i}
+					{#each $localLogoItems as logo (logo.id)}
 						<div
-							transition:scale
+							in:scale|global={{ duration: 300 }}
 							class="logo-individual flex items-center justify-center transition-all duration-200"
 						>
 							<button
 								aria-label="Logo Design"
 								role="gridcell"
-								onkeydown={bubble('keydown')}
-								onclick={() => (activeNumber = i)}
+								onclick={() => (activeId = logo.id)}
 								style:background-image={$settingsState.darkMode
-									? `url('${logo.imageDark}')`
+									? `url('${logo.imageDark ? logo.imageDark : logo.image}')`
 									: `url('${logo.image}')`}
-								class="aspect-square w-full max-w-[120px] bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:max-w-[160px]"
+								class="aspect-square w-full rounded-lg overflow-clip max-w-[120px] bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:max-w-[160px]"
 							></button>
 						</div>
 					{/each}
 				</div>
 			</div>
 
-			{#if $activeLocalLogoItems[activeNumber]}
+			{#if $localLogoItems.find((logo) => logo.id === activeId)}
 				<div
-					role="button"
-					tabindex="0"
-					onkeydown={stopPropagation(bubble('keydown'))}
-					onclick={stopPropagation(bubble('click'))}
 					transition:fly|global={{ x: -300, duration: 300 }}
-					class="{logoItems[activeNumber]
-						? 'translate-x-0'
-						: 'translate-x-full'} bg-primary-300 shadow-primary-900/30 dark:bg-primary-600 absolute left-0 z-11 flex h-4/5 max-h-[calc(100vh_-_5.5rem)] w-4/5 cursor-default flex-col items-center justify-between rounded-xl p-4 shadow-md md:right-2/5 md:w-3/5"
+					class="bg-primary-300 shadow-primary-900/30 dark:bg-primary-600 absolute left-0 z-11 flex h-4/5 max-h-[calc(100vh_-_5.5rem)] w-4/5 cursor-default flex-col items-center justify-between rounded-xl p-4 shadow-md md:right-2/5 md:w-3/5"
 				>
 					<div
 						style:background-image={$settingsState.darkMode
-							? `url('${logoItems[activeNumber].imageDark}')`
-							: `url('${logoItems[activeNumber].image}')`}
-						class=" my-auto aspect-square h-1/2 bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:p-4"
+							? `url('${$localLogoItems.find((logo) => logo.id === activeId)?.imageDark ? $localLogoItems.find((logo) => logo.id === activeId)?.imageDark : $localLogoItems.find((logo) => logo.id === activeId)?.image}')`
+							: `url('${$localLogoItems.find((logo) => logo.id === activeId)?.image}')`}
+						class="my-auto aspect-square w-full h-1/2 bg-contain bg-center bg-no-repeat bg-origin-content p-2 transition-all duration-200 md:p-4"
 					></div>
 					<div class="pb-4">
 						<h2 class="pb-2 text-center font-sans text-3xl">
 							<T
-								keyName="logo-design-{logoItems[activeNumber].title}"
-								defaultValue={logoItems[activeNumber].title}
+								keyName="logo-design-{$localLogoItems.find((logo) => logo.id === activeId)?.title}"
+								defaultValue={$localLogoItems.find((logo) => logo.id === activeId)?.title}
 							/>
-							<!-- {logoItems[activeNumber].title} -->
 						</h2>
 						<p class="text-center">
 							<T
-								keyName="logo-design-{logoItems[activeNumber].title}-text"
-								defaultValue={logoItems[activeNumber].text}
+								keyName="logo-design-{$localLogoItems.find((logo) => logo.id === activeId)
+									?.title}-text"
+								defaultValue={$localLogoItems.find((logo) => logo.id === activeId)?.text}
 							/>
-							<!-- {logoItems[activeNumber].text} -->
 						</p>
 					</div>
 
 					<button
 						aria-label="Close"
 						class="group group hover:text-primary-500 absolute top-4 right-4 z-20 h-6 w-6 font-sans"
-						onclick={() => (activeNumber = -1)}
+						onclick={() => (activeId = -1)}
 					>
 						<span
 							class="bg-primary-900 group-hover:bg-primary-600 dark:bg-primary-400 dark:group-hover:bg-primary-100 block h-0.5 w-6 rotate-45 transition-all duration-250 group-hover:rotate-[135deg]"
