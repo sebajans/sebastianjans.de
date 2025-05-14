@@ -1,16 +1,21 @@
 <script lang="ts">
-	import { settingsState, toggleDarkMode } from "$lib/stores/settingsState";
+	import { settingsState, toggleDarkMode } from '$lib/stores/settingsState';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <button
 	aria-label="DarkModeToggle"
-	class="p-2 h-10 w-10 relative overflow-hidden rounded-md transition-colors duration-250 hover:text-primary-300 dark:hover:text-primary-500 bg-primary-900/20 hover:bg-primary-900 text-primary-900 dark:bg-primary-50/20 dark:hover:bg-primary-50 dark:text-primary-50"
-	on:click={toggleDarkMode}
+	class="bg-primary-900/20 text-primary-900 hover:bg-primary-900 hover:text-primary-300 dark:bg-primary-50/20 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-500 relative h-10 w-10 overflow-hidden rounded-md p-2 transition-colors duration-250"
+	onclick={toggleDarkMode}
 >
 	<div
 		class="{$settingsState.darkMode
 			? 'rotate-90'
-			: ''} -translate-y-[50%] absolute h-6 w-6 origin-[50%_400%] transition-transform duration-500"
+			: ''} absolute h-6 w-6 origin-[50%_400%] -translate-y-[50%] transition-transform duration-500"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +35,7 @@
 	<div
 		class="{$settingsState.darkMode
 			? 'rotate-0'
-			: '-rotate-90'} -translate-y-[50%] absolute h-6 w-6 origin-[50%_400%] transition-transform duration-500"
+			: '-rotate-90'} absolute h-6 w-6 origin-[50%_400%] -translate-y-[50%] transition-transform duration-500"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +43,7 @@
 			viewBox="1 1 23 23"
 			stroke-width="2"
 			stroke="currentColor"
-			class="w-6 h-6"
+			class="h-6 w-6"
 		>
 			<path
 				stroke-linecap="round"
@@ -47,6 +52,5 @@
 			/>
 		</svg>
 	</div>
-	<slot />
+	{@render children?.()}
 </button>
-

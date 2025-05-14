@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { fade, draw } from 'svelte/transition';
-	export let imgClass: string;
+	interface Props {
+		imgClass: string;
+	}
+
+	let { imgClass }: Props = $props();
 </script>
 
 <svg

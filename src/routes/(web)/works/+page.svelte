@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { pageTitle } from '$lib/stores/pageTitle';
-	
+	import Button from '$lib/components/ui/button/button.svelte';
 	import { fly } from 'svelte/transition';
-	
+
 	import SvelteSeo from 'svelte-seo';
-	
+
 	import { workSectionNames } from '$lib/lists/workSectionNames';
 	import WorksHeader from '$components/WorksHeader.svelte';
-	
+
 	import SectionWebRR from './SectionWebRR.svelte';
 	import SectionWebRJ from './SectionWebRJ.svelte';
 	import SectionWebKamado from './SectionWebKamado.svelte';
@@ -19,54 +19,66 @@
 	import SectionProductDesign2 from './SectionProductDesign2.svelte';
 	import SectionProductDesignCup from './SectionProductDesignCup.svelte';
 	import SectionEnd from './SectionEnd.svelte';
+	// TODO: Brazie needs content
+	import SectionWebBrazie from './SectionWebBrazie.svelte';
 
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { scrollIntoView } from '$lib/functions/scrollIntoView';
 
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 	import { getTranslate } from '@tolgee/svelte';
-	import SectionWebBrazie from './SectionWebBrazie.svelte';
+	import SectionWebServices from './SectionWebServices.svelte';
 
 	const { t } = getTranslate(); // Tolgee t translation
 
-
 	pageTitle.set($t({ key: 'works-title', defaultValue: 'Works' }));
 
-	let scroll: number = 0;
-	let windowHeight: number = 0;
+	let scroll: number = $state(0);
+	let windowHeight: number = $state(0);
 
-	let elementWeb: HTMLElement;
-	let intersectingWeb: boolean = false;
-	let isVisibleLogo = false; // Separate state variable to control div visibility
+	let elementWeb: HTMLElement | undefined = $state();
+	let intersectingWeb: boolean = $state(false);
+	let isVisibleLogo = $state(false); // Separate state variable to control div visibility
 
-	$: {
+	$effect(() => {
 		if (intersectingWeb) {
-      isVisibleLogo = true;
-    }
-	}
+			isVisibleLogo = true;
+		}
+	});
 
-	let elementLogo: HTMLElement;
-	let intersectingLogo: boolean = false;
-	let isVisibleGraphicDesign = false; // Separate state variable to control div visibility
+	let elementLogo: HTMLElement | undefined = $state();
+	let intersectingLogo: boolean = $state(false);
+	let isVisibleGraphicDesign = $state(false); // Separate state variable to control div visibility
 
-	$: {
+	$effect(() => {
 		if (intersectingLogo) {
-      isVisibleGraphicDesign = true;
-    }
-	}
-	let elementGraphicDesign: HTMLElement;
-	let intersectingGraphicDesign: boolean = false;
-	let isVisibleProduct = false;
+			isVisibleGraphicDesign = true;
+		}
+	});
+	let elementGraphicDesign: HTMLElement | undefined = $state();
+	let intersectingGraphicDesign: boolean = $state(false);
+	let isVisibleProduct = $state(false);
 
-	$: {
+	$effect(() => {
 		if (intersectingGraphicDesign) {
-      isVisibleProduct = true; 
-    }
+			isVisibleProduct = true;
+		}
+	});
+	let elementProduct: HTMLElement | undefined = $state();
+	let intersectingProduct: boolean = $state(false);
+
+	let showWebServices = $state(true);
+
+	// $effect(() => {
+	// 	console.log('intersectingWeb', intersectingWeb);
+	// });
+
+	function preventDefault(fn: (event: Event) => void) {
+		return function (this: HTMLElement, event: Event) {
+			event.preventDefault();
+			fn.call(this, event);
+		};
 	}
-	let elementProduct: HTMLElement;
-	let intersectingProduct: boolean = false;
-	
-	
 </script>
 
 <svelte:head>
@@ -82,26 +94,31 @@
 
 <section
 	id="start"
-	class="px-4 relative w-full flex min-h-[calc(100svh_-_3.5rem)] md:min-h-[calc(100vh_-_7rem)]"
+	class="relative flex min-h-[calc(100svh_-_3.5rem)] w-full px-4 md:min-h-[calc(100vh_-_7rem)]"
 >
-	<div class="flex w-full my-auto flex-col md:flex-row items-center justify-start">
-		<p class="text-left md:w-1/2 text-base mb-4 md:mb-0">
+	<div class="my-auto flex w-full flex-col items-center justify-start md:flex-row">
+		<p class="mb-4 text-left text-base md:mb-0 md:w-1/2">
 			<T
 				keyName="intro-works"
 				defaultValue="This section serves as a showcase of some of my previous works. My volatile past has allowed me to work in different areas of Design and gain experience throughout the industry."
 			/>
 		</p>
 		<div
-			class="md:w-1/2 text-2xl md:text-3xl w-full pl-4 flex flex-col font-sans space-y-4 mb-auto md:my-auto"
+			class="mb-auto flex w-full flex-col space-y-4 pl-4 font-sans text-2xl md:my-auto md:w-1/2 md:text-3xl"
 		>
 			{#each workSectionNames as section, i}
 				<button
 					style="width:{`calc(100% - ${i * 16}px)`}"
-					on:click|preventDefault={() => {isVisibleProduct = true; isVisibleGraphicDesign = true; isVisibleLogo = true; setTimeout(() => {
-						scrollIntoView(section.id, section.start*500)}
-						, 200);}}
+					onclick={preventDefault(() => {
+						isVisibleProduct = true;
+						isVisibleGraphicDesign = true;
+						isVisibleLogo = true;
+						setTimeout(() => {
+							scrollIntoView(section.id, section.start * 500);
+						}, 200);
+					})}
 					in:fly|global={{ x: 100, duration: 400, delay: 100 * i }}
-					class="dark:text-primary-50 md:py-4 ml-auto py-2 duration-150 rounded-lg text-left pl-3 transition-all {section.color} "
+					class="dark:text-primary-50 ml-auto rounded-lg py-2 pl-3 text-left transition-all duration-150 hover:cursor-pointer md:py-4 {section.color} "
 				>
 					<T keyName="works-{section.id}" defaultValue={section.text} />
 				</button>
@@ -110,18 +127,52 @@
 	</div>
 </section>
 
-<div class="fixed md:block top-0 h-0 w-20 right-0 z-30" />
+<div class="fixed top-0 right-0 z-30 h-0 w-20 md:block"></div>
 
+{#snippet buttons()}
+	{#if intersectingWeb}
+		<div
+			in:fly={{ x: 200, duration: 300, delay: 300 }}
+			out:fly={{ x: 200, duration: 300, delay: 0 }}
+			class="flex flex-row items-center justify-center gap-2"
+		>
+			<Button
+				class="font-sans {showWebServices ? 'bg-primary-200' : 'bg-primary-500'}"
+				variant="default"
+				size="lg"
+				onclick={() => {
+					showWebServices = false;
+					setTimeout(() => {
+						scrollIntoView('websites', 500);
+					}, 200);
+				}}>Works</Button
+			>
+			<Button
+				variant="default"
+				class="font-sans {showWebServices ? 'bg-primary-500' : 'bg-primary-200'}"
+				size="lg"
+				onclick={() => {
+					showWebServices = true;
+					setTimeout(() => {
+						scrollIntoView('websites', 500);
+					}, 0);
+				}}>Services</Button
+			>
+		</div>
+	{/if}
+{/snippet}
 <WorksHeader show={intersectingWeb} backgroundColor="bg-primary-200/60 dark:bg-primary-700/60">
-	<T keyName="works-webdev" defaultValue="Webdesign" />
+	<div class="flex flex-col gap-2">
+		<T keyName="works-webdev" defaultValue="Webdesign" />
+	</div>
 </WorksHeader>
 
-<IntersectionObserver once element={elementWeb} bind:intersecting={intersectingWeb}>
-	<div bind:this={elementWeb}>
+<IntersectionObserver element={elementWeb} bind:intersecting={intersectingWeb}>
+	<div bind:this={elementWeb} class="">
 		<SectionWebRJ />
 		<SectionWebRR />
 		<SectionWebKamado />
-		<!-- <SectionWebBrazie /> -->
+		<SectionWebBrazie />
 		<SectionWebDMaier />
 	</div>
 </IntersectionObserver>
@@ -130,20 +181,21 @@
 	<T keyName="works-logodesign" defaultValue="Logo Design" />
 </WorksHeader>
 
-	
 <IntersectionObserver element={elementLogo} bind:intersecting={intersectingLogo}>
 	{#if isVisibleLogo}
-	<div bind:this={elementLogo}>
-		<SectionLogos />
-	</div>
+		<div bind:this={elementLogo}>
+			<SectionLogos />
+		</div>
 	{/if}
 </IntersectionObserver>
 
-
-<WorksHeader  show={intersectingGraphicDesign} backgroundColor="bg-primary-400/60 dark:bg-primary-500/60">
+<WorksHeader
+	show={intersectingGraphicDesign}
+	backgroundColor="bg-primary-400/60 dark:bg-primary-500/60"
+>
 	<T keyName="works-graphicdesign" defaultValue="Graphic Design" />
 </WorksHeader>
-	
+
 <IntersectionObserver element={elementGraphicDesign} bind:intersecting={intersectingGraphicDesign}>
 	{#if isVisibleGraphicDesign}
 		<div bind:this={elementGraphicDesign}>
@@ -157,7 +209,7 @@
 <WorksHeader show={intersectingProduct} backgroundColor="bg-primary-500/60 dark:bg-primary-400/60">
 	<T keyName="works-productdesign" defaultValue="Product Design" />
 </WorksHeader>
-	
+
 <IntersectionObserver element={elementProduct} bind:intersecting={intersectingProduct}>
 	{#if isVisibleProduct}
 		<div bind:this={elementProduct}>
@@ -167,4 +219,4 @@
 	{/if}
 </IntersectionObserver>
 
-<SectionEnd /> 
+<SectionEnd />

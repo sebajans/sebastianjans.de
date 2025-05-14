@@ -1,21 +1,27 @@
 <script lang="ts">
-	import { beforeUpdate } from 'svelte';
+	import { run } from 'svelte/legacy';
+
+	// import { beforeUpdate } from 'svelte';
 	import Logo from '$components/Logo.svelte';
 	import { pageTitle } from '$lib/stores/pageTitle';
 
-	import SocialMenu from '$components/SocialMenu.svelte';
-	// export let duration = "300ms"
-	export let offset = 0;
-	export let tolerance = 0;
+	// import SocialMenu from '$components/SocialMenu.svelte';
 
-	export let showHeader = false;
-	let showMenu: boolean;
-	$: showMenu;
-	let headerClass: boolean = false;
-	let y = 0;
+	interface Props {
+		// export let duration = "300ms"
+		offset?: number;
+		tolerance?: number;
+		showHeader?: boolean;
+	}
+
+	let { offset = 0, tolerance = 0, showHeader = $bindable(false) }: Props = $props();
+	// let showMenu: boolean;
+	// $: showMenu;
+	let headerClass: boolean = $state(false);
+	let y = $state(0);
 	let lastY = 0;
 
-	$: beforeUpdate(() => (showMenu = false));
+	// $: beforeUpdate(() => (showMenu = false));
 
 	function updateClass(y: number) {
 		const dy = lastY - y;
@@ -39,36 +45,40 @@
 		return (headerClass = true);
 	}
 
-	$: headerClass = updateClass(y);
+	run(() => {
+		headerClass = updateClass(y);
+	});
 	// $: console.log(showMenu, headerClass);
 </script>
 
 <svelte:window bind:scrollY={y} />
 
 <header
-	on:mouseenter={() => (showHeader = true)}
-	on:mouseleave={() => (showHeader = false)}
+	role="navigation"
+	aria-label="Page Header"
+	onmouseenter={() => (showHeader = true)}
+	onmouseleave={() => (showHeader = false)}
 	class=" {headerClass || showHeader
-		? 'translate-y-0 h-24 max-h-24'
-		: '-translate-y-full md:translate-y-0 h-20 max-h-16 '} fixed duration-300 top-0 w-full  flex z-40 transition-all backdrop-blur-md dark:bg-primary-900/40 bg-primary-50/40"
+		? 'h-24 max-h-24 translate-y-0'
+		: 'h-20 max-h-16 -translate-y-full md:translate-y-0 '} dark:bg-primary-900/40 bg-primary-50/40 fixed top-0 z-40 flex w-full backdrop-blur-md transition-all duration-300"
 >
 	<!-- <slot/> -->
 	<a
 		aria-label="Back to Home"
 		href="/"
 		class="{headerClass || showHeader
-			? 'w-20 h-20 md:left-2 top-2'
-			: 'w-16 h-16 '} md:fixed md:mx-8 top-0 absolute md:left-0 left-1/2 transition-all duration-150 md:translate-x-0 z-50 group"
+			? 'top-2 h-20 w-20 md:left-2'
+			: 'h-16 w-16 '} group absolute top-0 left-1/2 z-50 transition-all duration-150 md:fixed md:left-0 md:mx-8 md:translate-x-0"
 	>
-		<Logo className={headerClass || showHeader ? 'w-16 h-16' : 'translate-x-2 w-12 h-12'} />
+		<Logo class={headerClass || showHeader ? 'h-16 w-16' : 'h-12 w-12 translate-x-2'} />
 	</a>
 
-	<div class="relative items-center w-full md:pl-44 px-4 mx-auto z-40 flex justify-between ">
+	<div class="relative z-40 mx-auto flex w-full items-center justify-between px-4 md:pl-44">
 		<!-- page title -->
 		<h1
 			class="{headerClass || showHeader
-				? 'text-3xl md:text-4xl py-2'
-				: 'md:text-3xl py-0'} transition-all duration-300 pl-0 text-3xl md:text-4xl text-left font-sans font-bold z-40 !leading-tight"
+				? 'py-2 text-3xl md:text-4xl'
+				: 'py-0 md:text-3xl'} z-40 pl-0 text-left font-sans text-3xl leading-tight! font-bold transition-all duration-300 md:text-4xl"
 		>
 			{$pageTitle}
 		</h1>

@@ -1,20 +1,24 @@
 <script lang="ts">
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { run } from 'svelte/legacy';
+
+	import { T } from '@tolgee/svelte'; // change import statement
 
 	import { scrollInSection } from '$lib/functions/scrollInSection';
 	import TableFront from './product-items/TableFront.svelte';
 	import TableSide from './product-items/TableSide.svelte';
 	import TableTop from './product-items/TableTop.svelte';
 
-	let moveToRight: boolean = false;
+	let moveToRight: boolean = $state(false);
 
-	let scroll: number = 0;
-	let windowHeight: number;
-	$: sectionScroll = scrollInSection(scroll, 5, windowHeight);
-	let showProduct: Boolean = false;
-	$: if (sectionScroll >= 0.75 && scroll > 1) {
-		showProduct = true;
-	}
+	let scroll: number = $state(0);
+	let windowHeight: number | undefined = $state();
+	let sectionScroll = $derived(scrollInSection(scroll, 5, windowHeight ?? 0));
+	let showProduct: Boolean = $state(false);
+	$effect(() => {
+		if (sectionScroll >= 0.75 && scroll > 1) {
+			showProduct = true;
+		}
+	});
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={windowHeight} />
@@ -22,33 +26,33 @@
 <section
 	id="productdesign"
 	style="background:radial-gradient(at right top, var(--tw-gradient-from) 0%, transparent 30%);"
-	class="bg-gradient-to-bl from-primary-500/50 dark:from-primary-400/30 w-full relative h-screen h-screen-ios overflow-hidden flex flex-col "
+	class="from-primary-500/50 h-screen-ios dark:from-primary-400/30 relative flex h-screen w-full flex-col overflow-hidden bg-linear-to-bl"
 >
-	<div class="w-full h-auto flex flex-row mt-4 md:mt-24">
-		<div class="w-[calc(100vw_-_56rem)] h-auto" />
+	<div class="mt-4 flex h-auto w-full flex-row md:mt-24">
+		<div class="h-auto w-[calc(100vw_-_56rem)]"></div>
 
-		<div class="max-w-4xl w-full">
+		<div class="w-full max-w-4xl">
 			<h2
-				class="bg-primary-500 dark:bg-primary-400 md:text-right w-fit ml-auto text-left pr-8 pl-3 rounded-l-md font-sans py-3 text-4xl "
+				class="bg-primary-500 dark:bg-primary-400 ml-auto w-fit rounded-l-md py-3 pr-8 pl-3 text-left font-sans text-4xl md:text-right"
 			>
 				<T keyName="works-productdesign" defaultValue="Product Design" />
 			</h2>
 		</div>
-		<div class="w-[calc(100vw_-_56rem)] h-auto bg-primary-500 dark:bg-primary-400" />
+		<div class="bg-primary-500 dark:bg-primary-400 h-auto w-[calc(100vw_-_56rem)]"></div>
 	</div>
 
-	<div class="flex flex-row-reverse md:flex-row w-full justify-center items-center my-auto">
+	<div class="my-auto flex w-full flex-row-reverse items-center justify-center md:flex-row">
 		<div
-			class="md:ml-44 px-4 grid max-w-4xl w-full sm:w-full grid-cols-2 grid-rows-[0.5fr_0.5fr_auto] gap-4"
+			class="grid w-full max-w-4xl grid-cols-2 grid-rows-[0.5fr_0.5fr_auto] gap-4 px-4 sm:w-full md:ml-44"
 		>
 			{#if showProduct}
 				<div
 					class="{moveToRight
-						? '-translate-x-full sm:translate-x-0 opacity-0 sm:opacity-100'
-						: 'translate-x-0 opacity-100'} duration-500  transform relative"
+						? '-translate-x-full opacity-0 sm:translate-x-0 sm:opacity-100'
+						: 'translate-x-0 opacity-100'} relative transform duration-500"
 				>
 					<p
-						class="absolute font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-2/3"
+						class="absolute top-1/2 left-1/2 -translate-x-2/3 -translate-y-1/2 transform font-sans font-medium tracking-wide uppercase opacity-80"
 					>
 						<T keyName="front-view" defaultValue="Front View" />
 					</p>
@@ -57,11 +61,11 @@
 					/>
 				</div>
 				<!-- outline-1 outline outline-primary-50 -->
-				<div class="relative rounded-md  ">
+				<div class="relative rounded-md">
 					<img
 						class="{moveToRight
 							? 'opacity-100 '
-							: 'opacity-0 translate-x-full'} pt-3 translate-y-3 z-10 absolute shadow-md shadow-primary-900/30 backdrop-blur-sm bg-primary-300/50 rounded-xl w-full h-auto m-4 object-contain transition-all duration-500"
+							: 'translate-x-full opacity-0'} bg-primary-300/50 shadow-primary-900/30 absolute z-10 m-4 h-auto w-full translate-y-3 rounded-xl object-contain pt-3 shadow-md backdrop-blur-xs transition-all duration-500"
 						src="/productdesign/table-img-2.webp"
 						alt="bench"
 					/>
@@ -71,7 +75,7 @@
 							: 'translate-x-0 opacity-100 sm:opacity-100'} duration-500"
 					>
 						<p
-							class="opacity-80 absolute font-sans tracking-wide  font-medium uppercase top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/3"
+							class="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 transform font-sans font-medium tracking-wide uppercase opacity-80"
 						>
 							<T keyName="Side-view" defaultValue="Side View" />
 						</p>
@@ -84,7 +88,7 @@
 					<span
 						class="{moveToRight
 							? '-translate-x-1/3 md:-translate-x-2/3'
-							: '-translate-x-2/3'} absolute duration-500 font-sans tracking-wide font-medium opacity-80 uppercase top-1/2 -translate-y-1/2 transform left-1/2 "
+							: '-translate-x-2/3'} absolute top-1/2 left-1/2 -translate-y-1/2 transform font-sans font-medium tracking-wide uppercase opacity-80 duration-500"
 					>
 						<T keyName="Top-view" defaultValue="Top View" />
 					</span>
@@ -94,14 +98,14 @@
 					/>
 				</div>
 				<button
-					class="uppercase h-fit self-center font-sans bg-primary-800 w-auto px-6 py-2 rounded-lg hover:bg-primary-700 text-primary-50"
-					on:click={() => (moveToRight = !moveToRight)}
+					class="bg-primary-800 text-primary-50 hover:bg-primary-700 h-fit w-auto self-center rounded-lg px-6 py-2 font-sans uppercase"
+					onclick={() => (moveToRight = !moveToRight)}
 				>
 					<T keyName="change-view-button" defaultValue="View Images" />
 				</button>
 				<div
-					class=" col-span-2
-					 w-full self-start text-justify transform transition-all duration-500 relative items-center flex flex-col justify-center"
+					class=" relative
+					 col-span-2 flex w-full transform flex-col items-center justify-center self-start text-justify transition-all duration-500"
 				>
 					<p>
 						<T

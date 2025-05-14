@@ -1,12 +1,12 @@
 <script>
-	import T from '@tolgee/svelte/T.svelte';
+	import { T } from '@tolgee/svelte';
 </script>
 
-<div class="max-w-4xl w-full flex flex-col md:flex-col items-end justify-center">
-	<h1 class="w-full text-5xl text-right">
+<div class="flex w-full max-w-4xl flex-col items-end justify-center md:flex-col">
+	<h1 class="w-full text-right text-5xl">
 		<T keyName="success-page" defaultValue="Success!" />
 	</h1>
-	<h3 class="w-full md:w-2/3 self-end text-2xl text-right py-4">
+	<h3 class="w-full self-end py-4 text-right text-2xl md:w-2/3">
 		<T
 			keyName="success-text"
 			defaultValue="Thank you for contacting me, i will message you shortly!"

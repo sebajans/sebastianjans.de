@@ -6,7 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { getTranslate } from '@tolgee/svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte'; // change import statement
 	import Popup from '$components/Popup.svelte';
 	import TermsOfService from '$components/TermsOfService.svelte';
 
@@ -15,7 +15,7 @@
 
 	mainClass.set('pb-14 my-auto');
 
-	let popup: any;
+	let popup: any = $state();
 
 	function openPopup() {
 		popup.show();
@@ -31,9 +31,11 @@
 </svelte:head>
 
 <!-- https://www.staticforms.xyz -->
-<div class="px-4 flex flex-col justify-center mx-auto items-center my-auto max-w-4xl hide-scrollbar">
-	<div class="grid w-full sm:grid-cols-2 gap-3 md:gap-6 pb-3 ">
-		<p class="w-full md:pb-4 text-justify">
+<div
+	class="hide-scrollbar mx-auto my-auto flex max-w-4xl flex-col items-center justify-center px-4"
+>
+	<div class="grid w-full gap-3 pb-3 sm:grid-cols-2 md:gap-6">
+		<p class="w-full text-justify md:pb-4">
 			<T
 				keyName="contact-text"
 				defaultValue="
@@ -41,7 +43,7 @@
 			inquiries. "
 			/>
 		</p>
-		<div class="dark:text-primary-100 flex flex-row h-fit flex-wrap">
+		<div class="dark:text-primary-100 flex h-fit flex-row flex-wrap">
 			<span class="w-1/4 font-sans font-semibold uppercase"
 				><T keyName="my-phone" defaultValue="Phone: " /></span
 			>
@@ -54,11 +56,11 @@
 	</div>
 	<div
 		in:fly|global={{ y: 30, duration: 450 }}
-		class="relative w-full overflow-auto highlight-content mb-24 md:mb-0"
+		class="highlight-content relative mb-24 w-full overflow-auto md:mb-0"
 	>
-		<div class="w-full transition duration-300 ">
+		<div class="w-full transition duration-300">
 			<form
-				class="grid gap-6 grid-cols-2"
+				class="grid grid-cols-2 gap-6"
 				name="contact"
 				method="POST"
 				data-netlify="true"
@@ -69,8 +71,8 @@
 					<!-- <input type="hidden" name="subject" value="Test from jsfiddle" /> -->
 				<!-- Replace with the url you want to redirect to -->
 				<!-- <input type="hidden" name="redirectTo" value="https://www.sebastianjans.de" /> -->
-				<input type="hidden" name="form-name" value="contact" >
-				<input type="hidden" name="bot-field" >
+				<input type="hidden" name="form-name" value="contact" />
+				<input type="hidden" name="bot-field" />
 
 				<div>
 					<label for="Full_name" class="label"
@@ -93,7 +95,8 @@
 				<div>
 					<label for="phone" class="label"
 						><T keyName="Phone-number" defaultValue="Phone number" />
-						<span class="text-xs font-light">(<T keyName="optional" defaultValue="optional" />)</span
+						<span class="text-xs font-light"
+							>(<T keyName="optional" defaultValue="optional" />)</span
 						></label
 					>
 					<!-- https://stackoverflow.com/questions/17260238/how-to-insert-space-every-4-characters-for-iban-registering -->
@@ -115,29 +118,30 @@
 					<label for="message" class="label"
 						><T keyName="Your-message" defaultValue="Your Message" /></label
 					>
-					<textarea name="message" class="h-20 input" placeholder="Enter your message" required />
+					<textarea name="message" class="input h-20" placeholder="Enter your message" required
+					></textarea>
 				</div>
-				<div class="flex items-center col-span-2 sm:col-span-1">
-					<div class="flex items-center h-5 ">
+				<div class="col-span-2 flex items-center sm:col-span-1">
+					<div class="flex h-5 items-center">
 						<label
 							for="remember"
-							class="text-sm font-medium w-full text-primary-900 dark:text-primary-50"
+							class="text-primary-900 dark:text-primary-50 w-full text-sm font-medium"
 						>
 							<input
 								name="remember"
 								type="checkbox"
 								value=""
-								class="w-4 h-4 mr-2 bg-primary-50 rounded border focus:ring-3 focus:!ring-primary-300 dark:bg-primary-700 dark:border-primary-600 dark:focus:!ring-primary-600 dark:ring-offset-primary-800"
+								class="bg-primary-50 focus:ring-primary-300! dark:border-primary-600 dark:bg-primary-700 dark:ring-offset-primary-800 dark:focus:ring-primary-600! mr-2 h-4 w-4 rounded border focus:ring-3"
 								required
 							/>
 
 							<T keyName="i-agree" defaultValue="I agree with the " /><button
-								on:click={openPopup}
-								class="group font-bold text-primary-500 dark:text-primary-400 hover:text-primary-400 dark:hover:text-primary-600"
+								onclick={openPopup}
+								class="group text-primary-500 hover:text-primary-400 dark:text-primary-400 dark:hover:text-primary-600 font-bold"
 								><T keyName="terms-and-conditions" defaultValue="terms and conditions." />
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									class="h-3.5 w-3.5 before:p-1 inline align-baseline transition duration-250 -0.5"
+									class="-0.5 inline h-3.5 w-3.5 align-baseline transition duration-250 before:p-1"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -155,7 +159,7 @@
 				</div>
 				<button
 					type="submit"
-					class="col-span-2 font-sans tracking-wide text-base sm:col-span-1 btn btn-highlight text-primary-900 dark:text-primary-50 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md  w-full sm:w-auto px-5 py-2.5 text-center dark:focus:ring-primary-800"
+					class="btn btn-highlight text-primary-900 focus:ring-primary-300 dark:text-primary-50 dark:focus:ring-primary-800 col-span-2 w-full rounded-md px-5 py-2.5 text-center font-sans text-base font-medium tracking-wide focus:ring-4 focus:outline-hidden sm:col-span-1 sm:w-auto"
 				>
 					<T keyName="Submit" defaultValue="Submit" />
 				</button>
@@ -168,7 +172,7 @@
 </div>
 
 <Popup
-	popupClass={'w-[90vw] md:w-[70vw] !pl-8  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
+	popupClass={'w-[90vw] md:w-[70vw] pl-8!  scrollbar fixed h-[70vh] justify-start overflow-y-auto dark:bg-primary-50 bg-primary-900'}
 	position={'top-[15vh] left-[5vw] md:left-[15vw]'}
 	bind:this={popup}
 >

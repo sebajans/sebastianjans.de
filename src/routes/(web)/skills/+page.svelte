@@ -1,22 +1,24 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Button from '@/components/ui/button/button.svelte';
 	import { fly } from 'svelte/transition';
 	import { pageTitle } from '$lib/stores/pageTitle';
 	import { mainClass } from '$lib/stores/mainClass';
 	import { getTranslate } from '@tolgee/svelte';
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte';
+	import Popup from '$components/Popup.svelte';
 
 	import { skillItems } from '$lib/lists/skillItems';
 	import { afterNavigate } from '$app/navigation';
+
 	const { t } = getTranslate();
 	pageTitle.set($t({ key: 'skills-title', defaultValue: 'Skills' }));
-	import Popup from '$components/Popup.svelte';
 
 	mainClass.set('pb-14 my-auto');
 
-	let visible: boolean = false;
-	let duration: number;
-	let firstdelay: number;
+	let visible: boolean = $state(false);
+	let duration: number = $state(0);
+	let firstdelay: number = $state(0);
 	onMount(() => (visible = true));
 	afterNavigate(({ from }) => {
 		duration = from === null ? 450 : 0;
@@ -24,7 +26,7 @@
 		visible = true;
 	});
 
-	let popup: any;
+	let popup: any = $state();
 	function openPopup() {
 		popup.show();
 	}
@@ -35,10 +37,12 @@
 	<meta name="description" content="Skills of Sebastian Jans as a Designer." />
 </svelte:head>
 
-<div class="px-4 sm:columns-2 space-y-8 gap-8 max-w-4xl justify-center items-center mx-auto my-auto ">
+<div
+	class="mx-auto my-auto max-w-4xl items-center justify-center gap-8 space-y-8 px-4 sm:columns-2"
+>
 	{#if visible}
 		<div class="relative">
-			<p in:fly|global={{ y: 30, duration }} class="text-base text-left">
+			<p in:fly|global={{ y: 30, duration }} class="text-left text-base">
 				<T
 					keyName="skills-text-intro"
 					defaultValue="
@@ -47,13 +51,13 @@
 				/>
 				<button
 					aria-label="Open PopUp to download CVs"
-					class="font-bold hover:text-primary-500 transition duration-250 "
-					on:click={openPopup}
+					class="hover:text-primary-500 font-bold transition duration-250"
+					onclick={openPopup}
 				>
 					<T keyName="CV" defaultValue="CV" />.
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-4 w-4 before:p-1 inline align-baseline  "
+						class="inline h-4 w-4 align-baseline before:p-1"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"
@@ -71,9 +75,9 @@
 				popupClass={'left-10 w-full mr-10 items-start justify-start bg-primary-200'}
 				bind:this={popup}
 			>
-				<div class="font-sans font-normal uppercase space-x-2">
+				<div class="space-x-2 font-sans font-normal uppercase">
 					<a
-						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+						class="bg-primary-300 text-primary-900 hover:bg-primary-700 hover:text-primary-400 rounded-md px-3 py-2 transition-all duration-200"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Download English CV"
@@ -82,7 +86,7 @@
 						EN</a
 					>
 					<a
-						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+						class="bg-primary-300 text-primary-900 hover:bg-primary-700 hover:text-primary-400 rounded-md px-3 py-2 transition-all duration-200"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Download German CV"
@@ -91,7 +95,7 @@
 						ES</a
 					>
 					<a
-						class="bg-primary-300 py-2 px-3 rounded-md hover:bg-primary-700 text-primary-900 transition-all duration-200 hover:text-primary-400"
+						class="bg-primary-300 text-primary-900 hover:bg-primary-700 hover:text-primary-400 rounded-md px-3 py-2 transition-all duration-200"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Download Spanish CV"
@@ -105,35 +109,28 @@
 		{#each Object.entries(skillItems).filter(([categoryName, skills]) => categoryName !== 'Language Skills') as [categoryName, skills], i}
 			<div
 				in:fly|global={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
-				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
+				class="grid break-inside-avoid-column grid-cols-1 gap-2 rounded-lg align-top"
 			>
-				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
+				<h2 class="text-primary-900 dark:text-primary-50 font-sans text-xl font-bold uppercase">
 					<T keyName="skill-{categoryName}-title" defaultValue={categoryName} />
 				</h2>
-				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
+				<p class="text-primary-900 dark:text-primary-50 pb-1 font-serif">
 					<T keyName="skill-{categoryName}-text" defaultValue={skills.categorydescription} />
 				</p>
-				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap highlight-content p-3">
+				<div class="highlight-content grid h-auto w-full grid-cols-2 flex-wrap gap-3 p-3">
 					{#each skills.categoryArray as skill}
-						<div class="flex flex-row items-center h-7">
+						<div class="flex h-7 flex-row items-center">
 							<img
 								src={skill.iconLink}
-								class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
+								class="pointer-events-none mr-1.5 inline-block aspect-square h-full rounded-md object-fill text-white"
 								alt={skill.name}
 							/>
 							<span
-								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
+								class="text-primary-800 dark:text-primary-100 font-serif text-sm leading-4 font-medium"
 							>
 								{skill.name}
 							</span>
 						</div>
-						<!-- <div class="flex flex-row items-center h-7">
-							<span
-								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
-							>
-								{skill.progress}
-							</span>
-						</div> -->
 					{/each}
 				</div>
 			</div>
@@ -141,31 +138,31 @@
 		{#each Object.entries(skillItems).filter(([categoryName, skills]) => categoryName === 'Language Skills') as [categoryName, skills], i}
 			<div
 				in:fly|global={{ y: 30, duration, delay: (200 + i * 200) * firstdelay }}
-				class="break-inside-avoid-column rounded-lg align-top gap-2 grid grid-cols-1"
+				class="grid break-inside-avoid-column grid-cols-1 gap-2 rounded-lg align-top"
 			>
-				<h2 class="text-xl uppercase dark:text-primary-50 text-primary-900 font-bold font-sans">
+				<h2 class="text-primary-900 dark:text-primary-50 font-sans text-xl font-bold uppercase">
 					<T keyName="skill-{categoryName}-title" defaultValue={categoryName} />
 				</h2>
-				<p class="font-serif dark:text-primary-50 text-primary-900  pb-1">
+				<p class="text-primary-900 dark:text-primary-50 pb-1 font-serif">
 					<T keyName="skill-{categoryName}-text" defaultValue={skills.categorydescription} />
 				</p>
-				<div class="w-full h-auto gap-3 grid grid-cols-2 flex-wrap highlight-content p-3">
+				<div class="highlight-content grid h-auto w-full grid-cols-2 flex-wrap gap-3 p-3">
 					{#each skills.categoryArray as skill}
-						<div class="flex flex-row items-center h-7">
+						<div class="flex h-7 flex-row items-center">
 							<img
 								src={skill.iconLink}
-								class="pointer-events-none inline-block h-full rounded-md aspect-square mr-1.5 object-fill "
+								class="pointer-events-none mr-1.5 inline-block aspect-square h-full rounded-md object-fill text-white"
 								alt={skill.name}
 							/>
 							<span
-								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
+								class="text-primary-800 dark:text-primary-100 font-serif text-sm leading-4 font-medium"
 							>
 								{skill.name}
 							</span>
 						</div>
-						<div class="flex flex-row items-center h-7">
+						<div class="flex h-7 flex-row items-center">
 							<span
-								class="font-serif leading-4 dark:text-primary-100 text-primary-800 font-medium text-sm"
+								class="text-primary-800 dark:text-primary-100 font-serif text-sm leading-4 font-medium"
 							>
 								{skill.progress}
 							</span>
@@ -177,28 +174,18 @@
 	{/if}
 </div>
 <div class="px-4">
-
-<div
-	class=" max-w-4xl items-center flex flex-col md:flex-row content-between sm:space-x-2 mb-16 my-8 justify-center box-content  w-auto mx-auto "
->
-	<p class="mr-auto pb-2 md:pb-0">
-		<T
-			keyName="skills-convince"
-			defaultValue="If you're still hesitant, feel free to give me a brief call, and we can chat about your business!"
-		/>
-	</p>
-	<a class="btn standardButton w-full md:w-fit whitespace-nowrap" href="/contact">
+	<div
+		class=" mx-auto my-8 mb-16 box-content flex w-auto max-w-4xl flex-col content-between items-center justify-center sm:space-x-2 md:flex-row"
+	>
+		<p class="mr-auto pb-2 md:pb-0">
+			<T
+				keyName="skills-convince"
+				defaultValue="If you're still hesitant, feel free to give me a brief call, and we can chat about your business!"
+			/>
+		</p>
+		<Button
+		 class="text-primary-50 dark:text-primary-900 hover:dark:bg-primary-200 w-full whitespace-nowrap md:w-fit" href="/contact">
 			<T keyName="skills-convince-button" defaultValue="Contact me" />
-	</a>
+		</Button>
+	</div>
 </div>
-</div>
-
-<style>
-	.standardButton {
-		@apply items-center justify-center text-center text-primary-900 dark:text-primary-50 dark:from-primary-50/40 dark:to-primary-50/30 from-primary-900/30 to-primary-900/20 dark:border-primary-50/10 border-primary-900/10 font-light  bg-gradient-to-tr box-border 
-		py-2 px-4 h-auto md:backdrop-blur-sm flex border transition-all ease-in duration-300 rounded-lg hover:from-primary-900/30 hover:to-primary-900/40
-				dark:hover:from-primary-50/20 dark:hover:to-primary-50/30 
-				hover:border-primary-900/50 dark:hover:border-primary-50/50
-				
-	}
-	</style>

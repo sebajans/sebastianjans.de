@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let imgClass: string;
+	interface Props {
+		imgClass: string;
+	}
+
+	let { imgClass }: Props = $props();
 </script>
 
 <div class={imgClass}>
@@ -11,7 +15,7 @@
 		xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 		xml:space="preserve"
-		class="translate-y-[11.8%] translate-x-[4.8%] scale-[93%]"
+		class="translate-x-[4.8%] translate-y-[11.8%] scale-[93%]"
 		style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 	>
 		<g id="Close-up">

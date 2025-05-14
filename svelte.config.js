@@ -5,14 +5,16 @@ import preprocess from 'svelte-preprocess';
 const config = {
 	preprocess: [
 		preprocess({
-			postcss: true,
-		}),
+			postcss: true
+		})
 	],
 
 	kit: {
 		adapter: adapter(),
 		alias: {
-			$components: "src/components",
+			$components: 'src/components',
+			'@/*': 'src/lib/*'
+
 			// $i18n: "src/i18n",
 		},
 		inlineStyleThreshold: Infinity,
@@ -25,11 +27,9 @@ const config = {
 			// enabled: true,
 			// force: true,
 			// pages: ['*'],
-			entries: ['*', '/contact'],
-
-		},
-	},
-
+			entries: ['*', '/contact']
+		}
+	}
 };
 
 export default config;

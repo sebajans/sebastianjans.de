@@ -1,57 +1,71 @@
 <script lang="ts">
-	import T from '@tolgee/svelte/T.svelte'; // change import statement
+	import { T } from '@tolgee/svelte';
 	import { getTranslate } from '@tolgee/svelte';
 	const { t } = getTranslate();
 	import IntersectionObserver from 'svelte-intersection-observer';
 
+	let element: HTMLElement | undefined = $state();
+	let intersecting: boolean | undefined = $state();
 
-	let element: HTMLElement;
-  let intersecting:boolean;
-	
-	let elementPlay: HTMLElement;
-  let intersectingPlay:boolean;
-	let elementLevel: HTMLElement;
-  let intersectingLevel:boolean;
-	let elementSettings: HTMLElement;
-  let intersectingSettings:boolean;
-
+	let elementPlay: HTMLElement | undefined = $state();
+	let intersectingPlay: boolean | undefined = $state();
+	let elementLevel: HTMLElement | undefined = $state();
+	let intersectingLevel: boolean | undefined = $state();
+	let elementSettings: HTMLElement | undefined = $state();
+	let intersectingSettings: boolean | undefined = $state();
 </script>
 
-
-
-<IntersectionObserver once threshold={0.5} element={element} bind:intersecting={intersecting}
->
-	<section bind:this={element} class="pt-4 md:pt-20 pb-20 relative w-[calc(100vw_-_0rem)] md:w-[calc(100vw_-_12rem)] h-full min-h-screen flex flex-col justfiy-center" 
-		id="Recyclerumble">
-		<div class="space-y-4 max-w-4xl h-works md:h-worksmd w-full my-auto  mx-auto ">
+<IntersectionObserver once threshold={0.5} {element} bind:intersecting>
+	<section
+		bind:this={element}
+		class="justfiy-center relative flex h-full min-h-screen w-[calc(100vw_-_0rem)] flex-col pt-4 pb-20 md:w-[calc(100vw_-_12rem)] md:pt-20"
+		id="Recyclerumble"
+	>
+		<div class="h-works md:h-worksmd mx-auto my-auto w-full max-w-4xl space-y-4">
 			<h1
-			class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all duration-500 px-3 md:text-left text-primary-900 dark:text-primary-50">
+				class="{intersecting
+					? ''
+					: 'translate-y-20 opacity-0'} text-primary-900 dark:text-primary-50 px-3 transition-all duration-500 md:text-left"
+			>
 				{$t({ key: 'title-RR', defaultValue: 'Recycle Rumble' })}
 			</h1>
-			<p class="{intersecting ? '' : 'translate-y-20 opacity-0' } transition-all delay-150 duration-700 px-3">
-				{$t({ key: 'description-RR', defaultValue: 'Recycle Rumble is a game that i created as a part of my master thesis. It is an online game directed towards children. It teaches recycling and trash sorting.' })}
+			<p
+				class="{intersecting
+					? ''
+					: 'translate-y-20 opacity-0'} px-3 transition-all delay-150 duration-700"
+			>
+				{$t({
+					key: 'description-RR',
+					defaultValue:
+						'Recycle Rumble is a game that i created as a part of my master thesis. It is an online game directed towards children. It teaches recycling and trash sorting.'
+				})}
 			</p>
-			<ul class="{intersecting ? '' : 'translate-y-1/2 opacity-0' } transition-all delay-300 duration-700 md:overflow-y-clip hs backdrop-blur-md border-primary-900/5 dark:border-primary-50/10 md:bg-gradient-to-br  md:from-primary-900/10 md:to-primary-900/5 dark:from-primary-50/5 dark:to-primary-50/10 py-2 md:py-3 md:rounded-md  md:border items-start h-full snap-x snap-mandatory overflow-x-auto">
+			<ul
+				class="{intersecting
+					? ''
+					: 'translate-y-1/2 opacity-0'} hs border-primary-900/5 dark:border-primary-50/10 dark:from-primary-50/5 dark:to-primary-50/10 md:from-primary-900/10 md:to-primary-900/5 h-full snap-x snap-mandatory items-start overflow-x-auto py-2 backdrop-blur-md transition-all delay-300 duration-700 md:overflow-y-clip md:rounded-md md:border md:bg-linear-to-br md:py-3"
+			>
 				<li
-					class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
+					class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 				>
-					<img
+					<enhanced:img
 						alt="website-RR-front-mobile"
 						class="
-						col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-						src="img/website-RR/website-RR-mobile-front.webp"
+						col-span-2 row-span-5 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:col-span-3 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+						src="img/website-RR/website-RR-mobile-front.webp?enhanced"
 					/>
-					<img
+					<enhanced:img
 						alt="website-RR-front-desktop"
 						class="
-						h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-						src="img/website-RR/website-RR-front.webp"
+						col-span-4 col-start-3 row-span-5 h-full w-full rounded-t-[0.75rem] object-cover object-left pt-0.5 sm:h-auto md:col-span-5 md:col-start-4 md:row-start-2 md:mt-auto md:rounded-t-[1.25rem] md:object-left-top md:px-1 md:pt-1"
+						src="img/website-RR/website-RR-front.webp?enhanced"
 					/>
-					<div class="col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
-						<h3 class="pb-1"><T
-							keyName="title-RR-welcome"
-							defaultValue="Welcome page"
-						/></h3>
+					<div
+						class="col-span-6 row-span-1 row-start-1 flex flex-col px-3 md:col-start-4 md:row-start-1"
+					>
+						<h3 class="pb-1">
+							<T keyName="title-RR-welcome" defaultValue="Welcome page" />
+						</h3>
 						<p>
 							<T
 								keyName="text-RR-welcome"
@@ -60,28 +74,38 @@
 						</p>
 					</div>
 				</li>
-				<IntersectionObserver once threshold={0.5} element={elementPlay} bind:intersecting={intersectingPlay}
-				>	
-					<li bind:this={elementPlay}
-						class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
+				<IntersectionObserver
+					once
+					threshold={0.5}
+					element={elementPlay}
+					bind:intersecting={intersectingPlay}
+				>
+					<li
+						bind:this={elementPlay}
+						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 					>
-						<img
+						<enhanced:img
 							alt="website-RR-play-mobile"
-							class="{intersectingPlay ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500
-							col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-mobile-play.webp"
+							class="{intersectingPlay ? '' : 'translate-x-1/3 opacity-0'} col-span-2 row-span-5
+							rounded-t-[0.75rem] object-cover object-top pt-0.5 transition-all duration-500 md:col-span-3 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+							src="img/website-RR/website-RR-mobile-play.webp?enhanced"
 						/>
-						<img
+						<enhanced:img
 							alt="website-RR-play-desktop"
-							class="{intersectingPlay ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-150 duration-500
-							h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-play.webp"
+							class="{intersectingPlay
+								? ''
+								: 'translate-x-1/3 opacity-0'} col-span-4 col-start-3 row-span-5
+							h-full w-full rounded-t-[0.75rem] object-cover object-left pt-0.5 transition-all delay-150 duration-500 sm:h-auto md:col-span-5 md:col-start-4 md:row-start-2 md:mt-auto md:rounded-t-[1.25rem] md:object-left-top md:px-1 md:pt-1"
+							src="img/website-RR/website-RR-play.webp?enhanced"
 						/>
-						<div class="{intersectingPlay ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-300 duration-500 col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
-							<h3 class="pb-1"><T
-								keyName="title-RR-play"
-								defaultValue="Play page"
-							/></h3>
+						<div
+							class="{intersectingPlay
+								? ''
+								: 'translate-x-1/3 opacity-0'} col-span-6 row-span-1 row-start-1 flex flex-col px-3 transition-all delay-300 duration-500 md:col-start-4 md:row-start-1"
+						>
+							<h3 class="pb-1">
+								<T keyName="title-RR-play" defaultValue="Play page" />
+							</h3>
 							<p>
 								<T
 									keyName="text-RR-play"
@@ -91,28 +115,38 @@
 						</div>
 					</li>
 				</IntersectionObserver>
-				<IntersectionObserver once threshold={0.5} element={elementLevel} bind:intersecting={intersectingLevel}
-				>	
-					<li bind:this={elementLevel}
-						class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
+				<IntersectionObserver
+					once
+					threshold={0.5}
+					element={elementLevel}
+					bind:intersecting={intersectingLevel}
+				>
+					<li
+						bind:this={elementLevel}
+						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 					>
-						<img
+						<enhanced:img
 							alt="website-RR-level-mobile"
-							class="{intersectingLevel ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500
-							col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-mobile-level.webp"
+							class="{intersectingLevel ? '' : 'translate-x-1/3 opacity-0'} col-span-2 row-span-5
+							rounded-t-[0.75rem] object-cover object-top pt-0.5 transition-all duration-500 md:col-span-3 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+							src="img/website-RR/website-RR-mobile-level.webp?enhanced"
 						/>
-						<img
+						<enhanced:img
 							alt="website-RR-level-desktop"
-							class="{intersectingLevel ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-150 duration-500
-							h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-level.webp"
+							class="{intersectingLevel
+								? ''
+								: 'translate-x-1/3 opacity-0'} col-span-4 col-start-3 row-span-5
+							h-full w-full rounded-t-[0.75rem] object-cover object-left pt-0.5 transition-all delay-150 duration-500 sm:h-auto md:col-span-5 md:col-start-4 md:row-start-2 md:mt-auto md:rounded-t-[1.25rem] md:object-left-top md:px-1 md:pt-1"
+							src="img/website-RR/website-RR-level.webp?enhanced"
 						/>
-						<div class="{intersectingLevel ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-300 duration-500 col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
-							<h3 class="pb-1"><T
-								keyName="title-RR-level"
-								defaultValue="Level page"
-							/></h3>
+						<div
+							class="{intersectingLevel
+								? ''
+								: 'translate-x-1/3 opacity-0'} col-span-6 row-span-1 row-start-1 flex flex-col px-3 transition-all delay-300 duration-500 md:col-start-4 md:row-start-1"
+						>
+							<h3 class="pb-1">
+								<T keyName="title-RR-level" defaultValue="Level page" />
+							</h3>
 							<p>
 								<T
 									keyName="text-RR-level"
@@ -122,28 +156,38 @@
 						</div>
 					</li>
 				</IntersectionObserver>
-				<IntersectionObserver once threshold={0.5} element={elementSettings} bind:intersecting={intersectingSettings}
-				>	
-					<li bind:this={elementSettings}
-							class="snap-center snap-always md:snap-start w-full h-full max-h-96 grid grid-cols-6 grid-rows-6  md:grid-cols-8  md:grid-rows-[1fr,_3fr]"
+				<IntersectionObserver
+					once
+					threshold={0.5}
+					element={elementSettings}
+					bind:intersecting={intersectingSettings}
+				>
+					<li
+						bind:this={elementSettings}
+						class="grid h-full max-h-96 w-full snap-center snap-always grid-cols-6 grid-rows-6 md:snap-start md:grid-cols-8 md:grid-rows-[1fr__3fr]"
 					>
-						<img
+						<enhanced:img
 							alt="website-RR-settings-mobile"
-							class="{intersectingSettings ? '' : 'translate-x-1/3 opacity-0' } transition-all duration-500
-							col-span-2 row-span-5 md:col-span-3 rounded-t-[0.75rem] object-cover object-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-mobile-settings.webp"
+							class="{intersectingSettings ? '' : 'translate-x-1/3 opacity-0'} col-span-2 row-span-5
+							rounded-t-[0.75rem] object-cover object-top pt-0.5 transition-all duration-500 md:col-span-3 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
+							src="img/website-RR/website-RR-mobile-settings.webp?enhanced"
 						/>
-						<img
+						<enhanced:img
 							alt="website-RR-settings-desktop"
-							class="{intersectingSettings ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-150 duration-500
-							h-full sm:h-auto w-full   row-span-5 col-span-4 col-start-3 md:col-span-5 md:col-start-4 md:row-start-2 rounded-t-[0.75rem] md:mt-auto object-cover object-left md:object-left-top pt-0.5 md:rounded-t-[1.25rem] md:px-1 md:pt-1"
-							src="img/website-RR/website-RR-settings.webp"
+							class="{intersectingSettings
+								? ''
+								: 'translate-x-1/3 opacity-0'} col-span-4 col-start-3 row-span-5
+							h-full w-full rounded-t-[0.75rem] object-cover object-left pt-0.5 transition-all delay-150 duration-500 sm:h-auto md:col-span-5 md:col-start-4 md:row-start-2 md:mt-auto md:rounded-t-[1.25rem] md:object-left-top md:px-1 md:pt-1"
+							src="img/website-RR/website-RR-settings.webp?enhanced"
 						/>
-						<div class="{intersectingSettings ? '' : 'translate-x-1/3 opacity-0' } transition-all delay-300 duration-500 col-span-6 px-3 row-span-1 row-start-1 md:col-start-4  md:row-start-1 flex flex-col">
-							<h3 class="pb-1"><T
-								keyName="title-RR-settings"
-								defaultValue="Settings page"
-							/></h3>
+						<div
+							class="{intersectingSettings
+								? ''
+								: 'translate-x-1/3 opacity-0'} col-span-6 row-span-1 row-start-1 flex flex-col px-3 transition-all delay-300 duration-500 md:col-start-4 md:row-start-1"
+						>
+							<h3 class="pb-1">
+								<T keyName="title-RR-settings" defaultValue="Settings page" />
+							</h3>
 							<p>
 								<T
 									keyName="text-RR-settings"
@@ -162,23 +206,23 @@
 	:root {
 		--gutter: 0px;
 	}
-	
+
 	.hs::-webkit-scrollbar {
 		display: none;
 	}
-	
+
 	.hs {
-		-ms-overflow-style: none;  /* IE and Edge */
-		scrollbar-width: none;  /* Firefox */
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 		display: grid;
 		grid-gap: 10px;
-		grid-template-columns: repeat(4, calc(100% - var(--gutter) * 2)) ;
+		grid-template-columns: repeat(4, calc(100% - var(--gutter) * 2));
 		grid-template-rows: minmax(150px, 1fr);
 	}
-	
+
 	@media (min-width: 768px) {
-			.hs {
-				grid-template-columns: repeat(4,  calc(100% - var(--gutter) * 2));
-			}
+		.hs {
+			grid-template-columns: repeat(4, calc(100% - var(--gutter) * 2));
 		}
+	}
 </style>

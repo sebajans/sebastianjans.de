@@ -3,9 +3,6 @@
 	import { onMount } from 'svelte';
 
 	const tolgee = getTolgee(['language']);
-	// function handleLanguageChange(e: Event) {
-	// 	$tolgee.changeLanguage((e.currentTarget as HTMLSelectElement).value);
-	// }
 
 	let availableLangs = [
 		{ lang: 'de', fullLanguage: 'Deutsch' },
@@ -13,7 +10,11 @@
 		{ lang: 'es', fullLanguage: 'Español' }
 	];
 
-	export let langExpanded = false;
+	interface Props {
+		langExpanded?: boolean;
+	}
+
+	let { langExpanded = $bindable(false) }: Props = $props();
 
 	onMount(() => {
 		langExpanded = false;
@@ -22,43 +23,44 @@
 	function expandMenu() {
 		langExpanded = !langExpanded;
 	}
-
-	// function changeLanguage() {
-	// 	$tolgee.getLanguage() = language.lang
-	// }
 </script>
 
-<button
-	aria-label="Open Language Switcher"
+<div
 	class="{langExpanded
 		? 'w-[5.5rem]'
-		: 'w-10'} group overflow-hidden duration-300 transition-all items-center justify-center h-10 font-sans flex flex-row relative rounded-md text-primary-50 bg-primary-900/20 hover:bg-primary-900 dark:bg-primary-50/20 dark:hover:bg-primary-50"
-	on:click={expandMenu}
-	on:focus={expandMenu}
+		: 'w-10'} group bg-primary-900/20 text-primary-50 hover:bg-primary-900 dark:bg-primary-50/20 dark:hover:bg-primary-50 relative flex h-10 flex-row items-center justify-center overflow-hidden rounded-md font-sans transition-all duration-300"
 >
-	<!-- on:mouseenter={expandMenu}
-	on:mouseleave={expandMenu} -->
+	<!-- {#if !langExpanded} -->
 
-	<div
-		class="px-1 transition-all uppercase duration-250 text-lg group-hover:text-primary-500 dark:hover:text-primary-500 dark:text-primary-50 text-primary-900"
-	>
-		{$tolgee.getLanguage()}
-	</div>
+	<button aria-label="Open Language Switcher" class="  " onclick={expandMenu} onfocus={expandMenu}>
+		<div
+			class="text-primary-900 group-hover:text-primary-500 dark:text-primary-50 dark:hover:text-primary-500 px-1 text-lg uppercase transition-all duration-250"
+		>
+			{$tolgee.getLanguage()}
+		</div>
+	</button>
+	<!-- {:else} -->
 	{#if langExpanded}
 		{#each availableLangs as language}
 			{#if language.lang != $tolgee.getLanguage()}
-				<span class="dark:text-primary-900 "> / </span>
-				<button
-					type="button"
+				<span class="dark:text-primary-900"> / </span>
+				<div
+					role="button"
+					tabindex="0"
 					aria-label="Open Language Switcher (Currently selected language: {$tolgee.getLanguage()})"
-					on:click={() => {
+					onclick={() => {
 						$tolgee.changeLanguage(language.lang);
 					}}
-					class="w-5 px-0.5 transition-all hover:scale-110 uppercase duration-250 group-hover:text-primary-200 dark:group-hover:text-primary-700 hover:!text-primary-500 dark:hover:text-primary-400  dark:text-primary-900"
+					onkeypress={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							$tolgee.changeLanguage(language.lang);
+						}
+					}}
+					class="hover:text-primary-500! group-hover:text-primary-200 dark:text-primary-900 dark:hover:text-primary-400 dark:group-hover:text-primary-700 w-5 cursor-pointer px-0.5 uppercase transition-all duration-250 hover:scale-110"
 				>
 					{language.lang}
-				</button>
+				</div>
 			{/if}
 		{/each}
 	{/if}
-</button>
+</div>
