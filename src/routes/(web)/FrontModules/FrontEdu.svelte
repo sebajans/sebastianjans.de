@@ -30,7 +30,7 @@
 							style:background-image={$settingsState.darkMode
 								? `url('${item.image}')`
 								: `url('${item.image}')`}
-							class="border-primary-200/90 bg-primary-200/70 dark:border-primary-50/5 dark:bg-primary-100/80 pointer-events-none z-10 -mt-14 flex aspect-square max-h-[16rem] w-28 max-w-[16rem] -translate-x-4 translate-y-[3.75rem] justify-center rounded-lg border bg-contain bg-center bg-no-repeat bg-origin-content p-2 backdrop-blur-md md:mt-0 md:w-1/5 md:-translate-x-0 md:translate-y-0"
+							class="border-primary-200/90 bg-primary-200/70 dark:border-primary-50/5 dark:bg-primary-100/80 pointer-events-none z-10 -mt-14 flex aspect-square max-h-[16rem] w-28 max-w-[16rem] -translate-x-4 translate-y-[3.75rem] justify-center rounded-lg border bg-contain bg-center bg-no-repeat bg-origin-content p-2 md:p-4 backdrop-blur-md md:mt-0 md:w-1/5 md:-translate-x-0 md:translate-y-0"
 						></div>
 						<div class="box-content self-stretch md:w-4/5">
 							<h2 class="text-primary-900 dark:text-primary-50 mr-28 font-sans text-2xl md:mr-0">
