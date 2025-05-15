@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { T } from '@tolgee/svelte';
 	import { fly } from 'svelte/transition';
-	let profilePicture = 'img/profile-pic.webp';
+	let profilePicture = 'img/profile-picture-2024-4-3.webp';
 	import ButtonScrollToSection from '$components/ButtonScrollToSection.svelte';
 	import { getTranslate } from '@tolgee/svelte';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
@@ -74,22 +74,22 @@
 							<T keyName="likes-title" defaultValue="Some things i like" />
 						</h2>
 						<ul class="space-y-3 pt-3">
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="likes-item-1" defaultValue="Orange juice" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="likes-item-2" defaultValue="Traveling" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="likes-item-3" defaultValue="Staying up late" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="likes-item-4" defaultValue="Cats" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="likes-item-5" defaultValue="Puzzles" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="likes-item-6" defaultValue="Gaming" />
 							</li>
 						</ul>
@@ -105,19 +105,19 @@
 							<T keyName="dislikes-title" defaultValue="Some things i dislike" />
 						</h2>
 						<ul class="space-y-3 pt-3">
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="dislikes-item-1" defaultValue="Coffee" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="dislikes-item-2" defaultValue="Public speaking" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="dislikes-item-3" defaultValue="Comic Sans MS" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="dislikes-item-4" defaultValue="Horror movies" />
 							</li>
-							<li class="before:content-[''] before:border-primary-900/5 before:bg-primary-900/10 before:dark:border-primary-50/10 before:dark:bg-primary-50/25 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border before:backdrop-blur-md px-2 py-0.5">
+							<li class="before:content-[''] before:border-primary-800 before:bg-primary-900 before:opacity-10 before:dark:border-primary-50 before:dark:bg-primary-100 before:mr-2 before:inline-block before:h-3 before:w-3 before:translate-y-px before:rounded-full before:border px-2 py-0.5">
 								<T keyName="dislikes-item-5" defaultValue="Bad Communication" />
 							</li>
 						</ul>
